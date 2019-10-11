@@ -17,3 +17,8 @@ git reflog # find deleted commit
 # Removing an entire commit
 git rebase -p --onto SHA^ SHA
 
+
+
+
+add from BSD
+
