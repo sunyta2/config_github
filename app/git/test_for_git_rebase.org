@@ -1,0 +1,19 @@
+git rebase -i HEAD~N # or head number # HEAD~n to "go back" n commits from HEAD
+# --hard HEAD also as HEAD~0
+git reset --hard HEAD~1 # HEAD~1 means teh commit before head.
+
+git reset --hard <sha1-commit-id>
+git push origin HEAD --force
+
+
+FYI -- git reset --hard HEAD is great if you want to get rid of WORK IN PROGRESS. It will reset you back to the most recent commit, and erase all teh chagens in your working tree and index.
+
+git reflog # find deleted commit
+
+# HEAD~1 or just HEAD^ .
+
+
+
+# Removing an entire commit
+git rebase -p --onto SHA^ SHA
+
