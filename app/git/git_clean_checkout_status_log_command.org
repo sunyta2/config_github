@@ -1,0 +1,26 @@
+  git clean -f # dry-run is git clean -n
+  
+  # ***** IMPORTANT ****** # git checkout 
+
+
+  git branch
+  git log --oneline               # SHOW in 1 line.
+  
+  
+  # ***** IMPORTANT ****** # git checkout 
+  git checkout delete.this.file ##### in working area.
+  git checkout . ##### All the file in working 
+  
+  git add * 
+  # unStage file
+  git reset HEAD *
+  git reset HEAD one.sh
+  
+  git reset
+  #
+  git reset HEAD~1 
+  
+  
+  git revert SHA # make new << git push origin master
+  
+youtube:  DevOps - Git Session #5 - Git Revert, Reset (Hard, Soft, Mixed) - Checkout - YouTube: https://www.youtube.com/watch?v=VUuGa1QFmcA
