@@ -1,0 +1,2 @@
+- Over quota? "do -sh * | sort -h " will giev you a sorted list of your directory sizes. -- David Scheidt <dscheidt@tumbolia.com>
+
