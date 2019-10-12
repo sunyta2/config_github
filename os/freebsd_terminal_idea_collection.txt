@@ -4,3 +4,18 @@
 
 - man <number> intro # 1 (General Commands) to 9 (Kernel Developer's Manual)
   - man 1 intro
+- If you want to get a sorted list of all services that are started when FreeBSD boots,
+enter "service -e" -- Lars Engels <lme@FreeBSD.org>
+-
+=> hw.snd.default_unit: 0 -> 1
+###### WOW FreeBSD earphone sound out!!! ###### [No sound from earphones | The FreeBSD Forums](https://forums.freebsd.org/threads/no-.5707/ )
+
+
+
+- "pkg serarch part_of_package_name"
+
+
+
+- pkill X # to stop xorg 
+  - sudo service mdm stop # cf. sudo systemctl stop lightdm
+    - ctlr + alt + F1 / Alt + PrtScn/SysReq + K / Ctrl + Alt + Backspace
