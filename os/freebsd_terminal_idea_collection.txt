@@ -1,2 +1,6 @@
 - Over quota? "do -sh * | sort -h " will giev you a sorted list of your directory sizes. -- David Scheidt <dscheidt@tumbolia.com>
 
+- Need to find the location of a program? Use "locate program_name" -- Dru <genesis@istar.ca>
+
+- man <number> intro # 1 (General Commands) to 9 (Kernel Developer's Manual)
+  - man 1 intro
