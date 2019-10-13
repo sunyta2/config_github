@@ -1,0 +1,14 @@
+[Xterm fonts use x11-fonts/xfontsel  edit .Xdefaults and past the font name as xfontsel outputs to reload .Xdefaults by running % xrdb -load ~/.Xdefaults. | The FreeBSD Forums](https://forums.freebsd.org/threads/xterm-fonts.4687/#js-post-28433 )
+ - Xterm fonts use x11-fonts/xfontsel  edit .Xdefaults and past the font name as xfontsel outputs. Afterwards don't forget to reload .Xdefaults by running % xrdb -load ~/.Xdefaults. | The FreeBSD Forums
+ 
+ 
+ 
+ ##################
+ .Xdefaults
+Code:
+XTerm*faceName:
+XTerm*faceSize:
+ ##################
+ 
+ 
+ 
