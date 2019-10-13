@@ -1,0 +1,13 @@
+quit
+live-filter home
+live-filter 
+live-filter how to read
+live-filter 캐논
+h
+add ~/Music/Pine Player/
+add ~/Music/
+refresh 
+add ./
+exit
+cd
+dir

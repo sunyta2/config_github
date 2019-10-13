@@ -1,0 +1,59 @@
+
+
+
+#+BEGIN_SRC emacs-lisp
+
+(scroll-bar-mode -1)
+(set-face-attribute 'default nil
+                    :family "Source Code Pro"
+                    :height 123
+                    ;;:size 20
+                    :slant 'italic
+                    :weight 'normal
+                    :width 'normal)
+;; Master 먼저실행!
+;;(find-file "/Volumes/macbook_ssd/SYN/,Emacs-Aquamacs Manual/AquaMasterNote.org")
+
+
+;; add in ThinkPad
+(find-file "~/Dropbox/org/dropbox_org_functions_common/_init_dotfile_preference_space_aqua.org")
+;; 문장을 추가해 본다.
+
+
+
+
+;;basic setting need
+(ido-mode)
+(add-to-list 'package-archives
+     '("melpa" . "https://melpa.org/packages/") t)
+
+
+
+;; Dired-mode to File-management
+(global-set-key "\C-x \C-j" 'dired-jump) ;;C-x C-j
+
+
+
+
+;; Capture grab-mac
+(global-set-key "\C-c\a" 'org-agenda)
+(global-set-key (kbd "C-c l") 'org-store-link) ;; org-store-link (Ctrl-c l) 지정할 것 반드시  Emacs가 탁월한 확실한 이유임!!!!!
+
+
+;; 노트를 적을 준비를 한다. 한글을 가능하게 한다.
+(set-input-method  "korean-hangul")
+
+#+END_SRC
+
+
+
+
+
+
+
+
+
+
+
+
+

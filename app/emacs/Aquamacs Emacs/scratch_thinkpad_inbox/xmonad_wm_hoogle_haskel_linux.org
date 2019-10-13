@@ -1,0 +1,7 @@
+
+
+[[https://www.youtube.com/watch?v=70IxjLEmomg&list=PL5Pk7H4lYdc9aObNbsm7edLCjYNlWkUs9&index=14&t=0s][(3) XMonad Demo - YouTube]] 한국인의 링크가 있어서 흥미로움.
+
+
+Hoogle [[https://www.youtube.com/watch?v=f5JtgPALwUQ][(3) Switching to Xmonad - Not Exactly Day One - YouTube]]
+하스켈의 풍부한 자료를 가진 것으로 평가된다. hoogle.com 함수를 검색해서 공부할 수 있다.

@@ -1,0 +1,26 @@
+set noimd
+set number
+set relativenumber
+set clipboard=unnamed
+set guioptions+=a "https://stackoverflow.com/questions/4725434/gvim-passing-the-visually-selected-text-to-the-command-line
+set dir=/tmp/vim/backup//
+syntax on
+set linebreak
+set noswapfile
+" .vimrc
+" file:///.file/id=6571367.7179701
+" vimrc
+" file:///.file/id=6571367.7179702
+" 폐기함 noremap <C-v> :r !pbpaste<CR><CR>
+vnoremap <C-c> :'<,'>w !pbcopy<CR><CR>
+vmap <C-x> :!pbcopy<CR>
+
+let &t_SI = "\<Esc>]1337;CursorShape=1\x7"
+let &t_EI = "\<Esc>]1337;CursorShape=0\x7"
+
+call plug#begin()
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'roxma/vim-tmux-clipboard'
+call plug#end()

@@ -1,0 +1,44 @@
+
+
+http://mnetic.ch/blog/2014/06/14/rxvt_terminfo_on_smartos.md.html
+$ export TERMINFO=~/.terminfo
+SmartOS is a bit more complicated, due to the separate userlands. There are two tic(1m)’s, the system tic(1m) at /usr/bin/tic, and the pkgsrc tic(1m) at /opt/local/bin/tic. I was not able to locate the man pages online, but you may note the difference in
+
+$ MANPATH=/usr/man man -s 1m tic # system manpages
+$ MANPATH=/opt/local/man man -s 1 tic # pkgsrc manpages
+If you ldd(1) the pkgsrc tmux,
+
+$ ldd /opt/local/bin/tmux
+and look for curses, you will see that it’s linked against libcurses.so.1, which is living in /lib. This means that tmux will default to looking in the system directory, /usr/share/lib/terminfo, which on SmartOS is read only. In this case, you will need to set $TERMINFO to ensure that your path is being found, as the system tic(1m) doesn’t include ~/.terminfo in it’s default path like linux does. For a system install,
+
+$ sudo /opt/local/bin/tic -s rxvt-unicode-256color.terminfo
+$ export TERMINFO=/opt/local/share/lib/terminfo
+or a local install,
+
+$ tic -s -o ~/.terminfo rxvt-unicode-256color.terminfo
+$ export TERMINFO=~/.terminfo
+and now tmux should work.
+
+
+
+** the correct procedure would be: 1) acquire the source of the terminfo entry, or decompile it using infocmp; 2) copy the source to the target machine; 3) create ~/.terminfo/ on the target machine; 4) compile and install it using tic, which should then do the right thing. – Vladimir Panteleev
+
+[[https://unix.stackexchange.com/questions/410335/why-isnt-screen-on-macos-picking-up-my-terminfo][osx - Why isn't screen on macOS picking up my ~/.terminfo? - Unix & Linux Stack Exchange]]
+Running screen through dtruss (like strace for macOS) revealed the following:
+
+2131/0x12997:  access("/Users/vladimir/.terminfo/72/rxvt-unicode-256color\0", 0x4, 0x7FFF5F2B56EC)       = -1 Err#2
+For whatever reason, screen is using the hexadecimal r
+
+
+
+[[https://gist.github.com/rcrowley/438773][Mac rxvt-unicode setup. · GitHub]]
+
+[[https://metacpan.org/pod/Mac::Pasteboard][
+
+Mac::Pasteboard - Manipulate Mac OS X clipboards/pasteboards. - metacpan.org]]
+[[https://superuser.com/questions/17474/sharing-the-mac-os-x-clipboard-with-the-internal-x-server][
+
+
+macos - Sharing the Mac OS X clipboard with the internal X server - Super User]]
+
+

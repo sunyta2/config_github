@@ -1,0 +1,25 @@
+[[https://github.com/stumpwm/stumpwm/wiki][
+
+Home · stumpwm/stumpwm Wiki · GitHub]]
+
+ [[https://www.youtube.com/watch?v=tKt_rVO960Q ][(3) The Stumpwm Experience - YouTube]]
+
+
+
+/Users/thinkpad/Music/emacs/org/wow_emacs_great
+
+[[https://www.reddit.com/r/emacs/comments/7xmjk8/emacs_users_experience_with_stumpwm/][Emacs users' experience with Stumpwm? : emacs]]
+
+[[https://www.youtube.com/watch?v=8OE6uJve9-0][(3) Playing with stumpwm, fortune and flite - YouTube]] 소음이 심하다.
+
+[[https://www.youtube.com/watch?v=Jv0UQR-5ZLs][(3) A Common Lisp FullScreen Window Manager (CLFSWM) presentation - YouTube]] 다른 대안의 구조임.
+
+
+맥에서 가능한 것 같다. Mac osx [[http://blog.nguyenvq.com/blog/2009/10/11/stumpwm-on-mac-os-x/][stumpwm on mac os x]] [[https://desucru.hatenadiary.org/entry/20111211/1333110892][Mac OSX LionでStumpWM導入 - Desucru Diary]]
+[[file:antigen_youtube_dl_install.org::*antigen%20file%20link][씽크패드에 저장된 파일링크임   antigen file link]]   처음에 소개받은 문구 running archlinux, stumpwm and emacs, and have had pretty resounding
+>> success [[https://lists.gnu.org/archive/html/help-gnu-emacs/2012-01/msg00149.html][Re: emacs and xdg-open]]
+* stumpwm과 Emacs고수의 실력[[https://www.youtube.com/user/emailataskcom/videos][(3) emailataskcom - YouTube]] 동영상을 다운로드할 것.
+  :PROPERTIES:
+  :ID:       327654C1-E69E-4969-A60C-1FC163BDFF39
+  :END:
+

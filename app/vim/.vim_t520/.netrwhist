@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Users/thinkpad'
+let g:netrw_dirhist_2='/Users/thinkpad/vimwiki'
+let g:netrw_dirhist_3='/Users/thinkpad/.config/mpv'
+let g:netrw_dirhist_4='/Users/thinkpad/.config'
+let g:netrw_dirhist_5='/Users/thinkpad/.config/cmus'
+let g:netrw_dirhist_6='/usr/local/Cellar/macvim/8.1-147/MacVim.app/Contents/Resources/vim'
+let g:netrw_dirhist_7='/usr/local/Cellar/macvim/8.1-147/MacVim.app/Contents/Resources/vim/runtime'
+let g:netrw_dirhist_8='/usr/local/Cellar/macvim/8.1-147/MacVim.app/Contents/Resources/vim'
+let g:netrw_dirhist_9='/usr/local/Cellar/macvim/8.1-147/MacVim.app/Contents/Resources/vim/runtime'

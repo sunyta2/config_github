@@ -1,0 +1,4 @@
+
+
+
+** [[https://www.youtube.com/watch?v=tBoLDpTWVOM ][Git Bare Repository - A Better Way To Manage Dotfiles DistroTube 13K views]]

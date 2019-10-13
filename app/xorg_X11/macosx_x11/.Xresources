@@ -1,0 +1,12 @@
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.hinting:    true
+Xft.autohint:   true
+Xft.rgba:       rgb
+Xft.hintstyle:  hintfull
+
+URxvt*.termName: screen-256color
+xterm*termName: screen-256color
+urxvt.faceName: *courier-bold-r*150*
+XTerm*faceName: *courier-bold-r*80*
+

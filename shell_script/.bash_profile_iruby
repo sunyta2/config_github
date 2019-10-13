@@ -1,0 +1,25 @@
+
+
+# 이 파일을 source해야 jupyter에서 ruby엔진을 사용할 수 있도록 되어있음
+# 일단 ~/.bash_profile 에 source ~/.bash_profile_iruby를 입력해 둔다.
+
+export PATH="/Users/thinkpad/.rbenv/shims:${PATH}"
+export RBENV_SHELL=bash
+source '/usr/local/Cellar/rbenv/1.1.1/libexec/../completions/rbenv.bash'
+command rbenv rehash 2>/dev/null
+rbenv() {
+  local command
+  command="$1"
+  if [ "$#" -gt 0 ]; then
+    shift
+  fi
+
+  case "$command" in
+  rehash|shell)
+    eval "$(rbenv "sh-$command" "$@")";;
+  *)
+    command rbenv "$command" "$@";;
+  esac
+}
+
+# eval "$(rbenv init -)"

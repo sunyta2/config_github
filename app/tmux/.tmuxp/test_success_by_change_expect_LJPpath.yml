@@ -1,0 +1,75 @@
+session_name: 4-pane-split
+windows:
+- window_name: dev window
+  layout: tiled
+  shell_command_before:
+    - cd ~/                    # run as a first command in all panes
+    - ssh_macbook 
+  panes:
+    - shell_command:           # pane no. 1
+        - sleep 3; mpv "/Volumes/macbook_data/SYN/,Emacs/,,mp4,Emacs/How_I_Use_org-capture_and_Stuff.mp4"          # run multiple commands in this pane
+
+
+    - shell_command:
+        - sleep 3; mpv "/Volumes/macbook_data/SYN/,Emacs/,,mp4,Emacs/Emacs_Tutorial_-_Introduction_to_Magit.mp4"
+
+
+    - shell_command:
+        - say -v yuna "나무 대방광불화엄경";
+        - say -v yuna "나무 대방광불화엄경과 희랍로마의 만남 그래이트"
+
+
+#- ssh ljp@macbook.local #-c "say hi"
+#- echo hi
+#- ssh_macbook
+
+    - shell_command:
+        - sleep 3; mpv "/Volumes/macbook_backup/temp_backup_ssd/레베카(강의mp3 from YouTube)/Ch. 5-2_ Adjectives that end in -er.mp4"
+        #- ssh_macbook
+
+
+    - shell_command:
+        - echo hi
+
+
+    - shell_command:
+        - say hi
+
+
+
+
+
+- window_name: dev window2
+  layout: tiled
+  shell_command_before:
+    - cd ~/                    # run as a first command in all panes
+    - ssh_macbook 
+  panes:
+    - shell_command:           # pane no. 1
+        - sleep 9; mpv "/Volumes/macbook_data/SYN/,Emacs/,,mp4,Emacs/How_I_Use_org-capture_and_Stuff.mp4"          # run multiple commands in this pane
+
+
+    - shell_command:
+        - sleep 9; mpv "/Volumes/macbook_data/SYN/,Emacs/,,mp4,Emacs/Emacs_Tutorial_-_Introduction_to_Magit.mp4"
+
+
+    - shell_command:
+        - say -v yuna "나무 대방광불화엄경";
+        - say -v yuna "나무 대방광불화엄경과 희랍로마의 만남 그래이트"
+
+
+#- ssh ljp@macbook.local #-c "say hi"
+#- echo hi
+#- ssh_macbook
+
+    - shell_command:
+        - sleep 9; mpv "/Volumes/macbook_backup/temp_backup_ssd/레베카(강의mp3 from YouTube)/Ch. 5-2_ Adjectives that end in -er.mp4"
+        #- ssh_macbook
+
+
+    - shell_command:
+        - echo hi
+
+
+    - shell_command:
+        - say hi

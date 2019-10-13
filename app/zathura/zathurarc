@@ -1,0 +1,6 @@
+set selection-clipboard clipboard
+set guioptions cshv
+set show-v-scrollbar true
+set window-title-basename true
+set window-title-page true
+set zoom-center true

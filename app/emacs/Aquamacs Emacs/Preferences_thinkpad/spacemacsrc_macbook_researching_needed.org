@@ -1,0 +1,349 @@
+#+BEGIN_SRC emacs-lisp
+;;dotspacemacs-default-font '("Georgia" :size 15 :weight normal :width normal) ;; :powerline-offset 2)
+;;(spacemacs/set-font '("Menlo" :size 15))
+
+(dired "/Users/Leejeongpyo/dotfiles/emacs/mylisp")
+(set-face-attribute 'default nil :height 200)
+;;성공함 출처: ( https://stackoverflow.com/questions/294664/how-to-set-the-font-size-in-emacs )
+(load-theme 'deeper-blue)
+
+(setq w3m-default-display-inline-images t)
+#+END_SRC
+
+#+RESULTS:
+: t
+
+* 최우선으로 단축키를 만들 목록 :  
+C-c a - org-agenda
+C-c b - org-iswitchb ;; org파일만 검색하여서 매우찾기에 용이함 SPC b b와 유사함
+C-c g - org-mac-grab-link
+j - counsel-git-grep
+l - xilongshanren/insert-chrome-curr... ;;뭐지?? 혹시
+spacemacs/linum-relative-toggle (SPC t r) 그림 picture 최우선으로 기억할 것 → 잘못된 기록인 것같음 확인후 삭제해야 됨!
+
+<s (tab) -  프로그램의 입력의 단축키임
+org-store-link (Ctrl-c l) 지정할 것 반드시  Emacs가 탁월한 확실한 이유임!!!!!
+#+BEGIN_SRC emacs-lisp
+;;(require 'ob-applescript)
+#+END_SRC 
+
+
+#+BEGIN_SRC emacs-lisp
+;;  (global-set-key "\C-c\a" 'org-agenda)
+  (global-set-key (kbd "C-c a") 'org-agenda) ;; Ctrl+c a
+  (global-set-key (kbd "C-c b") 'org-iswitchb) ;; Ctrl+c b
+  (global-set-key (kbd "C-ㅊ ㅁ") 'org-agenda) ;; Ctrl-ㅊ ㅁ
+(global-set-key (kbd "C-ㅊ ㅠ") 'org-iswitchb) ;; Ctrl-ㅊ ㅠ
+;; 방법의 syntax 출처 :Emacs: How to Define Keys: http://ergoemacs.org/emacs/keyboard_shortcuts.html
+
+(global-set-key (kbd "C-c l") 'org-store-link) ;; org-store-link (Ctrl-c l) 지정할 것 반드시  Emacs가 탁월한 확실한 이유임!!!!!
+
+;; 탁월한 링크설정!!!! 감탄 감탄 최고!!!!
+
+
+(display-time-mode t)
+;; 시간을 나타내는 설정과 
+;; delete 키를 Vim의 경우와 유사하게 하는 것
+(global-set-key (kbd "C-S-h") 'delete-backward-char)
+(global-set-key (kbd "C-ㅗ") 'delete-backward-char)
+(global-set-key (kbd "C-ㅓ") 'electric-newline-and-maybe-indent)
+(global-set-key (kbd "C-ㅡ") 'org-return)
+;; 오류남(global-set-key (kbd "C-ㅡ") 'org-return &optional INDENT)
+
+;; 오류남(global-set-key (kbd "C-ㅡ") '(org-return &optional INDENT))
+
+;; (electric-newline-and-maybe-indent)
+;; (org-return &optional INDENT)
+
+
+
+
+;; 방향이동 상하좌우
+(global-set-key (kbd "C-ㄹ") 'forward-char)
+(global-set-key (kbd "C-ㅠ") 'backward-char)
+
+(global-set-key (kbd "C-ㅔ") 'previous-line)
+(global-set-key (kbd "C-ㅜ") 'next-line)
+
+
+
+;; 오류남(global-set-key (kbd "C-ㄹ") 'forward-char &optional N)
+;; 오류남(global-set-key (kbd "C-ㅠ") 'backward-char &optional N)
+
+;; 오류남(global-set-key (kbd "C-ㅔ") 'previous-line &optional ARG TRY-VSCROLL)
+;; 오류남(global-set-key (kbd "C-ㅜ") 'next-line &optional ARG TRY-VSCROLL)
+
+;; (forward-char &optional N)
+;; (backward-char &optional N)
+
+;; (previous-line &optional ARG TRY-VSCROLL)
+;; (next-line &optional ARG TRY-VSCROLL)
+
+(global-set-key (kbd "C-ㅁ") 'move-beginning-of-line)
+(global-set-key (kbd "C-ㄷ") 'move-end-of-line)
+
+(global-set-key (kbd "M-ㅁ") 'backward-sentence)
+(global-set-key (kbd "M-ㄷ") 'forward-sentence)
+
+
+;; (move-beginning-of-line ARG)
+;; (move-end-of-line ARG)
+;; (backward-sentence &optional ARG)
+;; (forward-sentence &optional ARG)
+
+
+;; 단어이동 앞단어 뒤단어
+(global-set-key (kbd "M-ㄹ") 'forward-word)
+(global-set-key (kbd "M-ㅠ") 'backward-word)
+
+;; 오류남(global-set-key (kbd "M-ㄹ") 'forward-word &optional ARG)
+;; 오류남(global-set-key (kbd "M-ㅠ") 'backward-word &optional ARG)
+
+
+;; (global-set-key (kbd "M-ㅔ") ')
+;; (global-set-key (kbd "M-ㅜ") ')
+
+
+
+
+
+
+
+
+;; To load at the start up
+;;(require 'reveal-in-osx-finder)
+;; If you want to configure a keybinding (e.g., C-c z), add the following
+(global-set-key (kbd "C-x M-f") 'reveal-in-osx-finder)
+;; <출처: kaz-yos/reveal-in-osx-finder: Reveal buffer-associated file in OS X Finder: https://github.com/kaz-yos/reveal-in-osx-finder       >
+
+
+
+
+
+
+
+;;
+
+(find-file "~/spacemacsrc.org")
+
+#+END_SRC
+
+
+
+
+키바인딩을 살피는 자료실 : 방법 key bindings - Show unbound keys - Emacs Stack Exchange: http://emacs.stackexchange.com/questions/964/show-unbound-keys
+* ;; .spacemacs 이 파일을 만들게 된 것은
+;; 출처는 init file - Where to put user configurations/defaults for spacemacs? - Emacs Stack Exchange: http://emacs.stackexchange.com/questions/24614/where-to-put-user-configurations-defaults-for-spacemacs
+;; org 파일로 만들기의 핵심은 elisp - Can I use org-mode to structure my .emacs or other .el configuration file? - Emacs Stack Exchange: http://emacs.stackexchange.com/questions/3143/can-i-use-org-mode-to-structure-my-emacs-or-other-el-configuration-file
+
+link to init.el : [[file:.emacs.d/init.el][init.el 파일 in .emacs.d폴더]]
+link to SpaceEmacsMaster.org : [[file:~/Desktop/org2/emacs/SpacEmacsMaster.org][스페이스이맥스마스터.org]] 아래의 주소양식이 둘다 작동함
+file:/Users/Leejeongpyo/Desktop/org2/emacs/SpacEmacsMaster.org
+file:~/Desktop/org2/emacs/SpacEmacsMaster.org
+
+* ;; 1. 우선 나의 이 지금 파일을 열어 놓는다.
+;; git의 무시하는 파일 목록을 열기
+;;----------------------------------------
+;;----------------------------------------
+;; 아래는 나의 실행리스트와 목록들이다
+
+;;----------------------------------------
+;;----------------------------------------
+
+
+#+BEGIN_SRC emacs-lisp
+
+;;(find-file "~/.gitignore")
+;;
+;; 1. 우선 나의 이 지금 파일을 열어 놓는다.
+;;(find-file "~/spacemacsrc.org")
+;;기존의 틀린 입력임-(find-file "/Users/Leejeongpyo/Volumes/Data(SSD)/SYN/,Emacs/,,,,,SpacEmacsMaster.org")
+;;깨달음!! { /Volumes/Data(SSD)/~~~ } 의 형식이라야 함 즉 바로아래는 실행됨!!!
+;;(find-file "/Volumes/Data(SSD)/SYN/,Emacs/,,,,,SpacEmacsMaster.org")
+(find-file "~/vimwiki/spacemac.org")
+;;즉, 간단히 말해서 그냥 Finder에서 ⌥⌘c 로 복사하여 그대로 붙여서 사용하면 됨!!!
+
+;; 미리 열어야 할 파일목록 열기
+
+;; 아래는 w3m을 실행하는 부분임 vimwiki w3m파일을 참조할 것
+(add-to-list 'load-path "~/.emacs.d/vendor/emacs-w3m/")
+(require 'w3m-load)
+
+#+END_SRC
+
+
+
+
+
+;; ----------------
+;; 미리 실행할 기능모음
+;; 0. 단축키
+
+;; (SPC T n)  ;; theme change(light/dark).
+;; (SPC t w) 공백,탭 보기 Show whitespace
+;; (SPC r y) helm-show-kill-ring 클립보드에 저장된 내용을 보여줌
+
+;; (SPC f r) helm-recentf(ile)
+
+;; Bookmark
+;; bookmark-jump (C-x r b) : 검색
+;; bookmark-set (C-x r m) : 생성
+
+
+;; 중요(SPC w W)ace-window  !!! - (SPC w W)윈도우 이동의 방법을 탁월하게!!
+
+;; (C-c p o) 버퍼내 검색을 탁월하게!!!
+;; (SPC s s) helm-swoop :버퍼내의 간단검색 search find 찾기
+;; (C-x b) helm-buffers-list
+;; (M-m s g b) :버퍼내의 검색인듯
+
+;; rgrap(M-m f g) : 문서내 단어총검색인듯
+;; (SPC a d) :소속된 폴더내의 검색
+;; (SPC f f(F)) helm-find-files
+
+
+
+#+BEGIN_SRC emacs-lisp
+;; 여기에 파인더 열기를 실행실험함
+;; finder 열기 실험중
+(package-initialize)
+;; 드디어 발견!!! 정답을 찾았다.!! <출처: custom - What is causing this error: "Cannot open load file, no such file or directory, session"? - Emacs Stack Exchange: http://emacs.stackexchange.com/questions/15001/what-is-causing-this-error-cannot-open-load-file-no-such-file-or-directory-s  > 
+
+
+;;(add-to-list 'load-path "~/.emacs.d") - 약간의 오류가 발생함
+
+;; (add-to-list 'load-path "/Users/Leejeongpyo/.emacs.d/elpa/")
+(add-to-list 'load-path "~/.emacs.d/elpa/")
+;; Emacs: Cannot open load file, go-autocomplete - Stack Overflow: http://stackoverflow.com/questions/27713584/emacs-cannot-open-load-file-go-autocomplete
+
+
+
+;;(defun auto-complete-for-go ()
+;;   (auto-complete-mode 1))
+;;(global-auto-complete-mode) 혼자서 수정해 보아서 범용으로 사용가능한 줄 알았으나 좀 부족
+
+
+;;(add-hook 'go-mode-hook 'auto-complete-for-go)
+
+;;(with-eval-after-load 'go-mode
+;;  (require 'go-autocomplete))
+;; File error: Cannot open load file, no such file or directory, go-autocomplete · Issue #325 · nsf/gocode: https://github.com/nsf/gocode/issues/325
+
+
+;; (setq inhibit-default-init t)
+;; <출처: Emacs Lisp error at init (file-error "Cannot open load file" "/home/user/a-m") - Stack Overflow: http://stackoverflow.com/questions/37920437/emacs-lisp-error-at-init-file-error-cannot-open-load-file-home-user-a-m >
+
+
+;; (require 'package)
+;; (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+
+
+#+END_SRC
+* 
+* Swiper 사용하기(
+#+BEGIN_SRC emacs-lisp
+  ;; it looks like counsel is a requirement for swiper
+  (use-package counsel
+    :ensure t
+    )
+
+  (use-package swiper
+    :ensure try
+    :config
+    (progn
+      (ivy-mode 1)
+      (setq ivy-use-virtual-buffers t)
+      (global-set-key "\C-s" 'swiper)
+      (global-set-key (kbd "C-c C-r") 'ivy-resume)
+      (global-set-key (kbd "<f6>") 'ivy-resume)
+      (global-set-key (kbd "M-x") 'counsel-M-x)
+      (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+      (global-set-key (kbd "<f1> f") 'counsel-describe-function)
+      (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+      (global-set-key (kbd "<f1> l") 'counsel-load-library)
+      (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
+      (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+      (global-set-key (kbd "C-c g") 'counsel-git)
+      (global-set-key (kbd "C-c j") 'counsel-git-grep)
+      (global-set-key (kbd "C-c k") 'counsel-ag)
+      (global-set-key (kbd "C-x l") 'counsel-locate)
+      (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
+      (define-key read-expression-map (kbd "C-r") 'counsel-expression-history)
+      ))
+#+END_SRC
+
+
+
+
+* test ??
+#+BEGIN_SRC emacs-lisp
+;;-> .. > m <이것은 폴더에서 마킹된 것만을 검색하는 것이다.>
+;;-> (* , %) Mark files (regexp): ;;--> (A) Search marked files (regexp) :
+#+END_SRC
+
+
+
+* 1. 줄
+
+#+BEGIN_SRC emacs-lisp
+;; 번호 자동 :
+;; 단축키: (SPC t r)
+;; spacemacs/linum-relative-toggle
+;; 참고 예문 To turn it on automatically everywhere, add the following line to your Emacs init file:
+;;(global-relative-line-numbers-mode)
+;;(global-linum-relative-toggle)는 안됨
+(global-linum-mode)
+(linum-relative-mode)
+;; auto wrap(Visual Line mode임)
+(visual-line-mode)
+#+END_SRC
+
+
+
+
+#+BEGIN_SRC emacs-lisp
+;; curser blink (SPC t L)
+(blink-cursor-mode)
+#+END_SRC
+
+
+;; 기능모음 종료
+;; ----------------
+
+
+
+
+ 아래의 것은 아젠다를 활성화하는 것이다.!
+#+BEGIN_SRC emacs-lisp
+;;  (setq org-agenda-files (list "~/Desktop/org2/emacs/SpacEmacsMaster.org"))
+
+(switch-to-buffer (get-buffer-create "*scratch*"))
+#+End_SRC
+실험후 정식으로 항목을 만들고
+
+
+
+
+
+
+
+
+;;----------------------------------------
+;;----------------------------------------
+;; 연구과제 목록의 아이디어들
+
+
+
+
+
+
+
+
+;; 함수를 만들어서 finder를 실행시키는 스크립트소개 - org mode - in Emacs, how to show current file in Finder? - Stack Overflow: http://stackoverflow.com/questions/20510333/in-emacs-how-to-show-current-file-in-finder
+;;(defun open-current-file-in-finder ()
+;;  (interactive)
+;;  (shell-command "open -R .")) 단 3문장의로 위사이트에서 설명함
+
+
+;;----------------------------------------
+;;----------------------------------------

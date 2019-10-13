@@ -1,0 +1,29 @@
+session_name: hello
+windows:
+- layout: 71ba,80x48,0,0[80x23,0,0{39x23,0,0,2,40x23,40,0,3},80x24,0,24{39x24,0,24,1,40x24,40,24,4}]
+  options:
+    automatic-rename: 'off'
+  panes:
+  - shell_command:
+    - cd /Users/thinkpad
+    - zsh
+  - shell_command:
+    - cd /Users/thinkpad
+    - zsh
+  - shell_command:
+    - cd /private/var/log
+    - zsh
+  - focus: 'true'
+    shell_command:
+    - cd /Users/thinkpad
+    - zsh
+  window_name: dev window
+- focus: 'true'
+  layout: c662,80x48,0,0,5
+  options:
+    automatic-rename: 'off'
+  panes:
+  - focus: 'true'
+    shell_command: Python
+  start_directory: /Users/thinkpad
+  window_name: Helloworld

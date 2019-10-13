@@ -1,0 +1,109 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+'H
+	/Users/thinkpad/
+	..
+1556016118
+'b
+	/Users/thinkpad/bin/
+	..
+1556016118
+'h
+	/Users/thinkpad/
+	..
+1556016118
+
+# Bookmarks:
+
+# TUI:
+ar
+q0
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/usr/local/Cellar/ruby/2.6.0/lib/ruby/2.6.0
+	..
+0
+d/usr/local/Cellar/ruby/2.6.0/lib/ruby
+	..
+0
+d/usr/local/Cellar/ruby/2.6.0/lib
+	..
+0
+d/usr/local/Cellar/ruby/2.6.0
+	..
+0
+d/usr/local/Cellar/ruby
+	2.6.0
+2
+d/Users/thinkpad/Music/pine_player
+	流星のナミダ ORCH-VER(Gundam Unicorn OST 4 - 09. 9thMob) copy.mp3
+9
+d/Users/thinkpad/Music
+	pine_player
+21
+d/Users/thinkpad/Music/pine_player
+	01.ANT.Matth.EngGrk.28chap.mp3
+10
+d
+
+# Right window history (oldest to newest):
+D/usr/local/Cellar/ruby/2.6.0/lib/ruby/2.6.0
+	..
+0
+D/usr/local/Cellar/ruby/2.6.0/lib/ruby
+	2.6.0
+1
+D/usr/local/Cellar/ruby/2.6.0/lib
+	ruby
+2
+D/usr/local/Cellar/ruby/2.6.0
+	..
+0
+D/usr/local/Cellar/ruby
+	..
+0
+D/usr/local/Cellar
+	ranger
+13
+D/usr/local/Cellar/ranger
+	1.9.1
+1
+D/usr/local/Cellar/ranger/1.9.1
+	INSTALL_RECEIPT.json
+6
+D
+
+# Command line history (oldest to newest):
+: cd ~/Music/pine_player/
+:!open -n -a mpv
+:rename
+:q
+
+# Search history (oldest to newest):
+
+# Prompt history (oldest to newest):
+
+# Local filter history (oldest to newest):
+
+# Registers:
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+
+# State:
+f
+i1
+[.1
+[F
+F
+I1
+].1
+]F
+s0

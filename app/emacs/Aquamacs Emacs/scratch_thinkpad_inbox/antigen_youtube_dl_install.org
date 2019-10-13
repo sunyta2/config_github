@@ -1,0 +1,18 @@
+source .~~~~
+
+[[https://github.com/zsh-users/antigen][GitHub - zsh-users/antigen: The plugin manager for zsh.]] 새로운 발굴이다.
+brew install antigen
+source /usr/local/share/antigen/antigen.sh
+/Users/Leejeongpyo/.antigen/bundles/rg3/youtube-dl/bin
+which youtube-dl | pbcopy 
+youtube-dl: aliased to PYTHONPATH=/Users/Leejeongpyo/.antigen/bundles/rg3/youtube-dl /Users/Leejeongpyo/.antigen/bundles/rg3/youtube-dl/bin/youtube-dl
+
+antigen apply
+antigen bunlde rg3/youtube-dl 
+
+/Users/thinkpad/.antigen/bundles/rg3/youtube-dl/bin
+
+** antigen file link
+
+
+** [[file:stumpwm_lisp_emacs_like.org::*stumpwm%EA%B3%BC%20Emacs%EA%B3%A0%EC%88%98%EC%9D%98%20%EC%8B%A4%EB%A0%A5%5B%5Bhttps:/www.youtube.com/user/emailataskcom/videos%5D%5B(3)%20emailataskcom%20-%20YouTube%5D%5D%20%EB%8F%99%EC%98%81%EC%83%81%EC%9D%84%20%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C%ED%95%A0%20%EA%B2%83.][stumpwm과 Emacs고수의 실력(3) emailataskcom - YouTube 동영상을 다운로드할 것.]]

@@ -1,0 +1,91 @@
+
+저장할 곳은 파일 검색에 관한 것으로 정하던지 아니면 swiper로 지정을 해 둘 것.
+[[https://oremacs.com/2016/07/29/brand-new-swiper-all/][Swipe all the files! · (or emacs]]
+brew install dbus-glib # counsel-rythembox POSSIBLE for [[http://macappstore.org/dbus-glib/][Install dbus-glib on Mac OSX – Mac App Store]]
+
+pad@thinkpad  ~/Music/emacs/org/wow_emacs_great                       ✔  3631  17:41:33
+ : $  brew services start dbus
+==> Successfully started `dbus` (label: org.freedesktop.dbus-session)
+[[https://jetforme.org/2015/03/using-dbus-on-os-x-yosemite/][Using dbus on OS X Yosemite]] [[https://github.com/zbentley/dbus-osx-examples/tree/master/installation][dbus-osx-examples/installation at master · zbentley/dbus-osx-examples · GitHub]]
+#+BEGIN_SRC 
+$ brew install d-bus
+As of this writing, this installs dbus 1.8.14.
+
+dbus requires a dæmon process to be running. Thew brew formula for dbus doesn’t set that up automatically, but has some instructions to set it up. Execute the following commands to configure the dbus dæmon to run automatically:1
+
+$ ln -sfv /usr/local/opt/d-bus/*.plist ~/Library/LaunchAgents
+$ launchctl load ~/Library/LaunchAgents/org.freedesktop.dbus-session.plist
+If launchctl reports the following:
+
+/usr/local/Cellar/d-bus/1.8.14/org.freedesktop.dbus-session.plist: File exists
+it means that it is already loaded and running (perhaps from a previous install). Try the following (you might need to sudo):
+
+$ launchctl remove org.freedesktop.dbus-session
+Note: It’s important to note that the user that starts the dbus dæmon should be the same user that will own the processes that want to communicate with that dæmon.
+
+Setting up Xcode
+Setting up Xcode is relatively straightforward. Select the appropriate target, choose the “General” tab, and click the “+” under “Linked Frameworks and Libraries.” This will open a sheet. Click “Other…” and begin typing
+
+/usr/local/lib
+Then find libdbus-1.dylib and click “Add.”
+
+Next, click on the “Build Settings” tab and ensure that you have the following search paths added to “Header Search Paths”:
+
+/usr/local/include/dbus-1.0
+/usr/local/lib/dbus-1.0/include
+Include dbus headers like this in your code:
+
+#include <dbus/dbus.h>
+Note that the launchd plist provided by dbus 1.8.14 has a key that’s no longer used (not sure when it was deprecated; a google search is little help). You can just remove the ServiceIPC and associated value from the file if you see
+
+com.apple.xpc.launchd[1]: (org.freedesktop.dbus-session) The ServiceIPC key is no longer respected. Please remove it.
+printed in the Console.app log. ↩
+#+END_SRC
+
+** 새로운 것을 발굴함. aria2 youtube_dl and antigen
+[[https://www.youtube.com/watch?v=tU3Bgo5qJZE][(3) 37 youtube-dl - faster downloads with aria2 (Programothesis by emailatask.com) - YouTube]]
+
+youtube-dl -o "$HOME/Videos/%(title)s.%(ext)s" 'http://www.youtube.com/watch?v=P0YiWsAM0O8'
+[[https://askubuntu.com/questions/923814/how-to-fix-youtube-dl-error-unable-to-open-for-writing-errno-21-is-a-direct][How to fix youtube-dl error : unable to open for writing: {Errno 21} Is a directory? - Ask Ubuntu]]
+Btw, the default output path pattern is %(title)s-%(id)s.%(ext)s
+
+
+
++++++++++++++ 이것이 정답. youtube-dl -o "%(playlist_index)s-%(title)s.%(ext)s" --external-downloader "aria2c" --external-downloader-args "-x 16"  <youtube_play_list_link>
+ @kazemihabib
+Owner Author
+kazemihabib commented on Oct 14, 2017
+adding -m 0 for aria2 causes unlimited try if fail (-m "number of times" and 0 means unlimited).
+
+ @kazemihabib
+Owner Author
+kazemihabib commented on Jun 1, 2018
+youtube-dl --external-downloader "aria2c" --external-downloader-args "-x 16" --write-sub --no-playlist -a ./links
+
+Download videos from the links file the --no-playlist prevent from downloading the whole list when the link of video is taken from a list.
+[[https://gist.github.com/kazemihabib/39c79ac731ddde86b3210cae55bb0e47][download with youtube-dl and aria2 with autoincrement number · GitHub]] 정답을 이곳에서 발견함 다른 검색도 가능할 것임. 다양한 명령을 위해서 [[https://www.google.com/search?ei=WpsMXarPLoWHoASS96fwBg&q=aria2+with+youtube-dl&oq=aria2+with+youtube&gs_l=psy-ab.3.0.0i22i30l2.5901.11989..14286...1.0..3.532.4341.0j7j3j4j0j2......0....1..gws-wiz.....6..0i71j35i39j0j0i67j0i20i263.H7SwiQ3rn3M][aria2 with youtube-dl - Google Search]]
+
+$ youtube-dl -o "%(playlist_index)s-%(title)s.%(ext)s" --external-downloader "aria2c" --external-downloader-args "-x 16"  <youtube_play_list_link>
+
+adding -m 0 for aria2 causes unlimited try if fail (-m "number of times" and 0 means unlimited).
+
+$ youtube-dl --external-downloader "aria2c" --external-downloader-args "-x 16" --write-sub https://www.youtube.com/user/emailataskcom/videos
+
+Download videos from the links file the --no-playlist prevent from downloading the whole list when the link of video is taken from a list.
+[[https://rrittwikc.github.io/softwares/aria2_youtubedl/][Aria2 and Youtube-Dl - Rittwik's Blog]] 설정파일을 바꾸면 빨라질 것인가??
+
+[[https://github.com/zsh-users/antigen][GitHub - zsh-users/antigen: The plugin manager for zsh.]] 새로운 발굴이다.
+brew install antigen
+source /usr/local/share/antigen/antigen.sh
+/Users/Leejeongpyo/.antigen/bundles/rg3/youtube-dl/bin
+which youtube-dl | pbcopy 
+youtube-dl: aliased to PYTHONPATH=/Users/Leejeongpyo/.antigen/bundles/rg3/youtube-dl /Users/Leejeongpyo/.antigen/bundles/rg3/youtube-dl/bin/youtube-dl
+
+antigen apply
+antigen bunlde rg3/youtube-dl 
+
+/Users/thinkpad/.antigen/bundles/rg3/youtube-dl/bin
+
+
+
+

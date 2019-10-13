@@ -1,0 +1,110 @@
+
+functi onurl() {
+osascript <<EOT
+display alert the clipboard
+
+set myclip to the clipboard
+set myclip2 to "https://www.youtube.com/watch?v=" & myclip
+set the clipboard to myclip2
+EOT
+}
+
+
+
+function ipull() {
+#먼저 임시로 cd 주소를 이동해본다 pwd를 출력한다
+cd "/Users/thinkpad/Music/Home Videos/"
+pwd
+#그리고 입력된 인터넷 주소를 입력받는다.
+
+myyoutube=$(osascript <<EOT
+set myclip to the clipboard
+display alert myclip
+set myclip2 to "https://www.youtube.com/watch?v=" & myclip
+set myfile to display dialog "url is correct?" default answer myclip2
+set myfile2 to text returned of myfile
+return myfile2
+EOT
+)
+echo $myyoutube
+
+
+
+# 주소를 이용해서 vtt를 다운로드 받는다.
+youtube-dl --write-auto-sub --skip-download "$myyoutube"
+
+    #파일명을 저장한다. 
+        #저장된 파일의 명칭출력하고 계속진행을 검토한다.
+        vtt=`ls -t *.vtt | head -1`
+        srt="${vtt/%vtt/srt}"
+        mp4_old=`ls -t *.mp4 | head -1`
+        mp4_new="${vtt/%en\.vtt/mp4}" # \.을 추가하는 것은 정답이었음. 콤마문제를 해결하는 백슬레쉬의 첨가
+        ffmpeg -i "$vtt" "$srt" # 더 좋은 대안임
+
+        # mv *.vtt ./srt-used #폴더로 이동시켜서 보관을 한다. 
+        mv "$mp4_old" "$mp4_new"
+        
+        open -a subler "$mp4_new"
+        
+        cd -
+
+}
+
+###############################################################
+
+
+function read1 () {
+clear
+echo -e "\a"
+echo "============================================"
+echo "||"
+sleep 0.5
+pbpaste
+sleep 0.5
+echo -e "\a"
+echo "||"
+echo "============================================"
+echo -e "\a"
+sleep 0.5
+echo "============================================"
+echo "||"
+echo -e "\a"
+sleep 0.5
+pbpaste | speedread
+echo "||"
+echo "============================================"
+}
+
+# echo "나무 대방광불화엄경" | pbcopy
+
+
+
+
+
+
+###############################################################
+
+
+
+
+
+
+## 실행은 source ~/.bashrc 를 실행하면 소스를 다시 리딩함(터미널에서)
+alias youtube="youtube-dl --skip-download --write-auto-sub "
+
+
+go1 () 
+{ 
+    cd "$*"
+}
+
+go2 () 
+{ 
+    cd '/Users/thinkpad/Home Videos'
+}
+go3 () { 
+    cd /Users/thinkpad/Music/iTunes/iTunes Media/Home Videos 
+}
+
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

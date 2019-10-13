@@ -1,0 +1,33 @@
+
+[[https://emacs.stackexchange.com/questions/371/how-do-i-use-emacsclient-to-connect-to-a-remote-emacs-instance][daemon - How do I use emacsclient to connect to a remote emacs instance? - Emacs Stack Exchange]]
+
+
+궁금한 사항 이것이 과연 파일을 실행하는 것중에서 서버로 접속하는 데
+사용하는 지 아니면 서버로서 받는데 사용하는 기 개념이 불확실함.
+
+
+따라서 명확히 어디에 사용된 설정인지를 확보할 것.
+
+Host thinkpad.local
+  HostName thinkpad.local
+  User thinkpad
+  #Port 2222
+  #UserKnownHostsFile /dev/null
+  #StrictHostKeyChecking no
+  #PasswordAuthentication no
+  IdentityFile /Users/Leejeongpyo/.ssh/id_rsa
+  IdentitiesOnly yes
+  #LogLevel FATAL
+  ForwardAgent yes
+
+#Host *
+	#AddKeysToAgent yes
+	#UserKeychain yes
+#	IdentityFile ~/.ssh/id_rsa
+
+PermitLocalCommand yes #파일 명령을 받아들이는 핵심의 문구임.
+#RSAAuthentication yes
+PubkeyAuthentication yes
+#AuthorizedKeysFile      ~/.ssh/authorized_keys
+#UsePAM yes
+ForwardX11 no

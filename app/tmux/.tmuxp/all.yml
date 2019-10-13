@@ -1,0 +1,151 @@
+session_name: thinkpad1
+windows:
+- window_name: blank_gen
+# 범용의 목적으로 비워진 것은 기본을 수행하기 위한 것이다.
+  window_index: 0
+  layout: tiled
+  shell_command_before:
+    - cd ~/Music/terminal                   # run as a first command in all panes
+  panes:
+    - shell_command:           # pane no. 1
+        - cd /var/log          # run multiple commands in this pane
+        - ls -al | grep \.log
+    - echo second pane         # pane no. 2
+    - echo third pane          # pane no. 3
+    - echo forth pane          # pane no. 4
+#####
+
+- window_name: dev_
+# 집중적인 연구를 위한 것을 둔다.
+# 그림을 열어서 옆에 두는 것이 좋을 것 같다. tmux에서 imgcat 에러가 난다.
+## imgcat_tmux search org file to save.
+  window_index: 1
+  layout: tiled
+  shell_command_before:
+    - cd ~/Music/terminal                   # run as a first command in all panes
+  panes:
+    - shell_command:           # pane no. 1
+        - cd /var/log          # run multiple commands in this pane
+        - ls -al | grep \.log
+    - echo second pane         # pane no. 2
+    - echo third pane          # pane no. 3
+    - echo forth pane          # pane no. 4
+
+
+
+#####2
+
+
+- window_name: emacs_org
+# 노트를 기록하는 것을 둔다.
+  window_index: 2
+  layout: tiled
+  shell_command_before:
+    - cd ~/Music/emacs                   # run as a first command in all panes
+  panes:
+    - shell_command:           # pane no. 1
+        - cd           # run multiple commands in this pane
+        
+    - echo second pane         # pane no. 2
+    - echo third pane          # pane no. 3
+    - echo forth pane          # pane no. 4
+#####3
+
+
+
+- window_name: cfg
+# 콘피그 설정을 변경하기 위한 것을 둔다.
+  window_index: 3
+  layout: tiled
+  shell_command_before:
+    - cd ~/                   # run as a first command in all panes
+  panes:
+    - shell_command:           # pane no. 1
+        - cd /var/log          # run multiple commands in this pane
+        
+    - echo second pane         # pane no. 2
+    - echo third pane          # pane no. 3
+    - shell_command:           # pane no. 4
+        - cd ~/.tmuxp
+
+
+
+
+#####
+
+
+#######
+# 공통의 음원 관리의 장소 ^b z Zoom을 사용해서 확장을 늘린다.
+- window_name: mpv_Z_oom
+
+  window_index: 6
+  layout: tiled
+  
+  shell_command_before:
+    - cd ~/Music/terminal
+ #   - ssh_macbook
+    - expect -c "spawn ssh ljp@macbook.local; expect -re \"assword\"; send \"ava\r\"; expect \"LJPs-MacBook\"; interact;"
+#- ssh_macbook
+    # run as a first command in all panes
+  panes:
+    - shell_command:
+        - cd ~/Music/emacs
+        - say hi
+    - shell_command:
+# comment
+        # macbook mpv play control
+        -  mpv '/Volumes/macbook_data/SYN/,Emacs/,,mp4,Emacs/How_I_Use_org-capture_and_Stuff.mp4'          # pane no. 4
+    
+
+
+
+
+
+################
+# below is macbook setting
+
+# 노트를 기록하는 것을 둔다.
+- window_name: emacs_org_Mac
+  window_index: 7
+  layout: tiled
+  shell_command_before:
+    - cd ~/Music/emacs/
+    - ssh_macbook
+    # run as a first command in all panes
+  panes:
+    - echo here is note in macbook
+    - shell_command:           # pane no. 1
+     #  - cd /var/log          # run multiple commands in this pane
+     #  - ls -al | grep \.log
+        - echo second pane         # pane no. 2
+        - echo third pane          # pane no. 3
+        - echo forth pane          # pane no. 4
+
+
+# 
+- window_name: emacs_org
+  window_index: 8
+  layout: tiled
+  shell_command_before:
+    - cd ~/Music/terminal                   # run as a first command in all panes
+  panes:
+    - shell_command:           # pane no. 1
+        - cd /var/log          # run multiple commands in this pane
+        - ls -al | grep \.log
+    - echo second pane         # pane no. 2
+    - echo third pane          # pane no. 3
+    - echo forth pane          # pane no. 4
+
+
+- window_name: emacs_org
+  window_index: 9
+  layout: tiled
+  shell_command_before:
+    - cd ~/Music/terminal                   # run as a first command in all panes
+  panes:
+    - shell_command:           # pane no. 1
+        - cd /var/log          # run multiple commands in this pane
+        - ls -al | grep \.log
+    - echo second pane         # pane no. 2
+    - echo third pane          # pane no. 3
+    - echo forth pane          # pane no. 4
