@@ -1,0 +1,9 @@
+Install ranger in FreeBSD
+# FIND any thing by $ locate <wanting_APP>
+locate ranger #### show up /usr/ports/sysutils/py-ranger
+  cd /usr/ports/sysutils/py-ranger && 
+sudo make DISABLE_VULNERABILITIES=yes
+ranger # POSSIBLE NOW! in FreeBSD
+
+
+ports update CMD or Portsnap to Update FreeBSD Ports Tree Collection - Tech Journey: https://techjourney.net/using-portsnap-to-update-freebsd-ports-tree-collection/
