@@ -1,0 +1,5 @@
+
+# ~/.Xdefauts saved in FreeBSD # for readable Korean character
+XTerm*faceName: nanumgothiccoding
+XTerm*faceSize: 17
+# xfontsel from sudo pkg install xfontsel in FreeBSD
