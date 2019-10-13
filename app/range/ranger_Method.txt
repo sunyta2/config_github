@@ -4,4 +4,5 @@
 $ ranger --copy-config=all
 # Ranger a terminal browser for Vim: https://wikimatze.de/ranger-a-terminal-browser-for-vim/
     # git with ranger _ VCS integration · ranger/ranger Wiki: https://github.com/ranger/ranger/wiki/VCS-integration
+        :set vcs_aware true
 $ vim ~/.config/ranger/rifle.conf
