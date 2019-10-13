@@ -1,5 +1,7 @@
 
-
+### to use greek-ancient other/grc in espeak
+(shell-command "espeak -v other/grc \"αὐτός αὐτός\" ")
+- eSpeak Speech Synthesizer: http://espeak.sourceforge.net/languages.html
 ##### to use in Latin Voice!
 espeak -v other/la "salveo salve te" <br/>
 espeak --voices # List of voice <br/>
