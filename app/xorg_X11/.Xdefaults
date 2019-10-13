@@ -3,3 +3,5 @@
 XTerm*faceName: nanumgothiccoding
 XTerm*faceSize: 17
 # xfontsel from sudo pkg install xfontsel in FreeBSD
+##### Afterwards don't forget to reload .Xdefaults by running % xrdb -load ~/.Xdefaults.
+      ###### % xrdb -load ~/.Xdefaults.
