@@ -1,0 +1,269 @@
+;; echo ";; https://raw.githubusercontent.com/Jehops/config/master/stumpwm/.stumpwmrc"
+;; curl https://raw.githubusercontent.com/Jehops/config/master/stumpwm/.stumpwmrc >> ./stumpwmrc_by jo~~
+
+
+;; -*-lisp-*-
+
+(in-package :stumpwm)
+
+;; These two lines used to cause StumpWM to crash, but they seem OK now
+;;(require 'swank)
+;;(swank:create-server)
+
+(setf *colors* (append *colors* (list "Orange2" "Gray52")))
+(setf *input-window-gravity* :bottom-right)
+(setf *maxsize-border-width* 4)
+(setf *message-window-gravity* :bottom-right)
+(setf *mode-line-background-color* "black")
+(setf *mode-line-border-width* 0)
+(setf *mode-line-position* :bottom)
+(setf *mode-line-timeout* 1)
+(setf *mouse-focus-policy* :click)
+(setf *normal-border-width* 4)
+(setf *startup-message* nil)
+(setf *transient-border-width* 4)
+(setf *window-border-style* :tight)
+(setf *window-format* "^[^8*%n^]^[^9*%s^]%256t")
+
+(update-color-map (current-screen))
+(set-focus-color "Orange2")
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defun list-windows-by-props (props &optional (fmt *window-format*))
+  "Present a list of windows with the specified properties and focus the one
+chosen.  The optional argument @var{fmt} can be specified to override the
+default window formatting."
+  (let* ((group (current-group))
+         (matches (remove-if-not (lambda (w)
+                                   (apply 'window-matches-properties-p w props))
+				 (group-windows group))))
+    (if (null matches)
+	(message "No Managed Windows Found")
+	(let ((window (select-window-from-menu
+		       (sort (copy-list matches) #'< :key #'window-number) fmt)))
+	  (if window
+	      (group-focus-window group window)
+              (throw 'error :abort))))))
+
+(defun show-window-with-pid (pid)
+  (act-on-matching-windows (w)
+                           (equal pid (car (window-property w :_NET_WM_PID)))
+                           (raise-window w)))
+
+(defun show-window-with-name (name)
+  "name is a regexp.
+I would prefer to use (raise-window w), so that the focus is
+not switched to 'w'.  The problem is that if 'w' was not the window already
+displayed in the frame, switching focus to that frame will cause 'w' to be
+hidden behind the previously displayed window."
+  (act-on-matching-windows (w)
+                           (title-re-p w name)
+                           (select-window-by-number (window-number w))))
+;;                          (raise-window w)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defcommand c2e () ()
+            "Copy the X clipboard contents to the Emacs kill ring."
+            (run-shell-command "c2e"))
+
+;; (defcommand eaacm () ()
+;;             "Emacs as a clipboard manager."
+;;             (run-or-raise "emacsclient -nc" '(:class "Emacs"))
+;;             (run-shell-command "emacsclient -n -e '(let ((helm-full-frame t)) \
+;;       (save-window-excursion (delete-other-windows) (helm-show-kill-ring)))'"))
+
+(defcommand eaacm () ()
+            "Emacs as a clipboard manager."
+            (run-or-raise "emacsclient -nc" '(:class "Emacs"))
+            (run-shell-command "emacsclient -n -e '(save-window-excursion
+(delete-other-windows) (counsel-yank-pop))'"))
+
+;; could use run-or-pull below
+(defcommand ec () ()
+            "Start Emacs or switch to it if it is already running."
+            (run-or-raise "emacsclient -nc" '(:class "Emacs")))
+
+(defcommand list-windows-by-class (class) (:string)
+            "Present a list of windows matching the specified class and focus
+the one that is chosen."
+            (list-windows-by-props `(:class ,class)))
+
+(defcommand s2e () ()
+            "Copy the X selection contents to the X clipboard and the Emacs kill
+ring if an Emacs daemon is running."
+            (run-shell-command "c2e -s"))
+
+(defcommand safequit () ()
+            "Checks if any windows are open before quitting."
+            (let ((win-count 0))
+
+              ;; Count the windows in each group
+              (dolist (group (screen-groups (current-screen)))
+                (setq win-count (+ (length (group-windows group)) win-count)))
+
+              ;; Display the number of open windows or quit
+              (if (= win-count 0)
+                  (run-commands "quit")
+                  (message (format nil "You have ~d ~a open" win-count
+                                   (if (= win-count 1) "window" "windows"))))))
+
+(defcommand shift-window (x y) ((:number "+ X: ") (:number "+ Y: "))
+            "Shift current window by X and Y pixels."
+            (float-window-move-resize
+             (current-window)
+             :x (+ (window-x (current-window)) x)
+             :y (+ (window-y (current-window)) y)))
+
+(defcommand term () ()
+            "Start urxvt or switch to it if it is already running."
+            (run-or-raise "urxvt -e sh -c \"tmux -q has-session && tmux -2 att \\
+-d || tmux -2 new-session\"" '(:class "URxvt")))
+
+(defcommand web-browser () ()
+            "Start Conkeror or switch to it if it is already running."
+            (run-or-raise "ck" '(:class "Conkeror")))
+
+;; (defcommand web-browser () ()
+;;             "Start Firefox or switch to it if it is already running."
+;;             (run-or-raise "firefox" '(:class "Firefox")))
+
+(defcommand firefox () ()
+            "Start Firefox or switch to it if it is already running."
+            (run-or-raise "firefox" '(:class "Firefox")))
+
+(defcommand chromium () ()
+            "Start Chromium or switch to it if it is already running."
+            (run-or-raise "chrome" '(:class "Chromium")))
+
+;; courtesy of Peter Seibel
+(defmacro with-gensyms ((&rest names) &body body)
+  `(let ,(loop for n in names collect `(,n (gensym)))
+     ,@body))
+
+(defmacro program-with-layout (name &key (command (string-downcase (string name)))
+                                      (props `'(:class ,(string-capitalize command))))
+  (with-gensyms (s w h files-path layout rules)
+    `(defcommand ,name () ()
+                 (let* ((,s (current-screen))
+                        (,w (prin1-to-string (screen-width ,s)))
+                        (,h (prin1-to-string (screen-height ,s)))
+                        (,files-path "/home/jrm/")
+                        (,layout (concat ,files-path ,"." ,command "-layout-" ,w "x" ,h))
+                        (,rules (concat ,files-path ,"." ,command "-rules")))
+                   (gnew ,command)
+                   (restore-from-file ,layout)
+                   (restore-window-placement-rules ,rules)
+                   (run-or-raise ,command ,props)
+                   (place-existing-windows))))) ; needed if command was already run
+
+(program-with-layout gimp)
+
+;; (defcommand gimp () ()
+;;             "Create a group for Gimp and start it."
+;;             (program-with-layout gimp))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;(undefine-key *root-map* (kbd "k"))
+(define-key *root-map* (kbd "SPC")      "fnext")
+(define-key *root-map* (kbd "M-r")      "reload")
+(define-key *root-map* (kbd "M-x")      "colon")
+(define-key *root-map* (kbd "0")        "remove-split")
+(define-key *root-map* (kbd "1")        "only")
+(define-key *root-map* (kbd "2")        "vsplit")
+(define-key *root-map* (kbd "3")        "hsplit")
+(define-key *root-map* (kbd "C-b")      "windowlist")
+(define-key *root-map* (kbd "c")        "eaacm")
+(define-key *root-map* (kbd "C")        "c2e")
+(define-key *root-map* (kbd "e")        "ec")
+(define-key *root-map* (kbd "C-e")      "ec")
+(define-key *root-map* (kbd "n")        "next")
+(define-key *root-map* (kbd "o")        "other-in-frame")
+(define-key *root-map* (kbd "p")        "prev")
+(define-key *root-map* (kbd "M-w")      "s2e")
+(define-key *root-map* (kbd "C-t")      "other")
+;;(define-key *root-map* (kbd "C-w")      "web-browser")
+;;(define-key *root-map* (kbd "w")        "firefox")
+(define-key *root-map* (kbd "C-w")      "chromium")
+(define-key *root-map* (kbd "w")        "chromium")
+(define-key *root-map* (kbd "x")        "term")
+(define-key *root-map* (kbd "C-x")      "term")
+
+(define-key *root-map* (kbd "b") '*windows-map*)
+(defvar *windows-map*
+  (let ((m (make-sparse-keymap)))
+    (define-key m (kbd "e")             "list-windows-by-class Emacs")
+    (define-key m (kbd "m")             "list-windows-by-class mpv")
+    (define-key m (kbd "p")             "list-windows-by-class MuPDF")
+    (define-key m (kbd "w")             "list-windows-by-class Conkeror")
+    ;;(define-key m (kbd "w")             "list-windows-by-class Firefox")
+    (define-key m (kbd "x")             "list-windows-by-class URxvt")
+    m))
+
+;; window movement
+(define-key *root-map* (kbd "C-h")      "move-focus left")
+(define-key *root-map* (kbd "C-j")      "move-focus down")
+(define-key *root-map* (kbd "C-k")      "move-focus up")
+(define-key *root-map* (kbd "C-l")      "move-focus right")
+(define-key *root-map* (kbd "H")        "move-window left")
+(define-key *root-map* (kbd "J")        "move-window down")
+(define-key *root-map* (kbd "K")        "move-window up")
+(define-key *root-map* (kbd "L")        "move-window right")
+
+(define-key *root-map* (kbd "C-Left")   "shift-window -100 0")
+(define-key *root-map* (kbd "C-Down")   "shift-window 0 100")
+(define-key *root-map* (kbd "C-Up")     "shift-window 0 -100")
+(define-key *root-map* (kbd "C-Right")  "shift-window 100 0")
+
+(define-key *root-map* (kbd "Q")        "safequit")
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(add-to-load-path "~/scm/swm/swm-freebsd-battery-modeline.git")
+(add-to-load-path "~/scm/swm/swm-freebsd-cpu-modeline.git")
+(add-to-load-path "~/scm/swm/swm-freebsd-mem-modeline.git")
+(add-to-load-path "~/scm/swm/swm-freebsd-net-modeline.git")
+(add-to-load-path "~/scm/swm/swm-freebsd-openvpn-modeline.git")
+(add-to-load-path "~/scm/swm/swm-freebsd-volume-modeline.git")
+(add-to-load-path "~/scm/swm/swm-freebsd-zfs-modeline.git")
+(add-to-load-path "~/scm/swm/swm-maildir-modeline.git")
+(add-to-load-path "~/scm/nm/stumpwm-contrib.git/modeline/hostname")
+
+(load-module "swm-freebsd-battery-modeline")
+(load-module "swm-freebsd-cpu-modeline")
+(load-module "swm-freebsd-mem-modeline")
+(load-module "swm-freebsd-net-modeline")
+(load-module "swm-freebsd-openvpn-modeline")
+(load-module "swm-freebsd-volume-modeline")
+(load-module "swm-freebsd-zfs-modeline")
+(load-module "swm-maildir-modeline")
+(load-module "hostname")
+
+;; %h hostname
+;; %f cpu frequency
+;; %t cpu temperature
+;; %M percentage of used system memory
+;; %P zfs pool name
+;; %O occupied pool space in GiB
+;; %T total pool space in GiB
+;; %F free pool space GiB
+;; %p percent of total pool space occupied
+;; %R disk read throughput in MiB/s
+;; %W disk write throughput in MiB/s
+;; %I interface for the default route
+;; %U u/l rate
+;; %D d/l rate
+;; %b battery state and percentage
+;; %v speaker volume percentage
+;; %V OpenVPN status
+;; %d date/time
+;; %m new mail messages
+
+(let ((hostname (car (split-string (machine-instance) ". "))))
+  (cond ((or (string= hostname "phe") (string= hostname "bravo"))
+         (setf *screen-mode-line-format* "^[^B^7*%h^] ^[^8*C^] %f^[^9*MHz^] %t^[^9*°C^] ^[^8*M^] %M^[^9*%%^] ^[^8*%P^] %O/%T^[^9*GiB^] %F^[^9*GiB^] %p^[^9*%%^] %R^[^9*MiB/s^] %W^[^9*MiB/s^] ^[^8*%I^] %U^[^9*KiB/s^] %D^[^9*KiB/s^] ^[^8*B^] %b ^[^8*V^] %v ^[^B^1*%V^] ^[^B^7*%d^] ^[^B^4*%m^]"))
+        ((string= hostname "gly")
+         (setf *screen-mode-line-format* "^[^B^7*%h^] ^[^8*C^] %f %t^[^9*°C^] ^[^8*M^] %M^[^9*%%^] ^[^8*%P^] %O/%T^[^9*GiB^] %F^[^9*GiB^] %p^[^9*%%^] %R^[^9*MiB/s^] %W^[^9*MiB/s^] ^[^8*%I^] %U^[^9*KiB/s^] %D^[^9*KiB/s^] ^[^8*V^] %v ^[^B^7*%d^] ^[^B^4*%m^]"))))
+(toggle-mode-line (current-screen) (current-head))
