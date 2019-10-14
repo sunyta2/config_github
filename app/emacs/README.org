@@ -1,0 +1,6 @@
+* emacs and stumpwm
+to think in emacs and stumpwm
+- ( stumpwm - https://github.com/sunyta2/config_github/tree/master/app/stumpwm )
+- ( cf. dwm - https://github.com/sunyta2/config_github/tree/master/app/suckless/dwm )
+
+*
