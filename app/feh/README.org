@@ -1,0 +1,9 @@
+* Background in system
+- feh
+  #+BEGIN_SRC sh
+  # Set background image with feh # ~/.xsessionrc
+  # https://beginners-guide-to-xmonad.readthedocs.io/wallpaper.html
+  feh --bg-scale /usr/share/backgrounds/warty-final-ubuntu.png &
+  #+END_SRC
+  
+- nitrogen
