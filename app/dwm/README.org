@@ -1,0 +1,12 @@
+* dwm
+===================================
+
+to do
+- dwm: to config.h
+	- config.h_arco_linux
+
+
+
+
+
+

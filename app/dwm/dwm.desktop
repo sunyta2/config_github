@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=DWM
+Comment=DWM is awesome!
+Exec=dwm
+Type=Application
