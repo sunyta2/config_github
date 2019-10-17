@@ -1,0 +1,8 @@
+*dwm_in_suckless - ~/config_github/app/suckless/dwm/README.org
+- dired 0 w # help dired ? h ### many stuff in dired!
+
+- Basic modification of file to use or change in other OS
+
+** save in config_github/app/dwm/
+
+- dwm strength ./dwm_strength.txt
