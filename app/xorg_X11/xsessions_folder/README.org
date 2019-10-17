@@ -1,0 +1,8 @@
+
+* cd /usr/share/xsessions/
+in Arco_Linux saved
+- dwm.desktop
+- stumpwm.desktop
+
+* exwm - https://www.youtube.com/watch?v=Gk9-q8tXbMs
+

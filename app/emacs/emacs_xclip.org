@@ -1,0 +1,21 @@
+emacs-xclip  0.9-1          0.03 MiB
+;; 어떻게 연동할 것인가를 찾던 중에 임시로 발견함
+;; yay xclip
+Total Installed Size:  0.03 MiB
+
+:: Proceed with installation? [Y/n] 
+(1/1) checking keys in keyring                     [-----------------------] 100%
+(1/1) checking package integrity                   [-----------------------] 100%
+(1/1) loading package files                        [-----------------------] 100%
+(1/1) checking for file conflicts                  [-----------------------] 100%
+:: Processing package changes...
+(1/1) installing emacs-xclip                       [-----------------------] 100%
+==> To set up Emacs to automatically kill to clipboard and yank from clipboard,
+    add the following to your ~/.emacs file (GNU Emacs) or ~/.xemacs/init.el
+    file (XEmacs):
+
+    (require 'xclip)
+    (turn-on-xclip)
+:: Running post-transaction hooks...
+(1/1) Arming ConditionNeedsUpdate...
+
