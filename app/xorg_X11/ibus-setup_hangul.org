@@ -1,0 +1,13 @@
+
+
+
+$ ibus-setup
+#IBus has been started! If you cannot use IBus, add the following lines to your $HOME/.bashrc; then relog into your desktop.
+
+# export GTK_IM_MODULE=ibus
+# export XMODIFIERS=@im=ibus
+# export QT_IM_MODULE=ibus
+
+
+yay ibus-hangul
+
