@@ -1,4 +1,9 @@
-emacs-xclip  0.9-1          0.03 MiB
+
+
+
+
+
+** emacs-xclip  0.9-1          0.03 MiB
 ;; 어떻게 연동할 것인가를 찾던 중에 임시로 발견함
 ;; yay xclip
 Total Installed Size:  0.03 MiB
@@ -19,3 +24,9 @@ Total Installed Size:  0.03 MiB
 :: Running post-transaction hooks...
 (1/1) Arming ConditionNeedsUpdate...
 
+*** 해결의 방식 m-m f e d 를 실행해서 만들어 감.
+(require 'xclip)
+ ;; (turn-on-xclip) ;; 안되서 검색함.
+ ;; To use, just add (xclip-mode 1) to your ~/.emacs or do `M-x clip-mode' ## 도움말 c-h P xclip로 발견함
+ (xclip-mode 1) ;; 이것이 실행을 가능하게 함!
+ 
