@@ -1,0 +1,11 @@
+* magit for git
+C-x g ( M-x magit-status )
+
+
+
+
+
+*** package-install 'magit
+  #+start_src emacs-lisp
+  (package-install 'magit)
+	#+end_src
