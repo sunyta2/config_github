@@ -6,6 +6,9 @@ to think in emacs and stumpwm
 * success!!
 md link copy change C-shift-l SETTING in Extension
 [Extensions](chrome://extensions/shortcuts)
+[startup_inlineimage_in_org_mode.org]
+* 일반론으로 사용할 방법찾기와 함수만들기 org mode - Emacs org-display-inline-images https://github.com/sunyta2/config_github/blob/master/app/emacs/org_mode_study/startup_inlineimage_in_org_mode.org
+[[file:./org_mode_study/startup_inlineimage_in_org_mode.org][일반론으로 사용할 방법찾기와 함수만들기 org mode-startup_inlineimage_in_org_mode.org]]
 
 
 * note
