@@ -1,0 +1,47 @@
+* to use greek-ancient other/grc in espeak
+(find-file "/home/thinkpad/config_github/app/espeak/espeak_yay.org") 
+
+/home/thinkpad/config_github/app/espeak/espeak_yay.org ;; espeak execute 저장위치
+/home/thinkpad/config_github/app/emacs/org_mode_study/README.org ;; 오그모드 연구 저장폴더
+yay espeak # to install 이것이 arco에서 성공한 비결 
+# 즉, 고대그리스어와 라틴어가 가능해짐.
+community/espeak-ng 1.49.2-6 (3.6 MiB 10.3 MiB) (Installed)
+
+이맥스에서 쉘의 espeak 실행을 위해서 변경한 내용.
+- M-x customize-apropos >> babel >> language >> Ins 
+#+begin_src org
+  Show Org Babel Load Languages:
+[INS] [DEL] Choice: [Value Menu] Emacs Lisp
+            Activate: [Toggle]  on (non-nil)
+[INS] [DEL] Choice: [Value Menu] Shell Script
+            Activate: [Toggle]  on (non-nil)
+[INS] [DEL] Choice: [Value Menu] Org
+            Activate: [Toggle]  on (non-nil)
+[INS] [DEL] Choice: [Value Menu] Python
+            Activate: [Toggle]  on (non-nil)
+[INS] [DEL] Choice: [Value Menu] Ruby
+            Activate: [Toggle]  on (non-nil)
+[INS] [DEL] Choice: [Value Menu] C
+            Activate: [Toggle]  on (non-nil)
+[INS]
+   [ State ]: SAVED and set.
+   Languages which can be evaluated in Org buffers. More
+Groups: [Babel]
+[[customize-apropose ][Org Babel Load Language]]
+#+end_src
+
+
+  - >> Shell Script 추가 (기타..)
+#+begin_src sh
+#+end_src
+
+
+  - >> Shell Script 추가 (기타..)
+#+begin_src python
+def foo(x):
+  if x>0:
+    return x+1
+  else:
+    return x-1
+return foo(5)
+#+end_src

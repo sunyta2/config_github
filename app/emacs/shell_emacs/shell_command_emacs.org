@@ -1,0 +1,6 @@
+* (shell-command)
+
+
+(async-shell-command "wget -O /tmp/image.jpg https://url/some-name.jpg")
+
+(async-shell-command "espeak -v ko '한글이 나온다'")

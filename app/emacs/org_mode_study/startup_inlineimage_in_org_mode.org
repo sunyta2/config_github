@@ -1,0 +1,56 @@
+#+STARTUP: inlineimages
+
+#+begin_src emacs-lisp
+(setq org-startup-with-inline-images t)
+#+end_src
+[[https://orgmode.org/worg/org-contrib/babel/languages/images/python-matplot-fig.png]]
+
+- he keybinding for toggle image is actually C-c C-x C-v . – Lorem Ipsum Dolor Apr 7 '16 at 2:46
+
+     - And the command is M-x org-toggle-inline-images –
+       - [org mode - Emacs org-display-inline-images - Stack Overflow](https://stackoverflow.com/questions/17621495/emacs-org-display-inline-images)
+
+#+begin_src emacs-lisp
+(defun do-org-show-all-inline-images ()
+  (interactive)
+  (org-display-inline-images t t))
+(global-set-key (kbd "C-c C-x C v")
+                'do-org-show-all-inline-images)
+;; And here's how I found how to do it:
+
+     ;;M-x apropos RET org.*image.*.
+     ;;F1 f org-display-inline-images.
+     ;;make a test.org with a link to picture.
+     ;;M-: (org-display-inline-images t t).
+     ;;wrap it in a defun/global-set-key.
+;;  일반론으로 사용할 방법찾기와 함수만들기 ;; [org mode - Emacs org-display-inline-images - Stack Overflow](https://stackoverflow.com/questions/17621495/emacs-org-display-inline-images)
+;;1)함수명칭정의
+;;2)(interactive)설정함
+;;3)함수핵심을파악
+;;4)단축키로 지정함
+;; 1)~2) 기초기반실현 3) 핵심장악 4) 작용의 확산
+;; 기초-핵심-확산작용
+
+     ;;1)기초용어찾기apropos를 사용
+     ;;2)파악된 기초작용을 탐구 사용법 파악
+     ;;3)대상을 실험체 파일을 생성함
+     ;;4)대상체에 적용함
+     ;;5)global한 일반 함수로 만들기
+     ;;1)~2)기초지식탐구 3)~4)객체완성실현 5)이치통합성
+;; 기초-객체-이치통일
+#+end_src
+
+
+* site and stuff
+[org mode inline image display size - Emacs Stack Exchange](https://emacs.stackexchange.com/questions/30559/org-mode-inline-image-display-size)
+#+ATTR_HTML: :width 300px
+(setq org-image-actual-width 400) 
+should do the job. The documentation of the variable (C-h v org-image-actual-width RET) gives more detail:
+[[file:/tmp/image.jpg]]
+
+
+(eww-browse-url "url.jpg")
+
+(async-shell-command "wget -O /tmp/image.jpg https://url/some-name.jpg")
+
+(async-shell-command "espeak -v ko '한글이 나온다'")

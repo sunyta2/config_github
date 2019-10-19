@@ -1,0 +1,28 @@
+* app/emacs/org_mode_study
+- 오그모드의 실천사항과 연구과제
+/home/thinkpad/config_github/app/espeak/espeak_yay.org ;; espeak execute 저장위치
+/home/thinkpad/config_github/app/emacs/org_mode_study/README.org ;; 오그모드 연구 저장폴더
+
+- M-x customize-apropos >> babel >> language >> Ins 
+#+begin_src org
+  Show Org Babel Load Languages:
+[INS] [DEL] Choice: [Value Menu] Emacs Lisp
+            Activate: [Toggle]  on (non-nil)
+[INS] [DEL] Choice: [Value Menu] Shell Script
+            Activate: [Toggle]  on (non-nil)
+[INS] [DEL] Choice: [Value Menu] Org
+            Activate: [Toggle]  on (non-nil)
+[INS] [DEL] Choice: [Value Menu] Python
+            Activate: [Toggle]  on (non-nil)
+[INS] [DEL] Choice: [Value Menu] Ruby
+            Activate: [Toggle]  on (non-nil)
+[INS] [DEL] Choice: [Value Menu] C
+            Activate: [Toggle]  on (non-nil)
+[INS]
+   [ State ]: SAVED and set.
+   Languages which can be evaluated in Org buffers. More
+Groups: [Babel]
+[[customize-apropose ][Org Babel Load Language]]
+#+end_src
+
+- 

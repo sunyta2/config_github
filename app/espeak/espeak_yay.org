@@ -1,0 +1,62 @@
+
+* to use greek-ancient other/grc in espeak
+(shell-command "espeak -v other/grc \"αὐτός αὐτός\" ")
+- eSpeak Speech Synthesizer: http://espeak.sourceforge.net/languages.html
+** to use in Latin Voice!
+espeak -v other/la "salveo salve te" <br/> # not work in arco linux
+espeak -v itc/la "salveo salve te"
+한글의 출력
+
+# community/espeak-ng 1.49.2-6 (3.6 MiB 10.3 MiB) (Installed)
+ espeak -v ko "한글의 출력"
+
+
+ espeak -v grk/grc "θεάομαι Σωκράτης
+κατέβην χθὲς εἰς Πειραιᾶ μετὰ Γλαύκωνος τοῦ Ἀρίστωνος προσευξόμενός τε τῇ θεῷ καὶ ἅμα τὴν ἑορτὴν βουλόμενος θεάσασθαι τίνα τρόπον ποιήσουσιν ἅτε νῦν πρῶτον ἄγοντες. καλὴ μὲν οὖν μοι καὶ ἡ τῶν ἐπιχωρίων πομπὴ ἔδοξεν εἶναι, οὐ μέντοι ἧττον ἐφαίνετο πρέπειν ἣν οἱ Θρᾷκες ἔπεμπον.    "
+#+begin_src markdown
+## espeak
+-g <integer>
+           Word gap. Pause between words, units of 10mS at the default speed
+
+-s <integer>
+           Speed in approximate words per minute. The default is 175
+-v <voice name>
+           Use voice file of this name from espeak-ng-data/voices
+--voices=<language>
+5  grc             --/M      Greek_(Ancient)    grk/grc
+5  ko              --/M      Korean             ko
+5  la              --/M      Latin              itc/la
+#+end_src
+- C-c C-c TO EXECUTE in src sh
+
+#+begin_src sh
+echo "hi"
+ espeak -g 60 -v itc/la "salveo salve te"
+ for i in {1..3}; do
+ espeak -v grk/grc "θεάομαι"
+done
+# espeak -s 100 -v grk/grc "θεάομαι"
+# espeak -s 500 -v grk/grc "θεάομαι"
+espeak -g 60 -s 100 -v grk/grc "ἐπιχωρίων πομπὴ ἔδοξεν "
+#+end_src
+
+#+RESULTS:
+: hi
+
+
+#+begin_src python :results silent
+print("Hello, world! python3 is possible in babel in EMACS")
+#+end_src
+
+#+RESULTS:
+:ble in babel in EMACS
+
+
+espeak --voices # List of voice <br/>
+** (shell-command "espeak -v other/la '__salveo <br/>
+_________________________________________{capture by mouse CLICK!} <br/>
+_________________________________________salve te'   " ) {^x^e OR ^j} **
+  - -a <integer> Amplitude, 0 to 200, default is 100
+  - -g <integer> Word ga. Pause between words, units of 10mS at the default speed
+  - get information : espeak --help
+  

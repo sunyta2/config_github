@@ -1,0 +1,3 @@
+[Python Source Code Blocks in Org Mode](https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-python.html)
+
+- python3 의 사용을 위한 것 사이트 자료를 연구자료로 잘 요약할 것.
