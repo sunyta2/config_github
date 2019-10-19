@@ -3,4 +3,12 @@ to think in emacs and stumpwm
 - ( stumpwm - https://github.com/sunyta2/config_github/tree/master/app/stumpwm )
 - ( cf. dwm - https://github.com/sunyta2/config_github/tree/master/app/suckless/dwm )
 
-*
+* success!!
+md link copy change C-shift-l SETTING in Extension
+[Extensions](chrome://extensions/shortcuts)
+
+
+* note
+spacemacs :!echo password | sudo -S make install
+;; to run sudo command in like /usr/bin/gksu
+출처: [How do I run a sudo command in Emacs? - Stack Overflow](https://stackoverflow.com/questions/2472273/how-do-i-run-a-sudo-command-in-emacs#2473152)

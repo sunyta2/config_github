@@ -1,0 +1,12 @@
+* xdg-open in emacs & 
+
+
+
+** xdg-open magnet:?xt=magnet-link-continue-here it opens qbittorrent with the link without a problem. ## use in torrent continue download in terminal purpose
+
+- refer in ./xdg-mime.org
+-  - other: kde-open gnome-open wsl-open
+
+
+
+

@@ -1,0 +1,31 @@
+* $ xdg-mime query filetype README.md
+text/plain
+
+* $ xdg-mime query default text/plain
+sublime_text_3.desktop
+
+
+Try 'xdg-mime --help' for more information.
+
+
+* purpose : change open xdg-open with double-click in thunar or konsole CMD or EMACS_&_xdg-open
+
+
+specific to your question, you could try this to set the default application associated with the png file:
+
+* xdg-mime default <ristretto.desktop> image/png
+source-site: [How does the xdg-open command know which application to use to open a file? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/251054/how-does-the-xdg-open-command-know-which-application-to-use-to-open-a-file)
+
+
+
+* ~/.config/mimeapps.list i have this:
+
+[Default Applications]                             
+text/html=google-chrome-beta.desktop               
+x-scheme-handler/http=google-chrome-beta.desktop   
+x-scheme-handler/https=google-chrome-beta.desktop
+
+** xdg-open magnet:?xt=magnet-link-continue-here it opens qbittorrent with the link without a problem.
+- [google chrome. linux. XDG-OPEN keep asking me (forever) what to do with magnet links - Super User](https://superuser.com/questions/1280184/google-chrome-linux-xdg-open-keep-asking-me-forever-what-to-do-with-magnet-l)
+
+ 

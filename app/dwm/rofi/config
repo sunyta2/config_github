@@ -1,0 +1,16 @@
+# (find-file "~/.config/rofi/config")
+             # 취지:rofi의 단순명령으로 실행하도록 in dwm
+# (find-file "~/config_github/app/dwm/rofi/config")
+# RUN by $ rofi -show combi # drun IS VERY USEFUL!
+
+# https://github.com/ageldama/configs/blob/master/i3wm/macbook-air-2012mid/rofi-config 한국인의 자료.
+
+
+rofi.theme: /usr/share/rofi/themes/android_notification.rasi
+# ~/.config/rofi/config
+rofi.combi-modi:    window,drun,run,ssh
+#rofi.theme:         lb
+#rofi.font:          Envy Code R 10
+rofi.modi:          combi
+###### not work #rofi.show:          combi
+#rofi.theme: /usr/share/rofi/themes/gruvbox-dark-hard.rasi
