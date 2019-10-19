@@ -1,0 +1,7 @@
+* install by OS
+
+** arch
+[[file:~/config_github/os/arch/yay_pacman_install.org][../os/arch/yay_pacman_install.org]]
+
+** gentoo
+[[file:~/config_github/os/arch/emerge_gentoo_install.org][../os/gentoo/emerge_gentoo_install.org]]
