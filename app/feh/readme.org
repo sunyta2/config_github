@@ -5,5 +5,11 @@
   # https://beginners-guide-to-xmonad.readthedocs.io/wallpaper.html
   feh --bg-scale /usr/share/backgrounds/warty-final-ubuntu.png &
   #+END_SRC
-  
+
+
+#+BEGIN_SRC sh
+feh --bg-center ~/config_github/pictures_sync/wanderer_above_the_sea_of_fog.jpg
+#+END_SRC
+
+
 - nitrogen
