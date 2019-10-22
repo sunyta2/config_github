@@ -1,4 +1,5 @@
 echo ~/config_github/start.sh or start CMD in PATH
+echo ln % ~/bin/ 을 실행하면 \$ PATH 의 원위치를 추가할 것.
 echo use start command and basic man
 echo	"							$ uname -mor"
                 uname -mor
