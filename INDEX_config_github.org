@@ -23,7 +23,7 @@
 (find-file-other-window "./app/emacs/org_mode_study/")
 *** search_emacs
 
-*** emacs_package
+*** emacs_package install
 (find-file "./app/emacs/package_install/")
 
 
@@ -35,7 +35,7 @@
 *** yay_pkg_brew_pacman.org
 (find-file-other-window "./app/yay_pkg_brew_pacman.org")
 
-*** [[*emacs_package][emacs_package]]
+*** [[*emacs_package][emacs_package]] install
 ** IDEA
 
    

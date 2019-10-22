@@ -1,6 +1,27 @@
+# 각 OS의 강점과 약점을 비교함-중심OS나 목표를 구체화
+(find-file "../os/compare_each_os.org")
+
+
+
 * install by OS
 - 리스트를 기록해서 나중에 재설치를 염두함.
 ** arch
 [[file:~/config_github/os/arch/yay_pacman_install.org][../os/arch/yay_pacman_install.org]]
 ** gentoo
 [[file:~/config_github/os/arch/emerge_gentoo_install.org][../os/gentoo/emerge_gentoo_install.org]]
+** freebsd
+[[../os/freebsd/pkg_freebsd_install.org]]
+** slackware
+(find-file "../os/slackware/_install.org")
+** macosx
+[[../os/macosx/brew_macosx_install.org]]
+(find-file "../os/macosx/brew_macosx_install.org")
+
+** lfs
+[[../os/lfs/lfs_install_roadmap.org]]
+(find-file "../os/lfs/readme.org")
+** 아이디어 모음
+- arco, antergo(USB restall)
+
+** emacs_package install
+(find-file "./emacs/package_install/")

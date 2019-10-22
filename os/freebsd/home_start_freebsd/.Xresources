@@ -1,0 +1,6 @@
+xterm*termname: screen-256color
+xterm*facename: *nanum-coding*15*
+
+rofi.combi-modi: window,run,ssh
+rofi.modi: combi
+

@@ -1,0 +1,29 @@
+이 문서는 EmacsWiki의 사이트 내용을 공부하라는 것이다.
+기본으로 중요함.
+https://www.emacswiki.org/emacs/LoadingLispFiles
+
+*  (load "~/elisp/foo")
+ (require 'foo)
+ (provide 'foo)
+
+(require 'load-directory)
+ (load-directory "~/.emacs.d/my-lisp")
+
+ (defun load-directory (dir)
+      (let ((load-it (lambda (f)
+		       (load-file (concat (file-name-as-directory dir) f)))
+		     ))
+	(mapc load-it (directory-files dir nil "\\.el$"))))
+    (load-directory "~/bunch/of/lisp/")
+
+* Conditional loading
+ (if (not (require 'tabbar nil t))
+        (message "`tabbar' not found")
+      (tabbar-mode)
+      (global-set-key [(control tab)]       'tabbar-forward)
+      (global-set-key [(control shift tab)] 'tabbar-backward)
+      (global-set-key [(control shift iso-lefttab)] 'tabbar-backward)
+      (global-set-key [(control f10)] 'tabbar-local-mode))
+
+* org파일 org-babel-load-file ""
+

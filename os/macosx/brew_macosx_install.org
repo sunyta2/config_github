@@ -1,0 +1,4 @@
+
+
+* 통일된 맥의 설치전개를 위하여
+/usr/home/thinkpad/config_github/os/macosx/brew_macosx_install.org

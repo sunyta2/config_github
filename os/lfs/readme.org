@@ -1,0 +1,7 @@
+# lfs의 설치를 할 장소를 물색한다.
+- 가상머신으로 먼저?
+- 나중에 실물에?
+
+
+** lfs
+(find-file "../os/lfs/readme.org")

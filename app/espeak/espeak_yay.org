@@ -54,6 +54,13 @@ print("Hello, world! python3 is possible in babel in EMACS")
 
 
 espeak --voices # List of voice <br/>
+
+*** os간의 통일을 맞추기위해 espeak-ng arco | espeakfreebsd
+- freebsd
+   sudo mkdir itc grk
+각각 other에 있던 la와 grc를 복사해서 붙임.
+- - 다른 대안으로 freebsd에 소스파일로 espeak-ng를 설치하는 법을 연구해야 함.
+
 ** (shell-command "espeak -v other/la '__salveo <br/>
 _________________________________________{capture by mouse CLICK!} <br/>
 _________________________________________salve te'   " ) {^x^e OR ^j} **

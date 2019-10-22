@@ -1,0 +1,36 @@
+#!/bin/sh
+
+output=LVDS1
+rotation="normal";
+
+stylus="stylus"
+touch="touch"
+
+if [ "normal" == "$1" ]; then
+    rotation="left";
+else
+    rotation=`xrandr --query --verbose | grep $output | awk '{print $5}'`
+fi
+
+case $rotation in
+    normal)
+        xrandr --output $output --rotation right
+        xsetwacom --set "$stylus" Rotate cw
+        xsetwacom --set "$touch"  Rotate cw
+    ;;
+    right)
+        xrandr --output $output --rotation inverted
+        xsetwacom --set "$stylus" Rotate half
+        xsetwacom --set "$touch"  Rotate half
+    ;;
+    inverted)
+        xrandr --output $output --rotation left
+        xsetwacom --set "$stylus" Rotate ccw
+        xsetwacom --set "$touch"  Rotate ccw
+    ;;
+    left)
+        xrandr --output $output --rotation normal
+        xsetwacom --set "$stylus" Rotate none
+        xsetwacom --set "$touch"  Rotate none
+    ;;
+esac

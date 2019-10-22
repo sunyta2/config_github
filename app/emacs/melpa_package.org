@@ -1,0 +1,22 @@
+Melpa를 사용하는 법에 관하여.
+
+2.1 Installing from Melpa
+Magit is available from Melpa and Melpa-Stable. If you haven’t used Emacs’ package manager before, then it is high time you familiarize yourself with it by reading the documentation in the Emacs manual, see (emacs)Packages. Then add one of the archives to package-archives:
+
+To use Melpa:
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+To use Melpa-Stable:
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+Once you have added your preferred archive, you need to update the local package list using:
+
+M-x package-refresh-contents RET
+Once you have done that, you can install Magit and its dependencies using:
+
+M-x package-install RET magit RET
+
+https://magit.vc/manual/magit/Installing-from-Melpa.html#Installing-from-Melpa
+

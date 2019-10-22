@@ -1,8 +1,9 @@
 
+EMACS 의 package index
 
 # 이곳에 리스트가 실행의 방법의 파일을 연결하도록 설정한다.
 
-* package install list
+* emacs package install list
 
 
 * A-Z
