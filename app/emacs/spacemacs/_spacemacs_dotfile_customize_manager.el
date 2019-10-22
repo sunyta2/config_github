@@ -6,6 +6,6 @@
 ;; To use, just add (xclip-mode 1) to your ~/.emacs or do `M-x clip-mode' ## 도움말 c-h P xclip로 발견함
 ;;(xclip-mode 1)
 
-(require 'edit-server) ;; EMACS chromium edit
-(edit-server-start)
-(linum-relative-global-mode) ;; 
+;(require 'edit-server) ;; EMACS chromium edit
+;(edit-server-start)
+;(linum-relative-global-mode) ;; 

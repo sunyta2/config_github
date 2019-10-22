@@ -341,11 +341,14 @@ you should place your code here."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
 
- ;; M-m f e i init.el에서 직접 로딩하는 것으로 변경함                                       ;
-; (load "/home/thinkpad/config_github/app/emacs/spacemacs/_spacemacs_dotfile_customize_manager.el")
+ ;; - 다시 이것을 취소< M-m f e i init.el에서 직접 로딩하는 것으로 변경함>취소함
+; (load "~/config_github/app/emacs/spacemacs/_spacemacs_dotfile_customize_manager.el")
 ; 매니저파일에 분할을 실행하도록함.
-;(load "/home/thinkpad/config_github/app/emacs/spacemacs/_spacemacs_dotfile_customize_manager.el")
-
+  (load "~/config_github/app/emacs/spacemacs/_spacemacs_dotfile_customize_manager.el")
+  (load "~/test/emacs/spacemacs/_spacemacs_dotfile_customize_manager.el")
+ ;(find-file "~/config_github/app/emacs/spacemacs/_spacemacs_dotfile_customize_manager.el")
+ ;(find-file "~/test/emacs/spacemacs/_spacemacs_dotfile_customize_manager.el")
+;; 실험시 자주 github파일이 변경되는 것을 방지하는 목적으로 둠
 
  ;; 열어서 백업 저장할 것. backup in (find-file "~/config_github/app/emacs/spacemacs/_spacemacs_dotfile_in_arco_linux")
 ;; 연구- 실행파일과 백업의 비교를 실행하는 명령문으로 자동으로 통제가 되도록 하는 것이 연구에도 도움이 될 것임.

@@ -54,6 +54,8 @@
 ** link
 [[org_emacs %EC%82%AC%EC%9A%A9][org_emacs 사용]]
 *** ln 의 하드링크로 닷파일을 훨씬 통합적으로 관리하는 것이 가능하다. arco .spacemacs와 config_github/ ln 연결
+- [[file:app/emacs/spacemacs/readme.org::*hard%20link%20to%20run%20.spacemacs%20M-m%20f%20e%20d%20with%20Github][hard link to run .spacemacs M-m f e d with Github]]
+
 ** search
 - convert or substite
 - goto: search_emacs
