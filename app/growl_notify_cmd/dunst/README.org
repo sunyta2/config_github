@@ -1,0 +1,35 @@
+* dunst
+- installed by yay dunst in arco linux
+- 알림창을 유닉스에서 가능하게 하는 것으로 중요함.
+
+* dunst with notify-send
+- SEE FOLDER ./dunst
+
+#+BEGIN_SRC sh :results silent
+
+/home/thinkpad/config_github/app/growl_notify_cmd/dunst/dunst_activate_and_test.sh
+# dunst &> /dev/null; notify-send -t 3000 "dunst $ notify-send -t 3000 \"Run by dunst\"                  \# SEE ~/config_github/app/notify"
+sleep 5
+notify-send -t 3000 "               dunst가 명확히 실행됨이 notify-send 명령으로 <참조> $ notify-send --help <사용법> "
+
+#+END_SRC
+
+
+* dunst config
+
+
+
+* 기타 활용 dunst_espeak.sh , dusntify , dunst log
+
+less $(which dunst_espeak.sh)
+
+
+dunstify --action="replyAction,reply" "Message received"
+;; 중간의 클릭으로 replyAction이 stdout으로 되나 연구필요
+
+
+
+* 자료
+- 아치리눅스: [[https://wiki.archlinux.org/index.php/Dunst ][Dunst - ArchWiki]] ;; 기본이 잘 설명됨.
+- budlab: 동영상자료 링크
+

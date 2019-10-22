@@ -1,0 +1,21 @@
+
+
+* chromium edit in EMACS
+** 설치
+- [[https://github.com/stsquad/emacs_chrome][stsquad/emacs_chrome: A Chromium "clone" of It's All Text for spawning an editor to edit text areas in browsers. Based on David Hilley's original Chromium extension.]]
+- M-x package-install edit-server
+#+BEGIN_SRC emacs-lisp
+(package-install 'edit-server)
+#+END_SRC
+
+#+RESULTS:
+| #s(package-desc edit-server (20181016 1125) server that responds to edit requests from Chrome nil single melpa nil ((:commit . af46de40e2991b046f04856c18a6483badce38aa) (:authors (Alex Bennée . alex@bennee.com)) (:maintainer Alex Bennée . alex@bennee.com) (:url . https://github.com/stsquad/emacs_chrome)) nil) |
+
+** 사용을 위한 다음 설정
+#+BEGIN_SRC emacs-lisp
+(require 'edit-server)
+(edit-server-start)
+#+END_SRC
+
+#+RESULTS:
+

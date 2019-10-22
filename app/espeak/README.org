@@ -1,0 +1,25 @@
+# FreeBSD korean resource from arch 
+[[*korean][/app/espeak/README.org*korean]]
+
+
+
+* espeak INDEX
+
+
+* A-Z
+
+** arco 
+(find-file "~/espeak/") 더욱 연마하는 폴더임.
+
+
+** greek
+
+
+
+** korean
+./resource/korean/ko_dict saved from /home/thinkpad/.cache/yay/espeak-test/src/espeak-1.48.15/espeak-data/ in Arco
+./resource/korean/ko_list|rules from /home/thinkpad/.cache/yay/espeak-test/src/espeak-1.48.15/dictsource
+** latin
+
+
+

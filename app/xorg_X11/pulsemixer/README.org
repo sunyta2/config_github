@@ -1,0 +1,1 @@
+pulsemixer --get-volume | awk '

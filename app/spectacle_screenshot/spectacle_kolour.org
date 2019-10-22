@@ -1,0 +1,9 @@
+* spectacle by PrtSc
+install
+- yay spectacle
+
+
+Take a New Screenshot | 촬영시 누르는 것
+; Capture Mode - Active Window
+ㄴ
+동영상녹화는 ffmpeg and Peek SimpleScreenRecoder

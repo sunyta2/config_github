@@ -31,6 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     markdown
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -117,8 +118,12 @@ values."
    ;; `recents' `bookmarks' `projects' `agenda' `todos'."
    ;; List sizes may be nil, in which case
    ;; `spacemacs-buffer-startup-lists-length' takes effect.
-   dotspacemacs-startup-lists '((recents . 5)
-                                (projects . 7))
+   dotspacemacs-startup-lists '((todos . 9)
+                                (agenda . 9)
+                                
+                                (bookmarks . 9)
+                                (recents . 9)
+                                (projects . 9))
    ;; True if the home buffer should respond to resize events.
    dotspacemacs-startup-buffer-responsive t
    ;; Default major mode of the scratch buffer (default `text-mode')
@@ -319,17 +324,32 @@ you should place your code here."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default-input-method "korean-hangul")
+ '(org-babel-load-languages
+   (quote
+    ((emacs-lisp . t)
+     (shell . t)
+     (org . t)
+     (python . t)
+     (ruby . t)
+     (C . t))))
  '(package-selected-packages
    (quote
-    (xclip spinner evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu evil undo-tree adaptive-wrap ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline smartparens restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra lv hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile projectile pkg-info epl helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-unimpaired evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-escape goto-chg eval-sexp-fu elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
+    (edit-server helm-google magit mmm-mode markdown-toc markdown-mode gh-md xclip spinner evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu evil undo-tree adaptive-wrap ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline smartparens restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra lv hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile projectile pkg-info epl helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-unimpaired evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-escape goto-chg eval-sexp-fu elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
 
- (require 'xclip)
- ;; (turn-on-xclip) ;; 안되서 검색함.
- ;; To use, just add (xclip-mode 1) to your ~/.emacs or do `M-x clip-mode' ## 도움말 c-h P xclip로 발견함
- (xclip-mode 1)
+ ;; M-m f e i init.el에서 직접 로딩하는 것으로 변경함                                       ;
+; (load "/home/thinkpad/config_github/app/emacs/spacemacs/_spacemacs_dotfile_customize_manager.el")
+; 매니저파일에 분할을 실행하도록함.
+;(load "/home/thinkpad/config_github/app/emacs/spacemacs/_spacemacs_dotfile_customize_manager.el")
+
+
+ ;; 열어서 백업 저장할 것. backup in (find-file "~/config_github/app/emacs/spacemacs/_spacemacs_dotfile_in_arco_linux")
+;; 연구- 실행파일과 백업의 비교를 실행하는 명령문으로 자동으로 통제가 되도록 하는 것이 연구에도 도움이 될 것임.
+ ;; 실행설정에 저장할 것 M-m f e d ()
+ ;;sudo ln ~/config_github/app/emacs/spacemacs/_spacemacs_dotfile_in_arco_linux ~/.spacemacs 하드링크로 연동함.
+
  )

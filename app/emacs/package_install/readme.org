@@ -1,0 +1,17 @@
+
+
+# 이곳에 리스트가 실행의 방법의 파일을 연결하도록 설정한다.
+
+* package install list
+
+
+* A-Z
+
+
+** edit-server
+- chrome(ium) edit in emacs 한글로 이맥스로 넣는 법을 고안하려고 시도함.
+		- (find-file "./edit-server.el.org")
+** magit
+
+** xclip
+

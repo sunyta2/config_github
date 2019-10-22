@@ -1,0 +1,36 @@
+* NOTIFY METHOD by app
+
+
+
+* dunst with notify-send
+- SEE FOLDER ./dunst
+
+#+BEGIN_SRC sh
+dunst &> /dev/null; notify-send -t 3000 "dunst $ notify-send -t 3000 \"Run by dunst\"                  \# SEE ~/config_github/app/notify"
+#+END_SRC
+
+#+BEGIN_SRC sh
+mkdir dunst
+cd dunst
+touch README.org
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC emacs-lisp
+(find-file "./dunst/README.org")
+#+END_SRC
+
+#+RESULTS:
+: #<buffer README.org<dunst>>
+
+
+* MAC OSX
+- growl
+- notification by applescript
+
+
+** growl
+
+
+** applescript
+- file link to ~/computer/language_computer/applescript/README.org

@@ -26,23 +26,24 @@ espeak -v itc/la "salveo salve te"
 5  grc             --/M      Greek_(Ancient)    grk/grc
 5  ko              --/M      Korean             ko
 5  la              --/M      Latin              itc/la
+                             English            en
 #+end_src
 - C-c C-c TO EXECUTE in src sh
 
-#+begin_src sh
+#+begin_src sh :results silent :var a="one" b="two"
 echo "hi"
  espeak -g 60 -v itc/la "salveo salve te"
  for i in {1..3}; do
- espeak -v grk/grc "θεάομαι"
-done
+  espeak -g 60 -s 100 -v grk/grc "θεάομαι"
+ done
 # espeak -s 100 -v grk/grc "θεάομαι"
+espeak -g 18 -s 180 -v ko "한글이 나옵니다 나무 대방광불화엄경"
 # espeak -s 500 -v grk/grc "θεάομαι"
 espeak -g 60 -s 100 -v grk/grc "ἐπιχωρίων πομπὴ ἔδοξεν "
 #+end_src
 
-#+RESULTS:
-: hi
-
+######## <<<<<<<<<<<연마>>>>>>>>>>>> ###########
+######## (find-file "~/espeak/README.org") <<<더욱 연마하는 ARCO에 있는 폴더임.>>>
 
 #+begin_src python :results silent
 print("Hello, world! python3 is possible in babel in EMACS")
