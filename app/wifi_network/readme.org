@@ -1,7 +1,7 @@
 잘 연결되는 network의 기반이 중요함.
 
 * wifi-menu in Arch
-
+nc발견! 연구필요함. nc 로 실행하는 (Advanced Network Configuration) cf.mc(midnight commander)
 * wifimrg in FreeBSD
 매우 탁월한 성능을 기대함. FreeBSD의 높은 통합안정성!
 

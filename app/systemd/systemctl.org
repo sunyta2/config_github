@@ -13,3 +13,5 @@
 # systemctl is-enabled httpd
 
 
+* sudo systemctl disable sddm-plymouth >> /app/dwm/sddm???
+

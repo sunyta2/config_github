@@ -1,12 +1,31 @@
-* dwm
+
+* study of dwm
+- c language improve mind,
+
+
+- git diff command study.
+
+
+- 좋은 모델링의 자료가 있는 것을 ARCH_wiki에서 발견함 중국인의 것인듯함.
+https://bbs.archlinux.org/viewtopic.php?id=74599
+
+![[http://shaunsite.googlepages.com/2009-06-23-182700_1280x800_scrot.png]]
+source에서 구조를 파악하고 투명화기능과 밑의 conky의 기능?을 연구해 볼 것.
+
+
+* dwm to do
 ===================================
 
 to do
 - dwm: to config.h
 	- config.h_arco_linux
 
+- .desktop 파일에서 기본셋팅을 실행하는 법을 발견
+	- setxkbmap 문을 실행할 스크립트문과 폴더를 지정함.
+    
+    - 또한 .Desktop의 형식이 .app(macosx의 폴더)와 유사한 기능으로 인식함.
+      - 출처: https://www.maketecheasier.com/create-desktop-file-linux/
 
-
-
+        - 실험아이디어:
 
 

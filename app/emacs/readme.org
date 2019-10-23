@@ -15,3 +15,8 @@ md link copy change C-shift-l SETTING in Extension
 spacemacs :!echo password | sudo -S make install
 ;; to run sudo command in like /usr/bin/gksu
 출처: [How do I run a sudo command in Emacs? - Stack Overflow](https://stackoverflow.com/questions/2472273/how-do-i-run-a-sudo-command-in-emacs#2473152)
+
+- oh my emacs site 다른 것도 찾아서 각자 합당한 곳에 정리해 둘 것.
+  - 출처: https://github.com/xiaohanyu/oh-my-emacs
+
+- ipython을 열게하는 동영상과 그 명칭?? 기록해 둘 것.

@@ -1,0 +1,41 @@
+# 1~9 까지   3(느림) 4약느 5보통 6약빠 7(빠름)
+
+# 3(느림) (async-shell-command "for i in 1 2 ;do espeak -v itc/la -s 100 -g 60 \"
+Cum divina tua mens et numen, imperator Caesar, 
+\"; sleep 2; done")
+# 3(느림) (async-shell-command "for i in 1 2 ;do espeak -v grk/grc -s 100 -g 60 \"
+Σωκράτης κατέβην χθὲς εἰς Πειραιᾶ μετὰ Γλαύκωνος
+\"; sleep 2; done")
+
+# 3.9(약간느림) (async-shell-command "for i in 1 2 ;do espeak -v itc/la -s 100 -g 50 \"
+Cum divina tua mens et numen, imperator Caesar, 
+\"; sleep 2; done")
+# 3.9(약간느림) (async-shell-command "for i in 1 2 ;do espeak -v grk/grc -s 100 -g 50 \"
+Σωκράτης κατέβην χθὲς εἰς Πειραιᾶ μετὰ Γλαύκωνος
+\"; sleep 2; done")
+
+# 5(보통) (async-shell-command "for i in 1 2 ;do espeak -v itc/la -s 111 -g 39 \"
+Cum divina tua mens et numen, imperator Caesar, 
+\"; sleep 2; done")
+# 5(보통) (async-shell-command "for i in 1 2 ;do espeak -v grk/grc -s 111 -g 39 \"
+Σωκράτης κατέβην χθὲς εἰς Πειραιᾶ μετὰ Γλαύκωνος
+\"; sleep 2; done")
+
+# 6(약동) (async-shell-command "for i in 1 2 ;do espeak -v itc/la -s 120 -g 33 \"
+** Cum divina tua mens et numen, imperator Caesar, 
+\"; sleep 2; done")
+# 6(약동) (async-shell-command "for i in 1 2 ;do espeak -v grk/grc -s 120 -g 33 \"
+Σωκράτης κατέβην χθὲς εἰς Πειραιᾶ μετὰ Γλαύκωνος
+*** 한글이 출력되는 것은 리눅스의 버그-기존고정와 다른관점해킹강력함의 경계가 불분명함을 의미한다. 즉 의미는 인간이 정한다.
+dwm 을 3으로 분할하여서 다양한 관점에서 접근하는 방법을 구사한다. 강점:다양한 관점을 구사하는 것이 가능하다.
+
+
+\"; sleep 2; done")
+
+#############################
+Σωκράτης κατέβην χθὲς εἰς Πειραιᾶ μετὰ Γλαύκωνος 
+τοῦ Ἀρίστωνος προσευξόμενός τε τῇ θεῷ καὶ ἅμα τὴν ἑορτὴν βουλόμενος θεάσασθαι τίνα τρόπον ποιήσουσιν ἅτε νῦν πρῶτον ἄγοντες. καλὴ μὲν οὖν μοι καὶ ἡ τῶν ἐπιχωρίων πομπὴ ἔδοξεν εἶναι, οὐ μέντοι ἧττον ἐφαίνετο πρέπειν ἣν οἱ Θρᾷκες ἔπεμπον.
+
+Cum divina tua mens et numen, imperator Caesar, 
+imperio potiretur orbis terrarum invictaque virtute cunctis hostibus stratis triumpho victoriaque tua cives gloriarentur et gentes omnes subactae tuum spectarent nutum populusque Romanus et senatus liberatus timore amplissimis tuis cogitationibus consiliisque gubernaretur, non audebam, tantis occupationibus, de architectura scripta et magnis cogitationibus explicata edere, metuens, ne non apto tempore interpellans subirem tui animi offensionem.
+#############################

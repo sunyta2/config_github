@@ -1,0 +1,12 @@
+		Display Manager
+Simple Desktop Display Manager (SDDM) 
+* sddm inbox 나중에 다시 정리하더라도 일단 수집함.
+		Display Manager
+Simple Desktop Display Manager (SDDM)
+- /app/systemd/readme.org를 참조할 것. 전체구조의 fs와 이해가 연관되는 것이다.
+
+assuming you have both of them installed (if not sudo pacman -S lightdm)
+sudo systemctl disable sddm-plymouth
+then
+sudo systemctl enable lightdm-plymouth
+출처: https://forum.manjaro.org/t/switching-to-lightdm-instead-of-sddm/9068/2

@@ -14,7 +14,7 @@
 (find-file "~/config_github/app/espeak/espeak_yay.org")
 
 
-
+$ text2wave #유사연구필요함.
 ** emacs
 - shortcut_자주연습하는 것의 지침파일을 만들 것.
 

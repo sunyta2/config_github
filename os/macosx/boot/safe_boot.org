@@ -1,0 +1,15 @@
+* safe boot in macosx
+#+BEGIN_SRC sh
+
+# 실행에 성공하는 출발은 CMD + s macosx booting
+/sbin/fsck -fy
+/sbin/mount -uw /
+exit
+# 활용 : dictionary 엡의 확장에 사용한 해제모드(이름을 나중에 적을것)에 적합하고
+# 활용2: fsck 명령문 등 맥의 커넬에 관한 연구에 경험획득과 검색으로 지식 확장이 가능함
+#+END_SRC
+
+
+[Imac shuts down while loading os. Faulty hard drive repair - YouTube](https://www.youtube.com/watch?v=99Wtb0KTW-k)
+[How to Fix a Mac not Booting up (Part I) Ali Mirmehdi 526K views](https://www.youtube.com/watch?v=WVDF4WyKvVs)
+[How to do a safeboot on a Mac Chance & Kelsie 74K views](https://www.youtube.com/watch?v=hfFkyxm2F5g)

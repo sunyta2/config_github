@@ -1,0 +1,32 @@
+Athena 여신이 섬세한 직조 여신임을 상기할 것-부드럽지만 강건한 타격!
+
+* typing 감수성과 정확성 그 다음 빠르기 
+
+다운로드 앱은 별도의 파일에 그래서 링크를 아래에... with 간단 특징과 목적설명.
+
+* gui
+- klavaro : budlabs소개
+  - 세분화된 절차성(감각 특화), 키보드를 공중에 띄움가능(시각화)
+
+- wpm ; 간단히 --load FILENAME 원하는 파일을 모델로 연습할 수 있을 것으로 추정함.
+  - 틀리면 다시 수정해야 함.(정확성 훈련에 특화됨)
+
+* web site Practice sites
+- 
+
+
+* 참고자료
+- YouTube - budlab의 동영상 시간: 아마 klavaro(gtk application- https://youtu.be/rkH6H-trFkI?t=134 )
+
+
+
+- https://www.fossmint.com/linux-typing-tutor-software/
+  - Typing.io, TIPP10, KTouch, Keybr, GNU Typist,
+
+
+- wpm 발견: https://www.ostechnix.com/wpm-measure-typing-speed-terminal/
+  - $ sudo pacman -S python-pip ; sudo pip install wpm
+- klavaro 발견: https://www.linuxlinks.com/Klavaro/ << https://www.linuxlinks.com/typingtutors/
+  - klavaro, tipp10, ktouch, gnu typist, tux typing
+  - 순위를 매기는 리눅스의 사이트라서 다른 이의 사용을 살필 수 있다.
+

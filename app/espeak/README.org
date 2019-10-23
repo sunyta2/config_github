@@ -1,8 +1,9 @@
 # FreeBSD korean resource from arch 
 [[*korean][/app/espeak/README.org*korean]]
 
-
-
+$ cat | while espeak 터미널에서 듣기 연습을 발견함!!! >> 
+$ generate mp3 file from espeak
+[[./practice_model_espeak.org]] << 실행문 모음.
 * espeak INDEX
 
 
@@ -12,6 +13,10 @@
 (find-file "~/espeak/") 더욱 연마하는 폴더임.
 
 
+** generate mp3 file from espeak
+출처: https://askubuntu.com/questions/178736/generate-mp3-file-from-espeak#178768
+espeak -f myfile --stdout | ffmpeg -i - -ar 44100 -ac 2 -ab 192k -f mp3 final.mp3
+espeak -f foo.txt -w foo.wav
 ** greek
 
 
@@ -20,6 +25,19 @@
 ./resource/korean/ko_dict saved from /home/thinkpad/.cache/yay/espeak-test/src/espeak-1.48.15/espeak-data/ in Arco
 ./resource/korean/ko_list|rules from /home/thinkpad/.cache/yay/espeak-test/src/espeak-1.48.15/dictsource
 ** latin
+
+** terminal
+terminal use 문장 한줄단위로 interactive하게 낭독하는 기능!!! $ say -i #macosx와 유사함.
+#+BEGIN_SRC sh
+### 중요한 각종 언어듣기학습의 도구
+# 한줄씩 또는 여러줄씩 중간마우스 클릭으로 웹의 문장을 읽어내는 것이 가능한 학습의 도구.
+$ cat | while read LINE; do espeak "$LINE"; done
+		# 출처에서 활용된 것임 dwm_arch_wiki
+		$ conky | while read LINE; do xsetroot -name "$LINE"; done
+#+END_SRC
+
+?? 궁금증 ?? 한줄 낭독과 다음 낭독을 파일 출력하면 어떻게 되는 것인가. 시간을 두고 읽는가 아니면...
+
 
 
 
