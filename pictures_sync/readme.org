@@ -1,11 +1,19 @@
 * 마음은 돋보기처럼 겨냥하는 법을 터득!
 - 허공을 낚도록 쏴라!
+
+#+BEGIN_SRC markdown
 ![집요한 노력의 달인](./buddha_all.png)
+#+END_SRC
 [[./buddha_all.png][집요한 노력의 달인 ./buddha_all.png FILE_LINK]]
 
 - (결정성)나는 소크라테스보다 마음을 집중할 수 있다.
+
 - Try habit of improvement.
+
+#+BEGIN_SRC markdown
 ![wander with Big purpose!](./wanderer_above_the_sea_of_fog.jpg)
+#+END_SRC
+
 [[./wanderer_above_the_sea_of_fog.jpg][wanderer_above_the_sea_of_fog.jpg 링크]]
 
 

@@ -5,3 +5,10 @@
 
 * kbd collect by prefix
 
+* C-c 
+[[file:./C-c_.org][./C-c_.org]]
+[[file:./C-c_C-v.org][./C-c_C-v.org]]
+
+* C-x
+[[file:./C-x_.org][./C-x_.org]]
+[[file:./C-x_.org][./C-x_.org]]
