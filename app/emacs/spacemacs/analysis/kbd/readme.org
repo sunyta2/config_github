@@ -5,10 +5,180 @@
 
 * kbd collect by prefix
 
-* C-c 
+* C-c -(1 of 3) [C-h paging/help]
 [[file:./C-c_.org][./C-c_.org]]
+C-c- -(1 of 3) [C-h paging/help]
+ESC -> +prefix
+RET -> org-ctrl-c-ret
+SPC -> org-table-blank-field
+TAB -> org-ctrl-c-tab
+  ! -> org-time-stamp-inactive
+  " -> +prefix
+  # -> org-update-statistics-cookies
+  $ -> org-archive-subtree
+  % -> org-mark-ring-push
+  & -> org-mark-ring-goto
+  ' ->org-edit-special
+  * -> org-ctrl-c-star
+  + -> org-table-sum
+  , -> org-proority
+  - -> org-ctrl-c-minus
+  . -> org-time-stamp
+  / -> org-sparse-tree
+  : -> org-toggle-fixed-width
+  ; -> org-toggle-comment
+  < -> org-goto-calendar
+  ? -> org-table-field-info
+  @ -> org-mark-subtree
+  [ -> org-agenda-file-to-front
+  \ -> org-match-sparse-tree
+  ] -> org-remove-file
+  ^ -> org-sort
+  ` -> org-table-edit-field
+  p -> +persp-key-map
+  { -> org-table-toggle-formula-debugge..
+  | -> org-table-create-or-convert-from..
+  } -> org-table-toggle-coordinate-over..
+  - -> org-table-create-with-table.el
+C-* -> org-list-make-subtree
+C-, -> org-insert-structure-template
+C-< -> outline-promote
+C-> -> outline-demote		;; m-RIGHT 가 동일한 것인지?
+C-^ -> org-up-element
+C-_ -> org-down-element
+C-a -> org-attach
+C-b -> org-backward-heading-same-level
+C-c -> org-ctrl-c-ctrl-c
+C-d -> org-deadline
+C-e -> org-export-dispatch
+C-f -> org-forward-heading-same-level
+C-j -> org-goto
+C-k -> org-kill-note-or-show-branches
+C-l -> org-insert-link
+C-n -> outline-next-visible-heading
+C-o -> org-open-at-point
+C-p -> outline-previous-visible-heading
+C-q -> org-set-tags-command
+C-r -> org-reveal
+C-s -> org-schedule
+C-t -> org-todo
+C-u -> outline-up-heading
+C-v -> +prefix
+C-w -> +prefix
+C-x -> +prefix
+C-y -> org-evaluate-time-range
+C-z -> org-add-note
+C-M-l  org-insert-all-links
+M-b -> org-previous-block
+M-f -> org-next-block
+M-l -> org-insert-last-stored-link
+M-w -> org-copy
+LEFT   winner-undo
+RIGHT  winner-redo
+
 [[file:./C-c_C-v.org][./C-c_C-v.org]]
 
-* C-x
+
+
+* C-x-(1 of 3) [C-h paging/help]
 [[file:./C-x_.org][./C-x_.org]]
+C-x-(1 of 3) [C-h paging/help]
+DEL -> backward-kill-sentence
+ESC -> +prefix
+       +ESC(C-[도 동일함)
+            ESC -> repeat-complex-command
+RET -> +prefix
+       +RET(C-m도 동일함)
+              c -> universal-coding-system-argument
+              F -> set-file-name-coding-system
+              f -> set-buffer-file-coding-system
+              k -> set-keyboard-coding-system
+              l -> set-language-environment
+              p -> set-buffer-process-coding-system
+              r -> revert-buffer-with-coding-system
+              t -> set-terminal-coding-system
+              X -> set-next-selection-coding-system
+              x -> set-selection-coding-system
+            C-\ -> set-input-method
+SPC -> rectangle-mark-mode
+TAB -> indent-rigidly
+  # -> server-edit
+  $ -> set-selective-display
+  ' -> expand-abbrev
+  ( -> kmacro-start-macro
+  ) -> kmacro-end-macro
+  * -> calc-dispatch
+  + -> balance-windows
+  - -> shrink-window-if-larger-than-buf..
+  . -> set-fill-prefix
+  0 -> delete-window
+  1 -> maximize-buffer
+  2 -> split-window-below
+  3 -> split-window-right
+  4 -> +ctl-x-4-prefix
+  5 -> +ctl-x-5-prefix
+  6 -> +2C-command
+  8 -> +prefix
+  ; -> comment-set-column
+  < -> scroll-left
+  = -> what-cursor-position
+  > -> scroll-right
+  @ -> +prefix
+  [ -> backward-page
+  ] -> forward-page
+  ^ -> enlarge-window		;; C-- (C-)3 C-x ^축소됨을 확인함.C-x z반복
+  ` -> next-error
+  a -> +prefix
+  b -> helm-buffers-list
+  d -> dired
+  e -> kmacro-end-and-call-macro
+  f -> set-fill-column
+  h -> mark-whole-buffer
+  i -> insert-file
+  k -> kill-buffer
+  l -> count-lines-page
+  m -> compose-mail
+  n -> +prefix
+  o -> other-window
+  q -> kbd-macro-query
+  r -> +prefix
+  s -> save-some-buffers
+  u -> undo-tree-visualize
+  v -> +vc-prefix-map
+  w -> +prefix
+  X -> +prefix
+  z -> repeak		;; 일종의 vim의 . command
+  { -> shrink-window-horizontally
+  } -> enlarge-window-horizontally
+C-SPC >pop-global-mark
+C-+ -> text-scale-adjust
+C-- -> text-scale-adjust
+C-0 -> text-scale-adjust
+C-; -> comment-line
+C-@ -> pop-global-mark
+C-b -> list-buffers
+C-c -> save-buffers-kill-terminal
+C-d -> list-directory
+C-e -> eval-last-sexp
+C-f -> helm-find-files
+C-j -> dired-jump
+C-k -> +kmacro-keymap
+C-l -> downcase-region
+C-n -> set-goal-column		;; 혹시 Vim의 붉은 세로줄역할??
+C-o -> delete-blank-lines
+C-p -> mark-page
+C-q -> read-only-mode		;; 읽기모드로 파일보호
+C-r -> find-file-read-only
+C-s -> save-buffer
+C-t -> transpose-lines
+C-u -> upcase-region
+C-v -> find-alternate-file
+C-w -> write-file
+C-x -> exchange-point-and-mark
+C-z -> suspend-frame
+C-left previous-buffer
+C-rightnext-buffer
+left-> previous-buffer
+right  next-buffer
+
 [[file:./C-x_.org][./C-x_.org]]
