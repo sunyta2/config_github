@@ -1,0 +1,17 @@
+* install app 
+** virtualbox
+
+** vmare
+
+** gnome boxes 
+install process in ubuntoo
+#+BEGIN_SRC sh
+$ sudo apt install -yy gnome-boxes qemu-kvm libvirt-bin
+$ sudo usermod -a -G kvm $USER
+$ sudo sed -i -e 's/\#group\ =\ "root"/group=kvm/g' /etc/libvirt/qemu.conf
+
+sudo apt install -yy gnome-boxes qemu-kvm
+sudo usermod -a -G kvm $USER
+sudo apt install spice-vdagent spice-webdavd
+#+END_SRC
+<출처 동영상> : [[https://youtu.be/tX2gcGRfKZc?t=405][A Look at GNOME Boxes Virtualization Software-설치의 명령어부분시간이동]]

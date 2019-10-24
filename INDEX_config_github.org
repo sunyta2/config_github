@@ -1,46 +1,46 @@
-* 서구의 학문이 우수한 것은 INDEX로 연관(백과사전)을 찾기 때문이다.
+* 서구의 학문이 우수한 것은 INDEX로 연관(백과사전)을 찾기 때문이다 , 
 - 파일의 위치를 쉽게 열고 관련된 것을 쉽게 등록하는 것을 목적으로 한다. meta학문구조.
 
 - 중심(USEFUL)객체를 주제어(with CORE VALUE)로 두도록.
 - 파일위치를 연결시키도록 하고 간략히 압축을 강조함. 색인(INDEX) 많이 늘어날 것이 예상되므로
 [[org_emacs %EC%82%AC%EC%9A%A9][org_emacs 사용]]
-* A-Z (C-s 또는 C-r) M-m {/ * (s f,b,l,F,B)} SPACEMACS - M-x(helm search)
+* A-Z (C-s 또는 C-r) M-m {/ * (s f,b,l,F,B)} SPACEMACS - M-x(helm search) , 
 - 중심(USEFUL)객체를 주제어(with CORE VALUE)로 두도록.
 
-** dunst
+** dunst , 
 
 
-** espeak
+** espeak , 
 (find-file "~/config_github/app/espeak/espeak_yay.org")
 
 
 $ text2wave #유사연구필요함.
-** emacs
+** emacs ,  
 - shortcut_자주연습하는 것의 지침파일을 만들 것.
 
 (dired "./app/emacs/README.org")
-*** org_emacs 사용
+*** org_emacs 사용 , 
 (find-file-other-window "./app/emacs/org_mode_study/")
-*** search_emacs
+*** search_emacs , 
 
-*** emacs_package install
+*** emacs_package instal , 
 (find-file "./app/emacs/package_install/")
 
 
-*** magit
+*** magit , 
 
 
     
-** install
-*** yay_pkg_brew_pacman.org
+** install ,  
+*** yay_pkg_brew_pacman.org , 
 (find-file-other-window "./app/yay_pkg_brew_pacman.org")
 
 *** [[*emacs_package][emacs_package]] install
-** IDEA
-
+** IDEA , 
+ls 의 대안을 dt가 제시함. lscd를 인스톨함 아르코에
    
 
-** korean
+** korean , 
 # espeak FreeBSD korean resource from arch 
 [[*korean][/app/espeak/README.org*korean]]
 
@@ -48,31 +48,31 @@ $ text2wave #유사연구필요함.
 
 - 
 
-** programming mind & method
+** programming mind & method , 
 - elisp link
 (find-file-other-window "./app/emacs/org_mode_study/startup_inlineimage_in_org_mode.org")
-** link
+** link , 
 [[org_emacs %EC%82%AC%EC%9A%A9][org_emacs 사용]]
-*** ln 의 하드링크로 닷파일을 훨씬 통합적으로 관리하는 것이 가능하다. arco .spacemacs와 config_github/ ln 연결
+*** ln 의 하드링크로 닷파일을 훨씬 통합적으로 관리하는 것이 가능하다. arco .spacemacs와 config_github/ ln 연결.  
 - [[file:app/emacs/spacemacs/readme.org::*hard%20link%20to%20run%20.spacemacs%20M-m%20f%20e%20d%20with%20Github][hard link to run .spacemacs M-m f e d with Github]]
-
-** search
+- [[file:./shell_script/sync_with_ln_cmd.sh]] 에서 sudo ln 실행문을 실행하는 것을 고려할 것.
+** search , 
 - convert or substite
 - goto: search_emacs
 
-** start.sh
+** start.sh ,  
 - to (find-file "./start.sh")
-*** init file in starters
-*** configuration method
+*** init file in starters , 
+*** configuration method , 
 방법론과 위치를 지정할 것.
+- link , 를 참조할 것
 
 
-
-** TODO_list
+** TODO_list , 
 
 - 부동산 전화검색 > 연락처 뽑기 > 연락하기
 
 
 
-** vim & tmux
-
+** vim & tmux , 
+vim tump tuxinator
