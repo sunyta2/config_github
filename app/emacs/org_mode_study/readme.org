@@ -1,4 +1,6 @@
 * app/emacs/org_mode_study
+ 
+
 - 오그모드의 실천사항과 연구과제
 /home/thinkpad/config_github/app/espeak/espeak_yay.org ;; espeak execute 저장위치
 /home/thinkpad/config_github/app/emacs/org_mode_study/README.org ;; 오그모드 연구 저장폴더
@@ -26,3 +28,5 @@ Groups: [Babel]
 #+end_src
 
 - 
+** org_agenda to control Chromium Book mark stuff is saved in Google/(star)Bookmark~ in Chrome
+- 나중에 자료를 더 연구해서 정리할 것.
