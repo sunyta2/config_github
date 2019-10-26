@@ -1,0 +1,44 @@
+
+
+
+lspci
+Intel Centrino Advanced-N 6205  로 대상을 특정함
+즉 wlp3s0의 발동을 위해서는 Kernel configuration이 필요함.
+
+
+youtube 동영상의 자료
+Basic overview of the kernel config https://www.youtube.com/watch?v=AEl8eISJpPQ
+cd /usr/src/linux/  그곳에서
+   /usr/src/linux/.config 파일의 존제를 확인하고 그곳에서
+sudo make menuconfig 가 핵심!!!!
+- File systems ---> 
+- Device Drivers
+
+pciutil
+lsutil - 
+usbutil
+$ sudo lsusb -k 
+
+$ sudo lspci -k # 모든 하드웨어 정보가 -k로 제공됨
+
+/iwlwifi 엔터
+변경사항 []->[*]변경 Enable broadcast filtering
+
+
+make -j5 
+
+### "make localmodconfig" helps greatly doing this for the first time.
+
+
+
+wifi_in_gentoo.org
+
+
+# sudo pkill X 이후에 나오는 문장에서 단서를 찾기를
+Log file: "/var/log/Xorg.0.log", Time:
+Using conig directory: "/etc/X11/xorg.confg.d"
+Using system config directory "/usr/share/X11/xorg.conf.d"
+
+sudo rc-config start start wpa_supplicant &> /dev/null
+${wms[$choice]} ## 아마 이것이 실행파일의 전조일 것으로 생각된다.
+echo ${wms[$choice]} 로 알아낼 수있을 것으로 생각됨.

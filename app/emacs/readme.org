@@ -20,3 +20,6 @@ spacemacs :!echo password | sudo -S make install
   - 출처: https://github.com/xiaohanyu/oh-my-emacs
 
 - ipython을 열게하는 동영상과 그 명칭?? 기록해 둘 것.
+
+
+* melpa and use-package in [[file:./melpa_package.org][]]

@@ -182,3 +182,11 @@ left-> previous-buffer
 right  next-buffer
 
 [[file:./C-x_.org][./C-x_.org]]
+
+
+* inbox in Website
+15.1 Completion
+Org has in-buffer completions. Unlike minibuffer completions, which are useful for quick command interactions, Org’s in-buffer completions are more suitable for content creation in Org documents. Type one or more letters and invoke the hot key to complete the text in-place. Depending on the context and the keys, Org offers different types of completions. No minibuffer is involved. Such mode-specific hot keys have become an integral part of Emacs and Org provides several shortcuts.
+
+M-TAB [[https://orgmode.org/manual/Completion.html][15.1 Completion-emacs manual in WEB site]]
+예시 \, * : [ #+ STARTUP

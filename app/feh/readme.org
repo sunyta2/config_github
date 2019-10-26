@@ -13,3 +13,5 @@ feh --bg-center ~/config_github/pictures_sync/wanderer_above_the_sea_of_fog.jpg
 
 
 - nitrogen
+nitrogen --restore
+

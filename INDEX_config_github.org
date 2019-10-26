@@ -76,3 +76,11 @@ ls 의 대안을 dt가 제시함. lscd를 인스톨함 아르코에
 
 ** vim & tmux , 
 vim tump tuxinator
+
+* 의문점과 아이디어임시저장 , 
+
+FreeBSD와 같이 sh path를 지정하는 스크립트를 만들어 시작동시에 
+export PATH=$PATH:'~/bin'
+또는 ln start(in config_github) ~/.bin/start 
+
+- 어디에 setxkbmap이 저장되는 지를 알아서 직접수정을 시도할 것.

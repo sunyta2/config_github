@@ -1,3 +1,10 @@
+* -l "~/config_github/app/emacs/shell_emacs/shell_command_emacs.org" 
+  -l "(lisp-file실행할파일)" man emacs에서 밝힘
+
+
+
+
+
 * (shell-command)
 
 

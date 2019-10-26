@@ -74,7 +74,8 @@ static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",	tile },    /* first entry is default */
 	{ "[M]",	monocle },
- 	{ "[@]",	spiral },
+ 	//{ "[@]",	spiral }, /*둘 중에 한가지를 선택함 select in */
+  { "[@]",	dwindle }, /* dwindle을 나는 선택함 */
 	{ "|M|",	centeredmaster },
 	{ "><>",	NULL },    /* no layout function means floating behavior */
 	{ ">M>",	centeredfloatingmaster },
@@ -96,6 +97,11 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *roficmd[] = { "rofi", "-show", "combi", NULL }; // ~/.config/rofi/config 에 설정을 가지고 있다.
 /* static const char *roficmd[] = { "rofi", "-combi", "window,run", "-show", "combi", NULL }; */
+static const char *urxvtcmd[] = { "urxvt", NULL }; // 투명한 기능에 매력적이다.
+static const char *urxvt_fmcmd[] = { "urxvt", "-e", "sh", "-c", "$HOME/.bin/emacsQ", NULL }; // 투명한 emacsQ 일단 File Manager.
+//static const char *urxvt_fmcmd[] = { "urxvt", "-e", "sh", "-c", "ranger", NULL }; // 투명한 ranger 일단 File Manager.
+//static const char *urxvt_fmcmd[] = { "urxvt", "-e", "sh", "-c", "mc" NULL }; // 투명한 mc 대안 File Manager.
+// 대안의 항목 dolphin, spacefm, worker, mc, ranger, lscd, hunter ...
 
 #include "movestack.c"
 static Key keys[] = {
@@ -142,6 +148,8 @@ static Key keys[] = {
 	{ MODKEY,			XK_Page_Up,	shiftview,	{ .i = -1 } },
 	{ MODKEY,			XK_d,		spawn,		{ .v = dmenucmd } },
 	{ MODKEY,			XK_r,		spawn,		{ .v = roficmd } },
+  { MODKEY,         			XK_Return,		spawn,		{ .v = urxvtcmd } },    /* 투명터미널 실행을 목적 */
+  { MODKEY|ShiftMask,			XK_Return,		spawn,		{ .v = urxvt_fmcmd } }, /* 투명파일매니져 열어냄 */
 	{ MODKEY,			XK_Page_Down,	shiftview,	{ .i = 1 } },
 };
 

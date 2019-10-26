@@ -20,3 +20,36 @@ M-x package-install RET magit RET
 
 https://magit.vc/manual/magit/Installing-from-Melpa.html#Installing-from-Melpa
 
+;; below is by Xah
+#+BEGIN_SRC emacs-lisp
+;; http://ergoemacs.org/emacs/emacs_package_system.html
+(when (>= emacs-major-version 24)
+  (require 'package)
+  (add-to-list
+   'package-archives
+   ;; '("melpa" . "http://stable.melpa.org/packages/") ; many packages won't show if using stable
+   '("melpa" . "http://melpa.milkbox.net/packages/")
+   t))
+#+END_SRC 
+;; 인스톨할 것. use-package
+(package-initialize)
+;;;; 설치되어 있었음 (package-install "use-package")
+
+[[file:~/config_github/app/emacs/melpa_package.org]]
+(package-initialize)
+(eval-when-compile
+  ;; Following line is not needed if use-package.el is in ~/.emacs.d
+;;  (add-to-list 'load-path "<path where use-package is installed>")
+  (require 'use-package))
+
+(use-package magit
+  ;;:init
+  ;;(setq foo-variable t)
+  ;;:config
+  )
+
+(use-package foo
+  :init
+  (setq foo-variable t)
+  :config
+  (foo-mode 1))
