@@ -12,7 +12,8 @@
   (org-mode)
   ;;(message "hi")
   ;(progn
-    (dired-other-window "~/.bin/")(dired-hide-details-mode)
+  (dired-other-window "~/config_github/shell_script/")(dired-hide-details-mode)
+  (bookmark-bmenu-list)
 )
 
 (when (>= emacs-major-version 24)
@@ -41,6 +42,16 @@
   ;;(setq foo-variable t)
   ;;:config
 )
+
+;;(use-package ' 클립보드 자동완성, 
+(use-package neotree 
+  :config
+  (neotree-dir "~/config_github/shell_script/")
+  (neotree-show)
+)
+
+
+
 (use-package simpleclip
 :config
 (simpleclip-mode 1)
