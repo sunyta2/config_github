@@ -1,12 +1,76 @@
 이곳에 일단 분류된 키보드 단축목록을 수집한다.
-
+(read-file 
 요점을 추리고 핵심동작음 만든다음 적용을 시도한다.
 
 * 매우 유용한 기능과 찾아야 하는 기능
 - 매우 유용한 기능(연습할 것)
+C-s C-M-y한글자씩검색전진 C-M-w한글자씩검색후진
+C-s C-w C-w ... 단어위주의 검색
+C-s M-s C-e ... 잘 모르겠음 검색이 필요함. 특이한 기능인 듯함.
 
+
+M-g M-g 줄이동
+M-g c 칼럼이동
+
+- 옆의 윈도우의 줄이동 [[https://www.emacswiki.org/emacs/Reference_Sheet_by_Aaron_Hawley][웹사이트 유용합!!! emacs/Reference_Sheet_by_Aaron_Hawley !!!]]
+C-u 1      C-v : 자기 윈도우 이동
+C-u 1 C-[  C-v : 다른 윈도우 이동은 ESC,즉C-[로 가능함
+               :   이후 반복으로 C-x z (repeat) cf) C-x C-[ C-[ / C-x M-: (repeat-complex-command)
+               :    다시 반복으로 C-u 3 C-x z(3회반복)
+               : !! 이맥스의 놀라운 창의적인 건축기법에 감탄!!!
+
+(command-history) C-x C-[ C-[ repeat-complex-command 
+명령유래 M-p M-n  C-x M-:     {cf. M-: eval or M-& M-! Shell command}
+
+C-x x == M-x
+C-x m == M-m in spacemacs
 
 - 찾아야 하는 기능(검색법을 기록할 것)
+C-M-r !!! C-M-s가 안되지만, !!!
+C-s M-r 예시 C.x로 C-x검색되는 놀라움!!!
+C-s  단어검색 중에 변경시 M-e
+C-space {f{character} in VIM}} == C-s C-m 
+화려한 결합의 향연아이디어: C-s M-r C-s 이전 검색복귀. M-e편집가능함.
+
+
+
+(switch-to-buffer "readme.org" nil (quote force-same-window))
+
+C-x [ gg
+C-x ] G in Vim
+
+
+- (find-name-dired)
+find 검색을 터미널처럼하는 것이 중요함
+- (find-grep-dired)
+
+
+중요- 검색의 법을 설명한 것  $ info find.info 'Reference' 'Regular Expressions' 'emacs regular expression'
+드디어 잘 실행됨!  (find-dired "~/config_github/" "-iname *read*")
+- /home/thinkpad/config_github/app/tmux/README.txt 
+/home/thinkpad/config_github/app/feh/readme.org 
+/home/thinkpad/config_github/app/wifi_network/readme.org 
+/home/thinkpad/config_github/app/cmus/README.txt /home/thinkpad/config_github/app/vifm/scripts/README /home/thinkpad/config_github/app/xorg_X11/pulsemixer/README.org /home/thinkpad/config_github/app/xorg_X11/xsessions_folder/README.org /home/thinkpad/config_github/app/xorg_X11/macosx_x11/README.txt
+m m m ... 으로 선택하고 0 w로 주소를 복사하고 U로 unmark함.
+파일명변경하기in Dired C-x C-q(dired-toggle-read-only) Wdired
+C-c C-c (wdired-finish-edit) [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Wdired.html#Wdired][<Wdired 사이트출처>]]
+
+
+?? 어떻게 선택된 파일에서 
+(검색명령어 "선택파일...... 들" "검색단어")
+(lgrep "명령" "*.org" "~/config_github/app/emacs/spacemacs/analysis/kbd/" nil)
+
+파일명자동완성의 명령어 Vim의 C-x C-f와 같은 것이 있으면 편리할 것임.
+
+
+(defun dired-do-eshell-command (command)
+  "Run an Eshell command on the marked files."
+  (interactive "sEshell command: ")
+  (let ((files (dired-get-marked-files t)))
+    (eshell-command
+     (format "%s %s" command (mapconcat #'identity files " ")))))
+
+dired-do-eshell-command RET grep -nH --color your-search--pattern RET
 
 
 * kbd collect by prefix

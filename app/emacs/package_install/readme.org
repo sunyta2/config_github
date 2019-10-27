@@ -1,5 +1,7 @@
 
 EMACS 의 package index
+$ sudo chown -R username:group directory
+$ cd ~/.emacs.d/elpa; sudo chown -R root:wheel ./simpleclip-20181105.1636/
 
 # 이곳에 리스트가 실행의 방법의 파일을 연결하도록 설정한다.
 
