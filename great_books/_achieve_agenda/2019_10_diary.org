@@ -66,6 +66,7 @@ https://github.com/elbaulp/myDWM patch study github and bash command. - todo stu
 
 study - dwm in good explain http://srobb.net/dwm.html
 
+
 *** 의문 어떻게 display 된 출력을 command-history처럼 보는 법이 있을까? => 
 => * Bookmark List * C-x r l 에서 ? 중에 w 는 mini-buffer에 출력하는 것에 착안함. 즉, file path 복사.
 
@@ -78,3 +79,18 @@ study - dwm in good explain http://srobb.net/dwm.html
 
 #+END_SRC
 
+
+** [2019-10-30 수] 
+
+from W541 terminal into T520
+$ ssh thinkpad@192.168.1.2
+from T520 terminal into W541
+$ ssh thinkpad@192.168.1.3
+
+<2019-10-30 수 14:00>
+- sshd success in arco using NETGEAR line with T520 
+ $ sudo systemctl start sshd # [[https://www.cyberciti.biz/faq/howto-start-stop-ssh-server/][Ubuntu Linux: Start / Stop / Restart / Reload OpenSSH Server]]
+                              # 사이트에 여러가지 정보가 저장되있었음.
+
+셋팅이 저장된 곳/etc/ssh/sshd_config
+(find-file "/etc/ssh/")
