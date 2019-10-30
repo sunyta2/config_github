@@ -1,0 +1,80 @@
+* 2019_10
+** 26
+
+   
+** 27
+- 지진발생에 미동도 않는 헛다리교육.
+
+- install emacs yasnippet https://www.youtube.com/watch?v=39u8K12rXHE Emacs Tutorial 20 - Yasnippet! Uncle Dave
+#+BEGIN_SRC emacs-lisp
+   (package-initialize)
+  (package-refresh-contents)
+    (use-package yasnippet
+	    :ensure t
+	    :config
+	    (use-package yasnippet-snippets
+		    :ensure t)
+	    (yas-reload-all))
+  (yas-global-mode 1)
+  (use-package popup)
+  (require 'popup)
+  (req
+(define-key yas-minor-mode-map (kbd "<tab>") nil)
+(define-key yas-minor-mode-map (kbd "TAB") nil)
+(define-key yas-minor-mode-map (kbd "<C-tab>") 'yas-expand)
+(de
+a
+#+END_SRC
+
+#+RESULTS:
+
+** <2019-10-29 화 05:46> , 
+
+<2019-10-29 화>
+[2019-10-29 화]
+<2019-10-29 화 05:47> 
+#+author: 
+emacs-lisp_
+#+begin_src emacs-lisp :tangle yes
+(find-file "~/.emacs.d/elpa/yasnippet-snippets-20191010.1106/snippets/sh-mode/function")
+#+end_src
+
+
+- W541 arrived
+- merit:earphone with same vent side! 
+ - fit t420 caddy sawing for W541 it works Great!
+
+- dwm : set CMD-tab possible
+	- 2master:1stack will be great with rightside open! Search it.
+	- cmd+ctrl
+-  Focuswriter install
+ - send to all CMD+Shift+0 with from start.
+
+
+
+todo dwm
+fakefullscreen- https://dwm.suckless.org/patches/fakefullscreen/
+
+number of columns is always nmaster + 1, and the last column is a stack of leftover windows https://dwm.suckless.org/patches/columns/
+
+defaulttransparency  
+https://dwm.suckless.org/patches/defaulttransparency/
+
+
+github - elbaulp/myDWM
+https://github.com/elbaulp/myDWM patch study github and bash command. - todo study dwm
+
+study - dwm in good explain http://srobb.net/dwm.html
+
+*** 의문 어떻게 display 된 출력을 command-history처럼 보는 법이 있을까? => 
+=> * Bookmark List * C-x r l 에서 ? 중에 w 는 mini-buffer에 출력하는 것에 착안함. 즉, file path 복사.
+
+*** yas-snippet-insert 
+(find-file "~/.emacs.d/elpa/yasnippet-snippets-20191010.1106/snippets/sh-mode/function")
+
+*** system-lang 영어로 변경해야 할 것임.
+#+BEGIN_SRC sh
+  functio
+
+#+END_SRC
+

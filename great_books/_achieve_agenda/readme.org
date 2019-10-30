@@ -1,0 +1,29 @@
+ (find-file "~/config_github/great_books/_achieve_agenda/readme.org")
+
+
+* ~/config_github/great_books/_achieve_agenda/readme.org
+- purpose_daily
+	- mind_set: 시간을 지배하는 것이 세상을 지배하는 것이다.
+		- chrome의 즐겨찾기를 끌어 올것.
+
+
+- well_done # 하루나 주중 월간 성과와 성취를 기록함.
+(find-file "./2019_10_diary.org")
+
+- diary
+	- 시간대별로 활동을 기록할 것.
+
+- todo
+	- 
+"~/Documents/emacs_orgcard.pdf") ;; 파일열기를 외부로 실행하는 것을 neotree의 함수를 참조해서 
+즉 단축키가 o.
+
+- maybe_list 의문점, 해결필요, 확인요망, 구매요구, 연락처, 인박스(inbox)기능
+
+
+
+
+* index ~/config_github/great_books/_achive_agenda/readme.org 아래에 일단기록
+
+
+

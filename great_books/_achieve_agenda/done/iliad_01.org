@@ -1,0 +1,105 @@
+
+* ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; 이전의 기록을 무시하고 일단 앞으로 진군함.
+;; done을 기록하는 곳 (find-file "~/Documents/org_agenda_github/done/iliad_01.org")
+
+;; 제목은 아래에 ** 스타로 시작하고 아래의 부분으로 기록을 남기다.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+** ~/espeak/homer/iliad_rhytm/iliad01/line_016.mp4 &>/dev/null &
+
+#+BEGIN_SRC sh :results silent
+function espeak_g () {
+# 3.9(약간느림) 
+for i in 1 2 3;do espeak -v grk/grc -s 100 -g 30 "
+$greek_text
+"; sleep 1; done
+}
+function espeak_e () {
+# 5(보통) 
+for i in 1 2 ;do espeak  -s 171 -g 12 "
+$english_text
+"; sleep 1; done
+}
+# ~/espeak/homer/iliad_rhytm/iliad01/line_016.mp4
+greek_text="
+| Ἀτρεΐδα 아트레우스의 아들       | δὲ 그리고 | μάλιστα 대부분               | δύω, 둘 | κοσμήτορε 장군들의  | λαῶν:  사람들의         |
+"
+english_text="
+| sons-of-Atreus | and | most(especially (the)) | two  | marshallers | of (the) people |
+- eng_App[15]: but most of all the two sons of Atreus, the marshallers
+  of the people: 
+"
+mpv --player-operation-mode=pseudo-gui ~/espeak/homer/iliad_rhytm/iliad01/line_016.mp4
+#espeak_e
+#+END_SRC
+
+
+#+BEGIN_SRC sh :results silent
+mpv --player-operation-mode=pseudo-gui ~/espeak/homer/iliad_rhytm/iliad01/line_016.mp4 &>/dev/null &
+#+END_SRC
+
+** ~/espeak/homer/iliad_rhytm/iliad01/line_017.mp4 &>/dev/null &
+#+BEGIN_SRC sh :results silent
+function espeak_g () {
+# 3.9(약간느림) 
+for i in 1 2 3;do espeak -v grk/grc -s 100 -g 30 "
+$greek_text
+"; sleep 1; done
+}
+function espeak_e () {
+# 5(보통) 
+for i in 1 2 ;do espeak  -s 171 -g 12 "
+$english_text
+"; sleep 1; done
+}
+# ~/espeak/homer/iliad_rhytm/iliad01/line_017.mp4
+greek_text="
+| Ἀτρεΐδαι          | τε    | καὶ | ἄλλοι      | ἐϋκνήμιδες   | Ἀχαιοί,   |
+"
+english_text="
+| O-sons-of-Atreus, | Both, | and | (ye) other | well-greaved | Achaeans, |
+- eng_App: “Sons of Atreus, and other well-greaved Achaeans, 
+"
+mpv --player-operation-mode=pseudo-gui ~/espeak/homer/iliad_rhytm/iliad01/line_017.mp4
+#espeak_e
+#+END_SRC
+
+
+#+BEGIN_SRC sh :results silent
+mpv --player-operation-mode=pseudo-gui ~/espeak/homer/iliad_rhytm/iliad01/line_017.mp4 &>/dev/null &
+#+END_SRC
+
+
+** ~/espeak/homer/iliad_rhytm/iliad01/line_018.mp4 &>/dev/null &
+#+BEGIN_SRC sh :results silent
+function espeak_g () {
+# 3.9(약간느림) 
+for i in 1 2 3;do espeak -v grk/grc -s 100 -g 30 "
+$greek_text
+"; sleep 1; done
+}
+function espeak_e () {
+# 5(보통) 
+for i in 1 2 ;do espeak  -s 171 -g 12 "
+$english_text
+"; sleep 1; done
+}
+# ~/espeak/homer/iliad_rhytm/iliad01/line_018.mp4
+greek_text="
+| ὑμῖν   | μὲν    | θεοὶ        | δοῖεν         | Ὀλύμπια  | δώματ' | ἔχοντες         |
+"
+english_text="
+| to-you | indeed | (the) gods, | may-they-give | Olympian | abodes | having(holding) |
+- eng_App: to you may the gods who have homes upon Olympus grant that
+  you sack 
+"
+mpv --player-operation-mode=pseudo-gui ~/espeak/homer/iliad_rhytm/iliad01/line_018.mp4
+#espeak_e
+#+END_SRC
+
+
+#+BEGIN_SRC sh :results silent
+mpv --player-operation-mode=pseudo-gui ~/espeak/homer/iliad_rhytm/iliad01/line_018.mp4 &>/dev/null &
+#+END_SRC

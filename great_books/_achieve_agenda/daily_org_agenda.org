@@ -1,0 +1,11 @@
+
+
+* add to daily routines , 
+- greek latin study( great idea with Buddha)
+	- espeak 폴더내의 실행파일 중인것:
+		- (find-file "~/espeak/greek_espeak.org")
+- computer
+
+
+* method of agenda , 
+emacs kbd shortcut (find-file "~/config_github/app/emacs/spacemacs/analysis/kbd/readme.org")
