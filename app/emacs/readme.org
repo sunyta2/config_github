@@ -22,4 +22,9 @@ spacemacs :!echo password | sudo -S make install
 - ipython을 열게하는 동영상과 그 명칭?? 기록해 둘 것.
 
 
+sudo save 가 가능한 것을 발견함. C-x C-f /sudo::/path/to/file 
+https://stackoverflow.com/questions/95631/open-a-file-with-su-sudo-inside-emacs
+
+
+
 * melpa and use-package in [[file:./melpa_package.org][]]

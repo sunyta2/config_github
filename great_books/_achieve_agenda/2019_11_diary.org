@@ -1,0 +1,131 @@
+
+
+
+* [2019-11-01 Fri] 
+
+- An Introduction To Programming In Emacs Lisp
+(shell-command "xdg-open \"$HOME/Documents/An Introduction To Programming In Emacs Lisp, 2Nd Ed - Robert J. Chassell.pdf\"")
+<2019-11-01 Fri 11:00>
+Go 024 상징:Symbol is a way of locating the definition or set of instructions.
+자신의 이름역시 상징에 불과하며 그 이면에 내재하는 깊은 본질을 탐구하는 것은 드물다.
+  # In Lisp, both data and programs are represented the same way;
+  # (Since a program looks like data, one program may easily serve as data for another; 
+        # this is a very powerful feature of Lisp.) 버그와 해킹의 중간영역은 매우 방대하다.
+'Lots of Isolated Silly Parentheses' LISt Processing
+Atom unsplittable in Lisp, 
+A list in Lisp -any list- is a program ready to run. (Lisp jargon is evaluate)
+Run(evaluate) list do one of 3 thing( return list itself; send error message; treat first symbol as command-instruction to do something)
+single apostrophe, ', that quote , do nothing with the list, other than take it as it is written.
+
+list is consists  of parentheses surrounding atoms separated by whitespace or surrounding tothe rlists or surrounding both atoms and other lists.
+
+岀力된 表現, 원자와 리스트는 像徵된 式이라고 불린다.
+printed representation of both atoms and lists are called symbolic expressions or, more concisely, s-expressions.
+expression itself can refer to either the printed representation, or to the atom or list as it is held internally in the computer.
+symbolic expressions, s-expressions
+one set of instructions can be attached to several names.
+On the other hand, a symbol can have only one function definition attached to ti at a time.
+함수가 속한 부분을 표시하는 형식으로 함수명이 정해진다. 
+#+BEGIN_SRC emacs-lisp
+(setq a '(+ 0 1)
+      b (quote (+ 0 1 1)))
+
+(+ 1 (eval a))
+;(+ 1 (eval b))
+#+END_SRC
+
+#+RESULTS:
+: 2
+
+먼저, '를 확인하고 계산한다. 결과 도출 또는 에러메시지.
+계산 Evaluation-'to ascertain the value or amount of; to appraise' activity of works on an expression
+interpreter 'evaluates the expression'. Return a Value.
+( + 1 2)  fill-column \a #o23457 #x0Fa \t \n "안녕하세요 이것도 계산문장이돠."  ;; 이러한 다양한 표현도  C-x C-e eval-last-expression으로 계산됨.
+요약: 리스트를 구성하는 아톰은  상징과 숫자 문자열을 포함. (상징)식은 계산된다. 상징은 함수, 값, 혹은 둘다를 가질 수 있다
+
+(setq + 3)  (eval (quote (+ 2 +)))
+(substring "123" 0 3) substring substring is A function such as substring uses both a string and numbers as arguments. 
+(*) => 'evaluates to'
+ because every Lisp function must return a value if it does not get an error, 
+but it will only have a side effect if it is designed to have one.
+G 038에있는 종합은 걸작이다.
+
+interactive functions, or commands : The functions you
+evaluate by typing keystrokes are called interactive functions, or commands;
+모든 키의 입력역시 식의 계산이며 그 첫 요소는 함수이다. self-insert-command가 키의 누름시 함수다.
+
+A name and the object or entity to which the name refers are different
+from each other. You are not your name. You are a person to whom others
+refer by name. 
+You do not want to speak to the
+name, but to the person to whom the name refers.
+이름은  그 뒤에 위에 숨은 본질에 접근하는 방편이다. 언어는 도단이다.
+The choice of name is up to the programmer and should be chosen
+to make the meaning of the function clear.
+이름의 선택은 기능을 명확히 하는 수단이다.
+1
+2
+5
+3
+jj;
+
+(+)(buffer-name)"2019_11_diary.org"
+(buffer-file-name)"/home/thinkpad/config_github/great_books/_achieve_agenda/2019_11_diary.org"
+"2019_11_diary.org" "2019_11_diary.org""/home/thinkpad/config_github/great_books/_achieve_agenda/2019_11_diary.org"
+C-u C-x C-e 출력이 나오다. 버퍼에 또한  C-u M-x (buffer-file-name)
+"/home/thinkpad/config_github/great_books/_achieve_agenda/2019_11_diary.org"
+"/home/thinkpad/config_github/great_books/_achieve_agenda/2019_11_diary.org"
+
+2
+hi
+1
+a
+(defun multiply-by-3 (number) ;
+"Multiply Number by 3."
+(interactive "p")
+(message "The result is %d" (* 3 number)))
+
+3
+(multiply-by-3 3)"The result is 9"
+(if (equal 'hi 'hi)
+	(message "3 is greater than 2"))
+
+(defun type-of-animal (characteristic)
+"Print message in echo area depenidng on CHARACTERISTIC.
+If the CHARACTERISTIC is the symbol 'fierce',
+then warn of a tiger."
+(if (equal characteristic 'fierce)
+    (message "It's a tiger!")))
+(type-of-animal 'fierce) ;only symbol is work true.
+
+
+Lisp interpreter is concerned, () and nil are the same.
+Humans, however, tend to use nil for false and () for the empty list
+사람의 경우 구분을 해서 인식할 필요가 있다.
+
+
+
+* 이전의 노트한 것을 옮긴다.
+M-| 또는 C-u M-| 
+드디어 발견함.
+2     1
+3 --> 2 C-u M-| sort 엔터
+1     3
+Sardi-Arc [GTK2
+M-g M-g 또는 g 줄로 이동하기 
+M-x view-lossage ;;입력의 기록을 보는 것임. 검색해서 실시간을 찾아볼것.
+C-; comment가 아니라 iedit.el로 설정되어 있음. 동시변환의 기능으로 영역설정후 원하는 것 일괄동시 변경함.
+cua-mode연구필요함.
+abcdefg
+
+#+BEGIN_SRC sh
+  echo hi
+  abcdefg
+  abcdfg 
+    abcdefgcase 
+
+	  abcdefgcase hi
+    abcdefgcase 
+  abcdefgcase 
+
+#+END_SRC

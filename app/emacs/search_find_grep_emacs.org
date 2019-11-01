@@ -1,0 +1,36 @@
+
+
+
+* 검색과 파일 내용 검색의 방법과 함수를 일단 수집 정리한다.
+
+ grep -i -nH -e "eshell/" *.el | grep -v defun
+ M-x grep -n -e setq ~/.emacs
+
+
+
+
+
+* 수집함.
+
+
+
+- 일단 실행파일에 저장됨.
+#+BEGIN_SRC emacs-lisp
+
+(defun dired-do-eshell-command (command)
+  "Run an Eshell command on the marked files."
+  (interactive "sEshell command: ")
+  (let ((files (dired-get-marked-files t)))
+    (eshell-command
+     (format "%s %s" command (mapconcat #'identity files " ")))))
+;; use M-x dired-do-eshell-command 리턴키 grep -nH --color {{검색어패턴} 리턴}
+;; grep marked files in the dired mode https://emacs.stackexchange.com/questions/30855/how-to-grep-marked-files-in-the-dired-mode-of-emacs/30866
+;; 매우 유용하므로 연구가 필요하다. my_fun_함수명으로 변경하여 일괄관리도 고려할 것. 또한 사이트를 자주 보고 패턴을 익힐 것.
+
+;; 아래는 테스트가 필요함
+(defun test1 (mes1)
+  "hi"
+  (interactive)
+  (message "you entered mes1 as %s" mes1))
+
+#+END_SRC

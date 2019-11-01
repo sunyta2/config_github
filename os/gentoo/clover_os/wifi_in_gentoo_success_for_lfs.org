@@ -1,0 +1,61 @@
+Gentoo linux를 설치를 연습하고 이후 LFS를 실행할 바탕을 만들기위한 WiFi환경구축을 목표로 한다!
+
+        * 이 노트는 이전의 성공의 사례로 옮긴 것이다.
+해결됨! Sakak's EFI Install Guide/SettingUp Networking and Connecting via shh
+#+BEGIN_SRC sh
+ip a
+iwconfig  ##참고 iwconfig wlan0 scan
+cd /etc/
+cat > wpa.conf
+network = {
+      ssid="Public WiFi Free"
+      key_mgmt=NONE
+      auth_alg=OPEN
+}
+^d
+cat wpa.conf
+chmod -v 600 $_
+
+wpa-supplicant -D nl80211,wext -i wlp3s0 -c /etc/wpa.conf -B
+
+#+END_SRC
+청색볼펜노트
+ kldload if-iwm         # if_iwm_load="YES"
+ kldload iwm7260fw      # iwm7260fm_load="YES"
+ kldstat
+
+ pciconf -lv
+ pciconf -lbcev | less /BCM4322
+ # dmesg | grep BroadCom -------중요표시됨---------> bwn0 (in MacBook)
+ ifconfig wlan0 create wlandev iwn0
+ service netif restart
+ dhclient wlan0 #---매우중요표시됨---#
+                                      # find / -type {d또는f} | less 검색의 방법을 적은 것으로 추정함.
+                                      # /usr/libexec/locate.updatedb # 아마 locate 명령의 데이터베이스
+ pkg static install -f pkg
+ pkg upgrade -f
+ 
+     # crux에서 사용되나 인터넷연결은 안 되는 명령 2종:  arp -an 와  netstat -r
+
+
+YouTube- Creating and Using a CHROOT JAIL in Linux Ubuntu - Part 2
+sudo mount -o bind /proc /SECURITY/JAIL/proc
+         # -o bind 의미 연구필요함
+                 # /proc 통합ssd, /SECURITY/JAIL/proc는 /home/thinkpad(Linux) /Users/thinkpad(MacOSX)
+cat /etc/resolv.conf # nameserver이라고 함.
+
+
+# UUID로 /ect/fstab을 편집하여 쉽게 mount하는 것을 아이디어로 가짐, 실험해야함.
+       # # google how mount fstab gentoo vfat?? fm??
+blkid -o full
+blkid -k # blkid --help 
+
+
+부정확한 노트이나 일단 기록
+ kldload pf
+ pfctl -e # packet 필요??
+ pfctl -d
+
+ nano /boot/loader.conf
+   >> kldload ext2fs
+ sudo mount -t /dev/ada0p8 /usr/home/disk /home ????

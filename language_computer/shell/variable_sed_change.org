@@ -1,0 +1,53 @@
+grep NEXT line
+grep -A1 'greek' logfile|grep -v "greek"
+cat << EOF |  grep -A 2 'greek'
+cat << EOF |  grep -A1 'greek' |grep -v "greek"
+
+> 1
+> 2 greek
+> 3
+> 4
+> 5
+> 6 greek good
+> 7
+> 8
+> 9
+> EOF
+2 greek
+3
+4
+--
+6 greek good
+7
+8
+awk '/19:55/{c=5} c-->0'
+awk '/19:55/{c=5} c && c--'
+When pattern found, set c=5
+If c is true, print and decrease number of c
+
+Here is a sed solution:
+sed '/19:55/{
+N
+N
+N
+N
+N
+s/\n/ /g
+}' file.txt
+
+sed 선택한다 줄의 정확한 지점을 변수로 저장한다. 크롬뮴으로 검색할 것.
+[thinkpad@msata045 ~]$ echo hi | espeak --stdin
+Here is a sed solution:
+
+[1] 205470
+$ notify-send "hi 2" &
+[2] 205475
+
+$ notify-send "hi 3" &
+[3] 205489
+
+
+
+
+/home/thinkpad/config_github/language_computer/shell/variable_sed_change.org
+[emacs - How to capture standard output of a shell command in elisp? - Stack Overflow](https://stackoverflow.com/questions/5014246/how-to-capture-standard-output-of-a-shell-command-in-elisp)

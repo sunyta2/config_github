@@ -1,0 +1,9 @@
+
+* tmux
+- tmuxp or tmuxinator
+yay install tmuxp
+
+
+* screen
+- GNU screen
+	- shortcut C-a {S | tab C-a c " # ('#) w} (find-file "./gnu_screen/screen_shortcut.org")

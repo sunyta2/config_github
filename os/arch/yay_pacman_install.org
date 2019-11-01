@@ -4,6 +4,7 @@ spectacle, kolour ;; For screenshot PrtSc to activate spectacle,
 translate ;; google translate
 pulsemixer ;; xsetroot ;; pulsemixer --get-volume | awk '{ print $1 }'
 
+tmuxp
 
 * pacman
 

@@ -94,3 +94,62 @@ $ ssh thinkpad@192.168.1.3
 
 셋팅이 저장된 곳/etc/ssh/sshd_config
 (find-file "/etc/ssh/")
+
+
+(defun tilde () (interactive) (insert "~"))
+(global-set-key "\M-\C-!" 'tilde)   ;; you choose the combo
+
+(global-set-key [home] 'beginning-of-line)
+(global-set-key (kbd "<home>") 'beginning-of-line)
+https://superuser.com/questions/710358/emacs-key-for-home-end#new-answer?s=bc13fec45c514d2194d1f9fe9b0ac58a
+[keyboard shortcuts - Emacs key for Home & End - Super User](https://superuser.com/questions/710358/emacs-key-for-home-end#new-answer?s=bc13fec45c514d2194d1f9fe9b0ac58a)
+## 추가로 답을 적어서 포인트를 얻을 것.
+(define-key key-translation-map (kbd "M-2") (kbd "@"))
+(setq mac-command-key-is-meta nil
+      mac-command-modifier nil)
+quoted-insert should deal with this.
+C-q Alt-N
+
+M-x customize-group ns
+
+- sudo inside Emacs - Stack Overflow
+C-x C-f /sudo::/path/to/file
+
+
+
+
+컴퓨터는 유기화된 통치질서이다.
+- 9 tmux를 실행하고 통제를 만들고 실행을 총괄한다.
+컴퓨터는 유기화된 통치질서이다.
+- 9 tmux를 실행하고 통제를 만들고 실행을 총괄한다.
+
+- dired C-u ^ 를 kill previous dired [EmacsWiki: Dired Reuse Directory Buffer](https://www.emacswiki.org/emacs/DiredReuseDirectoryBuffer)
+
+** [2019-10-31 Thu] 
+
+- os와 편집기의 매우 유기성있는 결합은 높은 추상성의 통합적인 아이디어와 비젼 그리고 노력을 요구한다.
+
+notify-send "hi 漢字가 나온다."
+espeak "hi 漢字가 나온다."
+
+- 경문을 분할하고 읽는 부분의 직전의 위치를 찾아내고 그것을 전주로 읽기와 알림창을 병행해서 사용한다. 화엄경 독송의 원리.
+
+
+- 성과 -반복청취의 실행을 조각조각 만들어 완성해 가는 중이다.
+$ notify-send "$(cat ~/file.org)" & 
+
+- 주력의 고정위치를 정하고 그 위주에 배치를 검토한다.- 결정은 현재발생지에 가까울 수록 변화에 긴박하고, 대응이 유연해진다.
+
+org파일로 주력의 음원에 배치하고 아래의 grep로 문장을 추출변수로 만들어서 사용한다.
+grep -A1 'greek' logfile|grep -v "greek" # /home/thinkpad/config_github/language_computer/shell/variable_sed_change.org 
+
+Have you added the function to your config.h?
+[Linux Patch Source Files With Diff Files - YouTube](https://www.youtube.com/watch?v=TC4Xa_T9RVM)
+
+static const double shade     = 0.6;      /* opacity of unfocussed clients */
+
+
+ # 현재 실행중인 파일을 다른 창에 열어 내는 중요한 기능을 발견함.- start 에서 사용중임.
+# (find-file-other-window (substring (shell-command-to-string "eval \"echo $(cat $HOME/config_github/bookmark/start_homer_rhythm_org_path_bookmark.txt)\"") 0 -1))
+
+

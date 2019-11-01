@@ -1,0 +1,19 @@
+
+
+참조 : (find-file-other-window "../gentoo/clover_os/wifi_in_gentoo_success_for_lfs.org")
+su root 
+pkg install lumina xorg qt4-imageformats
+
+edit /etc/rc.conf
+>> hold_enable="YES"
+   dbus_enable="YES"
+   moused_enable="YES"
+   mixer_enable="YES"
+ # 4 line added for lumina
+shutdown -r now
+
+edit ~/.xinitrc
+#!/bin/sh
+/usr/local/bin/Lumina -DE
+chomod 755 ~/.Xinitrc
+startx

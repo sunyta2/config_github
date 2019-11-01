@@ -112,3 +112,15 @@
 :config
 (simpleclip-mode 1)
 )
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defun dired-do-eshell-command (command)
+  "Run an Eshell command on the marked files."
+  (interactive "sEshell command: ")
+  (let ((files (dired-get-marked-files t)))
+    (eshell-command
+     (format "%s %s" command (mapconcat #'identity files " ")))))
+;; use M-x dired-do-eshell-command 리턴키 grep -nH --color {{검색어패턴} 리턴}
+;; grep marked files in the dired mode https://emacs.stackexchange.com/questions/30855/how-to-grep-marked-files-in-the-dired-mode-of-emacs/30866
+;; 매우 유용하므로 연구가 필요하다. my_fun_함수명으로 변경하여 일괄관리도 고려할 것. 또한 사이트를 자주 보고 패턴을 익힐 것.
