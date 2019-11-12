@@ -1,0 +1,5 @@
+
+* ~/.bin copy of this file and edit in there and recap in here for git push
+
+* strategy to use shell command in app/shell to use there script in general way
+
