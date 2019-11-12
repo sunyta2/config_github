@@ -1,0 +1,45 @@
+;; purpose: stumpwm dotfile to use real os and sync github in korean 
+
+;; ~/.stumpwmrc ;; in arch KDE
+;;   stumpwmrc_in_github_syncXX ;; in 
+;; ~/config_github/app/stump/stumpwmrc_in_home_dot_stumpwmrc
+                   ;; m-> ;; to save git
+
+;; make rofi POSSIBLE ;; C-t CMD-r in stumpwm!!!
+(define-key *root-map* (kbd "s-r") "exec rofi -combi window,run -show combi") ;; CURRENT BEST!!! in stumpwm Use in the s-r for confomation with dwm sync.
+
+;; (define-key *root-map* (kbd "C-d") "exec rofi -combi window,run -show combi") ;; Success!! "C-d"
+;; (define-key *root-map* (kbd "c-d") "exec rofi -combi window,run -show combi")) ;; error in "c-d"
+
+;;error in below
+;;(define-key *root-map* (kbd "c-d") "exec rofi -modi window,run,combi -show combi")
+;;(define-key *root-map* (kbd "c-d" "exec rofi -combi window,run -show combi"))
+;;(define-key *root-map* (kbd "c-d" "exec rofi -combi window,run -show combi")) ;; error in loading in kde
+
+(mode-line) ;; mode-line
+
+
+;;/home/thinkpad/config_github/app/stumpwm/
+
+;;;[ .stumpwmrc c-x c-e ];;;
+;; (message "emacs command to save git ")
+;; (shell-command "cp ~/.stumpwmrc ~/config_github/app/stumpwm/stumpwmrc_in_home_dot_stumpwmrc")
+;;           (dired "~/config_github/app/stumpwm/stumpwmrc_in_home_dot_stumpwmrc") ;; good!
+                            ;; good!
+;;           (dired "~/.stumpwmrc")
+                            ;; good!
+;; CAREFUL! git to CHANGE reall ACTIVATED config
+;; (shell-command "cp ~/config_github/app/stumpwm/stumpwmrc_in_home_dot_stumpwmrc ~/.stumpwmrc") ;; CAREFUL!
+
+
+;; (find-file "~/")
+;; (find-name-dired "~/config_github/app/stumpwm/" "stump*")
+;;           ;; (dired-jump "~/config_github/app/stumpwm/stumpwmrc_in_home_dot_stumpwmrc") ;; not good this method
+;;           (dired "~/config_github/app/stumpwm/stumpwmrc_in_home_dot_stumpwmrc") ;; good!
+;; (find-name-dired "~/config_github/" "*stump*") ;;
+;; (find-name-dired "~/" "*mp4*") ;; 음원재생에 탁월한 효과
+
+
+
+
+;;;[ .stumpwmrc c-x c-e ];;;
