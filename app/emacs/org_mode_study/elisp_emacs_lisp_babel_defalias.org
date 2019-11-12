@@ -1,0 +1,22 @@
+#+BEGIN_SRC elisp
+(defalias 'org-babel-execute:py 'org-babel-execute:python)
+#+END_SRC
+This works because the function org-babel-execute:elisp exists. Looking at the help for that function shows
+
+org-babel-execute:elisp is an alias for ‘org-babel-execute:emacs-lisp’ in ‘ob-emacs-lisp.el’.
+
+(org-babel-execute:elisp BODY PARAMS)
+
+Execute a block of emacs-lisp code with Babel.
+
+
+
+#+BEGIN_SRC elisp :results output
+(print org-babel-load-languages)
+#+END_SRC
+
+#+RESULTS:
+: 
+: ((emacs-lisp . t) (python . t) (ipython . t) (plantuml . t) (dot . t) (calc . t) (C . t) (latex . t) (sqlite . t) (java . t) (shell . t))
+
+[org mode - orgmode - babel language elisp vs. emacs-lisp - Emacs Stack Exchange](https://emacs.stackexchange.com/questions/34466/orgmode-babel-language-elisp-vs-emacs-lisp)

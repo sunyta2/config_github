@@ -1,0 +1,5 @@
+	   \"; sleep 003; done ; espeak korean_text_for_global_Great_Mind. ")
+         #+END_SRC
+
+	#+BEGIN_SRC emacs-lisp :results silent :comment 라틴어빠르게5번읽기
+        (async-shell-command "echo greek_text_is_best_study; for i in {1..30} ; do espeak -v itc/la -s 150 -g 30 \"

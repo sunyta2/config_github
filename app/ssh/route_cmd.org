@@ -1,0 +1,76 @@
+정답은 # route add default gw 192.168.123.254 
+
+*** [2019-11-02 Sat 15:18] gentoo route CMD 발견
+[7 Linux Route Command Examples (How to Add Route in Linux)](https://www.thegeekstuff.com/2012/04/route-examples/)
+정답은 # route add default gw 192.168.123.254 
+인: gentoo에서 wifi와 ethernet의 라우터 충돌발생 [2019-11-02 Sat 15:18]
+리: ssh/route_cmd.org (find-file-other-window "~/config_github/app/ssh/route_cmd.org")
+- 파일 이치적인 파일
+- 동영상 : [How to use the route command for a specified interface in all versions of Windows - YouTube](https://www.youtube.com/watch?v=rqAqS8LDGm8)
+- 관련자료 : [networking - Cannot ping Wireless IP when ethernet is connected - Super User](https://superuser.com/questions/562353/cannot-ping-wireless-ip-when-ethernet-is-connected)
+route add 10.236.11.0 mask 255.255.255.0 10.236.10.1
+사: gentoo_lfs
+- 파일 활용적인 파일
+연: (find-file-other-window "~/config_github/os/gentoo/install_process/youtube_t530_study.org")
+
+
+
+* [2019-11-11 Mon 13:18] route -n ip r
+Run command:
+$ route add default gw {IP-ADDRESS} {INTERFACE-NAME}
+$ route add default gw 192.168.2.254 eth0
+
+ You can also use ip command as follows to set default routing/gateway on Linux:
+# ip route add default via 192.168.1.254
+
+Verify it:
+# route -n
+
+OR
+# ip r
+
+How to delete the default route
+To deletes the current default route,
+ which is labeled “default” or 0.0.0.0 in the destination field of the current routing table.
+
+# route del default
+site : [How to install route command on CentOS / RHEL 7 - nixCraft](https://www.cyberciti.biz/faq/install-route-command-centos-rhel-7/)
+
+
+* [2019-11-11 Mon 16:47] self-applied function 자기반추적인 기능(우주의 운행작동-로고스의 직접구현됨)
+- 구현되는 사물에 로고스는 결정력을 지니는 것으로 생각된다.
+- 대학은 무지의 최전방이다. 진리의 방패가 영토 유지하고 그 창이 확장시킨다.
+something called self application - it's the idea of applying something to itself.
+출처: [https://youtu.be/9T8A89jgeTI?t=336][Essentials: Functional Programming's Y Combinator - Computerphile - YouTube]
+
+
+람다함수-LAMBDA Calculus syntax 출처: [https://youtu.be/3VQ382QG-y4?t=200][Lambda Calculus - Fundamentals of Lambda Calculus & Functional Programming in JavaScript - YouTube]
+expression ::= variable	identifier
+	| expression expression application
+	| lambda variable.expression	abstraction
+	| ( expression )	grouping
+비교  ( 람다함수 | javascript )
+[Application]
+f a              |           f(a)
+f a b            |           f(a)(b)
+
+> add = a => b => a + b
+[Function: add]
+> add(1)
+[Function]
+> add(1)(2)
+3
+(f a) b          |          (f(a))(b)
+f (a b)          |          f(a(b))
+
+[Abstractions]
+lambda a.b       |          a => b a를 입력받고 일단 b를 반환한다.
+lambda a.b x     |          a => b(x)
+람다는 탐욕스럽게 오른쪽을 삼킨다. 따라서 아래의 괄호는 무의미함.
+lambda a.(b x)   |          a => (b(x))
+
+
+(lambda a.b) x   |          (a => b)(x)
+lambda a.lambda b.a |       a => b => a
+람다는 탐욕스럽게 오른쪽을 삼킨다. 따라서 아래의 괄호는 무의미함.
+lambda a.(lambda b.a)|       a => (b => a)

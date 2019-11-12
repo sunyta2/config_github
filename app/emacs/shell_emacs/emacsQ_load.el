@@ -43,8 +43,13 @@
 
 ;; addtion of shortcut
 ;; C-x C-j jump-dired
-;; C-x 4 C-j 가 유용해서 불필요함. (define-key global-map (kbd "C-x C-j") 'dired-jump)
-;;                 이후 C-x 4 0 로 사용을 중단함.
+    ;; (find-file-other-window "~/config_github/app/emacs/org_mode_study/agenda_view_org.org")
+(global-set-key (kbd "C-c a") 'org-agenda)
+(setq org-agenda-window-setup (quote current-window)) ;;open agenda in current window
+;; C-x 4 C-j 가 유용
+(define-key global-map (kbd "C-x 4 C-j") 'dired-jump-other-window)
+(define-key global-map (kbd "C-x C-j") 'dired-jump-other-window)
+;;  (dired-jump-other-window) 0w   이후 q 또는 C-x 4 0 로 사용을 중단함.
                                    ;; C-g  g grep-mac-chrome
 
 
@@ -71,6 +76,15 @@
   (require 'use-package))
 
 
+
+  (use-package command-log-mod
+  :config 
+  (clm/open-command-log-buffer)
+	;(require 'command-log-mode)
+	;(add-hook 'LaTeX-mode-hook 'command-log-mode)
+	;To see the log buffer, call M-x clm/open-command-log-buffer.
+  )
+
 ;; 나중에 use-package의 사용파일 분리를 고려할 것.emacs_package폴더를 고려해서 그곳에 두는 것이 낫다.
 (use-package magit
   ;;:init
@@ -85,6 +99,13 @@
   (neotree-show)
 )
 
+
+;;
+(use-package visible-mark
+)
+
+(use-package paredit
+)
 
 ;; Emacs as a C/C++ Editor/IDE (Part I) https://www.youtube.com/watch?v=HTUE03LnaXA
 ; (package-initialize)

@@ -1,0 +1,104 @@
+
+
+#+NAME: RECEIVE_FILE
+#+BEGIN_TEXT sh :note "이것이 $comment로 입력되는 것이다."
+/home/thinkpad/config_github/great_books/vitruvius/de_architectura/liber01.org
+#+END_TEXT
+
+(find-file-other-window RECEIVE_FILE)
+(find-file-read-only-other-window "/home/thinkpad/config_github/great_books/vitruvius/de_architectura/liber01.org")
+
+#+BEGIN_TEXT sh :note "이것을 폼으로 두어서 참조할 것."
+| invictaque | virtute |    cunctis   | hostibus  |   stratis  | triumpho             | 
+invictaque virtute cunctis hostibus stratis triumpho
+| invincible | bravery | all together | foreigner | spread out | triumphal procession |
+when all their enemies had been laid low by your invincible valour, 
+나무 대방광불화엄경
+#+END_TEXT
+
+
+#+NAME: EXCERPTED_TEXT
+#+BEGIN_TEXT sh :note "이것이 실제로 바로 저장되는 것이 입력되는 것이다."
+| imperator Caesar, | imperio | potiretur  | orbis  | terrarum |
+imperator Caesar, imperio potiretur orbis terrarum
+| Imperator Caesar, | order   | make slave | circle |  world,  |
+Imperator Caesar, were engaged in acquiring the right to command the world,
+나무 대방광불화엄경
+#+END_TEXT
+
+   omnes subactae tuum spectarent nutum populusque Romanus et senatus liberatus timore amplissimis tuis cogitationibus consiliisque gubernaretur, non audebam, tantis occupationibus, de architectura scripta et magnis cogitationibus explicata edere, metuens, ne non apto tempore interpellans subirem tui animi offensionem.
+   —while all foreign nations were in subjection awaiting your beck and call, and the Roman people and senate, released from their alarm, were beginning to be guided by your most noble conceptions and policies, I hardly dared, in view of your serious employments, to publish my writings and long considered ideas on architecture, for fear of subjecting myself to your displeasure by an unseasonable interruption.
+
+
+#+CALL: TEXT_RESULTS_DISPLAY()
+
+#+RESULTS:
+
+* #+NAME: TEXT_RESULTS_SEND latin
+#+NAME: TEXT_RESULTS_SEND
+#+BEGIN_SRC sh :results raw :var a=EXCERPTED_TEXT 
+#receive_file=RECEIVE_FILE
+
+receive_file="/home/thinkpad/config_github/great_books/vitruvius/de_architectura/liber01.org"
+#echo hi1 >> "${receive_file}" #1
+#echo hi2 >> $receive_file #1
+#echo hi3 >> /home/thinkpad/config_github/great_books/vitruvius/de_architectura/liber01.org
+echo "** # $(sed -n '1p' <<< $a)" >> "$receive_file" #1
+cat "./latin01.txt" >> "$receive_file"
+echo "          $(sed -n '3p' <<< $a)" >> "$receive_file" #2
+cat "./latin02.txt" >> "$receive_file"
+echo "$(sed -n '4p' <<< $a)" >> "$receive_file" #3
+cat "./latin03.txt" >> "$receive_file"
+echo "$(sed -n '5p' <<< $a)" >> "$receive_file" #4
+cat "./latin04.txt" >> "$receive_file"
+echo "$(sed -n '2p' <<< $a)" >> "$receive_file" #5
+cat "./latin05.txt" >> "$receive_file"
+echo "          $(sed -n '1p' <<< $a)" >> "$receive_file" #1
+cat "./latin06.txt" >> "$receive_file"
+echo "** # $(sed -n '3p' <<< $a)" >> "$receive_file" #2
+#+END_SRC
+
+#+RESULTS: TEXT_RESULTS_SEND
+/home/thinkpad/config_github/great_books/vitruvius/de_architectura/liber01.org
+
+
+#+RESULTS:
+
+
+* backup2 #+NAME: TEXT_RESULTS_DISPLAY latin
+#+NAME: TEXT_RESULTS_DISPLAY
+#+BEGIN_SRC sh :results raw :var a=EXCERPTED_TEXT
+#cat "./latin00.txt" # /home/thinkpad/config_github/great_books/vitruvius/de_architectura/form/
+echo "** # $(sed -n '1p' <<< $a)" #1
+cat "./latin01.txt"
+echo "         $(sed -n '3p' <<< $a)" #2
+cat "./latin02.txt"
+echo "$(sed -n '2p' <<< $a)" #3
+cat "./latin03.txt"
+echo "$(sed -n '4p' <<< $a)" #4
+cat "./latin04.txt"
+echo "$(sed -n '5p' <<< $a)" #5
+cat "./latin05.txt"
+echo "         $(sed -n '1p' <<< $a)" #1
+cat "./latin06.txt"
+echo "** # $(sed -n '3p' <<< $a)" #2
+#########################순서의 변경이 필요해서 아래의 더 정확한 것으로 변경됨
+#echo hi1 >> "${receive_file}" #1
+#echo hi2 >> $receive_file #1
+#echo hi3 >> /home/thinkpad/config_github/great_books/vitruvius/de_architectura/liber01.org
+echo "** # $(sed -n '1p' <<< $a)" >> "$receive_file" #1
+cat "./latin01.txt" >> "$receive_file"
+echo "          $(sed -n '3p' <<< $a)" >> "$receive_file" #2
+cat "./latin02.txt" >> "$receive_file"
+echo "$(sed -n '4p' <<< $a)" >> "$receive_file" #3
+cat "./latin03.txt" >> "$receive_file"
+echo "$(sed -n '5p' <<< $a)" >> "$receive_file" #4
+cat "./latin04.txt" >> "$receive_file"
+echo "$(sed -n '2p' <<< $a)" >> "$receive_file" #5
+cat "./latin05.txt" >> "$receive_file"
+echo "          $(sed -n '1p' <<< $a)" >> "$receive_file" #1
+cat "./latin06.txt" >> "$receive_file"
+echo "** # $(sed -n '3p' <<< $a)" >> "$receive_file" #2
+#+END_SRC
+
+#+RESULTS:

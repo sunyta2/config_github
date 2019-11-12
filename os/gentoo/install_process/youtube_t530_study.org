@@ -1,0 +1,519 @@
+ okular "$(find ~/Music  -inum 6836311)" &
+# this is arco open (async-shell-command "okular \"$(find ~/Music  -inum 6836311)\" &")
+
+
+
+
+동영상의 W541 저장위치 ~/Music/
+실행명령어 
+(async-shell-command "mpv \"$HOME/Music/Gentoo linux installation - full process-X4SxEzPDjsk.mkv\"")
+** Gentoo USB boot up and ,passwd,sshd start, tmux new-session, , 
+If any ethernet adapters were dected at boot, they should be auto-configured
+if DHCP is available on you network. Type "net-setup eth0" to specify eth0 IP address settings by hand.
+
+Check /etc/kernels/kernel-config-* for kernel configurations(s).
+The latest version of the Handbook is alwasy available form the Gentoo web site 
+by typing "links https://wiki.gentoo.org/wiki/Handbook".
+
+To start an ssh server on this system, type "/etc/init.d/sshd start".
+If you need to log in revomely as root, type "passwd root" to reset root's password to a know value.
+
+*** # passwd root
+*** # /etc/init.d/sshd start
+*** # tmux new-session -t gentoo
+*** $ ssh root@192.168.1.4 #[thinkpad@msata045 ~]에서 delete print
+*** # lsblk 주의 빈 드라이브를 잘 지정할 것.
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+loop0    7:0    0  315M  1 loop /mnt/livecd
+sdb      8:16   0 14.9G  0 disk 
+|-sdb1   8:17   0  200M  0 part 
+`-sdb2   8:18   0 14.7G  0 part 
+
+** 동영상의 내용을 아래에 나의 사용을 동일시에도 그대로 적용
+- W520의 동영상내용 시간을 아래...
+- 중단 지점까지 가볼 것.
+*** lsblk 시작 주의할 것 sdb를 사용할 것 (동영상은 sda라도 다시 확인)
+000030 - now we can begin!
+*** # parted -a optimal /dev/sdb
+000120 # parted -a optimal /dev/sd#
+#+BEGIN_SRC sh
+ivecd ~ #  parted -a optimal /dev/sdb                            
+GNU Parted 3.2
+Using /dev/sdb
+Welcome to GNU Parted! Type 'help' to view a list of commands.    
+                                                                  
+(parted)
+
+#+END_SRC
+***   mklabel gpt
+***   unit mib
+***  mkpart primary 1 51 #일단 10분의 1로 줄이는 전략을 사용함.
+000200 mkpart primary 1 512
+***  name 1 EFI
+***  mkpart primary 51 101
+***  name 2 boot
+***  mkpart primary 101 1739
+***  name 3 swap
+***  mkpart primary 1739 5835
+***  name 4 root
+***  mkpart primary 5835 -1
+***  name 5 home
+***  q
+(parted) q
+Information: You may need to update /etc/fstab.
+000400
+
+*** WiFi route CMD 아래의 * wifi 참조할 것
+*** 000400 # mkfs.vfat -F 32 /dev/sdb1
+mkfs.vfat -F 32 /dev/sd#1
+#+BEGIN_SRC sh
+livecd ~ #  mkfs.vfat -F 32 /dev/sdb1                             
+mkfs.fat 4.1 (2017-01-24)
+#+END_SRC
+
+*** # mkfs.ext2 /dev/sdb2
+mkfs.ext2 /dev/sd#2
+#+BEGIN_SRC sh
+livecd ~ #  mkfs.ext2 /dev/sdb2
+mke2fs 1.45.2 (27-May-2019)
+Discarding device blocks: done                                    
+Creating filesystem with 51200 1k blocks and 12824 inodes         
+Filesystem UUID: 3bdf7008-953c-4f6e-9de3-740bbfdb2ce2             
+Superblock backups stored on blocks:                              
+        8193, 24577, 40961
+
+Allocating group tables: done                                     
+Writing inode tables: done                                        
+Writing superblocks and filesystem accounting information: done 
+#+END_SRC
+
+*** 000500 # mkswap /dev/sdb3
+mkswap /dev/sd#3
+***        # mkfs.xfs /dev/sdb4
+mkfs.xfx /dev/sd#4
+*** 000600 # mkfs.ext4 /dev/sdb5
+mkfs.ext4 /dev/sd#5
+*** 000630 # mkdir /mnt/gentoo
+***        # mount /dev/sdb4 /mnt/gentoo , 
+mkdir /dev/sd#4 /mnt/gentoo
+***        # cd /mnt/gentoo
+***          # apt-get install links
+*** 000730   # links gentoo.org
+***           # links gentoo.org > Downloads
+                아님. x86 >> Stage 3 i686 ####-##-## ###MiB
+                  아님 Download [ stage3-i686-#######.tar.xz ] [Cancel]!
+*** 000845    # 이것임 amd64 aka x86_64 >> Stage 3
+***               이것임 >> Stage 3 ####-##-## ### MiB
+***                   Download [ stage3-amd64-######.tar.xz ] [OK]
+*** 000915 # tar xpf stage3* --xattrs-include='*.*' --numeric-owner , 
+***        # apt-get install vim 대신 emacs 사용할 것임. ,
+*** 001130 # emacs /mnt/gentoo/etc/portage/make.conf #아래 변경내용,
+**** 변경내용 #<--#원본에서
+
+#+BEGIN_SRC sh
+
+# Please consult /usr/share/portage/config/make.conf.example for a more                       
+
+# detailed example.
+COMMON_FLAGS="-march=ivybridge -O2 -pipe"    #<--#COMMON_FLAGS="-O2 -pipe"
+CFLAGS="${COMMON_FLAGS}"
+CXXFLAGS="${COMMON_FLAGS}"
+FCFLAGS="${COMMON_FLAGS}"
+FFLAGS="${COMMON_FLAGS}"
+CPU_FLAGS_X86="mmx sse sse2"                 #<--#빈줄이었음 여기부터
+USE="alsa glamour"
+MAKEOPTS="-j3"                 #<--#j5이었음 j3으로 x220에 맞게 변경함
+EMERGE_DEFAULT_OPTS=" --jobs 3 --with-bdeps=y --quiet --keep-going=y"
+PORTAGE_TMPDIR="/var/tmp"
+ACCEPT_LICENSE="*"
+#VIDEO_CARDS="intel i915"
+EDITOR=/usr/bin/emacs        #<--#vim이었음 emacs로 변경함
+GRUB_PLATFORMS="efi-64"                       #<--#빈줄이었음 여기까지
+
+# NOTE: This stage was built with the bindist Use flag enabled                                
+PORTDIR="/var/db/repos/gentoo"
+DISTDIR="/var/cache/distfiles"
+PKGDIR="/var/cache/binpkgs"
+
+# This sets the language of build output to English.
+
+#+END_SRC
+**** 001700 수정내용을 동영상에서 재확인할 것
+*** 001715 # mkdir --parents /mnt/gentoo/etc/portage/repos.conf
+***        # cp /mnt/gentoo/usr/share/portage/config/repos.conf /mnt/gentoo/etc/portage/repos.conf/gentoo.conf
+*** 001900 # cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
+***        # mount --types proc /proc /mnt/gentoo/proc
+***        # mount --rbind /dev /mnt/gentoo/dev
+***        # mount --rbind /sys /mnt/gentoo/sys
+***        # test -L /dev/shm && rm /dev/shm && mkdir /dev/shm
+***        # mount --types tmpfs --options nosuid,nodev,noexec shm /dev/shm
+***        # chmod 1777 /dev/shm
+***        # chroot /mnt/gentoo/ /bin/bash
+*** 002300 # source /etc/profile
+***        # export PS1="(chroot) ${PS1}"
+*** (chroot) # mount /dev/sdb2 /boot , 
+(chroot) # mount /dev/sd#2 /boot
+***        # emerge-webrsync
+*** 002600 # emerge --sync --quiet # 이명령실행후 기다리는 중이다.
+*** 002730 # eselect profile list
+***        # emerge -aDNuv @world
+***         >> # ?  y [Yes]
+***        #나의 에디터로 일단 emerge -a emacs # 실행해서 다운로드함.
+*** 002900 # ls /usr/share/zoneinfo/
+***        # echo "Asia/Seoul" > /etc/timezone
+*** 002930 # emerge --config sys-libs/timezone-data
+*** 003100 # emacs /etc/locale.gen , 
+nano -w /etc/locale.gen
+***         >> en_US.UTF-8 UTF-8
+***         >> ko_KR.UTF-8 UTF-8
+***         >> en_US ISO-8859-1
+***        # locale-gen
+***        # eselect locale list
+*** 003200 # eselect locale set 3
+***        # emacs /etc/env.d/02locale ,
+nano -w /etc/env.d/02locale
+***         >>LANG="en_US.utf8"
+***         >>LC_COLLATE="C"
+*** 003500 # env-update && source /etc/profile && export PS1="(chroot) $PS1"
+***        # emerge -a cpuid2cpuflags
+***        # emerge -a vim emacs
+*** 003600 # cpuid2cpuflags >> /etc/portage/make.conf
+***        # emacs /etc/portage/make.conf , 
+vim /etc/portage/make.conf
+***         >>CPU_FLAGS_X86="aes avx f16c mmx mmxert pclmul popcnt sse sse2 sse3 sse4_1 sse4_2 ssse3" , 
+***         >>GENTOO_MIRRORS="http://mirror.swithc.ch/ftp/mirror/gentoo/ http://mirrors.evowise.com/gentoo/ http://lug.mtu.edu/gentoo/"
+*** 004030 # etc-update
+*** 003930 # emerge -a gentoo-sources genkernel usbutils dosfstools pciutils gentoolkit ufed eix axel xfsprogs ,,, 
+**** 실행의 과정에서
+
+(chroot) livecd / # emerge -a gentoo-sources genkernel usbutils dosfstools pciutils gentoolkit ufed eix axel xfsprogs
+
+#+BEGIN_SRC sh
+The following USE changes are necessary to proceed:                                                                             │·····················
+ (see "package.use" in the portage(5) man page for more details)                                                                │·····················
+# required by sys-kernel/genkernel-3.5.3.3::gentoo                                                                              │·····················
+# required by genkernel (argument)                                                                                              │·····················
+>=sys-apps/util-linux-2.33.2 static-libs                                                                                        │·····················
+                                                                                                                                │·····················
+Would you like to add these changes to your config files? [Yes/No] y                                                            │·····················
+                                                                                                                                │·····················
+Autounmask changes successfully written.                                                                                        │·····················
+                                                                                                                                │·····················
+ * IMPORTANT: 2 config files in '/etc/portage' need updating.                                                                   │·····················
+ * See the CONFIGURATION FILES and CONFIGURATION FILES UPDATE TOOLS                                                             │·····················
+ * sections of the emerge man page to learn how to update config files.                                                         │·····················
+#+END_SRC
+
+
+# etc-update 명령을 실행함.
+#+BEGIN_SRC sh
+(chroot) livecd / # etc-update                                                                                                  │·····················
+Scanning Configuration files...                                                                                                 │·····················
+The following is the list of files which need updating, each                                                                    │·····················
+configuration file is followed by a list of possible replacement files.                                                         │·····················
+1) /etc/portage/package.use/zz-autounmask (1)                                                                                   │·····················
+Please select a file to edit by entering the corresponding number.                                                              │·····················
+              (don't use -3, -5, -7 or -9 if you're unsure what to do)                                                          │·····················
+              (-1 to exit) (-3 to auto merge all files)                                                                         │·····················
+                           (-5 to auto-merge AND not use 'mv -i')                                                               │·····················
+                           (-7 to discard all updates)                                                                          │·····················
+                           (-9 to discard all updates AND not use 'rm -i'): 3                                                   │·····················
+The following is the list of files which need updating, each                                                                    │·····················
+configuration file is followed by a list of possible replacement files.                                                         │·····················
+1) /etc/portage/package.use/zz-autounmask (1)                                                                                   │·····················
+Please select a file to edit by entering the corresponding number.                                                              │·····················
+              (don't use -3, -5, -7 or -9 if you're unsure what to do)                                                          │·····················
+              (-1 to exit) (-3 to auto merge all files)                                                                         │·····················
+                           (-5 to auto-merge AND not use 'mv -i')                                                               │·····················
+                           (-7 to discard all updates)                                                                          │·····················
+                           (-9 to discard all updates AND not use 'rm -i'): 3                                                   │·····················
+The following is the list of files which need updating, each                                                                    │·····················
+configuration file is followed by a list of possible replacement files.                                                         │·····················
+1) /etc/portage/package.use/zz-autounmask (1)                                                                                   │·····················
+Please select a file to edit by entering the corresponding number.                                                              │·····················
+              (don't use -3, -5, -7 or -9 if you're unsure what to do)                                                          │·····················
+              (-1 to exit) (-3 to auto merge all files)                                                                         │·····················
+                           (-5 to auto-merge AND not use 'mv -i')                                                               │·····················
+                           (-7 to discard all updates)                         
+                           (-9 to discard all updates AND not use 'rm -i'): 3                                                   │·····················
+The following is the list of files which need updating, each                                                                    │·····················
+configuration file is followed by a list of possible replacement files.                                                         │·····················
+1) /etc/portage/package.use/zz-autounmask (1)                                                                                   │·····················
+Please select a file to edit by entering the corresponding number.                                                              │·····················
+              (don't use -3, -5, -7 or -9 if you're unsure what to do)                                                          │·····················
+              (-1 to exit) (-3 to auto merge all files)                                                                         │·····················
+                           (-5 to auto-merge AND not use 'mv -i')                                                               │·····················
+                           (-7 to discard all updates)                                                                          │·····················
+                           (-9 to discard all updates AND not use 'rm -i'): 3                                                   │·····················
+The following is the list of files which need updating, each                                                                    │·····················
+configuration file is followed by a list of possible replacement files.                                                         │·····················
+1) /etc/portage/package.use/zz-autounmask (1)                                                                                   │·····················
+Please select a file to edit by entering the corresponding number.                                                              │·····················
+              (don't use -3, -5, -7 or -9 if you're unsure what to do)                                                          │·····················
+              (-1 to exit) (-3 to auto merge all files)                                                                         │·····················
+                           (-5 to auto-merge AND not use 'mv -i')                                                               │·····················
+                           (-7 to discard all updates)                                                                          │·····················
+                           (-9 to discard all updates AND not use 'rm -i'): 3                                                   │·····················
+The following is the list of files which need updating, each                                                                    │·····················
+configuration file is followed by a list of possible replacement files.                                                         │·····················
+1) /etc/portage/package.use/zz-autounmask (1)                                                                                   │·····················
+Please select a file to edit by entering the corresponding number.                                                              │·····················
+              (don't use -3, -5, -7 or -9 if you're unsure what to do)                                                          │·····················
+              (-1 to exit) (-3 to auto merge all files)                                                                         │·····················
+                           (-5 to auto-merge AND not use 'mv -i')                                                               │·····················
+                           (-7 to discard all updates)                                                                          │·····················
+                           (-9 to discard all updates AND not use 'rm -i'): 3                                                   │·····················
+The following is the list of files which need updating, each                                                                    │·····················
+configuration file is followed by a list of possible replacement files.                                                         │·····················
+1) /etc/portage/package.use/zz-autounmask (1)                                                                                   │·····················
+Please select a file to edit by entering the corresponding number.                                                              │·····················
+              (don't use -3, -5, -7 or -9 if you're unsure what to do)                                                          │·····················
+              (-1 to exit) (-3 to auto merge all files)                                                                         │·····················
+                           (-5 to auto-merge AND not use 'mv -i')                                                               │·····················
+                           (-7 to discard all updates)                                                                          │·····················
+                           (-9 to discard all updates AND not use 'rm -i'): 3                                                   │·····················
+The following is the list of files which need updating, each                                                                    │·····················
+configuration file is followed by a list of possible replacement files.                                                         │·····················
+1) /etc/portage/package.use/zz-autounmask (1)                                                                                   │·····················
+Please select a file to edit by entering the corresponding number.                                                              │·····················
+              (don't use -3, -5, -7 or -9 if you're unsure what to do)                                                          │·····················
+              (-1 to exit) (-3 to auto merge all files)                                                                         │·····················
+                           (-5 to auto-merge AND not use 'mv -i')                                                               │·····················
+                           (-7 to discard all updates)                                                                          │·····················
+                           (-9 to discard all updates AND not use 'rm -i'): 3  
+The following is the list of files which need updating, each                                                                    │·····················
+configuration file is followed by a list of possible replacement files.                                                         │·····················
+1) /etc/portage/package.use/zz-autounmask (1)                                                                                   │·····················
+Please select a file to edit by entering the corresponding number.                                                              │·····················
+              (don't use -3, -5, -7 or -9 if you're unsure what to do)                                                          │·····················
+              (-1 to exit) (-3 to auto merge all files)                                                                         │·····················
+                           (-5 to auto-merge AND not use 'mv -i')                                                               │·····················
+                           (-7 to discard all updates)                                                                          │·····················
+                           (-9 to discard all updates AND not use 'rm -i'): 3                                                   │·····················
+The following is the list of files which need updating, each                                                                    │·····················
+configuration file is followed by a list of possible replacement files.                                                         │·····················
+1) /etc/portage/package.use/zz-autounmask (1)                                                                                   │·····················
+Please select a file to edit by entering the corresponding number.                                                              │·····················
+              (don't use -3, -5, -7 or -9 if you're unsure what to do)                                                          │·····················
+              (-1 to exit) (-3 to auto merge all files)                                                                         │·····················
+                           (-5 to auto-merge AND not use 'mv -i')                                                               │·····················
+                           (-7 to discard all updates)                                                                          │·····················
+                           (-9 to discard all updates AND not use 'rm -i'): 3                                                   │·····················
+The following is the list of files which need updating, each                                                                    │·····················
+configuration file is followed by a list of possible replacement files.                                                         │·····················
+1) /etc/portage/package.use/zz-autounmask (1)                                                                                   │·····················
+Please select a file to edit by entering the corresponding number.                                                              │·····················
+              (don't use -3, -5, -7 or -9 if you're unsure what to do)                                                          │·····················
+              (-1 to exit) (-3 to auto merge all files)                                                                         │·····················
+                           (-5 to auto-merge AND not use 'mv -i')                                                               │·····················
+                           (-7 to discard all updates)                                                                          │·····················
+                           (-9 to discard all updates AND not use 'rm -i'): 1                                                   │·····················
+                                                                                                                                │·····················
+                                                                                                                                │·····················
+File: /etc/portage/package.use/._cfg0000_zz-autounmask                                                                          │·····················
+1) Replace original with update                                                                                                 │·····················
+2) Delete update, keeping original as is                                                                                        │·····················
+3) Interactively merge original with update                                                                                     │·····················
+4) Show differences again                                                                                                       │·····················
+5) Save update as example config                                                                                                │·····················
+Please select from the menu above (-1 to ignore this update): 1                                                                 │·····················
+Replacing /etc/portage/package.use/zz-autounmask with /etc/portage/package.use/._cfg0000_zz-autounmask                          │·····················
+mv: overwrite '/etc/portage/package.use/zz-autounmask'? y                                                                       │·····················
+                                                                                                                                │·····················
+Exiting: Nothing left to do; exiting. :)
+#+END_SRC
+
+#+BEGIN_SRC sh
+(chroot) livecd / # emerge -a gentoo-sources genkernel usbutils dosfstools pciutils gentoolkit ufed eix axel xfsprogs           │·····················
+                                                                                                                                │·····················
+ * IMPORTANT: 6 news items need reading for repository 'gentoo'.                                                                │·····················
+ * Use eselect news read to view new items.                                                                                     │·····················
+                                                                                                                                │·····················
+[ebuild  N    ] app-shells/push-2.0-r1                                                                                          │·····················
+[ebuild  N    ] app-shells/quoter-3.0_p2-r1                                                                                     │·····················
+[ebuild  N    ] app-arch/cpio-2.12-r1                                                                                           │·····················
+[ebuild  N    ] sys-kernel/linux-firmware-20191022                                                                              │·····················
+[ebuild  N    ] dev-libs/libusb-1.0.21-r1                                                                                       │·····················
+[ebuild  N    ] virtual/libusb-1-r2                                                                                             │·····················
+[ebuild  N    ] sys-devel/bc-1.06.95-r2                                                                                         │·····················
+[ebuild  N    ] dev-libs/elfutils-0.176-r1                                                                                      │·····················
+[ebuild  N    ] net-misc/axel-2.4-r3                                                                                            │·····················
+[ebuild  N    ] virtual/libelf-3                                                                                                │·····················
+[ebuild   R   ] sys-apps/util-linux-2.33.2                                                                                      │·····················
+[ebuild  N    ] sys-fs/xfsprogs-4.19.0                                                                                          │·····················
+[ebuild  N    ] app-portage/gentoolkit-0.4.6                                                                                    │·····················
+[ebuild  N    ] sys-kernel/genkernel-3.5.3.3                                                                                    │·····················
+[ebuild  N    ] sys-kernel/gentoo-sources-4.19.72                                                                               │·····················
+[ebuild  N    ] app-portage/ufed-0.94                                                                                           │·····················
+[ebuild  N    ] app-portage/eix-0.33.8                                                                                          │·····················
+[ebuild  N    ] virtual/libudev-232-r3                                                                                          │·····················
+[ebuild  N    ] sys-fs/dosfstools-4.1                                                                                           │·····················
+[ebuild  N    ] sys-apps/usbutils-010-r1                                                                                        │·····················
+[ebuild  N    ] sys-apps/pciutils-3.5.6-r1                                                                                      │·····················
+                                                                                                                                │·····················
+Would you like to merge these packages? [Yes/No] yes                                                                            │·····················
+>>> Verifying ebuild manifests                                                                                                  │·····················
+>>> Running pre-merge checks for sys-kernel/linux-firmware-20191022                                                             │·····················
+>>> Running pre-merge checks for sys-kernel/genkernel-3.5.3.3                                                                   │·····················
+>>> Emerging (1 of 21) app-shells/push-2.0-r1::gentoo                                                                           │·····················
+>>> Emerging (2 of 21) app-shells/quoter-3.0_p2-r1::gentoo
+#+END_SRC
+
+*** 중단된 상태.
+*** 004140 # emacs /etc/genkernel.conf
+*** 004215  >>MENYCONFIG="yes"
+***         >>CLEAN="no"
+***         >>MRPROPER="no"
+***         >>MAKEOPTS="$(portageq envvar MAKEOPTS)" #uncomment하여 활성화함.
+*** 004330                          ## 특이하게 #ZFS="no"있으므로 나중에 고려할 것.
+***         >>TMPDIR="/var/tmp/genkernel"            #uncomment하여 활성화함.
+*** 004400 # emacs /etc/fstab
+***         >>/dev/sdb1 /boot/efi vfat noauto,noatime 0 2 
+/dev/sd#1 /boot/efi vfat noauto,noatime 0 2
+***         >>/dev/sdb2 /boot/ ext2 defaults 0 2 
+/dev/sd#2 /boot/ ext2 defaults 0 2
+***         >>/dev/sdb3 none swap sw 0 0 
+/dev/sd#3 none swap sw 0 0
+***         >>/dev/sdb4 / xfs noatime 0 1 
+/dev/sd#4 / xfs noatime 0 1
+***         >>/dev/sdb5 /home ext4 noatime 0 2 
+/dev/sd#5 /home ext4 noatime 0 2
+***         >>/dev/cdrom /mnt/cdrom auto noauto,user 0 0 
+/dev/cdrom /mnt/cdrom auto noauto,user 0 0
+***         >>tmpfs /var/tmp tmpfs rw,nosuid,noatime,nodev,size=0.8G,mode=1777 0 0 
+tmpfs /var/tmp tmpfs rw,nosuid,noatime,nodev,size=8G,mode=1777 0 0
+***         >>tmpfs /var/tmp/portage tmpfs rw,nosuid,noatime,nodev,size=0.8G,mode=775,uid=portage,gid=portage,x-mountmkdir=775 0 0 
+tmpfs /var/tmp/portage tmpfs rw,nosuid,noatime,nodev,size=8G,mode=775,uid=portage,gid=portage,x-mountmkdir=775 0 0
+*** 
+* 윗 줄에 계속 진행중이며, 기록을 부지런히 남길 것.
+* wifi WiFi route CMD 위의 *** WiFi route CMD
+Gentoo linux를 설치를 연습하고 이후 LFS를 실행할 바탕을 만들기위한 WiFi환경구축을 목표로 한다!
+
+        * 이 노트는 이전의 성공의 사례로 옮긴 것이다.
+해결됨! Sakak's EFI Install Guide/SettingUp Networking and Connecting via shh
+#+BEGIN_SRC sh
+ip a
+iwconfig  ##참고 iwconfig wlan0 scan
+cd /etc/
+cat > wpa.conf
+network={
+      ssid="Public WiFi Free"
+      key_mgmt=NONE
+      auth_alg=OPEN
+}
+^d
+cat wpa.conf
+chmod -v 600 $_
+
+wpa_supplicant -D nl80211,wext -i wlp3s0 -c /etc/wpa.conf -B
+##에러# ping: www.gentoo.org: Temporary failure in name resolution
+# route add default gw 192.168.123.254
+ # ping -c 3 www.gentoo.org # 잘 작동!
+
+#+BEGIN_SRC sh :name 참고의 명령어 gentoo_lfs.pdf파일에 많은 자료있음
+# iwconfig wlp3s0   # 좋은 명령어로 생각된다.                                                                                                │·································································
+wlp3s0    IEEE 802.11  ESSID:"Public WiFi Free"                                                                                 │·································································
+          Mode:Managed  Frequency:5.5 GHz  Access Point: 22:06:AC:80:26:C7                                                      │·································································
+          Bit Rate=520 Mb/s   Tx-Power=20 dBm                                                                                   │·································································
+          Retry short limit:7   RTS thr:off   Fragment thr:off                                                                  │·································································
+          Encryption key:off                                                                                                    │·································································
+          Power Management:on                                                                                                   │·································································
+          Link Quality=44/70  Signal level=-66 dBm                                                                              │·································································
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0                                                              │·································································
+          Tx excessive retries:0  Invalid misc:1   Missed beacon:0
+#+END_SRC
+# KDE에서 完壁하게 실행되며, --help 설정이 유리함
+## [thinkpad@msata827 etc]$ sudo wpa_supplicant -Dnl80211 -iwlp3s0 -c/etc/wpa_supplicant.conf -B
+Successfully initialized wpa_supplicant # 단 wlp3s0 를 사용함에 유의할 것.
+[thinkpad@msata827 etc]$ ip a # KDE에서 完壁하게 실행되며, --help 설정이 유리함
+
+
+[thinkpad@msata045 ~]$ ssh root@192.168.1.4
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+
+SHA256:kxij5Gawky+x3b1nC2CoBA0FAfjiTZkb6wgT1nikKOY.
+Please contact your system administrator.
+
+Add correct host key in /home/thinkpad/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/thinkpad/.ssh/known_hosts:3
+
+ECDSA host key for 192.168.1.4 has changed and you have requested strict checking.
+Host key verification failed.
+
+### 해결책 192.168.1.4뒷부분을 삭제함 - /home/thinkpad/.ssh/known_hosts에서
+You need to bridge the WLAN AP interface to the Ethernet interface on your router, or to tick the appropriate box in the router's UI that does that for you.
+
+### sudo route add default gw 192.168.123.254 # 핵심성공!
+### yay net-tools ### for route command in KDE ###
+리: ssh/route_cmd.org (find-file-other-window "~/config_github/app/ssh/route_cmd.org")
+livecd /etc # route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         192.168.1.1     0.0.0.0         UG    204    0        0 enp0s25
+default         192.168.123.254 0.0.0.0         UG    303    0        0 wlp3s0
+192.168.1.0     0.0.0.0         255.255.255.0   U     204    0        0 enp0s25
+192.168.123.0   0.0.0.0         255.255.255.0   U     303    0        0 wlp3s0
+livecd /etc # route add default gw 192.168.123.254
+
+
+
+[thinkpad@msata045 ~]$ 
+#+END_SRC
+청색볼펜노트
+ kldload if-iwm         # if_iwm_load="YES"
+ kldload iwm7260fw      # iwm7260fm_load="YES"
+ kldstat
+
+ pciconf -lv
+ pciconf -lbcev | less /BCM4322
+ # dmesg | grep BroadCom -------중요표시됨---------> bwn0 (in MacBook)
+ ifconfig wlan0 create wlandev iwn0
+ service netif restart
+ dhclient wlan0 #---매우중요표시됨---#
+                                      # find / -type {d또는f} | less 검색의 방법을 적은 것으로 추정함.
+                                      # /usr/libexec/locate.updatedb # 아마 locate 명령의 데이터베이스
+ pkg static install -f pkg
+ pkg upgrade -f
+ 
+     # crux에서 사용되나 인터넷연결은 안 되는 명령 2종:  arp -an 와  netstat -r
+
+
+YouTube- Creating and Using a CHROOT JAIL in Linux Ubuntu - Part 2
+sudo mount -o bind /proc /SECURITY/JAIL/proc
+         # -o bind 의미 연구필요함
+                 # /proc 통합ssd, /SECURITY/JAIL/proc는 /home/thinkpad(Linux) /Users/thinkpad(MacOSX)
+cat /etc/resolv.conf # nameserver이라고 함.
+
+
+# UUID로 /ect/fstab을 편집하여 쉽게 mount하는 것을 아이디어로 가짐, 실험해야함.
+       # # google how mount fstab gentoo vfat?? fm??
+blkid -o full
+blkid -k # blkid --help 
+
+
+부정확한 노트이나 일단 기록
+ kldload pf
+ pfctl -e # packet 필요??
+ pfctl -d
+
+ nano /boot/loader.conf
+   >> kldload ext2fs
+ sudo mount -t /dev/ada0p8 /usr/home/disk /home ????
+* make menuconfig < cd /usr/src/linux | {Gentoo }genkernel 
+cd /usr/src/linux
+sudo make menuconfig # gentoo에서 잘 실행됨 Clover을 무선가능하게 하려고 시도함.
+
+https://youtu.be/C-Np_IOImqU?t=499
+* $ route -n # 아치리눅스에서 검색 아르코리눅스 
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         192.168.123.254 0.0.0.0         UG    600    0        0 wlp3s0
+0.0.0.0         192.168.1.1     0.0.0.0         UG    20100  0        0 enp0s25
+192.168.1.0     0.0.0.0         255.255.255.0   U     100    0        0 enp0s25
+192.168.123.0   0.0.0.0         255.255.255.0   U     600    0        0 wlp3s0

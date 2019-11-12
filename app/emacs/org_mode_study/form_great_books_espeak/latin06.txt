@@ -1,0 +1,2 @@
+          \"; sleep 003; done ; espeak word_each_text_with_Great_Mind. ")
+          #+END_SRC

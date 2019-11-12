@@ -1,0 +1,140 @@
+
+
+
+
+
+καὶ ἅμα τὴν ἑορτὴν βουλόμενος θεάσασθαι τίνα τρόπον ποιήσουσιν ἅτε νῦν πρῶτον ἄγοντες. καλὴ μὲν οὖν μοι καὶ ἡ τῶν ἐπιχωρίων πομπὴ ἔδοξεν εἶναι, οὐ μέντοι ἧττον ἐφαίνετο πρέπειν ἣν οἱ Θρᾷκες ἔπεμπον.
+and also because I wished to see how they would conduct the festival since this was its inauguration.5 I thought the procession of the citizens very fine, but it was no better than the show, made by the marching of the Thracian contingent.
+** [327β] (async-shell-command "surf http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0167%3Abook%3D1%3Asection%3D327b &")
+
+
+* TOD2O2 #
+* #
+* method & form
+- 일단 원문의 위치를 복사해서 async-shell 아래 만들어 둔다.
+이때는 별이 2개로 둔다.
+시작부분의 읽는 부분을 두고 투두로 변경한다.
+
+
+- .bin/say 를 위치시킨다.
+조건: 엄정한 형식을 갖추고 변화의 가능성에 정호가히 대응하게 한다.
+원문을 두고 
+첫줄| | |
+단어번역| | |
+
+
+
+**hi**
+
+
+
+
+#+BEGIN_TEXT markdown
+  ;;;#+NAME: TOREAD
+Σωκράτης
+κατέβην χθὲς εἰς Πειραιᾶ μετὰ Γλαύκωνος τοῦ Ἀρίστωνος προσευξόμενός τε τῇ θεῷ 
+καὶ ἅμα τὴν ἑορτὴν βουλόμενος θεάσασθαι τίνα τρόπον ποιήσουσιν ἅτε νῦν πρῶτον ἄγοντες. 
+καλὴ μὲν οὖν μοι καὶ ἡ τῶν ἐπιχωρίων πομπὴ ἔδοξεν εἶναι, οὐ μέντοι ἧττον ἐφαίνετο πρέπειν ἣν οἱ Θρᾷκες ἔπεμπον.
+#+END_SRC
+for i in 1 2 3;do
+  espeak -v grk/grc -s 100 -g 30 "$(echo "$greek_text")"
+ sleep 1; done
+
+#+BEGIN_SRC sh :results silent :var to_read=TOREAD
+#espeak -v grk/grc -s 100 -g 10 "$(echo $to_read)"
+notify-send -t 15000 "κατέβην χθὲς εἰς Πειραιᾶ μετὰ Γλαύκωνος        
+                         τοῦ Ἀρίστωνος προσευξόμενός τε τῇ θεῷ "
+espeak -v grk/grc -s 100 -g 10 "κατέβην χθὲς εἰς Πειραιᾶ μετὰ Γλαύκωνος 
+                                τοῦ Ἀρίστωνος προσευξόμενός τε τῇ θεῷ "
+
+espeak -v en "I went down yesterday to the Peiraeus with Glaucon, 
+             the son of Ariston, to pay my devotions to the Goddess,"
+#+END_SRC
+
+#notify-send -t 15000 "$korean_text" &
+
+espeak  -s 171 -g 12 "$(echo "$english_text")"
+}
+
+#+RESULTS:
+
+
+         #+NAME: TODO_ESPEAKING
+         #+BEGIN_SRC sh :var eng=TODO_ENG gre=TODO_GRE  :results silent
+
+	     notify-send -t 51000 "
+	      $gre
+	      $eng"
+	   #  espeak -v en "$eng" ;sleep 2;
+	     for i in 1 ;do
+	       espeak -v grk/grc -s 100 -g 30 "$(echo "$gre")"
+	     sleep 3; done
+	   #  espeak -v en "$eng"
+         #+END_SRC
+
+κατέβην χθὲς εἰς Πειραιᾶ μετὰ Γλαύκωνος
+τοῦ Ἀρίστωνος προσευξόμενός τε τῇ θεῷ 
+
+         #+NAME: TODO_GRE
+         #+BEGIN_TEXT markdown
+_   κατέβην     χθὲς        εἰς    Πειραιᾶ μετὰ Γλαύκωνος
+__   τοῦ Ἀρίστωνος     προσευξόμενός τε τῇ θεῷ 
+         #+END_TEXT
+         #+NAME: TODO_ENG
+         #+BEGIN_TEXT
+* etc
+
+#+NAME: trans
+#+BEGIN_SRC translate :src en :dest ko :var korean=kor_str english2=eng_str2 :results replace
+$english2
+#+END_SRC
+
+#+RESULTS: trans
+
+#+BEGIN_SRC sh :var trasay=trans
+say -v yuna $trasay
+#+END_SRC
+
+#+RESULTS:
+
+항목은 가장 최근의 것 (원본 파일)입니다. 
+각 항목은 커미 작성자의 이름과 전자 메일 주소, 변경 사항, 변경 사항 및 메시지 내용을 표시합니다. 
+커밋 ID 번호는 4 장의 33 페이지에 "내용 주소"를 설명하고 커미션은 6 장에서 설명합니다. 
+당신과 함께 커밋을하고 커미션을 표시하고 함께 사용하십시오.
+
+항목은 가장 최근의 것부터 가장 오래된 것 순으로 나열됩니다 (원본 파일). 
+각 엔트리는 커밋 작성자의 이름과 전자 메일 주소, 커밋 날짜, 변경 로그 메시지 및 커밋의 내부 식별 번호를 표시합니다. 
+커밋 ID 번호는 4 장의 33 페이지에있는 "내용 주소 지정 가능한 이름"에서 설명하고 커밋은 6 장에서 설명합니다.
+특정 커밋에 대한 자세한 내용을 보려면 커밋 번호와 함께 git show를 사용하십시오.
+
+ :var korean=kor_str english=eng_str
+- 2. 한글 번역을 아래에 넣는다.
+#+NAME: kor_str
+#+BEGIN_EXAMPLE
+항목은 가장 최근의 것부터 가장 오래된 것 순으로 나열됩니다 (원본 파일).
+각 엔트리는 커밋 작성자의 이름과 전자 메일 주소, 커밋 날짜, 변경 로그 메시지 및 커밋의 내부 식별 번호를 표시합니다.
+커밋 ID 번호는 4 장의 33 페이지에있는 "내용 주소 지정 가능한 이름"에서 설명하고 커밋은 6 장에서 설명합니다.
+특정 커밋에 대한 자세한 내용을 보려면 커밋 번호와 함께 git show를 사용하십시오.
+#+END_EXAMPLE
+
+- 3. 각각의 파일을 생성하고 합체하여서 저장한다.
+#+BEGIN_SRC sh 
+# data="Hello hangul"
+say $english   -o ./aiff/eng.aiff
+#	       -o ./aiff/$(date +%y%m%d_%H%M%S)eng.aiff
+name=$(date +%y%m%d_%H%M%S)
+say -v yuna $korean   -o ./aiff/kor.aiff
+		      -o ./aiff/$(date +%y%m%d_%H%M%S)kor.aiff
+ #echo $data
+/usr/local/bin/sox ./aiff/ava.aiff \
+                   ./aiff/bell.aiff ./aiff/eng.aiff \
+                   ./aiff/bell.aiff ./aiff/kor.aiff \
+                   "$name enko.aiff"
+
+
+# /usr/local/bin/sox ./aiff/ava.aiff ./aiff/eng.aiff ./aiff/bell.aiff ./aiff/kor.aiff $(date +%y%m%d_%H%M%S)enko.aiff
+echo $name
+
+open "$name enko.aiff"
+#+END_SRC
+

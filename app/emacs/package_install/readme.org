@@ -10,7 +10,8 @@ $ cd ~/.emacs.d/elpa; sudo chown -R root:wheel ./simpleclip-20181105.1636/
 
 * A-Z
 
-
+** stumpwm-mode 배우는 법의 실행을 바로바로 가능하게 함. 
+나를 위해 만든 것 같다.
 ** edit-server
 - chrome(ium) edit in emacs 한글로 이맥스로 넣는 법을 고안하려고 시도함.
 		- (find-file "./edit-server.el.org")

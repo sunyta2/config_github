@@ -1,0 +1,4 @@
+	\"; sleep 003; done ; espeak english_text_with_Great_Mind. ")
+        #+END_SRC
+         #+BEGIN_SRC emacs-lisp :results silent :comment 마음자세와깨달은바5번읽기
+	   (async-shell-command "espeak korean_text_to_beginnig ; for i in {1..2} ; do espeak -v ko -s 100 -g 30 \"

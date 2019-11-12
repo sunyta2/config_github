@@ -1,21 +1,15 @@
-Gentoo linux를 설치를 연습하고 이후 LFS를 실행할 바탕을 만들기위한 WiFi환경구축을 목표로 한다!
 
-        * 이 노트는 이전의 성공의 사례로 옮긴 것이다.
-해결됨! Sakak's EFI Install Guide/SettingUp Networking and Connecting via shh
-#+BEGIN_SRC sh
-ip a
-iwconfig  ##참고 iwconfig wlan0 scan
-cd /etc/
+
+* to study LFS
+* WiFi Free connection
+- ./clover_os/wifi_in_gentoo_success_for_lfs.org
+- ./install_process/youtube_t530_study.org
 cat > wpa.conf
 network={
       ssid="Public WiFi Free"
       key_mgmt=NONE
       auth_alg=OPEN
 }
-^d
-cat wpa.conf
-chmod -v 600 $_
-
 wpa_supplicant -D nl80211,wext -i wlp3s0 -c /etc/wpa.conf -B
 
 #+END_SRC
@@ -53,9 +47,10 @@ blkid -k # blkid --help
 
 부정확한 노트이나 일단 기록
  kldload pf
- pfctl -e # packet 필요??
+
  pfctl -d
 
  nano /boot/loader.conf
    >> kldload ext2fs
  sudo mount -t /dev/ada0p8 /usr/home/disk /home ????
+ 

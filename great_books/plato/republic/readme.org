@@ -1,0 +1,10 @@
+
+
+
+* site & stuff
+- [[ http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0167 ][ Plato, Republic, book 1, section 327a perseus SITE ]]
+* method & form
+- 
+#+BEGIN_TEXT markdown
+**hi**
+#+END_SRC

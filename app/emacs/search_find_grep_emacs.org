@@ -1,5 +1,6 @@
-
-
+(buffer-file-name)"/home/thinkpad/config_github/app/emacs/search_find_grep_emacs.org"
+(find-file-other-window "/home/thinkpad/config_github/app/emacs/search_find_grep_emacs.org")
+#이곳을 검색의 중심지로 사용한다.
 
 * 검색과 파일 내용 검색의 방법과 함수를 일단 수집 정리한다.
 
@@ -7,10 +8,37 @@
  M-x grep -n -e setq ~/.emacs
 
 
+* 커서아래바로검색을 찾아서 , 
+[search - Searching for marked (selected) text in Emacs - Stack Overflow](https://stackoverflow.com/questions/202803/searching-for-marked-selected-text-in-emacs#203026)
+Another option I use quite often is C-s C-w to search for the word after the current mark. Hitting C-w repeatedly increases the search with additional words 
+(e.g., C-s C-w C-w C-w searches for the 3 words after the current mark).
+Similarly, C-s M-s C-e searches for the rest of the line after the current mark and C-s C-M-y searches for the character after the mark. These are both repeatable in the same way (the former by somewhat-awkwardly repeating M-s C-e after C-s).
+
+
+Likewise, C-r C-w searches backward ("r" = reverse) for the word after the mark. And C-r C-w C-w searches backward for the two words after the mark. – dougkramer Feb 5 '15 at 7:44 
+4
+This should be the accepted answer. – Bogdan Calmac Jun 25 '16 at 19:15
+1
+The function C-s C-y used to be bound to is now bound to C-s M-s C-e (since Emacs 24.1)
 
 
 
 * 수집함.
+
+[linux - How can I recursively find all files in current and subfolders based on wildcard matching? - Stack Overflow](https://stackoverflow.com/questions/5905054/how-can-i-recursively-find-all-files-in-current-and-subfolders-based-on-wildcard#5905066)
+find . -type f -name "*.conf"
+find / -iname '*C*.xml'   2>&1 | grep -v "Permission denied"
+find . -name "*.wanted" | xargs wc -l
+sudo updatedb
+And, to use it to look for some particular file type
+
+locate filename
+updates db at 1AM would look like:
+0 1 * * * updatedb
+
+Or, to look for filename or patter from within current directory, you can type:
+
+ pwd | xargs -n 1 -I {} locate "filepattern"
 
 
 

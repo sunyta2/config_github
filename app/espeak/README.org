@@ -27,7 +27,6 @@ espeak -f foo.txt -w foo.wav
 ** latin
 
 ** terminal
-terminal use 문장 한줄단위로 interactive하게 낭독하는 기능!!! $ say -i #macosx와 유사함.
 #+BEGIN_SRC sh
 ### 중요한 각종 언어듣기학습의 도구
 # 한줄씩 또는 여러줄씩 중간마우스 클릭으로 웹의 문장을 읽어내는 것이 가능한 학습의 도구.
@@ -36,8 +35,48 @@ $ cat | while read LINE; do espeak "$LINE"; done
 		$ conky | while read LINE; do xsetroot -name "$LINE"; done
 #+END_SRC
 
+#+BEGIN_SRC sh :results silent
+#ls | (while read LINE ; do espeak "$LINE";sleep 1; done)
+a="Deep in your innermost being, you’ve always known you were destined to learn Clojure.
+Every time you held "
+a="$(xclip -o)"
+echo "$a" | while read LINE ; do espeak "$LINE";sleep 3; done
+#+END_SRC
+
+#+RESULTS:
+
+terminal use 문장 한줄단위로 interactive하게 낭독하는 기능!!! $ say -i #macosx와 유사함.
+:results silent
+EOF
+
+#+RESULTS:
+
+
+
+
+#+RESULTS:
+
 ?? 궁금증 ?? 한줄 낭독과 다음 낭독을 파일 출력하면 어떻게 되는 것인가. 시간을 두고 읽는가 아니면...
 
 
+** okular espeak not work 해결책은??? 아직 모색중이다.
 
+Description:
+There are two submenus in the Tools menu called "Speak Whole Document" and "Speak Current Page", they are not working without "speech-dispatcher" and "espeak-ng" so I suggest adding them as an optional dependency to the package.
+
+Additional info:
+* package version(s)
+okular 19.04.1-1
+espeak-ng 1.49.2-6
+speech-dispatcher 0.9.1-1 다운로드해두 잘 안됨. 이전에 FreeBSD에서 해결한 것 같은데...
+6 aur/espeak-ng-git 0.0-1 (+10 0.00%) (Installed: 1.49.2.r1099.fe7aa874-1)
+9 aur/gespeaker-git 0.8.2.4.g236462d-2 (+2 0.00%) 
+    A GTK+ frontend for espeak and mbrola to speech the read text
+4 community/gst-plugins-espeak 0.5.0-2 (11.8 KiB 34.0 KiB) 
+    Use espeak as a sound source for gstreamer
+
+10 aur/jasper-tts-espeak 0.0.0-1 (+1 0.00%) 
+    Meta package to satisfy dependencies for Jasper's espeak TTS engine.
+9 aur/gespeaker-git 0.8.2.4.g236462d-2 (+2 0.00%) 
+    A GTK+ frontend for espeak and mbrola to speech the read text.
 

@@ -1,6 +1,82 @@
+# (progn (save-buffer)(shell-command "/home/thinkpad/.bin/grasp/server/grasp_server.py --path /home/thinkpad/config_github/great_books/_achieve_agenda/2019_11_diary.org"))
+#+START: overview
+#+start: show_all
+#+TAGS: org_diary(d) todo(t)
+
+#+BEGIN_SRC text
+sdkf
+sdf
+sf
+s
+f
+sdf
+*
 
 
 
+
+#+END_SRC
+
+#+BEGIN_TEXT python
+echo hi
+print("hi")
+
+#+END_TEXT
+
+#+NAME: e_text
+#+BEGIN_TEXT sh
+(dired-jump good day in the world is best place
+echo hi
+#+END_TEXT
+
+#+BEGIN_SRC sh :var a=e_text :results raw replace
+while true ; do
+echo 1
+espeak "$a"
+echo 2
+sleep 30
+done
+#+END_SRC
+
+
+#+RESULTS:
+#+BEGIN_SRC sh :var a=greek_tex
+notify-send -t 3000 "hi
+$a
+"
+#+END_SRC
+
+#+RESULTS:
+
+
+#+BEGIN_SRC org
+|
+ sdf|asdf|asdf|
+|asdf|asdf|Asdfa|
+[[file:/][sdf]]
+[[file://][hi]]
+
+
+#+END_SRC
+#+BEGIN_text markdown
+# 제목이 나온다.
+## 크기는 같다. 그러나 진하게 bold
+### wow markdown
+[asdf](sdf)
+
+[2019-11-01 Fri 11:00]
+- gi dow
+* 
+__slant 기울어진__
+**굵은 글씨bold **
+#+END_text
+
+
+#+BEGIN_SRC org
+
+[2019-11-01 Fri]
+
+#+END_SRC
 * [2019-11-01 Fri] 
 
 - An Introduction To Programming In Emacs Lisp
@@ -103,29 +179,592 @@ Lisp interpreter is concerned, () and nil are the same.
 Humans, however, tend to use nil for false and () for the empty list
 사람의 경우 구분을 해서 인식할 필요가 있다.
 
+[Emacs Lisp Basics](http://ergoemacs.org/emacs/elisp_basics.html) 중국계의 놀라운 자료실 공부방으로 중요함.
 
 
-* 이전의 노트한 것을 옮긴다.
+*** DONE 이전의 노트한 것을 옮긴다.
+리: "/home/thinkpad/config_github/app/emacs/spacemacs/analysis/kbd/readme.org"
 M-| 또는 C-u M-| 
-드디어 발견함.
-2     1
-3 --> 2 C-u M-| sort 엔터
-1     3
-Sardi-Arc [GTK2
 M-g M-g 또는 g 줄로 이동하기 
 M-x view-lossage ;;입력의 기록을 보는 것임. 검색해서 실시간을 찾아볼것.
 C-; comment가 아니라 iedit.el로 설정되어 있음. 동시변환의 기능으로 영역설정후 원하는 것 일괄동시 변경함.
 cua-mode연구필요함.
 abcdefg
 
-#+BEGIN_SRC sh
-  echo hi
-  abcdefg
-  abcdfg 
-    abcdefgcase 
 
-	  abcdefgcase hi
-    abcdefgcase 
-  abcdefgcase 
+#+BEGIN_SRC emacs-lisp
+(ding) (beep)
 
 #+END_SRC
+
+* [2019-11-02 Sat] 
+  - 
+
+*** DONE 다이어리(발생이력), 발달(활용처, 원리연구처)
+초기와 발달을 이해하면 전체를 알 수 있다. 아리스토텔레스
+인: [시간] - 
+리:
+사:  
+연:
+
+*** DONE [2019-11-02 Sat 15:18] gentoo route CMD 발견
+[7 Linux Route Command Examples (How to Add Route in Linux)](https://www.thegeekstuff.com/2012/04/route-examples/)
+정답은 # route add default gw 192.168.123.254 
+인: gentoo에서 wifi와 ethernet의 라우터 충돌발생 [2019-11-02 Sat 15:18]
+리: ssh/route_cmd.org (find-file-other-window "~/config_github/app/ssh/route_cmd.org")
+- 파일 이치적인 파일
+route add 10.236.11.0 mask 255.255.255.0 10.236.10.1
+사: gentoo_lfs
+- 파일 활용적인 파일
+연: (find-file-other-window "~/config_github/os/gentoo/install_process/youtube_t530_study.org")
+ 
+
+
+*** DONE Wishlist:   # 좋은 방법론
+인: [2019-11-02 Sat] 겐투검색하다 맥북에서 동영상 발견
+리: 1.org_meta_method 2.search_find/awk
+사: 겐투 xsetroot_bar_info in start CMD
+연:
+         - Show Memory Used/Total
+free -h | awk '/^Mem:/ {print $3 "/" $2}'
+         - Show CPU Temp
+sensors | awk '/^fan/ {getline; print $2}'
+         - Show most Memory intensive processes
+
+         - Show most CPU intensive processes
+Then create status bar module for CPU/Mem.
+
+sudo pacman -S lm_sensors
+awk next line method
+awk '/C02/{print;getline;print}' ~/temp/log.txt
+
+*** DONE (find-file-other-window "/home/thinkpad/config_github/app/emacs/search_find_grep_emacs.org")
+#이곳을 검색의 중심지로 사용한다.
+
+* [2019-11-03 Sun]
+*** ediff-regions-wordwise 영역비교에 놀라운 기능을 발견함.
+ediff-regions-wordwise
+ediff-merge-buffers
+ diff-buffer-with-file. Wish ediff could do that.
+M-x ediff-current-file
+
+ '(ediff-split-window-function (quote split-window-horizontally))
+ '(ediff-window-setup-function (quote ediff-setup-windows-plain))
+
+M-x compare-windows (and C-x z z z z ... to repeat as necessary).
+*** say_greek say_latin in .bin/
+- 엄정한 것은 깊은 통찰을 요구한다.
+* [2019-11-04 Mon] 
+- thinkpad W541 lot of 2 purchase!!! $395
+* [2019-11-05 Tue] 
+
+		(find-file-other-window "~/config_github/app/emacs/org_mode_study/")
+- defalias for elisp(py) in babel 출처:elisp_emacs_lisp_babel_defalias.org
+- BEGIN_SRC emacs-lisp :results value :results raw :exports results 출처:babel_exports_results_form.org
+- agenda C-c [ 리스트에 추가하는 방식을 연구함.  C-c / t ;;현재 폴더내의 투두만 국한 -
+    - /emacs/org_mode_study/agenda_view_org.org
+
+(require 'org-plus-contrib)
+* [2019-11-07 Thu]
+- 아침에 전원이 꺼져서 시도한 stumpwm에서 놀라운 정적인 것의 유용함을 발견함.
+- 높은 통합성과 
+	- 
+
+	#+BEGIN_SRC sh
+	  echo "실행이 C-M-x 로 org내에서 C-c C-'에서 가능함을 확인함."
+	#+END_SRC
+
+tace
+
+
+
+
+** (compile-file "hello.lisp") stumpWM의 화면띄우기의 통합을 위한 조치.
+#+BEGIN_SRC common-lisp
+(compile-file "hello.lisp")
+(load "hello.fasl")
+;;or
+(load (compile-file "hello.lisp"))
+#+END_SRC
+* [2019-11-08 Fri]
+
+;echo hi
+(message "hi world")
+"hi world";;;good ayd
+#+BEGIN_SRC sh
+  echo hi
+
+
+#+END_SRC
+** note from FreeBSD
+You can use aliases to decrease the amount of typing you need to do to get
+commands you commonly use.  Examples of fairly popular aliases include (in
+Bourne shell style, as in /bin/sh, bash, ksh, and zsh):
+
+	alias lf="ls -FA"
+	alias ll="ls -lA"
+	alias su="su -m"
+
+In csh or tcsh, these would be
+
+	alias lf ls -FA
+	alias ll ls -lA
+	alias su su -m
+
+To remove an alias, you can usually use 'unalias aliasname'.  To list all
+aliases, you can usually type just 'alias'.
+
+Want to list all files of an installed package? Enter                                              │··················································
+"pkg info -l packagename". 
+
+
+- cp -a source target
+If you want to recursively copy a directory preserving file and directory
+attributes use
+"cp -a source target"
+
+		-- Lars Engels <lme@FreeBSD.org>
+
+** save before python link
+
+** ssh -X thinkpad@FreeBSD.local # good Discovery
+** package install slime
+save: /computer_language/commonlisp_closure/
+save:emas/download paedit with swack
+
+;; closure https://youtu.be/O9M-c6UrOyE?t=82
+CCL is Clojure's Common Lisp
+? (load "/emacs-local/slime/swank-loader.lisp")
+? (swank-loader:init)
+? (swank:create-server :dont-close t)
+
+;; install (package-list-packages 'clojure-mode)
+(unless (package-installed-p 'clojure-mode)
+  (package-install 'clojure-mode))
+
+
+
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(package-refresh-contents)
+
+;;아래는 이맥스 내부에서 
+M-x slime-connect 127.0.0.1        port: 4005
+잘 안되는 것 같음.
+
+(defun hello-world (msg) (format t "Hello world, hello ~A~%" msg) )
+(hello-world "kami") 
+
+버그와 해킹의 경계가 불완전하다.
+** slime (setq inferior-lisp-program "/usr/bin/sbcl")
+(setq slime-contribs '(slime-fancy))
+(require 'slime)
+* Todo꼭!매일 
+
+* TODAY_DONE_ 
+
+* 임의적인 입력의 노트 
+[2019-11-02 Sat 10:33]
+
+
+#+NAME: test1
+#+BEGIN_SRC sh :results raw
+espeak "hi23"
+echo "hi123"
+#+END_SRC
+
+#+RESULTS: test1
+
+
+
+
+
+#+call: test
+#+call: test1
+#+BEGIN_SRC org
+;; 
+[[asdfs][sdfsdf]] echo 2
+call_test1()
+#+END_SRC
+
+#+RESULTS:
+
+
+hi
+hi2
+hi
+
+
+
+* test
+
+* how to grasp in Chrome
+* C-x C-s먼저! 
+* (progn (save-buffer)(push-mark-command 1)(end-of-buffer)(shell-command "/home/thinkpad/.bin/grasp/server/grasp_server.py --path /home/thinkpad/config_github/great_books/_achieve_agenda/2019_11_diary.org"))
+* (revert-buffer)
+
+* Tasks
+* [2019-11-08 Fri 19:30] Emacs CL part 2 (G101, video 2) - YouTube :grasp:
+https://www.youtube.com/watch?v=w4MCEaK072I
+
+* [2019-11-08 Fri 19:31] Emacs CL part 2 (G101, video 2) - YouTube :grasp:
+https://www.youtube.com/watch?v=w4MCEaK072I
+* [2019-11-08 Fri 19:33] Emacs CL part 2 (G101, video 2) - YouTube    :grasp:
+https://www.youtube.com/watch?v=w4MCEaK072I
+
+* [2019-11-08 Fri 19:38] Moving Point - GNU Emacs Manual :grasp:
+https://www.gnu.org/software/emacs/manual/html_node/emacs/Moving-Point.html
+
+this is test
+* [2019-11-08 Fri 19:50] (push-mark-command 1)을 사용함.(set-mark 1)이 잘 안되서 우회함.elisp - How do I set key binding for set mark in emacs? - Unix & Linux Stack Exchange :grasp:
+https://unix.stackexchange.com/questions/91834/how-do-i-set-key-binding-for-set-mark-in-emacs
+Selection:
+You need to pass your arguments to push-mark, not global-set-key:
+
+(global-set-key (kbd "M-SPC") (lambda() (interactive) (push-mark nil nil 1)))
+* [2019-11-08 Fri 20:11] Regions, marks, and visible-mark | Pragmatic Emacs :grasp:
+http://pragmaticemacs.com/emacs/regions-marks-and-visual-mark/
+Selection:
+C-u C-SPACE to jump around the previous marks
+gitlab_visible_mark_chrome_grasp.org
+* [2019-11-08 Fri 21:17] '최고 등급' 수배자 윤지오.."편파수사" 강력 반발 | Daum 뉴스 :grasp:
+https://news.v.daum.net/v/20191108200407667
+Selection:
+최근들어 확실하게 느낄수있는건
+대한민국 경찰,검찰은 
+기득권들과 더러운 권력자,재력가들에게 만큼은
+절대 수사하지 않고
+오로지 만만하거나 약자들에게만 철퇴를 휘두른다!
+* [2019-11-08 Fri 21:33] 정부, '엽기 살인현장' 北선박 공개.."北에 인계 완료"(종합2보) | Daum 뉴스 :grasp:
+https://news.v.daum.net/v/20191108185951555?d=y
+Selection:
+토착왜구들이 본래 기준없이 정부 까는데 급급한 말종집단들이라서 반대경우엔 살인범들 받아들였다고 짖어댈건 뻔한 반응...
+* [2019-11-08 Fri 21:34] 김성태 딸 "정규직 공채 직접 지원..퇴근후 시험준비"(종합) | Daum 뉴스 :grasp:
+https://news.v.daum.net/v/20191108193808219?d=y
+Selection:
+딸이 피의자 아니고 증인이여? 성태는 막봐주네 정치인인데도 비공개소환하고. 나경원이는 언제수사하냐? ㅉㅉ
+참으로 가증스럽다.
+그토록 많은 증거가 있건만 끝까지...
+* [2019-11-08 Fri 21:46] 긴장한 채 잔뜩 허리 굽힌 尹..'조국 정국' 후 文대통령 첫 대면 | Daum 뉴스 :grasp:
+https://news.v.daum.net/v/20191108163222695?d=y
+Selection:
+문재인 대통령 하시는 언행을 보면, 사는 동안 남자의 세계라는 게 무엇인지를 깨닫게 하는 표본이라고 본다.
+회초리 들어야 할 때와 은은한 듯 강렬한 눈빛으로 묵언의 깨우침을 가지게 해야  할 때를 시의적적하게 판단하신다.
+
+참 대단한 분이시다.
+그러므로 우리 문프를 존경하지 않을 수가 없다. 나의 대통령 문재인!!
+* [2019-11-08 Fri 21:46] 8년간 겉만 살짝 긁어낸 日..비만 와도 방사능 '쑥' | Daum 뉴스 :grasp:
+https://news.v.daum.net/v/20191108200717722?d=y
+Selection:
+그린피스] "(재)오염이 실제로 될 수밖에 없다는 걸 현실에서 보고나니까 정말 이 재앙은 지금 시작에 불과하구나 라는 절망감이 들었습니다."
+* [2019-11-08 Fri 21:47] How to move forward and backward in Emacs' mark ring - Stack Overflow :grasp:
+https://stackoverflow.com/questions/3393834/how-to-move-forward-and-backward-in-emacs-mark-ring
+
+* [2019-11-09 Sat 07:35] neotree
+(defun neotree-open-file-in-system-application ()
+  "Open a file under point in the system application."
+  (interactive)
+  (call-process neo-default-system-application nil 0 nil
+                (neo-buffer--get-filename-current-line)))
+
+(defun neotree-open-file-in-system-application ()
+  "Open a file under point in the system application."
+  (interactive)
+  (call-process neo-default-system-application nil 0 nil
+                "/home/thinkpad/Music/Gentoo Install Guide 4_5-ZiO75hTbs7w.mkv")
+
+
+)
+* [2019-11-09 Sat 07:53]C-h ? l keyboard stroke history!!!
+* [2019-11-09 Sat 13:28] 모친 삼우제 불참한 文대통령, 어젯밤 양산 묘소 방문 | Daum 뉴스 :grasp:
+https://news.v.daum.net/v/20191109123354651?d=y
+
+* [2019-11-09 Sat 13:28] 심상정 "이자스민, 黃 '임금차별' 논란에 당 정리 고민..입당 적극 권유" | Daum 뉴스 :grasp:
+https://news.v.daum.net/v/20191109102116263?d=y
+
+* [2019-11-09 Sat 13:28] '주사파 발언' 박홍 전 서강대 총장 선종(종합) | Daum 뉴스 :grasp:
+https://news.v.daum.net/v/20191109102853358?d=y
+Selection:
+ "고백성사를 하러 온 학생들로부터 들었다"고 해명했지만 신도들로부터 고백성사 누설 혐의로 고발당했다. 천주교 사제가 신도로부터 고발당하기는 처음 있는 일이었다.
+* [2019-11-09 Sat 13:29] '전두환 골프' 덮친 임한솔 부대표가 밝힌 당일 취재기록.."너 명함 있냐?" | Daum 뉴스 :grasp:
+https://news.v.daum.net/v/20191109105554671?d=y
+Selection:
+“기력이 없으세요”
+
+▲임한솔
+
+“기력이 없는데 어떻게 골프를 치고 계세요? 광주 518 학살에 대해서 한 말씀해주시죠”
+
+▲전두환
+
+“광주학살에 대해서 모른다 나는.”
+* [2019-11-09 Sat 13:29] 檢, 정경심 조사 사실상 마무리..조국 동생 구치소 병동에 '입원' | Daum 뉴스 :grasp:
+https://news.v.daum.net/v/20191109114201172
+Selection:
+사흘 연속 건강 문제를 이유로 불출석 사유서를 내고 검찰 조사에 출석하지 않았습니다.
+
+조 씨 측은 현재 목 부위 신경 통증으로 구치소 내 병동에 입원했다
+* [2019-11-09 Sat 13:30] 공무원·군인연금 눈덩이 부채 940조..정부 개혁안 검토 | Daum 뉴스 :grasp:
+https://news.v.daum.net/v/20191109110019714
+Selection:
+연금부채, 2015년 660조→2018년 940조
+
+앞서 기재부가 발표한 ‘2018회계연도 국가결산’에 따르면 연금충당부채(공무원연금부채+군인연금부채)가 지난해 연금충당부채가 939조9000억원에 달했다. 이는 국가부채(재무제표 기준 1682조7000억원)의 55.8%에 달하는 규모다. 
+
+
+* bwi Broadcom ipw iwn interl wireless WiFi
+* sudo kldload iwm7260fw 일단 작동됨.
+* sudo kldload iwm7265Dfw 일단 작동됨.
+
+
+* sudo kldload iwm7265fw 일단 작동됨.
+* sudo kldload if_bwi 일단 작동됨.
+* work list show in BSD $ kldconfig -r
+* kldstat | grep iw # 매우 좋은 결과!!!!
+* #  sudo pciconf -lbcev | less # 핵심broadcom!
+bwn_pci0@pci0:3:0:0:    class=0x028000 card=0x000d1028 chip=0x432b14e4 rev=0x01 hdr=0x00
+    vendor     = 'Broadcom Inc. and subsidiaries'
+    device     = 'BCM4322 802.11a/b/g/n Wireless LAN Controller'
+    class      = network
+    bar   [10] = type Memory, range 64, base 0xf2400000, size 16384, enabled
+    cap 01[40] = powerspec 3  supports D0 D1 D2 D3  current D0
+    cap 09[58] = vendor (length 120)
+    cap 05[e8] = MSI supports 1 message, 64 bit 
+    cap 10[d0] = PCI-Express 1 endpoint max data 128(128)
+                 link x1(x1) speed 2.5(2.5) ASPM L0s/L1(L0s/L1)
+    ecap 0001[100] = AER 1 0 fatal 0 non-fatal 0 corrected
+    ecap 0002[13c] = VC 1 max VC0
+    ecap 0003[160] = Serial 1 be492cffff200024
+    ecap 0004[16c] = Power Budgeting 1
+
+* dmesg | grep iw # 더좋은 결과 iwn0  <Intel Centrino Advancde N 6205>
+* 일단 참고명령 # service netif restart
+* 일단 참고명령 # ifconfig 
+* 일단 참고명령 # ifconfig wlan0 up scan
+* # options BWN_GPL_PHY
+bwn0: bwn_phy_n_attach: BWN_GPL_PHY not in kernel config; no PHY-N support
+bwn0: failed
+$$$$$$$$$
+bwn_v4_ucode_load="YES"
+bwn_v4_n_ucode_load="YES"
+if_bwn_load="YES"
+
+* (clover) sudo make menuconfig - [*] 추가함! Support for N-PHY (the main 802.11n series) devices
+cd /usr/src/linux ; sudo make menuconfig 
+  .config - Linux/x86 5.2.16-gentoo Kernel Configuration                                                  │·······································································································································································
+ → Device Drivers → Network device support → Wireless LAN
+https://youtu.be/C-Np_IOImqU?t=714 pdf linux kernel in nutshell
+
+* # (clover)(인스톨) # sudo genkernel --install initramfs #https://youtu.be/C-Np_IOImqU?t=1355
+BroadCom
+[    8.659609] b43-phy0: Broadcom 4322 WLAN found (core revision 16)
+[    8.684738] snd_hda_intel 0000:00:1b.0: bound 0000:00:02.0 (ops i915_audio_component_bind_ops [i915])
+[    8.685103] input: Wacom ISDv4 E6 Finger as /devices/pci0000:00/0000:00:1d.0/usb2/2-1/2-1.5/2-1.5:1.1/0003:056A:00E6.0002/input/input23
+[    8.685371] wacom 0003:056A:00E6.0002: hidraw1: USB HID v1.11 Mouse [Tablet ISD-V4] on usb-0000:00:1d.0-1.5/input1
+[    8.699502] snd_hda_codec_conexant hdaudioC0D0: CX20590: BIOS auto-probing.
+[    8.699965] snd_hda_codec_conexant hdaudioC0D0: autoconfig for CX20590: line_outs=1 (0x1f/0x0/0x0/0x0/0x0) type:speaker
+[    8.699967] snd_hda_codec_conexant hdaudioC0D0:    speaker_outs=0 (0x0/0x0/0x0/0x0/0x0)
+[    8.699968] snd_hda_codec_conexant hdaudioC0D0:    hp_outs=2 (0x1c/0x19/0x0/0x0/0x0)
+[    8.699969] snd_hda_codec_conexant hdaudioC0D0:    mono: mono_out=0x0
+[    8.699969] snd_hda_codec_conexant hdaudioC0D0:    inputs:
+[    8.699971] snd_hda_codec_conexant hdaudioC0D0:      Internal Mic=0x23
+[    8.699972] snd_hda_codec_conexant hdaudioC0D0:      Mic=0x1b
+[    8.699972] snd_hda_codec_conexant hdaudioC0D0:      Dock Mic=0x1a
+[    8.700526] b43-phy0: Found PHY: Analog 8, Type 4 (N), Revision 4
+[    8.700574] b43-phy0: Found Radio: Manuf 0x17F, ID 0x2056, Revision 3, Version 0
+[    8.701690] snd_hda_codec_conexant hdaudioC0D0: Enable sync_write for stable communication
+[    8.713256] input: HDA Intel PCH Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input25
+[    8.713323] input: HDA Intel PCH Dock Mic as /devices/pci0000:00/0000:00:1b.0/sound/card0/input26
+[    8.713377] input: HDA Intel PCH Dock Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card0/input27
+[    8.713433] input: HDA Intel PCH Headphone as /devices/pci0000:00/0000:00:1b.0/sound/card0/input28
+[    8.713488] input: HDA Intel PCH HDMI/DP,pcm=3 as /devices/pci0000:00/0000:00:1b.0/sound/card0/input29
+[    8.713542] input: HDA Intel PCH HDMI/DP,pcm=7 as /devices/pci0000:00/0000:00:1b.0/sound/card0/input30
+[    8.713592] input: HDA Intel PCH HDMI/DP,pcm=8 as /devices/pci0000:00/0000:00:1b.0/sound/card0/input31
+[    8.720719] Broadcom 43xx driver loaded [ Features: PNLS ]
+[    8.720874] ssb0:0: Missing Free firmware (non-Free firmware loading is disabled)
+[    8.724939] b43 ssb0:0: Direct firmware load for /*(DEBLOBBED)*/ failed with error -2
+[    8.724941] b43 ssb0:0: Falling back to syfs fallback for: /*(DEBLOBBED)*/
+[    9.170716] ssb0:0: Missing Free firmware (non-Free firmware loading is disabled)
+[    9.176381] ssb0:0: Missing Free firmware (non-Free firmware loading is disabled)
+[    9.176441] b43 ssb0:0: Direct firmware load for /*(DEBLOBBED)*/ failed with error -2
+[    9.176443] b43 ssb0:0: Falling back to syfs fallback for: /*(DEBLOBBED)*/
+[    9.188379] ssb0:0: Missing Free firmware (non-Free firmware loading is disabled)
+[    9.196377] b43-phy0 ERROR: Firmware file "/*(DEBLOBBED)*/" request failed (err=-11)
+[    9.196378] b43-phy0 ERROR: Firmware file "b43-open//*(DEBLOBBED)*/.fw" request failed (err=-11)
+[    9.196379] b43-phy0 ERROR: /*(DEBLOBBED)*/
+
+* # (clover) before install kernel (with Intel Corporation Centrino)
+$ lspci -kv
+03:00.0 Network controller: Intel Corporation Centrino Advanced-N 6205 [Taylor Peak] (rev 34)
+        Subsystem: Intel Corporation Centrino Advanced-N 6205 (802.11a/b/g/n)
+        Flags: fast devsel, IRQ 17
+        Memory at f2400000 (64-bit, non-prefetchable) [size=8K]
+        Capabilities: <access denied>
+        Kernel modules: iwlwifi
+$ dmesg | grep iw                                                                                                                                  
+[   12.685390] iwlwifi 0000:03:00.0: can't disable ASPM; OS doesn't have ASPM control                                                                                   
+[   12.686326] iwlwifi 0000:03:00.0: Direct firmware load for /*(DEBLOBBED)*/ failed with error -2                                                                      
+[   12.686328] iwlwifi 0000:03:00.0: Falling back to syfs fallback for: /*(DEBLOBBED)*/                                                                                 
+[   12.692848] iwlwifi 0000:03:00.0: Direct firmware load for /*(DEBLOBBED)*/ failed with error -2                                                                      
+[   12.692849] iwlwifi 0000:03:00.0: Falling back to syfs fallback for: /*(DEBLOBBED)*/                                                                                 
+[   12.700851] iwlwifi 0000:03:00.0: no suitable firmware found!                                                                                                        
+[   12.700854] iwlwifi 0000:03:00.0: minimum version required: /*(DEBLOBBED)*/5                                                                                         
+[   12.700855] iwlwifi 0000:03:00.0: maximum version supported: /*(DEBLOBBED)*/6                                                                                        
+[   12.700856] iwlwifi 0000:03:00.0: check /*(DEBLOBBED)*/ 
+
+
+
+* # (clover) sudo make menuconfig
+03:00.0 Network controller: Intel Corporation Centrino Advanced-N 6205 [Taylor Peak] (rev 34)
+        Subsystem: Intel Corporation Centrino Advanced-N 6205 (802.11a/b/g/n)
+        Flags: fast devsel, IRQ 17
+        Memory at f2400000 (64-bit, non-prefetchable) [size=8K]
+        Capabilities: <access denied>
+        Kernel modules: iwlwifi
+
+ $ dmesg | grep iw                                                                                                                                  
+[   12.355563] iwlwifi 0000:03:00.0: can't disable ASPM; OS doesn't have ASPM control                                                                                   
+[   12.355838] iwlwifi 0000:03:00.0: Direct firmware load for /*(DEBLOBBED)*/ failed with error -2                                                                      
+[   12.355840] iwlwifi 0000:03:00.0: Falling back to syfs fallback for: /*(DEBLOBBED)*/                                                                                 
+[   12.361064] iwlwifi 0000:03:00.0: Direct firmware load for /*(DEBLOBBED)*/ failed with error -2                                                                      
+[   12.361066] iwlwifi 0000:03:00.0: Falling back to syfs fallback for: /*(DEBLOBBED)*/                                                                                 
+[   12.369055] iwlwifi 0000:03:00.0: no suitable firmware found!                                                                                                        
+[   12.369057] iwlwifi 0000:03:00.0: minimum version required: /*(DEBLOBBED)*/5                                                                                         
+[   12.369058] iwlwifi 0000:03:00.0: maximum version supported: /*(DEBLOBBED)*/6                                                                                        
+[   12.369060] iwlwifi 0000:03:00.0: check /*(DEBLOBBED)*/                                                                                                              
+
+
+ $ sudo fwts aspm   
+
+
+
+* [2019-11-09 Sat 19:48] freebsd/if_bwn_phy_n.c at master · freebsd/freebsd :grasp:
+https://github.com/freebsd/freebsd/blob/master/sys/dev/bwn/if_bwn_phy_n.c
+Selection:
+freebsd/sys/dev/bwn/if_bwn_phy_n.c
+Find fileCopy path
+
+
+* 일단 참고명령 # dmesg | grep bwn
+bwn_pci0: <Broadcom BCM4322 802.11n Dual-Band Wireless> mem 0xf2400000-0xf2403fff irq 17 at device 0.0 on pci1
+bhndb0: <PCI-BHND bridge> on bwn_pci0
+bhndb0: Using MSI interrupts on bwn_pci0
+bwn0: <Broadcom 802.11 MAC/PHY/Radio, rev 16> mem 0x18001000-0x18001dff,0x18001f00-0x18001fff,0x18001e00-0x18001eff irq 1 at core 1 on bhnd0
+bwn0: bwn_phy_n_attach: BWN_GPL_PHY not in kernel config; no PHY-N support
+* 일단 참고명령 # wpa_supplicant -D bsd -i wlan0 -c /etc/wpa.conf -B
+* sudo ifconfig wlan0 create wlandev iwn0 # ifconfig에 wlan0 출현!!!!!!
+* ifconfig wlan0 scan # 매우 잘 탐색함.
+
+$  ifconfig wlan0 scan
+SSID/MESH ID                      BSSID              CHAN RATE    S:N     INT CAPS
+ollehEgg_014                      00:1d:93:81:d1:d6    1   54M  -81:-95   100 EPS  HTCAP RSN WPA WME
+Public WiFi Free                  02:06:ac:80:26:c6    5   54M  -74:-95   100 ES   HTCAP WME ATH
+Public WiFi FREE                  12:06:ac:80:26:c6    5   54M  -74:-95   100 ES   HTCAP WME ATH
+U+NetE62C                         18:c5:01:a1:e6:2e    5   54M  -91:-95   100 EPS  HTCAP VHTCAP VHTOPMODE WME ATH RSN
+$  ifconfig wlan0 scan
+SSID/MESH ID                      BSSID              CHAN RATE    S:N     INT CAPS
+U+NetA19B                         18:c5:01:8a:a1:9a   11   54M  -89:-95   100 EP   HTCAP RSN WME
+Public WiFi Free                  02:06:ac:80:26:c6    5   54M  -74:-95   100 ES   HTCAP WME ATH
+Public WiFi Free                  02:06:ac:80:26:c2    5   54M  -90:-95   100 ES   HTCAP WME ATH
+$ dmesg | grep iw
+module iwi already present!
+iwn0: <Intel Centrino Advanced-N 6205> mem 0xf2400000-0xf2401fff irq 17 at device 0.0 on pci1
+iwn0: iwn_read_firmware: ucode rev=0x12a80601
+iwn0: iwn_read_firmware: ucode rev=0x12a80601
+iwn0: iwn_read_firmware: ucode rev=0x12a80601
+module iwi already present!
+
+
+
+
+
+
+
+SSID/MESH ID           BSSID
+Public WiFi FREE       12:06:ac:80:26:c6
+Public WiFi FREE       12:06:ac:80:26:c2
+
+ctrl_interface=DIR=/run/wpa_supplicant GROUP=wheel
+update_config=1
+country=kr
+country=us
+update_config=1
+ctrl_interface=/var/run/wpa_supplicant
+
+########refer#########
+wpa_suplicant.conf
+Code:
+ctrl_interface=/var/run/wpa_supplicant
+update_config=1
+ap_scan=1
+fast_reauth=1
+
+network={
+    ssid="ssid"
+    psk="password"
+}
+
+
+rc.conf
+Code:
+ifconfig_bce2_name="wlan0"        # External Network
+ifconfig_wlan0="WPA DHCP"
+
+
+########refer#########
+
+
+* note3.org To see the last time that you logged in, use lastlogin(8)
+* net-setup wlan0 in Gentoo but 
+* [2019-11-10 Sun 08:46] emacs newbie question - how to search within a region - Stack Overflow :grasp:
+https://stackoverflow.com/questions/1893795/emacs-newbie-question-how-to-search-within-a-region#1893817
+Selection:
+You can use this combination of commands:
+
+M-x narrow-to-region
+C-s SOMETEXT
+M-x widen
+C-x n n
+C-s sometext
+C-x n w
+
+
+(shell-command-to-string "echo -test! $x-")"-test! -
+"
+
+
+1
+ab
+2
+12
+123
+
+* [2019-11-10 Sun 09:24] How to find file by inode number » Linux Ask! | Linux Ask! :grasp:
+http://www.linuxask.com/questions/how-to-find-file-by-inode-number
+Selection:
+To find a file by its inode number, you can use the argument -inum with the find command. e.g.
+
+# find -inum 8232976
+./test.txt
+./hard_link.txt
+* [2019-11-10 Sun 09:28]  okular "$(find ~/Music  -inum 6836311)" & c - How can I access file by inode on Linux - Stack Overflow :grasp:
+https://stackoverflow.com/questions/31428641/how-can-i-access-file-by-inode-on-linux/31432662#31432662
+Selection:
+2
+
+I found the question connected concerning similar topic here.
+
+Summarizing, check out those commands:
+
+find /path/to/mountpoint -inum <inode number>
+sudo debugfs -R 'ncheck 393094' /dev/sdaX 2>/dev/null
+* [2019-11-11 Mon 13:18] route -n ip r
+Run command: 참조 /app/ssh/route.org
+$ route add default gw {IP-ADDRESS} {INTERFACE-NAME}
+$ route add default gw 192.168.2.254 eth0
+
+* [2019-11-11 Mon 13:18]  qt.qpa.xcb: could not connect to display localhost:10:0
+
+
+* [2019-11-12 Tue]
+** 울산 남구 화합로 71번지 힐튼빌리지 401호
+부동산

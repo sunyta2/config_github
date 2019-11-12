@@ -1,0 +1,12 @@
+
+1. 깊은 사고력.
+
+2. 기본키보드의 머슬메모리 - 반복적인 훈련.
+
+3. 연계와 확장 그리고 새로운 도전의 용기
+- emacsQ를 실행하고 C-x 5 2로 여러개의 프래임을 생성하여서
+일괄적으로 C-x C-c로 닫기가 가능하다
+	- 교훈: 통합의 방식을 정하는 힘!(매우 다양한 가능성에서)
+	- OS의 다양한 통합의 방식은 혼란속의 질서를 찾아가는 것이다.
+리: (find-file-other-window "~/config_github/app/dwm/dwm_meta_method.org")
+연: (find-file-other-window "~/config_github/app/emacs/org_mode_study/org_meta_method.org")

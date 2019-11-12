@@ -1,3 +1,18 @@
 책은 위대한 책이라야 한다.
 
+
 * 위대한 아이디어를 담은 책을 읽는다.
+
+*** 안목의 격차에 의해서 월등한 차이를 내는 것이 컴퓨터다!
+많은 자료에서 형식을 정하는 Formula 입법능력이 인간의 강점.
+연: (find-file-other-window "~/config_github/app/emacs/org_mode_study/org_meta_method.org")
+
+
+* scp from FreeBSD to Arco Linux 
+$ scp -r ~/Music/bellum_gallicum_1210_librivox/*.mp3 thinkpad@192.168.1.3:/home/thinkpad/Music/gentoo_lfs/
+thinkpad@192.168.1.3's password: 
+bellumgallicum_01_caesar_64kb.mp3                                                                                   100% 7972KB  11.1MB/s   00:00    
+bellumgallicum_02_caesar_64kb.mp3                                                                                   100% 6007KB  11.1MB/s   00:00    
+bellumgallicum_03_caesar_64kb.mp3                                                                                   100% 9300KB  11.1MB/s   00:00    
+
+* bellumgallicum_caesar

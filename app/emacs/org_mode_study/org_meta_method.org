@@ -1,0 +1,24 @@
+*** Wishlist:   # 좋은 방법론
+인: [2019-11-02 Sat] 겐투검색하다 맥북에서 동영상 발견
+리: 1.org_meta_method 2.search_find/awk
+사: 겐투 xsetroot_bar_info in start CMD
+연:
+         - Show Memory Used/Total
+free -h | awk '/^Mem:/ {print $3 "/" $2}'
+         - Show CPU Temp
+sensors | awk '/^fan/ {getline; print $2}'
+         - Show most Memory intensive processes
+
+         - Show most CPU intensive processes
+Then create status bar module for CPU/Mem.
+
+sudo pacman -S lm_sensors
+awk next line method
+awk '/C02/{print;getline;print}' ~/temp/log.txt
+
+*** 다이어리(발생이력), 발달(활용처, 원리연구처)
+초기와 발달을 이해하면 전체를 알 수 있다. 아리스토텔레스
+인: [시간] - 
+리: (find-file-other-window "~/config_github/app/emacs/org_mode_study/org_meta_method.org")
+사:  
+연: (find-file-other-window "~/config_github/app/dwm/dwm_meta_method.org")

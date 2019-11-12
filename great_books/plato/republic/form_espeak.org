@@ -1,0 +1,26 @@
+** |그리스어|단어|단어|
+#+BEGIN_SRC emacs-lisp :results silent :comment 느리게3번읽기
+(async-shell-command "espeak  word_each_text_is_best_study; for i in {1..3} ; do espeak -v grk/grc -s 100 -g 30 \"
+|그리스어|단어|단어|
+\"; sleep 003; done ; espeak word_each_text_with_Great_Mind. ")
+#+END_SRC
+#+BEGIN_word_meaning_text :comment 단어_발생취지뜻을_마음에
+|english|word|word|
+#+END_word_meaning_text
+#+BEGIN_SRC emacs-lisp :results silent :comment 영어낭독읽기
+(async-shell-command "espeak english_text_is_best_study; for i in {1..2} ; do espeak -v en -s 150 -g 15 \"
+english_long_translation
+\"; sleep 003; done ; espeak english_text_with_Great_Mind. ")
+#+END_SRC
+####################
+#+BEGIN_SRC emacs-lisp :results silent :comment 그리스어빠르게5번읽기
+(async-shell-command "espeak greek_text_is_best_study; for i in {1..5} ; do espeak -v grk/grc -s 150 -g 30 \"
+그리스어문장으로 연결됨
+\"; sleep 003; done ; espeak greek_text_with_Great_Mind. ")
+#+END_SRC
+#+BEGIN_SRC emacs-lisp :results silent :comment 마음자세와깨달은바5번읽기
+(async-shell-command "espeak korean_text_to_beginnig ; for i in {1..2} ; do espeak -v ko -s 100 -g 30 \"
+마음자세와깨달은바 나무대방광불화엄경
+\"; sleep 003; done ; espeak korean_text_for_global_Great_Mind. ")
+#+END_SRC
+** |english|word|word|

@@ -1,0 +1,104 @@
+
+
+#+NAME: mycontent
+#+BEGIN_SRC emacs-lisp :results value :results raw :exports results
+(print "this content is streamed to a new buffer")
+#+END_SRC
+
+
+
+#+NAME: mystream2
+#+BEGIN_SRC sh :var c=mycontent  :results raw
+echo "echo $c"
+#+END_SRC
+
+#+RESULTS: mystream2
+echo this content is streamed to a new buffer
+
+
+#+NAME: mystream
+#+BEGIN_SRC emacs-lisp :var c=mycontent :results none
+(prin1 c (generate-new-buffer "new"))
+#+END_SRC
+
+
+* save :exprots results
+출처: [org mode - org-babel result to a separate buffer - Emacs Stack Exchange](https://emacs.stackexchange.com/questions/23870/org-babel-result-to-a-separate-buffer)
+#+NAME: mycontent
+#+BEGIN_SRC emacs-lisp :results value :results raw :exports results
+(print "this content is streamed to a new buffer")
+#+END_SRC
+
+#+NAME: mystream
+#+BEGIN_SRC emacs-lisp :var c=mycontent :results none
+(prin1 c (generate-new-buffer "new"))
+#+END_SRC
+
+* TODO Arguments to Code Blocks
+
+
+#+NAME: test_txt
+#+BEGIN_EXAMPLE
+Type 
+  t 
+#+END_EXAMPLE
+
+
+
+#+BEGIN_SRC sh :var a1=test_square(6) t=test_txt
+echo "test_square $a1 헤더값으로 ()변수 기본값을 지정할 수 있었음에도 유의"
+  echo "test_txt $t $함수의 기본을 정의한다."
+#+END_SRC
+
+#+RESULTS:
+| 36   |
+| Type |
+| t    |
+|      |
+
+#+name: test_square
+#+header: :var x=0
+#+begin_src python
+return x*x
+#+end_src
+
+
+
+
+#+name: square
+#+header: :var x=0
+#+begin_src python
+return x*x
+#+end_src
+Now we use the source block:
+
+#+call: square(x=6)
+(for information on the call syntax see Library of Babel)
+36
+
+#+call: square(x=36)
+
+#+RESULTS:
+: 1296
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#+lob: square(x=6)
+
+library from any Org-mode file using the org-babel-lob-ingest (bound to C-c C-v l).
+
+(org-babel-lob-ingest "path/to/file.org")
+#+lob: square(x=36)
+
+(org-babel-lob-ingest "./plus3_using_lob_babel.org") ;;; C-c C-c 아래의 call:이 실행의 방식이다.
+#+call: add3(x=36)
+#+call: mult3(x=36)
+
+#+RESULTS:
+: 108
+
+mult3 and add3 by (org-babel-lob-ingest "./plus3_using_lob_babel.org")
+#+call: add3(x=36)
+#+call: mult3(x=36)
+
+#+lob: add3(x=3)
+#+lob: mult3(x=3)

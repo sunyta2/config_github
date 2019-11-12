@@ -1,0 +1,27 @@
+** # | Cum | divina | tua | mens       | et | numen, |
+          #+BEGIN_word_meaning_text :comment 단어_발생취지뜻을_마음에
+      	  | with| divine | your|intelligence|and |  will, |
+          #+END_word_meaning_text
+        #+BEGIN_SRC emacs-lisp :results silent :comment 영어낭독읽기
+	(async-shell-command "espeak english_text_is_best_study; for i in {1..2} ; do espeak -v en -s 150 -g 15 \"
+WHILE your divine intelligence and will,  
+	\"; sleep 003; done ; espeak english_text_with_Great_Mind. ")
+        #+END_SRC
+         #+BEGIN_SRC emacs-lisp :results silent :comment 마음자세와깨달은바5번읽기
+	   (async-shell-command "espeak korean_text_to_beginnig ; for i in {1..2} ; do espeak -v ko -s 100 -g 30 \"
+나무 대방광불화엄경
+	   \"; sleep 003; done ; espeak korean_text_for_global_Great_Mind. ")
+         #+END_SRC
+
+	#+BEGIN_SRC emacs-lisp :results silent :comment 라틴어빠르게5번읽기
+        (async-shell-command "echo greek_text_is_best_study; for i in {1..30} ; do espeak -v itc/la -s 150 -g 30 \"
+Cum divina tua mens et numen,     
+        \"; sleep 003; done ; #espeak greek_text_with_Great_Mind. ")
+	#+END_SRC
+
+          #+BEGIN_SRC emacs-lisp :results silent :comment 느리게3번읽기
+          (async-shell-command "espeak  word_each_text_is_best_study; for i in {1..3} ; do espeak -v itc/la -s 100 -g 30 \"
+          | Cum | divina | tua | mens       | et | numen, |
+          \"; sleep 003; done ; espeak word_each_text_with_Great_Mind. ")
+          #+END_SRC
+** # | with| divine | your|intelligence|and |  will, |

@@ -1,0 +1,196 @@
+
+(async-shell-command "~/.bin/say_greek")
+(search-forward "+NAME: TODO_ESPEAKING")
+(search-forward "TODO")
+         #+BEGIN_SRC sh :var eng=TO1DO_ENG gre=TODO_GRE  :results silent
+
+	   notify-send -t 51000 "
+	    $gre
+	    $eng"
+	   espeak -v en "$eng" ;sleep 2;
+	   for i in 1 2 3;do
+	     espeak -v grk/grc -s 100 -g 30 "$(echo "$gre")"
+	   sleep 3; done
+	   espeak -v en "$eng"
+         #+END_SRC
+
+#+BEGIN_SRC sh :results silent
+#ls | (while read LINE ; do espeak "$LINE";sleep 1; done)
+a="Deep in your innermost being, you’ve always known you were destined to learn Clojure.
+Every time you held "
+# a="$(xclip -o)"
+echo "$a" | while read LINE ; do espeak "$LINE";sleep 3; done
+#+END_SRC
+
+
+***  [[ http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0167 ][ Plato, Republic, book 1, section 327a perseus SITE ]]
+** [327α] (async-shell-command "surf http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0167 &")
+** Σωκράτης
+** # κατέβην     χθὲς        εἰς     Πειραιᾶ  μετὰ Γλαύκωνος  
+
+#+BEGIN_SRC emacs-lisp :results silent :comment 느리게3번읽기
+(async-shell-command "espeak  word_each_text_is_best_study; for i in {1..3} ; do espeak -v grk/grc -s 100 -g 30 \"
+    | κατέβην  |     χθὲς |       εἰς|      Πειραιᾶ | μετὰ |   Γλαύκωνος|  
+\"; sleep 003; done ; espeak word_each_text_with_Great_Mind. ")
+#+END_SRC
+#+BEGIN_word_meaning_text :comment 단어_발생취지뜻을_마음에
+    went down | yesterday   | into |          |with|
+#+END_word_meaning_text
+#+BEGIN_SRC emacs-lisp :results silent :comment 영어낭독읽기
+(async-shell-command "espeak english_text_is_best_study; for i in {1..2} ; do espeak -v en -s 150 -g 15 \"
+     I went down yesterday to the Peiraeus with Glaucon, ~ 
+\"; sleep 003; done ; espeak english_text_with_Great_Mind. ")
+#+END_SRC
+####################
+#+BEGIN_SRC emacs-lisp :results silent :comment 그리스어빠르게5번읽기
+(async-shell-command "espeak greek_text_is_best_study; for i in {1..5} ; do espeak -v grk/grc -s 150 -g 30 \"
+     
+\"; sleep 003; done ; espeak greek_text_with_Great_Mind. ")
+#+END_SRC
+#+BEGIN_SRC emacs-lisp :results silent :comment 마음자세와깨달은바5번읽기
+(async-shell-command "espeak korean_text_to_beginnig ; for i in {1..2} ; do espeak -v ko -s 100 -g 30 \"
+      나무 대방광불화엄경
+\"; sleep 003; done ; espeak korean_text_for_global_Great_Mind. ")
+#+END_SRC
+
+
+####################
+
+** # went down | yesterday | into |         |with|
+** TODO # τοῦ Ἀρίστωνος     προσευξόμενός   τε       τῇ   θεῷ
+#+BEGIN_SRC emacs-lisp :results silent :comment 느리게3번읽기
+(async-shell-command "espeak  word_each_text_is_best_study; for i in {1..3} ; do espeak -v grk/grc -s 100 -g 30 \"
+τοῦ Ἀρίστωνος     προσευξόμενός   τε       τῇ   θεῷ
+\"; sleep 003; done ; espeak word_each_text_with_Great_Mind. ")
+#+END_SRC
+#+BEGIN_word_meaning_text :comment 단어_발생취지뜻을_마음에
+                   offer_prayers| both &   |   | Deity | 
+#+END_word_meaning_text
+#+BEGIN_SRC emacs-lisp :results silent :comment 영어낭독읽기
+(async-shell-command "espeak english_text_is_best_study; for i in {1..2} ; do espeak -v en -s 150 -g 15 \"
+ the son of Ariston, to pay my devotions to the Goddess
+\"; sleep 003; done ; espeak english_text_with_Great_Mind. ")
+#+END_SRC
+####################
+#+BEGIN_SRC emacs-lisp :results silent :comment 그리스어빠르게5번읽기
+(async-shell-command "espeak greek_text_is_best_study; for i in {1..5} ; do espeak -v grk/grc -s 150 -g 30 \"
+     τοῦ Ἀρίστωνος     προσευξόμενός   τε       τῇ   θεῷ
+\"; sleep 003; done ; espeak greek_text_with_Great_Mind. ")
+#+END_SRC
+#+BEGIN_SRC emacs-lisp :results silent :comment 마음자세와깨달은바5번읽기
+(async-shell-command "espeak korean_text_to_beginnig ; for i in {1..2} ; do espeak -v ko -s 100 -g 30 \"
+     한글의 나무대방광불화엄경2
+\"; sleep 003; done ; espeak korean_text_for_global_Great_Mind. ")
+#+END_SRC
+
+
+####################
+
+** TODO #                  offer_prayers| both &   |   | Deity | 
+** # καὶ     ἅμα     τὴν   ἑορτὴν  βουλόμενος   θεάσασθαι  τίνα   τρόπον ποιήσουσιν  #  
+#+BEGIN_SRC emacs-lisp :results silent :comment 느리게3번읽기
+(async-shell-command "espeak  word_each_text_is_best_study; for i in {1..3} ; do espeak -v grk/grc -s 100 -g 30 \"
+ καὶ     ἅμα     τὴν   ἑορτὴν  βουλόμενος   θεάσασθαι  τίνα   τρόπον ποιήσουσιν   
+\"; sleep 003; done ; espeak word_each_text_with_Great_Mind. ")
+#+END_SRC
+#+BEGIN_word_meaning_text :comment 단어_발생취지뜻을_마음에
+and    at once |       feast | wish      |  behold  | which | way | make(ποιέω) |
+#+END_word_meaning_text
+#+BEGIN_SRC emacs-lisp :results silent :comment 영어낭독읽기
+(async-shell-command "espeak english_text_is_best_study; for i in {1..2} ; do espeak -v en -s 150 -g 15 \"
+and also because I wished to see how they would conduct the festival
+\"; sleep 003; done ; espeak english_text_with_Great_Mind. ")
+#+END_SRC
+####################
+#+BEGIN_SRC emacs-lisp :results silent :comment 그리스어빠르게5번읽기
+(async-shell-command "espeak greek_text_is_best_study; for i in {1..5} ; do espeak -v grk/grc -s 150 -g 30 \"
+그리스어문장으로 연결됨
+\"; sleep 003; done ; espeak greek_text_with_Great_Mind. ")
+#+END_SRC
+#+BEGIN_SRC emacs-lisp :results silent :comment 마음자세와깨달은바5번읽기
+(async-shell-command "espeak korean_text_to_beginnig ; for i in {1..2} ; do espeak -v ko -s 100 -g 30 \"
+마음자세와깨달은바 나무대방광불화엄경
+\"; sleep 003; done ; espeak korean_text_for_global_Great_Mind. ")
+#+END_SRC
+** and    at once |       feast | wish      |  behold  | which | way | make(ποιέω) |
+** # |그리스어|단어|단어| # 
+#+BEGIN_SRC emacs-lisp :results silent :comment 느리게3번읽기
+(async-shell-command "espeak  word_each_text_is_best_study; for i in {1..3} ; do espeak -v grk/grc -s 100 -g 30 \"
+|그리스어|단어|단어|
+\"; sleep 003; done ; espeak word_each_text_with_Great_Mind. ")
+#+END_SRC
+#+BEGIN_word_meaning_text :comment 단어_발생취지뜻을_마음에
+|english|word|word|
+#+END_word_meaning_text
+#+BEGIN_SRC emacs-lisp :results silent :comment 영어낭독읽기
+(async-shell-command "espeak english_text_is_best_study; for i in {1..2} ; do espeak -v en -s 150 -g 15 \"
+english_long_translation
+\"; sleep 003; done ; espeak english_text_with_Great_Mind. ")
+#+END_SRC
+####################
+#+BEGIN_SRC emacs-lisp :results silent :comment 그리스어빠르게5번읽기
+(async-shell-command "espeak greek_text_is_best_study; for i in {1..5} ; do espeak -v grk/grc -s 150 -g 30 \"
+그리스어문장으로 연결됨
+\"; sleep 003; done ; espeak greek_text_with_Great_Mind. ")
+#+END_SRC
+#+BEGIN_SRC emacs-lisp :results silent :comment 마음자세와깨달은바5번읽기
+(async-shell-command "espeak korean_text_to_beginnig ; for i in {1..2} ; do espeak -v ko -s 100 -g 30 \"
+마음자세와깨달은바 나무대방광불화엄경
+\"; sleep 003; done ; espeak korean_text_for_global_Great_Mind. ")
+#+END_SRC
+** |english|word|word|
+** # |그리스어|단어|단어| # 
+#+BEGIN_SRC emacs-lisp :results silent :comment 느리게3번읽기
+(async-shell-command "espeak  word_each_text_is_best_study; for i in {1..3} ; do espeak -v grk/grc -s 100 -g 30 \"
+|그리스어|단어|단어|
+\"; sleep 003; done ; espeak word_each_text_with_Great_Mind. ")
+#+END_SRC
+#+BEGIN_word_meaning_text :comment 단어_발생취지뜻을_마음에
+|english|word|word|
+#+END_word_meaning_text
+#+BEGIN_SRC emacs-lisp :results silent :comment 영어낭독읽기
+(async-shell-command "espeak english_text_is_best_study; for i in {1..2} ; do espeak -v en -s 150 -g 15 \"
+english_long_translation
+\"; sleep 003; done ; espeak english_text_with_Great_Mind. ")
+#+END_SRC
+####################
+#+BEGIN_SRC emacs-lisp :results silent :comment 그리스어빠르게5번읽기
+(async-shell-command "espeak greek_text_is_best_study; for i in {1..5} ; do espeak -v grk/grc -s 150 -g 30 \"
+그리스어문장으로 연결됨
+\"; sleep 003; done ; espeak greek_text_with_Great_Mind. ")
+#+END_SRC
+#+BEGIN_SRC emacs-lisp :results silent :comment 마음자세와깨달은바5번읽기
+(async-shell-command "espeak korean_text_to_beginnig ; for i in {1..2} ; do espeak -v ko -s 100 -g 30 \"
+마음자세와깨달은바 나무대방광불화엄경
+\"; sleep 003; done ; espeak korean_text_for_global_Great_Mind. ")
+#+END_SRC
+** |english|word|word|
+
+
+* 저장소
+
+
+
+
+
+
+
+|ἅτε    |  νῦν | πρῶτον | ἄγοντες. 
+since this was its inauguration. 
+| as if | now |first|bring(ἄγω)
+
+
+
+ καὶ     ἅμα   τὴν ἑορτὴν βουλόμενος θεάσασθαι τίνα τρόπον ποιήσουσιν ἅτε νῦν πρῶτον ἄγοντες. 
+
+
+
+
+
+
+* __   and at once  |   feast | wish    |  behold | which | way | make(ποιέω) | as if | now |first|bring(ἄγω)
+* καλὴ μὲν οὖν μοι καὶ ἡ τῶν ἐπιχωρίων πομπὴ ἔδοξεν εἶναι, οὐ μέντοι ἧττον ἐφαίνετο πρέπειν ἣν οἱ Θρᾷκες ἔπεμπον.
+* ___  and also because I wished to see how they would conduct the festival since this was its inauguration. 
+* I thought the procession of the citizens very fine, but it was no better than the show, made by the marching of the Thracian contingent.
+
+

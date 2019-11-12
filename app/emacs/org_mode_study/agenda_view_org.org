@@ -1,0 +1,55 @@
+
+
+C-c / t ;;현재 폴더내의 투두만 국한해서 검색하는 중요한 명령어(org-show-todo-tree)
+C-c / < 또는 > ;;일종의 잠금장치기능으로 리스트대신에 특수한 것으로 국한하는 것으로 추정함.
+
+
+/emacs/org_mode_study/agenda_view_org.org
+agenda C-c [ 리스트에 추가하는 방식을 연구함.
+C-c [ C-c / t ;;현재 폴더내의 투두만 국한
+/home/thinkpad/.emacs.d/elpa/org-plus-contrib-20190801/org-macs.elc
+
+
+(message "%s" org-default-notes-file)
+(setq org-default-notes-file (expand-file-name "~/notes.org"))
+(setq org-default-notes-file (expand-file-name "~/config_github/great_books/_achieve_agenda/2019_11_diary.org"))
+(require 'org-install)
+* org_capture todo items using C-c t
+#+BEGIN_SRC emacs-lisp
+(define-key global-map (kbd "C-c c") 'org-capture)
+(setq a "hi")
+(message "%s %s" a (concat a " " a))
+(setq my-github-achieve-agenda-file "~/config_github/great_books/_achieve_agenda/2019_11_diary.org")
+(setq my-github-achieve-agenda-file (expand-file-name "~/config_github/great_books/_achieve_agenda/2019_11_diary.org"))
+;; 캡쳐하는 것과 아젠다 파일이 되는 것은 별개의 따로 지정하는 것이다.
+(setq org-caputer-templates
+	'(
+	  ("d" "오늘의 성과 TODAY_DONE_" entry (file+headline my-github-achieve-agenda-file "TODAY_DONE_ ")
+           "* DONE %?")
+	  ("m" "maybe...next_for DONE_" entry (file+headline my-github-achieve-agenda-file "임의적인 입력의 노트 ")
+           "* maybe...next_for %?")
+	  ("n" "NEWS_뉴스maybe...next_for DONE_" entry (file+headline my-github-achieve-agenda-file "임의적인 입력의 노트 ")
+           "* 뉴스분류요망...next_for %?")
+	  ("t" "test and stuff" entry (file+headline my-github-achieve-agenda-file "test ")
+           "* test_for_ %?")
+	  ("T" "Todo꼭!매일" entry (file+headline my-github-achieve-agenda-file "Todo꼭!매일 ")
+           "* 꼭_ %?")
+
+	 )
+)
+
+#+END_SRC
+
+* agenda command (global-set-key (kbd "C-c a") 'org-agenda) 
+#+BEGIN_SRC elisp
+(global-set-key (kbd "C-c a") 'org-agenda)
+(setq org-agenda-window-setup (quote current-window)) ;;open agenda in current window
+(setq org-agenda-files (quote ("~/
+;;  (message "%s" org-agenda-files) (message "%s" org-capture-templates)
+#+END_SRC
+;;(global-set-key (kbd "C-x C-j") 'dired-jump) C-x 4 C-j ~ 0w ~ q C-x 4 0
+
+
+* mks error load and use customize-group org-capture방법으로 전환함.  
+(load-file "~/.emacs.d/elpa/org-plus-contrib-20190801/org-macs.elc")
+(setq org-default-notes-file (expand-file-name "~/config_github/great_books/_achieve_agenda/2019_11_diary.org"))

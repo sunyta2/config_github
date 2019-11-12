@@ -1,0 +1,14 @@
+mult3 and add3 by (org-babel-lob-ingest "./plus3_using_lob_babel.org")
+
+#+name: mult3
+#+header: :var x=0
+#+begin_src python
+return x*3
+#+end_src
+
+
+#+name: add3
+#+header: :var x=0
+#+begin_src python
+return x+3
+#+end_src

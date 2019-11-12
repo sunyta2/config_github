@@ -1,0 +1,10 @@
+
+
+(use-package visible-mark
+)
+
+* [2019-11-08 Fri 20:11] Regions, marks, and visible-mark | Pragmatic Emacs :grasp:
+http://pragmaticemacs.com/emacs/regions-marks-and-visual-mark/
+Selection:
+C-u C-SPACE to jump around the previous marks
+gitlab_visible_mark_chrome_grasp.org

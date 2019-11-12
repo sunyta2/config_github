@@ -1,5 +1,7 @@
 
 * study of dwm
+- 통합적인 사고력의 증대
+다른 것을 통합하는 고도의 추상성 ./dwm_meta_method.org
 - c language improve mind,
 
 

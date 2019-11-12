@@ -1,0 +1,208 @@
+while read line; do    
+    echo $line    
+done < file.txt
+awk 'NR== 2,NR== 3' <<< $a
+
+
+
+
+(async-shell-command "~/.bin/say_latin")
+(search-forward "+NAME: TODO_ESPEAKING")
+(search-forward "TODO")
+**** stuff to process 
+
+   omnes subactae tuum spectarent nutum populusque Romanus et senatus liberatus timore amplissimis tuis cogitationibus consiliisque gubernaretur, non audebam, tantis occupationibus, de architectura scripta et magnis cogitationibus explicata edere, metuens, ne non apto tempore interpellans subirem tui animi offensionem.
+   —while all foreign nations were in subjection awaiting your beck and call, and the Roman people and senate, released from their alarm, were beginning to be guided by your most noble conceptions and policies, I hardly dared, in view of your serious employments, to publish my writings and long considered ideas on architecture, for fear of subjecting myself to your displeasure by an unseasonable interruption.
+
+***  [[http://www.perseus.tufts.edu/hopper/text?doc=Perseus%253Atext%253A1999.02.0072%253Abook%253D1%253Achapter%253Dpreface][Vitruvius Pollio, De Architectura, Liber 01, perseus SITE]]
+** preface (async-shell-command "surf http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0167 &")
+** Vitruvius Pollio, De Architectura     Σωκράτης
+** # | Cum | divina | tua | mens       | et | numen, |
+          #+BEGIN_word_meaning_text :comment 단어_발생취지뜻을_마음에
+      	  | with| divine | your|intelligence|and |  will, |
+          #+END_word_meaning_text
+        #+BEGIN_SRC emacs-lisp :results silent :comment 영어낭독읽기
+	(async-shell-command "espeak english_text_is_best_study; for i in {1..2} ; do espeak -v en -s 150 -g 15 \"
+WHILE your divine intelligence and will,  
+	\"; sleep 003; done ; espeak english_text_with_Great_Mind. ")
+        #+END_SRC
+         #+BEGIN_SRC emacs-lisp :results silent :comment 마음자세와깨달은바5번읽기
+	   (async-shell-command "espeak korean_text_to_beginnig ; for i in {1..2} ; do espeak -v ko -s 100 -g 30 \"
+나무 대방광불화엄경
+	   \"; sleep 003; done ; espeak korean_text_for_global_Great_Mind. ")
+         #+END_SRC
+
+	#+BEGIN_SRC emacs-lisp :results silent :comment 라틴어빠르게5번읽기
+        (async-shell-command "echo greek_text_is_best_study; for i in {1..30} ; do espeak -v itc/la -s 150 -g 30 \"
+Cum divina tua mens et numen,     
+        \"; sleep 003; done ; #espeak greek_text_with_Great_Mind. ")
+	#+END_SRC
+
+          #+BEGIN_SRC emacs-lisp :results silent :comment 느리게3번읽기
+          (async-shell-command "espeak  word_each_text_is_best_study; for i in {1..3} ; do espeak -v itc/la -s 100 -g 30 \"
+          | Cum | divina | tua | mens       | et | numen, |
+          \"; sleep 003; done ; espeak word_each_text_with_Great_Mind. ")
+          #+END_SRC
+** # | with| divine | your|intelligence|and |  will, |
+** # | imperator Caesar, | imperio | potiretur  | orbis  | terrarum |
+          #+BEGIN_word_meaning_text :comment 단어_발생취지뜻을_마음에
+          | Imperator Caesar, | order   | make slave | circle |  world,  |
+          #+END_word_meaning_text
+        #+BEGIN_SRC emacs-lisp :results silent :comment 영어낭독읽기
+	(async-shell-command "espeak english_text_is_best_study; for i in {1..2} ; do espeak -v en -s 150 -g 15 \"
+Imperator Caesar, were engaged in acquiring the right to command the world,
+	\"; sleep 003; done ; espeak english_text_with_Great_Mind. ")
+        #+END_SRC
+         #+BEGIN_SRC emacs-lisp :results silent :comment 마음자세와깨달은바5번읽기
+	   (async-shell-command "espeak korean_text_to_beginnig ; for i in {1..2} ; do espeak -v ko -s 100 -g 30 \"
+나무 대방광불화엄경
+	   \"; sleep 003; done ; espeak korean_text_for_global_Great_Mind. ")
+         #+END_SRC
+
+	#+BEGIN_SRC emacs-lisp :results silent :comment 라틴어빠르게5번읽기
+        (async-shell-command "echo greek_text_is_best_study; for i in {1..30} ; do espeak -v itc/la -s 150 -g 30 \"
+imperator Caesar, imperio potiretur orbis terrarum
+        \"; sleep 003; done ; #espeak greek_text_with_Great_Mind. ")
+	#+END_SRC
+
+          #+BEGIN_SRC emacs-lisp :results silent :comment 느리게3번읽기
+          (async-shell-command "espeak  word_each_text_is_best_study; for i in {1..3} ; do espeak -v itc/la -s 100 -g 30 \"
+          | imperator Caesar, | imperio | potiretur  | orbis  | terrarum |
+          \"; sleep 003; done ; espeak word_each_text_with_Great_Mind. ")
+          #+END_SRC
+** # | Imperator Caesar, | order   | make slave | circle |  world,  |
+** # | invictaque | virtute |    cunctis   | hostibus  |   stratis  | triumpho             | 
+          #+BEGIN_word_meaning_text :comment 단어_발생취지뜻을_마음에
+      	  | invincible | bravery | all together | foreigner | spread out | triumphal procession |
+          #+END_word_meaning_text
+        #+BEGIN_SRC emacs-lisp :results silent :comment 영어낭독읽기
+	(async-shell-command "espeak english_text_is_best_study; for i in {1..2} ; do espeak -v en -s 150 -g 15 \"
+when all their enemies had been laid low by your invincible valour, 
+	\"; sleep 003; done ; espeak english_text_with_Great_Mind. ")
+        #+END_SRC
+         #+BEGIN_SRC emacs-lisp :results silent :comment 마음자세와깨달은바5번읽기
+	   (async-shell-command "espeak korean_text_to_beginnig ; for i in {1..2} ; do espeak -v ko -s 100 -g 30 \"
+나무 대방광불화엄경
+	   \"; sleep 003; done ; espeak korean_text_for_global_Great_Mind. ")
+         #+END_SRC
+
+	#+BEGIN_SRC emacs-lisp :results silent :comment 라틴어빠르게5번읽기
+        (async-shell-command "echo greek_text_is_best_study; for i in {1..30} ; do espeak -v itc/la -s 150 -g 30 \"
+invictaque | virtute |    cunctis   | hostibus  |   stratis  | triumpho
+        \"; sleep 003; done ; #espeak greek_text_with_Great_Mind. ")
+	#+END_SRC
+
+          #+BEGIN_SRC emacs-lisp :results silent :comment 느리게3번읽기
+          (async-shell-command "espeak  word_each_text_is_best_study; for i in {1..3} ; do espeak -v itc/la -s 100 -g 30 \"
+          | invictaque | virtute |    cunctis   | hostibus  |   stratis  | triumpho             |
+          \"; sleep 003; done ; espeak word_each_text_with_Great_Mind. ")
+          #+END_SRC
+** # | invincible | bravery | all together | foreigner | spread out | triumphal procession |
+** # | victoriaque | tua |  cives  | gloriarentur | et  | gentes  | 
+          #+BEGIN_word_meaning_text :comment 단어_발생취지뜻을_마음에
+      	  | victory     | thy | citizen |    boast     | and |  clan  | 
+          #+END_word_meaning_text
+        #+BEGIN_SRC emacs-lisp :results silent :comment 영어낭독읽기
+	(async-shell-command "espeak english_text_is_best_study; for i in {1..2} ; do espeak -v en -s 150 -g 15 \"
+and while your fellow citizens, were glorying in your triumph and victory,
+	\"; sleep 003; done ; espeak english_text_with_Great_Mind. ")
+        #+END_SRC
+         #+BEGIN_SRC emacs-lisp :results silent :comment 마음자세와깨달은바5번읽기
+	   (async-shell-command "espeak korean_text_to_beginnig ; for i in {1..2} ; do espeak -v ko -s 100 -g 30 \"
+나무 대방광불화엄경
+	   \"; sleep 003; done ; espeak korean_text_for_global_Great_Mind. ")
+         #+END_SRC
+
+	#+BEGIN_SRC emacs-lisp :results silent :comment 라틴어빠르게5번읽기
+        (async-shell-command "echo greek_text_is_best_study; for i in {1..30} ; do espeak -v itc/la -s 150 -g 30 \"
+ victoriaque | tua |  cives  | gloriarentur | et  | gentes             |
+        \"; sleep 003; done ; #espeak greek_text_with_Great_Mind. ")
+	#+END_SRC
+
+          #+BEGIN_SRC emacs-lisp :results silent :comment 느리게3번읽기
+          (async-shell-command "espeak  word_each_text_is_best_study; for i in {1..3} ; do espeak -v itc/la -s 100 -g 30 \"
+          | victoriaque | tua |  cives  | gloriarentur | et  | gentes  |
+          \"; sleep 003; done ; espeak word_each_text_with_Great_Mind. ")
+          #+END_SRC
+** # | victory     | thy | citizen |    boast     | and |  clan   |
+** # | omnes | subactae | tuum | spectarent |  nutum  | populusque | Romanus |  et | senatus | liberatus | timore  |
+          #+BEGIN_word_meaning_text :comment 단어_발생취지뜻을_마음에
+          |  all  | drive up | your |   gaze at  | nodding |   people   | of Rome | and |  Senate | liberate  | anxiety |
+          #+END_word_meaning_text
+        #+BEGIN_SRC emacs-lisp :results silent :comment 영어낭독읽기
+	(async-shell-command "espeak english_text_is_best_study; for i in {1..2} ; do espeak -v en -s 150 -g 15 \"
+and the Roman people and senate, released from their alarm,
+	\"; sleep 003; done ; espeak english_text_with_Great_Mind. ")
+        #+END_SRC
+         #+BEGIN_SRC emacs-lisp :results silent :comment 마음자세와깨달은바5번읽기
+	   (async-shell-command "espeak korean_text_to_beginnig ; for i in {1..2} ; do espeak -v ko -s 100 -g 30 \"
+로마의 의지, 나무 대방광불화엄경 결단의 용기
+	   \"; sleep 003; done ; espeak korean_text_for_global_Great_Mind. ")
+         #+END_SRC
+
+	#+BEGIN_SRC emacs-lisp :results silent :comment 라틴어빠르게5번읽기
+        (async-shell-command "echo greek_text_is_best_study; for i in {1..30} ; do espeak -v itc/la -s 150 -g 30 \"
+omnes subactae tuum spectarent nutum populusque Romanus et senatus liberatus 
+        \"; sleep 003; done ; #espeak greek_text_with_Great_Mind. ")
+	#+END_SRC
+
+          #+BEGIN_SRC emacs-lisp :results silent :comment 느리게3번읽기
+          (async-shell-command "espeak  word_each_text_is_best_study; for i in {1..3} ; do espeak -v itc/la -s 100 -g 30 \"
+          | omnes | subactae | tuum | spectarent |  nutum  | populusque | Romanus |  et | senatus | liberatus | timore  |
+          \"; sleep 003; done ; espeak word_each_text_with_Great_Mind. ")
+          #+END_SRC
+** # |  all  | drive up | your |   gaze at  | nodding |   people   | of Rome | and |  Senate | liberate  | anxiety |
+** # |    amplissimis  | tuis | cogitationibus | consiliisque | gubernaretur, |
+          #+BEGIN_word_meaning_text :comment 단어_발생취지뜻을_마음에
+          | of large extent |      |   considering   |   council   |   pilot       |
+          #+END_word_meaning_text
+        #+BEGIN_SRC emacs-lisp :results silent :comment 영어낭독읽기
+	(async-shell-command "espeak english_text_is_best_study; for i in {1..2} ; do espeak -v en -s 150 -g 15 \"
+were beginning to be guided by your most noble conceptions and policies, 
+	\"; sleep 003; done ; espeak english_text_with_Great_Mind. ")
+        #+END_SRC
+         #+BEGIN_SRC emacs-lisp :results silent :comment 마음자세와깨달은바5번읽기
+	   (async-shell-command "espeak korean_text_to_beginnig ; for i in {1..2} ; do espeak -v ko -s 100 -g 30 \"
+로마의 의지, 나무 대방광불화엄경 결단의 용기
+	   \"; sleep 003; done ; espeak korean_text_for_global_Great_Mind. ")
+         #+END_SRC
+
+	#+BEGIN_SRC emacs-lisp :results silent :comment 라틴어빠르게5번읽기
+        (async-shell-command "echo greek_text_is_best_study; for i in {1..30} ; do espeak -v itc/la -s 150 -g 30 \"
+amplissimis tuis cogitationibus consiliisque gubernaretur,
+        \"; sleep 003; done ; #espeak greek_text_with_Great_Mind. ")
+	#+END_SRC
+
+          #+BEGIN_SRC emacs-lisp :results silent :comment 느리게3번읽기
+          (async-shell-command "espeak  word_each_text_is_best_study; for i in {1..3} ; do espeak -v itc/la -s 100 -g 30 \"
+          |    amplissimis  | tuis | cogitationibus | consiliisque | gubernaretur, |
+          \"; sleep 003; done ; espeak word_each_text_with_Great_Mind. ")
+          #+END_SRC
+** # | of large extent |      |   considering   |   council   |   pilot       |
+** TODO # | non | audebam, |  tantis   | occupationibus, |
+          #+BEGIN_word_meaning_text :comment 단어_발생취지뜻을_마음에
+          | not |  dare to | such size |     seizure     |
+          #+END_word_meaning_text
+        #+BEGIN_SRC emacs-lisp :results silent :comment 영어낭독읽기
+	(async-shell-command "espeak english_text_is_best_study; for i in {1..2} ; do espeak -v en -s 150 -g 15 \"
+I hardly dared, in view of your serious employments, 
+	\"; sleep 003; done ; espeak english_text_with_Great_Mind. ")
+        #+END_SRC
+         #+BEGIN_SRC emacs-lisp :results silent :comment 마음자세와깨달은바5번읽기
+	   (async-shell-command "espeak korean_text_to_beginnig ; for i in {1..2} ; do espeak -v ko -s 100 -g 30 \"
+로마의 의지, 나무 대방광불화엄경 결단의 용기
+	   \"; sleep 003; done ; espeak korean_text_for_global_Great_Mind. ")
+         #+END_SRC
+
+	#+BEGIN_SRC emacs-lisp :results silent :comment 라틴어빠르게5번읽기
+        (async-shell-command "echo greek_text_is_best_study; for i in {1..30} ; do espeak -v itc/la -s 150 -g 30 \"
+non audebam, tantis occupationibus,
+        \"; sleep 003; done ; #espeak greek_text_with_Great_Mind. ")
+	#+END_SRC
+
+          #+BEGIN_SRC emacs-lisp :results silent :comment 느리게3번읽기
+          (async-shell-command "espeak  word_each_text_is_best_study; for i in {1..3} ; do espeak -v itc/la -s 100 -g 30 \"
+          | non | audebam, |  tantis   | occupationibus, |
+          \"; sleep 003; done ; espeak word_each_text_with_Great_Mind. ")
+          #+END_SRC
+** TODO # | not |  dare to | such size |     seizure     |

@@ -7,12 +7,26 @@
 
 
 
+
+
+
+
+case a in
+    arch)
+	
+	;;
+    freebsd)
+	
+	;;
+esac
+
+
 # 인박스.
 
-
+dolphin &
 # yes / no 진행문을 결정할 것.
 
-ech
+echo hi
 
 # 참고자료
 닷파일의 동영상 dt의 검색으로 동영상보기

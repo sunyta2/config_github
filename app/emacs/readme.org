@@ -1,3 +1,10 @@
+
+
+[[file:org_mode_study/agenda_view_org.org]]
+agenda C-c [ 리스트에 추가하는 방식을 연구함.
+C-c [ C-c / t ;;현재 폴더내의 투두만 국한
+
+
 * emacs and stumpwm
 to think in emacs and stumpwm
 - ( stumpwm - https://github.com/sunyta2/config_github/tree/master/app/stumpwm )

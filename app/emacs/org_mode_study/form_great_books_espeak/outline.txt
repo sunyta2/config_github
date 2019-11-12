@@ -1,0 +1,14 @@
+cat "/home/thinkpad/config_github/great_books/vitruvius/de_architectura/form/latin00.txt"
+echo "** # $(sed -n '1p' <<< $a)" #1
+cat "/home/thinkpad/config_github/great_books/vitruvius/de_architectura/form/latin01.txt"
+echo "         $(sed -n '2p' <<< $a)" #2
+cat "/home/thinkpad/config_github/great_books/vitruvius/de_architectura/form/latin02.txt"
+echo "$(sed -n '3p' <<< $a)" #3
+cat "/home/thinkpad/config_github/great_books/vitruvius/de_architectura/form/latin03.txt"
+echo "$(sed -n '4p' <<< $a)" #4
+cat "/home/thinkpad/config_github/great_books/vitruvius/de_architectura/form/latin04.txt"
+echo "$(sed -n '5p' <<< $a)" #5
+cat "/home/thinkpad/config_github/great_books/vitruvius/de_architectura/form/latin05.txt"
+echo "         $(sed -n '1p' <<< $a)" #1
+cat "/home/thinkpad/config_github/great_books/vitruvius/de_architectura/form/latin06.txt"
+echo "** # $(sed -n '2p' <<< $a)" #2
