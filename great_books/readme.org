@@ -15,4 +15,4 @@ bellumgallicum_01_caesar_64kb.mp3                                               
 bellumgallicum_02_caesar_64kb.mp3                                                                                   100% 6007KB  11.1MB/s   00:00    
 bellumgallicum_03_caesar_64kb.mp3                                                                                   100% 9300KB  11.1MB/s   00:00    
 
-* bellumgallicum_caesar
+* bellumgallicum_caesar (find-file "~/config_github/great_books/caesar/bellum_gallicum/readme.org")

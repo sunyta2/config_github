@@ -1,0 +1,59 @@
+  # /app/google-translate/readme.org
+
+
+
+
+
+
+
+* emacs  download google-translate.el
+#+BEGIN_SRC emacs-lisp :note saved in emacsQ_load.el
+(use-package google-translate ;; /app/google-translate/readme.org
+;(require 'google-translate) ;; $ yay translate-shell # trans -R
+  ;;:init
+  ;;(setq foo-variable t)
+    :config
+;(require 'google-translate-default-ui)
+;(global-set-key "\C-ct" 'google-translate-at-point)
+;(global-set-key "\C-cT" 'google-translate-query-translate)
+
+;(setq google-translate-default-target-language  "latin+ko"
+; google-translate-default-source-language "en")
+;(setq google-translate-default-target-language  nil
+; google-translate-default-source-language "en")
+
+(require 'google-translate-smooth-ui)
+(global-set-key "\C-ct" 'google-translate-smooth-translate)
+(setq google-translate-translation-directions-alist
+      '(("en" . "ko") ("en" . "la") 
+	("ko" . "en") ("ko" . "la") ("ko" . "el")  
+	 ("la" . "ko")  ("la" . "en")
+	("en" . "el") ("en" . "he")))
+
+)
+#+END_SRC
+
+
+
+
+* shell $ yay translate-shell # trans -R
+
+#+BEGIN_SRC sh :results raw
+trans -d -s en -t ko+la "hello world"
+#+END_SRC
+
+#+RESULTS:
+hello world
+
+안녕 세상
+
+
+
+
+#+BEGIN_SRC sh :results raw
+trans -b -d -s en -t ko+la -I
+#+END_SRC
+
+#+RESULTS:
+
+* yay translate-shell # trans -R

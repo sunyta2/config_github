@@ -1,0 +1,17 @@
+
+영감님을 만나고 악을 다시 선으로 변환하는 능력의 발굴!
+[2019-11-14 Thu 20:35] * xrandr * (find-file "~/config_github/app/xrandr/readme.org")
+*** xrandr * (find-file "~/config_github/app/xrandr/readme.org")
+*** 사용의 목적: 효과적인 다중모니터구성의 원리발굴.
+*** (find-file "~/config_github/app/xrandr/readme.org")
+* xrandr --auto --output eDP1 --auto --right-of VGA1 # 잘 작동됨!
+
+what kind of actions they are
+concerned with, (2) what sort of mean justice
+is, and (3) between what extremes the just act
+is
+ intermediate.
+
+* # 모니터가 단일화 복귀 ;;; (async-shell-command "xrandr --auto --output eDP1 &")
+* # 왼쪽에 외부모니터가 옴 ;;; (async-shell-command "xrandr --auto --output eDP1 --auto --right-of VGA1 &")
+* # 노트북잭왼쪽 오른쪽외부모니터 ; (async-shell-command "xrandr --auto --output eDP1 --auto --left-of VGA1 &")

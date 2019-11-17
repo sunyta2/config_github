@@ -77,7 +77,7 @@
 
 
 
-  (use-package command-log-mod
+(use-package command-log-mode
   :config 
   (clm/open-command-log-buffer)
 	;(require 'command-log-mode)
@@ -91,6 +91,32 @@
   ;;(setq foo-variable t)
   ;;:config
 )
+
+
+(use-package google-translate ;; /app/google-translate/readme.org
+;(require 'google-translate) ;; $ yay translate-shell # trans -R
+  ;;:init
+  ;;(setq foo-variable t)
+    :config
+;(require 'google-translate-default-ui)
+;(global-set-key "\C-ct" 'google-translate-at-point)
+;(global-set-key "\C-cT" 'google-translate-query-translate)
+
+;(setq google-translate-default-target-language  "latin+ko"
+; google-translate-default-source-language "en")
+;(setq google-translate-default-target-language  nil
+; google-translate-default-source-language "en")
+
+(require 'google-translate-smooth-ui)
+(global-set-key "\C-ct" 'google-translate-smooth-translate)
+(setq google-translate-translation-directions-alist
+      '(("en" . "ko") ("en" . "la") 
+	("ko" . "en") ("ko" . "la") ("ko" . "el")  
+	 ("la" . "ko")  ("la" . "en")
+	("en" . "el") ("en" . "he")))
+
+)
+
 
 ;;(use-package ' 클립보드 자동완성, 
 (use-package neotree 

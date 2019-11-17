@@ -1,0 +1,23 @@
+bellumgallicum_caesar
+(find-file "~/config_github/great_books/caesar/bellum_gallicum/readme.org")
+
+
+
+
+open by mpv use gui and also use repeat a-b from start.
+
+file-id of pdf
+* pdf file open by {PAGE} of zathura or okular 
+_caesares_gallic_war.pdf in ~/Music/bellumgallicum_caesar/_caesars_gallic_war.pdf in arco
+(dired "~/Music/bellumgallicum_caesar/_caesars_gallic_war.pdf")
+
+(defun show-in-finder ()
+  (interactive)
+  (shell-command (concat "open -R " buffer-file-name)))
+
+(shell-command "안됨!!dolphin --select ~/Music/bellumgallicum_caesar/_caesars_gallic_war.pdf")
+* take note in org files. 
+* site of pereseus 
+* mpv file with {A-B TIME} in command by inode of os
+use file id to adapt in chage of file path.
+(shell-command "mpv 
