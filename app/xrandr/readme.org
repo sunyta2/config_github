@@ -15,3 +15,5 @@ is
 * # 모니터가 단일화 복귀 ;;; (async-shell-command "xrandr --auto --output eDP1 &")
 * # 왼쪽에 외부모니터가 옴 ;;; (async-shell-command "xrandr --auto --output eDP1 --auto --right-of VGA1 &")
 * # 노트북잭왼쪽 오른쪽외부모니터 ; (async-shell-command "xrandr --auto --output eDP1 --auto --left-of VGA1 &")
+* # xrandr --output LVDS1 --auto # to get back to the default mode
+* # xrandr --output VGA1 --off # you may also disable on e optput using.https://xorg-team.pages.debian.net/xorg/howto/use-xrandr.html

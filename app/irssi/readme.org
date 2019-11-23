@@ -1,0 +1,34 @@
+
+open -e ~/.irssi/config
+file:///Users/thinkpad/.irssi/config
+You can also use the commands /1, /2, ... /N, which is what I like to do.
+
+
+
+
+
+my play ground and dom stadium is FreeNode
+ /CONNECT Freenode
+
+autosendcmd = "/msg nickserv mac_ava PASSWORD";
+
+irssi-config-example
+
+
+[nickserv] /msg NickServ help
+
+/nick leo_latin_greek
+
+[nickserv] /msg NickServ IDENTIFY mac_ava PASSWORD
+
+[nickserv] /JOIN #emacs
+
+ /JOIN #python
+
+irssi for learning from BEST!
+=============================
+
+- set automation
+
+- day by day open possible
+My perfect Irssi setup [http://www.antonfagerberg.com/blog/my-perfect-irssi-setup/

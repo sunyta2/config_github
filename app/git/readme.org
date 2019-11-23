@@ -1,0 +1,85 @@
+
+# git contents
+
+* git contents
+
+#+BEGIN_SRC sh
+git reset --hard HEAD # only reset in repo 즉 add하여 스테이지된 것을 몽땅 원상복구함.
+git clean -fd # only clean unstaged all 즉 등록되지 않은 파일은 모두 지음
+git clean -fdn # 테스트용 dry-run 바로 위의 git clean -fd 즉  -n(--dry-run)은 Not-run으로 기억됨
+
+
+#+END_SRC
+
+
+* git diff --cached 
+
+#+BEGIN_SRC sh
+# --cached means show the changes in the cache/index (i.e. staged changes) against the current HEAD.
+git diff --cached
+# --staged is a synonym for --cached.
+# --staged and --cached does not point to HEAD, just difference with respect to HEAD. 
+# If you cherry pick what to commit using git add --patch (or git add -p), --staged will return what is staged.
+#+END_SRC
+
+
+* Reset, restore and revert in git(1)
+ git revert is used to record some new commits to reverse the effect of some earlier commits (often only a
+       faulty one). If you want to throw away all uncommitted changes in your working directory, you should see git-
+       reset(1), particularly the --hard option. If you want to extract specific files as they were in another commit,
+       you should see git-restore(1), specifically the --source option. 출처 : git revert --help
+
+ git revert HEAD~3
+ git revert -n master~5..master~2
+git-cherry-pick(1)
+
+
+git checkout sutract-feature
+git cherry-pick b123
+git checkout master
+
+git reset --soft 0123 # 복귀하지만 파일을 삭제하지는 않음.
+git reset --mixed 0123 # not staged
+git reset --hard 0123 # 완전히 삭제하고 복구시킴. https://youtu.be/FdZecVxzJbk?t=780
+    $ git clean -df # delete untracked file by This clean cmd
+git reflog # 명령의 실행 을 기록해둔 중요한 보관소
+
+
+* git config --list
+git config --global user.name "LJP@thinkpad"
+git config --global user.email "sunyta@yahoo.com"
+git config --list
+
+
+
+* git checkout calc.py # 틀린 것을 원상복귀하는 명령어.
+- rm *2* && git status && git checkout *2* # 잘 작동됨을 확인함.
+
+* 메시지의 변경 명령어 git commit --amend -m "--amend 로 메시지만 변경함"
+
+* git commit -am "동시에 명령어"
+
+
+*  git push --set-upstream origin other3_github
+
+* git merge test 
+git checkout master
+git pull origin master
+git merge test
+git push origin master
+
+
+* git branch -D delete-branch
+git push origin home-changes
+
+git checkout master
+git merge home-changes
+
+git push origin master
+
+
+
+* git log --stat 
+
+git log --all --decorate --oneline --graph
+git log --stat 

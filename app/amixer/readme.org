@@ -1,0 +1,20 @@
+
+(async-shell-command "amixer --quiet set Master 25%")
+(async-shell-command "amixer --quiet set Master 75%")
+amixer set Master 75%
+amixer --quiet set Master 75%
+
+
+
+
+amixer get Master | tail -1 | awk '{print$4}'
+0
+amixer -q sset PCM 1+
+amixer -q sset PCM 1-
+awk -F"[][]" '/dB/ { print $2 }' <(amixer sget Master)
+vol=$(awk '/%/ {gsub(/[\[\]]/,""); print $4}' <(amixer sget Master))
+
+(async-shell-command "amixer --quiet set Master 25%")
+(async-shell-command "amixer --quiet set Master 75%")
+amixer set Master 75%
+amixer --quiet set Master 75%

@@ -160,7 +160,8 @@
 (simpleclip-mode 1)
 )
 
-
+(global-hl-line-mode)
+(set-face-background hl-line-face "gray13") ;; https://duckduckgo.com/?q=set+hl-line-mode+color&atb=v92-3_f&ia=qa
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defun dired-do-eshell-command (command)
   "Run an Eshell command on the marked files."

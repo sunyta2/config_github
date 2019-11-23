@@ -1,0 +1,30 @@
+stumpwm for study of emacs and lisp
+===================================
+
+to do
+how to run file in C-t : <input of dotfile>
+
+
+#+BEGIN_SRC emacs-lisp
+    (defun show-kernel () ;; 함수정의하는 법 배우기
+      (let ((ip (run-shell-command "uname -r" t)));; 내부변수정의법 배우기
+	(substitute #\Space #\Newline ip)));;#\Space 특수입력?으로 추정되는 법 익히기
+
+    (defvar color1 "#ff92d9");; 변수만 설정하는 법 익히기
+    ;; https://www.youtube.com/watch?v=4pTSgMlpyzc?t=281 [ DistroTube_Stumpwm Is One Strange Window Manager ]
+
+
+  (defmarco make-web-jump (name prefix)
+    `(defcommand ,(intern name) (search) ((:rest ,(concatenate 'string name " search: ")))
+       (sebstitute #\+ #\Space search)
+       (run-shell-command (concatenate 'string ,prefix search))))
+
+  (make-web-jump "google" "chromium http://www.google.fr/search?q=")
+
+#+END_SRC
+
+
+
+
+
+
