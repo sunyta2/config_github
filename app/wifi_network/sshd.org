@@ -1,0 +1,29 @@
+  i.  If you have the proprietary blobs, the only way to get most things you probably expect to work is to skip most of the nice things mpv has regarding video rendering, and just --hwdec=mmal and --vo=gpu or --vo=rpi.
+  ii.  If you don't have the proprietary blobs, then probably DRM+the gpu renderer (what used to be called "opengl") which can be utilized with --vo=gpu --gpu-context=drm (just requires you to have access to the DRM gpu device). Hardware decoding is not yet usable with this.
+  •  That list for snap contains access (supp
+  •  osedly) to x11 etc, but it still fails to connect to the X11 screen (empty string instead of the screen ID?).
+  •  
+
+What's the output of
+loginctl session-status
+
+
+mpv -vo drm somevideo.mp4
+
+# grep -i forward /etc/ssh/sshd_config 
+X11Forwarding yes
+# 
+
+echo "$DISPLAY"
+localhost:11.0
+# xauth list 
+
+On the client / local machine (Xorg installed on client) try this:
+$ xhost +
+
+Later try:
+$ ssh -AY user@host xterm
+or
+$ ssh -AX user@host xterm
+
+

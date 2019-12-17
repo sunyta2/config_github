@@ -1,0 +1,20 @@
+#+STARTUP: showall
+(find-file "~/note3/daily_pdf_mpv.org")
+
+# (progn (save-buffer)(shell-command "/home/thinkpad/.bin/grasp/server/grasp_server.py --path /home/thinkpad/config_github/great_books/_achieve_agenda/2019_11_diary.org"))
+##+START: overview
+
+#+TAGS: org_diary(d) todo(t)
+
+
+
+자득自得이 중요함!(자기自에게 가장 최적화된 방식으로 터득得하는 것)
+
+(최대한 깊고 강력하게 Binding됨을 추구함+느리더라도 결국에 효과적인 것)
+
+
+* [2019-12-07 Sat] Axiom_Greek인식의 自得감응
+[2019-12-07 Sat 20:07] 인식의 自得감응현상이 존재하는 것이 틀림없음.[2019-12-07 Sat 20:07] 내가 생각한 것은 세상의 창조이므로.
+https://www.youtube.com/watch?v=L3LMbpZIKhQ?t=2185
+[Lec 1 | MIT 6.042J Mathematics for Computer Science, Fall 2010-In fact, the word "axiom" comes from Greek]]
+정확히 찾아내어진 것- an_etymology_of_latin_greek.pdf No.104. ag에서 自得발견됨에 감탄!

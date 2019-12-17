@@ -11,6 +11,10 @@ network={
       auth_alg=OPEN
 }
 wpa_supplicant -D nl80211,wext -i wlp3s0 -c /etc/wpa.conf -B
+# ~/config_github/app/wifi_network/route.org
+# route add default gw 192.168.123.254
+ # ping -c 3 www.gentoo.org # 잘 작동!
+
 
 #+END_SRC
 청색볼펜노트

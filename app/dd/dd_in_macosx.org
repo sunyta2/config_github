@@ -1,0 +1,8 @@
+$ diskutil list
+$ diskutil unmountDisk /dev/disk2
+$ sudo dd if=/dev/disk2 of=backup.my.sdcard-18-oct-2015.img.dd bs=1m
+# dd if=FreeBSD-10.2-RELEASE-amd64-memstick.img of=/dev/da0 bs=1M conv=sync
+
+$ diskutil unmountDisk /dev/disk3
+$ sudo dd if=/dev/disk3 of=/Users/thinkpad/VirtualBox\ VMs/gentoo_linux/install-amd64-minimal-20191201T214502Z.iso bs=1m
+[How To Create Disk Image on Mac OS X With dd Command - nixCraft](https://www.cyberciti.biz/faq/how-to-create-disk-image-on-mac-os-x-with-dd-command/)

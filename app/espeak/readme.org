@@ -12,6 +12,32 @@ $ generate mp3 file from espeak
 ** arco 
 (find-file "~/espeak/") 더욱 연마하는 폴더임.
 
+** english # 문장의 전달에 사용할 수 있는 방법으로 지정할 것.
+
+#+NAME: test_txt
+#+BEGIN_EXAMPLE
+Type 
+  t 
+#+END_EXAMPLE
+
+
+#+BEGIN_SRC sh :var a1=test_square(6) t=test_txt
+echo "test_square $a1 헤더값으로 ()변수 기본값을 지정할 수 있었음에도 유의"
+  echo "test_txt $t $함수의 기본을 정의한다."
+#+END_SRC
+
+#+RESULTS:
+| 36   |
+| Type |
+| t    |
+|      |
+
+#+name: test_square
+#+header: :var x=0
+#+begin_src python
+return x*x
+#+end_src
+
 
 ** generate mp3 file from espeak
 출처: https://askubuntu.com/questions/178736/generate-mp3-file-from-espeak#178768

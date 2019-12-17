@@ -35,6 +35,7 @@ echo this content is streamed to a new buffer
 #+END_SRC
 
 * TODO Arguments to Code Blocks
+# 문장의 전달에 사용할 수 있는 방법으로 지정할 것.
 
 
 #+NAME: test_txt
@@ -42,7 +43,6 @@ echo this content is streamed to a new buffer
 Type 
   t 
 #+END_EXAMPLE
-
 
 
 #+BEGIN_SRC sh :var a1=test_square(6) t=test_txt

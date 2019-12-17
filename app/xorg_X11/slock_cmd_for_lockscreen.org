@@ -1,0 +1,16 @@
+yay slock # 3설치로 잘 작동됨.
+비밀번호 입력의 간단한 화면 잠금장치를 실행하는 것을 찾아냄.
+$ slock # Super-d dmenu에서 실행! 가능함!
+간단히 파일일 잠금을 실행함
+
+[linux - dwm and screen lock - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/236311/dwm-and-screen-lock)
+[Unit]
+Description=Lock the screen on resume from suspend
+
+[Service]
+User=jason
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/slock
+
+[Install]
+WantedBy=suspend.target

@@ -1,0 +1,5 @@
+
+
+* dd for USB_stick_gentoo dd_for_usb_stick.org
+* dd for clean in dd_with_clean.org
+* mac os diskutil list in dd_in_macosx.org

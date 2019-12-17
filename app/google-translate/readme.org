@@ -1,3 +1,4 @@
+#+STARTUP: showeverything
   # /app/google-translate/readme.org
 
 
@@ -39,7 +40,7 @@
 * shell $ yay translate-shell # trans -R
 
 #+BEGIN_SRC sh :results raw
-trans -d -s en -t ko+la "hello world"
+trans -b -d -s en -t ko+la "hello world"
 #+END_SRC
 
 #+RESULTS:
@@ -55,5 +56,27 @@ trans -b -d -s en -t ko+la -I
 #+END_SRC
 
 #+RESULTS:
+
+
+#+BEGIN_SRC sh :results raw
+str="
+ I intend to try, if  not to solve  it, at least to  examine and discuss it face to face with my readers, were it only to persuade them to answer it for themselves, and, if I can, to make their opinion and mine on the point clear. 
+"
+
+echo "$str
+
+"
+trans -b -d -s en -t ko+la "$str"
+#+END_SRC
+
+#+RESULTS:
+
+ I intend to try, if  not to solve  it, at least to  examine and discuss it face to face with my readers, were it only to persuade them to answer it for themselves, and, if I can, to make their opinion and mine on the point clear. 
+
+
+
+나는 그것을 해결하지 않으면 적어도 독자들과 직접 대면하여 조사하고 토론하려고 노력하고, 독자들에게 스스로 대답하고, 가능하다면 그들의 의견과 의견을 밝히도록 설득해야 했습니까? 요점은 분명하다.
+Animo ad conandum nisi solvere saltem inspicere disseretur obviam legentibus essent solum suasit respondebit sibi et si possunt facere sententiam meis patet punctum.
+
 
 * yay translate-shell # trans -R

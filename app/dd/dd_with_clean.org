@@ -1,0 +1,37 @@
+
+
+
+
+
+[How to Wipe Hard Disk with Linux Command Line](https://linoxide.com/linux-command/commands-wipe-disk-linux/)
+
+dd if=<source> of=<target> [Options]
+Only superuser can run this command because you can face a big data loss due to its improper usage.
+
+# dd if=/dev/zero of=/dev/sda2 bs=512 count=1
+1+0 records in
+1+0 records out
+512 bytes copied, 0.0116875 s, 43.8 kB/s
+
+
+You can wipe a disk is done by writing new data over every single bit. To further complicate the recovering process we will write over the entire drive with random data.
+# dd if=/dev/urandom of=/dev/sda2 bs=4096
+
+
+# shred -v --random-source=/dev/urandom -n10 /dev/sda2
+# shred -vfz -n 10 /dev/sda2
+-f changes permissions to allow writing if needed
+-n  (iterations=N) overwrites N times instead of the default (3)
+-s (size=N) specifies the number of bytes to shred
+-u truncates and removes files after overwriting
+-v shows verbose information about the progress
+-x does not round file sizes up to the next full block
+-z adds a final overwrite with zeros to hide shredding
+-u removes the file after overwriting
+
+
+# yum install wipe
+
+# scrub -p dod /dev/sda5 -f
+
+[delete data in linux hard drive in terminal at DuckDuckGo](https://duckduckgo.com/?q=delete+data+in+linux+hard+drive+in+terminal&atb=v92-3_f&ia=web)

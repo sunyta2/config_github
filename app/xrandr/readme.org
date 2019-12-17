@@ -1,4 +1,10 @@
 
+
+$ xrandr --output eDP1 --brightness 0.5
+[thinkpad@msata045 ~]$ xrandr --output eDP1 --brightness 1
+[thinkpad@msata045 ~]$ xrandr --output eDP1 --brightness .1
+[thinkpad@msata045 ~]$ xrandr --output eDP1 --brightness 1
+
 영감님을 만나고 악을 다시 선으로 변환하는 능력의 발굴!
 [2019-11-14 Thu 20:35] * xrandr * (find-file "~/config_github/app/xrandr/readme.org")
 *** xrandr * (find-file "~/config_github/app/xrandr/readme.org")

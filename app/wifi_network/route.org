@@ -1,0 +1,28 @@
+
+
+
+# route add default gw 192.168.123.254 # Gentoo설치에 유용한 명령어이다.
+ # ping -c 3 www.gentoo.org # 잘 작동!
+
+
+
+macosx에서 작동하는 것을 위해서는 설정에서 순서를 바꾸는 법을 사용하거나,
+
+$ route delete default
+$ route add default 192.168.0.1
+or
+[macos - How to change the default gateway of a Mac OSX machine - Ask Different](https://apple.stackexchange.com/questions/33097/how-to-change-the-default-gateway-of-a-mac-osx-machine)
+$ route change default -interface $INTF
+$ route change 192.168.0.0/16 -interface $INTF
+
+
+
+get default gateway 
+route -n get default | grep 'gateway' | awk '{print $2}'
+route -n get www.yahoo.com
+netstat -rn | grep 'default'
+
+_default=$( netstat -rn inet | awk '/default/ {print $2}' ) # I prefer $( ... ) over back-ticks
+netstat -rn | awk '/default/ {if ( index($6, "en") > 0 ){print $2} }'
+netstat -rn | grep "default" | awk '{print $2}'
+

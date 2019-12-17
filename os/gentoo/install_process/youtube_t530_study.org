@@ -50,12 +50,16 @@ Welcome to GNU Parted! Type 'help' to view a list of commands.
 ***  mkpart primary 1 51 #일단 10분의 1로 줄이는 전략을 사용함.
 000200 mkpart primary 1 512
 ***  name 1 EFI
+***  mkpart primary 51 1012
 ***  mkpart primary 51 101
 ***  name 2 boot
+***  mkpart primary 1012 17396
 ***  mkpart primary 101 1739
 ***  name 3 swap
+***  mkpart primary 17396 58356
 ***  mkpart primary 1739 5835
 ***  name 4 root
+***  mkpart primary 58356 -1
 ***  mkpart primary 5835 -1
 ***  name 5 home
 ***  q
@@ -155,6 +159,19 @@ PKGDIR="/var/cache/binpkgs"
 (chroot) # mount /dev/sd#2 /boot
 ***        # emerge-webrsync
 *** 002600 # emerge --sync --quiet # 이명령실행후 기다리는 중이다.
+*** error 발생함. OpenPGP keyring refresh failed:                                                                                                         │
+gpg: refreshing 4 keys from hkps://keys.gentoo.org                                                                                      │
+gpg: keyserver refresh failed: Server indicated a failure 
+*** 해결함 and adding [gentoo] sync-rsync-verify-metamanifest = no
+I tried to disable it by creating 출처:
+[Gentoo Forums :: View topic - [solved]keyserver refresh failed: Server indicated a failure](https://forums.gentoo.org/viewtopic-t-1093414-start-0.html)
+
+/etc/portage/repos.conf/portage.conf
+
+and adding
+[gentoo]
+sync-rsync-verify-metamanifest = no
+
 *** 002730 # eselect profile list
 ***        # emerge -aDNuv @world
 ***         >> # ?  y [Yes]
@@ -359,7 +376,7 @@ Would you like to merge these packages? [Yes/No] yes                            
 >>> Emerging (2 of 21) app-shells/quoter-3.0_p2-r1::gentoo
 #+END_SRC
 
-*** 중단된 상태.
+*** 위의 명령이 안될 경우 1개씩 진행하면서 genkernel은 마지막에 sync하고  etc-update를 실행하니 진행이 되었음.
 *** 004140 # emacs /etc/genkernel.conf
 *** 004215  >>MENYCONFIG="yes"
 ***         >>CLEAN="no"
@@ -368,6 +385,17 @@ Would you like to merge these packages? [Yes/No] yes                            
 *** 004330                          ## 특이하게 #ZFS="no"있으므로 나중에 고려할 것.
 ***         >>TMPDIR="/var/tmp/genkernel"            #uncomment하여 활성화함.
 *** 004400 # emacs /etc/fstab
+*** 아래의 내용을 한번에
+/dev/sdb1               /boot/efi       vfat            noauto,noatime  0 2                                                             ├────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+/dev/sdb2               /boot/          ext2            defaults        0 2                                                             │livecd ~ # 
+/dev/sdb3               none            swap            sw              0 0                                                             │
+/dev/sdb4               /               xfs             noatime         0 1                                                             │
+/dev/sdb5               /home           ext4            noatime         0 2                                                             │
+/dev/cdrom              /mnt/cdrom      auto            noauto,user     0 0                                                             │
+tmpfs                   /var/tmp        tmpfs           rw,nosuid,noatime,nodev,size=0.8G,mode=1777     0 0                             │
+tmpfs                   /var/tmp/portage                tmpfs                                           rw,nosuid,noatime,nodev,size=0.\│
+8G,mode=775,uid=portage,gid=portage,x-mountmkdir=775     0 0
+
 ***         >>/dev/sdb1 /boot/efi vfat noauto,noatime 0 2 
 /dev/sd#1 /boot/efi vfat noauto,noatime 0 2
 ***         >>/dev/sdb2 /boot/ ext2 defaults 0 2 
@@ -384,13 +412,62 @@ Would you like to merge these packages? [Yes/No] yes                            
 tmpfs /var/tmp tmpfs rw,nosuid,noatime,nodev,size=8G,mode=1777 0 0
 ***         >>tmpfs /var/tmp/portage tmpfs rw,nosuid,noatime,nodev,size=0.8G,mode=775,uid=portage,gid=portage,x-mountmkdir=775 0 0 
 tmpfs /var/tmp/portage tmpfs rw,nosuid,noatime,nodev,size=8G,mode=775,uid=portage,gid=portage,x-mountmkdir=775 0 0
-*** 
+*** 51:00 # genkernel all
+*** 1:11:17 emacs /etc/conf.d/modules # 추가함
+위치: #modules="ohci1394" 바로 아래의 빈칸에 아래의 한줄을 써 놓음.
+modules="overlay"
+*** 1:12:20 # emerge -a linux-firmware # 설치실행함.
+*** 1:13:00 # emacs /etc/conf.d/hostname
+hostname="gentoo_in_thinhdd01"
+*** 1:14:15 # emerge --ask --noreplace net-misc/netifrc # 설치함
+***         # emacs /etc/conf.d/net #설정을 아래에 있음
+*** # ifconfig #를 먼저실행함.
+config_emp0s25="dhcp"
+# config_wlp3s0="dhcp"
+dns_domain_lo="homenetwork"
+# dns_domain_lo="Public WiFi Free"
+*** cd /etc/init.d
+*** ln -s net.lo net.enp0s25 #  ln -s net.lo net.wlp3s0 
+*** 1:18:00 # rc-update add net.enp0s25 default # rc-update add net.wlp3s0 default
+*** # emacs /etc/hosts
+127.0.0.1 dushanhst.homenetwork dushanhst localhost
+::1 localhost
+*** passwd # 암호를 설정함.
+*** # emacs /etc/conf.d/hwclock
+clock="local"
+*** emerge -a syslog-ng cronie mlocate logrotate dhcpcd #설치를 실행함.
+*** 1:22:00 # rc-update add syslog-ng default
+*** # rc-update add cronie default
+*** # rc-update add sshd default
+*** # mkfs.fat -F32 /dev/sdb1
+*** # cd /boot
+*** # mkdir efi/
+*** # mount /dev/sdb1 /boot/efi
+*** # mount -o remount,rw /boot/efi
+*** # cd /etc/portage/package.use/
+ls
+*** # echo 'sys-boot/grub:2 mount truetype' >> /etc/portage/package.use/grub:2
+ls
+*** # emacs grub\:2 #아래에 내용이 있음 
+mount truetype
+*** # emerge --ask --newuse --deep --verbose sys-boot/grub:2 os-prober
+***  1:28:20 # mount -o remount,rw /sys/firmware/efi/efivars
+*** # grub-install -target=x86 64-efi --efi-directory=/boot/efi --removable
+*** # grub-mkconfig -o /boot/grub/grub.cfg
+*** useradd -m -G users,wheel,video,audio,root,sys,disk,adm,bin,daemon,tty,portage,console,usb,cdrw,cdrom,input,lp,uucp -s /bin/bash thinkpad
+*** passwd thinkpad
+*** emacs /etc/portage/make.conf # 아래에 내용이 있음 
+언커맨트함 VIDEO_CARDS="intel i915" # 이 한줄만 실행하게 변경했음.
+*** # eselect profile list # 많은 리스트목록이 나온다.
+*** # eselect profile set 16 이지만 변경을 해 볼 것.
+*** # 일단 설치완료는 여기까지임.
 * 윗 줄에 계속 진행중이며, 기록을 부지런히 남길 것.
 * wifi WiFi route CMD 위의 *** WiFi route CMD
 Gentoo linux를 설치를 연습하고 이후 LFS를 실행할 바탕을 만들기위한 WiFi환경구축을 목표로 한다!
 
         * 이 노트는 이전의 성공의 사례로 옮긴 것이다.
 해결됨! Sakak's EFI Install Guide/SettingUp Networking and Connecting via shh
+# route add default gw 192.168.123.254 # Gentoo설치에 유용한 명령어이다.
 #+BEGIN_SRC sh
 ip a
 iwconfig  ##참고 iwconfig wlan0 scan
@@ -407,7 +484,8 @@ chmod -v 600 $_
 
 wpa_supplicant -D nl80211,wext -i wlp3s0 -c /etc/wpa.conf -B
 ##에러# ping: www.gentoo.org: Temporary failure in name resolution
-# route add default gw 192.168.123.254
+# route add default gw 192.168.123.254 # Gentoo설치에 유용한 명령어이다.
+
  # ping -c 3 www.gentoo.org # 잘 작동!
 
 #+BEGIN_SRC sh :name 참고의 명령어 gentoo_lfs.pdf파일에 많은 자료있음
