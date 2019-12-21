@@ -1,6 +1,15 @@
+#+STARTUP: showall
 (buffer-file-name)"/home/thinkpad/config_github/app/emacs/search_find_grep_emacs.org"
 (find-file-other-window "/home/thinkpad/config_github/app/emacs/search_find_grep_emacs.org")
 #이곳을 검색의 중심지로 사용한다.
+
+* 검색의 핵심은 find-grep과 find-dired
+(find-grep "find ~/config_github -type f -exec grep --color -nH --null -e gentoo \{\} +")
+(find-dired "~/config_github" "-type f -exec grep -q -e gentoo \{\} +")
+
+(find-grep "find ~/config_github -type f -iname \"*emacs.org\" -exec grep --color -nH --null -e gentoo \{\} +")
+(find-dired "~/config_github" "-type f -iname \"*org\" -exec grep -q -e gentoo \{\} +")
+
 
 * 검색과 파일 내용 검색의 방법과 함수를 일단 수집 정리한다.
 
@@ -62,3 +71,66 @@ Or, to look for filename or patter from within current directory, you can type:
   (message "you entered mes1 as %s" mes1))
 
 #+END_SRC
+
+
+** 검색의 핵심은 find-grep과 find-dired ..*scratch* 
+-type f -exec grep -q -e gentoo \{\} \ ;
+
+-type f -exec grep -q -e gentoo \{\} \;
+
+find . -type f -exec grep --color -nH --null -e gentoo \{\} +
+
+
+(find-grep-lisp "~/config_github -type f -exec grep --color -nH --null -e gentoo \{\} +")
+
+(grep-find "~/config_github -type f -exec grep --color -nH --null -e gentoo \{\} +")
+
+
+
+(find-dired "~/config_github" "-type f -exec grep -q -e gentoo \{\} \;")error
+(find-dired "~/config_github" "-type f -exec grep -q -e gentoo \{\} +")
+
+
+
+
+(find-grep "find ~/config_github -type f -exec grep --color -nH --null -e gentoo \{\} +")
+(find-dired "~/config_github" "-type f -exec grep -q -e gentoo \{\} +")
+
+
+(find-dired "~/config_github" "-type f -name gentoo")
+
+find-dired is an interactive autoloaded compiled Lisp function in
+‘find-dired.el’.
+
+(find-dired DIR ARGS)
+
+Run ‘find’ and go into Dired mode on a buffer of the output.
+The command run (after changing into DIR) is essentially
+
+    find . \( ARGS \) -ls
+
+except that the car of the variable ‘find-ls-option’ specifies what to
+use in place of "-ls" as the final argument.
+
+[forward]
+
+
+
+
+
+find-grep is an alias for ‘grep-find’ in ‘grep.el’.
+
+(find-grep COMMAND-ARGS)
+
+Run grep via find, with user-specified args COMMAND-ARGS.
+Collect output in a buffer.
+While find runs asynchronously, you can use the C-x ` command
+to find the text that grep hits refer to.
+
+This command uses a special history list for its arguments, so you can
+easily repeat a find command.
+
+[back]
+
+
+** etc..* 

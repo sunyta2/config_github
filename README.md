@@ -1,3 +1,11 @@
+
+* 검색의 핵심은 find-grep과 find-dired
+(find-grep "find ~/config_github -type f -exec grep --color -nH --null -e gentoo \{\} +")
+(find-dired "~/config_github" "-type f -exec grep -q -e gentoo \{\} +")
+[검색의 핵심은 find-grep과 find-dired C-c C-l ](file:./app/emacs/search_find_grep_emacs.org "search find in Emacs")
+./app/emacs/search_find_grep_emacs.org
+
+
 # cd ~/config_github && git pull
 ================================\
 - git pull # first!!! # in Chrome bookmark 'config_github'

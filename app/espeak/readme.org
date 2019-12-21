@@ -1,6 +1,6 @@
 #+STARTUP: showall
 espeak "$(xclip -o)" # dmenu_run in CMD+d
-
+# cf trans-in-google
 # FreeBSD korean resource from arch 
 [[*korean][/app/espeak/README.org*korean]]
 
