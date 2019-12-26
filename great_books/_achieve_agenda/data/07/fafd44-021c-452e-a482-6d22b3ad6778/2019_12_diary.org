@@ -1,0 +1,49 @@
+#+TITLE: 2109_12_diary.org
+#+CREATOR: LEEJEONGPYO
+#+STARTUP: showeverything
+
+; #+STARTUP: showall
+(find-file "~/note3/daily_pdf_mpv.org")
+
+# (progn (save-buffer)(shell-command "/home/thinkpad/.bin/grasp/server/grasp_server.py --path /home/thinkpad/config_github/great_books/_achieve_agenda/2019_11_diary.org"))
+##+START: overview
+
+#+TAGS: org_diary(d) todo(t)
+
+(rgrep "단어_들" "*.org" "~/config_github/app" nil)
+(find-grep "find ~/config_github/app -type f -exec grep --color -nH --null -e 단어_들 \{\} +")
+
+
+자득自得이 중요함!(자기自기기기기에게 가장 최적화된 방식으로 터득得하는 것)
+
+(최대한 깊고 강력하게 Binding됨을 추구함+느리더라도 결국에 효과적인 것)
+
+
+* [2019-12-07 Sat] Axiom_Greek인식의 自得감응
+[2019-12-07 Sat 20:07] 인식의 自得감응현상이 존재하는 것이 틀림없음.[2019-12-07 Sat 20:07] 내가 생각한 것은 세상의 창조이므로.
+https://www.youtube.com/watch?v=L3LMbpZIKhQ?t=2185
+[Lec 1 | MIT 6.042J Mathematics for Computer Science, Fall 2010-In fact, the word "axiom" comes from Greek]]
+정확히 찾아내어진 것- an_etymology_of_latin_greek.pdf No.104. ag에서 自得발견됨에 감탄!
+
+
+* [2019-12-22 Sun]
+
+[2019-12-22 Sun 11:22] espeak in EMACS find-grep in app/espeak or config.el
+저장할 것 아이디어를 저장하고 나에게 맞는 방식으로 변경할 수 있게 파일로 위의 내용의 아이디어를 저장할 것.
+
+[2019-12-22 Sun 17:28] xmodmap_dwm_korean_with_chrome
+(rgrep "xmodmap_dwm_korean_with_chrome" "*.org" "~/config_github/app" nil)
+(find-grep "find ~/config_github/app -type f -exec grep --color -nH --null -e xmodmap_dwm_korean_with_chrome \{\} +")
+
+
+
+* [2019-12-23 Mon]
+* [2019-12-23 Mon 16:13] (find-grep "find ~/config_github/ -type f -exec grep --color -nH --null -e \" read \" \{\} +")
+
+* [2019-12-26 Thu]
+* [2019-12-26 Thu 07:04] transient and emacs babel command
+org-store-link
+[[../../app/emacs/readme.org::*transient_emacs]]
+/home/thinkpad/config_github/great_books/_achieve_agenda/2019_12_diary.org
+* org-store-link
+[[file:~/config_github/great_books/_achieve_agenda/2019_12_diary.org::*%5B2019-12-26%20Thu%2007:04%5D%20transient%20and%20emacs%20babel%20command][{2019-12-26 Thu 07:04} transient and emacs babel command]]
