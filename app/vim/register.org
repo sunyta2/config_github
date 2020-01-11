@@ -1,0 +1,16 @@
+
+
+
+
+set clipboard?
+clipboard=autoselect,exclude:cons\|l
+inux
+
+set clipboard=unnamed
+
+
+
+
+* is just mouse pointer paste
+
++ is both mouse and xclip

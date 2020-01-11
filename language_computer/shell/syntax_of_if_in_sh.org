@@ -1,0 +1,14 @@
+
+
+
+collection of if syntax
+
+
+
+#+BEGIN_SRC sh
+    if [[ -z ${toggle} ]] || [[ ${toggle} = false ]] ; then
+        toggle=true
+    else
+        toggle=false
+    fi
+#+END_SRC

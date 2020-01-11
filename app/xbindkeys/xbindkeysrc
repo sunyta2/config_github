@@ -1,0 +1,55 @@
+# start by in .bin/start
+# xbindkeys -f ~/config_github/app/xbindkeys/xbindkeysrc
+# This file is (find-file "~/config_github/app/xbindkeys/xbindkeysrc")
+# test is in (find-file "~/test_config_github/app/xbindkeys/")
+
+#"amixer set Master toggle"
+ "notify-send -t 3000 \"$(amixer set Master toggle | tail -n 2)\""
+# "notify-send -t 3000 `awk '/%/ { print $5 $6}' <(amixer set Master toggle) | uniq`"
+XF86AudioMute
+
+# "amixer set Master 10%-"
+ "notify-send -t 3000 \"$(amixer set Master 10%- | tail -n 2)\""
+XF86AudioLowerVolume
+
+# "amixer set Master 10%+"
+ "notify-send -t 3000 \"$(amixer set Master 10%+ | tail -n 2)\""
+XF86AudioRaiseVolume
+
+#XF86AudioMicMute
+
+## using in rotate shortcut.
+# cf. xbindkeys for shortcut setting XF86HomePage
+# xrandr, xmodmap, setxkbmap
+
+### killall -s1 xbindkeys
+
+### xbindkeys -f ~/config_github/app/xbindkeys/xbindkeysrc
+#"google-chrome"
+#F8
+#"xvkbd -no-jump-pointer -xsendevent -text '\Cc'"
+#F3
+"~/.bin/rotate"
+XF86HomePage
+
+
+
+
+
+
+
+
+
+
+
+### inbox
+# amixer alsamixer
+# amixer set Master 10%+
+#  <XF86AudioMute> <XF86AudioLowerVolume> <XF86AudioRaiseVolume> <XF86AudioMicMute>
+# <XF86MonBrightnessDown> <XF86MonBrightnessUp> <XF86Display> <XF86WLAN>
+# <XF86Tools> <XF86Search> <XF86LaunchA> <XF86Explorer>
+# <XF86Calculator> <s-l> <XF86HomePage> <s-e>
+
+
+
+

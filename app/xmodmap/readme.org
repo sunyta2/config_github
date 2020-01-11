@@ -1,0 +1,38 @@
+#+TITLE: xmodmap_dwm_korean_with_chrome 빠른 키를 만들면서 크롬의 한영변환은 그대로 인식하는 것을 목적으로 함.
+#+CREATOR: LEEJEONGPYO
+#+STARTUP: showeverything
+# cf. xbindkeys for shortcut setting XF86HomePage
+
+
+
+
+
+
+* Make the right Alt key work as if it were Mod4 (Windows Key)
+어떻게 xmodmap_dwm_korean_with_chrome 키를 변환해서 편리하게 사용할까 그리고 크롬에서의 한글키 기능은 그대로 살리면서, 작동됨!
+
+First, find out which keycode is assigned to Alt_R:
+# <XF86HomePage> to use in xrandr to rotate in ~/.bin/rotate
+xmodmap -pke | grep Alt_R # 아마 108로 나온 것으로 확인함
+	=> keycode 108 = Alt_R Meta_R Alt_R Meta_R
+ 일단 추가함.
+Then simply add the following to the startup script (e.g. ~/.xinitrc), 
+changing the keycode 108 if necessary to the result gathered by the previous xmodmap command:
+
+xmodmap -e "keycode 108 = Super_L"  # reassign Alt_R to Super_L
+xmodmap -e "remove mod1 = Super_L"  # make sure X keeps it out of the mod1 group
+출처: https://www.linuxsecrets.com/archlinux-wiki/wiki.archlinux.org/index.php/Dwm.html Make the right Alt key work as if it were Mod4 (Windows Key)
+
+
+* $  xmodmap -pke | grep Home
+keycode  79 = KP_Home KP_7 KP_Home KP_7
+keycode 110 = Home NoSymbol Home
+keycode 180 = XF86HomePage NoSymbol XF86HomePage
+
+
+xmodmap -e "keycode 108 = Super_L"
+xmodmap -e "remove mod1 = Super_L"
+
+* 기타 등등,,, 
+zenity --entry --entry-text="Type" --text="Bang on the keyboard"
+# cf. xbindkeys for shortcut setting XF86HomePage

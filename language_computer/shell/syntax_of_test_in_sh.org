@@ -1,0 +1,27 @@
+
+
+
+#+BEGIN_SRC sh
+[root@msata045 thinkpad]# test 0 || echo hi
+[root@msata045 thinkpad]# test 1=1 || echo hi
+[root@msata045 thinkpad]# test 1 -eq 1 || echo hi
+[root@msata045 thinkpad]# [1 -eq 1] || echo hi
+bash: [1: command not found
+hi
+[root@msata045 thinkpad]# [ 1 -eq 1 ] || echo hi
+[root@msata045 thinkpad]# [ 1 = 1 ] || echo hi
+[root@msata045 thinkpad]# [ 1 == 1 ] || echo hi
+[root@msata045 thinkpad]# [[ 1 == 1 ]] || echo hi
+[root@msata045 thinkpad]# [[ 1 = 1 ]] || echo hi
+[root@msata045 thinkpad]# [[ 1 ]] || echo hi
+[root@msata045 thinkpad]# [[ 1 ]] || echo hi
+[root@msata045 thinkpad]# test 1 -eq 1 && echo 1
+1
+[root@msata045 thinkpad]# [ 1 -eq 1 ] && echo 1
+1
+[root@msata045 thinkpad]# [[ 1 -eq 1 ]] && echo 1
+1
+[root@msata045 thinkpad]# [[ 1 -eq 2  ]] && echo 1 || echo 0
+0
+#+END_SRC
+

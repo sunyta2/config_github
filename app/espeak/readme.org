@@ -99,13 +99,13 @@ okular 19.04.1-1
 espeak-ng 1.49.2-6
 speech-dispatcher 0.9.1-1 다운로드해두 잘 안됨. 이전에 FreeBSD에서 해결한 것 같은데...
 6 aur/espeak-ng-git 0.0-1 (+10 0.00%) (Installed: 1.49.2.r1099.fe7aa874-1)
-9 aur/gespeaker-git 0.8.2.4.g236462d-2 (+2 0.00%) 
+9 aur/gespeaker-git 0.8.2.4.g236462d-2 (+ 2 0.00%) 
     A GTK+ frontend for espeak and mbrola to speech the read text
 4 community/gst-plugins-espeak 0.5.0-2 (11.8 KiB 34.0 KiB) 
     Use espeak as a sound source for gstreamer
 
 10 aur/jasper-tts-espeak 0.0.0-1 (+1 0.00%) 
     Meta package to satisfy dependencies for Jasper's espeak TTS engine.
-9 aur/gespeaker-git 0.8.2.4.g236462d-2 (+2 0.00%) 
+9 aur/gespeaker-git 0.8.2.4.g236462d-2 (+ 2 0.00%) 
     A GTK+ frontend for espeak and mbrola to speech the read text.
 

@@ -1,0 +1,325 @@
+#+TITLE: 2020_01_diary.org
+#+CREATOR: LEEJEONGPYO
+#+STARTUP: showeverything indent latexpreview
+
+TODO in THIS_diary.org { C-c / t } by Agenda in THIS file!!! very simple.
+C-c [ C-c / t ;;현재 폴더내의 투두만 국한
+ 
+(rgrep "단어_들" "*.org" "~/config_github/app" nil)
+(find-grep "find ~/config_github/app -type f -exec grep --color -nH --null -e 단어_들 \{\} +")
+
+
+자득自得이 중요함!(자기自己에게 가장 최적화된 방식으로 터득得하는 것)
+
+(최대한 깊고 강력하게 Binding됨을 추구함+느리더라도 결국에 효과적인 개성화 자화된 자아의 것)
+
+;; 반복적 과정을 매우 효과적으로 강화하는 리엔지니어링의 과정이다. steve_jobs
+(async-shell-command "mpv ~/Music/St* --ab-loop-a=1:58 --ab-loop-b=2:08 --start=1:53 --volume=39")
+Nuntii Latini
+https://areena.yle.fi/1-1931339
+Long live, Greco-Latin Culture!
+
+
+\[ e^{i \pi} = -1\]
+
+* TODO [2020-01-01 Wed] 自由 ! 
+- 자제의 힘으로 목표를 정하고 내부의 강력한 세계를 구축함. 외부와 강한 공명감동함. 연동형.
+- 맹목적인 외부에서 주어진 허구에 대한 저항권으로 자신의 가능성을 표출함
+
+** TODO ~/note3/a2_inbox_note_for_diary_in_note3.org
+- collect in here and Cut and Paste
+(find-file "~/note3/a2_inbox_note_for_diary_in_note3.org")
+test is good 
+#+BEGIN_SRC sh
+(call-process "echo" nil "*scratch*" nil "hi\n\n\n world\n\n")
+(call-process "echo" nil "*eshell*" nil "hi\n\n\n world\n한글이 나온다는 것으로 전송을 증명함\n") ;; eshell로 명령을 전송할 수 있다.
+(call-process "echo" nil "*eshell*" nil "hi\n\n\n world\n\n")
+#+END_SRC
+
+*** good in the way of thought
+make it possible in the way of thought
+
+* [2020-01-02 Thu]
+  - Note taken on [2020-01-02 Thu 16:44] \\
+    #+BEGIN_SRC emacs-lisp
+    (setq org-inhibit-startup-visibility-stuff t) ;; Global #+STARTUP: showeverything
+    #+END_SRC
+  - Note taken on [2020-01-02 Thu 16:28] \\
+    #+BEGIN_SRC emacs-lisp
+    
+    ;; 반복적 과정을 매우 효과적으로 강화하는 리엔지니어링의 과정이다. steve_jobs
+    (async-shell-command "mpv ~/Music/St* --ab-loop-a=1:58 --ab-loop-b=2:08 --start=1:53 --volume=39 --player-operation-mode=pseudo-gui")
+;; dired 에서 실행하는 법 &로 async로 실행함 그리고 mpv --ab-loop-a=1:58 --ab-loop-b=2:08 --start=1:53 --volume=39 --player-operation-mode=pseudo-gui 를 붙여서 실행하는 것을 만듬. 즉, 위의 명령과 완전히 동일함.
+
+    (async-shell-command "mpv ~/Music/St* --ab-loop-a=1:58 --ab-loop-b=2:08 --start=1:53 --volume=39 --profile=pseudo-gui &>/dev/null &")
+    
+    #+END_SRC
+  - Note { C-x n n } taken on [2020-01-02 Thu 10:38] \\
+    C-x n n 으로 정확하게 구역을 편집하는 것이 가능하다. 따라서 필요한 곳에서 실행하는 것이 중요할 듯
+    a2
+    	- test
+	  123
+	  			asdf
+  - Note taken on [2020-01-02 Thu 10:36] \\
+    이맥스의 강점을 강변함
+    eshell 로 변수를 정하고 실행하는 것이 매우 탁월함 이맥스의 우수성이 증명됨.
+    	- 즉 shell명령을 실행하면서 동시에 그곳에서 바로 elisp를 기동한다! 
+    이맥스는 특별한 성질을 가진 매우 고유한 기능을 보인다.
+  - Note taken on [2020-01-02 Thu 09:12] \\
+    제목을 정하는 것을 정확히 할 것
+  - Note taken on [2020-01-02 Thu 09:05] \\
+    	#+BEGIN_SRC emacs-lisp
+    	  (use-package forge
+    	  :ensure t)
+    	
+    	#+END_SRC
+
+
+* [2020-01-04 Sat]
+Adobe Color
+https://color.adobe.com/create
+Corrupt a File
+https://corrupt-a-file.net/
+Firefox Monitor
+https://monitor.firefox.com/
+GasBuddy
+https://www.gasbuddy.com/
+GetHuman
+https://gethuman.com/
+Kialo
+https://www.kialo.com/
+Pexels (Videos)
+https://www.pexels.com/videos/
+Reelgood
+https://reelgood.com/
+Simple English Wikipedia
+https://simple.wikipedia.org/wiki/Mai...
+
+
+Urban Dictionary
+https://www.urbandictionary.com/ 
+
+ 
+* [2020-01-06 Mon] Rust는 최고의 단련이라 생각된다.
+** rust install and emacs package
+install rust and 
+- for EMACS - cargo ob-rust rustic rust-mode install
+#+BEGIN_SRC rust
+fn main() {
+	println!("Hello, World in Babel emacs");
+}
+
+#+END_SRC
+
+#+RESULTS:
+** 개성을 구현하는 능력이 없으면 통일된 언어로 각성할 수 없다.
+- 획일화된 단순함은 이도저도 못하는 엉렁뚱땅뿐이다.
+
+** 왜 간단한 개성을 구현하는 것이 힘들었을까?!
+* [2020-01-07 Tue]
+** TODO [2020-01-07 Tue 08:00] 자동으로 투두목록파일을 보이는 것을 babel로 찾아들 수 있게 해서 현제 사용중인 아젠다리스트를 관리하게 할 것.
+- 리스트를 잘 관리하게 한다.
+** A
+** 
+** TODO ASDF
+** TODO JASDF
+*** TODO AN
+** [2020-01-07 Tue 15:00]성공함 일단 저장을 exfat로 맥에서 만들어야 큰 파일이 저장됨!
+#+BEGIN_SRC sh
+
+[thinkpad@msata045 ~]$ lsblk
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda      8:0    0 465.8G  0 disk 
+├─sda1   8:1    0   200M  0 part 
+└─sda2   8:2    0 465.6G  0 part 
+sdb      8:16   0 465.8G  0 disk 
+├─sdb1   8:17   0   200M  0 part 
+└─sdb2   8:18   0 465.6G  0 part 
+sdc      8:32   0 119.2G  0 disk 
+├─sdc1   8:33   0 110.5G  0 part /
+└─sdc2   8:34   0   8.8G  0 part [SWAP]
+[thinkpad@msata045 ~]$ sudo mount /dev/sdb2 ~/mnt/
+[sudo] password for thinkpad: 
+FUSE exfat 1.3.0
+[thinkpad@msata045 ~]$ 
+#+END_SRC
+
+
+
+
+* TODO hardward drive 모으기 (find-file "~/config_github/os/readme.org")
+- hard장치는 soft한 os에 종속시키는 것이 목적달성에 유리하다. 따라서 별도관리보다는 os의 하부에 일단 둔다.
+
+
+* [2020-01-08 Wed] 상서로운 구름 
+- [2020-01-08 Wed 03:00]
+- 상서러운 구름이 원형으로 하늘을 공중에서 빠르게 돌고 다시 흑색으로 바뀌어서 돌아가는 것을 감상함.
+- 새의 형상으로 매우 많은 것으로 세로로 여러줄이 생성되는 것에 감탄함.
+
+
+
+
+[2020-01-08 Wed 19:00] 성과- 물리(하드디스크), 종이(플라스틱박스), 디지털(os/readme.org파일내) 순서일치 
+- 아이디어를 물질로 구연하는 것과 무형의 상관관계를 잘 이해하는 것과 실천의 중요성 *우선순위리스트의 작성과 자주보기*
+- 순서의 완전한 일치를 구현하도록 할 것
+
++ FlashCard Green Box idea- 자신을 잘 아는 것이 중요함. 물리적인 크기(종이와 디지털의 질감을 이해하는 상기의 과정이 중요함)
+따라서 학습조직은 개인의 성장이 없으면 어렵다.
+
+- 디지털의 발달은 물리적, 무형적 통합을 위한 개인의 아이디어를 실험하는 것이 중요함.
+심지어 섬세한 Sticker의 방향과 위치가 매우 정밀한 설계관찰이 필요함!
+
+
+[2020-01-08 Wed 20:00] 성과- (학문-질서) 분류 시각화를 위해서 자주 접하는 방식으로 개선해서 입력할 것
+Logos 학문은 -> 분류며, -> 질서며, ->지도력이다!
+
+[2020-01-08 Wed 21:00] 강평_성과- 9시부터 30분간은 정리하면서 새로운 정보수집은 중단함. 성과정리, 다음날 과업
+
+
+* [2020-01-09 Thu] (어원혁명!) 그리스어의 그림원형을 다운로드함(어원의 어원이므로 매우 중요함)
+
+- 꿈 국회의 모든 스티커를 직접보내는 결정적인 작업으로 모든 사람들이 나의 진행에 달려있었음.
+
+** TODO [2020-01-09 Thu 09:50] dell precision 6800 $199 경매진행중이며, 
+
+
+** TODO [2020-01-09 Thu 23:20] lg ph550 경매낙찰을 기대함.
+
+** TODO [2020-01-09 Thu 16:30] 그리스 알파벳- 글자마다 인식을 그림으로 구체화시켜서 명확히 한다.
+- 어원의 이해를 더욱 더 파고들어 어원의 연원을 추단한다. [2020-01-09 Thu 19:36]
+- 자판의 손가락도 같이 만들어서 이해를 굳힌다.
+- (해석) 무의식적으로 깊은 연관성이 형성되므로 무시할 수 있는 사안이 아니다.
+	혁명적인 학습이다. 예감적 [2020-01-09 Thu 19:41] 공명진동 안암학사의 별관의 로비의 비누냄새가 학습의 동기를 폭발적으로 증대한다. ( *어원을 철자 그림으로 추단한다 漢字처럼 내부질서의 창조행위=자유의지* )
+
+* [2020-01-10 Fri] 빠른 EmacsClient(한글사용가능하게), 프로젝터당첨구매, rsync기록시작, File-Reminder를 만들어 맨탈강화중력활용 
+
+
+** [2020-01-10 Fri 00:10] 구입성공! lg ph550당첨!!!
+** [2020-01-10 Fri 13:20] ~/.bin/bright.sh 화면밝기 터오프실행을 가능하게 함.
+
+** 이맥스 클라이언트를 실행하여서 emacsclient -t --eval ' (list-buffers "*diary.org") '
+- 즉, 한글입력이 가능한 이맥스클라이언트를 실행하는 것이 브라우징의 수집에 중요한 열쇠가 될 것이다.
+(server-start) ; 먼저 서버를 시작해 둔다.
+가장 중요한 점은 그냥 $ emacsclient -t 만 실행해도 된다는 사실!
+(buffer-menu) 
+(list-buffers "*diary.org")
+
+(command-history)
+(execute-extended-command nil "command-history" nil)
+** [2020-01-10 Fri] File-Reminder를 만들어 활용함! 야곱의 하느님과 같이 상대에 맞게 상대한다. (find-file-other-frame "~/config_github/great_books/mental_reminder.org")
+- 늙은 짐승과 야수를 법칙에 맞게 다스릴 권능이 인간에게 있다.
+Acronym	Definition
+XDG	XHTML (Extensible Hypertext Markup Language) Design Guide
+XDG	Xunta De Galicia
+XDG	X Desktop Group
+** rsync sshfs 사용을 권유받음. /app/rsync 
+[2020-01-10 Fri 18:00] sshfs를 사용할 것을 권유받음 - 편리한 파일교환을 보장함.
+goto >> ssh 폴더 
+
+
+** $ find ~/config_github/app -iname "*ssh*" -print # 파일을 검색하는 것이 큰 도움이 될 것이다.
+달원반 무리! 
+
+** [2020-01-10 Fri 20:25] C-u M-: buffer-file-name "~~/2020_01_diary.org" ;변수출력으로 파일명확인! 
+C-u M-: buffer-file-name "/home/thinkpad/config_github/great_books/_achieve_agenda/2020_01_diary.org" ;변수출력으로 파일명확인!
+
+
+
+
+* [2020-01-11 Sat]
+
+
+** [2020-01-11 Sat 10:15] (multi-occur) 을 사용한 버퍼 안의 검색법을 익힌다.
+최강의 인식법이다.
+multi-occur (multi-occur BUFS REGEXP &optional NLINES)
+multi-occur-in-matching-buffers
+Multi-Occur
+
+Built into Emacs 23, this command can search any files or buffers matching a regexp for a particular regexp.
+
+To select buffers to search individually:
+
+  M-x multi-occur
+To select files to search by regexp:
+
+  M-x multi-occur-in-matching-buffers
+To select buffers to search by regexp:
+
+  C-u M-x multi-occur-in-matching-buffers
+
+파일 리스트를 열고 그 안에 필요한 것을 검색하는 법을 만들 경우 최강의 활용법이다.
+
+
+
+- 별도
+
+[2020-01-11 Sat 10:30] (ibuffer) You can use ibuffer mode to mark the buffers you would like to search. Call ibuffer-do-isearch (bound to M-s a C-s by default) to search for text, or ibuffer-do-isearch-regexp if you need to search for a regular expression.
+
+If you aren't familiar with ibuffer, fire it up and take a look at the Mark menu to see all the ways you can choose a set of buffers on which to operate.
+
+
+
+** [2020-01-11 Sat 14:30] *초자아의 강력진동파동으로 상황돌파*회광반조! 금강반야바라밀(앎의 다이아로 앎의 원인을 친다)최고지식의 희생 "화두70현상30"
+- 늘 하고 있는 것이 마음에 담긴 것이 곧 그 사람의 인격이며 인생이다
+- "화두70현상30" 뚫는 힘으로 뚫는다.
+
+
+** TODO 이맥스 동영상에서 파일명이 버퍼에 나오는 것을 고려해서 넣어 둘 것 방법을 버퍼파일에 저장할 것
+
+
+   - Note taken on [2020-01-11 Sat 07:24] \\
+     소속분류를 밝히고,
+     핵심동작을 발굴하고.
+     차근차근 시행한다.
+     
+     목적: 목록을 각각 명령으로 실행하는 법을 찾아서 활용한다. 여러 파일 열기 실행... 등등 여러 쉘 명령문 실행, 변수 전달확장법
+~/config_github/great_books/mental_reminder.org
+~/test_config_github/great_books/mental_reminder.org
+~/config_github/app/emacs/readme.org
+~/config_github/great_books/_achieve_agenda/2020_01_diary.org
+~/config_github/app/ssh/route_cmd.org
+~/config_github/app/wifi_network/sshd.org
+~/config_github/app/rsync/readme.org
+~/config_github/app/xdg-open/readme.org
+~/config_github/app/xdg-open/xdg-open.org
+~/config_github/app/xdg-open/xdg-mime.org
+~/config_github/os/readme.org
+buffer-file-name
+"/home/thinkpad/config_github/great_books/_achieve_agenda/2020_01_diary.org"
+
+
+; 아래의 명령에서 C-u C-x C-e 명령이 몇줄아래 붙임.
+변수명에서 바로 실행하는 법을 발견함. elisp.pdf 1.7 Variable에서 발견 늘 새로운 발견이 있는 신기한 세상!
+buffer-file-name
+
+
+"/home/thinkpad/config_github/great_books/_achieve_agenda/2020_01_diary.org"
+
+
+
+buffer-file-name
+
+
+"/home/thinkpad/config_github/great_books/_achieve_agenda/2020_01_diary.org"
+hi
+hi
+(message "hi %s %d" "hi2" 5)
+
+"hi hi2 5"
+(buffer-name )
+
+(buffer-file-name) 
+
+
+(3)
+
+(setq a "hello world")
+
+
+a
+
+
+"hello world"
+
+(a)
+

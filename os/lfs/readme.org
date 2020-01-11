@@ -5,3 +5,24 @@
 
 ** lfs
 (find-file "../os/lfs/readme.org")
+
+
+[[LFS Series Video 4 - Partitioning and Setting up Filesystem][https://www.youtube.com/watch?v=YQxi3S6eSIQ]]
+
+
+[[https://www.youtube.com/watch?v=5tRJgDJC7kY][ SudoTech good 23:52 Linux From Scratch 8.2 - Episode 1: Host System ]]
+
+
+[[https://www.youtube.com/watch?v=fmWz9Lkd0Kw][￼
+5:29:46
+NOW PLAYING
+￼
+1 of 3 How to build Linux From Scratch (LFS) 8.4 by Kernotex - Part 1
+Kernotex
+14K views]]
+
+
+
+
+
+

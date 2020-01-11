@@ -1,0 +1,29 @@
+#+TITLE: ip 명령문에 대한 네트워크 연구임
+#+CREATOR: LEEJEONGPYO
+#+STARTUP: showeverything
+
+
+
+
+* man ip 에 우선 익숙해 질 것! 
+
+
+
+
+
+
+
+** wifi 연결을 한방에 arco에서 가능하므로 (Arch linux 범용으로 사용가능할 것임.)! 
+   - Arco의 WiFi 새로운 설정에 유용한 성공을 보인 명령임
+     #+BEGIN_SRC sh
+	   sudo ip link set wlp3s0 down # 일단 기존의 설정을 끄고 시작함.
+	   sudo wifi-menu # Arco에서는 새로운 네트워크를 발견하고 사용하는 데 탁월하게 즉시 실행됨.
+			   # 위의 2문장이 잘 됨을 도서관에서 새롭게 설정된 네트워크에 잘 접속됨으로 Arco Linux에서 확인함.
+	   #+END_SRC
+
+
+
+
+
+
+* wifimrg

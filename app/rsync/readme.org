@@ -1,0 +1,49 @@
+/app/rsync/readme.org
+
+- 어떻게 소켓을 제외할 수 있을까? > 검색해서 찾아볼 것
+
+$ rsync <원본위치> -> <사본보관위치>
+$ rsync Original/ Backup/ # 내용이 복사됨
+
+$ rsync Original/* Backup/
+$ rsync -r Original/ Backup/ 
+
+-a (Archive을 나타냄)
+$ rsync -av --dry-run Original/ Backup/
+
+$ rsync -zaP ~/origin/my_site_folder thinkpad@192.168.1.108:~/test_server/
+
+touch new_add.file
+rsync -zaP thinkpad@192.168.1.108:~/backups
+
+
+:)looks good 
+mkdir test backup 20
+backup ls
+$ rsync -vzhe ssh root@10.43.1.130:/tester /backup203
+
+
+# Linux Tip | Using SFTP and Automating Rsync
+
+$ sftp 192.168.1.108
+sftp> ls
+sftp> lls
+sftp> pwd
+sftp> lpwd
+sftp> lcd Downloads/
+sftp> cd Pictures/
+sftp> get windows.jpg 
+sftp> get -r recursive_folders/
+sftp> cd ../Music/ ; put windows.jpg
+sftp> exit # bye or exit 
+
+$ sftp cindy@192.168.1.108
+sftp> 
+
+[2020-01-10 Fri 18:00] sshfs를 사용할 것을 권유받음 - 편리한 파일교환을 보장함.
+goto ssh folder.
+
+I'll just stay positive!
+
+Corey_Schafer
+

@@ -1,0 +1,40 @@
+This is GitHub not test_in_arco.
+
+클릭 STAR Bookmarks C-f rust
+and goto there
+
+chr
+http:chrome\:bookmarks/?id=3723
+ome bookmark url:
+https://chrome://bookmarks/?id=3723
+[[https://bookmarks/?id=3723]]
+open in chrome
+http://~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/book/ch01-02-hello-world.html
+
+install rust in arco and ~/test_
+install emacs package of 
+(use-package lsp-mode
+  :hook (XXX-mode . lsp-deferred)
+  :commands (lsp lsp-deferred))
+
+run remacs and installed.
+#+BEGIN_SRC rust
+fn main() {
+    println!("Hello, world!");
+}
+
+#+END_SRC
+
+#+RESULTS:
+
+(message explicit-shell-file-name "~/.bashrc")
+#+RESULTS:
+(require 'cargo)
+
+#+BEGIN_SRC sh
+echo hi
+which cargo
+which rustc
+#+END_SRC
+
+#+RESULTS:

@@ -1,0 +1,41 @@
+
+
+매크로의 놀라운 기능을 잘 익혀 둘 것 
+특히, C-x C-k e	edit-kbd-macro
+
+
+C-x (		kmacro-start-macro ; C-u C-x (		kmacro-start-macro append to last keyboard macro
+C-x )		kmacro-end-macro
+C-x e		kmacro-end-and-call-macro
+
+
+C-x z		repeat
+C-x ESC ESC	repeat-complex-command
+C-x M-:		repeat-complex-command
+C-x C-[ C-[	repeat-complex-command
+C-x M-:		repeat-complex-command
+
+
+C-x C-k C-a	kmacro-add-counter
+C-x C-k C-c	kmacro-set-counter
+C-x C-k C-d	kmacro-delete-ring-head
+C-x C-k C-e	kmacro-edit-macro-repeat
+C-x C-k C-f	kmacro-set-format
+C-x C-k TAB	kmacro-insert-counter
+C-x C-k C-k	kmacro-end-or-call-macro-repeat
+C-x C-k C-l	kmacro-call-ring-2nd-repeat
+C-x C-k RET	kmacro-edit-macro
+C-x C-k C-n	kmacro-cycle-ring-next
+C-x C-k C-p	kmacro-cycle-ring-previous
+C-x C-k C-s	kmacro-start-macro
+C-x C-k C-t	kmacro-swap-ring
+C-x C-k C-v	kmacro-view-macro-repeat
+C-x C-k SPC	kmacro-step-edit-macro
+C-x C-k b	kmacro-bind-to-key
+C-x C-k e	edit-kbd-macro
+C-x C-k l	kmacro-edit-lossage
+C-x C-k n	kmacro-name-last-macro
+C-x C-k q	kbd-macro-query
+C-x C-k r	apply-macro-to-region-lines
+C-x C-k s	kmacro-start-macro
+C-x C-k x	kmacro-to-register

@@ -1,0 +1,26 @@
+
+
+    ;; 반복적 과정을 매우 효과적으로 강화하는 리엔지니어링의 과정이다. steve_jobs
+    (async-shell-command "mpv ~/Music/St* --ab-loop-a=1:58 --ab-loop-b=2:08 --start=1:53 --volume=39 --player-operation-mode=pseudo-gui")
+;; dired 에서 실행하는 법 &로 async로 실행함 그리고 mpv --ab-loop-a=1:58 --ab-loop-b=2:08 --start=1:53 --volume=39 --player-operation-mode=pseudo-gui 를 붙여서 실행하는 것을 만듬. 즉, 위의 명령과 완전히 동일함.
+
+    (async-shell-command "mpv ~/Music/St* --ab-loop-a=1:58 --ab-loop-b=2:08 --start=1:53 --volume=39 --profile=pseudo-gui &>/dev/null &")
+
+;; 반복적 과정을 매우 효과적으로 강화하는 리엔지니어링의 과정이다. steve_jobs
+(async-shell-command "mpv ~/Music/St* --ab-loop-a=1:58 --ab-loop-b=2:08 --start=1:53 --volume=39")
+
+* Playback Control
+--ab-loop-a=<time>, --ab-loop-b=<time> ; 반복은 이렇게
+ --start=<relative time> ; 시작은 여유를 3초정도 두고서 시작함
+[+|-][[hh:]mm:]ss[.ms]
+pp% seeks to percent position pp (0-100)
+
+ --start=-3:20 --length=10
+--end=<relative time> Stop at given time. Use 
+--length=<relative time>
+--length if the time should be relative to --start.
+
+
+--volume=<value>
+              Set  the startup volume. 0 means silence, 100 means no volume reduction or amplification. Negative values can be passed for compati‐
+              bility, but are treated as 0.

@@ -1,0 +1,19 @@
+* xdg-open 
+
+ - other: kde-open gnome-open
+ - ~/.config/mimeapps.list saved in arco linux for backup
+ 
+* xdg-mime - xdg-mime.org LOOK
+
+
+
+* ~/.config/mimeapps.list 
+* xdg-settings --list # 단순히
+Known properties:
+  default-url-scheme-handler    Default handler for URL scheme
+  default-web-browser           Default web browser
+
+
+
+* 다른 대안의 폴더 [2020-01-10 Fri 16:35]
+~/.local/share/  비교해 볼 폴더임

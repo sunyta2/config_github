@@ -1,2 +1,9 @@
 sh , bash , zsh의 사용을 위한것
 각각의 파일이나 폴더위치
+#+BEGIN_SRC sh
+
+touch ./syntax_of_variable_in_sh.org
+
+#+END_SRC
+
+#+RESULTS:

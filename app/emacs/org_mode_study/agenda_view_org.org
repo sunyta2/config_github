@@ -1,4 +1,4 @@
-
+#+STARTUP: showall
 
 C-c / t ;;현재 폴더내의 투두만 국한해서 검색하는 중요한 명령어(org-show-todo-tree)
 C-c / < 또는 > ;;일종의 잠금장치기능으로 리스트대신에 특수한 것으로 국한하는 것으로 추정함.
@@ -14,7 +14,8 @@ C-c [ C-c / t ;;현재 폴더내의 투두만 국한
 (setq org-default-notes-file (expand-file-name "~/notes.org"))
 (setq org-default-notes-file (expand-file-name "~/config_github/great_books/_achieve_agenda/2019_11_diary.org"))
 (require 'org-install)
-* org_capture todo items using C-c t
+* TODO org_capture todo items using C-c t
+
 #+BEGIN_SRC emacs-lisp
 (define-key global-map (kbd "C-c c") 'org-capture)
 (setq a "hi")

@@ -1,0 +1,90 @@
+M-x eww RET www.gentoo.org
+
+
+
+
+
+Enabled minor modes: Async-Bytecomp-Package Auto-Composition
+Auto-Compression Auto-Encryption Blink-Cursor Diff-Auto-Refine
+Electric-Indent File-Name-Shadow Font-Lock Global-Auto-Complete
+Global-Eldoc Global-Font-Lock Global-Git-Commit Global-Magit-File
+Line-Number Magit-Auto-Revert Menu-Bar Mouse-Wheel Override-Global
+Shell-Dirtrack Simpleclip Tool-Bar Tooltip Transient-Mark Yas
+Yas-Global
+
+(Information about these minor modes follows the major mode info.)
+
+eww mode defined in ‘eww.el’:
+Mode for browsing the web.
+
+In addition to any hooks its parent mode ‘special-mode’ might have run,
+this mode runs the hook ‘eww-mode-hook’, as the final or penultimate step
+during initialization.
+
+key             binding
+---             -------
+
+TAB		shr-next-link
+ESC		Prefix Command
+SPC		scroll-up-command
+&		eww-browse-with-external-browser 외부앱으로 열기
+-		negative-argument
+0 .. 9		digit-argument
+<		beginning-of-buffer
+>		end-of-buffer
+?		describe-mode
+B		eww-list-bookmarks
+C		url-cookie-list
+D		eww-toggle-paragraph-direction
+E		eww-set-character-encoding
+F		eww-toggle-fonts
+G		eww 	주소를 변경입력함
+H		eww-list-histories
+R		eww-readable
+S		eww-list-buffers
+b		eww-add-bookmark
+d		eww-download
+g		eww-reload
+h		describe-mode
+l		eww-back-url
+n		eww-next-url
+p		eww-previous-url
+q		quit-window
+r		eww-forward-url
+s		eww-switch-to-buffer
+t		eww-top-url
+u		eww-up-url
+v		eww-view-source
+w		eww-copy-page-url 주소를 복사함
+DEL		scroll-down-command
+S-SPC		scroll-down-command
+<backtab>	shr-previous-link
+<delete>	scroll-down-command
+<remap>		Prefix Command
+
+C-M-i		shr-previous-link
+M-RET		eww-open-in-new-buffer
+M-C		eww-toggle-colors
+M-n		eww-next-bookmark
+M-p		eww-previous-bookmark
+
+
+
+
+
+Async-Bytecomp-Package minor mode (no indicator):
+Byte compile asynchronously packages installed with package.el.
+Async compilation of packages can be controlled by
+‘async-bytecomp-allowed-packages’.
+
+(fn &optional ARG)
+[back]
+
+
+http://ergoemacs.org/emacs/emacs_eww_web_browser.html
+How to make emacs always use eww?
+Put this in your emacs init file:
+#+BEGIN_SRC emacs-lisp
+;; make emacs always use its own browser for opening URL links
+(setq browse-url-browser-function 'eww-browse-url)
+#+END_SRC

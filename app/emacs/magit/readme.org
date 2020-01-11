@@ -16,3 +16,5 @@ Ediff - https://www.youtube.com/watch?v=476kAEi-_8o
 
 https://duckduckgo.com/?q=ediff&atb=v92-3_f&iax=videos&ia=videos&pn=1
 
+* transient file link
+[[file:transient.org::*purpose_of_transient_is_menu_buffer]]

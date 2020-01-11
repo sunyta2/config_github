@@ -1,0 +1,62 @@
+
+
+6. Registers
+Ctrl+X r s (#)	Copy Selection to Numbered Clipboard
+Ctrl+X r i (#)	Paste from Numbered Clipboard
+Ctrl+X r space (#)	Set Numbered Bookmark
+Ctrl+X r j /#	Jump to Numbered Bookmark
+
+* Quick 위치이동( C-x r j ) ( C-x r SPC )
+C-x SPC		rectangle-mark-mode
+
+C-x C-SPC	pop-global-mark # 빠른 이동으로 원래의 위치를 기억하는 편의성을 제공함.
+C-x C-SPC	pop-global-mark
+C-x C-+		text-scale-adjust
+C-x C--		text-scale-adjust
+C-x C-0		text-scale-adjust
+C-x C-;		comment-line
+C-x z		repeat
+C-x C-;		comment-line
+
+
+C-x '		expand-abbrev
+C-x '		expand-abbrev 뭐지(C-M-/는 잘 되는데 차이점은?)
+C-x ;		comment-set-column
+
+ä­ㅁa 
+
+
+
+C-x n b		org-narrow-to-block
+C-x n d		narrow-to-defun
+C-x n e		org-narrow-to-element
+C-x n n		narrow-to-region
+C-x n p		narrow-to-page
+C-x n s		org-narrow-to-subtree
+C-x n w		widen
+
+C-x r C-@	point-to-register
+C-x r ESC	Prefix Command
+C-x r SPC	point-to-register
+C-x r +		increment-register
+C-x r M		bookmark-set-no-overwrite
+C-x r N		rectangle-number-lines
+C-x r b		bookmark-jump
+C-x r c		clear-rectangle
+C-x r d		delete-rectangle
+C-x r f		frameset-to-register
+C-x r g		insert-register
+C-x r i		insert-register
+C-x r j		jump-to-register
+C-x r k		kill-rectangle
+C-x r l		bookmark-bmenu-list
+C-x r m		bookmark-set
+C-x r n		number-to-register
+C-x r o		open-rectangle
+C-x r r		copy-rectangle-to-register
+C-x r s		copy-to-register
+C-x r t		string-rectangle
+C-x r w		window-configuration-to-register
+C-x r x		copy-to-register
+C-x r y		yank-rectangle
+C-x r C-SPC	point-to-register

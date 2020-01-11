@@ -1,0 +1,174 @@
+- $  ps aux | grep xbind
+thinkpad  574740  0.0  0.0   7448  2292 pts/9    S+   12:46   0:00          |       \_ grep --color=auto xbind
+thinkpad  557928  0.0  0.0  43816  4280 ?        S    09:52   0:01 xbindkeys -f ./simple_xbindkeysrc
+
+- app/awk/readme.org참조해서 사용할것 또한 sh syntax case zenity를 사용할 것. 아이디어!
+- 트랙마우스를 disable해서 터치에 둔감하게 만들 필요가 있다. start의 서문에 간단히 서문을 붙이고 이곳을 링크할 것.
+
+
+Coordinate Transformation Matrix 설정법
+https://wiki.ubuntu.com/X/InputCoordinateTransformation # 잘 설명됨.
+$ xrandr -o left #(clockwise 90°) 0 -1 1 1 0 0 0 0 1
+⎡ 0 -1 1 ⎤
+⎜ 1  0 0 ⎥
+⎣ 0  0 1 ⎦
+$ xrandr -o right #(counterclockwise 90°) 0 1 0 -1 0 1 0 0 1
+⎡  0 1 0 ⎤
+⎜ -1 0 1 ⎥
+⎣  0 0 1 ⎦
+$ xrandr -o inverted #(clockwise or counterclockwise 180°) -1 0 1 0 -1 1 0 0 1
+⎡ -1  0 1 ⎤
+⎜  0 -1 1 ⎥
+⎣  0  0 1 ⎦
+
+$ xinput list-props 'SynPS/2 Synaptics TouchPad' | grep "Coordinate Transformation Matrix"
+$ xinput list
+
+$ xinput --list-props "TPPS/2 IBM TrackPoint"
+$ xinput --list-props "Synaptics TM3053-003" # disable This for touchpad?
+$ xinput --list-props "TPPS/2 IBM TrackPoint"
+
+
+#+BEGIN_SRC sh
+xinput set-prop 'Synaptics TM3053-003' "Device Enabled" 0 # 트랙패드 가능하게함(0는 사용중지시킴). 원래값:1
+#+END_SRC
+
+#+RESULTS:
+
+#+BEGIN_SRC sh
+	# Synaptics TM3053-003 실험함. id=16
+#	xinput set-prop 'Synaptics TM3053-003' "libinput Tapping Enabled" 1 # 터치로 클릭됨-조용해짐. 원래값:0
+	xinput set-prop 'Synaptics TM3053-003' --type=float "libinput Accel Speed" 2 # 무빙 속도늘리기. 원래값:0
+	xinput set-prop 'Synaptics TM3053-003' --type=float "libinput Accel Speed Default" 2 # 무빙 속도늘리기. 원래값:0
+#	xinput set-prop 'Synaptics TM3053-003' "libinput Tapping Drag Lock Enabled" 0 # 터치로 클릭됨-조용해짐. 원래값:0
+	xinput map-to-output 16 eDP-1 # 16 is TM3053-003 즉, 터치패드임
+
+	## 기록용 xinput set-prop 'Synaptics TM3053-003' "Device Enabled" 1 # 트랙패드 가능하게함(0는 사용중지시킴). 원래값:1
+
+#+END_SRC
+
+
+
+#+RESULTS:
+
+
+
+
+* 성공한 left rotation both mouse screen 
+#+BEGIN_SRC sh :results silent
+#	xinput set-prop 'Synaptics TM3053-003' "Device Enabled" 1 # 트랙패드 가능하게함(0는 사용중지시킴). 원래값:1
+	xinput set-prop 'Synaptics TM3053-003' --type=float "Coordinate Transformation Matrix" 0 -1 1 1 0 0 0 0 1
+	# 트랙포인터만 돌리는 것으로 실험함. id=17
+	## 화면돌리기 부터실험함.
+	xrandr -o left
+	## 마우스 트랙포인터만 돌리기
+	xinput set-prop 'TPPS/2 IBM TrackPoint' --type=float "Coordinate Transformation Matrix" 0 -1 1 1 0 0 0 0 1
+#	xinput map-to-output 17 eDP-1 # 17 is TPPS/2 IBM TrackPoint
+#	xinput set-prop 'USB Optical Mouse' --type=float "Coordinate Transformation Matrix" 0 -1 1 1 0 0 0 0 1
+#	xinput map-to-output 12 eDP-1 # 12 is USB Optical Mouse
+
+#+END_SRC
+
+
+
+# 아래는 오른쪽으로 돌리는 법임
+#+BEGIN_SRC sh :results silent
+#	xinput set-prop 'Synaptics TM3053-003' "Device Enabled" 1 # 트랙패드 가능하게함(0는 사용중지시킴). 원래값:1
+	xinput set-prop 'Synaptics TM3053-003' --type=float "Coordinate Transformation Matrix" 0 1 0 -1 0 1 0 0 1
+	# 트랙포인터만 돌리는 것으로 실험함. id=17
+	## 화면돌리기 부터실험함.
+	xrandr -o right
+	## 마우스 트랙포인터만 돌리기
+	xinput set-prop 'TPPS/2 IBM TrackPoint' --type=float "Coordinate Transformation Matrix" 0 1 0 -1 0 1 0 0 1
+#	xinput map-to-output 17 eDP-1 # 17 is TPPS/2 IBM TrackPoint
+#	xinput set-prop 'USB Optical Mouse' --type=float "Coordinate Transformation Matrix" 0 1 0 -1 0 1 0 0 1
+#	xinput map-to-output 12 eDP-1 # 12 is USB Optical Mouse
+
+#+END_SRC
+
+
+#+BEGIN_SRC sh :results silent
+	xinput set-prop 'Synaptics TM3053-003' --type=float "Coordinate Transformation Matrix" 1 0 0 0 1 0 0 0 1
+	# 트랙포인터만 돌리는 것으로 실험함. id=17
+	## 화면돌리기 부터실험함.
+	xrandr -o normal
+	## 마우스 트랙포인터만 돌리기
+	xinput set-prop 'TPPS/2 IBM TrackPoint' --type=float "Coordinate Transformation Matrix" 1 0 0 0 1 0 0 0 1
+#	xinput map-to-output 17 eDP-1 # 17 is TPPS/2 IBM TrackPoint
+#	xinput set-prop 'USB Optical Mouse' --type=float "Coordinate Transformation Matrix" 1 0 0 0 1 0 0 0 1
+#	xinput map-to-output 12 eDP-1 # 12 is USB Optical Mouse
+
+#+END_SRC
+
+
+ 아래는 inverted
+#+BEGIN_SRC sh :results silent
+	xinput set-prop 'Synaptics TM3053-003' --type=float "Coordinate Transformation Matrix" -1 0 1 0 -1 1 0 0 1
+	# 트랙포인터만 돌리는 것으로 실험함. id=17
+	## 화면돌리기 부터실험함.
+	xrandr -o inverted
+	## 마우스 트랙포인터만 돌리기
+	xinput set-prop 'TPPS/2 IBM TrackPoint' --type=float "Coordinate Transformation Matrix" -1 0 1 0 -1 1 0 0 1
+#	xinput map-to-output 17 eDP-1 # 17 is TPPS/2 IBM TrackPoint
+#	xinput set-prop 'USB Optical Mouse' --type=float "Coordinate Transformation Matrix" -1 0 1 0 -1 1 0 0 1
+#	xinput map-to-output 12 eDP-1 # 12 is USB Optical Mouse
+
+#+END_SRC
+
+
+
+
+* 성공한 right rotation both mouse screen 
+#+BEGIN_SRC sh
+	# 트랙포인터만 돌리는 것으로 실험함. id=17
+	## 화면돌리기 부터실험함.
+	xrandr -o right
+	## 마우스 트랙포인터만 돌리기
+	xinput set-prop 'TPPS/2 IBM TrackPoint' --type=float "Coordinate Transformation Matrix" 0 1 0 -1 0 1 0 0 1
+	xinput map-to-output 17 eDP-1
+#+END_SRC
+
+#+RESULTS:
+
+
+
+#+BEGIN_SRC sh
+	# 트랙포인터만 돌리는 것으로 실험함. id=17
+	## 화면돌리기 부터실험함.
+	xrandr -o normal
+	## 마우스 트랙포인터만 돌리기
+	xinput set-prop 'TPPS/2 IBM TrackPoint' --type=float "Coordinate Transformation Matrix" 1 0 0 0 1 0 0 0 1
+	xinput map-to-output 17 eDP-1
+#+END_SRC
+
+#+RESULTS:
+
+
+
+
+* # Virtual core pointer 돌리는 것으로 실험함. id=2 결론 각각을 실행해야 함.
+#+BEGIN_SRC sh
+	# Virtual core pointer 돌리는 것으로 실험함. id=2
+	## 화면돌리기 부터실험함.
+	xrandr -o right
+	## Virtual core pointer 돌리기
+	xinput set-prop 'Virtual core pointer' --type=float "Coordinate Transformation Matrix" 0 1 0 -1 0 1 0 0 1
+	xinput map-to-output 2 eDP-1
+#+END_SRC
+
+#+RESULTS:
+
+
+
+#+BEGIN_SRC sh
+	# Virtual core pointer 돌리는 것으로 실험함. id=2
+	## 화면돌리기 부터실험함.
+	xrandr -o normal
+	## Virtual core pointer 돌리기
+	xinput set-prop 'Virtual core pointer' --type=float "Coordinate Transformation Matrix" 1 0 0 0 1 0 0 0 1
+	xinput map-to-output 2 eDP-1
+#+END_SRC
+
+#+RESULTS:
+
+

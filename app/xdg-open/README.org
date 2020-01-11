@@ -1,7 +1,0 @@
-* xdg-open
-
- - other: kde-open gnome-open
-- ~/.config/mimeapps.list saved in arco linux for backup
-
-* xdg-mime - xdg-mime.org LOOK
-

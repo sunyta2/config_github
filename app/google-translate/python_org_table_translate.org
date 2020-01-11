@@ -1,0 +1,64 @@
+# -*- mode: org; org-confirm-babel-evaluate: nil; -*-
+(setq org-confirm-babel-evaluate nil) ; https://stackoverflow.com/questions/22668112/how-to-evaluate-all-code-blocks-when-exporting-in-emacs-org-mode
+
+
+#+TITLE: 표의 형태로 만들어 내는 것이 성공적이었음
+- 단 eww에서 번역기가 제대로 작동하면 매우 수집과 창의적인 전개가 가능할 것임.
+
+https://www.reddit.com/r/orgmode/comments/57sybq/using_orgmode_for_translations_creating/
+https://gist.githubusercontent.com/justinhj/b8a6126a3698c33bd5dbb053bb1e898e/raw/cce84d0285ff067c091667a27236a23d7d6e2c71/translate.org
+
+# Uses translate from https://pypi.python.org/pypi/translate
+# pip install translate
+# sudo pip3 install translate https://pypi.org/project/translate/
+
+
+#+name: translate
+#+begin_src python :var translatetext="" :results value
+from translate import Translator
+translator=Translator(to_lang="ko")
+#translated=translator.translate(translatetext)
+#return(translated.encode('utf-8'))
+return(translator.translate(translatetext))
+#+end_src
+
+#+RESULTS: translate
+
+
+#+call: translate("The third code block does have a tangle header argument indicating the name of the file to which the tangled source code will be written. It also has Noweb style references to the two previous code blocks.")
+
+#+RESULTS:
+: 세 번째 코드 블록에는 얽힌 소스 코드가 작성 될 파일 이름을 나타내는 엉킴 헤더 인수가 있습니다. 
+또한 이전의 두 코드 블록에 대한 Noweb 스타일 참조가 있습니다.
+
+
+#+TBLNAME: org-babel-english-python3-success
+| English                 |                           |
+|-------------------------+---------------------------|
+| How are you?            | 어떻게 지내세요?          |
+| I like spicy food       | 나는 매운 음식을 좋아한다 |
+| Do you live in England? | 영국에 살고 있습니까?     |
+| two                     | 이                        |
+| forty three             | 마흔 세                   |
+| shanghai dialect        | 상해 방언                 |
+#+TBLFM: $2='(org-sbe translate ('$1))
+
+
+
+##+TBLFM: $2='(org-sbe translate ('$1))
+
+
+;; 아래는 실험을 해서 읽기와 동시에 기동하는 법을 연구했음.
+#+TBLFM: '(async-shell-command (concat "espeak " '($1))  ) :: $2='(org-sbe translate ('$1))
+;;;; 실패함.
+
+(async-shell-command (concat "espeak " "'espeak'")  )
+#+BEGIN_SRC sh :results raw
+translate-cli -t ko "This is book:"
+#+END_SRC
+
+#+RESULTS:
+
+Translation: 이것은 책입니다:
+-------------------------
+Translated by: MyMemory

@@ -1,0 +1,19 @@
+
+#+ TITLE: tar zip의 사용법에 관하여.
+
+
+
+
+* LifeWire - Practical Examples of the zip Command 
+  https://www.lifewire.com/practical-examples-of-the-zip-command-2201158
+
+#+BEGIN_SRC sh
+
+ find /home/yourname/Music -name *love* | zip lovesongs.zip -@
+
+ # Here is one way to exclude the videos when creating photos.zip
+ zip photos.zip -r /home/photos/ -x *.mp4
+
+#+END_SRC
+
+

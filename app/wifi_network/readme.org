@@ -1,3 +1,7 @@
+#+TITLE: wifi설정을 가능하게 하자!
+#+CREATOR: LEEJEONGPYO
+#+STARTUP: showeverything
+
 잘 연결되는 network의 기반이 중요함.
 sudo pkill dhclient 실행이 중요함.
 
@@ -5,7 +9,41 @@ sudo pkill dhclient 실행이 중요함.
 - sudo pkill dhclient 를 실행해야 네트워크의 연결이 잘되는 것을 arco에서 발견함!!!
 
 nc발견! 연구필요함. nc 로 실행하는 (Advanced Network Configuration) cf.mc(midnight commander)
+
+** wifi 연결을 한방에 arco에서 가능하므로 (Arch linux 범용으로 사용가능할 것임.)! 
+- Arco의 WiFi 새로운 설정에 유용한 성공을 보인 명령임
+	#+BEGIN_SRC sh
+	sudo ip link set wlp3s0 down # 일단 기존의 설정을 끄고 시작함.
+	sudo wifi-menu # Arco에서는 새로운 네트워크를 발견하고 사용하는 데 탁월하게 즉시 실행됨.
+	#+END_SRC
+	- ip_cmd.org에 ip 연구있음
+
+
+
 * wifimrg in FreeBSD
 매우 탁월한 성능을 기대함. FreeBSD의 높은 통합안정성!
 
 * wpa.conf 
+
+* iwlist wlp3s0 scanning # Arco에서 주변의 모든 무선 네트워크를 검색하고 상세정보제공(중요)!
+- 비교 ) sudo fdisk -l # 저장장치를 상세정보제공함.
+	#+BEGIN_SRC sh
+	  # 출처: 동영상  https://www.youtube.com/watch?v=lwpqi1Y1ExE 
+	  sudo ifconfig wlan0 up
+	  sudo iwlist wlan0 scanning | grep ESSID
+	  sudo iwconfig wlan0 essid YOURSSIDHERE
+	  wpa_passphrase YOURSSIDHERE YOURKEYHERE > YOURSSIDHERE.conf
+	  #  (youtube doesn't allow use of > greaterthansymbol, so code exchange in this line)
+	  wpa_supplicant -Dwext -iwlan0 -cYOURSSIDHERE.conf -B
+	  sudo dhcpcd # !!!!!!매우 중요한 명령으로 생각되어진다. 
+	   # ! cf. $ dhclient (와 비교해 볼 것.)
+
+	  #Optional helpful support tools:
+	  lshw
+	  lspci
+	  wavemon
+
+	   # 동영상필기내용 아래에...
+	   $ cat /etc/fstab # 파일설정이지만 잘 알아 둘 것.
+	#+END_SRC
+

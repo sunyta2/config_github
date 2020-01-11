@@ -1,6 +1,9 @@
 * $ xdg-mime query filetype README.md
 text/plain
 
+- 의미 mime: Multipurpose Internet Mail Extensions (MIME)
+	is an Internet standard that extends the format of email messages to support text in character sets other than ASCII, as well as attachments of audio, video, images, and application programs.
+
 * $ xdg-mime query default text/plain
 sublime_text_3.desktop
 

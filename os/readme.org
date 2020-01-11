@@ -1,0 +1,87 @@
+
+
+
+구입할 것. t420 caddy 2~3
+msata_caddy 3~
+
+usb convertor 3usb 1
+
+
+
+
+* hardward drive 모으기 (find-file "~/config_github/os/readme.org")
+- hard장치는 soft한 os에 종속시키는 것이 목적달성에 유리하다. 따라서 별도관리보다는 os의 하부에 일단 둔다.
+* 벡업 하드저장장치(SATA, USB, SDHC) 용도 밝히기 /os/readme.org일단 저장함.
+exfatbig1 : NAME (용도: macbook_data, macbook_backup 저장용도)
+
+
+
+- PNY16G (일단 카탈리나 맥설치USB) Using Transmac in window10  untitle
+	일단 실패함. 커넬 읽기에서 계속중단됨.
+
+여러개구입한 샌드디스크32기가짜리
+- 일단 5개 구입한 것
+exfat32g2 : NAME (일단 저장된 것은 확인함.)-동영상Xcode
+exfat32g2 : NAME (일단 저장된 것은 확인함.)-동영상Xcode
+exfat32g2 : NAME (일단 저장된 것은 확인함.)-동영상Xcode
+exfat32g2 : NAME (일단 저장된 것은 확인함.)-동영상Xcode
+exfat32g2 : NAME (일단 저장된 것은 확인함.)-동영상Xcode
+exfat32g2 : NAME (일단 저장된 것은 확인함.)-동영상Xcode - exfat32g2 : NAME (일단 저장된 것은 확인함.)-동영상Xcode - exfat32g2 : NAME (일단 저장된 것은 확인함.)-동영상Xcode
+
+
+- 저장된 것을 exfat32g2 : NAME (일단 저장된 것은 확인함.)-동영상Xcode로 모을 것.
+그리고 미국에서 저장된 msata를 비워둘것 임시로 카탈리나 설치해서 여러체크를 빠르게 해보는 것이 유리할 것임.
+
+
+
+하드디스크의 리스트를 만들고 간단히 특징을 기록해 둘 것 
+- 명칭_tag(name)(사용량/총량G파일타입 기종외형크기특징) (중요성: 저장내용-사용방향)을 정리해 둘 것.
+- 바탕화면에 명칭_tag(name).txt 파일로 아래의 내용과 각각 통일한 방식으로 저장해 두고 싱크시킬 것.
+	- 날짜와 시간을 적어 두고 갱신정보를 상위에 두어서 수정을 쉽게 확인하도록 할 것.
+
+- w520 win7(name) (?/256G파일타입?윈도우? SanDisk알루미늄호일싸임) (약간중요함: 윈도우7아래에 적시함. 사용방향:경량고속부팅의 윈도우적합)
+	저장된 데이터의 양은 매우 적은 듯하지만 검토해서 옮길 윈도우 통합저장또는 
+
+- x220t Win(name). 지금 w541에서 사용중인 윈도우 정말 느림... (보류:되도록 삭제를 고려해봄직함.)
+win10임 재기동은 10분이상인듯함. 느렸지만 네트워크가 도서관에서 잘 잡히고, 유선으로 다른 컴과 연동시 고려해 봄직함
+로그인은 일단 2개임 thinkpad는 평상의 다른 것과 동일함.
+다른 아이디인 Lee Jeongpyo는 자료가 있을 가능성이 있음.
+
+	- Using Transmac in window10  untitle PNY16G를 Catalina 사용을 위해서 일단 설치함 나중에 구입또는 VM을 사용해야 할 지도 모른다.
+		부팅은 성공적인데 연구가 필요함.
+
+
+
+* hardward drive 모으기 (find-file "~/config_github/os/readme.org")
+
+sudo cp -Rv /Volumes/macbook_backup/ /Volumes/exfatbig1/macbook_backup/ # 이 명령으로  실행해서 벡업데이터통합파일을 저장하는 것이 가능함을 확인함.
+
+
+원본 삭제는 sudo rm -fr /Volumes/extfatbig1/macbook_delet/
+
+
+* busy umount [thinkpad@msata045~]$ sudo umount -l /home/thinkpad/mnt 
+잘 마운트 해야 하드를 빼서 다른 곳에 옮기므로 우선 마운트를 해제할 것이 목적.
+[thinkpad@msata045 ~]$ sudo umount /dev/sdb2
+umount: /home/thinkpad/mnt: target is busy.
+[thinkpad@msata045 ~]$ sudo umount -l /home/thinkpad/mnt # 깔끔하게 언마운트하지만 주의가 필요하다는 충고 아래의 출처에 상세함.
+[thinkpad@msata045 ~]$ 
+출처: https://stackoverflow.com/questions/7878707/how-to-unmount-a-busy-device
+- lsof method 
+	lsof | grep '<mountpoint of /dev/sda1>' (or whatever the mounted device is)
+	pkill target_process (kills busy proc. by name | kill PID | killall target_process)
+	umount /dev/sda1 (or whatever the mounted device is)
+
+
+
+* format exfat
+
+type sudo fsck.exfat /dev/sdb1 to have it scanned for errors. 
+
+
+* Both를 uefi only로 변경해야 인스톨러가 설치됨을 확인.
+꼭 모드를 확인하는 습관을 기를 것.
+원래의 Both Legacy First로 나중에 변경해야 할 지도 모른다.- 최고급의 W541에서 시도한 것임. > 다시 원래되로 돌려놓음.설치실패함.
+- 시작시 Attempting system restart,,, MACH Reboot 여기서 장시간 대기상태가 지속되는 것이 발견됨. 팬의 회전이 요란함.설치실패
+2시까지 30분 이상 지속시 다른 설정값을 변경하고 다시 시도해 볼 것.
+t520에서 설치를 시도해 보면 어떨지???

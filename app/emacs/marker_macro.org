@@ -1,0 +1,21 @@
+
+
+
+* macro 의 실용적인 사용법 
+; 출처: 
+Do you want the command to be executed automatically, 
+or just entered into the command line in preparation?
+
+M-x append-to-buffer RET will enter the selected text into the specified buffer at point, 
+but the command would not be executed by the shell.
+
+A wrapper function for that could automatically choose *shell* for the buffer
+ (or more smartly select/prompt based on current buffers in shell-mode), and then call append-to-buffer.
+
+You could trivially record a keyboard macro to copy the region,
+ switch to *shell*, yank, and enter (if required).
+;; 아래에 실용적인 방법으로 직관적인 이해와 연습이 필요함.
+F3 M-w C-x b *shell* RET C-y RET F4
+C-x C-k n my-execute-region-in-shell RET
+M-x insert-kbd-macro RET my-execute-region-in-shell RET
+(global-set-key (kbd "C-c e") 'my-execute-region-in-shell)

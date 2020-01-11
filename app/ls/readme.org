@@ -1,0 +1,32 @@
+#+TITLE: 여러명령 즉 list로 정보를 상세화
+#+CREATOR: LEEJEONGPYO
+#+STARTUP: showeverything
+
+
+
+
+
+* lshw 하드웨어의 정보를 파악하는 명령어.
+
+  - Note taken on [2019-12-27 Fri 16:32] \\
+    Using # cd /etc/default then # nano grub I edited the entry:
+  	Code:
+ GRUB_CMDLINE_LINUX=""
+to read:
+Code:
+ GRUB_CMDLINE_LINUX="fbcon=rotate:1"
+
+
+* dmesg
+Being that I am uncertain how far back dmesg pulls from the logs, I ran # dmesg -C to clear the log and then shut down and rebooted my machine.
+
+Upon logging back in, I went straight to Terminal to run # dmesg. Here are the results:
+
+* lspci 
+
+* lsblk
+cf) sudo fdisk -l  # 유사하되 더 자세함
+
+
+* sudo iwlist
+sudo iwlist wlan0 scanning | grep ESSID # wifi_network폴더참조할 것.

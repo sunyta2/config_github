@@ -1,8 +1,15 @@
 * xdg-open in emacs & 
 
+- 의미 xdg: XDG(X Desktop Group)
 
+Acronym	Definition
+XDG	XHTML (Extensible Hypertext Markup Language) Design Guide
+XDG	Xunta De Galicia
+XDG	X Desktop Group
 
-** xdg-open magnet:?xt=magnet-link-continue-here it opens qbittorrent with the link without a problem. ## use in torrent continue download in terminal purpose
+** xdg-open magnet:?xt=magnet-link-continue-here 
+#it opens qbittorrent with the link without a problem.
+## use in torrent continue download in terminal purpose
 
 - refer in ./xdg-mime.org
 -  - other: kde-open gnome-open wsl-open

@@ -1,0 +1,25 @@
+#+TITLE: narrow-shrink링크와 widen-expand
+#+CREATOR: LEEJEONGPYO
+#+STARTUP: showeverything
+
+
+~/config_github/app/emacs/logbook_drawer_narrow.org
+
+
+C-c C-x C-d time calulation 기록된 시간로그를 통합계산!
+C-c C-z Add a time-stamped note to the LOGBOOK drawer.
+ -> 궁금 어떻게 생성된것을 추가편집을 다른 창에서 할 수 있을까?
+
+C-c C-x d :drawer:
+어떻게 narrow-shrink링크와 widen-expand를 가능하게 했던 것일까?
+C-x n b         org-narrow-to-block  
+C-x n d         narrow-to-defun      
+C-x n e         org-narrow-to-element
+C-x n n         narrow-to-region     # Emacs의 n n은 매우 특별한 강점!
+C-x n p         narrow-to-page       
+C-x n s         org-narrow-to-subtree
+C-x n w         widen | # note에서
+
+
+C-c C-x C-{w|y} 하위리스트를 잘라내는 것!!!
+C-c C-x C-{p|n} 링크의 위치만 골라서 이동함 감탄!

@@ -1,0 +1,16 @@
+
+
+
+- 체계적인 파일복원을 목적
+
+용도
+- ~파일, .swp파일 배제, 기타 시스템파일 배제
+~/config_github/.gitignore 파일을 변경하는 것이 목적
+# (find-file-other-window "./../../.gitignore")
+* 문장구조 분석
+
+
+* test_file test_folder 배제하는 방법 
+
+* sync도 config설정(.gitignore처럼)하여서 특정 명칭의 파일이나 폴더를 배제할 수 있을까?
+

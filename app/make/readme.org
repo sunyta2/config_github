@@ -1,0 +1,17 @@
+
+
+
+
+/home/thinkpad/config_github/app/make/readme.org
+
+
+
+[[https://youtu.be/A5lX1h_2zy0][make-simple syntax to study_ ncurses tutorial 1 - Moving Cursors]]
+
+<s
+all: hello
+
+hello: hello.c
+	g++ -lncrses hello.cpp -o hello
+
+

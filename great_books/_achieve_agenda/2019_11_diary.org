@@ -747,7 +747,7 @@ To find a file by its inode number, you can use the argument -inum with the find
 ./test.txt
 ./hard_link.txt
 * [2019-11-10 Sun 09:28]  (async-shell-command "okular \"$(find ~/Music  -inum 6836311)\" &")
-okular "$(find ~/Music  -inum 6836311)" & c - How can I access file by inode on Linux - Stack Overflow
+(async-shell-command "okular \"$(find ~/Music  -inum 6836311)\" &") c - How can I access file by inode on Linux - Stack Overflow
 https://stackoverflow.com/questions/31428641/how-can-i-access-file-by-inode-on-linux/31432662#31432662
 Selection:
 2

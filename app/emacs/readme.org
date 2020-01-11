@@ -4,9 +4,13 @@
 agenda C-c [ 리스트에 추가하는 방식을 연구함.
 C-c [ C-c / t ;;현재 폴더내의 투두만 국한
 
-
+* emacs공부의 필요성!
+- 가장 경제적이며 통합적인 os가 범용적으로 이해하는 운영의 놀라운 공통성.(범Mind_해커의 무의식화가 핵심)
+	- 오직, 기초를 연마만을 할 수 있다.(Steve Jobs, AI...)
+	- divide & Conquer! 다양한 조각의 조립을 실행하는 마인드가 중요함.
 * emacs and stumpwm
 to think in emacs and stumpwm
+- 유용성: common-lisp를 Emacs에서 StumpWm으로 명령을 전송하는 것으로 lisp의 기초를 연마한다. 
 - ( stumpwm - https://github.com/sunyta2/config_github/tree/master/app/stumpwm )
 - ( cf. dwm - https://github.com/sunyta2/config_github/tree/master/app/suckless/dwm )
 
@@ -17,6 +21,8 @@ md link copy change C-shift-l SETTING in Extension
 * 일반론으로 사용할 방법찾기와 함수만들기 org mode - Emacs org-display-inline-images https://github.com/sunyta2/config_github/blob/master/app/emacs/org_mode_study/startup_inlineimage_in_org_mode.org
 [[file:./org_mode_study/startup_inlineimage_in_org_mode.org][일반론으로 사용할 방법찾기와 함수만들기 org mode-startup_inlineimage_in_org_mode.org]]
 
+* 다른 노트기록의 방식들과 아이디어,
+deft-mode, Howm 출처: https://opensource.com/article/18/7/emacs-modes-note-taking
 
 * note
 spacemacs :!echo password | sudo -S make install
@@ -35,3 +41,6 @@ https://stackoverflow.com/questions/95631/open-a-file-with-su-sudo-inside-emacs
 
 
 * melpa and use-package in [[file:./melpa_package.org][]]
+** transient_emacs
+   DEADLINE: <2019-12-26 Thu 12:01> SCHEDULED: <2019-12-26 Thu 12:00>
+[[file:magit/readme.org::*transient%20file%20link]]

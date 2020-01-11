@@ -1,3 +1,7 @@
+#+TITLE: kbd collection emacs
+#+CREATOR: LEEJEONGPYO
+#+STARTUP: showeverything
+
 이곳에 일단 분류된 키보드 단축목록을 수집한다.
 (read-file 
 요점을 추리고 핵심동작음 만든다음 적용을 시도한다.
@@ -16,7 +20,32 @@ C-s C-w C-w ... 단어위주의 검색
 C-s M-s C-e ... 잘 모르겠음 검색이 필요함. 특이한 기능인 듯함.
 
 
-M-g M-g 줄이동
+In emacs, the following commands lets you delete whitespaces around cursor.
+
+C-x C-o delete-blank-lines 【Ctrl+x Ctrl+o】 마구난타해서 한줄씩 지우기..
+M-SPC just-one-space 【Alt+Space】 그냥 빈공간입력인듯
+M-^ delete-indentation 【Alt+^】
+M-\ delete-horizontal-space 【Alt+\】 빈칸을 삭제하는 놀라움.
+
+
+
+^a   bes dfg
+a
+1
+M-\ C-x Ctrl-o
+Alt-SPC
+ Alt ^
+
+echo hi
+
+한글이 나온다
+1
+a
+3
+b
+
+
+M-g M-g 줄이동 ~L{숫자} 현재줄위치가 상태표시줄!
 M-g c 칼럼이동
 
 - 옆의 윈도우의 줄이동 [[https://www.emacswiki.org/emacs/Reference_Sheet_by_Aaron_Hawley][웹사이트 유용합!!! emacs/Reference_Sheet_by_Aaron_Hawley !!!]]
@@ -42,7 +71,8 @@ C-space {f{character} in VIM}} == C-s C-m
 
 
 (switch-to-buffer "readme.org" nil (quote force-same-window))
-
+(switch-to-buffer "*scratch*" nil (quote force-same-window))
+(switch-to-buffer "*scratch*" nil)
 C-x [ gg
 C-x ] G in Vim
 

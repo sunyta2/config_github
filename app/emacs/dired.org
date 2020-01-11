@@ -1,0 +1,7 @@
+
+
+* dired-x (load "dired-x") 
+(load "dired-x")
+
+위의 명령으로 C-x C-j가 가능하여짐 
+https://www.gnu.org/software/emacs/manual/html_node/dired-x/Installation.html#Installation

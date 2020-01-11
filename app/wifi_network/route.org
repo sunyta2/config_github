@@ -1,7 +1,8 @@
 
 
+참조할 곳> app/ssh/
 
-# route add default gw 192.168.123.254 # Gentoo설치에 유용한 명령어이다.
+# Route add default gw 192.168.123.254 # Gentoo설치에 유용한 명령어이다.
  # ping -c 3 www.gentoo.org # 잘 작동!
 
 

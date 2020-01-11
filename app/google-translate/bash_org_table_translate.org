@@ -1,0 +1,81 @@
+
+
+
+
+-*- mode: org; org-confirm-babel-evaluate: nil; -*-
+
+# Uses translate from https://pypi.python.org/pypi/translate
+# pip install translate
+# pip3 install translate를 대신 사용했음
+
+#+name: translate
+#+begin_src sh :var translatetext="" :results value
+
+#translator=Translator(to_lang="ko")
+#translated=translator.translate(translatetext)
+#return(translated.encode('utf-8'))
+#echo "hi $a"
+#trans -b -d -s en -t ko+la -I "$a"
+trans -b -d -s en -t ko "$a" 
+#echo world2
+#+end_src
+
+#+RESULTS: translate
+
+"world"
+#+call: translate(a="how are you?") 
+
+#+RESULTS:
+: world2
+어떻게 지내?
+어떻게 지내?
+quid agis?
+
+
+| English                 | Mandarin |
+|-------------------------+----------|
+| How are you?            | nil      |
+| I like spicy food       | nil      |
+| Do you live in England? | nil      |
+| two                     | nil      |
+| forty three             | nil      |
+| shanghai dialect        | nil      |
+#+TBLFM: $2='(org-sbe translate((a=$1)))
+yes
+
+
+
+
+#+TBLNAME: source-block
+| a    | b    | c    | d    |
+|------+------+------+------|
+| aaa1 | aaa2 | aaa3 | aaa4 |
+| bbb1 | bbb2 | bbb3 | bbb4 |
+|      |      |      |      |
+
+#+BEGIN_SRC emacs-lisp
+
+; (org-sbe "source-block" (n $2) (m 3))
+ (org-sbe "source-block" (n $3) (m 1))
+
+#+RESULTS:
+:
+
+
+ (("aaa1" "aaa2" "aaa3" "aaa4") ("bbb1" "bbb2" "bbb3" "bbb4") ("" "" "" ""))
+
+is the equivalent of the following source code block:
+
+ #+begin_src emacs-lisp :var results=source-block(n=val_at_col_2) :results value
+ results
+ #+end_src
+
+ #+RESULTS:
+ | aaa1 | aaa2 | aaa3 | aaa4 |
+ | bbb1 | bbb2 | bbb3 | bbb4 |
+ |      |      |      |      |
+
+
+
+
+    |      |      |

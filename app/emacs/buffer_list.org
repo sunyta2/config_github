@@ -1,0 +1,36 @@
+
+(ibuffer)
+ibuffer-do-isearch (bound to M-s a C-s by default) to search for text, or ibuffer-do-isearch-regexp if you need to search for a regular expression.
+
+
+C-u C-x C-b ; org파일버퍼만 검색하므로 편리하다.
+(buffer-menu)
+
+
+C-u M-: buffer-file-name             "~/2020_01_diary.org" ;변수출력으로 파일명확인! [2020-01-10 Fri 20:25] 
+C-u M-: buffer-file-name             "/home/thinkpad/config_github/great_books/_achieve_agenda/2020_01_diary.org" ;변수출력으로 파일명확인!
+        buffer-file-name C-u C-x C-e "~/2020_01_diary.org" ;변수출력으로 파일명확인! [2020-01-11 Sat 09:25] 
+        buffer-file-name C-u C-x C-e "/home/thinkpad/config_github/great_books/_achieve_agenda/2020_01_diary.org" ;변수출력으로 파일명확인!
+
+(setq a "a is apple")
+(setq a "b is big")
+
+(message 
+
+"hi %s"
+ a)
+
+* %로 정확하게 읽기모드로 변환한 다음에 연습을 한다.
+
+* b 키 ( bury 로 중요한 우선파일만 골라낸다)
+
+
+* ( C-x 4 c ) Indirect Buffers_in_buffer_list.org_with_news3.org
+                  _using_in_python_news_chrome.org
+- 핵심능력: 같은 버퍼를 다른 버퍼를 생성해서 전혀 다른 모드로 실행할 수 있다
+	다른 모드의 예: { (news_여기서_주석을 추가함).org | (원본)read-only-mode }, { org | artist-mode }
+- Emacs의 놀라운 다양한 모드의 변형을 가져온다! 매우 유연한 창의성이 빔보다 탁월함.
+
+(file-name-directory buffer-file-name) and (file-name-directory (buffer-file-name)) "/home/thinkpad/config_github/app/emacs/"
+소속된 폴더의 명칭을 알아내는 방법.
+Actually, according to the docs, buffer-file-name is both a function and a buffer-local variable, so both (file-name-directory buffer-file-name) and (file-name-directory (buffer-file-name)) should work

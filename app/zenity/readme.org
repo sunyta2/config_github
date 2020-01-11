@@ -1,0 +1,20 @@
+#+TITLE: zenity xbindkeys xmodmap_dwm_ 빠른 키를 만들면서 크롬의 한영변환은 그대로 인식하는 것을 목적으로 함.
+#+CREATOR: LEEJEONGPYO
+#+STARTUP: showeverything
+
+
+
+* 사용의 용처 
+~/.bin/rotate # GUI로 입력을 받아서 단축키로 화면돌리기로 사용하는 것.
+	state_gui=$(zenity --entry --entry-text="123*" --text="select 1 character for --rotate \$state_rotate :")
+
+* 기타 등등,,, 
+기본명령의 출처 https://www.linux.org/threads/zenity-gui-for-shell-scripts.9802/ Zenity - GUI for Shell Scripts
+- 노트를 보면서 기본 명령을 저장할 것
+
+zenity --entry --entry-text="Type" --text="Bang on the keyboard"
+
+zenity --info --text="blah blah blah"
+notify-send -t 3000
+nofity-send -t 3000 "$(echo hi)"
+notify-send -t 3000 "$(amixer set Master toggle | tail -n 2)"

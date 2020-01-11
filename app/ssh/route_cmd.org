@@ -1,5 +1,5 @@
 정답은 # route add default gw 192.168.123.254 
-
+참조: 할 곳 > 
 *** [2019-11-02 Sat 15:18] gentoo route CMD 발견
 [7 Linux Route Command Examples (How to Add Route in Linux)](https://www.thegeekstuff.com/2012/04/route-examples/)
 정답은 # route add default gw 192.168.123.254 
@@ -38,7 +38,7 @@ site : [How to install route command on CentOS / RHEL 7 - nixCraft](https://www.
 
 
 * [2019-11-11 Mon 16:47] self-applied function 자기반추적인 기능(우주의 운행작동-로고스의 직접구현됨)
-- 구현되는 사물에 로고스는 결정력을 지니는 것으로 생각된다.
+- 구현되는 사물에 로고스는 결정력을 지니는 것으로 생각된다. {lazer의 신호강화원리- 야곱의 사랑받는 원리}
 - 대학은 무지의 최전방이다. 진리의 방패가 영토 유지하고 그 창이 확장시킨다.
 something called self application - it's the idea of applying something to itself.
 출처: [https://youtu.be/9T8A89jgeTI?t=336][Essentials: Functional Programming's Y Combinator - Computerphile - YouTube]

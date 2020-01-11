@@ -1,0 +1,27 @@
+#+TITLE: xdotool
+#+STARTUP: showeverything
+#+CREATOR: LEEJEONGPYO
+
+  grab-x-link        20191113.848  installed             Grab links from X11 apps and insert into Emacs
+  greader            0.1           installed             gnamù reader, a reader with espeak tts
+
+
+  grab-x-link        20191113.848  installed             Grab links from X11 apps and insert into Emacs
+xdotool을 사용해서 진행하는 것을 발견함
+
+
+
+* 연구의 과제들
+- 발견사항: 잘 활용할 경우 맥의 기능이 부럽지 않을 정도의 완벽한 통제력!
+- 필요사항: 어떻게 원하는 창이나 앱을 선택하도록 하여서 명령을 전달하는 것인가?!
+* YouTube 동영상 <검색어: xdotool >
+
+https://www.youtube.com/watch?v=yKNS1D7CcPg 구글메일의 선택과 삭제의 방법을 보임
+=> 활용으로 xkeybind와 연동하여 필요한 기능을 가능하게 하는 것이 중요한 것으로 보인다.
+어떻게 rofi로 윈도우를 선택하게 할 수 있을까.
+xdotool mousemove 200 250 click
+while [ 1 ]; do xdotool mousemove
+xdotool key k # app/emacs/shell_emacs/eshell_in_emacs.org 사용될 활용있음
+
+
+

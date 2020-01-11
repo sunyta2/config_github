@@ -1,0 +1,27 @@
+
+
+배열을 다루는 법 요약
+
+
+
+
+배열의 모음.
+# cribbed from redshift, https://github.com/jonls/redshift/blob/master/README-colorramp
+GAMMA_VALS=('1.0:0.7:0.4'  # 3000K
+            '1.0:0.7:0.5'  # 3500K
+            '1.0:0.8:0.6'  # 4000K
+            '1.0:0.8:0.7'  # 4500K
+            '1.0:0.9:0.8'  # 5000K
+            '1.0:0.9:0.9'  # 6000K
+            '1.0:1.0:1.0'  # 6500K
+            '0.9:0.9:1.0'  # 7000K
+            '0.8:0.9:1.0'  # 8000K
+            '0.8:0.8:1.0'  # 9000K
+            '0.7:0.8:1.0') # 10000K
+# https://github.com/philippnormann1337/xrandr-brightness-script/blob/master/brightness.sh
+
+get_gamma_index() {
+    for i in "${!GAMMA_VALS[@]}"; do
+        [[ "${GAMMA_VALS[$i]}" = "$1" ]] && echo "$i" && break
+    done
+}

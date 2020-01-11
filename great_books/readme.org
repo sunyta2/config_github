@@ -1,6 +1,9 @@
 책은 위대한 책이라야 한다.
 
 
+
+ 개발 자료 맨탈 중력장의 힘 Reminder (find-file "~/config_github/great_books/mental_reminder.org")
+
 * 위대한 아이디어를 담은 책을 읽는다.
 
 *** 안목의 격차에 의해서 월등한 차이를 내는 것이 컴퓨터다!

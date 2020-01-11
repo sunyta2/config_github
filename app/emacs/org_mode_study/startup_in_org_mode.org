@@ -54,3 +54,10 @@ should do the job. The documentation of the variable (C-h v org-image-actual-wid
 (async-shell-command "wget -O /tmp/image.jpg https://url/some-name.jpg")
 
 (async-shell-command "espeak -v ko '한글이 나온다'")
+
+* global #startup: showeverything 
+#+BEGIN_SRC emacs-lisp
+
+(setq org-inhibit-startup-visibility-stuff t) ;; Global #+STARTUP: showeverything
+#+END_SRC
+

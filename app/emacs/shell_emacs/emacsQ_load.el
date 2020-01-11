@@ -38,7 +38,16 @@
      (org . t)
      (python . t)
      (ruby . t)
+     (rust . t)
      (C . t)))))
+
+
+;(require 'lsp-rust)
+(require 'lsp-mode)
+;;(use-package lsp-mode
+ ; :hook (XXX-mode . lsp-deferred)
+ ; :commands (lsp lsp-deferred))
+
 
 
 ;; addtion of shortcut
@@ -52,7 +61,7 @@
 ;;  (dired-jump-other-window) 0w   이후 q 또는 C-x 4 0 로 사용을 중단함.
                                    ;; C-g  g grep-mac-chrome
 
-
+(setq org-inhibit-startup-visibility-stuff t) ;; Global #+STARTUP: showeverything
 
 (when (>= emacs-major-version 24)
   (require 'package)
@@ -75,7 +84,13 @@
 
   (require 'use-package))
 
-
+(use-package greader)
+;(use-package greek-polytonic)
+(use-package grab-x-link
+;:config
+;; (grab-x-link-chrome-insert-org-link)
+;(grab-x-link-chromium-insert-org-link)
+)
 
 (use-package command-log-mode
   :config 
@@ -92,32 +107,38 @@
   ;;:config
 )
 
+;; make emacs always use its own browser for opening URL links
+;; 일단 중단함 크롬의 북마크를 열기위해서
+;; (setq browse-url-browser-function 'eww-browse-url)
+;; app/emacs/eww.org M-eww
 
-(use-package google-translate ;; /app/google-translate/readme.org
+
+;; 러스트를 다운로드하였으므로 활용하기 위해 설치함
+;; - for EMACS - cargo ob-rust rustic rust-mode install
+(require 'cargo)
+(require 'rustic)
+(require 'rust-mode)
+
+
+
+;(use-package google-translate ;; /app/google-translate/readme.org
 ;(require 'google-translate) ;; $ yay translate-shell # trans -R
-  ;;:init
-  ;;(setq foo-variable t)
-    :config
-;(require 'google-translate-default-ui)
-;(global-set-key "\C-ct" 'google-translate-at-point)
-;(global-set-key "\C-cT" 'google-translate-query-translate)
 
-;(setq google-translate-default-target-language  "latin+ko"
-; google-translate-default-source-language "en")
-;(setq google-translate-default-target-language  nil
-; google-translate-default-source-language "en")
-
-(require 'google-translate-smooth-ui)
-(global-set-key "\C-ct" 'google-translate-smooth-translate)
-(setq google-translate-translation-directions-alist
-      '(("en" . "ko") ("en" . "la") 
-	("ko" . "en") ("ko" . "la") ("ko" . "el")  
-	 ("la" . "ko")  ("la" . "en")
-	("en" . "el") ("en" . "he")))
-
-)
-
-
+(defun google-translate-ljp ()
+"일단 간단히 실행하고 나중에 추가할 것을 추가한다.
+- 다른 버퍼나 파일로 전송하는 것을 연구할 것
+- ;(find-file ~/config_github/app/google-translate/proj_making_el/collect_tesing_defun.el)
+"
+  (interactive)
+  (if mark-active
+      (progn (setq
+	    selection (buffer-substring-no-properties (region-beginning) (region-end))
+	    traned-txt (substring (shell-command-to-string (concat "trans -no-autocorrect -b -d -s en -t ko+la '" selection "'")) 0 -1 )
+	)
+	     ;(message (concat traned-txt "=" selection))
+	     (message (concat selection "=" traned-txt))
+	)))
+(global-set-key "\C-ct" 'google-translate-ljp)
 ;;(use-package ' 클립보드 자동완성, 
 (use-package neotree 
   :config
@@ -125,7 +146,11 @@
   (neotree-show)
 )
 
-
+(use-package goldendict
+  :config
+  (global-set-key (kbd "C-x C-d") 'goldendict-dwim)
+;;If invoke with [C-u] prefix, then it will raise the main window.
+)
 ;;
 (use-package visible-mark
 )

@@ -8,3 +8,29 @@ tmuxp
 
 * pacman
 
+
+#+BEGIN_SRC sh
+
+#We need to know that ArchLinux (Like Gentoo) is a rolling release, that means that there are no releases like in Debian or Ubuntu, where from time to time you get a new fresh release, and you have to upgrade it, in ArchLinux the packages are constantly being updated, so to have the last version or Arch once installed, just enter this two commands:
+
+sudo pacman -Syy
+# This is to update the database, just like
+
+sudo aptitude update #in Debian or Ubuntu.
+
+#We will later perform the update.
+sudo pacman -Su
+#And that is it, you should run these commands, mmmh once a week, and you will stay up to date.
+#Just remember to read the oficial forums before in case something with upgrade may break your system.
+
+#+END_SRC
+
+
+#+BEGIN_SRC sh
+# $ mirror
+sudo pacman -Ssyu # Arco Linux Note
+# update
+# pksyua
+sudo pacman -S plasma-meta
+
+#+END_SRC

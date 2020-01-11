@@ -1,3 +1,14 @@
+amixer sget Master # 수치를 출력함 나중에 awk로 추출
+amixer set Master 10%+
+amixer set Master 10%+
+amixer set Master 10%-
+amixer set Master toggle
+To mute, unmute or toggle between muted/unmuted state, use
+
+amixer set Master mute
+amixer set Master unmute
+amixer set Master toggle
+
 
 (async-shell-command "amixer --quiet set Master 25%")
 (async-shell-command "amixer --quiet set Master 75%")
@@ -18,3 +29,5 @@ vol=$(awk '/%/ {gsub(/[\[\]]/,""); print $4}' <(amixer sget Master))
 (async-shell-command "amixer --quiet set Master 75%")
 amixer set Master 75%
 amixer --quiet set Master 75%
+ awk '/%/ { print $5 $6}' <(amixer sget Master) | uniq
+awk '/%/ { print $5 $6}' <(amixer set Master toggle) | uniq

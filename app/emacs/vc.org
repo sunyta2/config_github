@@ -1,0 +1,27 @@
+
+
+# estr
+
+
+C-x v +		vc-update
+C-x v =		vc-diff
+C-x v D		vc-root-diff
+C-x v G		vc-ignore
+C-x v I		vc-log-incoming
+C-x v L		vc-print-root-log
+C-x v O		vc-log-outgoing
+C-x v P		vc-push
+C-x v a		vc-update-change-log
+C-x v b		vc-switch-backend
+C-x v d		vc-dir
+C-x v g		vc-annotate
+C-x v h		vc-region-history
+C-x v i		vc-register
+C-x v l		vc-print-log
+C-x v m		vc-merge
+C-x v r		vc-retrieve-tag
+C-x v s		vc-create-tag
+C-x v u		vc-revert
+C-x v v		vc-next-action
+C-x v x		vc-delete-file
+C-x v ~		vc-revision-other-window

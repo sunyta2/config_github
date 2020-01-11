@@ -6,6 +6,8 @@ You can also use the commands /1, /2, ... /N, which is what I like to do.
 
 
 
+(erc-tls :server "irc.freenode.net" :port 6697 :nick "my_nick" :password "erc잘작동됨")
+
 
 my play ground and dom stadium is FreeNode
  /CONNECT Freenode

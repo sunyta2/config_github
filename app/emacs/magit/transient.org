@@ -1,0 +1,43 @@
+[[file:readme.org::*transient%20file%20link]]
+
+* purpose_of_transient_is_menu_buffer
+
+* Conquering Kubernetes with Emacs 
+https://www.youtube.com/watch?v=w3krYEeqnyk
+
+  - Note taken on [2019-12-26 Thu 09:17] \\
+    test
+[[file:~/config_github/great_books/_achieve_agenda/2019_12_diary.org::*%5B2019-12-26%20Thu%2007:04%5D%20transient%20and%20emacs%20babel%20command][{2019-12-26 Thu 07:04} transient and emacs babel command]]
+	- ㅜ샏 \\
+		ㅁㄴㅇㄹ
+		#+BEGIN_SRC emacs-lisp
+		  (defun test-function (&optional args)
+		    (interactive
+		     (list (transient-args 'test-transient)))
+		    (message-box "args: %s" args))
+
+		  (define-transient-command test-transient ()
+		  "Test Transient Title"
+		  ["Arguments"
+		  ("-s" "Switch" "--switch")
+		  ("-a" "Another switch" "--another")]
+		  ["Actions"
+		  ("d" "Action d" test-function)])
+		  (test-transient)
+		#+END_SRC
+
+		#+RESULTS:
+		#+BEGIN_SRC emacs-lisp
+		  (let ((columns [("Col1" 50) ("Col2" 50)])
+			(rows (list '(nil ["row1" "value1"])
+				    '(nil ["row2" "value2"])
+				    '(nil ["row3" "value3"]))))
+		  (switch-to-buffer "*temp*")
+		  (setq tabulated-list-format columns)
+		  (setq tabulated-list-entries rows)
+		  (tabulated-list-init-header)
+		  (tabulated-list-print))
+		#+END_SRC
+
+		#+RESULTS:
+		: 1

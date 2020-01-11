@@ -1,4 +1,8 @@
-#+STARTUP: showall
+#+TITLE: 2019_12_diary.org
+#+CREATOR: LEEJEONGPYO
+#+STARTUP: showeverything
+
+; #+STARTUP: showall
 (find-file "~/note3/daily_pdf_mpv.org")
 
 # (progn (save-buffer)(shell-command "/home/thinkpad/.bin/grasp/server/grasp_server.py --path /home/thinkpad/config_github/great_books/_achieve_agenda/2019_11_diary.org"))
@@ -6,9 +10,11 @@
 
 #+TAGS: org_diary(d) todo(t)
 
+(rgrep "단어_들" "*.org" "~/config_github/app" nil)
+(find-grep "find ~/config_github/app -type f -exec grep --color -nH --null -e 단어_들 \{\} +")
 
 
-자득自得이 중요함!(자기自에게 가장 최적화된 방식으로 터득得하는 것)
+자득自得이 중요함!(자기自己에게 가장 최적화된 방식으로 터득得하는 것)
 
 (최대한 깊고 강력하게 Binding됨을 추구함+느리더라도 결국에 효과적인 것)
 
@@ -18,3 +24,74 @@
 https://www.youtube.com/watch?v=L3LMbpZIKhQ?t=2185
 [Lec 1 | MIT 6.042J Mathematics for Computer Science, Fall 2010-In fact, the word "axiom" comes from Greek]]
 정확히 찾아내어진 것- an_etymology_of_latin_greek.pdf No.104. ag에서 自得발견됨에 감탄!
+
+
+* [2019-12-22 Sun]
+
+[2019-12-22 Sun 11:22] espeak in EMACS find-grep in app/espeak or config.el
+저장할 것 아이디어를 저장하고 나에게 맞는 방식으로 변경할 수 있게 파일로 위의 내용의 아이디어를 저장할 것.
+
+[2019-12-22 Sun 17:28] xmodmap_dwm_korean_with_chrome
+(rgrep "xmodmap_dwm_korean_with_chrome" "*.org" "~/config_github/app" nil)
+(find-grep "find ~/config_github/app -type f -exec grep --color -nH --null -e xmodmap_dwm_korean_with_chrome \{\} +")
+
+
+
+* [2019-12-23 Mon]
+* [2019-12-23 Mon 16:13] (find-grep "find ~/config_github/ -type f -exec grep --color -nH --null -e \" read \" \{\} +")
+
+* [2019-12-26 Thu]
+  :PROPERTIES:
+  :ORDERED:  t
+  :END:
+  :LOGBOOK:
+  CLOCK: [2019-12-26 Thu 10:22:10]--[2019-12-26 Thu 10:30] =>  0:08
+  CLOCK: [2019-12-26 Thu 10:03:20]--[2019-12-26 Thu 10:07:10] =>  0:04
+#+BEGIN: clocktable :scope subtree :maxlevel 2
+#+CAPTION: Clock summary at [2019-12-26 Thu 10:28]
+| Headline         | Time   |
+|------------------+--------|
+| *Total time*     | *0:04* |
+|------------------+--------|
+| [2019-12-26 Thu] | 0:04   |
+#+END:
+
+  :END:
+
+* [2019-12-26 Thu 07:04] transient and emacs babel command
+org-store-link
+[[../../app/emacs/readme.org::*transient_emacs]]
+/home/thinkpad/config_github/great_books/_achieve_agenda/2019_12_diary.org
+* org-store-link
+  :PROPERTIES:
+  :ORDERED:  t
+  :END:
+
+0:00:00 0:00:07 0:00:15 | *Total time* | *0:00* |
+#+BEGIN: clocktable :scope subtree :maxlevel 2
+#+CAPTION: Clock summary at [2019-12-26 Thu 10:02]
+| Headline     | Time   |
+|--------------+--------|
+| *Total time* | *0:00* |
+#+END:
+
+
+ ㅁㄴㅇㄹ
+C-c C-x C-d time calulation 기록된 시간로그를 통합계산!
+C-c C-z Add a time-stamped note to the LOGBOOK drawer.
+
+C-c C-x d :drawer:
+어떻게 narrow-shrink링크와 widen-expand를 가능하게 했던 것일까?
+~/config_github/app/emacs/logbook_drawer_narrow.org
+C-x n e         org-narrow-to-element
+C-x n w         widen | # note에서
+C-x n s         org-narrow-to-subtree
+
+
+
+
+C-c C-x C-{w|y} 하위리스트를 잘라내는 것!!!
+C-c C-x C-{p|n} 링크의 위치만 골라서 이동함 감탄!
+* [2019-12-28 Sat]
+- 밤 꿈에 세계적인 지도자가 되는 준비를 하라는 것을 받음
+- 일본에 편지를 쓸 생각.

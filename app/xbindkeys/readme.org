@@ -1,0 +1,84 @@
+#+TITLE: xbindkeys zenity xmodmap_dwm_ 빠른 키를 만들면서 크롬의 한영변환은 그대로 인식하는 것을 목적으로 함.
+#+CREATOR: LEEJEONGPYO
+#+STARTUP: showeverything
+
+
+
+
+
+
+
+
+
+
+# cf. xbindkeys for shortcut setting XF86HomePage
+# xrandr, xmodmap, setxkbmap
+* 잘실행되는 것으로 Reload the config file:
+#+BEGIN_SRC sh
+### 출처: http://xahlee.info/linux/linux_xbindkeys_tutorial.html
+##### 
+##### make xbindkeys reload config
+#killall -s1 xbindkeys 에러남 
+killall xbindkeys # 에러없이 잘 실행됨.
+#####Start xbindkeys:
+####### start xbindkeys daemon
+        #xbindkeys -f ~/.xbindkeysrc
+xbindkeys -f ~/config_github/app/xbindkeys/xbindkeysrc
+#+END_SRC
+
+
+
+*** test
+#+BEGIN_SRC sh
+Add the following content:
+
+##### sample xbindkeys config
+##### place this file at ~/.xbindkeysrc
+
+##### make F8 launch Google Chrome browser
+"google-chrome"
+F8
+
+##### make F3 do Ctrl+c
+"xvkbd -no-jump-pointer -xsendevent -text '\Cc'"
+F3
+Mouse button example:
+
+##### mouse button 9 sends Control + PageUp
+"xvkbd -xsendevent -text '\C\[Page_Up]'"
+b:9
+
+##### mouse button 8 sends Control + PageDown
+"xvkbd -xsendevent -text '\C\[Page_Down]'"
+b:8
+#+END_SRC
+
+
+* install ,,, 
+
+$ yay xbindkeys
+1 community/xbindkeys 1.8.6-3 (22.0 KiB 56.0 KiB) 
+    Launch shell commands with your keyboard or your mouse under X
+==> Packages to install (eg: 1
+
+
+ <XF86AudioMute> <XF86AudioLowerVolume> <XF86AudioRaiseVolume> <XF86AudioMicMute>
+ <XF86MonBrightnessDown> <XF86MonBrightnessUp> <XF86Display> <XF86WLAN>
+ <XF86Tools> <XF86Search> <XF86LaunchA> <XF86Explorer>
+ <XF86Calculator> <s-l> <XF86HomePage> <s-e>
+
+
+#"amixer set Master toggle"
+ "notify-send -t 3000 \"$(amixer set Master toggle | tail -n 2)\""
+# "notify-send -t 3000 `awk '/%/ { print $5 $6}' <(amixer set Master toggle) | uniq`"
+XF86AudioMute
+
+# "amixer set Master 10%-"
+# "notify-send -t 3000 `awk '/%/ { print $5 $6}' <(amixer set Master 10%-) | uniq`"
+#XF86AudioLowerVolume
+
+# "amixer set Master 10%+"
+# "notify-send -t 3000 `awk '/%/ { print $5 $6}' <(amixer set Master 10%+) | uniq`"
+#XF86AudioRaiseVolume
+
+#XF86AudioMicMute

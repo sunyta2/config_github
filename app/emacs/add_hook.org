@@ -1,0 +1,21 @@
+
+
+
+
+
+* 명령구조들을 일단 수집함
+#+BEGIN_SRC emacs-lisp
+; 아래의 문장은 스트링을 전달하는 법을 찾다가 발견했음.
+;; 특이한 것에 눈여겨 보고 메모할 것
+(add-hook 'python-mode-hook
+      'my-python-send-statement)
+
+ (defun my-python-send-statement ()
+   (interactive)
+   (local-set-key [C-return] 'my-python-send-statement) ;; 로컬로 저장되는 문장.
+   (end-of-line) ;; 위치의 이동
+   (set-mark (line-beginning-position)) ;; 마커의 설정
+   (call-interactively 'python-shell-send-region)
+   (python-shell-send-string "; print()")) ;; 문장을 전송하는 법
+#+END_SRC
+
