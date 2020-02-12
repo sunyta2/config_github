@@ -1,4 +1,4 @@
-
+#+STARTUP: showeverything indent
 
     ;; 반복적 과정을 매우 효과적으로 강화하는 리엔지니어링의 과정이다. steve_jobs
     (async-shell-command "mpv ~/Music/St* --ab-loop-a=1:58 --ab-loop-b=2:08 --start=1:53 --volume=39 --player-operation-mode=pseudo-gui")
@@ -7,7 +7,50 @@
     (async-shell-command "mpv ~/Music/St* --ab-loop-a=1:58 --ab-loop-b=2:08 --start=1:53 --volume=39 --profile=pseudo-gui &>/dev/null &")
 
 ;; 반복적 과정을 매우 효과적으로 강화하는 리엔지니어링의 과정이다. steve_jobs
-(async-shell-command "mpv ~/Music/St* --ab-loop-a=1:58 --ab-loop-b=2:08 --start=1:53 --volume=39")
+(async-shell-command "mpv ~/Music/St* --start=1:53 --ab-loop-a=1:58 --ab-loop-b=2:08 --volume=39")
+
+
+(find-file-other-window "~/config_github/app/mpv/readme.org") ;; 이 파일을 여는 방식을 diary.org 다른 곳에서도 붙여서 사용할 것
+
+
+(async-shell-command "mpv \"$(find ~/Music  -inum 6960041)\" &") ;; /home/thinkpad/Music/test_mp3/Napoleon Hill/✦Full AudioBook.mp3 # Arco linux
+
+(async-shell-command "mpv --start=2:34:50 --ab-loop-a=2:34:56 --ab-loop-b=2:35:00 \"$(find ~/Music  -inum 6960041)\" &") ;;
+                     ;; /home/thinkpad/Music/test_mp3/Napoleon Hill/✦Full AudioBook.mp3 # Arco linux
+
+* inode를 사용한 방법과 파일 위치검색을 넣어 둘 것.
+- /app/mpv/test_inode_mpv.org 에 노트한 것을 정리해서 적어 둘 것.
+    (find-file-other-window "./test_inode_mpv.org")
+
+(rgrep "단어_들" "*.org" "~/config_github/app" nil)
+(find-grep "find ~/config_github/app -type f -exec grep --color -nH --null -e 단어_들 \{\} +")
+
+(rgrep "incognito" "*.org" "~/config_github" nil)
+(async-shell-command "brave --incognito 'https://www.youtube.com/watch?v=IggY48vEe2w&t=11m'")
+
+* [2019-11-10 Sun 09:24] How to find file by inode number » Linux Ask! | Linux Ask! :grasp:
+http://www.linuxask.com/questions/how-to-find-file-by-inode-number
+Selection:
+To find a file by its inode number, you can use the argument -inum with the find command. e.g.
+
+# find -inum 8232976
+./test.txt
+./hard_link.txt
+* [2019-11-10 Sun 09:28]  (async-shell-command "okular \"$(find ~/Music  -inum 6836311)\" &")
+(async-shell-command "okular \"$(find ~/Music  -inum 6836311)\" &") c - How can I access file by inode on Linux - Stack Overflow
+https://stackoverflow.com/questions/31428641/how-can-i-access-file-by-inode-on-linux/31432662#31432662
+Selection:
+2
+
+I found the question connected concerning similar topic here.
+
+Summarizing, check out those commands:
+
+find /path/to/mountpoint -inum <inode number>
+sudo debugfs -R 'ncheck 393094' /dev/sdaX 2>/dev/null
+
+
+
 
 * Playback Control
 --ab-loop-a=<time>, --ab-loop-b=<time> ; 반복은 이렇게
@@ -24,3 +67,13 @@ pp% seeks to percent position pp (0-100)
 --volume=<value>
               Set  the startup volume. 0 means silence, 100 means no volume reduction or amplification. Negative values can be passed for compati‐
               bility, but are treated as 0.
+
+
+읽은 횟수/듣기만한 횟수를 기록할 것.
+(async-shell-command "mpv \"~/Music/bellumgallicum_caesar/bellumgallicum_02_caesar_64kb.mp3\"")
+(async-shell-command "mpv --player-operation-mode=pseudo-gui '/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_02_caesar_64kb.mp3'") 
+(async-shell-command "mpv --player-operation-mode=pseudo-gui '/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_02_caesar_64kb.mp3'")  ;; 읽은 횟수/듣기만한 횟수
+(async-shell-command "mpv --player-operation-mode=pseudo-gui '/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_02_caesar_64kb.mp3'")  ;; 1 / 2
+(async-shell-command "mpv --player-operation-mode=pseudo-gui '/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_02_caesar_64kb.mp3'") 
+--player-operation-mode=pseudo-gui
+--player-operation-mode=<cplayer|pseudo-gui>

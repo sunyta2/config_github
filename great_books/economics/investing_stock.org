@@ -1,0 +1,33 @@
+
+
+* [[https://www.youtube.com/results?search_query=buffett+principles][buffett principles - YouTube]] 
+- [[https://www.youtube.com/watch?v=z1aRl6ay-04][Warren Buffett: Principles For Success In Life and Business - YouTube]]
+    - 회계학은 사업의 언어이며 의사결정에 필수적이다. (find-file "./accounting_concepts.org")
+    - account is essential 반드시 회계학에 익숙해 질 것 [[https://www.youtube.com/watch?v=PUvkPoDavnI][4 (PE). Finding Basic Stock Terms - YouTube]]
+    - 자신이 직접설명함 [[https://www.youtube.com/watch?v=sH-jQg-_ITA][BUFFETT ON VALUE INVESTING & 4 FILTERS INNOVATION - YouTube]]
+
+- 4가지의 버핏의 원리- 너무 간단해서 잘 사용되지 못하고 있다. 
+    - Understand the Business 회계학은 사업의 언어이며 의사결정에 필수적
+    - Enduring Competitive Advantages 경쟁적 우위를 유지하는 것
+    - Able and Trustworthy Managers
+    - Bargain Price= Margin of Safety
+
+
+
+
+* [[https://atyourbest.tistory.com/8][미국 주식 투자하기 (4) : 증권계좌 개설 및 거래 :: At Your Best]]
+[[https://www.google.com/search?source=hp&ei=VHIyXob6EdCsmAWQqabYDg&q=%EB%AF%B8%EA%B5%AD+%EC%A3%BC%EC%8B%9D+%EA%B3%84%EC%A2%8C%EA%B0%9C%EC%84%A4&oq=%EB%AF%B8%EA%B5%AD+%EC%A3%BC%EC%8B%9D+&gs_l=psy-ab.3..0i131l2j0l8.826.5296..16075...0.0..0.104.398.2j2......0....1..gws-wiz.....0.NSVkZ-HAejo&ved=0ahUKEwiG9JqI1KrnAhVQFqYKHZCUCesQ4dUDCAY&uact=5][미국 주식 계좌개설 - Google Search]]
+
+
+
+[[https://www.vegastooza.com/2019/07/blog-post.html][베가스풍류객의 미국주식 이야기: 한국 국적으로 미국 현지 주식계좌 개설과 배당세에 대해
+]]한마디로 한쿡의 주민등록번호와 유사하지만 다른 사회보장번호(SNN)가 없으면 계좌개설 자체가 안된다. 
+그러니 여러군데 검색해서 알아볼 필요가 없다. 안되니 포기하는게 제일 좋은 방법이다. 
+SSN이 있더라도 미국에 거주하지 않는 이상 계좌개설은 불가능하다. 
+한마디로 미국 시민권자이거나 영주권자만 계좌개설이 가능하다. 
+미국에 거주하는 주재원이나 유학생들 중에서 계좌개설은 가능하지만 세금문제가 발생하기 때문에 되도록 한국계좌로 매매하는 것이 편할 것이다. 
+[[https://www.vegastooza.com/2019/07/blog-post_10.html][베가스풍류객의 미국주식 이야기: 로빈후드 주식계좌 개설방법과 다른 증권사와 비교]]
+사회보장번호는 미국에서 합법적으로 일을 할 수 있는 권한을 부여하는 것이다. 
+다른 방법은 외국인(한쿡인)신분으로 미국증권사를 통해 계좌를 개설하는건데 사실상 불가능에 가깝다고 보면 된다. 어쩔수 없이 250만원 이상 수익나면 22% 양도세 내면서 한쿡 증권사를 통해 미쿡주식 매수해야 한다.
+한쿡의 증권거래법은 모든 주식은 증권사를 통해 매수해야 한다고 알고 있다. 한쿡 국적의 한쿡인이 한쿡 소재 증권사를 통해서 해외주식을 매수하고 보관은 예탁원을 통해 한다는 것으로 알고 있다. 
+

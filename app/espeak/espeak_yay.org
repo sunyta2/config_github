@@ -1,3 +1,5 @@
+#+STARTUP: showeverything indent
+
 
 * to use greek-ancient other/grc in espeak
 (shell-command "espeak -v other/grc \"αὐτός αὐτός\" ")
@@ -32,9 +34,11 @@ espeak -v itc/la "salveo salve te"
 
 #+begin_src sh :results silent :var a="one" b="two"
 echo "hi"
- espeak -g 60 -v itc/la "salveo salve te"
+ # espeak -g 60 -v itc/la "salveo salve te"
+ espeak -g 60 -v other/la "salveo salve te"
  for i in {1..3}; do
-  espeak -g 60 -s 100 -v grk/grc "θεάομαι"
+  espeak -g 60 -s 100 -v other/grc "θεάομαι"
+  # espeak -g 60 -s 100 -v grk/grc "θεάομαι"
  done
 # espeak -s 100 -v grk/grc "θεάομαι"
 espeak -g 18 -s 180 -v ko "한글이 나옵니다 나무 대방광불화엄경"

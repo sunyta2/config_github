@@ -87,7 +87,8 @@ C-x n e         org-narrow-to-element
 C-x n w         widen | # note에서
 C-x n s         org-narrow-to-subtree
 
-
+C-x n n         narrot-to-region
+C-x n w         widen                 2019_12_diary.org
 
 
 C-c C-x C-{w|y} 하위리스트를 잘라내는 것!!!

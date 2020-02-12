@@ -1,8 +1,115 @@
+#+TITLE: stumpwm README.ORG for study of emacs and lisp
+#+CREATOR: LEEJEONGPYO
+#+STARTUP: showeverything indent latexpreview
+
 stumpwm for study of emacs and lisp
 ===================================
 
 to do
 how to run file in C-t : <input of dotfile>
+- 도움말을 구하는 방식을 발견함 [2020-01-12 Sun 19:02] C-t h {v|f} 많은 정보를 직접 이맥스의 방식으로 구할 수 있다.
+
+C-t t C-h ;; 유용한 방식을 또 발견함. 도움말을 얻고 동시에 토글의 방식을 발견함.
+C-t h C-h ;; 
+C-t x {C-h | npfb | hjkl} 맞교환의 탁월한 방식을 발견함.
+13.7 Getting Help
+
+
+* 모듈의 사용법 
+https://stumpwm.github.io/git/stumpwm-git_16.html#index-list_002dmodules
+$ git clone git@github.com:stumpwm/stumpwm-contrib.git ~/.stumpwm.d/modules # 저장의 장소와 
+
+Function: (list-modules)
+Return a list of the available modules.
+Command: (load-module name)
+Loads the contributed module with the given NAME.
+기타: *load-path* add-to-load-path init-load-path
+
+
+* screen이 무슨 개념인가??
+https://stumpwm.github.io/git/stumpwm-git_9.html#Screens
+
+
+(idle-time (current-screen))
+(ratwarp 300 300)
+(+ 1 2)  ; (eval-line "(+ 1 2)")요건 잘 안됨.
+
+
+(restart-hard)
+(commands)
+(print *last-command*) (lastmsg)
+(list-window-properties)
+(show-window-properties)
+(print *startup-message*)
+(command-mode)
+(stumpwm:run-commands
+  "escape C-z"
+  "exec firefox"
+  "split")
+(window-send-string "hi this is good ")
+(window-send-string "<단 영어만>이 명령으로 값을 전송받을 방법이 생긴 것같다.(여기에 명령을 넣으면 그 출력을 전송하는 방식) ")
+(window-send-string *last-command*)
+(current-screen)
+(window-send-string (current-screen)) (window-send-string (current-screen)) ERROR!
+(window-send-string (lastmsg))
+
+; 윈도우 명을 정확히 변경하는 법, 그리고 윈도우 순서를 배열하는 법 아마도 윈도우에 관한 곳에서 찾아야 할 것임.;
+ 그리하여 통합적인 워크시트를 만든다. 출발때 부터 규격화된 실행을 감행하여 일정한 속도가 나게 한다.
+번호를 재배정하는 법!을 일단 발견함 (renumber 0) [2020-01-12 Sun 20:30]
+
+
+(set-focus-color "orange")
+(set-float-focus-color "red")
+(set-float-unfocus-color "navy")
+(set-unfocus-color "grey")   (set-unfocus-color "blue")
+(set-unfocus-color "white") (set-unfocus-color "black")
+* title의 명칭과 색깔을 변경하는 법을 찾을 것.
+
+(window-send-string (print *last-command*))
+hi this is good 
+
+ysiw"
+
+ysia"
+* 사고의 방식을 배우는 것이다.
+- 기본의 기능에 초점을 맟추고 증강시키는 방식(+자기개성적인 초점이 강력한 동력원이다)이 적합하다. 모든 방식에 적용해 볼 것
+호출: C-t
+        - #윈도우 f프레임{#n,p} g그룹# (기본 선택) s스크린
+  기초옮김- 
+
+*x-selection* 을 실행한 다음에 (copy-last-message)
+(copy-last-message) 긴 결과 출력시 확인하여서 자주 두고 볼 것.
+(:PRIMARY
+ "end of file on #<SB-IMPL::STRING-INPUT-STREAM {10024B0473}>Backtrace for: #<SB-THREAD:THREAD \"main thread\" RUNNING {10005404C3}>
+0: (STUMPWM::BACKTRACE-STRING)
+1: (ERR \"~A\" #<END-OF-FILE {10024B0553}>)
+2: (EVAL-LINE \"(message (print \\\"hi\\\")\")
+3: (STUMPWM::CALL-INTERACTIVELY \"eval\" #S(STUMPWM::ARGUMENT-LINE :STRING \"eval\" :START 5))
+4: (STUMPWM::EVAL-COMMAND \"eval\" T)
+5: ((LAMBDA (&REST #:G0 &KEY :CODE :STATE &ALLOW-OTHER-KEYS) :IN \"/home/thinkpad/.cache/yay/stumpwm/src/stumpwm-18.11/events.lisp\") :CODE 28 :STATE 4)
+6: (STUMPWM::HANDLE-EVENT :DISPLAY #<XLIB:DISPLAY :0 (The X.Org Foundation R12006000)> :EVENT-KEY :KEY-PRESS :EVENT-CODE 2 :SEND-EVENT-P NIL :CODE 28 :SEQUENCE 48609 :TIME 34554583 :ROOT #<XLIB:WINDOW :0 1AE> :WINDOW #<XLIB:WINDOW :0 2C00006> :EVENT-WINDOW #<XLIB:WINDOW :0 2C00006> :CHILD NIL :ROOT-X 506 :ROOT-Y 816 :X 505 :Y 799 :STATE 4 :SAME-SCREEN-P T)
+7: ((FLET SB-THREAD::WITH-RECURSIVE-LOCK-THUNK :IN XLIB:PROCESS-EVENT))
+8: ((FLET \"WITHOUT-INTERRUPTS-BODY-29\" :IN SB-THREAD::CALL-WITH-RECURSIVE-LOCK))
+9: (SB-THREAD::CALL-WITH-RECURSIVE-LOCK #<CLOSURE (FLET SB-THREAD::WITH-RECURSIVE-LOCK-THUNK :IN XLIB:PROCESS-EVENT) {7F012D4CF06B}> #<SB-THREAD:MUTEX \"CLX Event Lock\" owner: #<SB-THREAD:THREAD \"main thread\" RUNNING {10005404C3}>> T NIL)
+10: ((FLET SB-IMPL::TIMEOUT-BODY :IN XLIB:PROCESS-EVENT))
+11: (XLIB:PROCESS-EVENT #<XLIB:DISPLAY :0 (The X.Org Foundation R12006000)> :HANDLER #<FUNCTION STUMPWM::HANDLE-EVENT> :TIMEOUT 0 :PEEK-P NIL :DISCARD-P NIL :FORCE-OUTPUT-P T)
+12: ((FLET \"WITHOUT-INTERRUPTS-BODY-29\" :IN SB-THREAD::CALL-WITH-RECURSIVE-LOCK))
+13: (SB-THREAD::CALL-WITH-RECURSIVE-LOCK #<CLOSURE (FLET SB-THREAD::WITH-RECURSIVE-LOCK-THUNK :IN STUMPWM::DISPATCH-ALL) {7F012D4CF4BB}> #<SB-THREAD:MUTEX \"CLX Event Lock\" owner: #<SB-THREAD:THREAD \"main thread\" RUNNING {10005404C3}>> T NIL)
+14: ((FLET STUMPWM::DISPATCH-ALL :IN \"/home/thinkpad/.cache/yay/stumpwm/src/stumpwm-18.11/stumpwm.lisp\") #<XLIB:DISPLAY :0 (The X.Org Foundation R12006000)>)
+15: ((:METHOD IO-LOOP (STUMPWM::SBCL-IO-LOOP)) #<STUMPWM::SBCL-IO-LOOP {1003D76503}> :DESCRIPTION \"StumpWM\") [fast-method]
+16: (STUMPWM::STUMPWM-INTERNAL-LOOP)
+17: (STUMPWM::STUMPWM-INTERNAL \":0\")
+18: (STUMPWM \":0\")
+19: ((LAMBDA NIL :IN \"/home/thinkpad/.cache/yay/stumpwm/src/stumpwm-18.11/make-image.lisp\"))
+20: ((FLET SB-UNIX::BODY :IN SB-EXT:SAVE-LISP-AND-DIE))
+21: ((FLET \"WITHOUT-INTERRUPTS-BODY-14\" :IN SB-EXT:SAVE-LISP-AND-DIE))
+22: ((LABELS SB-IMPL::RESTART-LISP :IN SB-EXT:SAVE-LISP-AND-DIE))")
+
+
+
+[2020-01-13 Mon 00:10] 앱간이동의 편리한 점은 C-t C-r rofi의 경우외에도 매우 편리한 것이 숨어있었다.
+- C-t (g) ' (tab (shift)) 앞뒤로 이동하면서 실행을 살펴본다.
+
 
 
 #+BEGIN_SRC emacs-lisp
@@ -25,6 +132,20 @@ how to run file in C-t : <input of dotfile>
 
 
 
+* (find-file-other-window "~/.stumpwmrc")
 
+(find-file-other-frame "~/.stumpwmrc")
+
+
+[2020-01-12 Sun 18:17]
+문장의 수집에 놀라운 기능(C-t C-t 로 빠른 앱간전환이 되면서 Emacs의 입력과 바로 연동되는 구조라서 편리하다)
+- 스클롤링을 하면서 문장의 검토하는 것이 편리할 뿐 아니라. 창의 이동이 불필요하다. DWM처럼 빠르진 안치만 매우 안정화된 창구조라서 꾸준한 연습이 요구된다.
+
+
+전제: 전체화면으로 만들어 놓을 경우 노트로 전환하는 속도가 매우 빠르면 이맥스와 연동에 탁월하다.
+	전제1: 겹치게 큰화면으로 만들어 놓은 단일 큰화면명령은 (C-t Q 전체확장)
+
+
+* 
 
 

@@ -1,3 +1,4 @@
+#+STARTUP: showeverything indent latexpreview
 M-x eww RET www.gentoo.org
 
 

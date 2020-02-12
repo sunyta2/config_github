@@ -1,0 +1,31 @@
+#+STARTUP: showeverything indent
+
+
+
+
+rust manual (async-shell-command "brave --incognito 'file:///home/thinkpad/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/book/ch01-03-hello-cargo.html'")
+lingua latina
+outwitting_devil_note
+
+
+(async-shell-command "brave --incognito 'https://www.youtube.com/watch?v=tYbGm_1mi3k&t=2m01s'") zsh emacs
+(async-shell-command "brave --incognito 'https://www.youtube.com/watch?v=tYbGm_1mi3k&t=2m01s'") zsh emacs
+
+
+
+* brave_browser and chromium chrome Extenstion
+- 통합의 폴더에 익스텐션의 기능별로 파일을 만들어 사용한다.
+  (find-file-other-window "~/config_github/app/brave_browser/chrome_extension_manager/")
+
+
+
+* 소스파일로 보는 법
+ (async-shell-command "brave --incognito 'view-source:https://github.com/joaotavora/yasnippet'")
+    - 단축키로 위의 것을 실행하는 법은 
+[[view-source:https://github.com/joaotavora/yasnippet][view-source:https://github.com/joaotavora/yasnippet]]
+
+* 북마크 바로가기 ; 아래의 것은 모두 안되는 것이므로 될 것을 연구할 것
+ (async-shell-command "brave --incognito 'chrome://bookmarks/?id=1629'") ;안되는 것이므로 될 것을 연구할 것
+ (async-shell-command "brave             ' brave://bookmarks/?id=1629'") ;안되는 것이므로 될 것을 연구할 것
+ (async-shell-command "brave             'chrome://bookmarks/?id=1629'") ;안되는 것이므로 될 것을 연구할 것
+[[chrome://bookmarks/?id=1629][Bookmarks]]

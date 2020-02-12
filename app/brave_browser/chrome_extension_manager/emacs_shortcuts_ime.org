@@ -1,0 +1,10 @@
+- 통합적인 키보드 단축키로 효과적인 사용을 가능하게 한다.
+
+[[https://chrome.google.com/webstore/detail/emacs-shortcuts-ime/mkegpdcnenfnhenaliggngipehndddne?hl=en-US][Emacs shortcuts IME - Chrome Web Store]]
+현재 입력을 변경하는 것이 없어서 사용을 못하지만 건의해서 물어보든지 아니면 다른 방법을 찾든지...
+
+brave : [[chrome://settings/?search=method][Settings]] 
+
+
+- keymacs MacOSX13 에서 작동하지만 linux에서는 잘 안됨. [[https://chrome.google.com/webstore/detail/keymacs/hkhefpopnmfflcfldaagjjdemflgmhkk][keymacs - Chrome Web Store]]
+- 대안으로 생각해 봄직함. [[https://chrome.google.com/webstore/detail/moly-keys/madpldjnldgadicnebalhaedllkngplf][Moly Keys - Chrome Web Store]]

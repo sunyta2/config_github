@@ -1,0 +1,13 @@
+
+
+(find-file-other-window "~/config_github/app/brave_browser/chrome_extension_manager/")
+
+* 통합된 기능으로 편리하게 링커를 수집함. 
+
+[[chrome://extensions/shortcuts][Extensions]] > 설정된 C-Shift-l 로 어디서든 활성화된 창의 주소를 이맥스를 벗어나지 않고 쉽게 통합함.
+- 추가할 것은 일정한 레이아웃으로 단축키를 조정하여서 편리하게 사용하는 것을 가능하게 할 것.
+
+* 개별적으로 수정한 것을 다른 곳에서도 사용가능하게 올리고 사용을 적어둘 것.
+- 즉 오그모드로 변경한 파일을 잘 저장해 둘 것
+    - 일단 위치를 파악할 것!
+

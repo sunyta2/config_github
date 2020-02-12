@@ -1,8 +1,13 @@
+#+TITLE: 强點에 集中하여 眞我로 통합을 추구함 app/emacs/readme.org
+#+CREATOR: LEEJEONGPYO
+#+STARTUP: showeverything indent latexpreview
 
 
 [[file:org_mode_study/agenda_view_org.org]]
 agenda C-c [ 리스트에 추가하는 방식을 연구함.
-C-c [ C-c / t ;;현재 폴더내의 투두만 국한
+       C-c / t ;;현재 폴더내의 TODO만 국한 
+
+상세한 검색은 (dired-other-window "~/config_github/app/emacs/spacemacs/analysis/kbd")
 
 * emacs공부의 필요성!
 - 가장 경제적이며 통합적인 os가 범용적으로 이해하는 운영의 놀라운 공통성.(범Mind_해커의 무의식화가 핵심)
@@ -44,3 +49,28 @@ https://stackoverflow.com/questions/95631/open-a-file-with-su-sudo-inside-emacs
 ** transient_emacs
    DEADLINE: <2019-12-26 Thu 12:01> SCHEDULED: <2019-12-26 Thu 12:00>
 [[file:magit/readme.org::*transient%20file%20link]]
+
+* Why Emacs is Great! ./emacs_is_great.org 파일에 상세함.
+- 超高度通合性Emacs_[2020-02-12 Wed 14:08] 클릭가능![rgrep을]저장할 수 있음(놀람!). Why Emacs is Great! ./emacs_is_great.org
+
+** 작은 것의 강점들. (find-file-other-window "./emacs_is_great.org") "emacs_workflow"
+- 자동으로 줄을 띄우는 것(indent)이 있다. #+STARTUP: showeverything indent latexpreview
+
+- 빠른 region(영역)의 선택
+  C-SPC{set-mark} C-r{또는 C-r}로 첫글자입력 후 C-m{return_대용}
+
+- 집중적으로 인식을 모을 수 있다.
+n과 w로 사용하는 법으로 集中의 노트를 사용하는 핵심의 기술이다!
+C-x n n         narrot-to-region
+C-x n w         widen                 2019_12_diary.org
+C-x n C-h       위의 설명을 보게함. 매우 중요한 특징으로 자주 활용할 것
+
+
+
+* 핵심적으로 사용할 로딩을 가능하게 하는 명령문을 넣어 둘 것.
+#+BEGIN_SRC emacs-lisp
+
+#+END_SRC
+
+
+

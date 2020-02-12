@@ -1,0 +1,13 @@
+#+STARTUP: showeverything indent
+
+bookmark_rust_manual.org
+
+
+
+[[file:///home/thinkpad/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/book/ch01-03-hello-cargo.html][Hello, Cargo! - The Rust Programming Language]]
+(async-shell-command "brave --incognito 'file:///home/thinkpad/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/book/ch01-03-hello-cargo.html'")
+
+
+bookmark_rust_manual.org of Rust_Programming_language_in_Brave_incognito
+
+

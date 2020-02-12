@@ -1,0 +1,114 @@
+
+
+일단 이동의 기본방식을 잘 수집한다.
+
+* [2020-01-16 Thu 13:00] 유용한 정도를 발견함 C-s C-w로 맨 마지막 줄요 이동하는 법이 있음.
+C-r C-w (C-w ...이후 단어를 수집해서 검색어로 연결시킴! 신기함.)
+
+
+* C-u 286 M-g M-g will jump to line number (=go to a certain line given its number?) 
+https://www.gnu.org/software/emacs/manual/html_node/efaq/Going-to-a-line-by-number.html
+
+
+
+C-x ` to step through the offending lines one
+
+
+ use M-g M-p and M-g M-n to go to the previous and next matches directly
+example, C-u 286 M-g M-g will jump to line number 286 in the current buffer.
+
+
+{sdf amek igoe "giien ith the way of thought in be
+
+
+"}
+* C-M-{f, b, u, d}Vim % 같은 기능 
+C-M-f, or M-x forward-sexp, goes forward to the closing brace, or to the opening brace in the next set of braces. 
+C-M-b, or M-x backward-sexp
+
+also a show-paren-mode. For navigation, I think it's better C-M-n and C-M-n
+
+C-M-@
+C-M-<SPC> [2020-01-13 Mon 20:20] 특히 C-x C-x로 마커와 커서를 변경하면 삭제에 특히 유용한 것임!
+Put mark after following expression (mark-sexp).
+
+** C-M-<SPC> [2020-01-13 Mon 20:20] 특히 C-x C-x로 마커와 커서를 변경하면 삭제에 특히 유용한 것임!
+Put mark after following expression (mark-sexp).
+
+
+
+* M-x electric-pair-mode 자동으로 짝으로 생성됨. M-x show-paren-mode. To customize it, type M-x customize-group <RET> paren-showing.
+[2020-01-13 Mon 20:05] M-x electric-pair-mode 자동으로 짝으로 생성 M-x show-paren-mode
+26.4.3 Matching Parentheses https://www.gnu.org/savannah-checkouts/gnu/emacs/manual/html_node/emacs/Matching.html#Matching
+M-x show-paren-mode. To customize it, type M-x customize-group <RET> paren-showing.
+
+
+
+* zap-to-char
+[2020-01-13 Mon 20:31] zap-to-char C--를 추가할 경우 뒤로 삭제하는 기능으로 우수함. 반복으로 될 때까지 하는 법이 있을 것임.
+깨알 같이 적은 상세한 기본동작이 나온곳. https://www.cs.colostate.edu/helpdocs/emacs-bindings
+
+zap-to-char
+
+
+
+* Meta-Thought 나누어 생각하면 상당히 심오하다.
+** 3단어 동시 지우기의 경우 M-- 3 M-d
+연습사항: C-[ C-- 3 C-[ d ( 기본적인 메타meta 사고가 깊게 자리잡혀야 한다. ) ]] M-- 3 M-d
+3단어 동시  
+
+3단어 동시 지우기의 경우 M-- 3 M-d
+풀어서 쓰면 C-[ C-- 3 C-[ d ( 기본적인 메타meta 사고가 깊게 자리잡혀야 한다. ) ]]
+
+지우기의 경우 M--지우기의 경우 M--지우기의 경우 M--지우기의 경우 M--지우기의 경우 M--
+*** 기억술! (메타는 기본적으로 틀을 벗어나서(특이함) 남으로 Escape로 이해하면 되며, 또한 닫힘의 한계가 없으므로 열린 상태의 상자이다!)
+- 매우 창의적인 통합의 기억술이다! 메타=벗어남(다른특이함)=열린무한공간=자유
+통제력을 행사하기 전에 먼저 틀을 벗어나야 한다.(즉 출세간을 먼저 배우고 세간사를 배우는 화엄의 원리와 동일함.)
+창의성(=창조력)은 틀을 벗어난 형이상학의 접근이 먼저 우선한다.
+자유는 한계를 벗어난 창조력이므로 관료제적인 접근은 자유의 능력에 장애물이 되는 경우가 많다.
+
+
+
+
+[2020-01-14 Tue 09:26] 말을 할 수 있는 그 자리(그 곳)은 생각의 영역이 아니다.
+1독생자의 의미도 원래는 하느님이 생한 자리라면 성품의 자리라고 봐야 할 것이 아닌가?
+즉 종교간의 모색도 동일한 도착에 이르는 것이라고 봐야 할 것이다.                                            
+                                                            
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaa
+aaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+
+                                            
+                                            
+1
+2
+3                                            
+sadfasdf    (((())))
+" sdfa asdf"  s " sdf "  
+
+
+00000000000000000000000000000                                            
+1
+2
+3                                            
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+* [2020-01-14 Tue 11:19] 숨겨진 C-u의 기능을 발견함_
+- 여러 줄을 검색하면서 지우는 방법을 발견함. 영역으로 선택한 다음에 그곳에서 선별적으로 맨위애서 부터 지우는 검색어를 실행해 본다.(delete-matching-lines)
+
+M-5 0 C-n
+C-u 6 4 C-u 1 does insert 64 copies of the character ‘1’.
+https://www.gnu.org/software/emacs/manual/html_node/emacs/Arguments.html#Arguments
+ C-x z (repeat) 
+
+ C-u 2 0 C-d to delete 20 characters. 
+
+
+* [2020-01-15 Wed 18:42] what-line what-cursor-position
+M-x line-number-mode
+C-x = (what-cursor-position)
+https://www.gnu.org/software/emacs/manual/html_node/emacs/Position-Info.html#Position-Info
+* C-[ h 문맥적이 선택을 하는 것으로 구분할 것 C-x h와 

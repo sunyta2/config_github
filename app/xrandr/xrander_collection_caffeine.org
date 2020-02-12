@@ -1,4 +1,4 @@
-#+TITLE: xrander caffeine.org
+#+TITLE: xrander_collection_caffeine.org
 #+CREATOR: LEEJEONGPYO
 #+STARTUP: showeverything
 xrandr -q # 기초자료출력함!

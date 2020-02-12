@@ -1,0 +1,26 @@
+#+STARTUP: showeverything indent
+
+
+(shell-command "watch -n 5 -x espeak \"hi\"")
+(shell-command "while true;do espeak 'hi';sleep 2 ; done")
+
+
+
+* repeat many command
+** 일단 안되는데 우회를 발견할 것.
+$ watch -n 5 -x espeak "hi"
+
+ while syntax in sh (find-file-other-window "../../language_computer/shell/syntax_of_while_in_sh.org")
+#+BEGIN_SRC sh :results silent
+ /usr/bin/watch -n 5 -x espeak 'hi'
+#+END_SRC
+
+#+BEGIN_SRC sh
+#which watch
+#while true ; do ; espeak 'hi'; sleep 2 ; done # sh: line 2: syntax error near unexpected token `;'
+
+while true; do  espeak 'hi';    sleep 2; done
+
+#+END_SRC
+
+#+RESULTS:

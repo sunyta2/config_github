@@ -1,0 +1,10 @@
+#+STARTUP: showeverything indent
+Apple File System = apfs.org
+- 목적: 
+
+* arco에서 가능하지만 쓰기가 안됨.
+2 aur/linux-apfs-dkms-git 1:r5.277a34e-1 (+2 0.08%) (Installed: 1:r6.2a598f1-1)
+
+
+
+[[https://www.youtube.com/watch?v=47puTVS1Scg][Mount APFS Disk on Linux | Mount & Access APFS partition on Linux | Add Apple APFS partition support - YouTube]]

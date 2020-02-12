@@ -1,0 +1,7 @@
+$ pavucontrol #을 실행하면 깔끔하게 삼성티비로 소리를 전달하는 것이 가능함
+출처 : [[https://itsfoss.com/how-to-fix-no-sound-through-hdmi-in-external-monitor-in-ubuntu/][Fix No Sound Through HDMI In External Monitor In Ubuntu Linux - It's FOSS]]
+
+
+install PulseAudio Volume Control:
+
+$ sudo apt-get install pavucontrol

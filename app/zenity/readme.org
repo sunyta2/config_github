@@ -16,5 +16,6 @@ zenity --entry --entry-text="Type" --text="Bang on the keyboard"
 
 zenity --info --text="blah blah blah"
 notify-send -t 3000
-nofity-send -t 3000 "$(echo hi)"
+notify-send -t 3000 "$(echo hi)
+notify-send -t 3000 "READING TEXT is     $reading_text"
 notify-send -t 3000 "$(amixer set Master toggle | tail -n 2)"

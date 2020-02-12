@@ -1,0 +1,13 @@
+#+STARTUP: showeverything indent
+
+
+
+
+* [[https://www.youtube.com/watch?v=B6kg2zeJ9do][Introduction to the Ext4 File System for Linux - YouTube]]
+(async-shell-command "brave --incognito 'https://www.youtube.com/watch?v=B6kg2zeJ9do&t=29m03s'") ;; 바로가기:내용:sync 명령어 바로가기
+(async-shell-command "brave --incognito 'https://www.youtube.com/watch?v=B6kg2zeJ9do&t=21m03s'") ;; 바로가기:내용:dump2 명령어 바로가기;; dumpe2fs 
+                                                 dumpe2fs /dev/sda1 | head -n 3
+
+
+** 필기를 시작함 (async-shell-command "brave --incognito 'https://www.youtube.com/watch?v=B6kg2zeJ9do&t=31m25s'") ;; 바로가기:내용:dump2 명령어 바로가기;; dumpe2fs 
+sync, fsck, tune2fs, e4defrag, stat <파일명>

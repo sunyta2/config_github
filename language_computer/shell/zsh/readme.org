@@ -1,5 +1,6 @@
+#+STARTUP: showeverything indent
 zsh의 특수목적성:범용적인 bash보다 제한적으로 생각됨.
-* start zsj
+* start zsh
 (1)  Turn on completion with the default options.
 
   (2)  Run the configuration tool (compinstall).  You can also run
@@ -13,7 +14,8 @@ zsh의 특수목적성:범용적인 bash보다 제한적으로 생각됨.
 * bindkey in emacs전문가 동영상
 $ bindkey -s "^x^f" $'ls -la ' 
 $ ls -la #작동함 C-x C-f 놀라운 eshell과 zsh의 통일성
-https://youtu.be/tYbGm_1mi3k?t=149
+(async-shell-command "brave --incognito 'https://www.youtube.com/watch?v=tYbGm_1mi3k&t=2m01s'")
+                ;; [[https://www.youtube.com/watch?v=tYbGm_1mi3k&t=2m01s][&t=2m01s 08 Linux - vertical space between commands & tricks (Programothesis by emailatask.com) - YouTube]]
 C-f 놀라운	eshell과 zsh의 통일성
 
 

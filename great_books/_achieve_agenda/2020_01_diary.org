@@ -323,3 +323,212 @@ a
 
 (a)
 
+
+LG PH550 배송비 결제완료함.
+* [2020-01-16 Thu] 
+** Linuxcommand Line CLI connectiong to WPA 2 wireless network
+lspci를 소개함.
+sudo lshw -C network [2020-01-16 Thu 10:10]
+$ iwlist wlp3s0 scanning # !!!!!새로운 중요명령문 iwlist 을 발견함!!!!! #
+
+iwconfig # 연결을 안됨을 확인함!
+wpa_passphrase "KT_GiGA_5G_library_2_1" abc123 > library.conf
+more library.conf
+sudo wpa_supplicant -Dwext -iwlan0 -clibrary.conf -B
+
+
+[thinkpad@msata045 ~]$ iwlist wlp3s0 scan | grep ESSID
+                    ESSID:"KT_GiGA_5G_library_2_1"
+                    ESSID:"KT_GiGA_2G_library_2_2"
+                    ESSID:"KT_GiGA_5G_library_2_2"
+                    ESSID:"KT_GiGA_5G_library_1_1"
+                    ESSID:"SK_WiFiGIGA8484"
+                    ESSID:""
+[thinkpad@msata045 ~]$ sudo iwconfig wlp3s0 ESSID "KT_GiGA_5G_library_2_1"
+iwconfig # 연결을 확인함!
+sudo wavemon 좋은 네트워크정보수집# [2020-01-16 Thu 12:34] yay wavemon 1번
+
+
+
+***** other video https://www.youtube.com/watch?v=qVqkldgPjjo
+sudo ifconfig wlan0 up
+ifconfig wlan0
+man -k iw # Good date!!! for man [2020-01-16 Thu 12:52]
+
+sudo iwlist wlp30 scanning | less
+sudo iwconfig wlp3s0 essid KT_GiGA_5G_library_2_1
+     iwconfig wlp3s0
+# ip주소를 얻는 것이 아래의 문장임.
+sudo dhclient wlp3s0 # sudo dhcpd 와 유사한 것인가?!
+
+ifconfig
+iwlist wlp3s0 rate 
+$ iwlist wlp3s0 rate
+wlp3s0    unknown bit-rate information.
+          Current Bit Rate=866.7 Mb/s
+
+$ iwlist wlp3s0 freq
+wlp3s0    32 channels in total; available frequencies :
+          Channel 01 : 2.412 GHz
+          Channel 02 : 2.417 GHz
+          Channel 03 : 2.422 GHz
+          Channel 04 : 2.427 GHz
+          Channel 05 : 2.432 GHz
+          Channel 06 : 2.437 GHz
+          Channel 07 : 2.442 GHz
+          Channel 08 : 2.447 GHz
+          Channel 09 : 2.452 GHz
+          Channel 10 : 2.457 GHz
+          Channel 11 : 2.462 GHz
+          Channel 12 : 2.467 GHz
+          Channel 13 : 2.472 GHz
+          Channel 36 : 5.18 GHz
+          Channel 40 : 5.2 GHz
+          Channel 44 : 5.22 GHz
+          Channel 48 : 5.24 GHz
+          Channel 52 : 5.26 GHz
+          Channel 56 : 5.28 GHz
+          Channel 60 : 5.3 GHz
+          Channel 64 : 5.32 GHz
+          Channel 100 : 5.5 GHz
+          Channel 104 : 5.52 GHz
+          Channel 108 : 5.54 GHz
+          Channel 112 : 5.56 GHz
+          Channel 116 : 5.58 GHz
+          Channel 120 : 5.6 GHz
+          Channel 124 : 5.62 GHz
+          Channel 128 : 5.64 GHz
+          Channel 132 : 5.66 GHz
+          Channel 136 : 5.68 GHz
+          Channel 140 : 5.7 GHz
+          Current Frequency:5.18 GHz (Channel 36)
+sudo ifconfig wlp3s0 down # 무선네트워크 중단시킴.
+* [2020-01-16 Thu 13:00] 유용한 정도를 발견함 C-s C-w로 맨 마지막 줄요 이동하는 법이 있음.
+
+C-r C-w (C-w ...이후 단어를 수집해서 검색어로 연결시킴! 신기함.)
+
+
+
+
+** [2020-01-16 Thu 16:00] brave browser Install in yay brave
+
+Package (1)  New Version  Net Change
+
+brave-bin    1:1.2.42-2   229.77 MiB
+
+Total Installed Size:  229.77 MiB
+
+:: Proceed with installation? [Y/n] 
+(1/1) checking keys in keyring                     [---------] 100%
+(1/1) checking package integrity                   [---------] 100%
+(1/1) loading package files                        [---------] 100%
+(1/1) checking for file conflicts                  [---------] 100%
+:: Processing package changes...
+(1/1) installing brave-bin                         [---------] 100%
+Optional dependencies for brave-bin
+    cups: Printer support [installed]
+    pepper-flash: Adobe Flash support
+    libgnome-keyring: Enable GNOME keyring support [installed]
+:: Running post-transaction hooks...
+
+** shopping file list 
+- caddy, m2<-msata1pc ,
+* [2020-01-16 Thu 15:05] 10/26 나오는 것이 신기함. Chown chmod
+https://youtu.be/fguV653wfqY?t=370
+
+sudo chown root:root myfile.org
+sudo chown -R root:root Video/
+sudo www-data:www-data -R /var/www/
+Owner Group Other rwx ugo
+chmod -R dir/
+
+
+* [2020-01-17 Fri]
+** 경제는 가치의 배분이면서 증대다.
+- 점수 올리기로 만든 가짜 평가구조를 만드는 것은 분식회계라고 봐야 한다.
+신용은 수치의 노름이 아니다.
+불확정을 신용으로 바꾸는 것.
+institutions are a tool to  lower uncertainty.
+정부는 안정적인 마음으로 불완전의 미개척지를 
+탐구하는 국민을 양성하는 것에 경제발전이 있다.
+사람들을 신뢰로 연결하여, 다양한 종류의 가치와
+아이디어, 의미, 상품과 서비스를 교환하는 것이다.
+소통은 정보의 교환이며, 가치의 교류이다.
+비판적 사고야 말로 가치의 정확한 평가를 위해 중요한 것
+
+이제 기술 그 자체만으로 오직 기술만으로 기관을 대신할 수 있다.
+
+공개된 거래장부(블록체인의 간단한 개념) 가치를 기록하고 계약과 거래를 가능하게 한다.
+문제의 해결책과 편의의 교류가 증대된다. 즉 국부의 상승이 기대된다.
+** 인생은 의미를 찾아야 한다는 깨달음의 중요성 [2020-01-17 Fri 21:30]
+
+* [[https://www.cs.colostate.edu/helpdocs/emacs-bindings][https://www.cs.colostate.edu/helpdocs/emacs-bindings]]
+많은 익스텐션을 설치함[2020-01-17 Fri 21:20]
+Rememberry-alt+DoubleClick!!!-단어장을 만드는 것을 설치함- 단어학습에 획기적이고 단어를 만드는 것이 합리적이다.
+소스파일을 보는 것이 있음
+C-q빠르게 텝을 이동하방식과 동시에 검색을 하는 놀라운 기능을 발견함.
+PDF view in brave browser 
+Mate를 해킹하는 것으로 보고 검색해서 잘 이용할 부분을 사용할 수 있게 할 것.
+
+
+
+* [2020-01-22 Wed 08:00] 빛의 기둥의 꿈
+
+창밖을 내다보니 하늘에서 거대한 빔의 기둥이 내려옴. 
+순간적으로 어두워져서 빛기둥만 보이다가 주변이 어두워져서 효과가 극대화되는 현상을 꿈에서 보았음
+와! 하고 탄성을 지르면서 창밖으로 나감. 주변인이 있었던 것 같은데 보이지 않고 밖으로 나가 감탄하며 지켜봄.
+
+
+일본인들의 친절한 만남. 감탄.
+
+
+
+
+* [2020-01-23 Thu 08:00] 언어능력과 음악능력의 상관성과 통일성
+어머니께 말씀드림.
+언어와 음악의 상관성과 '마'음가와 '파'음가의 엄마, 파파의 성격의 유사성에 관하여.
+
+
+전화해서 알아본 경우 확인된 사항.
+많은 젊은이들을 부리는 세무서 그러나 공무원과 다투는 민원인.
+
+
+
+강글라라 님을 만남.
+
+산상수훈의 비유 - 가난하므로 하느님 나라를 요구한다.
+자아의 선발대임. 초자아의 추구임.
+항아리를 쓴 여인처럼 늘 하느님을 지향하는 선발시험.
+요구를 하는 것이 중요함.
+종교는 자신의 하느님을 지향하는 태도를 형성하는 것이며, 합격할 태도(자율의 제어-계율)를 만드는 것이다.
+모든 미의 근원은 아는 힘이며, 깜깜하므로 빛을 달라고 하는 것이며, 하느님의 축복과 진리의 나라를 달라고 하는 것이다.
+
+* [2020-01-27 Mon] 할머니에 대한 꿈 (세면가에서) 군대식 머리로 멍청해진 상태 전통의 힘을 약화시키려는 것이 통한 듯함.
+설날의 불참가에 대하여 
+
+
+불필요한 적대감이 상대방에 대한 실질적인 이해를 가로막는 것은 실책이다. 검사들의 드라마처럼.
+
+심리적 여성성이 강조된 현상은 언어적 여성성이 미적인 정신현상의 반영이다. 즉 핵심은 여성성(창조적 자아)의 발굴이다.
+
+* [2020-01-28 Tue] 주간으로 내려가겠다는 경진의 말 밥이 적어져서 식사량을 한두숫가락 줄인다는 이야기
+그럼 나는 야간이 어렵겠구나라고 자평하는 부분
+
+
+[2020-01-28 Tue 06:00] 커질수록 자제하라! 로마의 가르침모토라는 꿈의 책의 내용!
+로마의 위대성은 스스로 자제하는 것이라면서 "커질수록 자제하라"는 모토를 발굴함.
+호민관으로서 문제의 인식이 같은지 확인부터 하는 것이 
+
+두려움없는 사자와 같이 그물에 걸림없는 바람과 같이
+[[~/config_github/app/emacs/register_emacs.org::9]] with C-c C-o 
+- [[~/config_github/language_computer/python/bookmark_org_link.org::9]] ;; python을 이용한 방식과 틀을 보관 
+
+
+- [[~/config_github/app/emacs/register_emacs.org::9]] ;; hello world 
+
+
+** [2020-01-28 Tue 17:39] 박동명씨 딸의 문자가 왔음
+무례하게 일방적으로 통보하는 것에 굴복하는 것이 옳바른 것인가?
+"박동명씨집입니다~아버지께서 평당 30을 원하십니다..땅매입이 여의치않으시면 아버지땅에서 건물 치우시면 됩니다!
+빠른시일내 결정되시길 바라고 계십니다!"
+객관적 자료를 거부하는 태도의 문제, 철거의 가능성의 정당성확보하고 싶었다.

@@ -1,12 +1,75 @@
+#+STARTUP: showeverything indent
+- [[~/config_github/language_computer/python/bookmark_org_link.org::9]] ;; python을 이용한 방식과 틀을 보관 
+- [[~/config_github/app/emacs/register_emacs.org::9]] ;; hello world 
 
+* hi
 
 6. Registers
-Ctrl+X r s (#)	Copy Selection to Numbered Clipboard
-Ctrl+X r i (#)	Paste from Numbered Clipboard
-Ctrl+X r space (#)	Set Numbered Bookmark
-Ctrl+X r j /#	Jump to Numbered Bookmark
+Ctrl+x r s (#)	Copy Selection to Numbered Clipboard
+Ctrl+x r i (#)	Paste from Numbered Clipboard
+Ctrl+x r space (#)	Set Numbered Bookmark
+Ctrl+x r j /#	Jump to Numbered Bookmark
 
-* Quick 위치이동( C-x r j ) ( C-x r SPC )
+
+
+
+
+* C-u C-SPC Cycle through marks in the mark ring. # 중요한 마커의 변경을 보여준다.
+
+
+* 북마크로 빠른 버퍼간의 이동을 담보함 [[https://stackoverflow.com/questions/3770804/how-do-i-set-marks-in-emacs-%C3%A0-la-vim][bookmarks - How do I set marks in Emacs à la Vim? - Stack Overflow]]
+
+C-x r SPC r ;;Record the position of point and the current buffer in register r (point-to-register).
+C-x r j r ;;Jump to the position and buffer saved in register r (jump-to-register).
+
+* M-x compilation-shell-minor-mode in M-x shell after `$ grep -n "def" *.py`
+emacsclient +4:3 FILE
+emacs --no-splash "+$line" --file "$file"
+(find-file "/home/thinkpad/config_github/app/emacs/register_emacs.org:3")
+M-x rgrep and cousins already, right?
+
+Furthermore, if you in M-x shell type grep -n "def" *.py (for example) you'll end up with:
+But now you can do M-x compilation-shell-minor-mode to make them clickable (like the compilation-mode, et al. modes)
+출처:[[https://www.reddit.com/r/emacs/comments/9sz0ql/make_emacs_open_files_at_specific_line_numbers_as/][Make emacs open files at specific line numbers as outputted by grep and other shell commands : emacs]]
+[[file:/folder/subfolder/file.xml::435]] with C-c C-o 
+[[3]]
+[[file:register_emacs.org]] with C-c C-o 
+
+* M-g M-g  (goto-line 3)
+(goto-line LINE &optional BUFFER)
+** find-file-at-point
+* python Bable_ Clickable link in line Automation!
+- 쉽게 링커를 생성하는 법; 동영상 시간분리에 유용함
+If you also want to export/publish your links you can use:
+
+#+OPTIONS: d:t \n:t
+#+BEGIN_SRC python :results output drawer :exports both
+for i in range(0,10):
+    print ("[[./test%d.org::100][test%d.org::100]]" %(i,i))
+  #  print ("i")
+#+END_SRC
+
+#+RESULTS:
+:RESULTS:
+[[./test0.txt::100][test0.txt::100]]
+[[./test1.txt::100][test1.txt::100]]
+[[./test2.txt::100][test2.txt::100]]
+[[./test3.txt::100][test3.txt::100]]
+[[./test4.txt::100][test4.txt::100]]
+[[./test5.txt::100][test5.txt::100]]
+[[./test6.txt::100][test6.txt::100]]
+[[./test7.txt::100][test7.txt::100]]
+[[./test8.txt::100][test8.txt::100]]
+[[./test9.txt::100][test9.txt::100]]
+:END:
+
+
+
+The d:t option tells to export drawers, the \n:t one to preserve linebreaks.
+
+Putting your python code result into a drawer (the :results output drawer) allows org mode to interpret it as true org-mode code.
+
+* Quick 위치이동( C-x r j ) ( C-x r SPC );포인터를 마커로 변환함
 C-x SPC		rectangle-mark-mode
 
 C-x C-SPC	pop-global-mark # 빠른 이동으로 원래의 위치를 기억하는 편의성을 제공함.

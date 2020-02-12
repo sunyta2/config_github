@@ -99,6 +99,17 @@
 	;(add-hook 'LaTeX-mode-hook 'command-log-mode)
 	;To see the log buffer, call M-x clm/open-command-log-buffer.
   )
+(use-package xclip
+            :config
+            (xclip-mode t) ; StumpWm에서 파일의 링크복사를 크로뮴에서 가능하게 했으로 C-t C-t로 창을 앞뒤로 변경하면서 쉽게 수집을 진행할 수 있을 것이다.
+					; 조건 Copy-md파일 변경했음 리눅스가능함.
+					; ~/.config/chromium/Default/Extensions/fkeaekngjflipcockcnpobkpbbfbhmdn/2.4.3_0/background/markdown.js
+	    ; ~/.config/BraveSoftware/Brave-Browser/Default/Extensions/fkeaekngjflipcockcnpobkpbbfbhmdn/2.4.3_0/background/markdown.js
+;[Copy as Markdown | CRX Inspector](chrome-extension://lmlpbkpknjcnfabomjkecmkigcphgomk/inspect.html?fkeaekngjflipcockcnpobkpbbfbhmdn)
+
+
+
+	     )
 
 ;; 나중에 use-package의 사용파일 분리를 고려할 것.emacs_package폴더를 고려해서 그곳에 두는 것이 낫다.
 (use-package magit

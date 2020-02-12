@@ -1,0 +1,20 @@
+gksudo를 활용한 동적인 입력이 있으나 설정을 변경하는 것이 더 중요한 경우도 있음
+화면밝기를 설정한 xinput의 readme.org를 참조할 것. 그곳에 저장하였음
+
+
+(find-file-other-window "/home/thinkpad/.bin/bright.sh")
+[ -w /sys/class/backlight/intel_backlight/brightness ] || gksudo chmod 777 /sys/class/backlight/intel_backlight/brightness
+#  gksudo chmod 777 /sys/class/backlight/intel_backlight/brightness
+
+(message "hi")
+(shell-command "lsblk") ;;; 찾아 볼것shell output in here??  ;; M-x term $ lsblk
+#  gksudo mount /dev/위치 위치
+    (shell-command "gksudo mount /dev/sda2 /home/thinkpad/mnt")
+    (shell-command "gksudo mount /dev/sda3 /home/thinkpad/mnt2") 
+    (shell-command "gksudo mount /dev/sda4 /home/thinkpad/mnt3") 
+
+
+
+
+
+        ;; (shell-command "mkdir /home/thinkpad/mnt3")

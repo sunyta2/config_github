@@ -1,0 +1,63 @@
+###################################
+#/usr/bin/bash
+# 잘 작동하는 구성이지만 보관용 통합의 이전파일임. 사용은 가능함
+#돌리기와 밝기를 통합하기 위한 명령의 전조로 저장한 내용임 + zenity list click
+#xrandr --output eDP-1 --rotate {left, right, normal, inverted}
+output_primary="$(xrandr -q | grep 'connected p'  | awk '{print $1 }')"
+# 단축키 만들기 XF86TaskPane XF86RotateWindows
+# 단축키 만들기   화면끄기 ,    화면돌리기
+#[thinkpad@msata045 ~]$ xrandr --output $output_primary --off # 복구가 잘 앙뇌서 다른 것을 사용할 것.
+#if you want switch on that monitor again then you have run this command:
+#xrandr --output $output_primary --auto
+
+#[thinkpad@msata045 ~]$ xset -display :0.0 dpms force on 
+#[thinkpad@msata045 ~]$ xset -display :0.0 dpms force off # 쉽게 복구됨으로 사용할 것.
+# $ zenity --width=200 --height=600 --list --column "" --title="choice"   "CHOICE 1"   "CHOICE 2"   "CHOICE 3"
+
+
+
+clear #xdotool key ctrl+l
+echo '# rotate command using xrandr in ~/.bin/rotate'
+#  state_rotate=1 # <XF86HomePage>
+# echo '      1|l) xrandr --output eDP-1 --rotate left ;;'
+ echo '      1|l) xrandr --output $output_primary --rotate left ;;'
+ echo '      2|r) xrandr --output $output_primary --rotate right ;;'
+ echo '      3|i) xrandr --output $output_primary --rotate inverted ;;'
+
+ echo '      *) xrandr --output $output_primary --rotate normal ;;'
+ 
+
+
+state_gui=$(zenity --entry --entry-text="l|r|i|*" --text="select 1 character for --rotate \$state_rotate :")
+# read -n 1 -p "select 1 character for --rotate \$state_rotate :" state_rotate
+state_rotate=$state_gui
+echo ""
+echo "      \$state_rotate is selected : state_rotate=${state_rotate}"
+echo "      ${state_rotate}) \$state_rotate is selected : state_rotate=${state_rotate}"
+sleep 1
+  case $state_rotate in
+      1|l)
+       echo '      1|l) xrandr --output $output_primary --rotate left ;;'
+      xrandr --output $output_primary --rotate left
+      xrandr --output LVDS-1 --rotate left
+	 ;;
+      2|r)
+       echo '      2|r) xrandr --output $output_primary --rotate right ;;'
+      xrandr --output $output_primary --rotate right
+      xrandr --output LVDS-1 --rotate right
+	 ;;
+      3|i)
+       echo '      3|i) xrandr --output $output_primary --rotate inverted ;;'
+      xrandr --output $output_primary --rotate inverted
+      xrandr --output LVDS-1 --rotate inverted
+	 ;;
+
+      *)
+       echo '      *) xrandr --output $output_primary --rotate normal ;;'
+      xrandr --output $output_primary --rotate normal
+      xrandr --output LVDS-1 --rotate normal
+         ;;
+    
+  esac
+
+

@@ -1,6 +1,6 @@
 #+TITLE: kbd collection emacs
 #+CREATOR: LEEJEONGPYO
-#+STARTUP: showeverything
+#+STARTUP: showeverything indent latexpreview
 
 이곳에 일단 분류된 키보드 단축목록을 수집한다.
 (read-file 

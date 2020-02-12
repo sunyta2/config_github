@@ -1,7 +1,21 @@
+#+STARTUP: showeverything indent
+
+
 This is GitHub not test_in_arco.
 
 클릭 STAR Bookmarks C-f rust
 and goto there
+
+[[file:///home/thinkpad/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/book/ch01-03-hello-cargo.html][Hello, Cargo! - The Rust Programming Language]]
+(async-shell-command "brave --incognito 'file:///home/thinkpad/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/book/ch01-03-hello-cargo.html'")
+bookmark_rust_manual.org of Rust_Programming_language_in_Brave_incognito
+
+
+file:///home/thinkpad/.rustup/
+(async-shell-command "brave --incognito 'file:///home/thinkpad/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/book/ch01-02-hello-world.html'")
+ ;; not work (async-shell-command "brave --incognito 'file://~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/book/ch01-02-hello-world.html'")
+ ;; not work(async-shell-command "brave --incognito 'http://~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/book/ch01-02-hello-world.html'")
+"http://~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/book/ch01-02-hello-world.html"
 
 chr
 http:chrome\:bookmarks/?id=3723

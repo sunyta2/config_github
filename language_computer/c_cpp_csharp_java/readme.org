@@ -1,0 +1,65 @@
+#+STARTUP: showeverything indent latexpreview
+c_cpp_csharp_java🅒🅒🅒 in broswer bookmark
+#+OPTIONS: d:t \n:t
+
+#+BEGIN_SRC python :results output drawer :exports both
+done_is_more_than_3 = 2
+if done_is_more_than_3 < 3 :
+    print ("- [[~/config_github/language_computer/python/bookmark_org_link.org::9]] ;; python을 이용한 방식과 틀을 보관 \n\n") # 북마크 만들어 생성하기 파이썬3을 사용하여서.
+    print ("- [[https://fresh2refresh.com/c-programming/][C Programming Tutorial | C Tutorial | C Programming | Fresh 2 Refresh]] ;; Learn C Programming Tutorial in easy way \n\n") # 북마크 만들어 생성하기 여기에 설명을 붙인다.
+    print ("- [[~/config_github/language_computer/python/bookmark_org_link.org::save_data]] ;; save_date 바로가기") #
+    #  [[~/config_github/language_computer/python/bookmark_org_link.org::save_data]] ;;
+#print ("[[./test%d.txt::100][test%d.txt::100]]") # 북마크 만들어 생성하기 여기에 설명을 붙인다.
+#+END_SRC
+
+#+RESULTS:
+:RESULTS:
+- [[~/config_github/language_computer/python/bookmark_org_link.org::9]] ;; python을 이용한 방식과 틀을 보관 
+
+
+- [[https://fresh2refresh.com/c-programming/][C Programming Tutorial | C Tutorial | C Programming | Fresh 2 Refresh]] ;; Learn C Programming Tutorial in easy way 
+
+
+- [[~/config_github/language_computer/python/bookmark_org_link.org::save_data]] ;; save_date 바로가기
+:END:
+
+
+
+* c language lacture
+[[https://www.youtube.com/watch?v=TEHA_IwNk34][C PROGRAMMING - FUNCTIONS - YouTube]] 인도인의 명강의 노트는 ./test_note_c_function.org
+
+
+
+* study 
+[[https://fresh2refresh.com/c-programming/][C Programming Tutorial | C Tutorial | C Programming | Fresh 2 Refresh]] Learn C Programming Tutorial in easy way
+
+[[https://fresh2refresh.com/cpp-tutorial/][C++ Tutorial - Learn C++ Programming Language Online | Fresh2Refresh]]
+
+
+* java_study_stuff
+#+STARTUP: showeverything indent latexpreview
+java in broswer bookmark
+#+OPTIONS: d:t \n:t
+
+#+BEGIN_SRC python :results output drawer :exports both
+done_is_more_than_3 = 2
+if done_is_more_than_3 < 3 :
+    print ("- [[~/config_github/language_computer/python/bookmark_org_link.org::9]] ;; python을 이용한 방식과 틀을 보관 \n\n") # 북마크 만들어 생성하기 파이썬3을 사용하여서.
+    print ("- [[https://fresh2refresh.com/java-tutorial/][Java Tutorial: Learn Java Basics for Free | Fresh 2 Refresh]] ;; Learn Java Programming Tutorial in easy way \n\n") # 북마크 만들어 생성하기 여기에 설명을 붙인다.
+    print ("- [[https://fresh2refresh.com/jsp-tutorial/][JSP Tutorial | Learn JSP Online | Fresh2Refresh.com]] ;; Learn JSP Programming Tutorial in easy way \n\n") # 북마크 만들어 생성하기 여기에 설명을 붙인다.
+    print ("- [[~/config_github/language_computer/python/bookmark_org_link.org::save_data]] ;; save_date 바로가기") #
+
+    print ("-  ;; save_date 바로가기") #
+    print ("-  ;; save_date 바로가기") #
+
+    #  [[~/config_github/language_computer/python/bookmark_org_link.org::save_data]] ;;
+#print ("[[./test%d.txt::100][test%d.txt::100]]") # 북마크 만들어 생성하기 여기에 설명을 붙인다.
+#+END_SRC
+[[https://explainjava.com/compile-run-java-linux/][How to Compile & Run Java Program in Ubuntu in 2019]]
+
+** java sdk download by yay # 34 extra/jdk-openjdk 13.0.2.u8-1 (81.1 MiB 93.0 MiB) 
+$ pacman -Ssy #일단 업데이트로 시작되어야 함
+$ yay java # 34번 선택함
+34 extra/jdk-openjdk 13.0.2.u8-1 (81.1 MiB 93.0 MiB) 
+    OpenJDK Java 13 development kit
+Total Installed Size:  265.27 MiB (Total Download Size:   121.10 MiB)

@@ -1,0 +1,68 @@
+#+TITLE: Why Emacs is Great! app/emacs/emacs_is_great.org 强點에 集中하여 眞我로 통합을 추구함
+#+STARTUP: showeverything indent latexpreview
+TODO   C-c / t ;;현재 폴더내의 TODO만 국한 
+
+
+* [org-mode] 고도의 통합성 - 超高度通合性Emacs_상위원리(哲學)로 간단하게 만든다.
+- 超高度通合性Emacs_[2020-02-12 Wed 14:08] 클릭가능![rgrep을]저장할 수 있음(놀람!). Why Emacs is Great! ./emacs_is_great.org
+    - 검색을 고도화하여 매우 높은 통합을 지향해서 심지어 심지어 링크사용없이!!! 바로 검색저장으로 관리하는 것도 가능할 것으로 보인다.
+      예시 /app/mount/readme.org 참고할 것 실험은 app/grep/
+      활용의 방안: M-x rgrep (rgrep ~~) 을 실행한 결과를 출력하여 복사한 다음 편집해서 쉽게 프로젝트 트리구조를 생성하는 것이 가능하다
+          - 프로그램의 각 부분을 검색한 다음 원하는 링크를 쉽게 만들어 내는 부분정복!!!이 가능할 것 같다.
+            - (미완성)편집을 수정하는 것이 아직연구가필요함
+- (find-file "/home/thinkpad/config_github/app/emacs/register_emacs.org:33")
+- sudo로 apfs의 파일들을 열어서 실행(gksudo가능함!)한 것을 자동으로 가능하게 하는 것도 vim보다는 우수하다.
+
+** org-mode agenda 연구중
+file:org_mode_study/agenda_view_org.org
+agenda C-c [ 리스트에 추가하는 방식을 연구함.
+       C-c / t ;;현재 폴더내의 TODO만 국한 
+
+
+* [concentration] 집중적인 노트의 통합이 가능하다
+
+
+n과 w로 사용하는 법으로 集中의 노트를 사용하는 핵심의 기술이다!
+(find-file-other-window "~/config_github/app/emacs/readme.org")
+          强點에 集中하여 眞我로 통합을 추구함 app/emacs/readme.org
+C-x n n         narrot-to-region
+C-x n w         widen                 2019_12_diary.org
+C-x n C-h       위의 설명을 보게함. 매우 중요한 특징으로 자주 활용할 것
+
+
+* [Speed 빠르다] 링크를 자유롭게 사용할 수 있다.
+
+
+
+* [Expension 확장성] 다른 외부프로그램명령과 연동성이 높은 통합성으로 연결된다.
+
+- mpv를 바로 실행함. /app/mpv/readme.org
+    (find-file-other-window "../mpv/readme.org")
+
+
+- espeak M-| 로 문서를 바로 읽어들이는 것이 우수함.
+    (find-file-other-window "../espeak/readme.org:2")
+  strings="$( cat )"; while true; do echo "$strings" | while read LINE ; do espeak -g 60 -s 100 -v other/grc "$LINE"; sleep 3; done; sleep 3 done
+                ;; 단문으로 만드는 것은 시행착오를 거치면서 완성되는 것이다. espeak -g 60 -s 100 -v other/grc /la를 실행
+                ;; C-x ESC ESC	repeat-complex-command
+시행착오 완성된 영역선택에서 읽기를 실행하는 문장임( GREAT!!! )
+
+
+- 브라우져로 YouTube시청 등의 기능 brave --incognito surf
+    (async-shell-command "surf http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0167"
+    (async-shell-command "surf http://www.google.com/ncr")
+(eww  "http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0167")
+(eww "http://www.google.com/ncr")
+(eww "http://www.perseus.tufts.edu/")
+
+(async-shell-command "brave --incognito 'http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0167'")
+(async-shell-command "brave --incognito 'https://www.youtube.com/watch?v=WBcvRW0CXfU&t=3m36s'")
+
+    (async-shell-command "brave --incognito ''")
+    (async-shell-command "brave --incognito ''")
+    (async-shell-command "surf http://www.google.com/ncr")
+    (async-shell-command "surf http://www.perseus.tufts.edu/")
+* [미완성] vim과 비교하거나 다른 것을 연구해야 하는 것들
+- ibus의 놀라운 한자입력완성기능이 있는데 ibus.el을 연구해볼것.
+
+* TODO workflow/ 폴더를 만들어서 연구하고 연습을 하는 곳을 둘 것.

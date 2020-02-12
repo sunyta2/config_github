@@ -3,6 +3,7 @@
 
 - Basic modification of file to use or change in other OS
 
+
 ** save in config_github/app/dwm/
 
 - dwm strength ./dwm_strength.txt

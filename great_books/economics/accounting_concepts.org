@@ -1,0 +1,23 @@
+회계학의 이해는 사업의 이해의 필수적인 요소이다. 리눅스 처럼 이해력을 갖추는 것이 독립적인 사고의 확신이다.
+
+[[https://www.youtube.com/watch?v=IggY48vEe2w][Accounting Concepts and Principles: Accounting Basics and Fundamentals - YouTube]]
+Relibility, Relevance, and Compareability, in the information they produce.
+1) The Entity Concept
+2) Period - 회계학적인 시간단위
+3) Cost - Transaction "Costs" 거래비용을 뜻함. 객관적이고 신뢰적일수록 좋은 의사결정이 탁월함
+    - # (async-shell-command "brave --incognito 'https://www.youtube.com/watch?v=IggY48vEe2w&t=11m'")
+4) 
+
+#+OPTIONS: d:t \n:t
+
+#+BEGIN_SRC python :results output drawer :exports both
+    # 링커의 시간을 자동으로 생성하는 명령을 실행한다.
+# (async-shell-command "brave --incognito 'https://www.youtube.com/watch?v=_uQrJ0TkZlc&t=8m'")
+done_t=123
+print ("done in #.05H # 위쪽 _SRC에서 수정할 것 기록을 반드시 남길 것") # 이곳_SRC에서 반드시 변경할 것
+for i in range(0,3*3+1,2):
+#    print ("[[./test%d.txt::100][test%d.txt::100]]" %(i,i)) # it works its syntax of python3
+    print ("- ;; comment [[https://www.youtube.com/watch?v=_uQrJ0TkZlc&t=%dm][ 나누어짐_ %d분에서-시작됨 Python Tutorial for Beginners Full Course Learn Python for Web Development - 6.14H YouTube ]] ;; save_date 바로가기" %(i,i)) #
+    print ("- ;; #h%dm에서 나누어짐 comment (async-shell-command \"brave --incognito 'https://www.youtube.com/watch?v=_uQrJ0TkZlc&t=%dm'\") \n" %(i,i)) # 빠르게 실행하는 것
+#+END_SRC
+

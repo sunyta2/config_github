@@ -1,0 +1,53 @@
+#+TITLE: 여러명령 즉 list로 정보를 상세화
+#+CREATOR: LEEJEONGPYO
+#+STARTUP: showeverything indent
+
+
+* inode ./inode.org
+2 aur/linux-apfs-dkms-git 1:r5.277a34e-1 (+2 0.08%) (Installed: 1:r6.2a598f1-1)
+
+* lshw 하드웨어의 정보를 파악하는 명령어.
+
+  - Note taken on [2019-12-27 Fri 16:32] \\
+    Using # cd /etc/default then # nano grub I edited the entry:
+  	Code:
+ GRUB_CMDLINE_LINUX=""
+to read:
+Code:
+ GRUB_CMDLINE_LINUX="fbcon=rotate:1"
+
+
+** arco에 없어서 yay로 설치함 덩달아 lshwd도 설치함
+
+Linux Command line CLI connecting to WPA 2 wireless network
+https://youtu.be/lwpqi1Y1ExE?t=500
+$ $ sudo lshw -C network Linuxcommand Line CLI connectiong to WPA 2 wireless network
+lspci를 소개함.
+sudo lshw -C network [2020-01-16 Thu 10:10]
+
+ifconfig -a # 숨겨진모든 것을 보이는 것인 듯함.-a
+sudo ifconfig wlan0 up 을 실행하지만 sudo ip link set wlp3s0 up과 차이는??
+sudo lshw -C network로 검색하면 위의 명령으로 DISABLE이 해제됨을 확인됨!
+$ iwconfig
+$ iwlist wlp3s0 scanning # !!!!!새로운 중요명령문 iwlist 을 발견함!!!!! #
+
+
+
+* dmesg
+Being that I am uncertain how far back dmesg pulls from the logs, I ran # dmesg -C to clear the log and then shut down and rebooted my machine.
+
+Upon logging back in, I went straight to Terminal to run # dmesg. Here are the results:
+
+* lspci 
+
+* lsblk
+cf) sudo fdisk -l  # 유사하되 더 자세함
+
+
+* sudo iwlist
+sudo iwlist wlan0 scanning | grep ESSID # wifi_network폴더참조할 것.
+
+
+* mount바로가기 - mpv를 바로 실행함. /app/mpv/readme.org
+    (find-file-other-window "../mount/readme.org")
+

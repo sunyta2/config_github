@@ -1,4 +1,4 @@
-
+#+STARTUP: showeverything indent
 
 
 #+BEGIN_SRC sh

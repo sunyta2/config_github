@@ -1,0 +1,10 @@
+#+STARTUP: showeverything indent
+
+
+
+xephyer를 사용하면 여러개를 사용하는 것을 dt로 부터 알게 됨.
+[[https://www.youtube.com/watch?v=WBcvRW0CXfU][dt-xephyr]]
+
+(async-shell-command "brave --incognito 'https://www.youtube.com/watch?v=WBcvRW0CXfU&t=3m36s'")
+" https://www.youtube.com/watch?v=WBcvRW0CXfU "
+

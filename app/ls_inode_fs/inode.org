@@ -1,0 +1,31 @@
+#+STARTUP: showeverything indent
+
+원리와 사용법(inode)
+
+* study
+
+(async-shell-command "brave --incognito 'https://www.youtube.com/watch?v=B6kg2zeJ9do&t=30m03s'") ;; 바로가기:내용:inode 바로가기 ./fs_ext4.org통합필기
+
+* [process] 사용법
+** 1. inode_숫자얻기
+**** outwitting devil.mp3를 대상으로 얻어내기 {~/Music/test_mp3/Napoleon Hill/✦Full AudioBook.mp3 # Arco linux}
+dired 에서 포인터를 파일에 둔 다음에 `&`키(쉘명령실행) `ls -i`를 실행하면 아래의 값이 나온다.
+6960041 '✦Full AudioBook.mp3' 
+6960041
+*** 만들어 내기
+;; 성공적인 실행! (async-shell-command "mpv --start=2:34:50 --ab-loop-a=2:34:56 --ab-loop-b=2:35:00 \"$(find ~/Music  -inum 6960041)\" &") ;;
+                     ;; ~/Music/test_mp3/Napoleon Hill/✦Full AudioBook.mp3 # Arco linux
+
+(async-shell-command "mpv \"$(find ~/Music  -inum 6960041)\"")
+(async-shell-command "mpv \"$(find ~/Music  -inum 6960041)\" &") ;; /home/thinkpad/Music/test_mp3/Napoleon Hill/✦Full AudioBook.mp3 # Arco linux
+***** [성공적이다!!!]null로 보내어 깔끔한 창을 만드는 것이 된다. &>/dev/null
+(async-shell-command "mpv --start=2:34:50 --ab-loop-a=2:34:56 --ab-loop-b=2:35:00 \"$(find ~/Music  -inum 6960041)\" &>/dev/null") ;; null로 보내어 깔끔한 창을 만드는 것이 된다. &>/dev/null
+***** string으로 만들어서 통합된 형태로 만들어 보는 것은 
+- 함수로 만들어서 별도의 함수로 실행하는 것은 어떨까?? defun
+
+* 활용하는 곳
+app/mpv/
+- mpv를 바로 실행함. /app/mpv/readme.org
+    (find-file-other-window "../mpv/readme.org")
+
+app/okular   app/brave

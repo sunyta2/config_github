@@ -110,8 +110,32 @@ is, and (3) between what extremes the just act
 is
  intermediate.
 
-* # 모니터가 단일화 복귀 ;;; (async-shell-command "xrandr --auto --output eDP1 &")
-* # 왼쪽에 외부모니터가 옴 ;;; (async-shell-command "xrandr --auto --output eDP1 --auto --right-of VGA1 &")
-* # 노트북잭왼쪽 오른쪽외부모니터 ; (async-shell-command "xrandr --auto --output eDP1 --auto --left-of VGA1 &")
+* # 모니터가 단일화 복귀 ;;; (async-shell-command "xrandr --auto --output eDP-1 &")
+* # 왼쪽에 외부모니터가 옴 ;;; (async-shell-command "xrandr --auto --output eDP-1 --auto --right-of VGA-1 &")
+* 특히 StumpWm에서 매우 유용함 설정이 잘 될경우 편리함 nitrogen 타일모드로 배경설정함.
+* xrandr --output VGA-1 --off
+* # 노트북잭왼쪽 오른쪽외부모니터 ; (async-shell-command "xrandr --auto --output eDP-1 --auto --left-of VGA-1 &")
+* # 노트북 아래 위쪽에 LG PH550 외부모니터 ; (async-shell-command " xrandr --auto --output eDP-1 --auto --below VGA-1 &")
 * # xrandr --output LVDS1 --auto # to get back to the default mode
 * # xrandr --output VGA1 --off # you may also disable on e optput using.https://xorg-team.pages.debian.net/xorg/howto/use-xrandr.html
+* xrandr --output eDP-1 --auto --primary
+* xrandr | grep " connected"
+Mark the script as executable: chmod a+x /path/to/scriptname
+
+Then call the script with /path/to/scriptname
+
+Replace eDP1 with your laptop monitor name discovered using:
+
+
+xrandr --output LVDS1 --rate 60 --mode 1920x1080 --fb 1920x1080 --panning 1920x1080* --output HDMI1 --mode 1920x1080 --same-as LVDS1
+
+xrandr --output LVDS1 --rate 60 --mode 1920x1080 --fb 1920x1080 --panning 1920x1080* 
+
+
+ xrandr --output VGA-1 --same-as LVDS-1     # x220 thinkpad to LG PH550
+xrandr --output DP-2-3 --same-as eDP-1
+xrandr --output DP-2-3 --mode 1920x1080 --same-as eDP-1
+
+xrandr --auto --output eDP-1 --auto --below VGA-1
+DP-2-3
+share

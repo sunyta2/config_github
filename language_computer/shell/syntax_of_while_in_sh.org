@@ -1,0 +1,39 @@
+#+STARTUP: showeverything indent
+
+
+
+
+(shell-command "while true;do espeak 'hi';sleep 2 ; done") ;;단일문장으로 간단히!
+
+
+
+#+BEGIN_SRC sh
+#which watch
+#while true ; do ; espeak 'hi'; sleep 2 ; done # sh: line 2: syntax error near unexpected token `;'
+
+while true; do  espeak 'hi';    sleep 2; done
+
+#+END_SRC
+
+#+RESULTS:
+
+
+#+BEGIN_SRC 
+cat | while read LINE; do while true ; do espeak "$LINE"; sleep 3; done; done
+# 잘 실행되는 espeak 문장으로 정확한 것은 espeak/readme.org에서 찾아 볼 것
+
+#+END_SRC
+
+
+* 다른 명령어
+- watch : /app/watch/readme.org 매우 유사한 반복 명령이다.
+    (find-file-other-window "../../app/watch/readme.org")
+- espeak : /app/espeak.readme.org
+      (find-file-other-window "../../app/espeak/readme.org")
+#+BEGIN_SRC sh
+while true
+do
+espeak -v other/grc "$(xclip -o )"
+sleep 3
+done
+#+END_SRC

@@ -1,0 +1,19 @@
+#+STARTUP: showeverything indent
+javascript_nodejs_jquery in broswer bookmark
+#+OPTIONS: d:t \n:t
+
+#+BEGIN_SRC python :results output drawer :exports both
+done_is_more_than_3 = 2
+if done_is_more_than_3 < 3 :
+    print ("- [[~/config_github/language_computer/python/bookmark_org_link.org::9]] ;; python을 이용한 방식과 틀을 보관 \n\n") # 북마크 만들어 생성하기 파이썬3을 사용하여서.
+    print ("- [[https://fresh2refresh.com/java-tutorial/][Java Tutorial: Learn Java Basics for Free | Fresh 2 Refresh]] ;; Learn Java Programming Tutorial in easy way \n\n") # 북마크 만들어 생성하기 여기에 설명을 붙인다.
+    print ("- [[https://fresh2refresh.com/jsp-tutorial/][JSP Tutorial | Learn JSP Online | Fresh2Refresh.com]] ;; Learn JSP Programming Tutorial in easy way \n\n") # 북마크 만들어 생성하기 여기에 설명을 붙인다.
+    print ("- [[~/config_github/language_computer/python/bookmark_org_link.org::save_data]] ;; save_date 바로가기") #
+
+    print ("-  ;; save_date 바로가기") #
+    print ("- [[https://www.youtube.com/watch?v=Bv_5Zv5c-Ts?t=3m][JavaScript: Understanding the Weird Parts - The First 3.5 Hours - YouTube]] ;; save_date 바로가기") #
+
+    #  [[~/config_github/language_computer/python/bookmark_org_link.org::save_data]] ;;
+#print ("[[./test%d.txt::100][test%d.txt::100]]") # 북마크 만들어 생성하기 여기에 설명을 붙인다.
+#+END_SRC
+

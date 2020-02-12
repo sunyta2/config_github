@@ -1,11 +1,20 @@
 # start by in .bin/start
-# xbindkeys -f ~/config_github/app/xbindkeys/xbindkeysrc
+# (async-shell-command "xbindkeys -f ~/config_github/app/xbindkeys/xbindkeysrc")
 # This file is (find-file "~/config_github/app/xbindkeys/xbindkeysrc")
-# test is in (find-file "~/test_config_github/app/xbindkeys/")
+# test is in (dired-other-window "~/test_config_github/app/xbindkeys/")
+
+# XF86TaskPane 
+
+
+      # 원본파일 편집하기 (find-file "~/config_github/app/xrandr/rotate.sh")
+# XF86RotateWindows #Rotate
+"~/config_github/app/xrandr/rotate.sh"
+XF86RotateWindows #Rotate
+
 
 #"amixer set Master toggle"
- "notify-send -t 3000 \"$(amixer set Master toggle | tail -n 2)\""
 # "notify-send -t 3000 `awk '/%/ { print $5 $6}' <(amixer set Master toggle) | uniq`"
+ "notify-send -t 3000 \"$(amixer set Master toggle | tail -n 2)\""
 XF86AudioMute
 
 # "amixer set Master 10%-"
@@ -36,8 +45,8 @@ XF86HomePage
 
 
 
-
-
+"~/config_github/app/espeak/espeak_xclip.sh"
+XF86Calculator
 
 
 
@@ -49,7 +58,9 @@ XF86HomePage
 # <XF86MonBrightnessDown> <XF86MonBrightnessUp> <XF86Display> <XF86WLAN>
 # <XF86Tools> <XF86Search> <XF86LaunchA> <XF86Explorer>
 # <XF86Calculator> <s-l> <XF86HomePage> <s-e>
-
+# X220table is below
+# XF86TaskPane 
+# XF86RotateWindows #Rotate
 
 
 

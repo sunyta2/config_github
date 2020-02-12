@@ -1,10 +1,22 @@
-
+#+STARTUP: showeverything indent
 
 배열을 다루는 법 요약
 
+* 배열문장이다 vals=(beep bop) # array use in command 
+#+BEGIN_SRC sh :results raw
+  i=2
+  vals=(beep bop i[2]배열_간단문장) # 이것이 배열의 기본문장이다. ;;[[https://stackoverflow.com/questions/17983586/bash-how-can-i-get-the-variable-value-inside-the-eof-tags][linux - BASH - how can i get the variable value inside the EOF tags? - Stack Overflow]]
 
+  cat << EOF
+      This is a beep: ${vals[$i]}
+  EOF
+#+END_SRC
 
-
+#+RESULTS:
+    This is a beep: i[2]배열_간단문장
+    This is a beep: 배열_간단문장
+    This is a beep: beep
+  
 배열의 모음.
 # cribbed from redshift, https://github.com/jonls/redshift/blob/master/README-colorramp
 GAMMA_VALS=('1.0:0.7:0.4'  # 3000K
@@ -25,3 +37,9 @@ get_gamma_index() {
         [[ "${GAMMA_VALS[$i]}" = "$1" ]] && echo "$i" && break
     done
 }
+
+
+#+BEGIN_SRC sh
+
+
+#+END_SRC

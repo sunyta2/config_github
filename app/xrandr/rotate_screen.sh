@@ -7,7 +7,7 @@
 # will be upgrade by dwm with other WM in xkeymaps
 
 #which zenity
-
+# $ xinput list #우선 정보파악 오른쪽 끝에서( C-e ) C-x C-e 즉시! (async-shell-command "xinput list")
   rotate_state="normal_testing"
 
   rotate_state="$(zenity --entry --entry-text="Type" \
@@ -26,7 +26,10 @@
 #	xinput map-to-output 17 eDP-1 # 17 is TPPS/2 IBM TrackPoint
 #	xinput set-prop 'USB Optical Mouse' --type=float "Coordinate Transformation Matrix" 0 -1 1 1 0 0 0 0 1
 #	xinput map-to-output 12 eDP-1 # 12 is USB Optical Mouse
-
+	xinput set-prop 'Virtual core pointer' --type=float "Coordinate Transformation Matrix" 0 -1 1 1 0 0 0 0 1
+	xinput set-prop 'Virtual core XTEST pointer' --type=float "Coordinate Transformation Matrix" 0 -1 1 1 0 0 0 0 1
+	xinput set-prop 'Wacom ISDv4 E6 Finger' --type=float "Coordinate Transformation Matrix" 0 -1 1 1 0 0 0 0 1
+	xinput set-prop 'TPPS/2 IBM TrackPoint' --type=float "Coordinate Transformation Matrix" 0 -1 1 1 0 0 0 0 1
 	       ;;
 	   r* | R*)
 	       echo "right"
@@ -38,6 +41,10 @@
 	## 화면돌리기 부터실험함.
 	xrandr -o right
 	## 마우스 트랙포인터만 돌리기
+	xinput set-prop 'TPPS/2 IBM TrackPoint' --type=float "Coordinate Transformation Matrix" 0 1 0 -1 0 1 0 0 1
+	xinput set-prop 'Virtual core pointer' --type=float "Coordinate Transformation Matrix" 0 1 0 -1 0 1 0 0 1
+	xinput set-prop 'Virtual core XTEST pointer' --type=float "Coordinate Transformation Matrix" 0 1 0 -1 0 1 0 0 1
+	xinput set-prop 'Wacom ISDv4 E6 Finger' --type=float "Coordinate Transformation Matrix" 0 1 0 -1 0 1 0 0 1
 	xinput set-prop 'TPPS/2 IBM TrackPoint' --type=float "Coordinate Transformation Matrix" 0 1 0 -1 0 1 0 0 1
 #	xinput map-to-output 17 eDP-1 # 17 is TPPS/2 IBM TrackPoint
 #	xinput set-prop 'USB Optical Mouse' --type=float "Coordinate Transformation Matrix" 0 1 0 -1 0 1 0 0 1
@@ -52,6 +59,10 @@
 	## 화면돌리기 부터실험함.
 	xrandr -o inverted
 	## 마우스 트랙포인터만 돌리기
+	xinput set-prop 'TPPS/2 IBM TrackPoint' --type=float "Coordinate Transformation Matrix" -1 0 1 0 -1 1 0 0 1
+	xinput set-prop 'Virtual core pointer' --type=float "Coordinate Transformation Matrix" -1 0 1 0 -1 1 0 0 1
+	xinput set-prop 'Virtual core XTEST pointer' --type=float "Coordinate Transformation Matrix" -1 0 1 0 -1 1 0 0 1
+	xinput set-prop 'Wacom ISDv4 E6 Finger' --type=float "Coordinate Transformation Matrix" -1 0 1 0 -1 1 0 0 1
 	xinput set-prop 'TPPS/2 IBM TrackPoint' --type=float "Coordinate Transformation Matrix" -1 0 1 0 -1 1 0 0 1
 #	xinput map-to-output 17 eDP-1 # 17 is TPPS/2 IBM TrackPoint
 #	xinput set-prop 'USB Optical Mouse' --type=float "Coordinate Transformation Matrix" -1 0 1 0 -1 1 0 0 1
@@ -69,6 +80,10 @@
 	## 화면돌리기 부터실험함.
 	xrandr -o normal
 	## 마우스 트랙포인터만 돌리기
+	xinput set-prop 'TPPS/2 IBM TrackPoint' --type=float "Coordinate Transformation Matrix" 1 0 0 0 1 0 0 0 1
+	xinput set-prop 'Virtual core pointer' --type=float "Coordinate Transformation Matrix" 1 0 0 0 1 0 0 0 1
+	xinput set-prop 'Virtual core XTEST pointer' --type=float "Coordinate Transformation Matrix" 1 0 0 0 1 0 0 0 1
+	xinput set-prop 'Wacom ISDv4 E6 Finger' --type=float "Coordinate Transformation Matrix" 1 0 0 0 1 0 0 0 1
 	xinput set-prop 'TPPS/2 IBM TrackPoint' --type=float "Coordinate Transformation Matrix" 1 0 0 0 1 0 0 0 1
 #	xinput map-to-output 17 eDP-1 # 17 is TPPS/2 IBM TrackPoint
 #	xinput set-prop 'USB Optical Mouse' --type=float "Coordinate Transformation Matrix" 1 0 0 0 1 0 0 0 1

@@ -1,0 +1,3 @@
+
+‘browse-url’, customize the option (‘M-x customize-option’) ‘browse-url-browser-function’ 
+and follow the prompts. Emacs 20.7 value menu lists 10 supported browsers.
