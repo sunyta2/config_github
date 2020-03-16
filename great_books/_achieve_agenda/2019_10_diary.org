@@ -1,3 +1,4 @@
+#+STARTUP: showeverything indent
 * 2019_10
 ** 26
 
@@ -113,7 +114,7 @@ C-q Alt-N
 M-x customize-group ns
 
 - sudo inside Emacs - Stack Overflow
-C-x C-f /sudo::/path/to/file
+C-x C-f /sudo::/path/to/file /app/sudo_gksudo/readme.org
 
 
 

@@ -1,0 +1,12 @@
+- T로 동일하게 C-u C-x C-b의 효과를 줄수 있음을 확인 help:Buffer-menu-toggle-files-only
+
+(multi-occur (quote (#<buffer de_architectura_liber01_03.org> #<buffer 03diary2020.org>)) "mapc" nil)
+버퍼의 리스트를 얻어서 리스트를 전부 검색하는 것이 가능할 것이다. 아니면 
+(list-buffers nil) help:list-buffers
+
+help:Buffer-menu-sort
+help:Buffer-Menu
+
+[[help:Enabled]]
+
+help:buffer-menu

@@ -1,0 +1,5 @@
+그냥 일단 저장함 나중에 multiple major-modes on one buffer 살펴볼것.
+
+Are you aware of mmm-mode. One can have multiple major-modes on one buffer. – Tobias Oct 22 '18 at 10:58
+[[https://emacs.stackexchange.com/questions/45502/clone-a-buffer-to-see-the-same-contents-in-an-other-mode][Clone a buffer to see the same contents in an other mode - Emacs Stack Exchange]]
+clone-indirect-buffer 과 관련있음. emacs/clone-indirect-buffer.org

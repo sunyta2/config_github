@@ -1,0 +1,158 @@
+C-s의 기능으로 함수명은 (isearch-forward)
+(isearch-forward &optional REGEXP-P NO-RECURSIVE-EDIT)
+(isearch-forward "*1*" nil)
+(isearch-forward-regexp "5")
+(re-search-forward "5")  잘 작동됨.
+    크샤의 설명임: [[http://ergoemacs.org/emacs/elisp_regex.html][Elisp: Regex Tutorial]] 여기서 발견함
+(re-search-backward "5") 
+
+1
+To abandon the search and return to the place where you started, 
+type <ESC> <ESC> <ESC> (isearch-cancel) or C-g C-g (isearch-abort).
+
+When you exit the incremental search, it adds the original value of point to the mark ring, 
+without activating the mark; 
+    you can thus use C-u C-<SPC> 
+                  or C-x C-x 
+    to return to where you were before beginning the search. 
+See Mark Ring. (Emacs only does this if the mark was not already active; 
+if the mark was active when you started the search, 
+both C-u C-<SPC> and C-x C-x will go to the mark.)
+
+* [[http://ergoemacs.org/emacs/modernization_isearch.html][Emacs: isearch Current Word]]
+
+
+
+* multi-occur 단축키로 원하는 부분으로 쉽게 이동하는 것이 필요함.
+(multi-occur (quote (#<buffer de_architectura_liber01_03.org> #<buffer 03diary2020.org>)) "mapc" nil)
+버퍼의 리스트를 얻어서 리스트를 전부 검색하는 것이 가능할 것이다. 아니면 
+(list-buffers nil) help:list-buffers
+
+helm의 기능을 상기하면 더 낳은 방법이 있을 것이다.
+
+
+* help
+#+BEGIN_SRC 
+C-s runs the command isearch-forward (found in global-map), which is
+an interactive compiled Lisp function in ‘isearch.el’.
+
+It is bound to C-s, <menu-bar> <edit> <search> <i-search>
+<isearch-forward>.
+
+(isearch-forward &optional REGEXP-P NO-RECURSIVE-EDIT)
+
+Do incremental search forward.
+With a prefix argument, do an incremental regular expression search instead.
+
+As you type characters, they add to the search string and are found.
+The following non-printing keys are bound in ‘isearch-mode-map’.
+
+Type DEL to cancel last input item from end of search string.
+Type RET to exit, leaving point at location found.
+Type LFD (C-j) to match end of line.
+Type C-s to search again forward, C-r to search again backward.
+Type C-w to yank next word or character in buffer
+  onto the end of the search string, and search for it.
+Type C-M-w to delete character from end of search string.
+Type C-M-y to yank char from buffer onto end of search string and search for it.
+Type M-s C-e to yank rest of line onto end of search string and search for it.
+Type C-y to yank the last string of killed text.
+Type M-y to replace string just yanked into search prompt
+ with string killed before it.
+Type C-q to quote control character to search for it.
+Type C-x 8 RET to add a character to search by Unicode name, with completion.
+C-g while searching or when search has failed cancels input back to what has
+ been found successfully.
+C-g when search is successful aborts and moves point to starting point.
+
+If you try to exit with the search string still empty, it invokes
+ nonincremental search.
+
+Type M-c to toggle search case-sensitivity.
+Type M-s i to toggle search in invisible text.
+Type M-r to toggle regular-expression mode.
+Type M-s w to toggle word mode.
+Type M-s _ to toggle symbol mode.
+Type M-s ' to toggle character folding.
+
+Type M-s SPC to toggle whitespace matching.
+
+#+END_SRC
+
+
+
+- [ ] (start-process "pdf okular" nil "okular" ;; 빠른 단축으로 만드는 것은 C-c C-l elisp: 를 사용해서 넣으면 됨
+"/home/thinkpad/Music/mastering_emacs.pdf" "-p" "146") ;-p146;occur shortcut
+"/home/thinkpad/Music/mastering_emacs.pdf" "-p" "197") ;-p197;with your thumb on the left meta key
+"/home/thinkpad/Music/mastering_emacs.pdf" "-p "150") ; helm
+
+
+(start-process "pdf okular" nil "okular" ;; 빠른 단축으로 만드는 것은 C-c C-l elisp: 를 사용해서 넣으면 됨
+"/home/thinkpad/Music/mastering_emacs.pdf" "-p" "197") ;-p197;with your thumb on the left meta key
+
+
+"/home/thinkpad/Music/wheelock/Wheelock's Latin - 6th edition.pdf" "-p" "52")
+
+
+M-n Move to next item in search history
+M-p Move to provious item in search history
+C-M-i "TAB" -complete search string against previous search ring
+C-s C-s Begins Isearch against last search string.
+C-r C-r Begins backward Isearch against last search string.
+
+
+
+C-w add word at point to search string
+C-M-y Add character at point to search string.
+M-s C-e Add rest of line at point to search string.
+C-y Yank from clipboard
+M-e Edit in the meddle of search 다시 편집을 시작.
+
+           Purpose
+M-s c     Toggles case-sensitivity
+M-s r     Toggles regular-expression mode
+M-s w     Toggles word mode
+M-s _     Toggles symbol mode
+M-s <SPC> Toggles lax whitespace matching
+M-s w     Isearch forward for word
+M-s _     Isearch forward for symbol ;;추가로 변경을 입력할 수 있다 123
+M-s .     Isearch forward for symbol at point
+Purpose
+(Emacs . or later)
+
+
+
+ M-s:
+key             binding
+---             -------
+
+M-s ESC		Prefix Command
+M-s .		isearch-forward-symbol-at-point
+M-s _		isearch-forward-symbol
+M-s h		Prefix Command
+M-s o		occur ;; M-s o 최고!!! iSearch중에서 창을 만들어 내는 신공!
+M-s w		isearch-forward-word
+
+
+Occur Key Binding ;; 필수로 익혀야 할 단축키의 놀라운 기능이라고 생각한다.
+M-n, M-p     Go to next and previous occurrence
+<, >     Go to beginning and end of buffer
+g     Revert the buffer, refreshing the
+      ; 파일이 편집되면 간단히 여기서 새로 갱신하는 것으로 그 변경을 재반영함.
+e    Switches to occur edit mode ;; 자체에서 편집이 가능함 놀라움!!! 그자체
+C-c C-c     Exits occur edit mode and applies changes ;; 위 편집을 적용
+
+
+* etc
+(require 'helm-config)
+C-x c     Prefix key for all Helm completion
+
+
+(setenv "PATH" (concat "C:\\gnuwin32\\bin\\"
+path-separator
+(getenv "PATH")))
+
+Purpose
+commands.
+Purpos
+apply-partially

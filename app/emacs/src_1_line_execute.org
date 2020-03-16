@@ -1,0 +1,7 @@
+
+
+
+- [ ] 1 line src_bash src_bash[:var a="Control C twice"]{espeak "Run this line by $a Good Emacs"}
+    src_bash[:var a="good"]{espeak "hello $a world"}
+
+ cf. elisp: Click or Return

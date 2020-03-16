@@ -1,0 +1,67 @@
+file:../find/readme.org
+ [[info:find#Invoking%20find][info:find#Invoking find]]
+ [[info:find#Invoking%20xargs][info:find#Invoking xargs]]
+
+find . | grep X/ | xargs -I{} cp {} ../2/
+find . | grep X/ | xargs -I file cp file ../2/
+#+BEGIN_SRC emacs-lisp
+;; espeak 에서 사용한 방식임.
+(start-process-shell-command "while true elisp_espeak ps aux kill" nil
+"ps aux | grep elisp_espeak | awk '{print $2}' | xargs -I{} kill -9 {}")
+;; M-! ps aux | grep while | awk '{print $2}' | xargs -I{} kill -9 {}
+#+END_SRC
+
+
+
+   ls | xargs -P `nproc` -I NAME gzip NAME NAME
+
+### 빠른 연습용으로 중요한 기능이다.
+printf "1\n2\n3\n" | xargs touch
+ls | xarg rm
+ls
+
+printf "1\n2\n3\n" | xargs -i touch {}.txt
+stat 1.txt
+printf "1\t2\t3\t" | xargs -d "\t" touch {}
+
+seq 3
+seq 3 | xargs echo "Hello"
+=> Hello 1 2 3
+seq 3 | xargs -n 1 echo "Hello"
+ls -1 | xargs echo "Hello"
+ls -1 | xargs -n 1 echo "Hello"
+groups
+ls | xargs -n 1 chgrp cdrom
+ls | xargs -I{} -n 1 chgrp abc {}
+find / -name .conf | xargs -n 1 chgrp mygroup
+
+echo {1..9}
+echo {1..9} | xargs 
+echo {1..9} | xargs -n1
+echo {1..9} | xargs -n1
+1 2 3
+4 5 6
+7 8 9
+
+find . -maxdepth 1 -name "*.jpag" | xarg tar -czvf jpeg.tgz
+tar -tzf jpeg.tgz 
+find . -maxdepth 1 -name "*.jpag" -delete
+
+-p --interactive Run in interactive mode
+-n --max-args=ARGS Use maximum of ARGS arguments
+ tail -3 ~/.bash_history | xargs
+ls -l video5* | xxargs wc -1
+
+find . -type f -cnewer "video73.tar" | xargs wc -l
+# [[https://www.youtube.com/watch?v=im85msFXkTA][Linux xargs command summary with examples - YouTube]]
+ 
+* ls -l
+ls -l | xargs echo
+ls -l | xargs -I_ echo _
+ls -l | xargs -I<> echo <>
+cp test test2
+cp test test3 
+cp test test4
+cp test test5
+cp test test6
+ls -l | awk '{print $9)' | grep "[23]"

@@ -1,0 +1,23 @@
+/app/emacs/org-clock-goto_C-u_C-c_C-x_C-j.org
+
+
+help:org-clock-goto
+* C-u_C-c_C-x_C-j.org 매우 정교한 통제가 가능하다.
+:LOGBOOK:
+CLOCK: [2020-02-17 Mon 11:49]--[2020-02-17 Mon 12:26] =>  0:37
+- test is good
+:END:
+놀라운 발견! [2020-02-17 Mon 11:35]
+- 빠르게 측정하는 것을 원하는 장소로 빠르게 이동할 수 있다.
+/app/emacs/org-clock-goto_C-u_C-c_C-x_C-j.org
+* [org-clock-goto]
+
+
+** C-u_C-c_C-x_C-j.org 섬세한 통제 인문의 힘! org-clock-goto_C-u_C-c_C-x_C-j.org
+:LOGBOOK:
+CLOCK: [2020-02-17 Mon 11:05]--[2020-02-17 Mon 11:05] =>  0:00
+:END:
+연속시간입력이냐 아니면 따로냐의 결정은 오직 인간의 경험!
+Hide Org Clock Continuously: Toggle  off (nil)
+    State : STANDARD.
+   Non-nil means to start clocking from the last clock-out time, if any.

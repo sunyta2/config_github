@@ -1,0 +1,14 @@
+
+
+강점을 비교함=> file:../wm_compare_youtube_note.org
+[[file:readme.org][stumpwm/readme]] , [[file:~/config_github/app/herbstluftwm/readme.org][herbstluftwm/readme]], [[file:~/config_github/app/xmonad/readme.org][xmonad/readme]] , [[file:~/config_github/app/qtile/readme.org][qtile/readme]] , [[file:~/config_github/app/dwm/readme.org][dwm/readme]] ,
+[[file:~/config_github/app/exwm/readme.org][exwm/readme]] , awesome, i3-gap
+
+emacs내부를 활용한 것이 강점으로 활용성을 높인다.
+info:stumpwm#Top Emacs의 놀라운 점! file:../emacs/info.org
+[[info:eintr#Top]] ;; 기초익히기에 중요한 것이므로 노트를 해둘것.
+info:elisp#Top ;; 좀더 심화된 것임. 정확이 문서와 일치하는지 검토해 둘 것.
+info:screen#Top
+
+(man "exwm")  # man mode
+(man "dwm")  # man mode

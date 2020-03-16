@@ -1,0 +1,21 @@
+https://github.com/polybar/polybar
+
+Download the polybar-<version>.tar for the version you want to build from the release page, extract it with tar xvf polybar-<version>.tar and go into the extracted folder. There, run the following commands:
+
+$ mkdir build
+$ cd build
+$ cmake ..
+$ make -j$(nproc)
+$ sudo make install
+
+There's also a helper script available in the root folder:
+
+$ ./build.sh
+Install the example configuration
+Run the following inside the build directory:
+
+$ make userconfig
+Or you can copy the example config from /usr/share/doc/polybar/config or /usr/local/share/doc/polybar/config (depending on your install parameters)
+
+Launch the example bar
+$ polybar example

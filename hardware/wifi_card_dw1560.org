@@ -1,0 +1,11 @@
+
+
+[[https://www.ebay.com/sch/i.html?_from=R40&_trksid=p2047675.m570.l1313.TR3.TRC1.A0.H0.XBCM94352Z.TRS0&_nkw=BCM94352Z&_sacat=0][BCM94352Z | eBay]]
+
+
+
+[[https://www.ebay.com/itm/Broadcom-BCM94352Z-M-2-NGFF-802-11AC-867Mbps-BT-4-0-DW1560-f-Mac-Hackintosh/252319175707?epid=1761109656&hash=item3abf65141b:g:q2wAAOSw1DtXGd2c][Broadcom BCM94352Z M.2 NGFF 802.11AC 867Mbps BT 4.0 DW1560 f Mac Hackintosh 625485432353 | eBay]]
+$79.99 best rating this 
+you have to know what you're doing.
+worked out of the box with proper kexts and kext patches. Perfect hackintosh part for Dell E5450
+This NGFF M.2 WiFi card delivers both fast WiFi and Bluetooth speeds. Only thing is Handoff and Continuity are basicallly non-functional but that’s considered extra features by me. The base capabilities (AC Wifi and 4.0 BT) work just fine!

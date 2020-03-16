@@ -1,0 +1,95 @@
+org-id를 발견함!
+위치를 옮겨도 된다면 놀라운 성과일 것으로 생각된다.[2020-02-28 Fri 23:25]
+[[id:387de902-86b8-495a-8b70-8dd2cffc5edf][Customize Group: Org ID * 여기에서 수정함]]
+[[info:org#Handling%20links][info:org#Handling links]] 여기서 발견함.
+원리: 
+        - ~/.emacs.d/.org-id-locations 파일에 등록되어서 호출됨. 주석문으로 관리하면 될 것같음. 단 파일이름의 변경에 유의할 것.
+(find-file-other-window "~/.emacs.d/.org-id-locations") 
+    파일을 변경하든지 그대로 사용하든지 통합관리를 위해서는 config_git/app/emacs/index_org_id.org로 통합하는 것이 유력함
+		(setq org-id-locations-file "~/.emacs.d/.org-id-locations")
+                Org Id Locations File: ~/.emacs.d/.org-id-locations (setq org-id-locations-file "~/.emacs.d/.org-id-locations")
+(customize-group 'org-id)
+(customize-group 'org-follow-link)
+사용절차:
+        - M-x org-store-link는 직접 타자로 명령을 내려야 하며,
+	- M-x org-insert-link는 단축키를 사용해도 된다. (C-c C-l을 사용)
+[[id:d5ec5f12-5767-47b2-ba64-113a9db8826f][tracking this for testing use of org-id]] 이것을 다른 폴더에서 발견된다면 대박이다. 소크라테스회상에 넣었음
+id:d5ec5f12-5767-47b2-ba64-113a9db8826f
+[[id:da3d92fa-3e52-4f40-a689-862513755955][128 방법을 발견하고 그에 맞게 살아감.]]  ; id:da3d92fa-3e52-4f40-a689-862513755955
+
+;; id:~/config_github/app/emacs/org_id.org
+;; id:아이디변경-문서생성-과정-절차1
+
+* study of org-id
+
+Possible completions are:
+help: function
+help:org-id-add-location
+help:org-id-alist-to-hash
+help:org-id-b36-to-int
+help:org-id-b36-to-int-one-digit
+help:org-id-copy
+help:org-id-decode
+help:org-id-find
+help:org-id-find-id-file
+help:org-id-find-id-in-file
+help:org-id-get
+help:org-id-get-create
+help:org-id-get-with-outline-drilling
+help:org-id-get-with-outline-path-completion
+help:org-id-goto
+help:org-id-hash-to-alist
+help:org-id-int-to-b36
+help:org-id-int-to-b36-one-digit
+help:org-id-locations-load
+help:org-id-locations-save
+help:org-id-new 이것으로 새로 생성하는 듯하면서 리스트로 추가하는 것이 가능할지도 모른다.
+help:org-id-open
+help:org-id-paste-tracker
+help:org-id-store-link
+help:org-id-time-to-b36
+help:org-id-update-id-locations
+help: variable
+help:org-id-uuid
+help:org-id-extra-files help:org-agenda-text-search-extra-files
+help:org-id-files        리스트 내용을 보여준다.Documentation:List of files that contain IDs.
+help:org-id-include-domain
+help:org-id-link-to-org-use-id
+help:org-id-locations
+help:org-id-locations-file
+help:org-id-method
+help:org-id-prefix
+help:org-id-search-archives
+help:org-id-track-globally
+help:org-id-uuid-program
+
+
+
+
+
+* 임의로 아이디를 변경해서 수정하고 그것에 의미를 등록하고 그아래 파일을 각각 할당함.
+  :PROPERTIES:
+  :ID:       아이디변경-문서생성-과정-절차1
+  :END:
+507701e9-7d7b-4190-81fb-14c1bd265daa
+
+* id file/path
+  :PROPERTIES:
+  :ID:       ~/config_github/app/emacs/org_id.org
+  :END:
+** sort org C-c ^
+help:org-sort [fn:1]
+
+** not here
+** C-c C-x b	file:org-tree-to-indirect-buffer
+
+** file:org-footnote-action C-c C-x f
+ [fn:2]
+
+* Footnotes
+- [ ] [footnotes]내부색인기능 발견 C-c C-x f org-footnote-action 참고: 주석기능과 유사함. file:footnotes.org - 커맨트를 찾아내던 빠른 방법
+[fn:1]
+
+[fn:2]
+
+[fn:3]

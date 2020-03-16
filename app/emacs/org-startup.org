@@ -1,0 +1,57 @@
+#+where_is_source_FILE: (dired-jump 3 "~/config_github/app/emacs/org-startup.org")
+#+STARTUP: indent
+#+작전주장: [ keyword ]
+#+ln:
+(setq org-startup-indented t)
+help:org-startup-indented
+
+
+
+org-adapt-indentation
+org-ascii-indented-line-width
+org-edit-src-content-indentation
+org-hide-leading-stars-before-indent-mode
+
+org-html-indent
+org-indent--deepest-level
+org-indent--heading-line-prefixes
+org-indent--initial-marker
+
+org-indent--inlinetask-line-prefixes
+org-indent--text-line-prefixes
+org-indent-agent-active-delay
+org-indent-agent-passive-delay
+
+org-indent-agent-resume-delay
+org-indent-agent-resume-timer
+org-indent-agent-timer
+org-indent-agentized-buffers
+
+org-indent-boundary-char
+org-indent-indentation-per-level
+org-indent-inlinetask-first-star
+org-indent-mode
+
+org-indent-mode-hook
+org-indent-mode-turns-off-org-adapt-indentation
+org-indent-mode-turns-on-hiding-stars
+org-indent-modified-headline-flag
+
+org-last-indent-begin-marker
+org-last-indent-end-marker
+org-list-description-max-indent
+org-list-indent-offset
+
+org-src--block-indentation
+org-src--preserve-indentation
+org-src-preserve-indentation
+org-startup-indented
+
+
+
+* global #startup: showeverything 
+#+BEGIN_SRC emacs-lisp
+
+(setq org-inhibit-startup-visibility-stuff t) ;; Global #+STARTUP: showeverything
+#+END_SRC
+

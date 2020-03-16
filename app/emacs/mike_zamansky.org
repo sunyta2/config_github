@@ -1,0 +1,110 @@
+#+STARTUP: entitiespretty
+
+help:name-last-kbd-macro
+
+(fset 'commaize 
+   [  ])
+help:insert-kbd-macro
+(insert-kbd-macro)
+
+(setq last-kbd-macro
+   [down right right right right down ?\C-a])
+
+
+(setq test_macro_1
+(fset 'test_macro_1
+   [down right right right right down ?\C-a])
+(put 'test_macro_1 'kmacro t)
+
+1135google is great 1234 1234 12 351 253 12 35
+1135google is great51
+2135google is great
+f135google is great
+s135google is great
+a135google is great
+w135google is greatsdf
+ 135google is great
+3135google is great
+5135google is great
+3135google is greatsdfasdf
+2135google is great
+t135google is great
+r135google is greatasdgfasdfasdfasdf
+
+
+
+** 10 org_init_file.mp4
+
+#+BEGIN_SRC emacs-lisp
+;; (org-babel-load-file (expand-file-name "~/.emacs.d/myinit.org"))
+(fset 'yes-or-no-p 'y-or-n-p) ;; 발견! 간단히 한 글자입력으로 전환하는 명령!!!
+(global-set-key (kbd "<f5>") 'revert-buffer)
+#+END_SRC
+
+#+RESULTS:
+: revert-buffer
+
+#+BEGIN_SRC emacs-lisp
+;;using swiper so ido no longer needed
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+(defalias 'list-buffers 'ibuffer)
+(defalias 'list-buffers 'ibuffer-other-window)
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+(use-package ace-window
+:ensure t
+:init
+(progn
+(global-set-key [remap other-window] 'ace-window)
+(custom-set-faces
+'(aw-leading-char-face
+((t (:inhirit ace-jump-face-foreground :height 3.0)))))
+))
+
+
+;; it looks like counsel is a requirement for swiper
+(use-package counsel
+:ensure t
+)
+)
+
+(use-package ivy
+:ensure t
+:diminish (ivy-mode)
+:bind (("C-x b" . ivy-swithc-buffer))
+:config
+(ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+(setq ivy-display-style 'fancy))
+
+
+(use-package swiper
+:ensure try
+:bind (("C-s" . swiper)
+("C-r" . swiper)
+("C-c C-r" . ivy-resume)
+("M-x" . counsel-M-x)
+("C-x C-f" . counsel-find-file))
+:config
+(progn
+(ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+(setq ivy-display-styoe 'fancy)
+(defin-key read-expression-map (kbd "C-r") 'cousel-expression-history)
+))
+
+
+(use-package auto-complete
+:ensure t
+:init
+(progn
+(ac-config-default)
+(global-auto-complete-mode t)
+))
+
+
+
+#+END_SRC

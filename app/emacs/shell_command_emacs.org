@@ -1,0 +1,46 @@
+
+
+
+alias org='/usr/bin/emacs --funcall org-agenda-list &' # 함수실행을 진행하는 법! --funcall 함수명
+emacsclient -t --eval "(org-agenda-list)" "(delete-other-windows)" # Make it as function or alias
+
+
+* -l "~/config_github/app/emacs/shell_emacs/shell_command_emacs.org" 
+  -l "(lisp-file실행할파일)" man emacs에서 밝힘
+
+
+
+
+
+* (shell-command)
+
+
+(async-shell-command "wget -O /tmp/image.jpg https://url/some-name.jpg")
+
+(async-shell-command "espeak -v ko '한글이 나온다'")
+
+
+* 참고 eshell_in_emacs.org to use elisp_function & shell_command 로 유용함!
+
+* sudo in emacs StackOverflow{ How do I run a sudo command in Emacs? }
+- 이사이트에서 아래의 2명령을 찾아냄: https://stackoverflow.com/questions/2472273/how-do-i-run-a-sudo-command-in-emacs 
+
+#+BEGIN_SRC emacs-lisp
+(defun sudo-shell-command (command)
+  (interactive "MShell command (root): ")
+  (with-temp-buffer
+    (cd "/sudo::/")
+    (async-shell-command command)))
+
+(defun sudo-shell-command (command)
+  (shell-command (concat "echo " (read-passwd "Password: ") " | sudo -S " command)))
+
+
+(shell-command (concat "echo " (shell-quote-argument (read-passwd "Password? "))
+                       " | sudo -S your_command_here"))
+	;(shell-command "sudo /etc/init.d/apache2 restart") (shell-command "echo password | sudo -S /etc/init.d/apache2 restart")
+#+END_SRC
+
+
+** 대안으로 gksudo 명령을 쉘명령으로 실행하는 것도 고려해 봄직함.
+    (find-file-other-window "../../sudo_gksudo/readme.org")

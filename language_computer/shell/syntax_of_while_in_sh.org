@@ -1,4 +1,7 @@
+-*- coding: utf-8 -*-
 #+STARTUP: showeverything indent
+#+TITLE: syntax_of_while_in_sh.org /shell/
+
 
 
 

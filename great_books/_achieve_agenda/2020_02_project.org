@@ -1,0 +1,176 @@
+-*- coding: utf-8 -*-
+#+TITLE: 2020_02_프로젝트.org 여기가 인박스다!!!!
+#+CREATOR: LEEJEONGPYO
+#+STARTUP: showeverything indent latexpreview logdrawer
+북마크가 너무 많으니 핵갈리므로 근거를 만들어 둔다.
+- 미래를 계획하는 것이 첫창조이다.
+- 다년간의 계획, 년간계획, 월간계획, 주간계획, 특정날 계획을 세우는 습관을 들인다.
+
+
+
+[2020-02-15 Sat 23:00]  project advance for years
+일단 북마크가 많아지니 반복할 근거를 만들어 두고 그 횟수를 센다
+
+
+우선순위별로 선정한다.
+
+
+
+* 10~20
+
+- stumpwm/ test_~ ;; filename for 작은 창을 생성하고 크기를 조절하는 것. 
+  (find-file "~/config_github/app/stumpwm/study_stumpwm_to_make_frame_and_resize_open_app_test.org")
+
+
+* INBOX
+일단 노트를 적어두고 나중에 분류한다 - 로 설정한 리스트를 만든다 [2020-02-15 Sat 18:17]
+
+- okular
+  okular C-S-p 색칠기능있음 좌우터치로 페이지를 빠르게 이동함. 스크린하드웨어에 적합한 구조로 보인다.
+  또한 돌리기 기능으 사용해야 할 것임. left 확대가 안되는 단점을 보완할 것
+  - hardware폴더로 나누어 저장하는 것인가 아니면 os에 붙이는가? 저장의 방식을 생각해야함
+    - dell M6800 touch, x230table 등 통일된 정리장소가 필요함.
+- [자유권의 영역-1哲의 부재-분리기준결단]로 인한 0혼란0과 불명확성발생이 왜인 이유이다.
+  - '잘 이해되는 정련된 자는 드물다'
+  - [합치는가|나누는가] 정보 분리기준을 어디에 두는가 부터
+    - 예) 파일과 폴더로 나누는 기준을 선정하는 것의 경우
+      - 1개의 org 파일내에 여러개의 * ** 로 분리하는 것이냐?
+      - 나누어 여럿의 폴더로 분산하는 것이 현명한가?
+        - 예) 다양한 방식 존재하므로... ln -s
+      - 다양한 기법이 존재함
+        - fs(File System)을 잘 이해하는 것은 드물다.
+        - [자료수집] -> [정리분류]=[기준과 특징비교 강점추출] 방법론정립=체계적인사고로간단히추상화
+        - [File명칭정립-어원연구]
+        - [담당권한을 설정함-권한을 정함]
+stumpwm
+- C-t {C-숫자, 끌어오기를 전제로}C-t 잘 배치된 빠른 전환이 가능함 Dwm이 가지지 못한 2단 통합적인 창전환이 가능하다.
+  - 빠르게 2개로 각 프레임을 사용할 수 있다.
+
+* emacs vim
+emacs 본질목적달성능력 StumpWm layout IDE
+[통합성]안정된 높은 통합적인 전체그림의 총전략의 구상에 적합
+총체적인 통합추구
+무거움
+
+tmux 중간영역-layout-tmuxinator,
+
+vim 직접효과달성 Dwm 빠른 속도전의 난타성 경쾌성.
+[직효성]다양성을 조합하여 효과적이고 빠른 완전한 분업을 목적.
+가벼운 몇몇으로 목적달성에 적합(기동특수여단)
+여러명령난입시 통일성유지어려움.
+
+
+* 빠른시청의 유튜브와 emacs시간기록 동영상시간을 기록하면서 빠른 시청이 보장된다.
+- 나중에 빠르게 시간별로 링커를 빠르게 생성할 수 있다.
+  - ~/Youtube/emacs_rock 참조해서 기록한 것을 이용하면 될 것이다
+
+* 핵심![손이 많이 가더라도!!!] 최종상태를 정성껏 조립해서 만들어 봐야 최종 이미지를 선명히 잡을 수 있다
+- [손설계정성-손으로 필기해보라] 직접 손으로 써서 문장을 기록한다음 입력을 하는 것이 정성이 들어서 효과적이다
+- [stump_layout_spectacle촬영기록] google_link로 저장하고 불러들이는 법을 생각해 볼 것
+- 단, 먼저 정성껏 그려볼 것
+글씨는 정성이다! 정성은 인식의 명확이다!!! [2020-02-15 Sat 18:53]
+- [설계의원칙방식] 일일이 수작업으로 완성을 시제해야 정성이 드러가고 정성이 모여야 선명한 비젼을 구상할 수 있다.
+=> Note_taking이 인식의 필수적이 핵심이다!!!
+
+정보량 폭발 
+효과적 直效를 빠르고 정확한 결정의 많은 결정들을 메타결정으로 처리함.
+UNIX의 체계로 원칙을 수립하는 연습을 한다.
+버핏- 정통한 통찰이라야 간결한 단 한가지 결정에 몰두할 수 있다
+# 人本(궁극적인 본질통찰)
+본질통찰탁월Excellent한 者가 목표이며 고객이다.
+역사관, 문해력=Deep Learnnig=다양한 맥락 속에서 장단점을 효과적으로 결정한다.
+전부를 의심함! 철저한 비판정신, 권위허구주의파괴-> 진정한 개혁과 혁명성.New Thought
+    따라서 무능한 반공주의와 공산주의는 몰락해야 한다!-'누가 내 편인가? 사리사욕에 사리잡힌 私由
+公(본질추구에 기여함!=私를 소아욕구물禾집착厶 나누어八 정복욕으로 본질을 추구함)
+
+* stumpwm
+emacs의 C-x 5 o로 되고 안 되고 불완전해도 되는 것이 dwm보다 탁월함. 가장 Emacs와 StumpWm이 잘 어울림.
+
+dwm
+window_switcher_in_dwm
+
+* hardware_test/
+/hardware/macbook.org
+x220t.org
+t520.org
+w541.org
+w541_high
+w541_middle
+w541_low
+samsung_notebook.org
+samsung_monitor.org
+
+
+m6800_biding.org
+
+* app/uname
+uname/readme.org
+rotate getting info from uname
+- emacs/?? 저장된 system 서로 링크를 찾아 둘 것.
+- xrandr to get primary + shell/variable or awk to extraction
+
+
+* 파일을 우선 만들어라 나중에 정확히 사용할 수 있을 것이다[저장공간이 있으며 정확히 기록이 쌓을수 있다]
+
+** language/shell/syntax_of_path{alias}.org
+
+
+* [2020-02-16 Sun] 
+
+** <search_Google> how to calculate battery remain time in linux command line
+[[https://askubuntu.com/questions/69556/how-do-i-check-the-batterys-status-via-the-terminal#102863][command line - How do I check the battery's status via the terminal? - Ask Ubuntu]]
+
+
+* 20~31
+
+
+* /home/thinkpad/note3.org
+(find-file "/home/thinkpad/note3.org")
+파일을 합칠 것.
+(find-file "/home/thinkpad/org/journal.org")
+* lognoteclock-out
+:LOGBOOK:
+CLOCK: [2020-02-17 Mon 11:23]--[2020-02-17 Mon 11:23] =>  0:00
+- integration lognote is GREAT!!!
+  WOW!!!
+CLOCK: [2020-02-17 Mon 11:21]--[2020-02-17 Mon 11:23] =>  0:02
+- GOOD IN NOTE
+:END:
+_   #+STARTUP: lognoteclock-out
+
+Hide Org Log Note Clock Out: Toggle  on (non-nil)
+    State : EDITED, shown value does not take effect until you set or save it.
+
+** 섬세한 통제 인문의 힘! 
+:LOGBOOK:
+CLOCK: [2020-02-17 Mon 11:34]--[2020-02-17 Mon 11:49] =>  0:15
+- good
+CLOCK: [2020-02-17 Mon 11:05]--[2020-02-17 Mon 11:05] =>  0:00
+:END:
+연속시간입력이냐 아니면 따로냐의 결정은 오직 인간의 경험!
+Hide Org Clock Continuously: Toggle  off (nil)
+    State : STANDARD.
+   Non-nil means to start clocking from the last clock-out time, if any.
+
+** 다음의 연속을 시험함.
+:LOGBOOK:
+CLOCK: [2020-02-17 Mon 11:05]--[2020-02-17 Mon 11:21] =>  0:16
+:END:
+
+
+
+
+M-x compilation-minor-mode ;; (compilation-minor-mode)
+
+./:
+
+2020_01_diary.org:44:    #+BEGIN_SRC emacs-lisp
+2020_01_diary.org:48:    #+BEGIN_SRC emacs-lisp
+2020_01_diary.org:71:           #+BEGIN_SRC emacs-lisp
+2020_01_diary.org:104:** rust install and emacs package
+2020_01_diary.org:109:  println!("Hello, World in Babel emacs");
+2020_01_diary.org:200:** 이맥스 클라이언트를 실행하여서 emacsclient -t --eval ' (
+list-buffers "*diary.org") '                                                    
+2020_01_diary.org:203:가장 중요한 점은 그냥 $ emacsclient -t 만 실행해도 된다는 사실!
+2020_01_diary.org:278:~/config_github/app/emacs/readme.org
+2020_01_diary.org:465:* [[https://www.cs.colostate.edu/helpdocs/emacs-bindings][https://www.cs.colostate.edu/helpdocs/emacs-bindings]]

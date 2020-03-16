@@ -1,0 +1,9 @@
+rsync를 사용하는 방법을 익힐 것
+file:../../app/rsync/readme.org
+help:find-file
+
+[[elisp:(org-open-file-with-system%20"~/Music")][elisp_(org-open-file-with-system)~/Music/]]
+
+elisp:
+(org-open-file-with-system "/home/thinkpad/Music/basics_of_biblical_greek_william_d_mounce/bbg_cd2_ch07_vts_02_1.mp4")
+

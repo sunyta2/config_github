@@ -1,1 +1,23 @@
+-*- coding: utf-8 -*-
 #+STARTUP: showeverything indent
+#+TITLE: syntax_of_for_in_sh.org /shell/
+
+
+* pid를 얻는 법을 발견함 하스켈 모나드 강의 2번째. 이맥스전문가의 명강의
+#+BEGIN_SRC sh
+  #!/usr/bin/bash
+  PIDS=()
+  for i in `seq 1 10`; do
+      DISPLAY=:1 xterm &
+      PIDS+=($!)
+      sleep 0.2
+  done
+
+  sleep 2
+
+  for pid in ${PIDS[@]}; do
+      kill $pid
+      sleep 0.2
+  done
+  # xmonad Part 2 on Code Deconstructed - Episode 4 2m10s
+#+END_SRC

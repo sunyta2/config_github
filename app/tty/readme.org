@@ -1,0 +1,5 @@
+
+
+tty 에서 모든 터미널을 모은다.
+     [[info:coreutils#tty%20invocation][info:coreutils#tty invocation]] 여기서 출발하므로 urxvt, st, 
+    [[info:coreutils#stty%20invocation][info:coreutils#stty invocation]] 

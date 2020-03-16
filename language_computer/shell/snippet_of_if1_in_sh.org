@@ -1,0 +1,22 @@
+-*- coding: utf-8 -*-
+#+STARTUP: showeverything indent
+#+TITLE: syntax_of_if_in_sh.org /shell/
+
+
+
+syntax_of_if_in_sh.org
+app/emacs/snippet_of_temp_buffer_in_emacs.org
+app/emacs/syntax_of_temp_buffer_in_emacs.org
+
+
+collection of if syntax
+/shell/syntax_of_test_in_sh.org
+
+
+#+BEGIN_SRC sh
+    if [[ -z ${toggle} ]] || [[ ${toggle} = false ]] ; then
+        toggle=true
+    else
+        toggle=false
+    fi
+#+END_SRC

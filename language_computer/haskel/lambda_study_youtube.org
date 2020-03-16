@@ -1,0 +1,154 @@
+간단한 기술은 순수해서 개성을 가지고 직접설계하는 역량이 필요하다.
+직접 숫자체계를 지정하고 개발한다.
+[[https://www.youtube.com/watch?v=Y7StjYhXvpE][Lambda? You Keep Using that Letter - Kevlin Henney - YouTube]]
+10:00 square -> lambda x  x*x   =>  (lamda x x*x) Pure Form!
+function square(x) {
+    return x * x
+}
+
+square = function(x) {
+    return x * x
+}
+
+square = (x) => {
+    return x * x
+}
+
+square = x => {
+    return x * x
+}
+
+square = x => x * x # 더 쉽게 만들었다.
+
+아름다움과 우아함 깨끗하고 간단함. 우주의 법칙처럼 중요한 
+16:52 Idea unfold before me
+이름든 단지 간략한 요약에 불과하다.
+
+algol
+(real x) real: x * x
+square := (real x) real: x * x;
+# kind of procedual abstruction ability! some in there!
+proc (real) real square; # 절차적 추상화 능력이 있었다.
+square := (real x) real: x * x;
+real result := square (7);
+21:00 (objects are merely a poor man's closures.)
+The concept of closures was developed in the 1960s 
+for the mechanical evaluation fo expressions in the lambda-calculus
+Peter J. Landin defined the term closrue in 1964 
+as having an environment part and a control part.
+
+Joel Moses credits Landin with introducing the term closure(폐쇄)
+to refer to a lambda expression whose open bindings (free variable)
+have been closed by (or bound in) the lexical environment, 
+resulting in a closed expression, or closure.
+
+Closures are a poor man's object.
+
+lambda-calculus was the first object-oriented language.
+
+const newStack = () => {
+    const items = [] //숨겨진 지역변수 접근이 안됨 보일지라도.
+    return {
+        depth: () => items.langth,
+	top: () => items[0],
+	push: newTop => { items.unshift(newTop) },
+	pop: () => { items.shift() },
+    }
+}
+
+One of the most powerful mechanisms for program structuring [...]
+is the block and procedure concept.
+
+algol60
+begin
+    ref(Rock) array items(1:capacity);
+    integer count;
+    integer procedure Depth; ...
+    ref(Rock) procedure Top; ...
+    procedure Push(top); ...
+    procedure Pop; ...
+    count := 0
+end;
+A procedure which is capable of giving rise to block instances which
+survive its call will be known as a class; 
+and the instances will be known as objects of that class.
+Class Stack(capacity); # 클래스는 이름이 필요없었다.
+    integer capacity;  # 그러나 이렇게 2줄을 추가하면 이름이 나온다.
+begin
+    ref(Rock) array items(1:capacity);
+    integer count;
+    integer procedure Depth; ...
+    ref(Rock) procedure Top; ...
+    procedure Push(top); ...
+    procedure Pop; ...
+    count := 0
+end;
+We could, of course, use any notation we want;
+do not laugh at notations;
+invent them, they are powerful.
+In fact, mathematics is, to a large extent,
+invention of better notations. -Richard Feynman
+
+^a는 람다는 오직 1개의 변수만 취한다.
+\ 가장 최소의 표시법
+function 
+fn fun func
+[]       C++
+[] () {} C++
+[] () {} ()
+=>     javascript
+-> c 
+()->{} java ()=>{}
+
+expression has type?
+untyped
+unityped
+
+   \x -> x * x  --하스켈의 표시임.
+:t \x -> x * x  --하스켈의 표시임.
+   \x -> x * x :: Num a => a -> a --하스켈의 표시임.
+
+     lambda x: x * x   # 파이썬의 표시임.
+type(lambda x: x * x)  # 파이썬의 표시임.
+     class<'function'> # 파이썬의 표시임.
+
+ x => x * x                         # c#의 표시임.
+(x => x * x).GetType()              # c#의 표시임.
+Operator '.' cannot be applied to   # c#의 표시임.
+operand of type 'lambda expression' # c#의 표시임.
+
+var square = x => x * x;           # c#의 표시임.
+Cannot assign lambda expression to # c#의 표시임.
+an implicitly-typed local variable # c#의 표시임.
+
+()=>{}
+((Action)(()=>{}))()
+()->{} # java의 표시임.
+apply test accept get 4개의 이름이 나온다.
+((Runnable))->{}).run() contexts 문맥이 없다!
+lambda x yx
+[lambda (variable변수) (application활용)]
+[abstraction추상화]
+추상화=람다표시+변수+활용
+0 -> \fx.x
+1 -> \fx.f(x)
+2 -> \fx.f(f(x))
+3 -> \fx.f(f(f(x)))
+...
+0 -> \fx.x
+1 -> \fx.fx
+2 -> \fx.f^2x
+3 -> \fx.f^3x
+...
+0 -> \fx.x
+1 -> \fx.fx
+2 -> \fx.f^2x
+3 -> \fx.f^3x
+...
+
+We shall not cease from expolration
+And teh endo fo all our exploring
+Will be to arrive where we started
+And know the place for the first time.
+                            T.S Eliot
+Understanding Computation pdf 

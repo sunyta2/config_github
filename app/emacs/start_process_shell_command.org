@@ -1,0 +1,215 @@
+드디어 발견한 완성형의 명령의 안정적인 실행법!!! [2020-02-29 Sat 16:00]
+
+- 버퍼명의 변경법임!. 통일된 버퍼명이 일괄처리에 유리할 것이므로 검색하고 파일위치를 설정할 것!
+help:rename-buffer (rename-buffer "start") file:rename.org
+나중에 Music/_1_list.org timeout/readme.org참조노트를 살펴볼것.
+
+- 키스트로크전달 help:call-process 
+ cat
+- *shell* 로 성공적으로 문장을 전달함. gentoo 설치에 활용
+# (sh-send-line-or-region-and-step) # 여기 앞에 point가 오도록 region을 정함.
+ espeak --stdin
+     이 영역을 선택한 다음 단축키로 아래의 명령을 실행하면 된다.
+     M-x sh-send-line-or-region-and-step
+     send-region
+     발전된 형태들 연구필요함 
+                                  # 가 marker 선택된 region 형태 대성공!!!
+# other experiment
+ # (sh-send-line-or-region-and-step)
+echo hi
+
+echo world
+echo 123
+
+espeak hi
+echo good
+
+
+- (start-process "timeout" nil "timeout" "60m" "mpv" "--speed=1" "--volume=80" "--player-operation-mode=pseudo-gui"
+"/home/thinkpad/Music/nicholas_youtube/latin/Present Passive Indicative-0hbP-ZzHdlw.mp4"
+"--start=3:30" "--ab-loop-a=3:30" "--ab-loop-b=4:03")
+; 간결한 완성!
+
+
+
+발전된 형태들 연구필요함 M-x sh-send-line-or-region-and-step
+-              help:send-region
+-      help:process-send-region
+-           help:sh-send-line-or-region-and-step
+-         help:term-send-region
+- help:python-shell-send-region
+-       help:comint-send-region
+-              help:call-process
+(call-process "echo" nil "*scratch*" nil "hi\n\n\n 123 world\n\n")
+(call-process "echo" nil "*shell*" nil "echo world") error small.
+(call-process "echo" nil "*shell*" nil "echo world")
+(call-process "echo" nil "*shell*" nil "")
+(call-process "echo" nil "2020_03_diary.org" nil "깔끔하게 문장이 전달된다.")
+(call-process "echo" nil "*eshell*" nil "hi\n\n\n world\n\n")
+
+(call-process "echo" nil "*eshell*" nil "hi\n\n\n world\n한글이 나온다는 것으로 전송을 증명함\n") ;; eshell로 명령을 전송할 수 있다.
+
+-             help:start-process
+(start-process "gimp" nil "gimp")
+(start-process program nil program)
+
+-             help:start-file-process
+-             help:start-process-shell-command
+(start-process-shell-command NAME BUFFER COMMAND)
+(start-process-shell-command "test" nil "espeak 'hi'")
+elisp:
+[[elisp:(start-process-shell-command%20"test"%20nil%20"espeak%20'hi%20world'")]]
+* espeak에 대한 효과적인 사용을 위한 연구와 간결한 아이디어를 추구함.
+- 윗부분에 긴함수와 파일명들과 같이 정의하고 아래의 부분은 리스프:(함수명 $1 $2 $3) 실행법도 고려해 봄직. 전체파일의 축소용량에 효과적1번통제가능
+- [윗부분에서 기술함] (sh-send-line-or-region-and-step) # 여기 앞에 point가 오도록 region을 정함.
+  - say 의 인터엑티브한 기능과 결합시 맥북에서 유용한 읽기를 전송함.
+- start-process-shell-command 
+- marker point를 활용하여 함수에서 그 값을 실행하는 것을 고려해 봄직함.
+
+*** espeak for elisp:(start-process-shell-command "espeak라틴희랍읽기" nil "espeak -v other/grc -s 100 -g 30 \"τοῦ Ἀρίστωνος     προσευξόμενός   τε       τῇ   θεῷ\"")
+    :PROPERTIES:
+    :ID:       workflow_espeak_with_start-process-shell-command
+    :END:
+  [[elisp:(start-process-shell-command%20"espeak라틴희랍읽기"%20nil%20"espeak%20-v%20other/grc%20-s%20100%20-g%2030%20\"τοῦ%20Ἀρίστωνος%20%20%20%20%20προσευξόμενός%20%20%20τε%20%20%20%20%20%20%20τῇ%20%20%20θεῷ\"")][espeak희랍어플라톤국가론중에서]]
+  (start-process-shell-command "espeak라틴희랍읽기" nil "espeak -v other/grc -s 100 -g 30 \"τοῦ Ἀρίστωνος     
+  προσευξόμενός   τε       τῇ   θεῷ
+
+  \"") 실행은 되지만
+  여러줄 입력은 안되는 것으로 확인함.
+  - 속도와 빠르기 
+  - 반복문 가능하지 검토요구됨.
+  espeak -v grk/grc -s 100 -g 30 "$(echo "$gre")"
+  espeak -v other/grc -s 100 -g 30 "$(echo "$gre")"
+  espeak  word_each_text_is_best_study; for i in {1..3} ; do espeak -v grk/grc -s 100 -g 30 \"
+  τοῦ Ἀρίστωνος     προσευξόμενός   τε       τῇ   θεῷ
+  \"; sleep 003; done
+  espeak -v other/grc -s 100 -g 30 \"τοῦ Ἀρίστωνος     προσευξόμενός   τε       τῇ   θεῷ\"
+
+
+
+* 지속적인 분류와 공통성 그리고 강점의 추출이 필요함.
+elisp:
+[[elisp:(start-process-shell-command%20"test"%20nil%20"espeak%20'hi%20world'")][elisp:test_espeak_start-process-shell-command]]
+(start-process-shell-command "test" nil "espeak 'hi'")
+
+
+
+[[elisp:(+%201%202)][elisp:(+_1_2)]]
+id:workflow_espeak_with_start-process-shell-command
+info:(elisp)Magic File Names
+[[info:elisp#Magic%20File%20Names][info:elisp#Magic File Names]]
+
+(execute-extended-command nil "command-history" "comman*-history")
+(info-apropos "Magic File Names")
+(apropos-command (quote ("Magic" "File" "Names")) nil)
+(command-history)
+(eshell-get-old-input)
+help:eshell-insert-process - 작동중인 것만을 주로 봄 shell term mpv등을 대상으로 Tab으로 완성리스트몇몇을 보임
+(eshell-insert-process "process timeout 25m Music 25m")
+#<process timeout 25m Music 25m>
+#<process shell> 무슨 표식인지 알아볼것.
+help:eshell-interrupt-process
+help:eshell-kill-process
+help:eshell-quit-process
+help:eshell-send-eof-to-process
+help:eshell-command
+(eshell-command "espeak --help")
+(eshell-command "man awk")
+(shell-command "man sed")
+(eshell-command &optional COMMAND ARG)
+DE: qtile                          
+WM: LG3D
+Theme: Arc-Dark [GTK2/3]           
+Icons: Sardi-Arc [GTK2/3]          
+CPU: Intel i5-2520M (4) @ 3.200GHz 
+GPU: Intel 2nd Generation Core Proc
+Memory: 1060MiB / 7784MiB          
+help:shell-command
+help:async-shell-command
+
+
+프로세스의 실행으로 저장해 둘 내용임 (C-h f shell-command RET로 찾아냄)
+* start-process is a compiled Lisp function in ‘subr.el’.
+
+(start-process NAME BUFFER PROGRAM &rest PROGRAM-ARGS)
+
+Start a program in a subprocess.  Return the process object for it.
+NAME is name for process.  It is modified if necessary to make it unique.
+BUFFER is the buffer (or buffer name) to associate with the process.
+
+Process output (both standard output and standard error streams)
+goes at end of BUFFER, unless you specify a filter function to
+handle the output.  BUFFER may also be nil, meaning that this
+process is not associated with any buffer.
+
+PROGRAM is the program file name.  It is searched for in ‘exec-path’
+(which see).  If nil, just associate a pty with the buffer.  Remaining
+arguments PROGRAM-ARGS are strings to give program as arguments.
+
+If you want to separate standard output from standard error, use
+‘make-process’ or invoke the command through a shell and redirect
+one of them using the shell syntax.
+
+The process runs in ‘default-directory’ if that is local (as
+determined by ‘unhandled-file-name-directory’), or "~"
+otherwise.  If you want to run a process in a remote directory
+use ‘start-file-process’.
+
+[back]
+
+
+
+* call-process is a built-in function in ‘C source code’.
+
+(call-process PROGRAM &optional INFILE DESTINATION DISPLAY &rest ARGS)
+
+Call PROGRAM synchronously in separate process.
+The remaining arguments are optional.
+The program’s input comes from file INFILE (nil means ‘null-device’).
+
+Third argument DESTINATION specifies how to handle program’s output.
+If DESTINATION is a buffer, or t that stands for the current buffer,
+ it means insert output in that buffer before point.
+If DESTINATION is nil, it means discard output; 0 means discard
+ and don’t wait for the program to terminate.
+If DESTINATION is ‘(:file FILE)’, where FILE is a file name string,
+ it means that output should be written to that file (if the file
+ already exists it is overwritten).
+DESTINATION can also have the form (REAL-BUFFER STDERR-FILE); in that case,
+ REAL-BUFFER says what to do with standard output, as above,
+ while STDERR-FILE says what to do with standard error in the child.
+ STDERR-FILE may be nil (discard standard error output),
+ t (mix it with ordinary output), or a file name string.
+
+Fourth arg DISPLAY non-nil means redisplay buffer as output is inserted.
+Remaining arguments ARGS are strings passed as command arguments to PROGRAM.
+
+If executable PROGRAM can’t be found as an executable, ‘call-process’
+signals a Lisp error.  ‘call-process’ reports errors in execution of
+the program only through its return and output.
+
+If DESTINATION is 0, ‘call-process’ returns immediately with value nil.
+Otherwise it waits for PROGRAM to terminate
+and returns a numeric exit status or a signal description string.
+If you quit, the process is killed with SIGINT, or SIGKILL if you quit again.
+
+The process runs in ‘default-directory’ if that is local (as
+determined by ‘unhandled-file-name-directory’), or "~" otherwise.  If
+you want to run a process in a remote directory use ‘process-file’.
+
+[back]
+
+
+
+:    help:process-status
+help:start-process
+#+BEGIN_SRC emacs-lisp
+(setq screencast-start ()
+(interactive)
+(if (equalp (process-status screencast-process-name) nil)
+    (stat-process screencast-process-name
+"*screencast*"
+"/usr/bin/ffmpeg"
+"-f" "alsa" "-ac"
+
+#+END_SRC

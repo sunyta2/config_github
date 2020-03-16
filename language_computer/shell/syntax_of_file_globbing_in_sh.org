@@ -1,0 +1,10 @@
+
+파일명검색이다.
+[[https://www.youtube.com/watch?v=hQyXuuBbCOo][File Globbing In Linux - YouTube]]
+$ [BC]at.txt
+$ text[1-9].txt
+$ rm file[!6-9].txt # !는 
+
+SQL는 %=* _=? 나머지는 거의 다르다
+regular expression_문장검색 과 전혀 다르다
+$ touch text{1..10}.txt

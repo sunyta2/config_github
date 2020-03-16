@@ -1,0 +1,134 @@
+
+
+빠르게 이 문서를 열기위한 ESC ESC 숫자의 설정은 interactive한 command명만 수용함을 확인함
+즉 "interactive"를 넣어서 새로운 함수를 만들어야 했음
+- 함수안에서 함수를 생성시키는 것이 가능하다면
+- (ESC_M_num "파일명" "숫자") 수행하는 것이 가능할 것이다. 
+file:../../app/emacs/global_set_key_kbd.org 원리를 기록함
+구체적인 프로젝트는 빠르게 이 문서를 열기위한 ESC ESC 숫자의 설정은 interactive한 command명만 수용함을 확인함
+                file:../../app/emacs/esc_esc_num.org
+즉 "interactive"를 넣어서 새로운 함수를 만들어야 했음
+- 함수안에서 함수를 생성시키는 것이 가능하다면
+- (ESC_M_num "파일명" "숫자") 수행하는 것이 가능할 것이다. 
+
+
+
+** 성공의 테스트
+
+
+(switch-to-buffer "test_re" nil (quote force-same-window))
+
+(global-set-key (kbd "ESC M-1")
+'diary_03)
+
+(switch-to-buffer "03diary2020.org" nil (quote force-same-window)))
+
+
+(defun esc_esc_1 ()
+(interactive)
+(find-file "/home/thinkpad/config_github/app/emacs/03diary2020.org")
+)
+(global-set-key (kbd "ESC ESC 1")
+'esc_esc_1)
+
+(defun esc_esc_2 ()
+(interactive)
+(find-file "~/Desktop/pdf_list_of_desktop.org")
+)
+(global-set-key (kbd "ESC ESC 2")
+'esc_esc_2)
+
+(defun esc_esc_3 ()
+(interactive)
+(find-file "/home/thinkpad/config_github/great_books/vitruvius/de_architectura/de_architectura_liber01_03.org")
+)
+(global-set-key (kbd "ESC ESC 3")
+'esc_esc_3)
+
+
+(defun esc_esc_4 ()
+(interactive)
+(find-file "~/Music/_1_bbg_playlist.org")
+)
+(global-set-key (kbd "ESC ESC 4")
+'esc_esc_4)
+
+(defun esc_esc_5 ()
+(interactive)
+(find-file "~/config_github/app/emacs/esc_esc_num.org")
+)
+(global-set-key (kbd "ESC ESC 5")
+'esc_esc_5)
+
+
+;
+
+
+
+
+(diary_03)
+
+(defun diary_03_find ()
+(interactive)
+(find-file "/home/thinkpad/config_github/app/emacs/03diary2020.org")
+)
+(global-set-key (kbd "ESC M-2")
+'diary_03_find)
+
+;; 함수의 함수를 만들기 위한 것이 성공적임. 즉 함수안에서 함수를 만드는 것이 가능함!
+(defun make_list_03 ()
+(defun list_03 ()
+(interactive)
+(find-file "/home/thinkpad/config_github/app/emacs/03diary2020.org")
+)
+)
+(global-set-key (kbd "ESC M-3")
+'list_03)
+(global-set-key (kbd "ESC ESC 4")
+'list_03)
+
+(make_list_03)
+
+(start-process "pdf okular" nil "okular" ;; 빠른 단축으로 만드는 것은 C-c C-l elisp: 를 사용해서 넣으면 됨
+"/home/thinkpad/Music/wheelock/Wheelock's Latin - 6th edition.pdf" "-p" "52")
+
+
+*** 백업용
+(switch-to-buffer "test_re" nil (quote force-same-window))
+
+(global-set-key (kbd "ESC M-1")
+'diary_03)
+
+(switch-to-buffer "03diary2020.org" nil (quote force-same-window)))
+
+
+(defun diary_03 ()
+(interactive)
+(switch-to-buffer "03diary2020.org" nil (quote force-same-window))
+)
+
+(diary_03)
+
+(defun diary_03_find ()
+(interactive)
+(find-file "/home/thinkpad/config_github/app/emacs/03diary2020.org")
+)
+(global-set-key (kbd "ESC M-2")
+'diary_03_find)
+
+
+(defun make_list_03 ()
+(defun list_03 ()
+(interactive)
+(find-file "/home/thinkpad/config_github/app/emacs/03diary2020.org")
+)
+)
+(global-set-key (kbd "ESC M-3")
+'list_03)
+(global-set-key (kbd "ESC ESC 4")
+'list_03)
+
+(make_list_03)
+
+(start-process "pdf okular" nil "okular" ;; 빠른 단축으로 만드는 것은 C-c C-l elisp: 를 사용해서 넣으면 됨
+"/home/thinkpad/Music/wheelock/Wheelock's Latin - 6th edition.pdf" "-p" "52")

@@ -1,0 +1,126 @@
+
+(dired-jump 3 "~/.emacs.d/recentf")
+;;(dired-jump 3 "~/config_github/app/emacs/recentf_in_emacs.org")
+(dired-jump 3 "~/config_github/app/emacs/eintr.pdf_study_note_test.org")
+
+
+
+#+BEGIN_SRC emacs-lisp
+
+(require 'recentf)
+(recentf-mode 1) ;; (find-file (expand-file-name "~/.emacs.d/recentf"))
+(setq recentf-max-menu-items 25)
+(setq recentf-max-saved-items 2000)
+(global-set-key "\C-x\ \C-r" 'recentf-open-files)
+#+END_SRC
+
+#+BEGIN_SRC elisp
+;;각 필요한 TODO 프로젝트마다 변경을 시도할 것. (recentf-load-list)
+(setq recentf-list
+      '(
+        "/home/thinkpad/config_github/hardware/ngff_pci-e_adapter_converter.org"
+        "/home/thinkpad/config_github/app/emacs/command-log.org"
+        "/home/thinkpad/config_github/app/emacs/tag.org"
+        "/home/thinkpad/config_github/app/emacs/readme.org"
+        ))
+
+(setq recentf-list
+      '(
+        "/home/thinkpad/config_github/hardware/ngff_pci-e_adapter_converter.org"
+        "/home/thinkpad/config_github/app/emacs/readme.org"
+        ))
+
+
+#+END_SRC
+
+#+RESULTS:
+: recentf-open-files
+
+#+BEGIN_SRC emacs-lisp
+;; test mapcar
+(mapcar 'find-file (list
+        "/home/thinkpad/config_github/hardware/ngff_pci-e_adapter_converter.org"
+        "/home/thinkpad/config_github/app/emacs/readme.org"
+        ))
+
+
+#+END_SRC
+
+#+RESULTS:
+| ngff_pci-e_adapter_converter.org | readme.org<emacs> | <= mapcar to help:kill-buffer |
+|                                  |                   |                               |
+
+help:kill-buffer 
+"ngff_pci-e_adapter_converter.org"
+"readme.org<emacs>"
+
+(mapcar 'kill-buffer (list
+;        "/home/thinkpad/config_github/hardware/ngff_pci-e_adapter_converter.org"
+"ngff_pci-e_adapter_converter.org"
+;        "/home/thinkpad/config_github/app/emacs/readme.org"
+"readme.org<emacs>"
+))
+
+
+| /home/thinkpad/config_github/hardware/ngff_pci-e_adapter_converter.org | /home/thinkpad/config_github/app/emacs/readme.org |
+
+help:mapcar
+help:mapc
+
+(require 'recentf)
+;; get rid of `find-file-read-only' and replace it with something
+;; more useful.
+(global-set-key (kbd "C-x C-r") 'recentf-open-files)
+                              ;;'ido-recentf-open)
+;; enable recent files mode.
+(recentf-mode t)
+; 50 files ought to be enough.
+(setq recentf-max-saved-items 50)
+
+
+
+
+        "/home/thinkpad/config_github/hardware/ngff_pci-e_adapter_converter.org"
+        "/home/thinkpad/config_github/app/emacs/readme.org"
+#+BEGIN_SRC emacs-lisp
+;recover file by test mapcar
+
+(mapcar 'find-file (list
+
+"~/config_github/app/xrandr/"
+"~/config_github/app/emacs/org-startup.org"
+        ))
+"~/config_github/app/xrandr/readme.org"
+"~/config_github/app/emacs/indent_whitespace.org"
+"~/config_github/app/emacs/index.org"
+"~/config_github/app/okular/readme.org"
+"~/config_github/app/awk/readme.org"
+"~/config_github/app/emacs/org_mode_study/babel_exports_results_form.org"
+"~/config_github/app/emacs/counsel_mode.org"
+"~/config_github/language_computer/shell/syntax_of_array_in_sh.org"
+"~/config_github/app/emacs/info.org"
+"~/config_github/app/emacs/string.org"
+"~/config_github/app/emacs/sort.org"
+"~/config_github/app/espeak/readme.org"
+"~/config_github/app/emacs/region.org"
+"~/Music/Latin_NVV_NT_Drama/_1_latin_new_testment_list.org"
+"~/Desktop/pdf_list_of_desktop.org"
+"~/config_github/app/emacs/global_set_key_kbd.org"
+"~/config_github/os/gentoo/install_process/youtube_t530_study.org"
+"~/Music/_1_bbg_playlist.org"
+"~/config_github/app/emacs/tag.org"
+"~/Music/_1_playlist.org"
+"~/Music/latintutorial_youtube/latintutorial_youtube_playlist.org"
+"~/config_github/app/emacs/mike_zamansky.org"
+"~/config_github/app/emacs/org_babel_load_file.org"
+"~/config_github/app/emacs/agenda_list.org"
+"~/config_github/app/emacs/03diary2020.org"
+"~/.emacs.d/recentf_log/2020_02_18_recentf.org"
+"~/Music/mpv_files/mpv_files_list.org"
+"~/config_github/app/emacs/recentf_in_emacs.org"
+
+
+#+END_SRC
+
+
+"(elisp) Primitive Function Type"

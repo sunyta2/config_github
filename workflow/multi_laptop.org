@@ -1,0 +1,21 @@
+
+* LG PH550 
+rotate 
+준비사항: A4로 벽면을 도배할 것!
+
+* 3대를 동시에 사용하면서 프로젝트로 보는 법
+취지: 여러 컴퓨터를 다루는 법을 연구하는 것은 중요한 기술이 될 것이다.
+- macosx, w541의 사용된 것을 krdc로 x220t(herbsluft)로 사용해서 본다.
+- x220t에 tmux -t x220t를 실행하고 Emacsclient -t를 실행하여 둔다.
+
+- (workflow)네트워크 카드를 한개씩 더 두어서 3대를 연결하는 것과 외부 인터넷을 연결하는 것을 동시에 두는 것을 검색해 볼 것.
+
+[[file:~/config_github/great_books/_achieve_agenda/2020_02_diary.org::*%5B2020-02-28%20Fri%5D]]
+
+
+* pdf 원형을 그려서 연결하는  workflow in okular/readme.org 참조할 것.
+
+[[info:org#Handling%20links][info:org#Handling links]]
+
+Remote Desktop 
+[[file:possible_in_arco.org]]

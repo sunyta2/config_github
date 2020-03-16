@@ -1,26 +1,21 @@
-#+TITLE: Why Emacs is Great! app/emacs/emacs_is_great.org 强點에 集中하여 眞我로 통합을 추구함
-#+STARTUP: showeverything indent latexpreview
-TODO   C-c / t ;;현재 폴더내의 TODO만 국한 
+#+STARTUP: showeverything indent
+#+TITLE: 强點에 集中하여 眞我로 통합을 추구함 app/emacs/emacs_is_great.org
+#+TITLE: 프로젝트.org
+#+Core_VALUE: For WHAT?, WHY, and Meta
+#+where_is_source_FILE: (find-file "~/config_github/app/emacs/emacs_is_great.org")
+#+CREATOR: LEEJEONGPYO
+###-*- coding: utf-8 -*-
 
-
-* [org-mode] 고도의 통합성 - 超高度通合性Emacs_상위원리(哲學)로 간단하게 만든다.
-- 超高度通合性Emacs_[2020-02-12 Wed 14:08] 클릭가능![rgrep을]저장할 수 있음(놀람!). Why Emacs is Great! ./emacs_is_great.org
-    - 검색을 고도화하여 매우 높은 통합을 지향해서 심지어 심지어 링크사용없이!!! 바로 검색저장으로 관리하는 것도 가능할 것으로 보인다.
-      예시 /app/mount/readme.org 참고할 것 실험은 app/grep/
-      활용의 방안: M-x rgrep (rgrep ~~) 을 실행한 결과를 출력하여 복사한 다음 편집해서 쉽게 프로젝트 트리구조를 생성하는 것이 가능하다
-          - 프로그램의 각 부분을 검색한 다음 원하는 링크를 쉽게 만들어 내는 부분정복!!!이 가능할 것 같다.
-            - (미완성)편집을 수정하는 것이 아직연구가필요함
-- (find-file "/home/thinkpad/config_github/app/emacs/register_emacs.org:33")
-- sudo로 apfs의 파일들을 열어서 실행(gksudo가능함!)한 것을 자동으로 가능하게 하는 것도 vim보다는 우수하다.
-
-** org-mode agenda 연구중
+* org-mode agenda 연구중
 file:org_mode_study/agenda_view_org.org
 agenda C-c [ 리스트에 추가하는 방식을 연구함.
        C-c / t ;;현재 폴더내의 TODO만 국한 
-
+/app/emacs/org-clock-goto_C-u_C-c_C-x_C-j.org
 
 * [concentration] 집중적인 노트의 통합이 가능하다
-
+- 원칙발견실험중: 두기술이상이 합체할 경우 새로 파일을 만드는 것을 원칙으로 한다.
+      - 사용기술:mpv, okular, python list ;; 이문장으로 쉽게 찾을 수 있게한다.
+        - 파일위치제목: /app/emacs/원칙설명_이름정함.org
 
 n과 w로 사용하는 법으로 集中의 노트를 사용하는 핵심의 기술이다!
 (find-file-other-window "~/config_github/app/emacs/readme.org")
@@ -29,10 +24,14 @@ C-x n n         narrot-to-region
 C-x n w         widen                 2019_12_diary.org
 C-x n C-h       위의 설명을 보게함. 매우 중요한 특징으로 자주 활용할 것
 
+** - 에서 [Alt키+좌우화살표]서열간격조정할 수 있음을 발견함. [Alt+Return]- 다음항목으로 넘어감 즉, 빠른 노트입력이 가능하다
 
+** [탭자동파일명완성 발견 /*핵심어*]mini-buffer에서
 * [Speed 빠르다] 링크를 자유롭게 사용할 수 있다.
-
-
+** [org_id.org] 참조할 것 ~/config_github/app/emacs/org_id.org
+- 파일명정확히 등록하면 우수한 색인파일을 생성하는 것을 가능하게 해서
+** [footnote]내부색인기능 발견 C-c C-x f org-footnote-action    참고: 주석기능과 유사함. file:footnotes.org
+emacs/test_stuff/like_pomodoro_timer_note.org
 
 * [Expension 확장성] 다른 외부프로그램명령과 연동성이 높은 통합성으로 연결된다.
 
@@ -66,3 +65,9 @@ C-x n C-h       위의 설명을 보게함. 매우 중요한 특징으로 자주
 - ibus의 놀라운 한자입력완성기능이 있는데 ibus.el을 연구해볼것.
 
 * TODO workflow/ 폴더를 만들어서 연구하고 연습을 하는 곳을 둘 것.
+- 정확한 정의가 선명한 자신감과 불타는 의욕을 감응[etymology음원필요성]
+'가가 가가?'
+- 단어의 선정이 tool{선명함}이냐 workflow{포괄적}
+- [사용에 기여하는 것] 
+    - (대안제시) [정확한 단어주제]파일명검색(M-x find-grep 등)으로 찾아내는 것을 활용하는 메타관리규칙.
+    # [find-name-dired *검색어*]일단 M-x locate로 파일명 검색보다는 M-x find-name-dired *검색어*

@@ -1,0 +1,134 @@
+[[info:org#Top][info:org#Top]]
+[[확산사용의 일반론(검색완료후_image_in_line.org)]]
+   file:info.org file:man_in_emacs.org M-! man awk (eshell-command "man awk")
+
+(info-apropos "Magic File Names")
+(apropos-command (quote ("Magic" "File" "Names")) nil)
+(command-history)
+
+(info "(info) Help")     기본기에 통달할 것!
+ info:info#Help 
+(Info-help)
+
+(apropos-command "region")
+(describe-variable 'path-separator)
+(describe-function 'bbg_mpv)
+(describe-key (kbd "C-h m"))
+                  (kbd "C-h m")
+(describe-mode)
+(help-for-help)
+
+* info is *info* 메뉴얼들이다.
+- [ ] info의 놀라운 단축키를 확인함!! 메뉴바을 눌러보고 확인할 것!!! (info "(stumpwm) Windows")
+- [ ] info의 놀라운 단축키 m 자동완성 제목를 확인함!! 복사는 쉽게 c키로 가능함 놀라운 발견! 메뉴바을 눌러보고 확인할 것
+이맥스는 놀라움의 연속이다! M-n은 창을 복사함!!!
+
+- H list 모든 키보드누름을 설명함
+- h는 기초 도움말로 간다.
+- d는 복귀함 info:dir#Top 각종 C 라이브러리도 있음
+- 참조  file:./external_link.org
+info:stumpwm#Top 
+[[info:eintr#Top]]        (info "(eintr) Top") 복사는 쉽게 c키로 간단히!
+                      help:browse-url  (browse-url "file:/home/thinkpad/Pictures/hebrew/hebrew_in_ipad.png")
+                       현재 파이어팍스로 열리는 것은 잘 됨. 나중에 변경을 시도할 것
+info:elisp#Top        (info "(elisp) Top")
+info:screen#Top
+info:gettext#Top info:gawk#Top info:xargs#Top
+bash basic [[info:coreutils#Top]] info:bash#Top
+[[https://orgmode.org/manual/External-Links.html#FOOT27][External Links (The Org Manual)]]
+[[info:org#External%20links][info:org#External links]]
+[[help:org-insert-link]]
+help:org-link-file-path-type
+help:info-apropos
+help:apropos-command
+
+info:ediff#Top 
+info:todo-mode#Top
+info:eww#Top
+info:erc#Top tramp eshell 
+
+info:libc#Top C 
+ With C-u prefix, or if ‘apropos-do-all’ is non-nil, also show
+ noninteractive functions.
+
+(info-apropos "Magic File Names")
+(apropos-command (quote ("Magic" "File" "Names")) nil)
+(apropos-command PATTERN &optional DO-ALL VAR-PREDICATE) ;;C-h a
+(command-history)
+
+                                   
+
+
+‘C-u C-c C-l’
+     When ‘C-c C-l’ is called with a ‘C-u’ prefix argument, a link to a
+     file will be inserted and you may use file name completion to
+     select the name of the file.  The path to the file is inserted
+     relative to the directory of the current Org file, if the linked
+     file is in the current directory or in a sub-directory of it, or if
+     the path is written relative to the current directory using ‘../’.
+     Otherwise an absolute path is used, if possible with ‘~/’ for your
+     home directory.  You can force an absolute path with two ‘C-u’
+     prefixes.
+
+* *info* 단축키 사용법
+l last page r forward page 
+[ ] back node  forward node
+^ upper node
+
+* 확산사용의 일반론(검색완료후_image_in_line.org)
+;; And here's how I found how to do it:
+;; note source in emacs/image_in_line.org
+     ;;M-x apropos RET org.*image.*.
+     ;;F1 f org-display-inline-images.
+     ;;make a test.org with a link to picture.
+     ;;M-: (org-display-inline-images t t).
+     ;;wrap it in a defun/global-set-key.
+;;  일반론으로 사용할 방법찾기와 함수만들기 ;; [org mode - Emacs org-display-inline-images - Stack Overflow](https://stackoverflow.com/questions/17621495/emacs-org-display-inline-images)
+;;1)함수명칭정의
+;;2)(interactive)설정함
+;;3)함수핵심을파악
+;;4)단축키로 지정함
+;; 1)~2) 기초기반실현 3) 핵심장악 4) 작용의 확산
+;; 기초-핵심-확산작용
+
+     ;;1)기초용어찾기apropos를 사용
+     ;;2)파악된 기초작용을 탐구 사용법 파악
+     ;;3)대상을 실험체 파일을 생성함
+     ;;4)대상체에 적용함
+     ;;5)global한 일반 함수로 만들기
+     ;;1)~2)기초지식탐구 3)~4)객체완성실현 5)이치통합성
+;; 기초-객체-이치통일
+
+
+
+
+#+begin_src emacs-lisp
+(defun do-org-show-all-inline-images ()
+  (interactive)
+  (org-display-inline-images t t))
+(global-set-key (kbd "C-c C-x C v")
+                'do-org-show-all-inline-images)
+;; And here's how I found how to do it:
+;; note source in emacs/image_in_line.org
+     ;;M-x apropos RET org.*image.*.
+     ;;F1 f org-display-inline-images.
+     ;;make a test.org with a link to picture.
+     ;;M-: (org-display-inline-images t t).
+     ;;wrap it in a defun/global-set-key.
+;;  일반론으로 사용할 방법찾기와 함수만들기 ;; [org mode - Emacs org-display-inline-images - Stack Overflow](https://stackoverflow.com/questions/17621495/emacs-org-display-inline-images)
+;;1)함수명칭정의
+;;2)(interactive)설정함
+;;3)함수핵심을파악
+;;4)단축키로 지정함
+;; 1)~2) 기초기반실현 3) 핵심장악 4) 작용의 확산
+;; 기초-핵심-확산작용
+
+     ;;1)기초용어찾기apropos를 사용
+     ;;2)파악된 기초작용을 탐구 사용법 파악
+     ;;3)대상을 실험체 파일을 생성함
+     ;;4)대상체에 적용함
+     ;;5)global한 일반 함수로 만들기
+     ;;1)~2)기초지식탐구 3)~4)객체완성실현 5)이치통합성
+;; 기초-객체-이치통일
+#+end_src
+

@@ -1,6 +1,15 @@
+-*- coding: utf-8 -*-
 #+STARTUP: showeverything indent
 - [[~/config_github/language_computer/python/bookmark_org_link.org::9]] ;; python을 이용한 방식과 틀을 보관 
 - [[~/config_github/app/emacs/register_emacs.org::9]] ;; hello world 
+
+
+
+help:list-registers   cf help:list-abbrevs help:list-processes
+
+(list-registers)
+(list-registers)
+
 
 * hi
 
@@ -12,18 +21,59 @@ Ctrl+x r j /#	Jump to Numbered Bookmark
 
 
 
+C-x r m         help:bookmark-set
+C-x r b         help:bookmark-jump
+C-x r l         help:bookmark-bmenu-list
+C-x r M         help:bookmark-set-no-overwrite
+
+C-x r n         help:number-to-register
+
+C-x r C-@       help:point-to-register
+C-x r C-SPC     help:point-to-register
+C-x r   SPC     help:point-to-register
+C-x r j         help:jump-to-register
+
+C-x r g         help:insert-register
+C-x r i         help:insert-register
+C-x r s         help:copy-to-register
+C-x r x         help:copy-to-register
+
+
+C-x r y         help:yank-rectangle
+C-x r M-w       help:copy-rectangle-as-kill
+C-x r ESC       help:Prefix Command
+C-x r r         help:copy-rectangle-to-register
+
+C-x r d         help:delete-rectangle
+C-x r k         help:kill-rectangle
+
+C-x r c         help:clear-rectangle
+C-x r t         help:string-rectangle
+C-x r o         help:open-rectangle
+C-x r +         help:increment-register
+C-x r N         help:rectangle-number-lines
+
+C-x r w         help:window-configuration-to-register
+C-x r f         help:frameset-to-register
+
+
+
+
+buffer-file-name 
 
 
 * C-u C-SPC Cycle through marks in the mark ring. # 중요한 마커의 변경을 보여준다.
 
-
+* - [ ] [footnotes]내부색인기능 발견 C-c C-x f org-footnote-action 참고: 주석기능과 유사함. file:footnotes.org - 커맨트를 찾아내던 빠른 방법
 * 북마크로 빠른 버퍼간의 이동을 담보함 [[https://stackoverflow.com/questions/3770804/how-do-i-set-marks-in-emacs-%C3%A0-la-vim][bookmarks - How do I set marks in Emacs à la Vim? - Stack Overflow]]
 
 C-x r SPC r ;;Record the position of point and the current buffer in register r (point-to-register).
 C-x r j r ;;Jump to the position and buffer saved in register r (jump-to-register).
 
 * M-x compilation-shell-minor-mode in M-x shell after `$ grep -n "def" *.py`
-emacsclient +4:3 FILE
+(find-file-other-window "./compilation_minor_mode.org")
+    - 한글깨짐을 해결함. coding-system app/emacs/coding_system_in_emacs.org
+emacsclient +4:3 FILE 
 emacs --no-splash "+$line" --file "$file"
 (find-file "/home/thinkpad/config_github/app/emacs/register_emacs.org:3")
 M-x rgrep and cousins already, right?
@@ -38,7 +88,7 @@ But now you can do M-x compilation-shell-minor-mode to make them clickable (like
 * M-g M-g  (goto-line 3)
 (goto-line LINE &optional BUFFER)
 ** find-file-at-point
-* python Bable_ Clickable link in line Automation!
+* python Babel_ Clickable link in line Automation!
 - 쉽게 링커를 생성하는 법; 동영상 시간분리에 유용함
 If you also want to export/publish your links you can use:
 
@@ -69,57 +119,83 @@ The d:t option tells to export drawers, the \n:t one to preserve linebreaks.
 
 Putting your python code result into a drawer (the :results output drawer) allows org mode to interpret it as true org-mode code.
 
-* Quick 위치이동( C-x r j ) ( C-x r SPC );포인터를 마커로 변환함
+* Quick 위치이동( C-x r j ) ( C-x r {C-}SPC @ );포인터를 마커로 변환함
+:PROPERTIES:
+:ID:       register이용한_빠른_이동전술
+:END:
 C-x SPC		rectangle-mark-mode
 
-C-x C-SPC	pop-global-mark # 빠른 이동으로 원래의 위치를 기억하는 편의성을 제공함.
-C-x C-SPC	pop-global-mark
+C-x C-SPC	        pop-global-mark # 빠른 이동으로 원래의 위치를 기억하는 편의성을 제공함.
+C-x C-SPC	        pop-global-mark
 C-x C-+		text-scale-adjust
 C-x C--		text-scale-adjust
 C-x C-0		text-scale-adjust
+C-x C-;		comment-line - Babel에서 실행됨.
+C-x z		        repeat
 C-x C-;		comment-line
-C-x z		repeat
-C-x C-;		comment-line
-
-
+repeat
+trainning
+trainner
 C-x '		expand-abbrev
 C-x '		expand-abbrev 뭐지(C-M-/는 잘 되는데 차이점은?)
 C-x ;		comment-set-column
 
 ä­ㅁa 
 
+#+BEGIN_EXPORT ascii
 
+#+END_EXPORT
 
-C-x n b		org-narrow-to-block
-C-x n d		narrow-to-defun
-C-x n e		org-narrow-to-element
-C-x n n		narrow-to-region
+#+BEGIN_SRC emacs-lisp
+  (setq a 1)
+  (defun ava ()
+  ""
+  ;; (print "hi")
+  ;; )
+
+  (setq b 2)
+
+#+END_SRC
+#+BEGIN_SRC sh
+  echo hi
+  say world
+
+  echo hi2
+
+  # echo hi3
+
+#+END_SRC
+C-x n b		org-narrow-to-block   - BEGIN~END 영역이 선택됨
+C-x n d		narrow-to-defun       - (특히 유용함)문단만 선택함 매우 유용함
+C-x n e		org-narrow-to-element - 문단만 선택함 매우 유용함
+C-x n n		narrow-to-region      - 선택한 영역만 됨 유용함
 C-x n p		narrow-to-page
-C-x n s		org-narrow-to-subtree
-C-x n w		widen
 
-C-x r C-@	point-to-register
-C-x r ESC	Prefix Command
-C-x r SPC	point-to-register
+C-x n s		org-narrow-to-subtree - 하위구조전부가 선택되어짐
+C-x n w		widen                 - [중요복귀기본]축소를 원상복귀함
+
+C-x r C-@	        point-to-register - 먼저저장(여러버퍼에서 빠르게 이동하는 데 유용함.)
+C-x r SPC	        point-to-register - 먼저저장(여러버퍼에서 빠르게 이동하는 데 유용함.)
+C-x r C-SPC	        point-to-register - 먼저저장(여러버퍼에서 빠르게 이동하는 데 유용함.)
+C-x r j		jump-to-register - 여러버퍼에서 빠르게 (이미저장된 것)이동하는 데 유용함.
+C-x r ESC	        Prefix Command
 C-x r +		increment-register
 C-x r M		bookmark-set-no-overwrite
-C-x r N		rectangle-number-lines
+C-x r N		rectangle-number-lines - 숫자로 N번호를 붙이는 기능임
+C-x r n		number-to-register
 C-x r b		bookmark-jump
-C-x r c		clear-rectangle
-C-x r d		delete-rectangle
+C-x r c		clear-rectangle - 여백으로 만들어 SPC로 바꾸어냄
+C-x r d		delete-rectangle - 일괄 kill
 C-x r f		frameset-to-register
-C-x r g		insert-register
+C-x r g		insert-register ; 등록된 값을 박스그대로 붙임; C-x SPC 불요함
 C-x r i		insert-register
-C-x r j		jump-to-register
 C-x r k		kill-rectangle
+C-x r y		yank-rectangle
 C-x r l		bookmark-bmenu-list
 C-x r m		bookmark-set
-C-x r n		number-to-register
-C-x r o		open-rectangle
-C-x r r		copy-rectangle-to-register
+C-x r o		open-rectangle - (선택박스영역을 빈칸으로 밀어냄)Indentation에사용좋음
+C-x r r		copy-rectangle-to-register ;선택된 박스를 저장함 나중에 붙이도록 저장됨
 C-x r s		copy-to-register
-C-x r t		string-rectangle
-C-x r w		window-configuration-to-register
 C-x r x		copy-to-register
-C-x r y		yank-rectangle
-C-x r C-SPC	point-to-register
+C-x r t		string-rectangle - VIM의 C-v와 유사한 기능을 보인다.
+C-x r w		window-configuration-to-register

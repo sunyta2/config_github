@@ -1,0 +1,30 @@
+[[http://emacsrocks.com/e13.html][Emacs Rocks! Episode 13: multiple-cursors]]
+
+
+ 실행되는 시간을 받는 것은 도움이 되지만 실제 사용은 연구가 필요하다.
+#+BEGIN_SRC emacs-lisp
+;; (package-install 'multiple-cursors)
+   (require 'multiple-cursors)
+(global-set-key (kbd "C-S-s C-S-s") 'mc/edit-lines)
+;When you want to add multiple cursors not based on continuous lines, but based on keywords in the buffer, use:
+
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+#+END_SRC
+
+#+RESULTS:
+: mc/mark-all-like-this
+
+ab123c
+* abcde
+* 
+* 
+
+123 121233abcgooge in the wayafecefsef
+123
+
+
+123
+
+

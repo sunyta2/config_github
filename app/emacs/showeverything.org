@@ -1,0 +1,19 @@
+#+STARTUP: showeverything
+;;#+STARTUP: lognoteclock-out showeverything
+;;#+STARTUP: lognoteclock-out showeverything
+;; 위의 명령이 모든 서랍까지 열어 준다.
+
+org-startup-folded
+(setq org-startup-folded 'showeverything) 꼭 실행할 것 장기저장의 방법을 찾을 것
+
+
+;;;#+STARTUP: lognoteclock-out showall nofold
+
+
+* test log unfolding
+:LOGBOOK:
+CLOCK: [2020-02-17 Mon 16:00]--[2020-02-17 Mon 16:02] =>  0:02
+CLOCK: [2020-02-17 Mon 15:52]--[2020-02-17 Mon 16:00] =>  0:08
+- good
+:END:
+

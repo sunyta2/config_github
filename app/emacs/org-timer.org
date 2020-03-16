@@ -1,0 +1,75 @@
+#+STARTUP: showeverything
+
+/emacs/org-timer.org
+* [org-timer-change-times-in-region, org-timer] start from in org
+:LOGBOOK:
+CLOCK: [2020-02-17 Mon 15:09]--[2020-02-17 Mon 15:49] =>  0:40
+- good
+:END:
+목적: 시작시간을 변경하는 법을 알면 Youtube의 동영상에 맞추어서 필요한 부분에서 시작하는 기록이 가능할 것임.
+여러명령중에서 찾아낼 것 [org-timer-change-times-in-region]로 발견됨 그러나 
+ 실행키는 
+C-u C-u C-c C-x . ;;드디어 발견함 함수는, 영역의 시간을 변경하는 계산을 한다.
+org-timer-start 	org-timer-stop
+org-timer 	org-timer-change-times-in-region 	org-timer-item
+org-timer-pause-or-continue 	org-timer-set-timer 	org-timer-show-remaining-time
+[[info:emacs:Top]]
+(find-file-other-window "info:emacs:Top")
+- 4:36:34 ::
+- 4:36:45 ::
+- 2:09:52 ::
+- 2:09:56 :: 2:10:01  2:10:03 2:10:05 
+
+ - M-return은 -를 시간스템프와 함께 출력한다!!!
+
+(org-timer 16 "1:50:38")
+	(org-timer-change-times-in-region '"1:20:30")
+#+BEGIN_SRC C-h f
+org-timer-change-times-in-region is an interactive autoloaded compiled
+Lisp function in ‘org-timer.el’.
+
+(org-timer-change-times-in-region BEG END DELTA)
+무슨 뜻인가? BEG END and DELTA??
+Change all h:mm:ss time in region by a DELTA.
+#+END_SRC
+
+(10:33:28 
+9:29:48 
+
+- 4:33:33 :: 
+3:34:55 
+3:34:58 3:34:59 
+- 3:03:03 :: 
+
+
+#+BEGIN_SRC C-h f org-timer
+org-timer is an interactive autoloaded compiled Lisp function in
+‘org-timer.el’.
+
+It is bound to C-c C-x ., <menu-bar> <Org> <Dates and Scheduling>
+<Insert Timer String>.
+
+(org-timer &optional RESTART NO-INSERT)
+
+Insert a H:MM:SS string from the timer into the buffer.
+The first time this command is used, the timer is started.
+
+When used with a ‘C-u’ prefix, force restarting the timer.
+
+When used with a ‘C-u C-u’ prefix, change all the timer strings
+in the region by a fixed amount.  This can be used to re-calibrate
+a timer that was not started at the correct moment.
+
+If NO-INSERT is non-nil, return the string instead of inserting
+it in the buffer.
+
+#+END_SRC
+
+
+
+
+* E04S02발견 M-RET로 쉽게 C-c C-x -를 대신함.
+  :LOGBOOK:
+  CLOCK: [2020-03-10 Tue 21:25]--[2020-03-10 Tue 21:28] =>  0:03
+  :END:
+0:00:58 0:00:00 

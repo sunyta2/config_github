@@ -1,0 +1,21 @@
+C-c C-s
+
+* vision and wish list
+
+
+app/m4.org
+
+** todo list to be make
+
+
+
+
+* method
+
+- 리스트를 목적에 맞게 변경하고 복구하는 것을 만들어 둔다. 
+(setq org-agenda-files '(
+			 "~/Music/mpv_files/mpv_files_list.org"
+			 "~/Desktop/aristotle.org"                ;file:~/Desktop/aristotle.org
+			 "~/config_github/app/emacs/03diary2020.org"
+                       "~/config_github/app/m4/readme.org"
+    ))

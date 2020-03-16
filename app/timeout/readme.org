@@ -1,0 +1,77 @@
+
+
+- timeout : [[info:coreutils#timeout%20invocation][info:coreutils#timeout invocation]] for use in mpv espeak while shell command 대발견!
+
+example: espeak/readme.org mpv/readme.org 참조할 것
+(start-process-shell-command "timeout 15m mpv Homer Iliad" nil 
+    (concat "timeout 15m "
+            "mpv --player-operation-mode=pseudo-gui " 
+            "~/Music/homer_rhythm/iliad01/line_010.mp4" )
+)
+
+
+(start-process-shell-command "timeout_mpv_above 15m mpv Homer Iliad" nil 
+    (concat "timeout 15m "
+            "mpv --player-operation-mode=pseudo-gui " 
+            "~/Music/homer_rhythm/iliad01/line_010.mp4" )
+)
+
+[[elisp:(start-process-shell-command%20"timeout_mpv_above%2015m%20mpv%20Homer%20Iliad"%20nil%20%20%20%20%20(concat%20"ps%20aux"%20"|%20grep%20ab-loop-b"%20"|%20awk%20'{print%20$2}'"%20"|%20xargs%20-I{}%20kill%20-9%20{}"%20))][kill by using concat]] bbg에서 사용함.
+
+(start-process-shell-command "timeout_mpv_above 15m mpv Homer Iliad" nil     (concat "ps aux" "| grep ab-loop-b" "| awk '{print $2}'" "| xargs -I{} kill -9 {}" ))
+
+;"echo hi; ps aux | grep ab-loop-b | awk '{print $2}' | xargs -I{} kill -9 {}")) nil nil 127)
+
+(eval-expression (quote (start-process-shell-command "kill by grep ab-loop-b" nil 
+
+(start-process-shell-command "timeout 1m Outwitting Devil excerpt" nil 
+    (concat "timeout 15s "
+            "mpv --player-operation-mode=pseudo-gui --speed=.75 "
+            "    --start=2:34:50 --ab-loop-a=2:34:56 --ab-loop-b=2:35:00 "
+            "\"$\(find ~/Music  -inum 6960041\)\"" )
+)
+
+
+$ timeout 15m mpv --player-operation-mode=pseudo-gui ../homer_rhythm/iliad01/line_009.mp4 &
+(start-process-shell-command "timeout 15m mpv Homer Iliad" nil "
+timeout 15m mpv --player-operation-mode=pseudo-gui ~/Music/homer_rhythm/iliad01/line_010.mp4
+")
+
+
+$ timeout 15m mpv --player-operation-mode=pseudo-gui ../homer_rhythm/iliad01/line_009.mp4 &
+(start-process-shell-command "timeout 5s mpv Homer Iliad" nil "
+timeout 12s mpv --player-operation-mode=pseudo-gui ~/Music/homer_rhythm/iliad01/line_010.mp4
+")
+
+
+
+espeak -v other/grc -s 100 -g 30 \"1\"
+
+
+(start-process-shell-command "espeak라틴희랍읽기" nil "espeak -v other/grc -s 100 -g 30 \"1\"")
+[[elisp:(start-process-shell-command "espeak라틴희랍읽기" nil "espeak -v other/grc -s 100 -g 30 \"1\"")]]
+
+$ timeout 20s mpv 1_greek_roman_heros_wings.mp4 # 성공적인 실행이 가능함을 확인함!
+* timeout 20s bash -c " "
+#+BEGIN_SRC sh :results silent
+
+timeout 20s bash -c "for i in {1..50}; do espeak -a 10 '여러문장실행의 우회법이 성공함'; sleep 2; done "
+   # 조건문이나 반복문의 전달을 위해서 bash -c를 사용해서 성공적으로 수행함
+
+#+END_SRC
+
+시작타임이 중요함 또는 파일경로명을 읽어서 음원을 재생하는 구조개발가능하게 됨 (뒷트래일은 substring으로 커버가능할 것으로 보인다.)
+명령앞부분
+    파일경로명
+명령뒷부분
+- [ ]  ch08 [[elisp:(bbg_pdf "-p 89")]] (bbg_mpv  "bbg_cd2_ch10_vts_05_1.mp4" "250" "1" "80"   
+       "--start=10:00 --ab-loop-a=10:00 --ab-loop-b=10:33 ")
+위의 명령은 아래의 요구를 불필요하게 만든다. 즉 변수를 전달하는 방식으로 묶어서 불필요한 substring을 불필요하게 만든다.
+#+BEGIN_SRC emacs-lisp :results silent
+;;; 사실상통일함.
+
+(start-process "timeout" nil "timeout" "60m" "mpv" "--speed=1" "--volume=80" "--player-operation-mode=pseudo-gui"
+"/home/thinkpad/Music/nicholas_youtube/latin/quidam, quaedam, quiddam-Zf4oJw1VRdA.mkv"
+"--start=3:30" "--ab-loop-a=3:30" "--ab-loop-b=4:03")
+; 간결한 완성!
+#+END_SRC 

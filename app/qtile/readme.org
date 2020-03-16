@@ -1,0 +1,127 @@
+
+강점을 비교함=> file:../wm_compare_youtube_note.org
+[[file:readme.org][stumpwm/readme]] , [[file:~/config_github/app/herbstluftwm/readme.org][herbstluftwm/readme]], [[file:~/config_github/app/xmonad/readme.org][xmonad/readme]] , [[file:~/config_github/app/qtile/readme.org][qtile/readme]] , [[file:~/config_github/app/dwm/readme.org][dwm/readme]] ,
+[[file:~/config_github/app/exwm/readme.org][exwm/readme]] , awesome, i3-gap
+
+(man "qtile")  # man mode
+
+qtile - 
+** 강점 (dwm과 비교하여서)
+- 기대함_최대강점: 멀티모니터프로젝터 실행시 자동으로 screen Swap기능이 우수함!
+- 파이썬을 배울수 있다는 강점!
+(C-S-r) 빠른 적용이 가능하다 file:config_arco1.py
+
+
+(음원재생workflow) zoomy모드로 음원을 실행된 것을 마우스커서의 일렁임만으로도 mod+tab으로 빠르게 이동함. 유용한 활성창으로 만들기 쉬운 구조를 만든다.
+
+약간 도움이 되는 것 상태줄에서 간단쉘명령문(클릭으로 여러목표실행하는것),포모도로가 가능함!
+** 미연구사항
+backto float into tile search need
+
+*** ipython과 연동되는 기능이 있다고 하는 듯 메뉴얼에서 언급되어 있음 연구필요함.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

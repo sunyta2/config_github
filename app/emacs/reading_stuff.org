@@ -1,0 +1,8 @@
+
+
+
+
+
+;; [[https://x86blog.com/emacs-the-100-extendable-text-editor/][Emacs – The 100% Extendable Text Editor – x86 Blog]]
+(async-shell-command "brave --incognito 'https://x86blog.com/emacs-the-100-extendable-text-editor/'")
+

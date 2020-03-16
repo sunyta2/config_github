@@ -1,0 +1,66 @@
+목표: <el {탭Tab키}>으로 구조를 완성한다.
+help:buffer-file-name 
+file:../../app/emacs/src_tab_org_structure_completion_template.org
+"/home/thinkpad/config_github/app/emacs/src_tab_org_structure_completion_template.org"
+
+help:org-try-structure-completion <= 이것이 탭을 누를때 발생하는 명령이다.
+[[info:emacs#Completion%20Example][info:emacs#Completion Example]] cf. help:auto-fill-mode
+
+[[elisp:(customize-group%20"completion")][elisp:(customize-group_"completion")]]
+[[elisp:(customize-group%20"structure")][elisp:(customize-group_"structure")]]
+
+(customize-apropos-options (quote ("org-agenda")))
+(customize-apropos-options '"structure")
+(customize-apropos-options  "structure")
+(customize-apropos-options (quote ("org structure")))
+
+(customize-browse) Tree구조 파악에 중요한 명령임 help:customize-browse 성과로 기록할 것
+C-u C-u M-: (buffer-file-name)
+emacs안에서 산다! 무엇이든 이맥스로 통합하려고 함.
+
+** help:customize-browse (customize-browse)
+
+Possible completions are:
+help:customize-apropos
+help:customize-apropos-faces
+help:customize-apropos-groups
+(customize-apropos-groups (quote ("structure")))   ;;좋은 실행지만 [    structure ] Search 클릭과 똑같은 것의 발굴요망
+                        - 발견하려함. 클릭부분을 structure로 하는 명령으로 간단히 기록하기 위해서
+(customize-apropos "structure")  ;; 발견함!!! help:customize-apropos
+
+help:customize-apropos-options
+(customize-apropos-options (quote ("structure")))
+(customize-apropos-options '"org structure")
+(customize-apropos-options  "structure")
+(customize-group  "buffer menu")
+(customize-group  "buffer menu")
+(looking-at org-outline-regexp) (looking-back "^\**") )))
+M-x avaM-x ava
+ help:customize-apropos ; 발견함!!!
+help:looking-at help:eval-expression
+help:customize-browse
+
+
+
+
+속성은 (키 . 가치) :키 "가치" 짝이다. file:../../emacs/key_value_pair_attribute_colon.org
+- key_value_pair_attribute_colon.org
+ATTRIBUTES are key-value pairs. file:key_value_pair_attribute_colon.org
+  - help:secrets-search-items
+  The keys are keyword symbols, starting with a :colon.  Example:
+(secrets-search-items "Tramp collection" :key_word_symbol "abc123")
+(secrets-search-items "Tramp collection" :user "joe")
+
+
+
+
+
+
+
+1
+2
+
+
+
+
+3

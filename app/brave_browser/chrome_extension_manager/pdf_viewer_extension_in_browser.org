@@ -1,0 +1,20 @@
+
+;; file:///home/thinkpad/Documents/ in brave --incognito
+(async-shell-command "brave --incognito 'file:///home/thinkpad/Documents/'")
+
+
+
+[[https://chrome.google.com/webstore/detail/recent-pdf/ihjgdammecebcjinfmllgniaeneabkdk][Recent PDF - Chrome Web Store]] 최근의 열어본 것을 쉽게 접근함. (중요도3/5 빈도 1/5)
+
+
+
+
+        [[chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/file:///home/thinkpad/Documents/python/python_for_unix_and_linux_system_administration.pdf][python_for_unix_and_linux_system_administration.pdf]]
+(async-shell-command "brave --incognito 'chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/file:///home/thinkpad/Documents/python/python_for_unix_and_linux_system_administration.pdf'")
+
+        [[chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/file:///home/thinkpad/Documents/eintr.pdf][eintr.pdf]]
+(async-shell-command "brave --incognito 'chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/file:///home/thinkpad/Documents/eintr.pdf'")
+- 주소가 이상해도 쉽게 브라우져로 통합해서 실행하는 것을 확인했음! -활용: 브라우져로 okular를 대체하는 임시효과를 준다는 강점.
+- [mate_pdf_translate!] 강점:mate를 사용해서 맥에서처럼 pdf의 내부문장을 번역기로 가능하게 함.
+~ /app/brave_browser/chrome_extension_manager/pdf_viewer_extension_in_browser.org
+- 연관처: okular brave_browser

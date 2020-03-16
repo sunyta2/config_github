@@ -1,0 +1,27 @@
+* [[https://www.youtube.com/watch?v=tEnnEhziLn8][Move Your Home Directory To A Second Drive - YouTube]]
+file:../../app/mount/readme.org 참조 
+#+BEGIN_SRC sh
+$ lsblk
+# gparted
+
+sudo mkdir /mnt/tmp
+sudo mount /dev/sdb1 /mnt/tmp
+
+$ sudo rsync -avx /home/ /mnt/tmp # 검증하고 rsync 실행할 중요명령구문임!
+$ sudo mount /dev/sdb1 /home
+$ sudo umount /home
+$ sudo umount -l /home
+
+$ rm -rf /home/*
+$ sudo rm -rf /home/*
+
+#fstab
+sudo blkid # UUDI=
+sudo vi /etc/fstab/
+UUID=1234567890 /home    ext4 defaults 0 2
+
+sudo reboot # 확인하는 것
+$ cat /proc/mounts
+$ mount -l
+
+#+END_SRC

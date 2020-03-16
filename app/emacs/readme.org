@@ -1,7 +1,9 @@
+#+STARTUP: showeverything indent
 #+TITLE: 强點에 集中하여 眞我로 통합을 추구함 app/emacs/readme.org
+#+Core_VALUE: For WHAT?, WHY, and Meta
+#+where_is_source_FILE: (find-file "~/config_github/app/readme.org")
 #+CREATOR: LEEJEONGPYO
-#+STARTUP: showeverything indent latexpreview
-
+###-*- coding: utf-8 -*-
 
 [[file:org_mode_study/agenda_view_org.org]]
 agenda C-c [ 리스트에 추가하는 방식을 연구함.
@@ -10,9 +12,25 @@ agenda C-c [ 리스트에 추가하는 방식을 연구함.
 상세한 검색은 (dired-other-window "~/config_github/app/emacs/spacemacs/analysis/kbd")
 
 * emacs공부의 필요성!
+
+** essential org
+:PROPERTIES:
+:Effort:   *
+:END:
+:LOGBOOK:
+CLOCK: [2020-02-17 Mon 20:50]--[2020-02-17 Mon 20:52] =>  0:02
+:END:
+- emacs/move.org [C-u C-u C-p/n/f/b]
+- [집중] 기억을 외부에 두는 것이 효과적이다 https://youtu.be/gDHE23vl9E0?t=72
+  - 작은 조각에 집중하고 달성에 성과를 느낀다. Focus! Here! & Now!
+  - [exocortex_develop] Dune- Frank Herbert - pragmatic thinking and learning Andy Hunt
+  - 다른 것에 신경을 쓰지 않아도 되는 놀라운 몰두력과 구조력!
 - 가장 경제적이며 통합적인 os가 범용적으로 이해하는 운영의 놀라운 공통성.(범Mind_해커의 무의식화가 핵심)
-	- 오직, 기초를 연마만을 할 수 있다.(Steve Jobs, AI...)
-	- divide & Conquer! 다양한 조각의 조립을 실행하는 마인드가 중요함.
+  - 오직, 기초를 연마만을 할 수 있다.(Steve Jobs, AI...)
+    # 기초의 essential_단련없이 발달은 없다! emacs/move.org
+    # 일단 이동의 기본방식을 잘 수집한다. 잘 단련된 기본을 바탕으로 발전을 쌓는다.
+
+  - divide & Conquer! 다양한 조각의 조립을 실행하는 마인드가 중요함.
 * emacs and stumpwm
 to think in emacs and stumpwm
 - 유용성: common-lisp를 Emacs에서 StumpWm으로 명령을 전송하는 것으로 lisp의 기초를 연마한다. 
@@ -40,16 +58,24 @@ spacemacs :!echo password | sudo -S make install
 - ipython을 열게하는 동영상과 그 명칭?? 기록해 둘 것.
 
 
-sudo save 가 가능한 것을 발견함. C-x C-f /sudo::/path/to/file 
-https://stackoverflow.com/questions/95631/open-a-file-with-su-sudo-inside-emacs
-
+- sudo save 가 가능한 것을 발견함. C-x C-f /sudo::/path/to/file 
+    (find-file-other-window "../sudo_gksudo/readme.org")
 
 
 * melpa and use-package in [[file:./melpa_package.org][]]
 ** transient_emacs
    DEADLINE: <2019-12-26 Thu 12:01> SCHEDULED: <2019-12-26 Thu 12:00>
 [[file:magit/readme.org::*transient%20file%20link]]
-
+* {linage} * super -> ** side -> *** stuff
+* [1_super_1]: 通合性 meta_method workflow emacs/readme.org::{linage}
+- /great_books/meta_thought.org
+** [2_side_2]: idea_practice: ./test_reading_stuff.org ./test_stuff/
+       - sible, /vim/readme.org
+*** [3_stuff_3]: simple_practice, dividen_note_making, etc. question? test develop
+        - ./test_stuff/
+#+BEGIN_SRC emacs-lisp
+(find-file-other-window "./test_stuff/readme.org")
+#+END_SRC
 * Why Emacs is Great! ./emacs_is_great.org 파일에 상세함.
 - 超高度通合性Emacs_[2020-02-12 Wed 14:08] 클릭가능![rgrep을]저장할 수 있음(놀람!). Why Emacs is Great! ./emacs_is_great.org
 

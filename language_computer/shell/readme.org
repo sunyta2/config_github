@@ -1,8 +1,16 @@
+-*- coding: utf-8 -*-
 #+STARTUP: showeverything indent
+#+TITLE: readme.org /shell/
+
+bash basic
+ info:bash#Top # Emacs의 놀라운 설명서기능이 내장되어있으므로 잘 확인하고 목록으로 만들어 노트로 기록할 것.
+ [[info:coreutils#Top]]
+info:screen#Top
 sh, bash, zsh in broswer bookmark
 
 sh , bash , zsh의 사용을 위한것
 각각의 파일이나 폴더위치
+
 #+BEGIN_SRC sh
 
 touch ./syntax_of_variable_in_sh.org

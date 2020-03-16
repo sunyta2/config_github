@@ -1,0 +1,67 @@
+[[elisp:(customize-browse)]] Tree구조 파악에 중요한 명령임 help:customize-browse 성과로 기록할 것
+- emacs안에서 산다! 무엇이든 이맥스로 통합하려고 함.
+C-u C-u M-: (buffer-file-name)" file:../../app/emacs/customize.org
+file:../../app/emacs/org_babel_load_file.org  file:../../app/emacs/src_tab_org_structure_completion_template.org
+file:../../app/emacs/info.org
+
+* search method
+help:customize-apropos
+(customize-apropos "process")   ;; word it work!
+(customize-apropos '("process" "org")) ;; list is work!!!
+  (customize-apropos (quote ("startup" "indent")) nil)   
+      ; <= M-x customize-apropos리턴 startup indent리턴 으로 수행하는 명령
+
+pdf emacs master.pdf p 72참조 apropos-value
+
+
+(customize-apropos-options (quote ("structure")))
+
+help:org-follow-link
+
+
+
+(customize-group 'org-id)
+(customize-group 'org-follow-link)
+
+(customize-group 'org-id)
+(customize-group 'org-follow-link)
+
+help:customize-browse (customize-browse)
+
+ help:customize-apropos ; 발견함!!!
+help:looking-at help:eval-expression
+
+
+help:looking-at help:eval-expression
+help:customize-browse
+
+help:customize-changed
+help:customize-changed-options
+help:customize-create-theme
+help:customize-customized
+help:customize-face
+help:customize-face-other-window
+help:customize-group
+help:customize-group-other-window
+help:customize-mark-as-set
+help:customize-mark-to-save
+help:customize-menu-create
+help:customize-mode
+help:customize-object
+help:customize-option
+symbol을 요구함 =>(customize-option structure)
+help:customize-option-other-window
+help:customize-package-emacs-version
+help:customize-push-and-save
+help:customize-read-group
+help:customize-rogue
+help:customize-save-customized
+help:customize-save-variable
+help:customize-saved
+help:customize-set-value
+help:customize-set-variable
+help:customize-themes
+help:customize-unsaved
+help:customize-variable
+help:customize-variable-other-window
+help:customize-version-lessp

@@ -1,0 +1,27 @@
+-*- coding: utf-8 -*-
+#+STARTUP: showeverything indent
+#+TITLE: syntax_of_function_in_sh.org /shell/
+
+
+
+
+
+
+
+
+
+
+* dwm의 머릿부분이 시작되는 것을 참고로 하면 깔끔할 것이다.
+** 연관 ~/.bin/start , app/awk/readme.org shell/variable~.org app/xrandr/rotate
+#+BEGIN_SRC sh
+function xsetroot_bar_info {
+	s_char='/'
+	bar_mem="$(free -h | awk '/^Mem:/ {print $3 $2}')"
+	bar_tmp="$(sensors | awk '/^fan/ {getline; print $2}')"
+	bar_total=" $bar_tmp $bar_mem $(battery)% $( date +'%F(%a%W/52)%p %R' )~ $i/15m "
+#bar_total=1
+}
+    # (find-file "~/.bin/start") :76: M-gM-g 76 C-m
+#+END_SRC
+** 활용처: rotate에서 깔끔하게 xrandr -q를 사용하여 이용하는 것에 적용할 것.
+    - 즉, 자동으로 이용하는 방식을 이용하는 것이 중요한 것이다.

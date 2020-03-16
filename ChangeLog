@@ -1,0 +1,11 @@
+2020-03-13  thinkpad  <thinkpad@msata045>
+
+	* app/emacs/dired.org: 
+
+2020-03-12  thinkpad  <thinkpad@msata045>
+
+	* app/emacs/dired.org: C-x v = => C-x 4 A 입력을 한 방식임.
+	diff-add-change-log-entries-other-window 나중에 commit을 수행할 경우,
+	반영되는 내용이 적용되는 지 실험으로 확인될 것임.
+	
+

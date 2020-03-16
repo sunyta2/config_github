@@ -1,0 +1,11 @@
+속성은 (키 . 가치) :키 "가치" 짝이다. file:../../emacs/key_value_pair_attribute_colon.org
+- TODO ( . ) 표기에 대한 elisp설명문과 자료를 수집해서 완전히 사용할 수 있게하는 것.
+
+
+
+- key_value_pair_attribute_colon.org
+ATTRIBUTES are key-value pairs. file:key_value_pair_attribute_colon.org
+  - help:secrets-search-items <= 발견장소!
+  The keys are keyword symbols, starting with a :colon.  Example:
+(secrets-search-items "Tramp collection" :key_word_symbol "abc123")
+(secrets-search-items "Tramp collection" :user "joe")

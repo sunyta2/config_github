@@ -1,0 +1,24 @@
+(open-dribble-file "dribble.txt")
+(find-file "dribble.txt")
+(open-dribble-file nil)
+Start writing all keyboard characters to a dribble file called FILE.
+If FILE is nil, close any open dribble file.
+The file will be closed when Emacs exits.
+
+Be aware that this records ALL characters you type!
+This may include sensitive information such as passwords.
+
+
+
+- (매우상세한) 키값 알아내기(C-u) C-x = 
+(describe-key (kbd "C-h m"))
+                  (kbd "C-h m") => "m" 
+
+
+
+
+
+
+
+
+

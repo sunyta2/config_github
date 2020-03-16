@@ -1,0 +1,24 @@
+
+* (auto-revert-mode) 읽기파일로 사용하면 매우 좋을 듯함 외부에서 변경되어도 영향을 바로 줄 수 있는 것으로 추정됨. 
+# C-x C-q 읽기 모드와 함께 사용하면 좋을 것임.
+auto-revert-mode is an interactive autoloaded compiled Lisp function
+in ‘autorevert.el’.
+
+(auto-revert-mode &optional ARG)
+
+Toggle reverting buffer when the file changes (Auto-Revert Mode).
+With a prefix argument ARG, enable Auto-Revert Mode if ARG is
+positive, and disable it otherwise.  If called from Lisp, enable
+the mode if ARG is omitted or nil.
+
+Auto-Revert Mode is a minor mode that affects only the current
+buffer.  When enabled, it reverts the buffer when the file on
+disk changes.
+
+When a buffer is reverted, a message is generated.  This can be
+suppressed by setting ‘auto-revert-verbose’ to nil.
+
+Use ‘global-auto-revert-mode’ to automatically revert all buffers.
+Use ‘auto-revert-tail-mode’ if you know that the file will only grow
+without being changed in the part that is already in the buffer.
+* 

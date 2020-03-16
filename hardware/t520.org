@@ -1,0 +1,14 @@
+hardware/t520.org
+
+ ~/config_github/hardware/storage/msata153_macos_high_sierra_10.13.2.org
+(find-file-other-window "storage/msata153_macos_high_sierra_10.13.2.org")
+
+
+
+
+
+
+~/config_github/hardware/storage/
+
+~/config_github/hardware/storage/msata045_arco.org
+~/config_github/hardware/storage/msata827_kde.org

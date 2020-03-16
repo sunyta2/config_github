@@ -1,5 +1,81 @@
 
 (원하는 도움말 기능을 바로 검색할 수 있을까?) 즉시 찾을 수 있도록 해서 유동성을 높인다.
+# M-x{C-h f} *mark 탭으로 여러명령의 목록을 확인할 수 있다.
+- [[info:emacs:Top]] 링커를 연결하는 것을 찾았음 더 정확히사용하려면 다른창으로 전달하는 것이 연구필요함.
+[놀라움!] C-u C-x C-e (describe-function 'describe-function) [놀라움!- 한줄 아래서 실행히 붙임]
+#("describe-function is an interactive autoloaded compiled Lisp function
+in ‘help-fns.el’.
+
+
+
+(apropos-command "region")
+(describe-variable 'path-separator)
+(describe-function 'bbg_mpv)
+(describe-key (kbd "C-h m"))
+                  (kbd "C-h m")
+(describe-mode)
+(help-for-help)
+
+
+
+
+It is bound to C-h f, <f1> f, <help> f, <menu-bar> <help-menu>
+<describe> <describe-function>.
+
+(describe-function FUNCTION)
+
+Display the full documentation of FUNCTION (a symbol).
+When called from lisp, FUNCTION may also be a function object." 74 85 (button (t) category help-function-def-button help-args (describe-function "/usr/share/emacs/26.3/lisp/help-fns.el")) 204 212 (face help-argument-name) 249 257 (face help-argument-name) 293 301 (face help-argument-name))
+
+
+
+
+
+[놀라움!] C-u C-x C-e 변수명칭을 변경해서 사용할 것 (describe-function 'describe-function)
+- 
+* 인접의 명령어 
+method to make easy: macro help : link(쉽게 변환하여서 클릭으로 사용을 편리하게 만드는 법)
+- 생산방법: [[file:kmacro.org::*macro%20help%20:%20link(%EC%89%BD%EA%B2%8C%20%EB%B3%80%ED%99%98%ED%95%98%EC%97%AC%EC%84%9C%20%ED%81%B4%EB%A6%AD%EC%9C%BC%EB%A1%9C%20%EC%82%AC%EC%9A%A9%EC%9D%84%20%ED%8E%B8%EB%A6%AC%ED%95%98%EA%B2%8C%20%EB%A7%8C%EB%93%9C%EB%8A%94%20%EB%B2%95)][macro help : link(쉽게 변환하여서 클릭으로 사용을 편리하게 만드는 법)]]
+
+- Possible completions are:
+help:describe-bindings
+help:describe-buffer-case-table
+help:describe-categories
+help:describe-char
+help:describe-character-set
+help:describe-coding-system
+help:describe-copying
+help:describe-current-coding-system
+help:describe-current-coding-system-briefly
+help:describe-current-display-table
+help:describe-distribution
+help:describe-face
+help:describe-font
+help:describe-fontset
+help:describe-function
+help:describe-gnu-project
+help:describe-input-method
+help:describe-key
+help:describe-key-briefly
+help:describe-language-environment
+help:describe-minor-mode
+help:describe-minor-mode-from-indicator
+help:describe-minor-mode-from-symbol
+help:describe-mode
+help:describe-no-warranty
+help:describe-package
+help:describe-prefix-bindings
+help:describe-specified-language-support
+help:describe-symbol
+help:describe-syntax
+help:describe-text-properties
+help:describe-theme
+help:describe-variable
+
+* (describe-function 'describe-function)
+It is bound to C-h f, <f1> f, <help> f, <menu-bar> <help-menu>
+Display the full documentation of FUNCTION (a symbol).
+When called from lisp, FUNCTION may also be a function object.
 
 
 (elisp-index-search "elisp")
@@ -26,6 +102,10 @@ Info-tagify 	Info-toc 	Info-top-node 	Info-undefined
 Info-up 	Info-validate 	Info-virtual-index
 
 * (Info-help) ;아래의 출력이 나오는 기본의 명령이다. 기초를 탄탄히 연구할 것.
+(info "(info) Help")     기본기에 통달할 것!
+ info:info#Help 
+(Info-help)
+
   - Note Info mode shortcut by  ?Key Pressing on [2020-01-03 Fri 11:56] \\
     Info mode shortcut by  ?Key Pressing
     n move to the "next" node of this node.
@@ -160,79 +240,8 @@ C-M-i		backward-button
 
 
 
-* ㅁ
+* 
 
 
 
 
-
-프로세스의 실행으로 저장해 둘 내용임 (C-h f shell-command RET로 찾아냄)
-start-process is a compiled Lisp function in ‘subr.el’.
-
-(start-process NAME BUFFER PROGRAM &rest PROGRAM-ARGS)
-
-Start a program in a subprocess.  Return the process object for it.
-NAME is name for process.  It is modified if necessary to make it unique.
-BUFFER is the buffer (or buffer name) to associate with the process.
-
-Process output (both standard output and standard error streams)
-goes at end of BUFFER, unless you specify a filter function to
-handle the output.  BUFFER may also be nil, meaning that this
-process is not associated with any buffer.
-
-PROGRAM is the program file name.  It is searched for in ‘exec-path’
-(which see).  If nil, just associate a pty with the buffer.  Remaining
-arguments PROGRAM-ARGS are strings to give program as arguments.
-
-If you want to separate standard output from standard error, use
-‘make-process’ or invoke the command through a shell and redirect
-one of them using the shell syntax.
-
-The process runs in ‘default-directory’ if that is local (as
-determined by ‘unhandled-file-name-directory’), or "~"
-otherwise.  If you want to run a process in a remote directory
-use ‘start-file-process’.
-
-[back]
-
-
-
-call-process is a built-in function in ‘C source code’.
-
-(call-process PROGRAM &optional INFILE DESTINATION DISPLAY &rest ARGS)
-
-Call PROGRAM synchronously in separate process.
-The remaining arguments are optional.
-The program’s input comes from file INFILE (nil means ‘null-device’).
-
-Third argument DESTINATION specifies how to handle program’s output.
-If DESTINATION is a buffer, or t that stands for the current buffer,
- it means insert output in that buffer before point.
-If DESTINATION is nil, it means discard output; 0 means discard
- and don’t wait for the program to terminate.
-If DESTINATION is ‘(:file FILE)’, where FILE is a file name string,
- it means that output should be written to that file (if the file
- already exists it is overwritten).
-DESTINATION can also have the form (REAL-BUFFER STDERR-FILE); in that case,
- REAL-BUFFER says what to do with standard output, as above,
- while STDERR-FILE says what to do with standard error in the child.
- STDERR-FILE may be nil (discard standard error output),
- t (mix it with ordinary output), or a file name string.
-
-Fourth arg DISPLAY non-nil means redisplay buffer as output is inserted.
-Remaining arguments ARGS are strings passed as command arguments to PROGRAM.
-
-If executable PROGRAM can’t be found as an executable, ‘call-process’
-signals a Lisp error.  ‘call-process’ reports errors in execution of
-the program only through its return and output.
-
-If DESTINATION is 0, ‘call-process’ returns immediately with value nil.
-Otherwise it waits for PROGRAM to terminate
-and returns a numeric exit status or a signal description string.
-If you quit, the process is killed with SIGINT, or SIGKILL if you quit again.
-
-The process runs in ‘default-directory’ if that is local (as
-determined by ‘unhandled-file-name-directory’), or "~" otherwise.  If
-you want to run a process in a remote directory use ‘process-file’.
-
-[back]

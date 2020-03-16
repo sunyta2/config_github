@@ -1,0 +1,26 @@
+#+원본위치:  "/home/thinkpad/config_github/app/ls_inode_fs/ln.org"
+# 링크위치1: "/home/thinkpad/config_github/app/stumpwm/_move_ln_r_to_qtile.org"
+    "/home/thinkpad/config_github/app/qtile/_move_ln_r_to_qtile.org"
+# 참여작전: 
+        [ [[*%EC%9C%A0%EC%9A%A9%ED%95%9C ln %EB%AA%85%EB%A0%B9][* 유용한 ln 명령]] ]
+ 
+(man "ln")
+
+Y 사용중인 것(dired에서 ln -r과 동일할 것으로 추측함.) help:dired-do-relsymlink
+ln -fsr TARGET LINK (man "ln") 
+(buffer-file-name)
+
+
+
+
+***** 유용한 ln 명령 
+    M-! ln -fsr ./ln.org ../stumpwm/_move_ln_r_to_qtile.org
+#+작전: 통괄자 상위원리 
+#+ln_보조:
+작전참여:
+작전보조:
+작전로그:
+작전경쟁:
+
+
+

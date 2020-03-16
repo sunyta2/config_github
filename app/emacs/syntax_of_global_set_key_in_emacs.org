@@ -1,0 +1,14 @@
+
+* 람다함수를 이용하여 여러명령을 수행함
+#+BEGIN_SRC emacs-lisp
+;; 람다를 이용하면 함수를 임시로 생성해서 저장할 수 있다
+    ;; M-d를 변경하는 것을 연구하려했음.
+(global-set-key [24 C-backspace] ; C-x C-backspace
+                (lambda () (interactive)
+                  (save-excursion
+                    (backward-word)
+                    (kill-word 1)
+                    (yank))))
+#+END_SRC
+
+** 다중함수를 실행하는 방법이 있었음 (prgn ~~~~) ?

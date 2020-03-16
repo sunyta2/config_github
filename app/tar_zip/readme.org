@@ -1,4 +1,13 @@
 
+** TODO 
+   [2020-03-04 Wed]
+info:tar#Top
+ info:zcat
+ info:zdiff
+ info:zforce
+ info:zgrep
+ info:zmore
+
 #+ TITLE: tar zip의 사용법에 관하여.
 
 

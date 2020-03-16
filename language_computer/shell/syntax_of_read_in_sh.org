@@ -1,0 +1,11 @@
+-*- coding: utf-8 -*-
+#+STARTUP: showeverything indent
+#+TITLE: syntax_of_read_in_sh.org /shell/
+
+
+- 변수를 읽어들여서 변수로 만드는 것
+- 변수를 줄별로 읽어들이는 법
+- 반복하는 법
+
+- 사용처: espeak/~ mpv/_ << list.txt
+    - 중복되더라도 이곳에도 수집해 둘 것.

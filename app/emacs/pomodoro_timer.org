@@ -1,0 +1,45 @@
+
+
+#+BEGIN_SRC emacs-lisp
+  (defun pomodoro ()
+  (interactive)
+  (run-at-time (* 25 60) nil (lambda ()
+		  (message "Time's up")
+		  (switch-to-buffer "*Messages*"))))
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+  (setq pomodoro-file "~/config_github/app/emacs/.pomodoro_test.org")
+
+  (defun pomodoro ()
+  (interactive)
+  (run-at-time (* 25 60) nil (lambda ()
+		  (message "Time's up")
+		  (switch-to-buffer "*Messages*"))))
+
+  ;; read the current counter form the file
+  (with-temp-buffer
+    (insert-file-contents pomodoro-file)
+    (buffer-string))
+
+  ;; update eh counter in the file
+#+END_SRC
+
+
+#+BEGIN_SRC emacs-lisp
+(setq pomodoro-file "~/config_github/app/emacs/.pomodoro_test.org")
+
+(defun pomodoro ()
+(interactive)
+(run-at-time (* 25 60) nil (lambda ()
+                (message "Time's up")
+		(switch-to-buffer "*Messages*"))))
+
+;; read the current counter form the file
+(string-to-number (with-temp-buffer
+       (insert-file-contents pomodoro-file)
+       (buffer-substring-no-properties (buffer-end -1) (buffer-end 1))))
+
+;; update eh counter in the file
+#+END_SRC
+

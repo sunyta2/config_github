@@ -1,0 +1,1 @@
+(dired-jump 3 "~/.emacs.d/history")

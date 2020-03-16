@@ -1,0 +1,4 @@
+* trainner in haskel
+** TODO in here
+test
+

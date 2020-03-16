@@ -1,0 +1,20 @@
+
+dash
+hydra
+ivy
+swiper
+popup
+alpha
+CM() transparency-increase
+(info "(elisp) Top")
+
+
+(info "(elisp)Printed Representation")
+(info "(elisp)Comments")
+(info "(elisp)Programming Types")
+(info "(elisp)Editing Types")
+(info "(elisp)Circular Objectse")
+(info "(elisp)Type Predicates")
+(info "(elisp)Equality Predicates")
+
+(elisp) Primitive Function Type

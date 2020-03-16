@@ -1,0 +1,14 @@
+
+
+- 일단 한 곳에 저장해서 몰아볼것.
+방법을 수집
+file:storage/_1_storage_index.org
+
+물리적자료수집 처리방법
+- 어떤 머신에서 어떻게 처리하는 것
+   일단 t520을 arch로 부팅해서 두개의 하드를 교환으로 정리하는 법이 유력함.
+    temp로 적색의 mgtag와 arch os
+    arch 용량부터 부담을 덜어 줄 것.
+
+위에 rsync사용을 참조하여 명령문을 찾아볼것
+$ sudo rsync -avx /home/ /mnt/tmp # 검증하고 rsync 실행할 중요명령구문임! in storage/home~.org 빈 하드 두대로 일단 돌려볼것.

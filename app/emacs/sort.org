@@ -1,0 +1,90 @@
+
+
+
+** quick-sort 
+#+BEGIN_SRC emacs-lisp
+  (defun qs (list)
+    "Non-destructively sort the
+  elements of `list' using quicksort."
+    (if (null list)
+	'()
+      (let* ((pivot (car list))
+	     (rest (cdr list))
+	     (lesser (remove-if-not
+		      (lambda (x) (<= x pivot)) rest))
+	     (reater (remove-if-not
+		      (lambda (x) (> x pivot)) rest)))
+	(append (qs lesser) (list pivot) (qs greater)))))
+  ;; (qs '(3 5 7 8 4 2 5 7 9 0 0 8 4 6))
+  (qs '(3 5 7 8 4 2 5 7 9 0 0 8 4 6))
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+  (global-set-key (kbd "M-#" 'sort-lines))
+
+  major-mode
+
+  (add-hook 'c-mode-common-hook
+	    (lambda ()
+	      (local-set-key (kbd "<f5>") 'recompile)))
+#+END_SRC
+
+
+#+BEGIN_SRC emacs-lisp
+  ((lambda (x) (* x x x)) 5)
+  ;; Anonymous functions
+  (fset 'cube (lambda (x) (* x x x)))
+  (setq cube "foo")
+#+END_SRC
+
+
+#+BEGIN_SRC elisp
+  ;; Recursion
+  (defun factorial (n)
+    (if (< n 1)
+	1
+      (* n (factorial (- n 1)))))
+  (factorial 5)
+#+END_SRC
+
+#+RESULTS:
+: 120
+
+#+BEGIN_SRC emacs-lisp
+;; Conditionals
+
+  (when (= (+2 1) 3)
+   (message "good 3"))
+
+  (defun evens-or-odds (n)
+    (if (= 0 (% n 2))
+	"even!"
+      "odd!"))
+
+  (evens-or-odds 4)
+  (evens-or-odds 3)
+
+
+  (defun pick-a-word (n)
+    (cond
+     ((= n 1) "bulouser")
+     ((= n 2) "boul")
+     ((= n 3) "be")
+     (t "gazebo!")))
+
+  (pick-a-word 2)
+  (pick-a-word "foo!")
+  (pick-a-word -72)
+
+#+END_SRC
+
+
+
+#+BEGIN_SRC emacs-lisp
+  (setq my-list '(foo bar baz))
+
+  (let ((a 1)
+	(b 5))
+    (format "a is %d and b is %d" a b))
+
+#+END_SRC

@@ -1,3 +1,28 @@
+#+STARTUP: showeverything indent
+ssh + eshell,term + emacs/start_process_shell_command.org + ssh
+=> lfs설치노트극대화 기대함
+
+* {linage} * super -> ** side -> *** stuff
+* [1_super_1]: 通合性 meta_method workflow emacs/readme.org::{linage}
+- /great_books/meta_thought.org
+** [2_side_2]: idea_practice: ./test_reading_stuff.org ./test_stuff/
+       - sible, /vim/readme.org
+*** [3_stuff_3]: simple_practice, dividen_note_making, etc. question? test develop
+        - ./test_stuff/
+#+BEGIN_SRC emacs-lisp
+(find-file-other-window "./test_stuff/readme.org")
+#+END_SRC
+
+* {linage} * super -> ** side -> *** stuff
+* [1_super_1]: 通合性 meta_method workflow emacs/readme.org::{linage}
+- /great_books/meta_thought.org
+** [2_side_2]: idea_practice: ./test_reading_stuff.org ./test_stuff/
+       - sible, /vim/readme.org
+*** [3_stuff_3]: simple_practice, dividen_note_making, etc. question? test develop
+        - ./test_stuff/
+#+BEGIN_SRC emacs-lisp
+(find-file-other-window "./test_stuff/readme.org")
+#+END_SRC
 
 
 * to study LFS

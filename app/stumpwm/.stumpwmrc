@@ -1,0 +1,262 @@
+;;; (async-shell-command "ln -fs ~/config_github/app/stumpwm/.stumpwmrc ~/.stumpwmrc")
+; (dired "~/config_github/app/qtile/")
+;         # (dired "~/.config/qtile/")
+
+;;(setf *mouse-focus-policy* :click)
+(setf *mouse-focus-policy* :sloppy) ;; 그냥 마우스 포인터의 위치 변경만으로 이동되는 것이 우선함.
+;;(setf *mouse-focus-policy* :ignore) ;;강점-다른창의 키입력이 많이 차단되는 효과로 안정적인 입력이 가능하다.
+;(define-key *root-map* (kbd "C-r") "exec rofi -show") ;; dwm과 달리 창의 이동이 완전히 자유롭다.
+(define-key *root-map* (kbd "C-r") "exec rofi -combi,run -show combi") ;; dwm과 달리 창의 이동이 완전히 자유롭다.
+
+;; 기본설정에서 필요해서 변경한 내용
+(define-key *root-map* (kbd "C-c") "exec urxvt") ;; urxvt로 변경함.
+(define-key *root-map* (kbd "c") "exec urxvt") ;; urxvt로 변경함.
+;(define-key *root-map* (kbd "C-e") (concat "emacs -Q -lw " (getenv "$HOME") "/config_github/app/emacs/shell_emacs/emacsQ_load.el") ;; emacsQ
+;(define-key *root-map* (kbd "e") (concat "exec Exec=emacs -Q -l " (getenv "$HOME") "/config_github/app/emacs/shell_emacs/emacsQ_load.el") ;; emacsQ
+;; 
+(define-key *root-map* (kbd "e") "emacs -Q -l '/home/thinkpad/config_github/app/emacs/shell_emacs/emacsQ_load.el'")
+(define-key *root-map* (kbd "C-e") "emacs -Q -l 'home/thinkpad/config_github/app/emacs/shell_emacs/emacsQ_load.el")
+
+;배경화면의 설정
+;(run-shell-command	(concat "feh --image-bg #428bdd --bg-max " (getenv "$HOME") "/config_github/pictures_sync/aristotle_bust1.jpg")
+(run-shell-command	"feh --image-bg '#428bdd' --bg-center /home/thinkpad/config_github/pictures_sync/wanderer_above_the_sea_of_fog.jpg")
+;(run-shell-command	"feh --image-bg #427bdd --bg-max $HOME/config_github/pictures_sync/buddha_all.png")
+(run-shell-command	"setxkbmap -option ''")
+
+
+
+(setf *window-format* "%m%n%s%c")
+(setf *screen-mode-line-format* (list "[^B%n^b] %W^>%d"))
+
+(setf *time-modeline-string* "%a %b %e %k:%M")
+
+(setf *mode-line-timeout* 2)
+(enable-mode-line (current-screen) (current-head) t)
+
+;;(define-key *top-map* (kbd "C-M-Left") "exec bbq :prev")
+
+
+
+
+
+;[cfg/.stumpwmrc at master · lepisma/cfg](https://github.com/lepisma/cfg/blob/master/stumpwm/.stumpwmrc) 에서 발췌
+;; Programs
+;(run-shell-command "polybar screen --reload")
+;(run-shell-command "nm-applet")
+(run-shell-command "dunst")
+;(run-shell-command "redshift")
+;(run-shell-command "gnome-encfs-manager")
+;(run-shell-command "electrum")
+;(run-shell-command "rambox")
+;(run-shell-command "megasync")
+;(run-shell-command "syncthing-gtk -m")
+;(run-shell-command "kdeconnect-indicator")
+;(run-shell-command "pulseeffects --gapplication-service")
+;(run-shell-command "patchwork")
+(run-shell-command "compton")
+;;;(run-shell-command "xcompmgr")
+
+
+(defvar *toggle-map* (make-sparse-keymap))
+(define-key *root-map* (kbd "t") '*toggle-map*)
+(define-key *toggle-map* (kbd "g") "toggle-gaps")
+(define-key *toggle-map* (kbd "f") "slop-this")
+(define-key *toggle-map* (kbd "u") "unfloat-this")
+(define-key *toggle-map* (kbd "a") "toggle-always-show")
+(define-key *toggle-map* (kbd "t") "toggle-always-on-top")
+
+
+(define-key *top-map* (kbd "XF86Launch8") "lower-brightness")
+(define-key *top-map* (kbd "XF86Launch9") "raise-brightness")
+
+(define-key *top-map* (kbd "XF86MonBrightnessUp") "raise-brightness")
+(define-key *top-map* (kbd "XF86MonBrightnessDown") "lower-brightness")
+
+(define-key *top-map* (kbd "XF86AudioLowerVolume") "amixer-Master-5-")
+(define-key *top-map* (kbd "XF86AudioRaiseVolume") "amixer-Master-5+")
+(define-key *top-map* (kbd "XF86AudioMute") "amixer-Master-toggle")
+
+
+
+;;
+;;(defvar *default-group-name* "Default"
+ ;; "The name of the default group.")
+(setf *default-group-name* "[1] StumpWM_Default")
+(grename "g1_StumpWm")
+;(set-fg-color color)
+;(set-bg-color color)
+(set-msg-border-width 6 ) ;; 기본값이 5였음
+(set-border-color "orange" ) ;;
+
+
+;(setf *message-window-padding* 12)
+
+(print *message-window-padding*) ;; 기본값이 5였음
+(setf *message-window-padding* 12)
+
+
+(setf *message-window-gravity* :center)
+(setf *input-window-gravity* :center)
+
+
+(setf *input-window-gravity* :center)
+;*input-window-gravity*
+;Variable: *input-window-gravity*
+;This variable controls where the input window appears. The following are valid values.
+
+;:top-left
+;:top-right
+;:bottom-left
+;:bottom-right
+;:center
+;:top
+;:left
+;:right
+;:bottom
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+; set the border color for focused windows
+      (set-focus-color "orange")  ; `white' by default
+(set-float-focus-color "white")
+(set-float-unfocus-color "blue")
+      (set-unfocus-color "grey")
+
+;(set-unfocus-color "palegreen3")
+;(run-commands "loadrc") ;;;로딩의 명령어... 잘 로딩하는 것을 이 파일의 모든 것을 실행함.
+(define-key *root-map* (kbd "C-S-SPC")
+  "toggle-always-on-top")
+
+
+
+;(defcommand toggle-always-on-top-with-float-on-top () ()
+;  "Toggle whether the current window always appears over other windows.
+;The order windows are added to this list determines priority.;
+;직접계량해봄.https://github.com/stumpwm/stumpwm/blob/master/window.lisp 를 1274줄 참조함
+;dwm과 동일하게 super+shift+space로 인식을 동일하게 하는 것이 주요함."
+;  (let ((w (current-window))
+;        (windows (group-on-top-windows (current-group))))
+;    (when w
+;      (if (find w windows)
+;          ((setf (group-on-top-windows (current-group)) (remove w windows));
+;	   (run-commands "toggle-always-on-top" "unfloat-this");
+;	                                                                   )
+;          ((push (current-window) (group-on-top-windows (current-group)))
+;	   (run-commands "toggle-always-on-top"  "float-this")
+;	  								   )
+;	  	))))
+
+
+(define-key *root-map* (kbd "s-S-SPC")
+       "toggle-always-on-top")
+       ;"toggle-always-on-top-with-float-on-top")
+
+
+
+;(defun float_on_top ()
+;  (run-commands "toggle-always-on-top"  "float-this")
+;)
+;(defun unfloat_on_top ()
+;  (run-commands "toggle-always-on-top" "unfloat-this")
+;)
+;(define-key *root-map* (kbd "s-S-SPC")
+;                                       "float_on_top")
+;(define-key *root-map* (kbd "s-SPC")
+;                                     "unfloat_on_top")
+
+
+;(define-key *root-map* (kbd "C-d")
+;  "exec dmenu_run -i -b -p \"run command:\"")
+
+
+;;; 생각난 워크플로우
+;; C-t M-t 로 원하는 위치에서 필요한 2개의 창을 불러내서 총6개정도를 관리하는 기법
+;; C-t f #숫자 로 이동함 C-t C-#로 당김.
+
+;; (run-commands "toggle-always-on-top")
+;; (run-commands "float-this") ;; CMD즉Super키로 크기조절은 물론이며 이동도 가능함.
+;; (run-commands "unfloat-this")
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; 
+
+
+;;(setf *screen-mode-line-format* (list "[^B%n^b] %W^>%d"))
+;; create the other groups3
+
+(run-commands "grename 1"
+	      "run-shell-command emacs -Q -l /home/thinkpad/config_github/app/emacs/shell_emacs/emacsQ_load.el"
+	      "run-shell-command konsole"
+	      "gnew 2"
+	      "run-shell-command okular /home/thinkpad/Documents/stumpwm-git.pdf"
+	      "gnew 3"
+	      "gnew 4"
+	      "run-shell-command dolphin"
+	      "gnewbg 5"
+	      "gnewbg 6"
+	      "gnewbg 7"
+	      "gnewbg 8"
+	      "gnewbg 9"
+	      "gselect 1"
+	      );(fnext)
+;; (grename "1")
+;; (run-commands "gnewbg 2" "gnewbg 3" "gnewbg 4" "gnewbg 5" "gnewbg 6");(fnext)
+
+;; (run-shell-command "emacs -Q -l '/home/thinkpad/config_github/app/emacs/shell_emacs/emacsQ_load.el'")
+;; (gnext)
+;; (run-shell-command "okular /home/thinkpad/Documents/stumpwm-git.pdf")
+;; (gnext)
+;; (run-shell-command "konsole")
+;; (gnext)
+;; (run-shell-command "dolphin")
+
+;;(run-commands "gnewbg 2");(fnext)
+;;(run-commands "gnewbg 3")
+;;(run-commands "gnewbg 4")
+;;(run-commands "gnewbg 5")
+;;(run-commands "gnewbg 6")
+
+;(restore-from-file "~/config_github/app/stumpwm/LAYOUT/LAYOUT3.el")
+;;(run-shell-command "okular -p 36 '' &>/dev/null &")
+;;(run-shell-command "EXECUTE_LAYOUT1.sh")
+;;;;;; (find-file-other-window "~/config_github/app/stumpwm/LAYOUT/")
+
+;(restore-from-file "~/config_github/app/stumpwm/LAYOUT/LAYOUT2.el")
+
+;(gnew "2")
+(gnext)
+;;(run-shell-command "sleep3; brave; sleep 5")
+
+   ;;  (grename "g2_Emacsq")
+
+;(run-commands "gnewbg 3")
+;(gnext)
+					;(gnew "3")
+;(run-shell-command "~/config_github/app/stumpwm/LAYOUT/LAYOUT3.sh")
+;;  (grename "g3_Chromium")
+
+;(gnew "4")
+;(gnext)
+;(restore-from-file "~/config_github/app/stumpwm/LAYOUT/LAYOUT1.el")
+;;  (grename "g4_mpv_Dolphin")
+;(gnew "5")
+
+					;(run-shell-command "dolphin")
+;(restore-from-file "~/config_github/app/stumpwm/LAYOUT/LAYOUT2.el")
+
+
+;(gnew "6")
+;(gnext)
+;(gnext)
+;(run-commands "gnewbg 6")
+
+;(restore-from-file "~/config_github/app/stumpwm/LAYOUT/LAYOUT3.el")
+;(run-shell-command "dolphin")
+;; (run-commands "gnewbg Other")
+
+
+
+;;(run-commands "gnewbg 6" "restore-from-file \"~/config_github/app/stumpwm/LAYOUT/LAYOUT2.el\"" )

@@ -10,6 +10,7 @@ org-babel-execute:elisp is an alias for ‘org-babel-execute:emacs-lisp’ in �
 Execute a block of emacs-lisp code with Babel.
 
 
+help:org-babel-load-languages
 
 #+BEGIN_SRC elisp :results output
 (print org-babel-load-languages)

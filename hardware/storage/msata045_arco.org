@@ -1,0 +1,17 @@
+install 
+# KDE # use krfb(Desktop Sharing)
+
+kde 
+# KRDC(KDE Remote Desktop Client) in Arco 
+gksudo gedit /etc/X11/xorg.conf
+(in GNOME) or
+kdesudo kate /etc/X11/xorg.conf
+(in KDE)
+
+
+file:possible_in_arco.org]]
+
+* KRDC(KDE Remote Desktop Client) in Arco 
+vnc://thinkpad@192.168.1.3 # KDE # use krfb(Desktop Sharing)
+vnc://thinkpad@192.168.1.4 # to macosx
+[[file:possible_in_arco.org]]

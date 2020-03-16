@@ -1,8 +1,23 @@
+#+STARTUP: showeverything indent
 책은 위대한 책이라야 한다.
-
-
-
  개발 자료 맨탈 중력장의 힘 Reminder (find-file "~/config_github/great_books/mental_reminder.org")
+
+* {linage} * super -> ** side -> *** stuff
+* [1_super_1]: 通合性 meta_method workflow emacs/readme.org::{linage}
+- /great_books/meta_thought.org
+** [2_side_2]: idea_practice: ./test_reading_stuff.org ./test_stuff/
+       - sible, /vim/readme.org
+*** [3_stuff_3]: simple_practice, dividen_note_making, etc. question? test develop
+        - ./test_stuff/
+#+BEGIN_SRC emacs-lisp
+(find-file-other-window "./test_stuff/readme.org")
+#+END_SRC
+
+
+
+
+
+
 
 * 위대한 아이디어를 담은 책을 읽는다.
 
@@ -19,3 +34,9 @@ bellumgallicum_02_caesar_64kb.mp3                                               
 bellumgallicum_03_caesar_64kb.mp3                                                                                   100% 9300KB  11.1MB/s   00:00    
 
 * bellumgallicum_caesar (find-file "~/config_github/great_books/caesar/bellum_gallicum/readme.org")
+
+
+* cf, 자료와 사전정보 Stumpwm
+** [WordDisk_간단좋은사전Site] [[https://worddisk.com/wiki/StumpWM/][Reading | StumpWM]]
+; 다른 단어검색도 좋을 것임.
+ ,,

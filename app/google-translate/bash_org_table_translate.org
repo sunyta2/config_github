@@ -2,7 +2,7 @@
 
 
 
--*- mode: org; org-confirm-babel-evaluate: nil; -*-
+# -*- mode: org; org-confirm-babel-evaluate: nil; -*-
 
 # Uses translate from https://pypi.python.org/pypi/translate
 # pip install translate

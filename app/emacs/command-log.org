@@ -1,0 +1,3 @@
+
+
+ [[https://www.youtube.com/watch?v=FJq__bBi0nI][Emacs Doom E16: Org Mode, Marking Tasks with Tags - YouTube]]

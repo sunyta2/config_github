@@ -1,0 +1,26 @@
+
+취지: 어떻게 리스트목록을 보고 그것을 알맞게 조정할 수 있을까?
+상황별로 변경가능한 바벨목록을 만드는 것이 가능하면 좋을 것이다.
+
+help:org-agenda-files
+(describe-variable 'org-agenda-files)
+
+(setq org-agenda-files '(
+    "~/Music/mpv_files/mpv_files_list.org" 
+    "~/config_github/app/emacs/03diary2020.org"
+))
+
+
+
+
+
+
+help:org-agenda-list
+org-agenda-list-stuck-projects
+help:org-edit-agenda-file-list
+help:org-agenda-files
+Hide Org Agenda Files: [Value Menu] Store list in a file
+: ~/.agenda_files
+(find-file-other-window "~/.agenda_files")
+
+

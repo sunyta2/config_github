@@ -1,0 +1,229 @@
+ - 성공한 명령문-문장 [2020-03-14 Sat 13:32] espek timeout 25 and while true ALL in espeak/readme.org
+[[elisp:(start-process-shell-command%20"espeak%EB%9D%BC%ED%8B%B4%ED%9D%AC%EB%9E%8D%EC%9D%BD%EA%B8%B0"%20nil%20%0A(concat%20"timeout%2025m%20echo%20\"process%20NAME:%20espeak_timeout_25m\";"%0A"%20string=\""%20(buffer-substring-no-properties%20(+%20(line-beginning-position%202)%206)%20(line-end-position%202))%20"\";"%0A"%20string2=\""%20(buffer-substring-no-properties%20(line-beginning-position%203)%20(line-end-position%203))%20"\";"%0A"timeout%2025m%20bash%20-c%20\"while%20true;%20"%0A"%20do%20espeak%20-a%2030%20-g%2060%20-s%20100%20-v%20other/grc%20\\\"$string\\\";%20sleep%203;"%0A"%20%20%20%20espeak%20-a%2030%20-g%2060%20-s%20120%20\\\"$string2\\\";%20sleep%203;"%0A"%20%20%20espeak%20-a%2030%20-g%2060%20-s%20100%20-v%20other/grc%20\\\"$string\\\";%20sleep%209;"%0A"%20done;%20echo%20\\\"process%20NAME:%20espeak_timeout_25m\\\"%20\""%0A))][elisp:(TIMEOUT 25m espeak_Below=grc+en)]]   [[elisp:(start-process-shell-command%20"kill%20using%20pipe%20BY%20using%20concat%20CMD!%20in%20timeout"%20nil%20(concat%20"ps%20aux"%20"|%20grep%20espeak_timeout_25m"%20"|%20awk%20'{print%20$2}'"%20"|%20xargs%20-I{}%20kill%20-9%20{}"))][elisp:(kill espeak_timeout_25m)]]  ;; 성공적인 정지력!!!
+- [ ] δὲ 그리고 | μάλιστα 대부분
+사랑한다 진리의 나여!
+
+[[elisp:(start-process-shell-command%20"espeak%EB%9D%BC%ED%8B%B4%ED%9D%AC%EB%9E%8D%EC%9D%BD%EA%B8%B0"%20nil%20%0A(concat%20"timeout%2025m%20echo%20\"process%20NAME:%20espeak_timeout_25m\";"%0A"%20string=\""%20(buffer-substring-no-properties%20(+%20(line-beginning-position%202)%206)%20(line-end-position%202))%20"\";"%0A"%20string2=\""%20(buffer-substring-no-properties%20(line-beginning-position%203)%20(line-end-position%203))%20"\";"%0A"timeout%2025m%20bash%20-c%20\"while%20true;%20"%0A"%20do%20espeak%20-a%2030%20-g%2060%20-s%20100%20-v%20other/la%20\\\"$string\\\";%20sleep%203;"%0A"%20%20%20%20espeak%20-a%2030%20-g%2060%20-s%20120%20\\\"$string2\\\";%20sleep%203;"%0A%20"%20%20%20espeak%20-a%2030%20-g%2060%20-s%20100%20-v%20other/la%20\\\"$string\\\";%20sleep%209;"%0A"%20done;%20echo%20\\\"process%20NAME:%20espeak_timeout_25m\\\"%20\""%0A))][elisp:(TIMEOUT 25m espeak_Below=latin+en)]]   [[elisp:(start-process-shell-command%20"kill%20using%20pipe%20BY%20using%20concat%20CMD!%20in%20timeout"%20nil%20(concat%20"ps%20aux"%20"|%20grep%20espeak_timeout_25m"%20"|%20awk%20'{print%20$2}'"%20"|%20xargs%20-I{}%20kill%20-9%20{}"))][elisp:(kill espeak_timeout_25m)]]  ;; 성공적인 정지력!!!
+- [ ] amare me
+사랑한다 진리의 나여!
+
+
+
+∑∑∑
+
+Caput Tertium I
+Caput Tertium I
+
+- [ ] Partes ipsius architecturae sunt tres: 
+There are three departments of architecture: 
+
+- [-] aedificatio gnomonice, machinatio. 
+the art of building, the making of timepieces, and the construction of machinery. 
+
+- [-] Aedificatio autem divisa est bipertito, 
+    Building is, in its turn, divided into two parts, 
+
+- [-] e quibus una est moenium et communium operum in publicis locis conlocatio, 
+of which the first is the construction of fortified towns and of works for general use in public places, 
+
+- [ ] altera est privatorum aedificiorum explicatio. 
+and the second is the putting up of structures for private individuals. 
+
+[[elisp:(start-process-shell-command%20"espeak%EB%9D%BC%ED%8B%B4%ED%9D%AC%EB%9E%8D%EC%9D%BD%EA%B8%B0"%20nil%20%0A(concat%20"timeout%2025m%20echo%20\"process%20NAME:%20espeak_timeout_25m\";"%0A"%20string=\""%20(buffer-substring-no-properties%20(+%20(line-beginning-position%202)%206)%20(line-end-position%202))%20"\";"%0A"%20string2=\""%20(buffer-substring-no-properties%20(line-beginning-position%203)%20(line-end-position%203))%20"\";"%0A"timeout%2025m%20bash%20-c%20\"while%20true;%20"%0A"%20do%20espeak%20-a%2030%20-g%2027%20-s%20120%20-v%20other/la%20\\\"$string\\\";%20sleep%202;"%0A"%20%20%20espeak%20-a%2030%20-g%2027%20-s%20150%20-v%20other/la%20\\\"$string\\\";%20sleep%202;"%0A"%20%20%20espeak%20-a%2030%20-g%2030%20-s%20120%20-v%20other/la%20\\\"$string\\\";%20sleep%202;"%0A"%20%20%20%20espeak%20-a%2030%20-g%2015%20-s%20126%20\\\"$string2\\\";%20sleep%202;"%0A"%20%20%20espeak%20-a%2030%20-g%2027%20-s%20120%20-v%20other/la%20\\\"$string\\\";%20sleep%209;"%0A"%20done;%20echo%20\\\"process%20NAME:%20espeak_timeout_25m\\\"%20\""%0A))][elisp:(TIMEOUT 25m espeak_Below=latin+en edit time)]]   [[elisp:(start-process-shell-command%20"kill%20using%20pipe%20BY%20using%20concat%20CMD!%20in%20timeout"%20nil%20(concat%20"ps%20aux"%20"|%20grep%20espeak_timeout_25m"%20"|%20awk%20'{print%20$2}'"%20"|%20xargs%20-I{}%20kill%20-9%20{}"))][elisp:(kill espeak_timeout_25m)]]  ;; 성공적인 정지력!!!
+- [ ] Publicorum autem distributiones sunt tres, 
+There are three classes of public buildings: 
+
+- [ ] e quibus est una defensionis, altera religionis, tertia opportunitatis. 
+the first for defensive, the second for religious, and the third for utilitarian purposes. 
+
+- [ ] Defensionis est murorum turrimque et portarum ratio ad hostium impetus perpetuo repellendos excogitata, 
+Under defence comes the planning of walls, towers, and gates, permanent devices for resistance against hostile attacks; 
+
+- [ ] religionis deorum immortalium fanorum aediumque sacrarum conlocatio, 
+under religion, the erection of fanes and temples to the immortal gods; 
+
+- [ ] opportunitatis communium locorum ad usum publicum dispositio, uti portus, fora, porticus, balinea, theatra, inambulationes ceteraque, quae isdem rationibus in publicis locis designantur.
+under utility, the provision of meeting places for public use, such as harbours, markets, colonnades, baths, theatres, promenades, and all other similar arrangements in public places.
+
+
+Caput Tertium I
+
+Caput Tertium II
+
+(global-set-key (kbd "ESC M-1")
+ 'previous-buffer) ;; success!
+(global-set-key (kbd "C-z 1")
+(defun my_123 ()
+(find-file "~/config_github/"))
+(previous-buffer))
+
+
+(eval-expression (quote (find-file "~/config_github/")) nil nil 127))
+(global-set-key (kbd "ESC M-2")
+'(message-box "hi"))
+#'my_123)
+(eval-expression (quote (find-file "~/config_github/")) nil nil 127))
+1 2 3 4 5 6
+# jlj
+# ljkhlkjh
+# hkjh
+# kjhlkjh
+#
+#
+#
+# 
+ # hjlkj
+ # (+ 1 2)
+ 'previous-buffer) ;; success!
+hi
+한글 문장의 작성을 연습하는 오타가 자주 발생하는 것에서 이유를 명확히 규명할 것.
+hi ; 
+;(eval-expression (quote (find-file "~/config_github/")) nil nil 127))
+(find-file "~/config_github/"))
+
+)
+ㄴㅇㄹ
+
+(global-set-key (kbd "C-S-h") 'delete-backward-char) ;한글등입력에서 발생하는 오타를 제거하는 연습
+(global-set-key (kbd "C-S-d") 'delete-backward-char)
+(global-set-key (kbd "C-D") 'delete-backward-char)
+(global-set-key (kbd "C-d") 'delete-char)
+
+(global-set-key (kbd "M-S-d") 'backward-kill-word)
+(global-set-key (kbd "M-D") 'backward-kill-word)
+(global-set-key (kbd "C-S-k") '(delete-region (point) (line-end-position 1)))
+as  (delete-region (point) (line-end-position 1))
+(delete-region (point) (line-end-position 1))
+help:global-set-key
+(global-set-key (kbd "C-S-k") (delete-region (point) (line-end-position 1)))
+
+delete-region help:delete-region
+()
+;lkÎ af
+src_emacs-lisp{(+ 1 2)}
+
+
+/home/thinkpad/Music/mpv_files/1_greek_roman_heros_wings.mp4
+(de
+
+
+
+
+
+
+
+
+
+
+
+lete-field)
+
+a
+(delete-indentation 2)
+     delete-field adfasdf
+delete-and-extract-region
+delete-auto-save-file-if-necessary
+delete-char
+delete-completion                 
+help:delete-dir-local-variable
+help:delete-file-local-variable        
+delete-directory                  
+help:delete-dups
+delete-extract-rectangle          
+delete-file
+
+delete-frame
+delete-frame-enabled-p            
+delete-matching-lines  ;; 선별적으로 단어를 골라서 삭제한다 유용한 기능임.
+
+delete-minibuffer-contents        
+delete-other-windows
+delete-other-windows-internal     
+delete-pair
+help:delete-process                    
+delete-region help:delete-region
+delete-selection-helper           
+delete-selection-repeat-replace-region
+delete-selection-uses-region-p    
+
+delete-indentation
+delete-trailing-whitespace
+delete-whitespace-rectangle       
+
+delete-window-internal
+delete-windows-on                 
+
+asd as   as   asdf  
+asd    asd     asd    
+as
+
+d
+as    df
+file+emacs:data.tab
+file+sys:/home/thinkpad/Music/mpv_files/1_greek_roman_heros_wings.mp4
+[[file+sys:data.tab]]
+
+$\int_0^x \sin x = 0.5$
+help:org-preview-latex-fragment
+(org-preview-latex-fragment)
+help:org-toggle-pretty-entities
+org-toggle-pretty-entities
+
+ {{{results(=3=)}}}
+
+
+#+tblname: hello-table
+| a | b |
+|---+---|
+| 1 | 1 |
+| 2 | 2 |
+
+
+#+BEGIN_SRC python2 :var data=hello-table
+#print(data);
+print data
+#+END_SRC
+
+#+RESULTS:
+
+#+BEGIN_SRC emacs-lisp
+(org-show-animate '("So" "..." "Emacs and org mode is great!"))
+(require 'org-toc) 
+#+END_SRC
+
+help:widen
+
+[[ref:hello-table]]
+
+
+
+
+
+(org-babel-tangle)
+#+BEGIN_SRC emacs-lisp :tangle hello.el
+;:results code
+(directory-files "./" )
+;(directory-files "./" nil "*")
+#+END_SRC
+
+#+RESULTS:
+| #de_architectura_liber01_03.org# | . | .#de_architectura_liber01_03.org | .. | de_architectura_liber01_00.org | de_architectura_liber01_00.org~ | de_architectura_liber01_01.org | de_architectura_liber01_02.org | de_architectura_liber01_03.org | de_architectura_liber01_03.org~ | de_architectura_liber01_04.org | de_architectura_liber01_05.org | de_architectura_liber01_06.org | de_architectura_liber01_07.org | previous_#liber00_form.org.txt# | previous_liber00_form.org.txt | previous_liber00_form.org.txt~ | previous_liber00_form.org~ | previous_liber01.org | previous_liber01.org |
+| previous_liber01.org~            |   |                                  |    |                                |                                 |                                |                                |                                |                                 |                                |                                |                                |                                |                                 |                               |                                |                            |                      |                      |
+
+
+
+asdf
+| #de_architectura_liber01_03.org# | . | .#de_architectura_liber01_03.org | .. | de_architectura_liber01_00.org | de_architectura_liber01_00.org~ | de_architectura_liber01_01.org | de_architectura_liber01_02.org | de_architectura_liber01_03.org | de_architectura_liber01_03.org~ | de_architectura_liber01_04.org | de_architectura_liber01_05.org | de_architectura_liber01_06.org | de_architectura_liber01_07.org | previous_#liber00_form.org.txt# | previous_liber00_form.org.txt | previous_liber00_form.org.txt~ | previous_liber00_form.org~ | previous_liber01.org | previous_liber01.org |
+| previous_liber01.org~            |   |                                  |    |                                |                                 |                                |                                |                                |                                 |                                |                                |                                |                                |                                 |                               |                                |                            |                      |                      |
+
+
+
+
+#+BEGIN_SRC elisp
+("#de_architectura_liber01_03.org#" "." ".#de_architectura_liber01_03.org" ".." "de_architectura_liber01_00.org" "de_architectura_liber01_00.org~" "de_architectura_liber01_01.org" "de_architectura_liber01_02.org" "de_architectura_liber01_03.org" "de_architectura_liber01_03.org~" "de_architectura_liber01_04.org" "de_architectura_liber01_05.org" "de_architectura_liber01_06.org" "de_architectura_liber01_07.org" "previous_#liber00_form.org.txt#" "previous_liber00_form.org.txt" "previous_liber00_form.org.txt~" "previous_liber00_form.org~" "previous_liber01.org" "previous_liber01.org\n  " "previous_liber01.org~")
+#+END_SRC
+
+
+
+--
+help:directory-files

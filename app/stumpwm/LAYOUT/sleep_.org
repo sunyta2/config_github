@@ -1,0 +1,5 @@
+(setf stumpwm:*screen-mode-line-format*
+(list "%w | "
+’(:eval (stumpwm:run-shell-command "date" t))))
+(stumpwm:toggle-mode-line (stumpwm:current-screen)
+(stumpwm:current-head))

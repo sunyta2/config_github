@@ -1,0 +1,13 @@
+$ kill-buffer "*Help*"
+t
+/usr/share/info $ (kill-buffer "*Help*")
+t
+help:ielm
+help:inferior-emacs-lisp-mode
+inferior-emacs-lisp-mode is an interactive compiled Lisp function in
+‘ielm.el’.
+
+(inferior-emacs-lisp-mode)
+
+Parent mode: help:comint-mode .
+

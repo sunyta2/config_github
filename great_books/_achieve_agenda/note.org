@@ -1,0 +1,55 @@
+
+[2020-02-21 Fri]
+26-216 청정중보불가설
+
+꿈일시: 20/2/21 9:00 9:45[2020-02-21 Fri 09:45] 오전 
+누구를 찾으러 헤어지면서 홀로 바닷가 긑처의 마우드로 감
+물개가 해변에 있고 코끼리 3마리가 물속에서 물밖으로 분수를 뿜으며,
+
+고래가 있던 것으로 추정됨.
+
+어느방으로 가니 동양고전을 공부하는 집인듯했음
+
+책장과 노트북이 있고,
+붉은 화엄경들이 책장에 있는데 방박으로 나오지를 못하는 특이함.
+20분을 걸어 도 해결이 안되는 막막한 심경
+누가 이끌어 방을 나오려고 방문을 나서자 눈을 뜨자 다시 원위치함.
+딱 꿈이라 깨는 것이 해법이었음.
+유위법이 꿈이라는 금강경구절과 일맥, 거위가 든 병의 비유 착각에 빠짐을 경계함
+말로서 말을 버리게 함. 꿈에서 꿈꺠는 법을 가르침. 말의 노예
+
+
+
+C-x r N 
+C-x r t
+delete-duplicate-lines
+
+
+- 싸움에 말려들지 않는 법을 먼저 배우는 것이 싸움의 기술;
+상대의 도발에 생각을 먼저 하는 법을 배움.
+
+
+[2020-02-21 Fri 19:31] 아리스토텔레스의 탁월함에 감탄!
+물체의 속성을 나누는 오브젝트식 프로그램언어의 원조임!
+One more example to consider: lightning split the tree and cut off some of its branches. Men can do that, too. with axes and saws; and they do it when they engage in lumbering in order to obtain the wood thdy needto build houses, or to make chairs and tables. You understand tht the houses men build are products of art, not of nature 
+
+
+* TODO test todo
+  SCHEDULED: <2020-02-22 Sat 15:00>
+  SCHEDULED: <2020-02-23 Sun 15:00>
+  :PROPERTIES:
+  :Effort:   5
+  :END:
+  - Note taken on [2020-02-22 Sat 11:19] \\
+    test is good in the world
+  :LOGBOOK:
+  CLOCK: [2020-02-22 Sat 11:22]--[2020-02-22 Sat 11:28] =>  0:06
+  CLOCK: [2020-02-22 Sat 11:18]--[2020-02-22 Sat 11:21] =>  0:03
+  :END:
+
+
+* TODO reading arstotle
+  SCHEDULED: <2020-02-22 Sat 11:29>
+  :LOGBOOK:
+  CLOCK: [2020-02-22 Sat 11:28]
+  :END:

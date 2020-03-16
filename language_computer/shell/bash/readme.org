@@ -1,3 +1,7 @@
+-*- coding: utf-8 -*-
 #+STARTUP: showeverything indent
+#+TITLE: readme.org /shell/bash
+
+
 
 * bash 의 높은 범용성

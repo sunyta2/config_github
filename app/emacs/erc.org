@@ -1,0 +1,17 @@
+ERC is extensible IRC client.
+
+
+‘M-x global-unset-key <RET> KEY’
+     Make KEY undefined in the global map.
+‘M-x local-unset-key <RET> KEY’
+     Make KEY undefined locally (in the major mode now in effect).
+help:erc
+   (erc :server "irc.freenode.net" :full-name "")
+erc is an interactive autoloaded Lisp function in ‘erc.el’.
+
+(erc &key (SERVER (erc-compute-server)) (PORT (erc-compute-port))
+(NICK (erc-compute-nick)) PASSWORD (FULL-NAME
+(erc-compute-full-name)))
+
+ERC is a powerful, modular, and extensible IRC client.
+This function is the main entry point for ERC.

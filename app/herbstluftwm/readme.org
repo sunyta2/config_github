@@ -1,0 +1,21 @@
+
+
+* herbstluftwm
+
+강점을 비교함=> file:../wm_compare_youtube_note.org
+[[file:readme.org][stumpwm/readme]] , [[file:~/config_github/app/herbstluftwm/readme.org][herbstluftwm/readme]], [[file:~/config_github/app/xmonad/readme.org][xmonad/readme]] , [[file:~/config_github/app/qtile/readme.org][qtile/readme]] , [[file:~/config_github/app/dwm/readme.org][dwm/readme]] ,
+[[file:~/config_github/app/exwm/readme.org][exwm/readme]] , awesome, i3-gap
+(man "herbstluftwm")  # man mode
+
+file:./
+** 강점 (dwm과 비교하여서)
+- 실험용으로 사용하는 것이 최대강점: 변환된 layout 생성과 돌리기(rotate가 특히) 실행시 자동기능이 우수함!
+herbstclient rotate => C-S-r, C-S-r(reloading config)=>C-s-r
+    플로우트모드가 각각 할당되어서 편리하다.
+
+- Shell Bash variable을 다루는 편집의 명령어가 탁월한 함수예문으로 나와서 shell명령의 이해에 큰 도움을 준다!
+
+
+** 단점: 현재 
+사용이 불편함 레이아웃이 안정적이지 못함. 단지 돌리기가 있지만 자주 사용하기 보다는 실험용으로 보기 좋은 형태를 다른 것에서
+구현하기 좋은 형태를 찾는 정도로 생각됨 현재의 생각은 잠정적임.

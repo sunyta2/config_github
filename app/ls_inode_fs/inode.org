@@ -1,13 +1,43 @@
 #+STARTUP: showeverything indent
 
-원리와 사용법(inode)
 
+
+
+원리와 사용법(inode)
+사용처: Music/_1_playlist.org clickable timeout player
+        활용은 app/mpv/readme.org 참조할 것
 * study
 
 (async-shell-command "brave --incognito 'https://www.youtube.com/watch?v=B6kg2zeJ9do&t=30m03s'") ;; 바로가기:내용:inode 바로가기 ./fs_ext4.org통합필기
 
 * [process] 사용법
 ** 1. inode_숫자얻기
+****  inode 추출법
+ls_inode_fs/inode.org => okular, mpv/readme.org
+요약: (car  (nthcdr 10 (file-attributes "~/config_github/app/mpv/readme.org"))  )
+(car 
+    (nthcdr 10 (file-attributes buffer-file-name))
+)
+    (nthcdr 10 (file-attributes "/home/thinkpad/config_github/app/mpv/readme.org"))
+(car  (nthcdr 10 (file-attributes "~/config_github/app/mpv/readme.org"))  )
+
+(car 
+    (nthcdr 10 (file-attributes ;;buffer-file-name
+        "~/Music/homer_rhythm/iliad01/line_010.mp4"))
+)
+
+(car buffer-file-number)
+3282990
+
+(file-attributes buffer-file-name)
+ file-attributes 를 files.el에서 발견함 from help:buffer-file-number
+    help:file-attributes 
+    (setq buffer-file-number
+	  (if filename
+	      (nthcdr 10 (file-attributes buffer-file-name)) ;; help:nthcdr
+	    nil))
+
+
 **** outwitting devil.mp3를 대상으로 얻어내기 {~/Music/test_mp3/Napoleon Hill/✦Full AudioBook.mp3 # Arco linux}
 dired 에서 포인터를 파일에 둔 다음에 `&`키(쉘명령실행) `ls -i`를 실행하면 아래의 값이 나온다.
 6960041 '✦Full AudioBook.mp3' 
@@ -22,6 +52,36 @@ dired 에서 포인터를 파일에 둔 다음에 `&`키(쉘명령실행) `ls -i
 (async-shell-command "mpv --start=2:34:50 --ab-loop-a=2:34:56 --ab-loop-b=2:35:00 \"$(find ~/Music  -inum 6960041)\" &>/dev/null") ;; null로 보내어 깔끔한 창을 만드는 것이 된다. &>/dev/null
 ***** string으로 만들어서 통합된 형태로 만들어 보는 것은 
 - 함수로 만들어서 별도의 함수로 실행하는 것은 어떨까?? defun
+*** buffer-file-number C-u C-x C-e ;;emacs-lisp
+- 저장한 것을 발견함.
+buffer-find-file
+
+; Run by C-u C-x C-e
+buffer-file-number
+(3282990 2049)
+buffer-file-number
+(car buffer-file-number)
+3282990
+#+BEGIN_SRC sh :results raw
+(ls -i "/home/thinkpad/config_github/great_books/mental_reminder.org")
+
+#+END_SRC
+
+#+RESULTS:
+3282990 /home/thinkpad/config_github/great_books/mental_reminder.org
+
+
+(async-shell-command "okular \"$(find ~/Music  -inum 6836311)\" &")
+(3282990 2049)
+
+
+
+
+* [emacs-lisp] inode catch to setq IN Emacs
+- inode를 값을 dired & {ls -i}알아낸 다음에 
+    6890127 stumpwm-git.pdf
+- shell-command로 파일위치정확위치 변수로 전환한다.
+- 얻어진 값으로 elisp로 사용할 수 있다 => 다양한 통제를 Emacs에서 수행한다.(파일위치가 변경될지라도)
 
 * 활용하는 곳
 app/mpv/
@@ -29,3 +89,6 @@ app/mpv/
     (find-file-other-window "../mpv/readme.org")
 
 app/okular   app/brave
+* youtube video
+[[https://www.youtube.com/watch?v=4-vye3QFTFo][Hard vs Soft Links in Linux (Linux Links) - YouTube]]
+간단히 설명한 아이노드의 기능 4분짜리로 간결함.

@@ -1,0 +1,50 @@
+   file:info.org file:man_in_emacs.org
+(man "herbstluftwm")  # man mode
+man doc을 보고 편집하기에 편리하다. (emacs가 우수한 이유) M-! man awk실행하면 된다.
+(shell-command "man awk" nil nil)
+출력된 *Shell Command Output* 
+      버퍼에서 간편히 복사편집 나중에 번역도 쉽게 복사 외부로 메모노트도 가능하다.
+info:gawk#Top
+
+(eshell-command "espeak --help")
+(eshell-command "man sed")
+(eshell-command &optional COMMAND ARG)
+
+
+(man "git") file:../../app/git/readme.org
+file:///usr/share/doc/git-doc/user-manual.html
+(start-process "emacs_pdf okular" nil "okular" ;; 빠른 단축으로 만드는 것은 C-c C-l elisp: 를 사용해서 넣으면 됨
+  "-p" (int-to-string (+ 57 24)) ;-p 57; query_string.org
+  "/home/thinkpad/Documents/learning_gnu_emacs.pdf" )
+
+
+(man "7" "gitcore-tutorial") ;; <에러안되는 문장구조>
+(man "gitcore-tutorial(7)") (man "giteveryday")
+(man "gittutorial") (man "gittutorial-2") (man "git-help")
+(man "gitworkflows(7)")
+
+
+
+* man mode
+Man mode defined in ‘man.el’:
+A mode for browsing Un*x manual pages.
+
+The following man commands are available in the buffer.  Try
+"C-h k <key> RET" for more information:
+
+m       Prompt to retrieve a new manpage.
+r       Retrieve reference in SEE ALSO section.
+M-n   Jump to next manpage in circular list.
+M-p   Jump to previous manpage in circular list.
+n       Jump to next manpage section.        엄청 편리함!!!
+p       Jump to previous manpage section.
+g       Go to a manpage section.
+s       Jumps to the SEE ALSO manpage section.
+q       Deletes the manpage window, bury its buffer.
+k       Deletes the manpage window, kill its buffer.
+h       Prints this help text.
+
+The following variables may be of some use.  Try
+"C-h v <variable-name> RET" for more information:
+
+* Emacs 안에서 모든 것을 통합함

@@ -1,0 +1,14 @@
+C-x C-b
+C-x C-b d x
+* 세션을 저장하는 법을 찾아 볼 것
+midnight-mode ???[[https://emacs.stackexchange.com/questions/39484/speed-up-emacs-start-up-time][init file - Speed up Emacs start-up time - Emacs Stack Exchange]]
+
+My guess is that you have set up Emacs to save your session and have accumulated hundreds of buffers in various modes.
+
+Try C-x C-b and clean up using d (to mark buffers for deletion) and x (to delete buffers marked in that manner).
+
+shareimprove this answer
+answered Mar 18 '18 at 10:40
+user18816
+@user18816 Yes. You were right. There are literally hundreds of buffers in various modes. C-x C-b d x is going to cumbersome. midnight-mode seems to be a better option. – deshmukh Mar 20 '18 at 11:12
+@deshmukh just in case it is not obvious, you can mark multiple buffers with d and then delete them all with a single x, you don't need to alternate d and x. – icarus Mar 20 '18 at 12:37

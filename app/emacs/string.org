@@ -1,0 +1,93 @@
+
+#+where_is_source_FILE:     (dired-jump 3 (substring (shell-command-to-string (concat "readlink -f \"" (buffer-file-name) "\"")) 0 -1) )
+
+help:sort-lines
+
+
+
+1
+3
+3
+5
+7
+(message "\
+--start=09:00 " )        ;; will use in ggb_mpv etc...
+
+
+* (buffer-substring-no-properties (line-beginning-position 0) (line-end-position 0)) 가 정답!!!
+
+- trim in *whitespace search
+* character positions으로 원하는 string 부분발췌 buffer-substring-no-properties
+(buffer-substring-no-properties (line-beginning-position 0) (line-end-position 0)) => "* character positions으로 원하는 string 부분발췌 buffer-substring-no-properties"
+
+cf .(line-substring-with-bidi-context  는 안됨
+help:buffer-substring
+(buffer-substring START END)
+(buffer-substring (line-beginning-position 0) (line-end-position 0)) => #("* character positions으로 원하는 string 부분발췌 buffer-substring-no-properties" 0 2 (fontified t face org-level-1) 2 70 (fontified t face org-level-1))
+
+
+This function copies the text properties of that part of the buffer
+into the result string; if you don’t want the text properties,
+use ‘buffer-substring-no-properties’ instead.
+buffer-substring-no-properties
+help:buffer-substring-no-properties
+
+- 클릭으로 문장을 읽는 것에 사용하려고 발견했음. 성공적인 함수임.
+Return the characters of part of the buffer, without the text properties.
+The two arguments START and END are character positions;
+help:buffer-substring-no-properties
+they can be in either order.
+
+(buffer-substring-no-properties START END)
+(buffer-substring-no-properties (line-beginning-position 0) (line-end-position 0))
+; buffer-substring-no-properties 
+* (dired-jump 3 (substring (shell-command-to-string (concat "readlink -f \"" (buffer-file-name) "\"")) 0 -1) )
+(dired-jump 3 (substring (
+shell-command-to-string (
+concat 
+"
+readlink
+ -f \"" (buffer-file-name) "\"")) 0 -1) )
+
+** shell-command-to-string
+help:shell-command-to-string
+
+
+
+
+
+** (man "readlink")
+*  그 이후 \n제거 by substring
+- sudo에 있을 것임 help:substring
+
+* \n 제거의 방식으로 쉘명령을 실행함 간단히 해결함. (message "\
+--start=09:00 " )        ;; will use in ggb_mpv etc...
+;; 컴퓨터의 놀라운 창의성은 인간의 언어능력과 심층적인 인식의 간결성에서 나온다!
+
+* trim
+(string-trim-right "12   312    ")
+"asdfasdf"
+)  =>  "asdfaef12   312asdfasdf"
+
+
+* (string-to-list "123 123")
+
+(mapcar 'print '("hi" 1 2 3))("hi" 1 2 3)
+(split-string "hi 1 2 3")
+(print "hi")"hi"
+("hi" 1 2 3)
+
+(mapc 'print-list '("hi" 1 2 3))("hi" 1 2 3)
+(mapcar 'print-list '("hi" 1 2 3))("
+" "
+" "
+" "
+")
+help:cdr
+
+
+* split-string (info "(elisp) Creating Strings")
+help:split-string
+
+(split-string "jkj kjk kjkj")
+

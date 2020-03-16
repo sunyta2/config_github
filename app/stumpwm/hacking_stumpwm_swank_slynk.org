@@ -1,0 +1,5 @@
+
+
+https://github.com/stumpwm/stumpwm/wiki/Hacking-StumpWM
+(ql:quickload :swank)
+(swank:create-server) ;; slime이 필수인듯하다!!!

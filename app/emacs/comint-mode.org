@@ -1,0 +1,9 @@
+emacs-rock!!!처럼 값으로 바꾸는 것이 가능한지 궁금함.
+
+mode: help:comint-mode  help:inferior-emacs-lisp-mode
+file:comint-mode.org
+M-r	이쉘에서도 가능함!!!	comint-history-isearch-backward-regexp
+common interpreter mode??
+
+help:ielm
+

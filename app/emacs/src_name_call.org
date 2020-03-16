@@ -1,0 +1,37 @@
+
+
+
+
+info를 참조해서 완성함.
+ #+CALL: src_box_name()을 재발굴사용함!
+
+** 활용장소
+- [ ] bbg의 음원재생함수에서 사용되고 있으므로 그곳에서 활용성을 볼것 
+* 
+#+name: square
+#+header: :var x=1
+#+begin_src python
+return x*x
+#+end_src
+
+#+RESULTS:
+
+#+RESULTS: square
+: 1
+
+Now we use the source block:
+
+#+call: 
+[[(square)]]
+
+(for information on the call syntax see Library of Babel)
+36
+info:elisp#Top
+#+call: square(x=36)
+| α        | β  |
+| ++       | ++ |
+| square() |    |
+
+src_bash[:var a="good"]{espeak "hello $a world"}
+#+RESULTS:
+: 1296

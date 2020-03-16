@@ -1,0 +1,14 @@
+#+STARTUP: showeverything indent
+
+* [본질 인식]은 단어이해는 문법과 분리될 수 없다.
+* {linage} * super -> ** side -> *** stuff
+* [1_super_1]: 通合性 meta_method workflow emacs/readme.org::{linage}
+- /great_books/meta_thought.org
+** [2_side_2]: idea_practice: ./test_reading_stuff.org ./test_stuff/
+       - sible, /vim/readme.org
+*** [3_stuff_3]: simple_practice, dividen_note_making, etc. question? test develop
+        - ./test_stuff/
+#+BEGIN_SRC emacs-lisp
+(find-file-other-window "./test_stuff/readme.org")
+#+END_SRC
+** test_list.org 리스트로 목록을 수립하고, ./test_stuff/각각의.org

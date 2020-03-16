@@ -1,0 +1,18 @@
+
+
+file:../../app/emacs/src_color_bakground.org
+[창의적인 시각화가 가능함.] 배경에 색깔을 넣어서 시각적 효과를 극대화한다. colorfull background
+- [ ] src BOX 칼라 배경방법을 org-info의 위치에 발견한 것 같음. 위치기록해 둘 것
+- add to .el
+
+#+BEGIN_SRC emacs-lisp
+     (require 'color)
+     (set-face-attribute 'org-block nil :background
+                         (color-darken-name
+                          (face-attribute 'default :background) 3))
+
+     (setq org-src-block-faces '(("emacs-lisp" (:background "#EEE2FF"))
+                                 ("python" (:background "#E5FFB8"))))
+
+
+#+END_SRC

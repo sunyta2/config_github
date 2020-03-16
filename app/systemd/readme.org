@@ -1,3 +1,9 @@
-
+-*- coding: utf-8 -*-
+#+STARTUP: showeverything indent
+#+TITLE:
 
 * systemctl in systemd 기본명령과 자료들.
+
+** colllect note
+(find-file "./systemctl.org")
+sudo systemctl enable sddm.service -f 

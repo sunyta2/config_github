@@ -1,0 +1,6 @@
+
+
+* KRDC(KDE Remote Desktop Client) in Arco 
+vnc://thinkpad@192.168.1.3 # KDE # use krfb(Desktop Sharing)
+vnc://thinkpad@192.168.1.4 # to macosx
+[[file:possible_in_arco.org]]

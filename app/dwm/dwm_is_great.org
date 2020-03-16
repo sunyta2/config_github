@@ -1,0 +1,9 @@
+
+
+* strength
+Youtube를 시청하는 전체화면을 깔끔하다 stumpwm은 단순히 전체화면만 되어서 불편함.
+** workflow
+조건: 단 left_rotate되어야 세로로 길게 깔끔하게 본다!
+- 1 : all in here a)brave b)brave --incognito c)emasq(floated)
+- 2 :     in here         b)brave --incognito c)emasq(floated) *brave[YouTube(full)] + notetaking emacsq
+- 3 :     in here a)brave                     c)emasq(floated) *brave[YouTube(full)] + notetaking emacsq

@@ -1,4 +1,11 @@
 /app/rsync/readme.org
+file:../../hardware/storage/
+
+
+$ sudo rsync -avx /home/ /mnt/tmp # 검증하고 rsync 실행할 중요명령구문임! in storage/home~.org
+- emacs rsync [[https://oremacs.com/2016/02/24/dired-rsync/][Using rsync in dired · (or emacs]]
+  - ./emacs_rsync.org
+
 
 - 어떻게 소켓을 제외할 수 있을까? > 검색해서 찾아볼 것
 

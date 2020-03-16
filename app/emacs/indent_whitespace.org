@@ -1,0 +1,42 @@
+
+whitespace wait in here to write.
+
+
+(whitespace-color-on)
+help:whitespace-cleanup-region
+
+(whitespace-cleanup-region START END)
+ START END)
+
+* indent-rigidly 영역을 선택후 C-x tab으로 연속적인 방향키로 성정하는 놀라운 발견 file:../../app/emacs/indent_whitespace.org
+help:indent-rigidly
+C-x TAB (translated from C-x <tab>) runs the command indent-rigidly
+(found in global-map), which is an interactive compiled Lisp function
+in ‘indent.el’.    
+
+It is bound to C-x TAB.
+
+(indent-rigidly START END ARG &optional INTERACTIVE)
+
+Indent all lines starting in the region.
+If called interactively with no prefix argument, activate a
+transient mode in which the indentation can be adjusted interactively
+by typing <left>, <right>, <S-left>, or <S-right>.
+Typing any other key deactivates the transient mode.
+
+If called from a program, or interactively with prefix ARG,
+indent all lines starting in the region forward by ARG columns.
+If called from a program, START and END specify the beginning and
+end of the text to act on, in place of the region.
+
+Negative values of ARG indent backward, so you can remove all
+indentation by specifying a large negative ARG.
+
+
+* trim함수발견
+- 추출한 파일명의 자동으로 클린한 상태를 만드는 것으로 추정함.
+help:string-trim-right
+(concat "asdfaef"
+(string-trim-right "12   312    ")
+"asdfasdf"
+)  =>  "asdfaef12   312asdfasdf"

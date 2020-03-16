@@ -1,0 +1,8 @@
+
+
+(file-name-directory buffer-file-name) and (file-name-directory (buffer-file-name)) "/home/thinkpad/config_github/app/emacs/"
+소속된 폴더의 명칭을 알아내는 방법.
+Actually, according to the docs, buffer-file-name is both a function and a buffer-local variable, so both (file-name-directory buffer-file-name) and (file-name-directory (buffer-file-name)) should work
+
+help:buffer-file-name
+help:file-name-directory 파일정보로 원본의 위치와 링커의 위치를 활용한 파일위치변경에 대응하는 실행을 가능하게 할 것으로 보인다.(용도)

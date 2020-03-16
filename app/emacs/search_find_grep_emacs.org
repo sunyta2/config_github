@@ -2,18 +2,100 @@
 #+TITLE: search_find_grep_emacs.org 파일검색
 #+CREATOR: LEEJEONGPYO
 
+
+
+
+일단 M-x locate로 파일명 검색보다는 M-x find-name-dired *검색어*
+M-x find-name-dired *검색어* 과 M-x rgrep을 사용하는 것이 유용하다.-정보장악력이 안정된 의사결정을 가능하게 한다.
+
+*** TODO multi-isearch-files multi-occur
+help:multi-isearch-files help:multi-occur
+       버퍼내의 검색전용    help:multi-occur-in-matching-buffers
+
+
+* [find-name-dired] M-x 
 #+STARTUP: showall
 (buffer-file-name)"/home/thinkpad/config_github/app/emacs/search_find_grep_emacs.org"
 (find-file-other-window "/home/thinkpad/config_github/app/emacs/search_find_grep_emacs.org")
 #이곳을 검색의 중심지로 사용한다.
 
+    M-x find-name-dired *apf* # 파일이름으로 검색하기
+    M-x find-dired -name \*apf\* # cmd_type{위와 매우 유사}
+_   M-x locate 좋은 명령이다.
+      (find-grep-dired "~/config_github/app/emacs" "*emacs-lisp*")
+(rgrep REGEXP &optional FILES DIR CONFIRM)
+      (rgrep "이름" "*.org" "~/config_github/app/shell")
+      (rgrep "기회" "*.org" "~/config_github")
+      (rgrep "*emacs-lisp" "*.org" "~/config_github/app/shell")
+* {linage} * super -> ** side -> *** stuff
+* [1_super_1]: 검색의 효과적인 실행
+- /great_books/meta_thought.org
+** [2_side_2]: idea_practice: ./test_reading_stuff.org ./test_stuff/
+       - side, /vim/readme.org
+*** [3_stuff_3]: simple_practice, dividen_note_making, etc. question? test develop
+        - ./test_stuff/
+#+BEGIN_SRC emacs-lisp
+(find-file-other-window "./test_stuff/readme.org")
+#+END_SRC
+
+
 * 검색의 핵심은 find-grep과 find-dired
+    - 추가 locate 와 find-name-dired
+
+** locate
+      (locate SEARCH-STRING &optional FILTER ARG)
+
+** find-name-dired
+      (find-name-dired DIR PATTERN)
+PATTERN is a shell wildcard (not an Emacs regexp) and need not be quoted.
+The default command run (after changing into DIR) is
+    find . -name 'PATTERN' -ls
+      
+** find-dired
+      (find-dired DIR ARGS)
+Run ‘find’ and go into Dired mode on a buffer of the output.
+The command run (after changing into DIR) is essentially
+      find . \( ARGS \) -ls
+
+
+
+
+** find-grep-dired
+      (find-grep-dired DIR REGEXP)
+      (find-grep-dired "~/config_github" "*핵심*")
+      (find-grep-dired "~/config_github/app/shell" "*emacs-lisp*")
+
+      (find-grep-dired "~/config_github/language_computer/shell" " while ")
+  /home/thinkpad/config_github/language_computer/shell/:
+  find . \( -type f -exec grep -q -e while \{\} \; \) -ls
+    3282977      4 -rw-r--r--   1 thinkpad thinkpad      859 Feb 12 17:53 syntax_of_while_in_sh.org
+    3282980      4 -rw-r--r--   1 thinkpad thinkpad     3222 Feb 12 18:15 syntax_of_variable_in_sh.org
+  find finished at Thu Feb 13 23:22:04
+
+
+
+Find files in DIR that contain matches for REGEXP and start Dired on output.
+The command run (after changing into DIR) is
+  find . \( -type f -exec ‘grep-program’ ‘find-grep-options’ \
+    -e REGEXP {} \; \) -ls
+
+  /home/thinkpad/config_github/app/emacs/:
+  find . \( -type f -exec grep -q -e \*comm\* \{\} \; \) -ls
+  find finished at Thu Feb 13 23:13:36
+
+
+
+
 (find-grep "find ~/config_github -type f -exec grep --color -nH --null -e gentoo \{\} +")
 (find-dired "~/config_github" "-type f -exec grep -q -e gentoo \{\} +")
 
 (find-grep "find ~/config_github -type f -iname \"*emacs.org\" -exec grep --color -nH --null -e gentoo \{\} +")
 (find-dired "~/config_github" "-type f -iname \"*org\" -exec grep -q -e gentoo \{\} +")
 
+
+
+* rgrep lgrep과 grep , grep-find
+** rgrep
 (rgrep "*gentoo*" "*.org" "~/config_github" 1)
 
 (rgrep "find" "*.org" "~/config_github" 1)
@@ -29,11 +111,25 @@
 (rgrep REGEXP &optional FILES DIR CONFIRM)
 (rgrep REGEXP &optional FILES DIR CONFIRM)
 
+** lgrep
+(lgrep REGEXP &optional FILES DIR CONFIRM)
+With C-u prefix, you can edit the constructed shell command line
+before it is executed.
+With two C-u prefixes, directly edit and run ‘grep-command’.
+
+
+** grep-find
+
+
+
+
 * 검색과 파일 내용 검색의 방법과 함수를 일단 수집 정리한다.
 
  grep -i -nH -e "eshell/" *.el | grep -v defun
  M-x grep -n -e setq ~/.emacs
+grep -i --color -nH "grep" *.org
 
+* dired-x-bind-find-file와 dired-x-find-file와 dired-x-find-file-other-window
 
 * 커서아래바로검색을 찾아서 , 
 [search - Searching for marked (selected) text in Emacs - Stack Overflow](https://stackoverflow.com/questions/202803/searching-for-marked-selected-text-in-emacs#203026)
@@ -207,4 +303,6 @@ easily repeat a find command.
 [back]
 
 
-** etc..* 
+** etc.. 
+
+*

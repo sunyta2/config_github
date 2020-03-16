@@ -1,0 +1,73 @@
+
+전제조건: customize-variable에서 리턴으로 실행되는 3가지 설정값을 변경해야함.
+
+id:workflow_espeak_with_start-process-shell-command
+id:[[id:workflow_espeak_with_start-process-shell-command][espeak for elisp:(start-process-shell-command "espeak라틴희랍읽기")]]
+[[elisp:(start-process-shell-command%20"espeak라틴희랍읽기"%20nil%20"espeak%20-v%20other/grc%20-s%20100%20-g%2030%20\"τοῦ%20Ἀρίστωνος%20%20%20%20%20προσευξόμενός%20%20%20τε%20%20%20%20%20%20%20τῇ%20%20%20θεῷ\"")][espeak희랍어플라톤국가론중에서]]
+*org-drill* 을 연결하면서 읽기를 실행하는 것을 연동하면 좋을 것이다.
+elisp:(start-process-shell-command "espeak라틴희랍읽기" nil "espeak -v other/grc -s 100 -g 30 \"τοῦ Ἀρίστωνος     προσευξόμενός   τε       τῇ   θεῷ\"")
++ org_id:[[id:register이용한_빠른_이동전술][Quick 위치이동( C-x r j ) ( C-x r {C-}SPC @ );포인터를 마커로 변환함]] 편집시에 빠른 이동을 보장함
+    + 마크로로 생성을 하는 법도 있음. 저장된 마크로를 불러내는 것도 좋을 것임.
++  파이썬을 이용한 생성이 더 좋을 것임 org_id:[[id:클릭커블한_link생성을_위한_파이썬Babel][클릭커블한_link생성을_위한_파이썬Babel]] 연구사항있음
++++ external link를 만든다 함수를 실행함 각각의 속도와 언어로 읽는 함수를 연결시킴
+    예2) latin: greek: + 주소를 문장으로 대체함.
+    예1) elisp:(latin "
+추가완료 syntax_of_variable_in_sh.org에서 변수로 입력된 문장에서 별표시 제거의 방법을 추가했음.
+[[elisp:(start-process-shell-command "espeak라틴희랍읽기" nil "espeak -v other/grc -s 100 -g 30 \"1\"")]]
+[[elisp:(start-process-shell-command "espeak라틴희랍읽기" nil "espeak -v other/grc -s 100 -g 30 \"2\"")]]
+[[elisp:(start-process-shell-command "espeak라틴희랍읽기" nil "espeak -v other/grc -s 100 -g 30 \"3\"")]]
+[[elisp:(start-process-shell-command "espeak라틴희랍읽기" nil "espeak -v other/grc -s 100 -g 30 \"4\"")]]
+[[elisp:(start-process-shell-command "espeak라틴희랍읽기" nil "espeak -v other/grc -s 100 -g 30 \"5\"")]]
+[[elisp:(start-process-shell-command "espeak라틴희랍읽기" nil "espeak -v other/grc -s 100 -g 30 \"6\"")]]
+[[elisp:(start-process-shell-command "espeak라틴희랍읽기" nil "espeak -v other/grc -s 100 -g 30 \"7\"")]]
+[[elisp:(start-process-shell-command "espeak라틴희랍읽기" nil "espeak -v other/grc -s 100 -g 30 \"8\"")]]
+[[elisp:(start-process-shell-command "espeak라틴희랍읽기" nil "espeak -v other/grc -s 100 -g 30 \"9\"")]]
+
+
+** - 성공한 명령문-문장 [2020-03-14 Sat 13:32] espek timeout 25 and while true ALL in espeak/readme.org
+[[elisp:(start-process-shell-command%20"espeak%EB%9D%BC%ED%8B%B4%ED%9D%AC%EB%9E%8D%EC%9D%BD%EA%B8%B0"%20nil%20%0A(concat%20"timeout%2025m%20echo%20\"process%20NAME:%20espeak_timeout_25m\";"%0A"%20string=\""%20(buffer-substring-no-properties%20(+%20(line-beginning-position%202)%206)%20(line-end-position%202))%20"\";"%0A"%20string2=\""%20(buffer-substring-no-properties%20(line-beginning-position%203)%20(line-end-position%203))%20"\";"%0A"timeout%2025m%20bash%20-c%20\"while%20true;%20"%0A"%20do%20espeak%20-a%2030%20-g%2060%20-s%20100%20-v%20other/grc%20\\\"$string\\\";%20sleep%203;"%0A"%20%20%20%20espeak%20-a%2030%20-g%2060%20-s%20120%20\\\"$string2\\\";%20sleep%203;"%0A"%20%20%20espeak%20-a%2030%20-g%2060%20-s%20100%20-v%20other/grc%20\\\"$string\\\";%20sleep%209;"%0A"%20done;%20echo%20\\\"process%20NAME:%20espeak_timeout_25m\\\"%20\""%0A))][elisp:(TIMEOUT 25m espeak_Below=grc+en)]]   [[elisp:(start-process-shell-command%20"kill%20using%20pipe%20BY%20using%20concat%20CMD!%20in%20timeout"%20nil%20(concat%20"ps%20aux"%20"|%20grep%20espeak_timeout_25m"%20"|%20awk%20'{print%20$2}'"%20"|%20xargs%20-I{}%20kill%20-9%20{}"))][elisp:(kill espeak_timeout_25m)]]  ;; 성공적인 정지력!!!
+- [ ] δὲ 그리고 | μάλιστα 대부분
+사랑한다 진리의 나여!
+
+[[elisp:(start-process-shell-command%20"espeak%EB%9D%BC%ED%8B%B4%ED%9D%AC%EB%9E%8D%EC%9D%BD%EA%B8%B0"%20nil%20%0A(concat%20"timeout%2025m%20echo%20\"process%20NAME:%20espeak_timeout_25m\";"%0A"%20string=\""%20(buffer-substring-no-properties%20(+%20(line-beginning-position%202)%206)%20(line-end-position%202))%20"\";"%0A"%20string2=\""%20(buffer-substring-no-properties%20(line-beginning-position%203)%20(line-end-position%203))%20"\";"%0A"timeout%2025m%20bash%20-c%20\"while%20true;%20"%0A"%20do%20espeak%20-a%2030%20-g%2060%20-s%20100%20-v%20other/la%20\\\"$string\\\";%20sleep%203;"%0A"%20%20%20%20espeak%20-a%2030%20-g%2060%20-s%20120%20\\\"$string2\\\";%20sleep%203;"%0A%20"%20%20%20espeak%20-a%2030%20-g%2060%20-s%20100%20-v%20other/la%20\\\"$string\\\";%20sleep%209;"%0A"%20done;%20echo%20\\\"process%20NAME:%20espeak_timeout_25m\\\"%20\""%0A))][elisp:(TIMEOUT 25m espeak_Below=latin+en)]]   [[elisp:(start-process-shell-command%20"kill%20using%20pipe%20BY%20using%20concat%20CMD!%20in%20timeout"%20nil%20(concat%20"ps%20aux"%20"|%20grep%20espeak_timeout_25m"%20"|%20awk%20'{print%20$2}'"%20"|%20xargs%20-I{}%20kill%20-9%20{}"))][elisp:(kill espeak_timeout_25m)]]  ;; 성공적인 정지력!!!
+- [ ] amare me
+사랑한다 진리의 나여!
+
+*** 실행노트바로가기 - 
+file:~/config_github/great_books/vitruvius/de_architectura/de_architectura_liber01_00.org
+
+
+** Homer test
+λαῶν:  사람들의
+| Ἀτρεΐδα 아트레우스의 아들       | δὲ 그리고 | μάλιστα 대부분               | δύω, 둘 | κοσμήτορε 장군들의  | λαῶν:  사람들의         |
+[[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%201%202%200;%20do%20espeak%20-v%20other/grc%20-s%20100%20-g%2030%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%200)][elisp:Click!espeak_grc_3times!]] [[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%200;%20do%20espeak%20-v%20other/grc%20-s%20100%20-g%2030%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%200)][elisp:Click!espeak_grc_1times!]] [[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%201%202%202%202%201%201%202%202%201%200;%20do%20espeak%20-v%20other/grc%20-s%20100%20-g%2030%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%200)][elisp:Click!espeak_grc_10times!]]
+(call-shell-region (line-beginning-position 0) (line-end-position 0) "a=\"$(cat)\"; for i in 1 2 0; do espeak -v other/grc -s 100 -g 30 \"$a\"; sleep $((i*3)); done" nil 0)
+(call-shell-region (line-beginning-position 0) (line-end-position 0) "espeak -v other/grc -s 100 -g 30 \"$(cat)\"" nil 0)
+(call-shell-region START END COMMAND &optional nil 0)
+(shell-command-on-region (line-beginning-position 0) (line-end-position 0) "espeak -v other/grc -s 100 -g 30 \"$(cat)\" &" "temp_espeak_while_true")
+(start-process NAME BUFFER PROGRAM &rest PROGRAM-ARGS)
+
+cogito 생각하다
+[[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%201%202%200;%20do%20espeak%20-v%20other/la%20-s%20100%20-g%2030%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%200)][elisp:Click!espeak_la_3times!]] [[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%200;%20do%20espeak%20-v%20other/la%20-s%20100%20-g%2030%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%200)][elisp:Click!espeak_la_1times!]] [[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%201%202%202%202%201%201%202%202%201%200;%20do%20espeak%20-v%20other/la%20-s%20100%20-g%2030%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%200)][elisp:Click!espeak_la_10times!]]
+
+(shell-command-on-region START END COMMAND &optional OUTPUT-BUFFER
+REPLACE ERROR-BUFFER DISPLAY-ERROR-BUFFER REGION-NONCONTIGUOUS-P)
+
+Execute string COMMAND in inferior shell with region as input.
+Normally display output (if any) in temp buffer ‘*Shell Command Output*’;
+Prefix arg means replace the region with it.  Return the exit code of
+COMMAND.
+
+#+BEGIN_SRC text
+[[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%201%202%200;%20do%20espeak%20-v%20other/la%20-s%20100%20-g%2030%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%200)][elisp:Click!espeak_la_3times!]] [[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%200;%20do%20espeak%20-v%20other/la%20-s%20100%20-g%2030%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%200)][elisp:Click!espeak_la_1times!]] [[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%201%202%202%202%201%201%202%202%201%200;%20do%20espeak%20-v%20other/la%20-s%20100%20-g%2030%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%200)][elisp:Click!espeak_la_10times!]]
+
+#+END_SRC
+된다는 의지의 힘 power of will is great
+[[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%201%202%200;%20do%20espeak%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%200)][elisp:Click!espeak_en_3times!]] [[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%200;%20do%20espeak%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%200)][elisp:Click!espeak_en_1times!]] [[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%201%202%202%202%201%201%202%202%201%200;%20do%20espeak%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%200)][elisp:Click!espeak_en_10times!]]
+(line-beginning-position 0) (line-end-position 0) "espeak -v other/grc -s 100 -g 30 -f"
+(call-process-region (line-beginning-position 0) (line-end-position 0) "espeak -v other/grc -s 100 -g 30 -f")
+[[elisp:(call-process-region%20(line-beginning-position%200)%20(line-end-position%200)%20"espeak"%20"-v%20other/grc%20-s%20100%20-g%2030")][elisp:클릭espeak -v other/grc -s 100 -g 30 above 1line!]] 
+(call-process-region (line-beginning-position 0) (line-end-position 0) "espeak")
+| Ἀτρεΐδα 아트레우스의 아들       | δὲ 그리고 | μάλιστα 대부분               | δύω, 둘 | κοσμήτορε 장군들의  | λαῶν:  사람들의         |
+elisp:(start-process-shell-command "espeak라틴희랍읽기" nil "espeak -v other/grc -s 100 -g 30 \"| Ἀτρεΐδα 아트레우스의 아들       | δὲ 그리고 | μάλιστα 대부분               | δύω, 둘 | κοσμήτορε 장군들의  | λαῶν:  사람들의         |\"")
+[[elisp:(start-process-shell-command%20"espeak%EB%9D%BC%ED%8B%B4%ED%9D%AC%EB%9E%8D%EC%9D%BD%EA%B8%B0"%20nil%20"espeak%20-v%20other/grc%20-s%20100%20-g%2030%20\"|%20%E1%BC%88%CF%84%CF%81%CE%B5%E1%BF%93%CE%B4%CE%B1%20%EC%95%84%ED%8A%B8%EB%A0%88%EC%9A%B0%EC%8A%A4%EC%9D%98%20%EC%95%84%EB%93%A4%20%20%20%20%20%20%20|%20%CE%B4%E1%BD%B2%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20|%20%CE%BC%E1%BD%B1%CE%BB%CE%B9%CF%83%CF%84%CE%B1%20%EB%8C%80%EB%B6%80%EB%B6%84%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20|%20%CE%B4%E1%BD%BB%CF%89,%20%EB%91%98%20|%20%CE%BA%CE%BF%CF%83%CE%BC%E1%BD%B5%CF%84%CE%BF%CF%81%CE%B5%20%EC%9E%A5%EA%B5%B0%EB%93%A4%EC%9D%98%20%20|%20%CE%BB%CE%B1%E1%BF%B6%CE%BD:%20%20%EC%82%AC%EB%9E%8C%EB%93%A4%EC%9D%98%20%20%20%20%20%20%20%20%20|\"")][호머일리아드1]]

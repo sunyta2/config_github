@@ -1,0 +1,8 @@
+(progn (other-window 1) (re-search-forward "5") )
+
+
+(isearch-forward-regexp "5")
+cf ./isearch.org (re-search-forward "5") 
+(progn (other-window 1) (re-search-forward "5") )
+(re-search-forward "5") 
+(re-search-backward "5")

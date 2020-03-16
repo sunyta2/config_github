@@ -1,3 +1,14 @@
+#+CREATOR: LEEJEONGPYO
+#+STARTUP: showeverything indent
+#+TITLE: linux_ide 强點에 集中하여 眞我로 통합을 추구
+###-*- coding: utf-8 -*-
+
+
+강점을 비교함=> file:../wm_compare_youtube_note.org
+[[file:readme.org][stumpwm/readme]] , [[file:~/config_github/app/herbstluftwm/readme.org][herbstluftwm/readme]], [[file:~/config_github/app/xmonad/readme.org][xmonad/readme]] , [[file:~/config_github/app/qtile/readme.org][qtile/readme]] , [[file:~/config_github/app/dwm/readme.org][dwm/readme]] ,
+[[file:~/config_github/app/exwm/readme.org][exwm/readme]] , awesome, i3-gap
+
+(man "dwm")  # man mode
 
 * study of dwm
 - 통합적인 사고력의 증대
@@ -31,3 +42,5 @@ to do
         - 실험아이디어:
 
 
+* 잡담
+dwm은 vim적이라고 보인다.

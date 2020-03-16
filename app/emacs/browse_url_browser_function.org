@@ -38,7 +38,7 @@ e.g.
 On Mac OS X, you don't need to. This command makes this shell call:
  「open -a Firefox.app http://example.com/」"
   (interactive)
-  (cond
+  (cond ;;operation system OS운영체계에 따라서 string을 다르게 변성하는 법을 고안함.
    ((string-equal system-type "windows-nt") ; Windows
     (shell-command (concat "firefox file://" buffer-file-name)))
    ((string-equal system-type "gnu/linux")

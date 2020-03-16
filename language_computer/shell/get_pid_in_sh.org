@@ -1,0 +1,108 @@
+[[test good]]
+(find-file "../shell/syntax_of_test_in_sh.org")
+ (find-file "../shell/syntax_of_if_in_sh.org")
+ ( find-file "../shell/get_pid_in_sh.org")
+
+
+
+see file:syntax_of_array_in_sh.org
+
+#+BEGIN_SRC sh
+#!/usr/bin/bash
+PIDS=()
+for i in `seq 1 10`; do
+DISPLAY=:1 xterm &
+PIDS+=($!)
+sleep 0.2
+done
+
+sleep 2
+
+for pid in ${PIDS[@]}; do
+kill $pid
+sleep 0.2
+done
+                # from youtube "xmonad Part 2 on Code Deconstructed - Episode 4 02:25 "
+#+END_SRC
+
+
+
+
+
+#+BEGIN_SRC sh
+#!/usr/bin/bash
+# 보관용 수정자제 복사해서 실험용으로 사용하기 위한 것!
+PIDS=()
+for i in `seq 1 10`; do
+DISPLAY=:1 xterm &
+PIDS+=($!)
+sleep 0.2
+done
+
+sleep 2
+
+for pid in ${PIDS[@]}; do
+kill $pid
+sleep 0.2
+done
+                # from youtube "xmonad Part 2 on Code Deconstructed - Episode 4 02:25 "
+#+END_SRC
+
+
+
+
+
+
+
+
+
+
+
+
+help:buffer-name
+ (buffer-name)
+
+
+#+BEGIN_SRC sh :results raw
+function speak_hi {
+ espeak -a 20 "hi";
+ }
+#  while [ i -eq 5 ]
+for i in 1 2 3 4 5
+   do speak_hi
+ echo $$
+[[echo "hi"]] export kill_id=$$
+[[$i == 3 ]] && kill -9 $$
+[[speak_hi]]
+done
+#+END_SRC
+
+#+RESULTS:
+
+[[$i==3]]
+#+RESULTS:
+[[a=3]]
+* $i==
+#+BEGIN_SRC sh
+[[ echo "hi" ]]
+[[:3:]]
+[[
+#+END_SRC
+
+#+RESULTS:
+
+[[(message "hi")]]
+[[::1]]
+[[:1:]]
+#+RESULTS:
+
+* $i==3
+***** test good
+
+** test
+#+STARTUP: showeverything indent logdrawer
+file:../../app/emacs/src_color_bakground.org
+배경에 색깔을 넣어서 시각적 효과를 극대화한다. colorfull background
+#+RESULTS:
+| emacs-lisp | (:background #EEE2FF) |
+| python     | (:background #E5FFB8) |

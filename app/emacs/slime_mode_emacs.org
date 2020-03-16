@@ -1,0 +1,15 @@
+#+CREATOR: LEEJEONGPYO
+#+STARTUP: showeverything indent
+#+TITLE: unix_ide 强點에 集中하여 眞我로 통합을 추구
+###-*- coding: utf-8 -*-
+
+
+
+
+* [[https://worddisk.com/wiki/SLIME/][Reading | SLIME]]
+(async-shel-command "brave --incognito 'https://worddisk.com/wiki/SLIME/'")
+
+
+
+* cf. 
+- common_lisp

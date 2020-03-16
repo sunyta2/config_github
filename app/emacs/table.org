@@ -1,0 +1,107 @@
+#+LINK:bbg file:
+
+
+| Name | Adress | Role |
+|------+--------+------|
+|      |        |      |
+
+
+#+CONSTANTS: skbios=string("1.15.0")
+
+
+
+| 1         |      2 | 3         |      4 |      5 | 6      |
+|           |        |           |   curr |    new |        |
+| Board     | System | CPU       |   BIOS |   BIOS | action |
+|-----------+--------+-----------+--------+--------+--------|
+| good day5 |        | good day2 | 1.15.0 | 1.15.0 |        |
+| good day5 |        | good day2 | 1.13.0 | 1.15.0 | update |
+| good day5 |        | good day2 |        | 1.15.0 | update |
+| good day5 |        | good day2 |        | 1.15.0 | update |
+#+TBLFM: $1=string("good day5");
+#+TBLFM: $3=string("good day2"); :: $5=$skbios; :: $6=if("$5" == "$4", string(""), update);
+#+TBLFM: @1=string("this @1");
+
+Define constants with #+CONSTANTS:
+Defind forumulas with #+TBLFM:
+    - Columns referenced by $colnum
+    - Rows referenced by @rownum
+
+
+
+C-u M-! result of shell
+C-c | or  C-u 2 C-c | for 2 SPC to column formation
+
+sort with C-c ^
+S-RET copies the value down, incrementing numeric values.
+
+total 1220
+       :=@11$2 => 4096
+          :=vsum(@2..@7) => 81
+|  1 |  Date | Time | User     |    |       | Name                        |          | S+RET | C-c ^ (sort) |     |            |
+|----+-------+------+----------+----+-------+-----------------------------+----------+-------+--------------+-----+------------|
+|  2 | 12288 |   12 | thinkpad | 11 | 14:30 | teset.org                   | thinkpad |  0.33 |           11 | Mar | drwxr-xr-x |
+|  3 |  4096 |   65 | thinkpad |  6 | 10:59 | test.123                    | thinkpad |  0.66 |           10 | Mar | drwxr-xr-x |
+|  4 | 27382 |    1 | thinkpad | 11 | 13:55 | test.file                   | thinkpad |  0.99 |            9 | Mar | -rw-r--r-- |
+|  5 |    41 |    1 | thinkpad |  8 | 16:21 | 03diary2020.org             | thinkpad |  1.32 |            8 | Mar | lrwxrwxrwx |
+|  6 |     9 |    1 | thinkpad |  8 | 16:19 | _1_emacs_index.org          | thinkpad |  1.65 |            7 | Mar | lrwxrwxrwx |
+|  7 |    11 |    1 | thinkpad |  1 | 20:38 | emacs_ln_index.org_test.org | thinkpad |  1.98 |            6 | Mar | lrwxrwxrwx |
+|  8 |   717 |    1 | thinkpad | 18 | 18:23 | add_hook.org                | thinkpad |  2.31 |            5 | Feb | -rw-r--r-- |
+|  9 |   591 |    1 | thinkpad |  2 | 15:49 | add_hook.org~               | thinkpad |  2.64 |            4 | Jan | -rw-r--r-- |
+| 10 |   597 |    1 | thinkpad | 11 | 09:58 | agenda_list.org             | thinkpad |  2.97 |            3 | Mar | -rw-r--r-- |
+| 11 |  4096 |   81 |          |    |       |                             |          |   3.3 |            2 |     |            |
+#+TBLFM: @11$2=@3$2::@11$3=vsum(@2..@7)
+
+::@11$4=@11$2
+clock table123
+clock   table1
+clock table1
+|                             |                                                        |                                   | <3> | <7>     |                                                              |
+| Name                        |                                                        |                                   |     |         |                                                              |
+|-----------------------------+--------------------------------------------------------+-----------------------------------+-----+---------+--------------------------------------------------------------|
+| teset.org                   | (mpv + 1) / (a*(teset.org) good day)                   | teset.org hello                   |     |         | (mpv + 1) / (a*(teset.org) string( world))                   |
+| test.123                    | (mpv + 1) / (a*(test.123) good day)                    | 6                                 |     | 7로 한글 | (mpv + 1) / (a*(test.123) string( world))                    |
+| test.file                   | (mpv + 1) / (a*(test.file) good day)                   | test.file hello                   | 123 | 한글폭  | (mpv + 1) / (a*(test.file) string( world))                   |
+| 03diary2020.org             | (mpv + 1) / (a*(03diary2020.org) good day)             | 03diary2020.org hello             |     | 맞아들어감 | (mpv + 1) / (a*(03diary2020.org) string( world))             |
+| _1_emacs_index.org          | (mpv + 1) / (a*(_1_emacs_index.org) good day)          | _1_emacs_index.org hello          |     | ㅁㄴㅇㄹ | (mpv + 1) / (a*(_1_emacs_index.org) string( world))          |
+| emacs_ln_index.org_test.org | (mpv + 1) / (a*(emacs_ln_index.org_test.org) good day) | emacs_ln_index.org_test.org hello |     | ㅁaaㄴㅇㄹㅁ | (mpv + 1) / (a*(emacs_ln_index.org_test.org) string( world)) |
+| add_hook.org                | (mpv + 1) / (a*(add_hook.org) good day)                | add_hook.org hello                |     | asdfasdfa한글입력 | (mpv + 1) / (a*(add_hook.org) string( world))                |
+| add_hook.org~               | (mpv + 1) / (a*(add_hook.org~) good day)               | add_hook.org~ hello               |     | asdfasdfasdf | (mpv + 1) / (a*(add_hook.org~) string( world))               |
+| agenda_list.org             | (mpv + 1) / (a*(agenda_list.org) good day)             | agenda_list.org hello             |     | ㅁㄴㅇㄹㅁ | (mpv + 1) / (a*(agenda_list.org) string( world))             |
+|                             | (mpv + 1) / (a*(0) good day)                           | hello                             |     |         | (mpv + 1) / (a*(0) string( world))                           |
+#+TBLFM: $6=(mpv+1)/a/string("$1") string( string(" world"))::@5$4=123
+#+TBLFM: $2=(mpv+1)/a/string("$1") string("good day")::$3='(concat $1 " hello")::@4$3=6
+[[file:table.org::clock table2]]
+file:table.org::clock table1
+file:table.org::C-c
+C-c C-' EDIT formular 편집의 여러줄로 #TBLFM을 만들어 두고 각 줄로 쉽게 내용을 변경(C-c C-c 수식편집완료)하는 것이 가능할 것이다. C-u C-c C-c(식을 적용)함
+- 한줄만 공식으로 적용됨!
+(info "(org) Editing and debugging formulas")
+(setq org-link-search-must-match-exact-headline nil)
+clock table2
+| 123 | 123 | 123 | 123 |
+|     |     |     |     |
+|     |     |     |     |
+|     |     |     |     |
+|     |     |     |     |
+#+TBLFM: 
+<< clocktable1 >>
+[[clocktable1]]
+** 테스트 오그 타임테이블
+   :LOGBOOK:
+   CLOCK: [2020-03-11 Wed 18:00]--[2020-03-11 Wed 18:08] =>  0:08
+   :END:
+
+#+NAME: clock table1
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2020-03-11 Wed 18:06]
+| Headline                   | Time   |      |
+|----------------------------+--------+------|
+| *Total time*               | *0:08* |      |
+|----------------------------+--------+------|
+| \_  테스트 오그 타임테이블 |        | 0:08 |
+#+END:
+
+
+#+NAME: clock table2
+

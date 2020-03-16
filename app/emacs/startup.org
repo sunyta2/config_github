@@ -1,0 +1,97 @@
+#+STARTUP: showeverything
+#+STARTUP: entitiespretty
+
+
+;;;#+STARTUP: lognoteclock-out showall nofold
+
+org-startup-folded
+
+[[https://sainathadapa.github.io/emacs-spacemacs-config/org-config][Org-mode settings]]
+
+
+(customize-variable-other-window 'org-clock-history-length)
+(customize-variable-other-window 'org-clock-clocked-in-display)
+    ;; (customize)
+org-startup    search 
+Org Startup Folded: Value Menu fold: (everything <- overview)
+    State : STANDARD.
+   Non-nil means entering Org mode will switch to OVERVIEW. More
+Groups: Org Startup
+
+
+(customize-group-other-window) org
+org-clock                Search
+org-clock-clocked-in-display
+* Clocking (setq org-clock-clocked-in-display (quote both))
+대발견! 창제목에 시간. (setq org-clock-clocked-in-display (quote both))
+Hide Org Clock Clocked In Display: Value Menu Both
+:LOGBOOK:
+CLOCK: [2020-02-17 Mon 09:14]--[2020-02-17 Mon 09:16] =>  0:02
+CLOCK: [2020-02-17 Mon 09:08]--[2020-02-17 Mon 09:09] =>  0:01
+:END:
+(setq org-clock-clocked-in-display (quote both))
+0:00:00 0:00:02 0:00:03 0:00:05 
+0:00:33 0:00:00 
+
+* Hide Org Timer Display: Value Menu Both
+:PROPERTIES:
+:code:     1
+:
+:END:
+:LOGBOOK:
+CLOCK: [2020-02-17 Mon 09:50]--[2020-02-17 Mon 10:18] =>  0:28
+CLOCK: [2020-02-17 Mon 09:10]--[2020-02-17 Mon 09:40] =>  0:30
+:END:
+org-cycle-subtree-status =>subtree
+(setq org-cycle-subtree-status 'all)
+org-cycle-subtree-status =>all
+
+
+(setq org-startup-indented t) ;; indent possible by THIS
+(customize-apropos (quote ("startup" "indent")) nil)   
+    ; <= M-x customize-apropos리턴 startup indent리턴 으로 수행하는 명령
+
+
+
+** test in 2nd
+:LOGBOOK:
+CLOCK: [2020-02-17 Mon 15:51]--[2020-02-17 Mon 15:52] =>  0:01
+CLOCK: [2020-02-17 Mon 15:50]--[2020-02-17 Mon 15:50] =>  0:00
+CLOCK: [2020-02-17 Mon 15:50]--[2020-02-17 Mon 15:49] =>  0:00
+CLOCK: [2020-02-17 Mon 15:49]--[2020-02-17 Mon 15:49] =>  0:00
+CLOCK: [2020-02-17 Mon 10:18]--[2020-02-17 Mon 10:18] =>  0:00
+:END:
+
+** org-exp
+:LOGBOOK:
+CLOCK: [2020-02-17 Mon 15:50]--[2020-02-17 Mon 15:51] =>  0:01
+CLOCK: [2020-02-17 Mon 15:49]--[2020-02-17 Mon 15:50] =>  0:01
+CLOCK: [2020-02-17 Mon 10:33]--[2020-02-17 Mon 10:34] =>  0:01
+CLOCK: [2020-02-17 Mon 10:31]--[2020-02-17 Mon 10:32] =>  0:01
+:END:
+
+- 0:00:54 :: (org-clock-in) 
+(org-clock-in '(3))
+
+
+* wifi-pineapple
+:LOGBOOK:
+CLOCK: [2020-02-17 Mon 10:34]--[2020-02-17 Mon 10:45] =>  0:11
+:END:
+
+- save /app/wifi~/wifi_pineapple.org
+[[https://duckduckgo.com/?q=wifi+pineapple&t=brave&iax=videos&ia=videos&iai=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DMAfloP43VzA][wifi pineapple at DuckDuckGo]]- 동영상 시청으로 우선 익힐 것.
+(async-shell-command "brave --incognito 'https://duckduckgo.com/?q=wifi+pineapple&t=brave&iax=videos&ia=videos&iai=https://www.youtube.com/watch?v=MAfloP43VzA'")
+
+ 우끼는세상의 형태 [[https://www.youtube.com/watch?v=E5eqyzrKmlo][Police Say Your Kid Might Be A Hacker If He Uses... - YouTube]]
+                 (async-shell-command "brave --incognito 'https://www.youtube.com/watch?v=E5eqyzrKmlo&t=3m'")
+                 해커에 대한 망상 Police Say Your Kid Might Be A Hacker If He Uses... - YouTube
+
+
+- [ebay] device_wifi.org 
+
+
+* org-clock-mode-line-total
+
+[[https://orgmode.org/manual/Clocking-commands.html#FOOT75][Clocking commands (The Org Manual)]]
+(async-shell-command "brave --incognito 'https://orgmode.org/manual/Clocking-commands.html#FOOT75'")

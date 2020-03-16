@@ -1,0 +1,38 @@
+* [[https://www.youtube.com/watch?v=Fzmm87oVQ6c&t=2303s][My personal fight against the modern laptop - YouTube]]
+분석해서 해독하는 법을 배우는 것
+- 알트키와 슈퍼키를 교체하는 것은 쓸만한 것이다.
+** hd
+hexdump -C
+
+** vbindiff
+
+** hte
+Hex editor simple disassembler
+
+** binwalk
+Searches bin for contents
+Can extract all found
+- use : to extract firmware for embedded devices.
+$ binwalk target.bin
+ => {firmware header showing details of product}
+- Pineapple Image
+Give a man a program, you frustrate him for a day. Teach a man to program, you frustrate him for a lifetime.
+When you accept that the normal behaviour of the code is to fail everything becomes easier :D
+
+[[https://www.youtube.com/watch?v=3aanPGmUkzQ][Using Binwalk To View Firmware Data From Wifi Pineapple Image on Linux - YouTube]]
+$ binwalk upgrade.bin
+ => file HEADER! Squashfs filesystem size:5197504 bytes,
+uImage header
+lzma, 
+$ sudo dd if=upgrade.bin of=pineapplbe.squashfs bs=1 count=5197504
+$ unsquashfs pineaple.squashfs  $ cf) mksquashfs 
+$ ls squashfs-root/
+$ du -h squashfs-root/
+$ binwalk upgrade.bin
+understand give you freedom
+** Looking for structures
+EC Firmware has a large data section
+
+** Connect with Nitrocaster - points me at the 'live key bitmap'
+
+Hardware < SMM < Hypervisor < Supervisor < User 29:00

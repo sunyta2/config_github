@@ -55,11 +55,17 @@ C-u 1 C-[  C-v : 다른 윈도우 이동은 ESC,즉C-[로 가능함
                :    다시 반복으로 C-u 3 C-x z(3회반복)
                : !! 이맥스의 놀라운 창의적인 건축기법에 감탄!!!
 
-(command-history) C-x C-[ C-[ repeat-complex-command 
-명령유래 M-p M-n  C-x M-:     {cf. M-: eval or M-& M-! Shell command}
+C-M-q		indent-sexp
+C-M-q		prog-indent-sexp
 
-C-x x == M-x
-C-x m == M-m in spacemacs
+(command-history) 실행키 x command-history-repeat
+C-x C-[ C-[ repeat-complex-command 
+명령유래 M-p M-n  C-x M-:     {cf. M-: eval or M-& M-! Shell command}
+C-x M-: (repeat-complex-command ARG) 용도: 원래 실행되는 문장을 이해하는 것이 좋음.
+- 내부 명령어의 구조를 깊이 이해하는 것에 큰 도움이 된다.
+   위의 명령으로 이렇게 특수키로 검색하는 것을 발견함.(describe-key "\272" 1 nil)
+   C-[ x == M-x
+(첫문자로이동함 유용함) C-[ m == M-m in spacemacs
 
 - 찾아야 하는 기능(검색법을 기록할 것)
 C-M-r !!! C-M-s가 안되지만, !!!

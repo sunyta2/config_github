@@ -1,0 +1,5 @@
+
+
+info:screen#Top 스크린의 마인드구조를 시간이 나면 살펴본다.
+file:../vim/index.org
+file:../tmux/index.org

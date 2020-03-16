@@ -1,0 +1,20 @@
+
+
+
+help:defadvice 함수의 선행실행일 경우 다른 키의 실행을 알리는 알리미 기능으로 이용할 수 있을지도 모른다.
+                예컨데 스텀프의 알림으로 사용해서 알림을 주는 법이 가능할 지도...
+
+
+help:defcustom 기본값을 미리 설정하는 기능인 것 같음... 
+
+
+help:defalias 
+
+#+BEGIN_SRC emacs-lisp
+;;using swiper so ido no longer needed
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+(defalias 'list-buffers 'ibuffer)
+(defalias 'list-buffers 'ibuffer-other-window)
+#+END_SRC

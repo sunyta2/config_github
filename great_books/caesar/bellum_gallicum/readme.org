@@ -1,6 +1,81 @@
-bellumgallicum_caesar
+-*- coding: utf-8 -*-
+#+TITLE: bellumgallicum_caesar
+#+CREATOR: LEEJEONGPYO
+#+STARTUP: showeverything indent
+
+
+(find-file "~/Music/bellumgallicum_caesar/") note in here!
+                (find-file "~/Music/bellumgallicum_caesar/bellumgallicum_05_caesar_64kb.mp3.org")
 (find-file "~/config_github/great_books/caesar/bellum_gallicum/readme.org")
 
+;; mp3 of /Music/bellumgallicum_caesar/
+(dired-other-window "~/Music/bellumgallicum_caesar/")
+
+(async-shell-command "mpv --player-operation-mode=pseudo-gui '/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_02_caesar_64kb.mp3'")  ;; 읽은 횟수/듣기만한 횟수
+
+
+# [주요사용방법 bbg] time많은 리스트를 만들어 쉽게 노트를 작성한다.
+
+* note
+
+** 01-05 \"~/Music/bellumgallicum_caesar/bellumgallicum_01_caesar_64kb.mp3\"
+        (async-shell-command "mpv --start=0:00:50 --ab-loop-a=0:00:56 --ab-loop-b=0:01:00 --player-operation-mode=pseudo-gui \"/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_01_caesar_64kb.mp3\"") ;; ok
+        (async-shell-command "mpv --start=0:00:50 --ab-loop-a=0:00:56 --ab-loop-b=0:01:00 --player-operation-mode=pseudo-gui '/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_01_caesar_64kb.mp3'") ;; ok
+        (async-shell-command "mpv --start=0:00:50 --ab-loop-a=0:00:56 --ab-loop-b=0:01:00 --player-operation-mode=pseudo-gui \"$home/Music/bellumgallicum_caesar/bellumgallicum_01_caesar_64kb.mp3\"") ;; not
+
+
+** 01        (async-shell-command "mpv --start=0:00:50 --ab-loop-a=0:00:56 --ab-loop-b=0:01:00 --player-operation-mode=pseudo-gui \"/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_01_caesar_64kb.mp3\"") ;;
+** 02        (async-shell-command "mpv --start=0:00:50 --ab-loop-a=0:00:56 --ab-loop-b=0:01:00 \"/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_02_caesar_64kb.mp3\" --player-operation-mode=pseudo-gui") ;;
+** 03        (async-shell-command "mpv --start=0:00:50 --ab-loop-a=0:00:56 --ab-loop-b=0:01:00 \"/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_03_caesar_64kb.mp3\" --player-operation-mode=pseudo-gui") ;;
+** 04        (async-shell-command "mpv --start=0:00:50 --ab-loop-a=0:00:56 --ab-loop-b=0:01:00 \"/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_04_caesar_64kb.mp3\" --player-operation-mode=pseudo-gui") ;;
+** 05        (async-shell-command "mpv --start=0:00:50 --ab-loop-a=0:00:56 --ab-loop-b=0:01:00 \"/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_05_caesar_64kb.mp3\" --player-operation-mode=pseudo-gui") ;;
+Liber I XLII (find-file "~/Music/bellumgallicum_caesar/bellumgallicum_05_caesar_64kb.mp3.org")
+05-01      (async-shell-command "mpv --start=0:00:24 --ab-loop-a=0:01:20 --ab-loop-b=0:00:20 \"/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_05_caesar_64kb.mp3\" --player-operation-mode=pseudo-gui") ;;
+                Cognito Caesaris adventu Ariovistus legatos ad eum mittit: quod antea de conloquio postulasset, id per se fieri licere, quoniam propius accessisset seque id sine periculo facere posse exitimaret.
+                Non respuit condicionem Caesar iamque eum ad sanitatem reverti arbitrabatur, cum id quod antea petenti denegasset ultro polliceretur, magnamque in spem veniebat pro suis tantis populique Romani in eum beneficiis cognitis suis postulatis fore uti pertinacia dissteret.
+                Upon being apprised of Caesar's arrival, Ariovistus sends ambassadors to him, [saying] that what he had before requested as to a conference, might now, as far as his permission went, take place, since he [Caesar] had approached nearer, and he considered that he might now do it without danger. 
+Caesar did not reject the proposal and began to think that he was now returning to a rational state of mind, as he spontaneously proffered that which he had previously refused  to him when requesting it;
+and was in great hopes that, in consideration of his own and the Roman people's great favours towards him the issue would be that he would desist from his obstinacy upon his demands being made known.
+
+
+
+
+
+** 06-10
+** 06        (async-shell-command "mpv --start=0:00:50 --ab-loop-a=0:00:56 --ab-loop-b=0:01:00 \"/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_06_caesar_64kb.mp3\" --player-operation-mode=pseudo-gui") ;;
+** 07        (async-shell-command "mpv --start=0:00:50 --ab-loop-a=0:00:56 --ab-loop-b=0:01:00 \"/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_07_caesar_64kb.mp3\" --player-operation-mode=pseudo-gui") ;;
+** 08        (async-shell-command "mpv --start=0:00:50 --ab-loop-a=0:00:56 --ab-loop-b=0:01:00 \"/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_08_caesar_64kb.mp3\" --player-operation-mode=pseudo-gui") ;;
+** 09        (async-shell-command "mpv --start=0:00:50 --ab-loop-a=0:00:56 --ab-loop-b=0:01:00 \"/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_09_caesar_64kb.mp3\" --player-operation-mode=pseudo-gui") ;;
+** 10        (async-shell-command "mpv --start=0:00:50 --ab-loop-a=0:00:56 --ab-loop-b=0:01:00 \"/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_10_caesar_64kb.mp3\" --player-operation-mode=pseudo-gui") ;;
+
+
+
+
+
+
+* saved source execution
+01-05 \"~/Music/bellumgallicum_caesar/bellumgallicum_01_caesar_64kb.mp3\"
+        (async-shell-command "mpv --start=0:00:50 --ab-loop-a=0:00:56 --ab-loop-b=0:01:00 --player-operation-mode=pseudo-gui \"/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_01_caesar_64kb.mp3\"") ;; ok
+        (async-shell-command "mpv --start=0:00:50 --ab-loop-a=0:00:56 --ab-loop-b=0:01:00 --player-operation-mode=pseudo-gui '/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_01_caesar_64kb.mp3'") ;; ok
+        (async-shell-command "mpv --start=0:00:50 --ab-loop-a=0:00:56 --ab-loop-b=0:01:00 --player-operation-mode=pseudo-gui \"$home/Music/bellumgallicum_caesar/bellumgallicum_01_caesar_64kb.mp3\"") ;; not
+        (async-shell-command "mpv --start=0:00:50 --ab-loop-a=0:00:56 --ab-loop-b=0:01:00 --player-operation-mode=pseudo-gui \"/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_01_caesar_64kb.mp3\"") ;;
+        (async-shell-command "mpv --start=0:00:50 --ab-loop-a=0:00:56 --ab-loop-b=0:01:00 \"/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_02_caesar_64kb.mp3\" --player-operation-mode=pseudo-gui") ;;
+        (async-shell-command "mpv --start=0:00:50 --ab-loop-a=0:00:56 --ab-loop-b=0:01:00 \"/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_03_caesar_64kb.mp3\" --player-operation-mode=pseudo-gui") ;;
+        (async-shell-command "mpv --start=0:00:50 --ab-loop-a=0:00:56 --ab-loop-b=0:01:00 \"/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_04_caesar_64kb.mp3\" --player-operation-mode=pseudo-gui") ;;
+        (async-shell-command "mpv --start=0:00:50 --ab-loop-a=0:00:56 --ab-loop-b=0:01:00 \"/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_05_caesar_64kb.mp3\" --player-operation-mode=pseudo-gui") ;;
+
+06-10
+        (async-shell-command "mpv --start=0:00:50 --ab-loop-a=0:00:56 --ab-loop-b=0:01:00 \"/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_06_caesar_64kb.mp3\" --player-operation-mode=pseudo-gui") ;;
+        (async-shell-command "mpv --start=0:00:50 --ab-loop-a=0:00:56 --ab-loop-b=0:01:00 \"/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_07_caesar_64kb.mp3\" --player-operation-mode=pseudo-gui") ;;
+        (async-shell-command "mpv --start=0:00:50 --ab-loop-a=0:00:56 --ab-loop-b=0:01:00 \"/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_08_caesar_64kb.mp3\" --player-operation-mode=pseudo-gui") ;;
+        (async-shell-command "mpv --start=0:00:50 --ab-loop-a=0:00:56 --ab-loop-b=0:01:00 \"/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_09_caesar_64kb.mp3\" --player-operation-mode=pseudo-gui") ;;
+        (async-shell-command "mpv --start=0:00:50 --ab-loop-a=0:00:56 --ab-loop-b=0:01:00 \"/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_10_caesar_64kb.mp3\" --player-operation-mode=pseudo-gui") ;;
+
+
+
+    /python/link_list_drawer_generate_python_babel.org
+        (async-shell-command "mpv --start=2:34:50 --ab-loop-a=2:34:56 --ab-loop-b=2:35:00 \"$(find ~/Music  -inum 6960041)\" &") ;;
+                     ;; /home/thinkpad/Music/test_mp3/Napoleon Hill/✦Full AudioBook.mp3 # Arco linux
 
 
 

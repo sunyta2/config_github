@@ -1,0 +1,32 @@
+
+(man "dwm")  # man mode
+
+강점을 비교함=> file: ../wm_compare_youtube_note.org
+-      [[file:stumpwm/readme.org][stumpwm/readme]] , 
+- [[file:herbstluftwm/readme.org][herbstluftwm/readme]],
+-       [[file:xmonad/readme.org][xmonad/readme]] ,
+-        [[file:qtile/readme.org][qtile/readme]] ,
+-          [[file:dwm/readme.org][dwm/readme]] , 
+-         [[file:exwm/readme.org][exwm/readme]] ,
+-      awesome,
+-       i3-gap
+- study_experiment file:xephyr => file:xephyr/readme.org (man "xephyr")
+file:polybar
+file:xrandr
+
+* Linux Desktop Roundup | A Look at Five Desktop Environments
+178K views 51:01 Joe Collins https://www.youtube.com/watch?v=SBz5A-fqnb4
+
+
+* layout record collect 
+herbstluftwm 불편함-음원재생이 많을 경우 놓이는 위치가 본래 위치에 중복침범되어 수정해야 함.
+
+qtile W541과 모니터를 오른쪽에 두고 배치하는 것이 강력함을 실험함
+- tag group:
+  - 1 2 3 4 5 6 7 8 9 (홀수는 돌파요구, 짝수는 참고자료들) 2모니터때문, 이전의 3배치
+이맥스, 이맥스장부기록, 검색목적달성, 음원재생,
+
+
+* link
+lfs gentoo study
+m4/readme.org 

@@ -1,0 +1,104 @@
+
+
+(man "vim")   /home/thinkpad/
+(man "urxvt")        urxvt [options] [-e command [ args ]]
+;; :help 를 실행하는 것으로 문서에 대한 탐색을 시도한다.
+* 체계적인 학습과 연구를 위한 명령전송과 help를 이용할 방법을 발견하려고 함.
+- 터미널의 외부를 빠르게 실행하는 법을 찾아냄.
+(start-process "vim_in_urxvt" nil "urxvt" ;; 빠른 단축으로 만드는 것은 C-c C-l elisp: 를 사용해서 넣으면 됨
+  "-e" "vim")   ;성공적으로 가능함을 발견함.
+(send-string "Shell" "k")
+(process-send-string "*Async Shell Command*" "iworld")
+
+
+
+help:async-shell-command
+
+(async-shell-command "espeak -a 30 hi" "abc")
+
+(async-shell-command "urxvt" nil nil)
+
+- 우선적으로 문장을 전송하는 법을 익힘
+
+process-send-eof
+process-send-region
+process-send-string    help:process-send-string
+(process-send-string "vim in urxvt" "iworld")
+(process-send-string "vim_in_urxvt" "iworld")
+(process-send-string 3687846 "iworld")
+help:process-send-eof (process-send-eof "vim_in_urxvt")
+help:process-send-region (process-send-region "vim_in_urxvt" 1 100)
+process-send-string
+
+help:python-shell-send-region
+help:send-region (send-region "vim_in_urxvt" 1 100)
+help:sh-send-line-or-region-and-step
+
+- *terminal* 로 전송하는 법
+help:term-send-region (term-send-region "vim_in_urxvt" 1 100)
+help:term-send-region (term-send-region "*terminal*" 1 100)
+help:term-send-string (term-send-string "*terminal*" "문장전송이 성공적이다.")
+help:term-send-string (term-send-string "*terminal*" "vim -h move")
+help:term-send-string (term-send-string "*terminal*" ":help move")
+
+- *shell* 로 전송하는 법
+    M-x shell
+M-: (sh-send-line-or-region-and-step) ;; 아래를 성공적으로 영역으로 실행함
+echo hi
+echo world
+echo echo hi
+echo echo world
+espeak -a 30 hi
+
+espeak -a 30 hi
+
+espeak -a 30 world
+:!q
+
+
+- *eshell* 로 전송하는 법
+help:send-string (send-string "abc" "abc") (send-string "*eshell*" "k")
+ - 단 실행중인 프로세스가 있어야 했음.위의 경우는 mpv로 음악재생을 통제하는 것이 가능함.
+
+python-shell-send-region
+send-region
+sh-send-line-or-region-and-step
+term-send-region
+
+(list-processes)
+
+
+
+
+- 다른방법 M-x term vim을 실행하는 것이 있으나 멀티터미널을 사용해야 할 가능성이 크다.
+
+(start-process "emacs_pdf okular" nil "okular" ;; 빠른 단축으로 만드는 것은 C-c C-l elisp: 를 사용해서 넣으면 됨
+  "-p" (int-to-string (+ 57 24)) ;-p 57; query_string.org
+  "/home/thinkpad/Documents/learning_gnu_emacs.pdf" )
+
+
+       --help      Give a help message and exit, just like "-h".
+       -h          Give a bit of help about the command  line  arguments  and
+                   options.  After this Vim exits.
+       /etc/vimrc     System wide Vim initializations.
+
+       ~/.vimrc       Your personal Vim initializations.
+
+       /etc/gvimrc    System wide gvim initializations.
+
+       ~/.gvimrc      Your personal gvim initializations.
+
+
+
+info:screen#Top
+file:../vim/index.org
+file:../tmux/index.org
+
+
+       /etc/vimrc     System wide Vim initializations.
+
+       ~/.vimrc       Your personal Vim initializations.
+
+       /etc/gvimrc    System wide gvim initializations.
+
+       ~/.gvimrc      Your personal gvim initializations.

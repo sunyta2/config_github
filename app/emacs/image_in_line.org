@@ -1,0 +1,138 @@
+#+STARTUP: inlineimages
+
+#+begin_src emacs-lisp
+(setq org-startup-with-inline-images t)
+#+end_src
+
+file:eww.org
+(eww-browse-url "file:/home/thinkpad/Pictures/hebrew/hebrew_in_ipad.png") 잘 됨.
+(eww-browse-url "file:/home/thinkpad/Desktop/458-AKozakImage1.jpg")
+file:image_in_line.org
+(eww-browse-url "file:/home/thinkpad/Desktop/458-AKozakImage1.jpg")
+
+
+
+(Image[imagemagick]) arco에서 파일로 즉시 이맥스에서 열림을 확인함.
+설치시 참고할 것. [[Image_imagemagick]]
+    - You can use C-c C-c or C-c C-x 핵삽뷰어가 있어서 매우 유용한 디버깅의 도구의 가능성을 보이는 이맥스의 놀라움
+
+* site and stuff
+[org mode inline image display size - Emacs Stack Exchange](https://emacs.stackexchange.com/questions/30559/org-mode-inline-image-display-size)
+#+ATTR_HTML: :width 300px
+(setq org-image-actual-width 400) 
+should do the job. The documentation of the variable (C-h v org-image-actual-width RET) gives more detail:
+[[file:/tmp/image.jpg]]
+
+
+[[https://orgmode.org/worg/org-contrib/babel/languages/images/python-matplot-fig.png]]
+
+- he keybinding for toggle image is actually C-c C-x C-v
+- And the command is M-x help:org-toggle-inline-images 
+
+
+
+
+
+(eww-browse-url "url.jpg")
+
+(async-shell-command "wget -O /tmp/image.jpg https://url/some-name.jpg")
+
+(async-shell-command "espeak -v ko '한글이 나온다'")
+
+
+
+#+begin_src emacs-lisp
+(defun do-org-show-all-inline-images ()
+  (interactive)
+  (org-display-inline-images t t))
+(global-set-key (kbd "C-c C-x C v")
+                'do-org-show-all-inline-images)
+;; And here's how I found how to do it:
+;; note source in emacs/image_in_line.org
+     ;;M-x apropos RET org.*image.*.
+     ;;F1 f org-display-inline-images.
+     ;;make a test.org with a link to picture.
+     ;;M-: (org-display-inline-images t t).
+     ;;wrap it in a defun/global-set-key.
+;;  일반론으로 사용할 방법찾기와 함수만들기 ;; [org mode - Emacs org-display-inline-images - Stack Overflow](https://stackoverflow.com/questions/17621495/emacs-org-display-inline-images)
+;;1)함수명칭정의
+;;2)(interactive)설정함
+;;3)함수핵심을파악
+;;4)단축키로 지정함
+;; 1)~2) 기초기반실현 3) 핵심장악 4) 작용의 확산
+;; 기초-핵심-확산작용
+
+     ;;1)기초용어찾기apropos를 사용
+     ;;2)파악된 기초작용을 탐구 사용법 파악
+     ;;3)대상을 실험체 파일을 생성함
+     ;;4)대상체에 적용함
+     ;;5)global한 일반 함수로 만들기
+     ;;1)~2)기초지식탐구 3)~4)객체완성실현 5)이치통합성
+;; 기초-객체-이치통일
+#+end_src
+
+
+
+* Image_imagemagick
+help:image-mode
+Image 가 메뉴바에 생기면서 활용을 높인다.
+단축키연구가 필요한 경우.
+Image[imagemagick] mode defined in ‘image-mode.el’:
+Major mode for image files.
+You can use C-c C-c or C-c C-x 핵삽뷰어가 있어서 매우 유용한 디버깅의 도구의 가능성을 보이는 이맥스의 놀라움
+to toggle between display as an image and display as text or hex.
+
+Key bindings:
+key             binding
+---             -------
+
+C-c		Prefix Command
+RET		image-toggle-animation
+SPC		image-scroll-up
++		image-increase-size
+-		image-decrease-size
+0 .. 9		digit-argument
+<		beginning-of-buffer
+>		end-of-buffer
+?		describe-mode
+F		image-goto-frame
+a		Prefix Command
+b		image-previous-frame
+f		image-next-frame
+g		revert-buffer
+h		describe-mode
+k		image-kill-buffer
+n		image-next-file
+o		image-save
+p		image-previous-file
+q		quit-window
+r		image-rotate
+DEL		image-scroll-down
+S-SPC		image-scroll-down
+<remap>		Prefix Command
+
+<remap> <backward-char>		image-backward-hscroll
+<remap> <beginning-of-buffer>	image-bob
+<remap> <end-of-buffer>		image-eob
+<remap> <forward-char>		image-forward-hscroll
+<remap> <left-char>		image-backward-hscroll
+<remap> <move-beginning-of-line>
+				image-bol
+<remap> <move-end-of-line>	image-eol
+<remap> <next-line>		image-next-line
+<remap> <previous-line>		image-previous-line
+<remap> <right-char>		image-forward-hscroll
+<remap> <scroll-down>		image-scroll-down
+<remap> <scroll-down-command>	image-scroll-down
+<remap> <scroll-left>		image-scroll-left
+<remap> <scroll-right>		image-scroll-right
+<remap> <scroll-up>		image-scroll-up
+<remap> <scroll-up-command>	image-scroll-up
+
+a +		image-increase-speed
+a -		image-decrease-speed
+a 0		image-reset-speed
+a r		image-reverse-speed
+
+C-c C-c		image-toggle-display
+C-c C-x		image-toggle-hex-display

@@ -1,0 +1,38 @@
+w541_high install
+KDE
+
+
+
+ ~/config_github/hardware/storage/msata827_kde.org
+(find-file-other-window "storage/msata827_kde.org")
+
+
+
+
+
+
+~/config_github/hardware/storage/
+
+~/config_github/hardware/storage/msata045_arco.org
+file:~/config_github/hardware/storage/msata827_kde.org
+("~/config_github/hardware/storage/msata827_kde.org") ;; id:아이디변경-문서생성-과정-절차5
+
+
+* w541_COMMON
+이 머신의 강점: 현존기종중에서 [휴대성높음]손잡이로쓰이는 Projected Battery가 있다!!! 빨콩이 있으며,
+   [아래있은 외부스피커]스피커가 모니터를 닫아도 소리의 소실이 없도록 아래에 배치됨 전기량절약과 음원의 안정적인 외부출력!
+   [환풍구와 이어폰잭이 같이 왼쪽에 위치함] 화면을 90도 회전시에 안정적인 휴대가 가능함 가방에 넣을 구조적안정감.
+
+
+* each of w541
+** w541_high
+  :PROPERTIES:
+  :ID:       아이디변경-문서생성-과정-절차3
+  :ID:       아이디변경-문서생성-과정-절차2
+  :END:
+~/config_github/hardware/w541.org
+
+
+** w541_middle
+** w541_low
+drill in ebay or 시계방에서 찾아 볼것.

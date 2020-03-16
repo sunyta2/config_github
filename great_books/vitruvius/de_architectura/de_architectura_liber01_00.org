@@ -1,0 +1,36 @@
+
+ - 성공한 명령문-문장 [2020-03-14 Sat 13:32] espek timeout 25 and while true ALL in espeak/readme.org
+[[elisp:(start-process-shell-command%20"espeak%EB%9D%BC%ED%8B%B4%ED%9D%AC%EB%9E%8D%EC%9D%BD%EA%B8%B0"%20nil%20%0A(concat%20"timeout%2025m%20echo%20\"process%20NAME:%20espeak_timeout_25m\";"%0A"%20string=\""%20(buffer-substring-no-properties%20(+%20(line-beginning-position%202)%206)%20(line-end-position%202))%20"\";"%0A"%20string2=\""%20(buffer-substring-no-properties%20(line-beginning-position%203)%20(line-end-position%203))%20"\";"%0A"timeout%2025m%20bash%20-c%20\"while%20true;%20"%0A"%20do%20espeak%20-a%2030%20-g%2060%20-s%20100%20-v%20other/grc%20\\\"$string\\\";%20sleep%203;"%0A"%20%20%20%20espeak%20-a%2030%20-g%2060%20-s%20120%20\\\"$string2\\\";%20sleep%203;"%0A"%20%20%20espeak%20-a%2030%20-g%2060%20-s%20100%20-v%20other/grc%20\\\"$string\\\";%20sleep%209;"%0A"%20done;%20echo%20\\\"process%20NAME:%20espeak_timeout_25m\\\"%20\""%0A))][elisp:(TIMEOUT 25m espeak_Below=grc+en)]]   [[elisp:(start-process-shell-command%20"kill%20using%20pipe%20BY%20using%20concat%20CMD!%20in%20timeout"%20nil%20(concat%20"ps%20aux"%20"|%20grep%20espeak_timeout_25m"%20"|%20awk%20'{print%20$2}'"%20"|%20xargs%20-I{}%20kill%20-9%20{}"))][elisp:(kill espeak_timeout_25m)]]  ;; 성공적인 정지력!!!
+- [ ] δὲ 그리고 | μάλιστα 대부분
+사랑한다 진리의 나여!
+
+[[elisp:(start-process-shell-command%20"espeak%EB%9D%BC%ED%8B%B4%ED%9D%AC%EB%9E%8D%EC%9D%BD%EA%B8%B0"%20nil%20%0A(concat%20"timeout%2025m%20echo%20\"process%20NAME:%20espeak_timeout_25m\";"%0A"%20string=\""%20(buffer-substring-no-properties%20(+%20(line-beginning-position%202)%206)%20(line-end-position%202))%20"\";"%0A"%20string2=\""%20(buffer-substring-no-properties%20(line-beginning-position%203)%20(line-end-position%203))%20"\";"%0A"timeout%2025m%20bash%20-c%20\"while%20true;%20"%0A"%20do%20espeak%20-a%2030%20-g%2060%20-s%20100%20-v%20other/la%20\\\"$string\\\";%20sleep%203;"%0A"%20%20%20%20espeak%20-a%2030%20-g%2060%20-s%20120%20\\\"$string2\\\";%20sleep%203;"%0A%20"%20%20%20espeak%20-a%2030%20-g%2060%20-s%20100%20-v%20other/la%20\\\"$string\\\";%20sleep%209;"%0A"%20done;%20echo%20\\\"process%20NAME:%20espeak_timeout_25m\\\"%20\""%0A))][elisp:(TIMEOUT 25m espeak_Below=latin+en)]]   [[elisp:(start-process-shell-command%20"kill%20using%20pipe%20BY%20using%20concat%20CMD!%20in%20timeout"%20nil%20(concat%20"ps%20aux"%20"|%20grep%20espeak_timeout_25m"%20"|%20awk%20'{print%20$2}'"%20"|%20xargs%20-I{}%20kill%20-9%20{}"))][elisp:(kill espeak_timeout_25m)]]  ;; 성공적인 정지력!!!
+- [ ] amare me
+사랑한다 진리의 나여!
+
+
+
+modified in de_architectura from app/espeak/readme.org 성공! [2020-03-14 Sat]
+    espeak로 한줄아래읽기 성공!! concat + shell timeout 25m while true grc la 둘다 성공함. kill도 성공!!!
+
+file:~/config_github/great_books/vitruvius/de_architectura/de_architectura_liber01_00.org
+modified in de_architectura
+
+[[elisp:(start-process-shell-command%20"espeak%EB%9D%BC%ED%8B%B4%ED%9D%AC%EB%9E%8D%EC%9D%BD%EA%B8%B0"%20nil%20%0A(concat%20"timeout%2025m%20echo%20\"process%20NAME:%20espeak_timeout_25m\";"%0A"%20string=\""%20(buffer-substring-no-properties%20(+%20(line-beginning-position%202)%206)%20(line-end-position%202))%20"\";"%0A"%20string2=\""%20(buffer-substring-no-properties%20(line-beginning-position%203)%20(line-end-position%203))%20"\";"%0A"timeout%2025m%20bash%20-c%20\"while%20true;%20"%0A"%20do%20espeak%20-a%2030%20-g%2027%20-s%20120%20-v%20other/la%20\\\"$string\\\";%20sleep%202;"%0A"%20%20%20espeak%20-a%2030%20-g%2027%20-s%20150%20-v%20other/la%20\\\"$string\\\";%20sleep%202;"%0A"%20%20%20espeak%20-a%2030%20-g%2030%20-s%20120%20-v%20other/la%20\\\"$string\\\";%20sleep%202;"%0A"%20%20%20%20espeak%20-a%2030%20-g%2015%20-s%20126%20\\\"$string2\\\";%20sleep%202;"%0A"%20%20%20espeak%20-a%2030%20-g%2027%20-s%20120%20-v%20other/la%20\\\"$string\\\";%20sleep%209;"%0A"%20done;%20echo%20\\\"process%20NAME:%20espeak_timeout_25m\\\"%20\""%0A))][elisp:(TIMEOUT 25m espeak_Below=latin+en edit time)]]   [[elisp:(start-process-shell-command%20"kill%20using%20pipe%20BY%20using%20concat%20CMD!%20in%20timeout"%20nil%20(concat%20"ps%20aux"%20"|%20grep%20espeak_timeout_25m"%20"|%20awk%20'{print%20$2}'"%20"|%20xargs%20-I{}%20kill%20-9%20{}"))][elisp:(kill espeak_timeout_25m)]]  ;; 성공적인 정지력!!!
+- [ ] Publicorum autem distributiones sunt tres, 
+There are three classes of public buildings: 
+
+
+
+
+file:de_architectura_liber01_00.org
+file:de_architectura_liber01_01.org
+file:de_architectura_liber01_02.org
+file:de_architectura_liber01_03.org 작업제작중...
+file:de_architectura_liber01_04.org
+file:de_architectura_liber01_05.org
+file:de_architectura_liber01_06.org
+file:de_architectura_liber01_07.org
+file:de_architectura_liber01_08.org
+
+

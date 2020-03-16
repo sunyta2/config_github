@@ -1,0 +1,20 @@
+#S(GDUMP
+   :NUMBER 2
+   :NAME "2_Emacsq"
+   :TREE ((#S(FDUMP
+              :NUMBER 0
+              :X 0
+              :Y 0
+              :WIDTH 960
+              :HEIGHT 1080
+              :WINDOWS (16777276 16777217)
+              :CURRENT 16777276)
+           #S(FDUMP
+              :NUMBER 1
+              :X 960
+              :Y 0
+              :WIDTH 960
+              :HEIGHT 1080
+              :WINDOWS (18876470)
+              :CURRENT 18876470)))
+   :CURRENT 1)

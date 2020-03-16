@@ -1,3 +1,25 @@
+-*- coding: utf-8 -*-
+#+STARTUP: showeverything indent
+#+TITLE: yay and pacman in arch_linux with acro or etc_distro
+
+
+* $ sudo rm /var/lib/pacman/db.lck && pacman -Syu
+it says: “..you can remove /var/lib/pacman/db.lck”.
+[[https://www.ostechnix.com/how-to-fix-unable-to-lock-database-error-in-arch-linux/][How To Fix "unable to lock database" Error In Arch Linux - OSTechNix]]
+
+** How to update and upgrade Arch Linux [[https://www.garron.me/en/go2linux/upgrade-update-arch-linux.html][How to update and upgrade Arch Linux]]
+you have to upgrade it, 
+in ArchLinux the packages are constantly being updated, 
+so to have the last version or Arch once installed, 
+just enter this two commands:
+$ sudo pacman -Syy
+This is to update the database, just like
+sudo aptitude update #in Debian or Ubuntu.
+We will later perform the update.
+$ sudo pacman -Su
+And that is it, you should run these commands, mmmh once a week, and you will stay up to date.
+
+
 * yay
 install list
 spectacle, kolour ;; For screenshot PrtSc to activate spectacle,
@@ -7,7 +29,6 @@ pulsemixer ;; xsetroot ;; pulsemixer --get-volume | awk '{ print $1 }'
 tmuxp
 
 * pacman
-
 
 #+BEGIN_SRC sh
 
@@ -25,10 +46,18 @@ sudo pacman -Su
 
 #+END_SRC
 
-
+:note:
+[2020-02-14 Fri 12:34] \\
+    바로 여기서 실행하는 것도 방법인지도 모른다통합적인 관리를 위해서
+:END:
 #+BEGIN_SRC sh
 # $ mirror
-sudo pacman -Ssyu # Arco Linux Note
+sudo pacman -Ssyu # update를 하는 보편의 명령인듯하다.
+# sudo pacman -Ssyu # Arco Linux Note
+#/os/arch/yay_pacman_install.org 기록을 해둔다.
+buffer-file-path 
+
+
 # update
 # pksyua
 sudo pacman -S plasma-meta

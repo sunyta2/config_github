@@ -1,15 +1,136 @@
+# 기초의 essential_단련없이 발달은 없다! emacs/move.org
+일단 이동의 기본방식을 잘 수집한다. 잘 단련된 기본을 바탕으로 발전을 쌓는다.
+
+[[info:org#Motion][info:org#Motion]]
+‘C-c C-u’     (‘outline-up-heading’)     Backward to higher level heading.
+‘C-c C-j’     (‘org-goto’) Jump to a different place without changing the current outline
+‘C-c C-w’     (‘org-refile’) Refile entry or region to a different location.  *Note Refile and copy 
+C-u C-p | C-u C-a 빠르게 줄을 키보드로 이동하는 법!
+요약 UP!으로 이해! 언틸 A지점 after?
+
+생각의 전환점이 발생! Emacs는 단순히 행동하는 것이아니라 목적적인 메타사고에 적합한 방식으로 구성되었음을 깨달아야 함.
+즉, 먼저 위치로 돌아감을 상정하고 지우기를 실천하는 것이다. M-b M-b 원위치를 정확히 잡고! M-d M-d등으로 지우며
+나중에 차례로 복귀가 되면서 kill-ring이 pop아웃되어서 원래의 원하는 자리로 돌아간다. 매우 합리적이다.
+즉 M-y는 이전으로 돌아가면서 이미 붙인 내용을 아웃시킨다.
+
+M-SPC는 M-\과 달리 1개의 스페이스공간을 둔다. 
+
+M-z는 (M--) 숫자 (M-z) 영문자1개 빠르게 이동한다.
+
+M-h는 놀라운 문단과 Org 하위 * 영역을 모두 선택하는 놀라움!
+
+########+STARTUP: showeverything indent
+syntax_of_if_in_sh.org
+app/emacs/snippet_of_temp_buffer_in_emacs.org
+app/emacs/syntax_of_temp_buffer_in_emacs.org
+
+input_editing_quick_method_in_emacs
+
+collection of if syntax
+놀라운 이동의 발견 /app/emacs/org-clock-goto_C-u_C-c_C-x_C-j.org
+[드디어발견함! C-u C-SPC] ;; 매우 빠르게 이전의 위치로 복귀함! [2020-02-15 Sat 16:56]
+cf. C-x SPC. (rectangle-mark-mode &optional ARG)
+cf. C-x C-@, C-x C-SPC. (pop-global-mark)
+M-{ M-}
+M-r (move-to-window-line-top-bottom &optional ARG) cf. C-l
+C-u C-SPC 버퍼내의 빠른 이동에 유용한 것 같음.
+C-x C-@ move 
+C-x C-@ runs the command pop-global-mark (found in global-map), which
+is an interactive compiled Lisp function in ‘simple.el’.
+It is bound to C-x C-@, C-x C-SPC.
+(pop-global-mark) help:pop-global-mark
 
 
-일단 이동의 기본방식을 잘 수집한다.
+- It is bound to M-r.
+ - cf. (move-to-window-line ARG)
+
+
+* 손가락을 탄지하듯이 이동하는 법
+- M-r M-a M-e의 조합을 연습할 것
+음을 추상하면 동작으로 느낄 태세가 되어 있어야 한다.
+음의 진동을 손으로 표현하는 것이다.[2020-03-08 Sun 07:10]
+#+BEGIN_QUOTE emac-lisp
+둘 또는 셋의 철자음소를 듣는 즉시 추상하여, 손의 동작으로 무의식적으로 전달되는 연습이 되어야 한다.
+
+나의 느린 그 인식이 왠지 강점이었음을 확신하며 더욱 창의적인 붓터치의 느낌을 주는 타건이 가능할 것이다.
+충웅~분우~니 깊고 풍성한 이미지를 수집하고 익히는 숙성의 과정이 요구된다. 본질적이면서 더욱 선명하고 생동감있게 무의식이 반응하는 것.
+무의식과 깊은 대화를 나누는 것이다. 자신은 누구이며, 무엇이 우주의 깊은 무의식적인 초의식 본질인가 깊이 느끼는 것이 공부이며, 기도이다.
+즉 다양하고 폭넓은 인식의 경험은 최상승의 가능성을 열기 위한 지표이다.
+Emacs가 훨씬 더 창의적인 타건의 자세를 요구하기에 붓처럼 3차원적인 손의 위치를 요구하는 고도의 동작추상성은
+왕희지의 必字동작을 연상시킨다. 
+super-key Meta-key의 위치가 손의 열림을 주는 것은 비틀린 연마를 위한 혁신의 가능성을 열어준다.
+    장애물이 오히려 새로운 도약의 발판을 열어준다. 극한의 영역을 넘어서 최상의 결과를 도출하는 새로운 지평을 열어낸다. 
+먼저 대기 상태 완전히 하고서 왼손은 모서리를 손톱으로 끍어 주면서 대기한다. 매우 제한된 극한의 터치를 보유할 것을 요구한다.
+                        왼손의 무명지를 Meta키의 상단모서리부분을 끍으며 중지는 D-key의 좌상단에 손끝이 부드럽게 터치된 열리 구조.
+                        왼손의 새끼손가락을 무명지에 붙인다음 
+ 심지어 중지 손가락으로 탄지하듯이 M-a를 연습하는 것이 중요하다.
+먼저 중요한 위치로 이동한 다음에 나머지 수정을 그 곳의 관점에서 처리하는 인상적인 메타 통솔의 기능을 보인다.
+먼저 최초상태 파악 입력전에 Mode-Line를 점검하는 습관을 들일 것. 그리고 그것을 정보처리의 중요한 위치로 인식할 것.
+mode_line.org 정확한 명칭을 인식하고 메뉴얼의 위치를 확인하여 함께 파일명으로 정하여 노트를 설정할 것.
+
+
+*** coding sysytem key unix-8 special key typing C-x RET c
+To specify a coding system for converting non-ASCII characters
+in the input and output to the shell command, use C-x RET c
+before this command.
+
+** append to previous kill ring C-M-w M-w
+If you want to append the killed line to the last killed text,
+use C-M-w before M-w.
 
 * [2020-01-16 Thu 13:00] 유용한 정도를 발견함 C-s C-w로 맨 마지막 줄요 이동하는 법이 있음.
 C-r C-w (C-w ...이후 단어를 수집해서 검색어로 연결시킴! 신기함.)
+* C-u C-u C-f/b ;; 빠른 줄의 이동 C-SPC로 region설정에도 좋음!
+C-u C-u C-n/p
+* 프로젝트워크북 클릭커블로 쉽게 위치로 이동하기- 갑자기 아이디어가 떠오름 
+그리고 클릭커블한 마커위치로 바로가기 a,b,c 
+마커설정을 정하는 방법을 구하기( 파일 열기가 전제되어야 할 것임 )
+마커위치을 불러내는 법을 구하기
+
+buffer-has-markers-at 	compilation--loc->marker 	copy-marker
+dired-file-marker 	dired-marker-regexp 	ethio-fidel-to-sera-marker
+ethio-sera-to-fidel-marker 	insert-before-markers 	insert-before-markers-and-inherit
+integer-or-marker-p 	make-marker 	mark-marker
+marker-buffer 	marker-insertion-type 	marker-position
+markerp
+move-marker 	number-or-marker-p
 
 
+[[41][41]]
+[[::test]]
+[[test]]
+[[test]
+prog-indent-sexp
+prog-mode
+(goto-line 7 "move.org")
+(goto-line 7 (buffer-name))
+prog2 (
+(goto-line LINE &optional BUFFER)
+If called interactively with C-u
+as argument, BUFFER is the most recently selected other buffer.
+prog-indent-sexp
+prog-mode
+  (goto-char 
+  (point-min))
+  (forward-line (1- N))
+ (forward-line (1- 3))
+file:test
+[[file:shell_star_cmd_search_in_emacs_test.org::**shell(C-h%20k)%20%EB%A1%9C%20%EA%B2%80%EC%83%89%ED%95%9C%20%EB%AA%A9%EB%A1%9D%EC%9E%84.%20etc][*shell(C-h k) 로 검색한 목록임. etc]]
+[[file:shell_star_cmd_search_in_emacs_test.org::6][6]]
+org-agenda-get-any-marker 	org-agenda-new-marker 	org-agenda-reset-markers
+org-agenda-save-markers-for-cut-and-paste 	org-check-and-save-marker 	org-clock-save-markers-for-cut-and-paste
+org-goto-marker-or-bmk 	org-imenu-new-marker 	org-refile-marker
+org-reinstall-markers-in-region 	org-save-markers-in-region 	point-marker
+point-max-marker 	point-min-marker 	set-marker
+set-marker-insertion-type 	xref-clear-marker-stack 	xref-location-marker
+xref-marker-stack-empty-p 	xref-pop-marker-stack 	xref-push-marker-stack
+
+elisp: 로 만들어서 워크스페이스로 사용하기 (파일열기와 워크북으로 사용하여서 프로잭트관리의 부담을 줄인다.)
+(추가 *scrach*제목변경법으로 제목을 찾기쉽게 그냥 scrach로 만들면 입력이 편하다)
 * C-u 286 M-g M-g will jump to line number (=go to a certain line given its number?) 
 https://www.gnu.org/software/emacs/manual/html_node/efaq/Going-to-a-line-by-number.html
 
-
+* test
 
 C-x ` to step through the offending lines one
 
@@ -22,7 +143,9 @@ example, C-u 286 M-g M-g will jump to line number 286 in the current buffer.
 
 
 "}
-* C-M-{f, b, u, d}Vim % 같은 기능 
+* [C-c &] Position saved to mark ring, go back with 'C-c &'
+Position saved to mark ring, go back with 'C-c &'. 문장이 나옴.
+* [C-M-{f, b, u, d}] Vim % 같은 기능 
 C-M-f, or M-x forward-sexp, goes forward to the closing brace, or to the opening brace in the next set of braces. 
 C-M-b, or M-x backward-sexp
 
@@ -32,10 +155,23 @@ C-M-@
 C-M-<SPC> [2020-01-13 Mon 20:20] 특히 C-x C-x로 마커와 커서를 변경하면 삭제에 특히 유용한 것임!
 Put mark after following expression (mark-sexp).
 
+빠른 이동에 유용함 id:[[id:register이용한_빠른_이동전술][Quick 위치이동( C-x r j ) ( C-x r {C-}SPC @ );포인터를 마커로 변환함]]
+** [C-M-n p f F SPC b B N P]VIM % 기능과 유사함
+C-M-@, C-M-SPC.
+C-M-f would move to with the same argument.
+Interactively, if this command is repeated
+or (in Transient Mark mode) if the mark is active,
+it marks the next ARG sexps after the ones already marked.
+This command assumes point is not in a string or comment.
+
+(mark-sexp &optional ARG ALLOW-EXTEND)
+
 ** C-M-<SPC> [2020-01-13 Mon 20:20] 특히 C-x C-x로 마커와 커서를 변경하면 삭제에 특히 유용한 것임!
 Put mark after following expression (mark-sexp).
 
-
+* delete one character or one word like backspace
+- C-- C-d, M-- M-d
+리피트는 C-x z
 
 * M-x electric-pair-mode 자동으로 짝으로 생성됨. M-x show-paren-mode. To customize it, type M-x customize-group <RET> paren-showing.
 [2020-01-13 Mon 20:05] M-x electric-pair-mode 자동으로 짝으로 생성 M-x show-paren-mode
@@ -60,26 +196,48 @@ zap-to-char
 3단어 동시 지우기의 경우 M-- 3 M-d
 풀어서 쓰면 C-[ C-- 3 C-[ d ( 기본적인 메타meta 사고가 깊게 자리잡혀야 한다. ) ]]
 
+
+** transpose- M-t C-M-t C-x C-t
+transpose-words is an interactive compiled Lisp function in
+‘simple.el’.
+It is bound to M-t.
+(transpose-words ARG)
+
+
+
+transpose-sexps is an interactive compiled Lisp function in
+‘simple.el’.
+It is bound to C-M-t.
+(transpose-sexps ARG)
+
+
+
+transpose-lines is an interactive compiled Lisp function in
+‘simple.el’.
+It is bound to C-x C-t.
+(transpose-lines ARG)
+
+
+* input_editing_quick_method_in_emacs
+C-M-/ global인 듯 느림
+M-/ [중요]빠름 영어단어완성기능이 있음
+C-x ; Babel comment out
 지우기의 경우 M--지우기의 경우 M--지우기의 경우 M--지우기의 경우 M--지우기의 경우 M--
-*** 기억술! (메타는 기본적으로 틀을 벗어나서(특이함) 남으로 Escape로 이해하면 되며, 또한 닫힘의 한계가 없으므로 열린 상태의 상자이다!)
-- 매우 창의적인 통합의 기억술이다! 메타=벗어남(다른특이함)=열린무한공간=자유
+*** 기억술! (메타는 기본적으로 틀을 벗어나서(특이함) 남으로 마음깊은속으로 Escape로 이해하면 되며, 또한 닫힘의 한계가 없으므로 열린 상태의 상자이다!)
+- 매우 창의적인 통합의 기억술이다! 메타=벗어남(다른특이함)=열린무한공간=내적자유
 통제력을 행사하기 전에 먼저 틀을 벗어나야 한다.(즉 출세간을 먼저 배우고 세간사를 배우는 화엄의 원리와 동일함.)
-창의성(=창조력)은 틀을 벗어난 형이상학의 접근이 먼저 우선한다.
-자유는 한계를 벗어난 창조력이므로 관료제적인 접근은 자유의 능력에 장애물이 되는 경우가 많다.
 
 
 
-
-[2020-01-14 Tue 09:26] 말을 할 수 있는 그 자리(그 곳)은 생각의 영역이 아니다.
+[2020-01-14 Tue 09:26] 말을 할 수 있는 그 자리(마음-그 곳-화두, 로고스)는 생각의 영역이 아니다.
+"나는 어째서 '말을 할 수 있는'가?"
 1독생자의 의미도 원래는 하느님이 생한 자리라면 성품의 자리라고 봐야 할 것이 아닌가?
-즉 종교간의 모색도 동일한 도착에 이르는 것이라고 봐야 할 것이다.                                            
+하느님을 가장 닮은 자리 '말을 할 수 있는' 능력을 탐구하는 것이 중요하다. 인간존중
+
+손가락으로 손가락을 못 가리키고, 불로 불을 못 태우듯이,
+말로써 말을 못 가리킨다. 지금 바로 이 벌어지는 마음 즉, 우주법계는 일불의 바다(유일관통한 진리의 바다)                                            
+말로써 말이 갈 수 없는 그 깊은 곳에 이르게 도움을 주는 것이다. 중론
                                                             
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaa
-aaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-
-
                                             
                                             
 1
@@ -112,3 +270,13 @@ M-x line-number-mode
 C-x = (what-cursor-position)
 https://www.gnu.org/software/emacs/manual/html_node/emacs/Position-Info.html#Position-Info
 * C-[ h 문맥적이 선택을 하는 것으로 구분할 것 C-x h와 
+
+* 오그 아이디 실험중
+  :PROPERTIES:
+  :ID:       da3d92fa-3e52-4f40-a689-862513755955
+  :END:
+
+* ::test
+asdf
+asdf
+* test

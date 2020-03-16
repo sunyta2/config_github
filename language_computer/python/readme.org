@@ -1,5 +1,27 @@
 #+STARTUP: showeverything indent latexpreview
 python in broswer bookmark
+
+
+#+BEGIN_SRC sh :results silent
+touch "./test_reading_stuff.org"
+    # (find-file "./test_reading_stuff.org")
+#+END_SRC
+* 읽어두면서 정리할 내용들 - 우선순위는 아니라도 읽기나 보기자료 "./test_reading_stuff.org"
+
+- 우선 순위를 변동하면서 정리를 새롭게 할 것. 
+파일아래에 리스트를 두고 사용법을 우선순위를 검토하는 것이 중요하다
+
+- brave_browser, okular 로 보내서 생성된 것을 보관하고 그곳에는 이곳의 링커를 둔다는 연동의 방식
+
+
+ ;; [[https://www.emacswiki.org/emacs/IBusMode][EmacsWiki: I Bus Mode]]
+(async-shell-command "brave --incognito 'https://www.emacswiki.org/emacs/IBusMode'")
+- note of ibus.el 사용법에 관하여.
+
+
+
+
+
 #+OPTIONS: d:t \n:t
 
 #+BEGIN_SRC python :results output drawer :exports both

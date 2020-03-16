@@ -1,0 +1,133 @@
+-*- coding: utf-8 -*-
+#+STARTUP: showeverything indent
+korean-hanguel
+latin-1-prefix
+ἀ῏εἒ greek
+hebrew
+맥북 ἀ῏εἒ 보다 범용적으로 사용가능한 이맥스로 입력의 방식을 통일하는 것이 더 효율적인 선택이라고 판단한다.
+
+ file:insert-char.org file:coding_system_in_emacs.org
+latin-1 입력법을 발견함! - 라틴어 입력을 맥북에 의존하기 보다는 범용사용을 가능하게 익히는 것이 유리하다.
+help:set-input-method C-x RET C-\ latin-1-prefix  
+äª (set-input-method 'korean-hangul) (set-input-method "latin-1-prefix") (set-input-method "TeX")
+help:describe-input-method
+(describe-input-method 'latin-1-prefix  ) (describe-input-method "TeX") =>  file:insert-char.org => [[file:insert-char.org::*TeX%20and%20latin-1-prefix][TeX and latin-1-prefix]]
+- (매우상세한) 키값 알아내기(C-u) C-x = 
+(describe-key (kbd "C-h m"))
+                  (kbd "C-h m") => "m" 
+
+    [해결함] # 반드시 영어로 입력할 것 한글은 깨진다. # 이었으나, 
+
+* 한글(korean-hanguel)깨짐을 해결하는 것은 간단한 명령의 실행을 두는 것이다[해결함!] ./coding_system_in_emacs.org:3: ;; 치료방법을 발견함 -*- coding: utf-8; mode: org; org-confirm-babel-evaluate: nil; -*-
+-*- coding: utf-8; mode: org; org-confirm-babel-evaluate: nil; -*- ;; 불편함. y/n문답시작됨 
+-*- coding: utf-8 -*- ;; 변수 y/n 없이 실행하므로 더 편리함.
+;;;##-*- coding: utf-8; mode: org; org-confirm-babel-evaluate: nil; -*-
+;;<기본양식>##-*- coding: NAME OF THE CODING SYSTEM -*- ;;이것이 기본형식이다.
+;; 출처: [[https://stackoverflow.com/questions/2901541/which-coding-system-should-i-use-in-emacs][character encoding - Which coding system should I use in Emacs? - Stack Overflow]]
+        - (setq 설정으로 변경하는 것이 있으므로 나중에 연구할 것)
+#다른예문 -*- mode: org; org-confirm-babel-evaluate: nil; -*-
+;;##;;-*- mode: org; org-confirm-babel-evaluate: nil; -*-
+
+
+[[https://stackoverflow.com/questions/2901541/which-coding-system-should-i-use-in-emacs][character encoding - Which coding system should I use in Emacs? - Stack Overflow]]
+
+#+BEGIN_SRC emacs-lisp
+
+(setq utf-translate-cjk-mode nil) ; disable CJK coding/encoding (Chinese/Japanese/Korean characters)
+  (set-language-environment 'utf-8)
+  (set-keyboard-coding-system 'utf-8-mac) ; For old Carbon emacs on OS X only
+  (setq locale-coding-system 'utf-8)
+  (set-default-coding-systems 'utf-8)
+  (set-terminal-coding-system 'utf-8)
+  (set-selection-coding-system
+    (if (eq system-type 'windows-nt)
+        'utf-16-le  ;; https://rufflewind.com/2014-07-20/pasting-unicode-in-emacs-on-windows
+      'utf-8))
+  (prefer-coding-system 'utf-8)
+#+END_SRC
+
+
+** [other] Revert buffer with coding system
+Chances are that every time utf-coding should be activated by invoking 'M-x revert-coding-system` , even though a long list of utf-prefer configuration:
+#+BEGIN_SRC emacs-lisp
+
+(prefer-coding-system        'utf-8)
+(set-terminal-coding-system  'utf-8)
+(set-keyboard-coding-system  'utf-8)
+(set-selection-coding-system 'utf-8)
+(setq locale-coding-system   'utf-8)
+(setq-default buffer-file-coding-system 'utf-8)
+;;Try to automate the process by
+;;; [[https://www.reddit.com/r/emacs/comments/cea0q5/revert_buffer_with_coding_system/][Revert buffer with coding system : emacs]]
+;;;; [[https://emacs.stackexchange.com/questions/37459/how-encode-to-utf-8-content-of-buffer][character encoding - How encode to UTF-8 content of buffer? - Emacs Stack Exchange]]
+;;Set buffer coding system
+(add-hook 'org-mode-hook (lambda () (revert-buffer-with-coding-system  "utf-8")))
+#+END_SRC
+However, it does not work as expected.
+What's the problem with my function to to handle the revert-buffer-with-coding-system'
+* 
+#+BEGIN_SRC sh
+echo "한글이 나온다"
+
+#+END_SRC
+
+#+RESULTS:
+: 한글이 나온다
+
+* buffer-file-coding-system ({C-u} C-x C-e )
+help:buffer-file-coding-system
+utf-8-unix
+buffer-file-name
+"/home/thinkpad/config_github/app/emacs/coding_system_in_emacs.org"
+
+
+* emacs master p81
+File-local variables are variables that Emacs can enable per-
+file if they present in the file. They can appear as head-
+ers:
+: -*- mode: mode-name-here; my-variable: value -*-
+or footers:
+Local Variables:
+mode: mode-name-here
+my-variable: value
+End:
+
+
+
+
+help:delete-dir-local-variable
+help:delete-file-local-variable   
+
+Coding systems Emacs has excellent Unicode support
+(type C-h h to see it demonstrated), including transpar-
+ently reading and writing between different coding
+systems, bidirectional right-to-left script support,
+keyboard input method switching, and more.
+To see the coding system in use for the current buffer,
+you can type C-h C <RET>. 
+
+
+;;; 동영상에 기록된 내용임 in persisting highlight Emacs mp4
+# Local Variables:
+# mode: mode-name-here
+# ov-highlight-data:
+"((123 231 \"LightBlue\" \"comment\") (567 578 \"Darkolivegreen1\" nil))"
+# my-variable: value
+# eval: (ov-highlight-load)
+# End:
+;; 개별화된 함수를 변수와 함께 처리할 수 있을 것 같다.
+
+
+
+* 증상을 기록해두어서 나중에 다른 문제의 해결에 도움을 준다
+- 증상 : Select coding system (default raw-text): {문제부분으로 추정됨'raw-text'}
+상황제현: 깨진부분을 붙일때 발생함! -재현해서 원인을 밝히는 연구가 나중에 참고할 것.
+** C-u C-x = will give info about Character!
+
+#+BEGIN_SRC emacs-lisp
+;; 파일별로 설정하는 것이 인상적이다!
+ (modify-coding-system-alist 'file "\\.txt\\'" 'windows-1252)
+;; 위의 것은 인상적인 3가지의 정수해결책의 연구필요함.[[https://www.emacswiki.org/emacs/ChangingEncodings][EmacsWiki: Changing Encodings]]
+#+END_SRC
+
+

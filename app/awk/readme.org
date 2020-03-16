@@ -1,3 +1,30 @@
+-*- coding: utf-8 -*-
+#+STARTUP: showeverything indent
+#+TITLE:
+
+
+info:gawk#Top
+info:sed#Top
+info:grep#Top
+
+
+
+
+#+BEGIN_SRC sh
+ls -l | grep -v \~ | awk '{ print $9 " " $9}' ##; 가장 기초가 가장 중요하다.
+ls -l  | grep -v "[\#|\~]" | awk '{ print $9 " " $9}' ##; 가장 기초가 가장 중요하다. awk/readme.org
+#+END_SRC
+
+#+RESULTS:
+|                                 |                                 |
+| reading_stuff_awk_note_test.org | reading_stuff_awk_note_test.org |
+| #readme.org#                    | #readme.org#                    |
+| readme.org                      | readme.org                      |
+|                                 |                                 |
+| reading_stuff_awk_note_test.org | reading_stuff_awk_note_test.org |
+| readme.org                      | readme.org                      |
+
+
 
 #+BEGIN_SRC sh
   #which zenity
@@ -96,3 +123,31 @@ echo " This is state of rotation : $rotate_state"
 
 #+RESULTS:
 : This is state of rotation : right
+
+
+*** note of awk command example
+#+BEGIN_SRC sh
+#노트한 것으로 수정하여서 다시정리할 것
+echo ... | awk -v FS="(<key>|<key>)" 'MF >'{print $2}'
+           awk '{if ($2 ~ /find_text/) print $3}' <in_file>
+           awk '$2 == "find_text"  {print $5}'
+           awk '$2 ~ "find_text"  {print $5}'
+           awk '$1 == "eDP-1"  {print $5}'
+#노트한 것으로 수정하여서 다시정리할 것
+#+END_SRC
+
+
+* dwm의 머릿부분이 시작되는 것을 참고로 하면 깔끔할 것이다.
+** 연관 ~/.bin/start , app/awk/readme.org shell/variable~.org app/xrandr/rotate
+#+BEGIN_SRC sh
+function xsetroot_bar_info {
+	s_char='/'
+	bar_mem="$(free -h | awk '/^Mem:/ {print $3 $2}')"
+	bar_tmp="$(sensors | awk '/^fan/ {getline; print $2}')"
+	bar_total=" $bar_tmp $bar_mem $(battery)% $( date +'%F(%a%W/52)%p %R' )~ $i/15m "
+#bar_total=1
+}
+    # (find-file "~/.bin/start") :76: M-gM-g 76 C-m
+#+END_SRC
+** 활용처: rotate에서 깔끔하게 xrandr -q를 사용하여 이용하는 것에 적용할 것.
+    - 즉, 자동으로 이용하는 방식을 이용하는 것이 중요한 것이다.

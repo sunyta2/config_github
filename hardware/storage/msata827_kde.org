@@ -1,0 +1,29 @@
+
+
+kde 
+# KRDC(KDE Remote Desktop Client) in Arco 
+gksudo gedit /etc/X11/xorg.conf
+(in GNOME) or
+kdesudo kate /etc/X11/xorg.conf
+(in KDE)
+
+
+- apfs설치해서 통합에 박차를 가할 것.
+  - * arco에서 가능하지만 쓰기가 안됨.
+   2 aur/linux-apfs-dkms-git 1:r5.277a34e-1 (+2 0.08%) (Installed: 1:r6.2a598f1-1)
+
+- tmuxp
+    yay install tmuxp 에러 남으로 기억됨
+
+
+- /Download 통합이 필요한 것.
+- KDE Downloads/앨빈토플러, 드러커의 문서있음. 가상머신의 자료있음(하드웨어로 옮길 것저장장소를 분류할 기준을 정하고 정확히 끊어지는 곳을 분할점으로 삼을 것.)
+- rsync사용을 고려할 것.
+
+
+
+
+* # KDE # use krfb(Desktop Sharing)
+  :PROPERTIES:
+  :ID:       아이디변경-문서생성-과정-절차5
+  :END:

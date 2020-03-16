@@ -1,5 +1,14 @@
+-*- coding: utf-8 -*-
 #+STARTUP: showeverything indent
+#+TITLE: /shell/syntax_of_variable_in_sh.org
+(man "test")
+(find-file "../shell/syntax_of_test_in_sh.org")
+(find-file "../shell/syntax_of_if_in_sh.org")
 
+
+
+
+* 단어추출 awk[fn:1] awk '$1 == "eDP-1" {print $5}'
 
 * 첫글자만 추출하는 법
 - ~/.bin/rotate 에서 zenity의 설명문을 변경하느 법을 익히는 것임 첫글자만 추출에서 Case문을 깔끔하게 한다.
@@ -24,7 +33,32 @@
 
       ## To remove everything after the final . use ${var%.*}.
       ${var%.*}
+      ## 참조: a=\"$(cat)\"; a=\"${a//-/ }\"; a=\"${a//\\*/}\"; 특히 \\* 에서 \가 2개인 \\로 전달해야 됨. 원래의도 : ***를 제거해서 깔끔한 제목을 espeak로 읽는 기능을 함수로 구현하려했음
+      # ;; elisp:(call-shell-region (line-beginning-position 0) (line-end-position 0) "a=\"$(cat)\"; a=\"${a//-/ }\"; a=\"${a//\\*/}\";for i in 0; do espeak \"$a\"; sleep $((i*3)); done" nil nil)
     #+END_SRC
+#+BEGIN_SRC sh
+  var="*** 123.org"
+  # echo ${var%.*}
+  # : bash bashrc_IN_arco change_default_editor_bash_zsh_test.org get_url_link_using_read_test.org get_url_link_using_read_test.org~ preserve_sed_command_output_with_here_string_test.org preserve_sed_command_output_with_here_string_test.org~ readme.org snippet_of_eval_in_sh_function_get_string_by_hardware_test.org snippet_of_eval_in_sh_function_get_string_by_hardware_test.org~ snippet_of_if1_in_sh.org snippet_of_if1_in_sh.org~ syntax_of_array_in_sh.org syntax_of_array_in_sh.org~ syntax_of_eval_string_in_sh.org syntax_of_eval_string_in_sh.org~ syntax_of_for_in_sh.org syntax_of_function_in_sh.org syntax_of_here_document_eof_in_sh.org syntax_of_here_document_eof_in_sh.org~ syntax_of_if_in_sh_good_note_test.org syntax_of_if_in_sh.org syntax_of_if_in_sh.org~ syntax_of_ln_in_sh.org syntax_of_ln_in_sh.org~ syntax_of_read_in_sh.org syntax_of_read_in_sh.org~ syntax_of_string_tail.org syntax_of_string_tail.org~ syntax_of_test_in_sh.org syntax_of_variable_in_sh.org syntax_of_while_in_sh.org test_reading_stuff.org test_reading_stuff.org~ variable_sed_change.org variable_sed_change.org~ zsh 123
+  #echo "${var%.*}"
+  #: *** 123
+#echo "${var/\*/k}"
+#: k** 123.org
+#echo "${var//\*/k}"
+#: kkk 123.org
+  var="***--- 123.org"
+#var="${var//-/}" # 이 둘을 통합시키는 구조가 좋을 것임
+#var="${var//\*/}"
+     # 에러남 이것>var="${$({var//\*/})//-/}"
+echo "var , was , $var"
+var="${var//[\*-]/}" # 통합에 성공함!
+echo "var , is , ___   $var"
+#+END_SRC
+
+#+RESULTS:
+| var | was | ***--- 123.org |
+| var | is  | ___    123.org |
+
 * 글자를 변경하는 최소의 방식
 
 ** 
@@ -73,19 +107,61 @@ would store the output of myscript in the same variable.
                 ;; 단문으로 만드는 것은 시행착오를 거치면서 완성되는 것이다. espeak -g 60 -s 100 -v other/grc /la를 실행
 
 
-* {변수값을 사용하는 변수}_이중변수_${!var} syntax.
+* 변수variable basis기본값을 설정하는 법 ${b:-$a} ${b:=$a} herbstluft
+발견장소: herbstluft/autostart
+hc keybind $Mod-Return       spawn ${TERMINAL:-urxvt} # ${TERMINAL:=urxvt} #변수기본값을 설정발견! syntax_variable
+#+BEGIN_SRC sh
+
+$ echo ${a:+123abc 123} # +는 안되는 듯하다.
+
+$ echo ${a:-123abc 123} # 변수값 설정없이 임시사용
+$ echo ${a:=123abc 123} # 변수값 설정으로 사용함
+123abc 123
+$ echo $a
+123abc 123
+$ echo ${b:-$a} # 안에 변수를 넣어서 그 값을 임시사용할 수 있다!
+123abc 123
+$ echo $a
+123abc 123
+$ echo $b
+
+$ echo ${b:=$a} # 안에 변수를 넣어서 그 값을 설정사용할 수 있다!
+
+
+#+END_SRC
+* {변수값을 사용하는 변수}_이중변수_${!var_i} syntax 
 #+BEGIN_SRC sh :results raw
-  i=1
-  val1=beep
-  val2=bop
+  val_1=beep
+  val_2=bop
   # # 이것이 배열의 기본문장이다. ;;[[https://stackoverflow.com/questions/17983586/bash-how-can-i-get-the-variable-value-inside-the-eof-tags][linux - BASH - how can i get the variable value inside the EOF tags? - Stack Overflow]]
-  rightval="val$i"             # {변수값을 사용하는 변수}_이중변수_${!var} syntax.
+      i=1
+  val_i="val_$i"             # {변수값을 사용하는 변수}_이중변수_${!var} syntax.  
   cat <<EOF
-  This is a beep: ${!rightval}
+  first cat,  This is val_i is val_1=beep: ${!val_i}
   EOF
   # That is, you compute the name of the variable you want, put that in another variable, and use the ${!var} syntax.
+      i=2
+  val_i="val_$i"             # {변수값을 사용하는 변수}_이중변수_${!var} syntax.  
+  cat <<!EOF
+  second cat, This is val_i is val_2=bop:  '${!val_i}'
+  EOF
+
 #+END_SRC
 
 #+RESULTS:
-This is a beep: beep
-good
+first cat,  This is val_i is val_1=beep: beep
+second cat, This is val_i is val_2=bop:  'bop'
+EOF
+first cat,  This is val_i is val_1=beep: beep
+second cat, This is val_i is val_2=bop:  "bop"
+EOF
+first cat,  This is val_i is val_1=beep: beep
+second cat, This is val_i is val_2=bop:  bop
+EOF
+first cat,  This is val_i is val_1=beep: beep
+second cat, This is val_i is val_2=bop:  bop
+
+** 참고 : [[https://stackoverflow.com/questions/37047717/how-to-create-a-variable-value-using-in-the-runtime-in-bash][linux - How to create a variable value using $ in the runtime in bash - Stack Overflow]]
+* Footnotes
+
+[fn:1] (find-file "../../app/awk/readme.org") ::*** note of awk command example

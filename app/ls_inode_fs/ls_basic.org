@@ -1,0 +1,53 @@
+
+ use in  emacs/touch_pri~~.org
+;; (shell-command-to-string "ls -tr") ;; ls -tr | tail -n 15
+                                      ;; ls -t | head -n 5
+
+ls -d */
+
+#+BEGIN_SRC sh
+#ls -l #| grep '^d'
+ls -d */
+#+END_SRC
+
+#+RESULTS:
+ls -l  | grep -v "[\#|\~]" | awk '{ print $9 " " $9}' ##; 가장 기초가 가장 중요하다. awk/readme.org
+
+
+* ls recent file in Recursively -R] $ ls -arRtlh | tail -n 15
+#+BEGIN_SRC sh
+cd ~/config_github/great_books/
+ls -arRtlh **/*.org | tail -n 15 # app/ls_inode_fs/ls_basic.org
+#+END_SRC
+
+#+RESULTS:
+| -rw-r--r-- | 1 | thinkpad | thinkpad | 3.1K | Jan | 30 | 18:15 | economics/investing_stock.org                                         |
+| -rw-r--r-- | 1 | thinkpad | thinkpad | 1.6K | Jan | 30 | 18:34 | economics/accounting_concepts.org                                     |
+| -rw-r--r-- | 1 | thinkpad | thinkpad | 1.5K | Feb | 11 | 16:44 | pronounce_laudare/test_greek_sound.org                                |
+| -rw-r--r-- | 2 | thinkpad | thinkpad | 3.5K | Feb | 12 | 11:37 | _achieve_agenda/2019_12_diary.org                                     |
+| -rw-r--r-- | 1 | thinkpad | thinkpad | 819  | Feb | 12 | 19:15 | _achieve_agenda/test_complition_mode.org                              |
+| -rw-r--r-- | 1 | thinkpad | thinkpad | 5.2K | Feb | 13 | 10:09 | _achieve_agenda/2019_10_diary.org                                     |
+| -rw-r--r-- | 1 | thinkpad | thinkpad | 474  | Feb | 13 | 17:50 | test_stuff/readme.org                                                 |
+| -rw-r--r-- | 1 | thinkpad | thinkpad | 624  | Feb | 14 | 05:46 | etymology_greek_latin/readme.org                                      |
+| -rw-r--r-- | 1 | thinkpad | thinkpad | 403  | Feb | 14 | 17:34 | etymology_greek_latin/etymology_google_list_page_note_test.org        |
+| -rw-r--r-- | 1 | thinkpad | thinkpad | 263  | Feb | 14 | 17:57 | etymology_greek_latin/quizlet_latin_study_site_practice_list_test.org |
+| -rw-r--r-- | 1 | thinkpad | thinkpad | 977  | Feb | 14 | 21:06 | etymology_greek_latin/test_list.org                                   |
+| -rw-r--r-- | 1 | thinkpad | thinkpad | 1.2K | Feb | 16 | 20:43 | _achieve_agenda/project.org                                           |
+| -rw-r--r-- | 1 | thinkpad | thinkpad | 6.8K | Feb | 17 | 16:18 | _achieve_agenda/2020_02_project.org                                   |
+| -rw-r--r-- | 1 | thinkpad | thinkpad | 13K  | Feb | 17 | 19:09 | _achieve_agenda/2020_02_diary.org                                     |
+| -rw-r--r-- | 1 | thinkpad | thinkpad | 2.3K | Feb | 17 | 19:36 | test_stuff/critical_thought_about_society.org                         |
+
+* ls --quoting-style=shell-always
+ls --quoting-style=shell-always #출처: [[https://stackoverflow.com/questions/1015678/get-most-recent-file-in-a-directory-on-linux][command line - Get most recent file in a directory on Linux - Stack Overflow]]
+#+BEGIN_SRC sh
+cd ~/config_github/great_books/
+ls -tl --quoting-style=shell-always | tail -n 3
+#files=($(ls -t --quoting-style=shell-always | tail -n 3))
+echo $files
+#+END_SRC
+
+#+RESULTS:
+| drwxr-xr-x | 3 | thinkpad | thinkpad | 4096 | Nov | 16 | 12:51 | 'caesar'    |
+| drwxr-xr-x | 3 | thinkpad | thinkpad | 4096 | Nov |  4 | 11:16 | 'vitruvius' |
+| drwxr-xr-x | 3 | thinkpad | thinkpad | 4096 | Nov |  3 | 14:12 | 'plato'     |
+|            |   |          |          |      |     |    |       |             |

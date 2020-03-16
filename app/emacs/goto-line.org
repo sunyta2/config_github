@@ -1,0 +1,22 @@
+(progn (find-file-other-window "~/config_github/great_books/_achieve_agenda/2020_02_project.org") (end-of-buffer))
+(progn (find-file-other-window "~/config_github/great_books/_achieve_agenda/2020_02_project.org") (end-of-buffer) (re-search-backward "연속") )
+북마크의 대안으로 원하는 키우드를 버퍼의 가장 상위에서 열어 내는 것을 목적으로 한다.
+또는 하위에서 검색해서 열어주는 것을 목적으로 한다.
+(progn (find-file-other-window "~/config_github/great_books/_achieve_agenda/2020_02_project.org") (end-of-buffer) (re-search-backward "연속") )
+(progn (find-file-other-window (clone-indirect-buffer-other-window "야호윈도우 창제목" "하하뭐지여긴") (end-of-buffer) (previous-line) )
+(progn (find-file-other-window "~/config_github/great_books/_achieve_agenda/2020_02_project.org") (end-of-buffer) (re-search-backward "연속") )
+1
+2 (clone-indirect-buffer) C-x 4 c 로 실행한다. ./clone-indirect-buffer.org
+3 (previous-line)
+4
+5 
+(progn (goto-line 3) (goto-line 1) (goto-line 5))
+
+
+문서를 열어서 다음줄로 이동함.
+(isearch-forward-regexp "5")
+cf ./isearch.org (re-search-forward "5") 
+(progn (other-window 1) (re-search-forward "5") )
+(re-search-forward "5") 
+(re-search-backward "5")
+(beginning-of-buffer)

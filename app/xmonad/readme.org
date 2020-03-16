@@ -1,4 +1,15 @@
 
+강점을 비교함=> file:../wm_compare_youtube_note.org
+[[file:readme.org][stumpwm/readme]] , [[file:~/config_github/app/herbstluftwm/readme.org][herbstluftwm/readme]], [[file:~/config_github/app/xmonad/readme.org][xmonad/readme]] , [[file:~/config_github/app/qtile/readme.org][qtile/readme]] , [[file:~/config_github/app/dwm/readme.org][dwm/readme]] ,
+[[file:~/config_github/app/exwm/readme.org][exwm/readme]] , awesome, i3-gap
+
+(man "xmonad")  # man mode 
+mod-q Restart xmonad
+    xephyer를 사용하면 여러개를 사용하는 것을 dt로 부터 알게 됨. xmonad 2parts에서도 나옴을 참조할 것
+    (man "xephyr")  # man mode
+
+
+
 하스켈을 익히기 위해서 설치를 시도함.
 [2020-01-14 Tue] 맥북을 내부청소하고 쿨링 작업을 위해 먼지청소와 써멀을 발라줌.
 [2020-01-15 Wed 09:37] sudo pacman -Syu xmobar
@@ -35,10 +46,11 @@ yay xmonad-contrib # 설치를 권고받음. https://youtu.be/JLz3UKJFMoI?t=1250
 .config/xmobar/.xmobarrc 폴더를 만들어야 실행된다고 함.
 
 ** 강점 (dwm과 비교하여서)
+- 최대강점: 멀티모니터프로젝터 실행시 자동으로 screen Swap기능이 우수함!
 - 레이아웃을 각각 다르게 미리 지정할 수 있다.
       !!또한 배열과 순서를 전혀 다르게 짤 수 있다!!!
 - 변경을 직접바로 즉시 실행할 수 있다.
-- 하스켈을 공부할 수 있다!
+- 하스켈을 공부할 수 있다! ghci를 사용하여 pdf문서로 놀라운 아이디어의 보고
 
 # .config/xmonad/ 폴더에 저장할 수 도 있다하니 고려할 것. xmonad.hs
 

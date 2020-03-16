@@ -1,0 +1,26 @@
+
+라벨표시명 : ssd90j~osx_sierra
+라벨표식1  : ONLY macbook
+
+원래설치장소: 맥북 (작동ERROR 부팅이 안됨!)
+현재사용장소: x220t 주로 자료추출용 
+1차보관장소: 중형빨간박스
+2차보관장소: 대형빨간박스
+
+외형: 검정색의 thin SSD 깔끔한 RED 사각형모양의 상징있음
+SAMSUNG SSD 840PRO 512GB 얇은 검정색의 macosx sierra
+P/N: MZ7PD512HCGM
+Model: MZ-7PD512
+RATED: DC + 5.0V ~ 1.5A
+KCC-REM-SEC-MZ-7PD512
+
+S/N: S1AXNSAF707990J => 90j 추출 =>  ssd90j_samsung840pro512gb_macosx_sierra.org
+
+현재저장내용
+
+
+사용방향
+
+
+사용방향아이디어
+- 

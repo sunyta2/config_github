@@ -1,0 +1,11 @@
+
+굉장한 발전의 성장 [2020-02-17 Mon 12:48]
+[[https://www.reddit.com/r/orgmode/comments/eu1zl5/wip_orggraphview/][WIP: org-graph-view : orgmode]]
+
+#+BEGIN_SRC emacs-lisp
+
+;;깃허브의 사이트 그러나 약점으로 미시행됨. 보강이 필요함. 
+(require 'dash)
+(require 's)
+#+END_SRC
+

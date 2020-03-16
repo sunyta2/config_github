@@ -1,0 +1,16 @@
+
+[[info:org#Footnotes][info:org#Footnotes]]
+
+[footnote]내부색인기능 발견 C-c C-x f org-footnote-action    참고: 주석기능과 유사함. file:footnotes.org
+- [ ] [footnotes]내부색인기능 발견 C-c C-x f org-footnote-action 참고: 주석기능과 유사함. file:footnotes.org - 커맨트를 찾아내던 빠른 방법
+
+** file:org-footnote-action C-c C-x f
+ [fn:2]
+
+* Footnotes
+
+[fn:1]
+
+[fn:2]
+
+[fn:3]

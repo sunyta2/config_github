@@ -1,0 +1,16 @@
+(man "m4")
+[[info:m4#Intro][info:m4#Intro]]
+
+
+
+* TODO read m4 info
+SCHEDULED: <2020-03-14 Sat 11:00-12:00 .+d>
+
+(man "m4")
+[[info:m4#Intro][info:m4#Intro]]
+
+
+
+
+
+읽던 중이던 내용 [2020-03-14 Sat 16:58] (info "(m4) Other tokens")

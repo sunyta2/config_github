@@ -1,0 +1,170 @@
+북마크와 비슷하지만 주석처럼 사용하던 것이 바로 커맨트기능인 것으로 생각됨.
+
+* [bookmark-load]  (dired-jump 3 "~/.emacs.d/bookmarks") 
+
+
+* (bookmark-bmenu-list)
+how edit bookmark in there C-x r l
+
+
+
+* list of  (dired-jump 3 "~/.emacs.d/bookmarks") 
+ (dired-jump 3 "~/.emacs.d/bookmarks") 
+** save1
+#+BEGIN_SRC 
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*- 
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("eintr.pdf_study_note_test.org"
+ (filename . "~/config_github/app/emacs/eintr.pdf_study_note_test.org")
+ (front-context-string)
+ (rear-context-string . "nts/eintr.pdf'\")")
+ (position . 153))
+("org_schedule_tag.org"
+ (filename . "~/config_github/app/emacs/test_stuff/org_schedule_tag.org")
+ (front-context-string . "\n\n\n* english IN ")
+ (rear-context-string . "n:2] good test\n\n")
+ (position . 313))
+("_마트 구입물품"
+ (filename . "~/config_github/great_books/_achieve_agenda/test_stuff/test_마트_shopping.org")
+ (front-context-string . "마트 구입물품\n수영장: 비누(")
+ (rear-context-string)
+ (position . 4))
+("meta_thought.org"
+ (filename . "~/config_github/great_books/meta_thought.org")
+ (front-context-string . "자유)을 파괴하는 것으로 가서")
+ (rear-context-string . " 한다.\n- 획일적으로 장점(")
+ (position . 696))
+("gentoo_amd_handbook_lfs.pdf_note.org"
+ (filename . "~/config_github/os/gentoo/test_stuff/gentoo_amd_handbook_lfs.pdf_note.org")
+ (front-context-string . "* [2_side_2]: id")
+ (rear-context-string . "ta_thought.org\n*")
+ (position . 668))
+("로그(git_commit_m)_저장_사항"
+ (filename . "~/config_github/test_git_commit_m_log.org")
+ (front-context-string . "*  \n{linage} * s")
+ (rear-context-string . "로 나중에 일괄로 올린다.\n\n")
+ (position . 181))
+("test_reading_stuff_python"
+ (filename . "~/config_github/language_computer/python/test_reading_stuff.org")
+ (front-context-string . "- note of IF syn")
+ (rear-context-string . "_if_else.htm'\")\n")
+ (position . 601))
+("test_solve_freebsd_startx.org"
+ (filename . "~/config_github/os/freebsd/test_solve_freebsd_startx.org")
+ (front-context-string . "\n\nFreeBSD에서 연구필요")
+ (rear-context-string)
+ (position . 2))
+("test_acro_list_drawer_mpv.org"
+ (filename . "~/config_github/app/mpv/test_acro_list_drawer_mpv.org")
+ (front-context-string)
+ (rear-context-string . " 플레쉬카드 사이트방문\n# \n")
+ (position . 245))
+("test_acro_list_drawer_brave_browser.org"
+ (filename . "~/config_github/app/brave_browser/test_acro_list_drawer_brave_browser.org")
+ (front-context-string . "\n# [주요사용방법 Youtu")
+ (rear-context-string . "rave_browser.org")
+ (position . 111))
+("test_acro_list_drawer_okular.org"
+ (filename . "~/config_github/app/okular/test_acro_list_drawer_okular.org")
+ (front-context-string)
+ (rear-context-string . "는 법 플레쉬카드 사이트방문\n")
+ (position . 245))
+("1_test_compilation-minor-mode.org"
+ (filename . "~/config_github/app/emacs/test_compilation-minor-mode.org")
+ (front-context-string . "../../great_book")
+ (rear-context-string . "n-minor-mode 1)\n")
+ (position . 161))
+("2020_02_diary.org"
+ (filename . "~/config_github/great_books/_achieve_agenda/2020_02_diary.org")
+ (front-context-string)
+ (rear-context-string . "ar_64kb.mp3'\") \n")
+ (position . 5134))
+("bookmark_quick_register_emacs"
+ (filename . "~/config_github/app/emacs/register_emacs.org")
+ (front-context-string . "\n\n\n\nC-u C-SPC Cy")
+ (rear-context-string . "mbered Bookmark\n")
+ (position . 194))
+("mental_reminder.org"
+ (filename . "~/config_github/great_books/mental_reminder.org")
+ (front-context-string . "\n- 哲學工夫 超高度通合性Em")
+ (rear-context-string . "a_thought.org\") ")
+ (position . 7614))
+("news3.org_inbox_chrome_grape_diary"
+ (filename . "~/note3/a2_inbox_note_for_diary_in_note3.org")
+ (front-context-string . "\n\n(async-shell-c")
+ (rear-context-string . "-here-file ) )\n)")
+ (position . 480))
+("2020_01_diary.org"
+ (filename . "~/config_github/great_books/_achieve_agenda/2020_01_diary.org")
+ (front-context-string . "[2020-01-28 Tue ")
+ (rear-context-string . "겠구나라고 자평하는 부분\n\n\n")
+ (position . 14843))
+("2019_12_diary.org"
+ (filename . "~/config_github/great_books/_achieve_agenda/2019_12_diary.org")
+ (front-context-string)
+ (rear-context-string . "k.pdf에서 발견됨에 감탄!")
+ (position . 437))
+("org-refile-last-stored"
+ (filename . "~/org/journal.org")
+ (front-context-string . "** 2\n\n* test2\n**")
+ (rear-context-string . " 농협 이정표\n\n* test\n")
+ (position . 2130))
+("news3.org"
+ (filename . "~/news3.org")
+ (front-context-string . "드 시사 '파상공세' | Da")
+ (rear-context-string . " 자리 박찬 美, 주한미군 카")
+ (position . 7022))
+("agenda_view_org.org"
+ (filename . "~/config_github/app/emacs/org_mode_study/agenda_view_org.org")
+ (front-context-string)
+ (rear-context-string . "_11_diary.org\"))")
+ (position . 2276))
+("journal.org"
+ (filename . "~/org/journal.org")
+ (front-context-string . "* Tuesday, 19/11")
+ (rear-context-string)
+ (position . 1))
+("mylisp"
+ (filename . "~/Documents/org_thinkpad/emacs/mylisp/")
+ (front-context-string . "___korean.el~\n  ")
+ (rear-context-string . "35 Apr 23  2018 ")
+ (position . 1081))
+("republic_book01.org"
+ (filename . "~/config_github/great_books/plato/republic/book01.org")
+ (front-context-string . "                ")
+ (rear-context-string . "αύκωνος        \n")
+ (position . 1064))
+("~/.bin/start"
+ (filename . "~/.bin/start")
+ (front-context-string . "HOME/config_gith")
+ (rear-context-string . "l \\\"echo $(cat $")
+ (position . 1019))
+("2019_11_diary.org"
+ (filename . "~/config_github/great_books/_achieve_agenda/2019_11_diary.org")
+ (front-context-string)
+ (rear-context-string . "f instructions.\n")
+ (position . 169))
+("2019_10_diary.org"
+ (filename . "~/config_github/great_books/_achieve_agenda/2019_10_diary.org")
+ (front-context-string)
+ (rear-context-string . "enSSH Server]]\n\n")
+ (position . 2178))
+("_achieve_agenda"
+ (filename . "~/config_github/great_books/_achieve_agenda/")
+ (front-context-string . "2019_10_diary.or")
+ (rear-context-string . "53 10월 27 20:20 ")
+ (position . 395))
+("_github/great_books/_achieve_agenda/readme.org"
+ (filename . "~/config_github/great_books/_achieve_agenda/readme.org")
+ (front-context-string . "\n- purpose_daily")
+ (rear-context-string . "genda/readme.org")
+ (position . 129))
+("emacsQ_load.el"
+ (filename . "~/config_github/app/emacs/shell_emacs/emacsQ_load.el")
+ (front-context-string . "\n\n\n\n(use-package")
+ (rear-context-string . "(neotree-show)\n)")
+ (position . 1295))
+)
+#+END_SRC

@@ -1,3 +1,5 @@
+#+STARTUP: showeverything indent
+#+OPTIONS: d:t \n:t
 
 korean.org
 

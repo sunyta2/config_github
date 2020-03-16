@@ -1,0 +1,60 @@
+touch command is can use as 우선순위사용의 도구가 될 수 있다.
+dired and T is good in work
+#+BEGIN_SRC sh
+#touch 
+
+touch ./isearch.org
+# 제일 최근 수정을 사용하는 것으로 사용의 우선을 정의한다.
+#+END_SRC
+
+#+RESULTS:
+
+
+move.org
+org-clock-goto_C-u_C-c_C-x_C-j.org~
+search_find_grep_emacs.org
+ltximg
+move_item_org.org
+move_item_org.org~
+org_sample_bullet_journaling.org
+org_sample_bullet_journaling.org~
+emacs_is_great.org
+#+BEGIN_SRC emacs-lisp :results raw
+(shell-command-to-string "ls -tr | grep -v \"[\#|\~]\" | tail -n 5 ")
+;; ls -l  | grep -v "[\#|\~]" | awk '{ print $9 " " $9}' ##; 가장 기초가 가장 중요하다. awk/readme.org
+;; (shell-command-to-string "ls -tr") ;; ls -tr | tail -n 15
+                                      ;; ls -t | head -n 5
+;; ls -arRtlh **/*.org | tail -n 15 # app/ls_inode_fs/ls_basic.org
+#+END_SRC
+
+#+RESULTS:
+goto-line.org
+startup.org
+emacs_is_great.org
+move.org
+touch_for_priority_in_dired.org
+
+
+#+BEGIN_SRC sh :results raw
+pwd
+ls -Rt ./**/*.org | tail -n 15 # app/ls_inode_fs/ls_basic.org
+#ls -arRtlh ./**/*.org | tail -n 15 # app/ls_inode_fs/ls_basic.org
+#+END_SRC
+
+#+RESULTS:
+/home/thinkpad/config_github/app/emacs
+./magit/transient.org
+./org_mode_study/agenda_view_org.org
+./org_mode_study/babel_exports_results_form.org
+./package_install/readme.org
+./package_install/gitlab_visible_mark_chrome_grasp.org
+./org_mode_study/plus3_using_lob_babel.org
+./org_mode_study/elisp_emacs_lisp_babel_defalias.org
+./org_mode_study/org_meta_method.org
+./org_mode_study/readme.org
+./package_install/loading_lisp_file.org
+./package_install/edit-server.el.org
+./shortcut_defun_global_set_key/emacs_tab_not_working.org
+./shortcut_defun_global_set_key/readme.org
+./org_mode_study/python_source_code_blocks_in_org_mode.org
+./Aquamacs Emacs/idea_diary.org

@@ -10,7 +10,8 @@ output_primary="$(xrandr -q | grep 'connected p'  | awk '{print $1 }')"
 
 #[thinkpad@msata045 ~]$ xset -display :0.0 dpms force on 
 #[thinkpad@msata045 ~]$ xset -display :0.0 dpms force off # 쉽게 복구됨으로 사용할 것.
-
+# TODO 자동으로 변수명을 획득하는 것을
+    # awk/readme.org shell/variable~ 를 이용한 변형을 참고할 것
 
 
 clear #xdotool key ctrl+l

@@ -1,0 +1,4 @@
+
+
+- tmuxp or tmuxinator
+yay install tmuxp

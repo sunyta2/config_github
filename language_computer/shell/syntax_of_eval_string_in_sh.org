@@ -1,0 +1,36 @@
+-*- coding: utf-8 -*-
+#+STARTUP: showeverything indent
+#+TITLE: /shell/syntax_of_eval_string_in_sh.org
+
+* 문장을 그대로 실행하는 법을 알면 
+- 다른 곳에 변수를 변환하고 나중 일괄실행에 편리할 것임
+- 연관: bash sh -c zsh ? 등도 있을 것임 
+
+;; 출처 [fn:2]
+#+BEGIN_SRC sh
+$ cmd='mysql AMORE -u root --password="password" -h localhost -e "select host from amoreconfig"'
+$ eval $cmd
+
+MYSQL='mysql AMORE -u username -ppassword -h localhost -e'
+QUERY="SELECT "'*'" FROM amoreconfig" ;# <-- "double"'single'"double"
+eval $MYSQL "'$QUERY'"
+
+
+
+print와 array를 활용한 법인듯함.
+cmd=( mysql AMORE -u username -ppassword -h localhost -e "SELECT  host  FROM amoreconfig" )
+printf -v cmd_str '%q ' "${cmd[@]}"
+ssh other_host "bash -c $cmd_str"
+#+END_SRC
+;; 출처 [fn:2]
+
+
+* 단어추출 awk[fn:1] awk '$1 == "eDP-1" {print $5}'
+
+* Footnotes
+
+[fn:2] # 출처:  [[https://stackoverflow.com/questions/2005192/how-to-execute-a-bash-command-stored-as-a-string-with-quotes-and-asterisk][scripting - How to execute a bash command stored as a string with quotes and asterisk - Stack Overflow]]
+
+[fn:1] (find-file "../../app/awk/readme.org") ::*** note of awk command example
+
+

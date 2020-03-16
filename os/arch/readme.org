@@ -1,0 +1,7 @@
+-*- coding: utf-8 -*-
+#+STARTUP: showeverything indent
+#+TITLE: arch_linux with acro or etc_distro
+
+
+
+/home/thinkpad/config_github/os/arch/yay_pacman_install.org

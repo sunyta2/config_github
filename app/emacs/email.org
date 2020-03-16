@@ -1,0 +1,6 @@
+
+
+
+Emacsy OS X https://emacs.wordpress.com/2007/06/15/emacsy-os-x/
+June 15, 2007 — jao
+Let me tell you how Emacs is more and more taking the center stage in my MacBook. In a previous post i explained how i set up Gnus as my mail (and of course, news) reader: 

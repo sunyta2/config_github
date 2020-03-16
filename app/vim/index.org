@@ -1,0 +1,5 @@
+
+
+info:screen#Top
+file:../vim/index.org
+file:../tmux/index.org

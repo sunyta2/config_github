@@ -1,0 +1,28 @@
+emacs/clone-indirect-buffer.org
+2 (clone-indirect-buffer) C-x 4 c 로 실행한다. ./clone-indirect-buffer.org
+(clone-indirect-buffer-other-window) (
+* C-x 6 C-h 아래와 비교해서 정리해 둘 것.
+#+BEGIN_SRC C-x 6 C-h
+
+Global Bindings Starting With C-x 6:
+key             binding
+---             -------
+
+C-x 6 2		2C-two-columns
+C-x 6 b		2C-associate-buffer
+C-x 6 s		2C-split
+C-x 6 <f2>	2C-two-columns
+
+
+clone-indirect-buffer-other-window is an interactive compiled Lisp
+function in ‘simple.el’.
+It is bound to C-x 4 c.
+(clone-indirect-buffer-other-window NEWNAME DISPLAY-FLAG &optional
+NORECORD)
+
+Like ‘clone-indirect-buffer’ but display in another window.
+
+
+[back]
+
+#+END_SRC

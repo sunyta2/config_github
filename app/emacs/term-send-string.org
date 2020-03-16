@@ -1,0 +1,41 @@
+=> file:index.org process send key & command
+file:start_process_shell_command.org
+ file:term-send-string.org file:insert-char.org
+file:eshell_process_mpv_send_key.org
+file:eshell_in_emacs.org
+
+* special char send to term for process
+ (<= C-q RET) help:quoted-insert C-h k C-q { 재발견 유튜브동영상에서 insert-char.org }
+=리턴키를 전달하려면 이 필요하고 그것을 얻기위해서는 단축키가 필요하다!
+=> 사용용도는 키의 작용상징부호를 전달할 필요가 있기 때문이다. (ex. term-send-string Below)
+   ([[help:term-send-string][term-send-string]] "*terminal*" "sudo genkernel") ; gentoo설치, tmux를 통제하는 org-babel elisp script
+       (term-send-string "*terminal*" "espeak \"명확하게 발음이 전달된다!\"") 
+
+
+(process-send-string PROCESS STRING)
+(process-send-string "*eshell*" "k") ;멋지게 스트로크를 mpv로 전달!
+(comint-send-string "*eshell*" "k")
+(term-send-string "*terminal*" "hi") ; 3번째인데 term만 가능할 것임.
+ (<= C-q RET) help:quoted-insert C-h k C-q { 재발견 유튜브동영상에서 insert-char.org
+(python-shell-send-string "; print()")) ;; python에서 문장을 전송하는 법
+
+
+* etc
+
+(call-process "echo" nil "*eshell*" nil "hi\n\n\n world\n한글이 나온다는 것으로 전송을 증명함\n") ;; eshell로 명령을 전송할 수 있다.
+; 명령을 직접으로 키-스크로크를 전달하는 것으로 사용함.
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+;; (process-send-region "guesuser@productionServerShellSession" beg end)
+(defun my-send (beg end)
+  (interactive "r")
+  (process-send-region "*eshell*" beg end))
+k ; 옆의 문자를 선택해서 전송해야 하지만 알아 둘 것.
+
+
+; (comint-send-string "*shell*" "COMMAND\n") 
+where the first argument is the name of the running process; 
+or, a user can omit the \n and then follow comint-send-string with comint-send-input
+(comint-send-input "*eshell*" "k")
+#+END_SRC

@@ -1,5 +1,70 @@
 
 # git contents
+(man "git")
+file:///usr/share/doc/git-doc/user-manual.html
+(start-process "emacs_pdf okular" nil "okular" ;; 빠른 단축으로 만드는 것은 C-c C-l elisp: 를 사용해서 넣으면 됨
+  "-p" (int-to-string (+ 57 24)) ;-p 57; query_string.org
+  "/home/thinkpad/Documents/learning_gnu_emacs.pdf" ) ;; 책을 읽을 것을 찾아서 등록해 둘 것.
+
+file:../../app/emacs/man_in_emacs.org
+(man "7" "gitcore-tutorial") ;; <에러안되는 문장구조>
+(man "gitcore-tutorial(7)") (man "giteveryday")
+(man "gittutorial") (man "gittutorial-2") (man "git-help")
+(man "gitworkflows(7)")
+  (man "git-log")
+  (man "git-diff")
+  (man "git-config")
+  (man "git-shortlog")
+  (man "git-log")
+  (man "git-notes")
+
+  (man "gitcvs-migration(7)")
+  (man "gitglossary(7)")
+  (man "gitcli(7)")
+  (man "git-status")
+  (man "gitignore")
+  (man "git-stash")
+  (man "git-commit")
+  (man "git-stage")
+  (man "git-add")
+  (man "git-rm")
+  (man "git-reset")
+  (man "git-mv")
+  (man "git-update-index")
+  (man "git-merge")
+  (man "git-branch")
+  (man "git-log")
+(man "urxvt")        urxvt [options] [-e command [ args ]]
+(man "vim")/home/thinkpad/
+(start-process "vim in urxvt" nil "urxvt" ;; 빠른 단축으로 만드는 것은 C-c C-l elisp: 를 사용해서 넣으면 됨
+  "-e" "vim" )
+;; :help 를 실행하는 것으로 문서에 대한 탐색을 시도한다.
+
+- 다른방법 M-x term vim을 실행하는 것이 있으나 멀티터미널을 사용해야 할 가능성이 크다.
+
+(start-process "emacs_pdf okular" nil "okular" ;; 빠른 단축으로 만드는 것은 C-c C-l elisp: 를 사용해서 넣으면 됨
+  "-p" (int-to-string (+ 57 24)) ;-p 57; query_string.org
+  "/home/thinkpad/Documents/learning_gnu_emacs.pdf" )
+
+
+
+       git-check-ref-format(1), git-fetch(1), git-remote(1), “Understanding
+       history: What is a branch?”[1] in the Git User’s Manual.
+
+
+       git-fmt-merge-msg(1), git-pull(1), gitattributes(5), git-reset(1),
+       git-diff(1), git-ls-files(1), git-add(1), git-rm(1), git-mergetool(1)
+
+
+       git-status(1) git-rm(1) git-reset(1) git-mv(1) git-commit(1) git-
+       update-index(1)
+
+
+ gittutorial(7), gittutorial-2(7), giteveryday(7), gitcvs-migration(7),
+       gitglossary(7), gitcore-tutorial(7), gitcli(7), The Git User’s
+       Manual[1], gitworkflows(7)
+
+
 
 * git contents
 

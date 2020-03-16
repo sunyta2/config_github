@@ -1,3 +1,8 @@
+-*- coding: utf-8 -*-
+#+STARTUP: showeverything indent
+#+TITLE: emerege gentoo_linux
+cf. arch_linux with acro or etc_distro
+
 * emerge
 install list in gentoo
 - 

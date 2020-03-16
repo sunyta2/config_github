@@ -1,0 +1,30 @@
+-*- coding: utf-8 -*-
+#+TITLE: 프로젝트.org
+#+Core_VALUE: For WHAT?, WHY, and Meta
+#+where_is_source_FILE:     (dired-jump 3 (substring (shell-command-to-string (concat "readlink -f \"" (buffer-file-name) "\"")) 0 -1) )
+#+where_is C-x C-j          (dired-jump 3    (buffer-file-name)     )
+#+CREATOR: LEEJEONGPYO
+#+STARTUP: showeverything indent
+
+
+* 프로젝트는 무엇을 위한 것인가?
+- 끊임없는 근본가치에 대한 탐구의 열정이다. PRO + Ject
+
+* 프로젝트는 무엇을 위한 어떻게 인가
+링커를 생성해서 원본을 불러내어 편집한다. #+where_is_source_FILE: (find-file "~/config_github/")
+
+* 프로젝트는 
+** make ln -s
+- from dired make link
+  - S		dired-do-symlink
+  - Y		dired-do-relsymlink
+  - H		dired-do-hardlink
+  - X		dired-do-shell-command
+- from shell-command
+
+* 도구가 복잡할 수록 더욱 정교한 실험과 안정성검토가 필요하다.
+안정성검토의 확인을 이 것에 확인함.
+Emacs에서 Y로 만들어진 link 구조는
+- 파일변경시 원본의 위치가 그대로 충돌없이 1개의 파일과 동일한 방식으로 안정적으로 변경됨!.
+
+- (bookmark-bmenu-list)

@@ -18,5 +18,50 @@
 
 test*/
 # 모든 test 폴더명이 시작하는 폴더
+
+*_test_for_*/
+*_test[0-9]/
+*_test/
+# 모든 test 폴더명이 마지막에 들어간 폴더 *_test[0-9]/ *_test/
+
+
+
 test*
 # 모든 test 파일명이 시작하는 파일
+
+#파일명의 사용을 연이어서 사용하기 위해서 *_test[0-9].org
+*_test.org
+*_test[0-9].org
+*_test[0-9][0-9].org
+*_test_for_*.org
+
+
+#ln###############################################################
+    # ln and projcet 이름을 연구함.
+    #+TITLE: 프로젝트.org
+#+Core_VALUE: For WHAT?, WHY, and Meta
+#+where_is_source_FILE: (find-file "~/config_github/great_books/_achieve_agenda/project.org")
+*_ln/
+# *_ln/ 폴더에 든 ln -s 링커에 관한 커밋배제을 위함. ln -fsr TARGET LINK (man "ln") 참조: app/ls_inode_fs/ln.org
+# *not_yet*     *not_git*
+#
+
+    # .txt
+    # text 파일을 org -*- 를 넣어 org 모드로 열리지만 저장은 방지함-*-
+
+#ln###############################################################
+
+
+################################################################
+    # 연습과 not_yet.org 이름을 연구함.
+# /연습* 연습.org
+# *not_yet*     *not_git*
+#
+
+    # .txt
+    # text 파일을 org -*- 를 넣어 org 모드로 열리지만 저장은 방지함-*-
+
+# ~/Music_test/ 또는 ~/config_github/Music_test/를 구상하여 노트수집
+# 그러나 일시노트는 파일의 바로 아래에 두는 것이 현명할 것이다.
+# 즉, ~/Documents/stumpwm.pdf_note_text.org 의 형식이 좋을 것이다.
+################################################################

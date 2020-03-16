@@ -1,0 +1,57 @@
+
+
+
+syntax_of_if_in_sh.org
+app/emacs/snippet_of_temp_buffer_in_emacs.org
+app/emacs/syntax_of_temp_buffer_in_emacs.org
+(describe-function describe-function)
+
+with-buffer-modified-unmodified
+with-current-buffer
+with-current-buffer-window
+with-displayed-buffer-window
+with-output-to-temp-buffer
+with-temp-buffer
+with-temp-buffer-window
+window-prev-buffers 	
+x-cut-buffer-or-selection-value
+
+* (with-output-to-temp-buffer "임시버퍼로 함수정의출력됨!" (describe-function 'with-output-to-temp-buffer))
+(describe-function 'describe-function)
+(with-output-to-temp-buffer "_[임시버퍼_명칭]_로 분명히 아래에 [윈도우명]으로 출력됨!_" (princ (concat "이곳에 " "\n 각각명령문들이 수행될 것임!!!")))
+
+* collection of [temp-buffer] syntax
+** let_command var SETING and 
+(defun totd () ;; [[https://emacs.wordpress.com/2007/06/21/tip-of-the-day/][Tip of the Day | minor emacs wizardry]] 
+;;(async-shell-command "brave --incognito 'https://emacs.wordpress.com/2007/06/21/tip-of-the-day/'")
+  (interactive)
+  (random t) ;; seed with time-of-day
+  (with-output-to-temp-buffer "*Tip of the day*"
+    (let* ((commands (loop for s being the symbols
+                           when (commandp s) collect s))
+           (command (nth (random (length commands)) commands)))
+      (princ
+       (concat "Your tip for the day is:\\n"
+               "========================\\n\\n"
+               (describe-function command)
+               "\\n\\nInvoke with:\\n\\n"
+               (with-temp-buffer
+                 (where-is command t)
+                 (buffer-string)))))))
+
+* collection of [with-output-to-temp-buffer] syntax (with-output-to-temp-buffer BUFNAME &rest BODY)
+
+with-out-put-to-temp_buffer
+(with-output-to-temp-buffer "*Tip of the day*"
+    (let* ((commands (loop for s being the symbols
+                           when (commandp s) collect s))
+           (command (nth (random (length commands)) commands)))
+      (princ
+       (concat "Your tip for the day is:\\n"
+               "========================\\n\\n"
+               (describe-function command)
+               "\\n\\nInvoke with:\\n\\n"
+               (with-temp-buffer
+                 (where-is command t)
+                 (buffer-string))))
+

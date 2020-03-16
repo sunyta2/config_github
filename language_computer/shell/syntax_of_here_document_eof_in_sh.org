@@ -1,0 +1,76 @@
+-*- coding: utf-8 -*-
+#+STARTUP: showeverything indent
+#+TITLE: syntax_of_here_document_eof_in_sh.org /shell/
+
+
+[[info:coreutils#cat%20invocation][info:coreutils#cat invocation]]
+
+
+
+* cat 으로 분장을 뒤에 추가하기
+$ cat >> delete123.txt
+gest
+good ndient wya fo 
+^C # 또는 ^D
+* cat 으로 문장을 앞에 추가하기 쉽게 입력을 하는 방식을 터득함.
+#+BEGIN_SRC sh
+# cat 으로 문장을 앞에 추가하기 쉽게 입력을 하는 방식을 터득함.
+$ cat << EOF > delete123.txt 
+> HEAD of this file
+> changed
+> $(cat delete123.txt)
+> 
+> EOF
+
+
+#+END_SRC
+
+* !EOF는 '' "" 도 출력됨
+* \EOF는 변수를 계산하지 않고 모든것을 문자그대로 출력함.(shell스크립터 에디터대신사용가능함)
+cat << \EOF >> shell.sh
+에디터처럼하는 것이 가능함 변수를 값으로 바꾸지 않으므로 안전한 입력이 된다.
+EOF
+#+BEGIN_SRC sh
+a=1
+cat << \EOF
+"$a"
+EOF
+#+END_SRC
+
+#+RESULTS:
+: $a
+
+* cat >> shell.sh <<< 'here
+multi
+<<< here string
+'
+이것이 <<< 'here strings $a' $a가 $a로 글자 그대로 출력됨 문자그대로의 에디터로 사용이 더 효과적이다.
+      <<< "here strings $a" $a가 $a로 값으로 바꿔 출력됨
+#+BEGIN_SRC sh
+a="good"
+cat <<< 'hi
+world $a
+'
+#+END_SRC
+
+#+RESULTS:
+| hi    |    |
+| world | $a |
+|       |    |
+
+
+* <<< 'here strings' and << EOF 'here document' <<\EOF
+
+EOF explicitly, you may be looking at what is called a “here document”. 
+It’s a technique for including input data into shell scripts. Perl provides the same capability. 
+In general, it looks like this:
+<<< 'here strings'
+
+- is a feature of the bash shell. It's not specific to Linux nor is it common to other shells.
+- It's the notation used in 'here strings'. These are conceptually similar to here documents, 
+but instead of reading form text embedded in the script, the source is a variable. 
+In your example, the presumption is that the value assigned to $1 is some text with fields delimited by '.', 
+such as the dotted decimal notation used to express IP addresses. 
+Each of those fields would be transferred into the variables i1,i2,i3 & i4.
+You can read more about here strings in the Advanced Bash-Scripting Guide.
+2.2k views · View Upvoters · Answer requested by Pengfei Zhao

@@ -1,0 +1,39 @@
+
+
+
+help:org-protocol-protocol-alist
+
+help:org-protocol-the-protocol
+
+
+help:dired-dnd-protocol-alist
+
+
+help:dnd-protocol-alist
+
+
+filesets-external-viewers 발견함
+
+(filesets-find-or-display-file &optional FILE VIEWER)
+(filesets-find-or-display-file)
+Type RET on a type label to view its full documentation.
+
+filesets-external-viewers
+  User option: Association list of file patterns and external viewers
+               for use with
+image-dired-external-viewer
+  User option: Name of external viewer.
+message-fcc-externalize-attachments
+  User option: If non-nil, attachments are included as external parts
+               in Fcc copies.
+mm-automatic-external-display
+  User option: List of MIME type regexps that will be displayed
+               externally automatically.
+mm-enable-external
+  User option: Indicate whether external MIME handlers should be used.
+mm-external-terminal-program
+  User option: The program to start an external terminal.
+mml-externalize-attachments
+  Variable: If non-nil, local-file attachments are generated as
+            external parts.
+

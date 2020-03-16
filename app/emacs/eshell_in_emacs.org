@@ -1,0 +1,60 @@
+
+
+
+2칼럼으로 분리한 것에서 tmux와 유사하게 명령을 전송함.
+한 쪽의 명령을 다른 쪽으로 보내는 것을 맥에 저장된 것을 추가할 것
+
+help:ielm 탭자동완성이 되는 것이 놀라움.
+help:eshell
+- 둘다 실행이 됨 놀라움 
+ $ kill-buffer "*Help*"
+t
+ $ (kill-buffer "*Help*")
+t
+file:comint-mode.org 연구가 필요함.
+M-r	이쉘에서도 가능함!!!	comint-history-isearch-backward-regexp
+* 키스트로크전달
+#+BEGIN_SRC emacs-lisp
+(call-process "echo" nil "*scratch*" nil "hi\n\n\n 123 world\n\n")
+(call-process "echo" nil "2020_03_diary.org" nil "hi 123 world")
+(call-process "echo" nil "*eshell*" nil "hi\n\n\n world\n\n")
+
+(call-process "echo" nil "*eshell*" nil "hi\n\n\n world\n한글이 나온다는 것으로 전송을 증명함\n") ;; eshell로 명령을 전송할 수 있다.
+; 명령을 직접으로 키-스크로크를 전달하는 것으로 사용함.
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+;; (process-send-region "guesuser@productionServerShellSession" beg end)
+(defun my-send (beg end)
+  (interactive "r")
+  (process-send-region "*eshell*" beg end))
+k ; 옆의 문자를 선택해서 전송해야 하지만 알아 둘 것.
+
+
+; (comint-send-string "*shell*" "COMMAND\n") 
+where the first argument is the name of the running process; 
+or, a user can omit the \n and then follow comint-send-string with comint-send-input
+(comint-send-input "*eshell*" "k")
+#+END_SRC
+
+- process send key & command
+=> file:index.org (term-send-string PROC STR) => file:term-send-string.org
+=> file:term-send-string.org file:insert-char.org
+(term-send-string "*terminal*" "echo hi") ; 3번째인데 term만 가능할 것임.
+help:term-send-string
+help:send-string
+		help:insert-char (insert-char "RET") file:insert-char.org
+ special char send to term for process
+
+- (매우상세한) 키값 알아내기(C-u) C-x = 
+(describe-key (kbd "C-h m"))
+                  (kbd "C-h m") => "m" 
+
+
+ (<= C-q RET) help:quoted-insert C-h k C-q { 재발견 유튜브동영상에서 insert-char.org }
+=리턴키를 전달하려면 이 필요하고 그것을 얻기위해서는 단축키가 필요하다!
+=> 사용용도는 키의 작용상징부호를 전달할 필요가 있기 때문이다. (ex. term-send-string Below)
+   ([[help:term-send-string][term-send-string]] "*terminal*" "sudo genkernel") ; gentoo설치, tmux를 통제하는 org-babel elisp script
+       (term-send-string "*terminal*" "espeak \"명확하게 발음이 전달된다!\"") 
+
+

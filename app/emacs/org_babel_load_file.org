@@ -1,0 +1,158 @@
+
+* (org-babel-load-file "org_babel_load_file.org") 
+help:org-babel-load-file (org-babel-load-file "")
+org-babel-load-file is an interactive autoloaded compiled Lisp
+
+function in ‘org.el’.
+
+(org-babel-load-file FILE &optional COMPILE)
+
+Load Emacs Lisp source code blocks in the Org FILE.
+This function exports the source code using ‘org-babel-tangle’
+and then loads the resulting file using ‘load-file’.  With prefix
+arg (noninteractively: 2nd arg) COMPILE the tangled Emacs Lisp
+file to byte-code before it is loaded.
+
+
+
+* defun for espeak la, grc, en
+** elisp:(espeak_grc_while_on)
+- 최종상태는
+elisp:(espeak_grc_while_on) | elisp:(espeak_grc_while_off)  예문은 아래에
+| Ἀτρεΐδα 아트레우스의 아들       | δὲ 그리고 | μάλιστα 대부분               | δύω, 둘 | κοσμήτορε 장군들의  | λαῶν:  사람들의         |
+#+BEGIN_SRC elisp
+;;| Ἀτρεΐδα 아트레우스의 아들       | δὲ 그리고 | μάλιστα 대부분               | δύω, 둘 | κοσμήτορε 장군들의  | λαῶν:  사람들의         |
+;;(async-shell-command (concat "a=\"" (buffer-substring-no-properties (line-beginning-position -2) (line-end-position -2)) "\";"        "while true; do for i in 1 2 2 2 1 1 2 2 1 0; do espeak -v other/grc -s 150 -g 30 \"$a\"; sleep $((i*3)); done; done") "async_espeak_temp")
+(defun espeak_grc_while_on ()
+(async-shell-command (concat "a=\"" (buffer-substring-no-properties (line-beginning-position 0) (line-end-position 0)) "\";"        "while true; do for i in 1 2 2 2 1 1 2 2 1 0; do espeak -v other/grc -s 150 -g 30 \"$a\"; sleep $((i*3)); done; done") "async_espeak_temp")
+)
+(defun espeak_grc_while_off ()
+" elisp:(espeak_grc_while_on) in org_babel_load_file.org"
+ " elisp:(espeak_grc_while_off) "
+  (prog1
+        (send-string "async_espeak_temp" "") ;;good work
+        (sleep-for 0.5) (other-window 1)
+        (kill-buffer-and-window)
+  )
+)
+
+#+END_SRC
+
+#+RESULTS:
+: espeak_grc_while_off
+
+elisp:(espeak_grc_while_on) | elisp:(espeak_grc_while_off)
+  λαῶν:  사람들의          | 
+κοσμήτορε 장군들의1 
+κοσμήτορε 장군들의2 
+κοσμήτορε 장군들의3 
+Σωκράτης κατέβην χθὲς εἰς Πειραιᾶ μετὰ Γλαύκωνος 
+[[elisp:(espeak_grc_while_on)]] | [[elisp:(espeak_grc_while_off)]]
+τοῦ Ἀρίστωνος προσευξόμενός τε τῇ θεῷ 
+καὶ ἅμα τὴν ἑορτὴν βουλόμενος θεάσασθαι 
+τίνα τρόπον ποιήσουσιν ἅτε νῦν πρῶτον ἄγοντες. 
+καλὴ μὲν οὖν μοι καὶ ἡ τῶν ἐπιχωρίων πομπὴ ἔδοξεν εἶναι, 
+οὐ μέντοι ἧττον ἐφαίνετο πρέπειν ἣν οἱ Θρᾷκες ἔπεμπον.
+
+
+* org-registry
+download by intuition
+#+BEGIN_SRC elisp
+;  (require 'org-registry)
+;  (org-registry-initialize)
+
+#+END_SRC
+
+#+RESULTS:
+
+
+
+* buffer name same but differ in dir
+#+BEGIN_SRC elisp
+
+
+#+END_SRC
+* org-drill.el
+#+BEGIN_SRC elisp
+(require 'org-drill)
+
+#+END_SRC
+
+* org-capture
+
+* mpv okular
+; help:okular_pdf (man "okular")
+(okular_pdf  "/home/thinkpad/Documents/git/git - 간편 안내서 - 어렵지 않아요!.pdf" "-p 30 ")
+#+BEGIN_SRC emacs-lisp
+(defun okular_pdf ( book_pdf p )
+" - 절대주소위치사용해야 함 pdf 읽기 페이지
+       즉, ~를 사용하면 파일주소를 읽지도 못하고 현재실행위치와 혼재되서 엉망이 됨  
+  - cd /;을 함수에 넣어야 했음 
+          즉, 추출된 주소가 실행위치에서가 아닌 / 위치에 원점위치하여서 사용하게 함.
+
+  - TODO 함수를 기동함수에 등록하여 범용으로 사용하게 할 것. 
+  - 참조: _1_bbf_playlist.org   (man \"okular\") 
+"
+
+    (
+    start-process-shell-command  (concat "cd /; okular로 열기 " book_pdf  " "  p ) nil 
+                                 (concat "cd /; exec okular \""  book_pdf "\" " p )
+    )
+)
+
+#+END_SRC
+
+
+* add this
+indent in org startup by customize
+;; (org-babel-load-file (expand-file-name "~/.emacs.d/myinit.org"))
+(fset 'yes-or-no-p 'y-or-n-p) ;; 발견! 간단히 한 글자입력으로 전환하는 명령!!! 혹시 t로 바꾸면 바로실행이 되는 것일 지도,,,
+(global-set-key (kbd "<f5>") 'revert-buffer)
+
+
+;; (find-file (expand-file-name "~/config_github/app/emacs/org_babel_load_file.org"))
+;; (find-file (expand-file-name "~/config_github/app/emacs/shell_emacs/emacsQ_load.el"))
+
+* disable key
+  ;; C-x C-z 
+
+
+
+
+이곳에 일단 모아서 정리할 파일의 목록
+- (customize-group "org-capture") 
+- /home/thinkpad/.emacs.d/init.el
+- file:/home/thinkpad/org/capture_possible.el
+#+BEGIN_SRC elisp
+;; "~/config_github/great_books/_achieve_agenda/2020_03_diary_spacemacs.org"
+(require 'org-capture)
+(require 'org-protocol)
+
+(defadvice org-capture
+    (after make-full-window-frame activate)
+  "Advise capture to be the only window when used as a popup"
+  (if (equal "emacs-capture" (frame-parameter nil 'name))
+      (delete-other-windows)))
+
+(defadvice org-capture-finalize
+    (after delete-capture-frame activate)
+  "Advise capture-finalize to close the frame"
+  (if (equal "emacs-capture" (frame-parameter nil 'name))
+      (delete-frame)))
+
+
+(setq org-capture-templates
+      '(("t" "inbox_Todo" entry (file+headline "~/config_github/great_books/_achieve_agenda/2020_03_diary.org" "inbox")
+         "* TODO %?\n %i\n")
+        ("l" "link" plain (file+headline "~/config_github/great_books/_achieve_agenda/2020_03_diary.org" "link")
+         "- %?\n %x\n")
+        ("d" "done" plain (file+headline "~/config_github/great_books/_achieve_agenda/2020_03_diary.org" "done")
+         "- DONE %?\n %x\n")
+        ))
+
+
+(global-set-key (kbd "C-c c") 'org-capture)
+
+#+END_SRC
+
+

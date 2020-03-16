@@ -1,3 +1,7 @@
+-*- coding: utf-8 -*-
+#+STARTUP: showeverything indent
+#+TITLE:
+
 * systemctl _method_CentOS / RHEL 7 : How to check the status of a service using systemd – The Geek Diary https://www.thegeekdiary.com/centos-rhel-7-how-to-check-the-status-of-a-service-using-systemd/ 
 
 # systemctl list-units --type service --all
@@ -15,3 +19,5 @@
 
 * sudo systemctl disable sddm-plymouth >> /app/dwm/sddm???
 
+*** note of systemctl command example
+sudo systemctl enable sddm.service -f

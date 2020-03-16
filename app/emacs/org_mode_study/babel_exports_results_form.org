@@ -29,6 +29,9 @@ echo this content is streamed to a new buffer
 (print "this content is streamed to a new buffer")
 #+END_SRC
 
+#+RESULTS: mycontent
+this content is streamed to a new buffer
+
 #+NAME: mystream
 #+BEGIN_SRC emacs-lisp :var c=mycontent :results none
 (prin1 c (generate-new-buffer "new"))
@@ -91,7 +94,7 @@ library from any Org-mode file using the org-babel-lob-ingest (bound to C-c C-v 
 
 (org-babel-lob-ingest "./plus3_using_lob_babel.org") ;;; C-c C-c 아래의 call:이 실행의 방식이다.
 #+call: add3(x=36)
-#+call: mult3(x=36)
+#+call: mult3(x=3)
 
 #+RESULTS:
 : 108

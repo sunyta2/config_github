@@ -1,6 +1,20 @@
 #+TITLE: xrander caffeine.org
 #+CREATOR: LEEJEONGPYO
 #+STARTUP: showeverything
+(man "xrandr")
+(shell-command "xrandr -q")
+* xrandr * (find-file "~/config_github/app/xrandr/readme.org")
+* # 모니터가 단일화 복귀 ;;; (async-shell-command "xrandr --auto --output eDP1 &")
+* # 왼쪽에 외부모니터가 옴 ;;; (async-shell-command "xrandr --auto --output eDP-1 --auto --right-of VGA-1") 성공적 w541h
+* # 노트북잭왼쪽 오른쪽외부모니터 ; (async-shell-command "xrandr --auto --output eDP1 --auto --left-of VGA1 &")
+eDP-1은 w541 LVDS-1은 x220x VGA-1은 삼성모니터! 나중에 자동으로 선택하는 쉘스크립트를 완성하는 것도 좋을 것임.
+
+**   왼쪽에 외부모니터가 옴 성공적 w541h (async-shell-command "xrandr --auto --output eDP-1 --auto --right-of VGA-1")
+** 오른쪽에 외부모니터가 옴 성공적 w541h (async-shell-command "xrandr --auto --output eDP-1 --auto --left-of VGA-1")
+
+* # 왼쪽에 외부모니터가 옴 ;; (async-shell-command "xrandr --auto --output LVDS-1 --auto --right-of VGA-1") 성공적 x220t
+xrandr --output VGA-1 --off
+
 xrandr -q # 기초자료출력함!
 
 $ xrandr --output eDP1 --brightness 0.5 #화면밝기조정하는 명령
@@ -139,3 +153,4 @@ xrandr --output DP-2-3 --mode 1920x1080 --same-as eDP-1
 xrandr --auto --output eDP-1 --auto --below VGA-1
 DP-2-3
 share
+xrandr --output VGA-1 --same-as eDP-1

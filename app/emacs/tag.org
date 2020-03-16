@@ -1,0 +1,262 @@
+#+STARTUP: showeverything indent
+#+TITLE: 强點에 集中하여 眞我로 통합을 추구함 ~/config_github/app/emacs/tag.org
+#+Core_VALUE: For WHAT?, WHY, and Meta
+#+where_is_source_FILE: (find-file "~/config_github/app/emacs/tag.org")
+#+CREATOR: LEEJEONGPYO
+#+COLUMNS: %8TODO(To Do) %40ITEM(Book) %15GENRE(Genre) %5PAGES(Pages)
+
+###-*- coding: utf-8 -*-
+
+복잡성을 다루는 발달된 자아의 세상의 선진국만이 오그모드를 가지고 연구할 필요성을 느낀다!
+즉, 자아의 복잡한 분화 발달로 많은 정보를 처리하는 것이 요구되는 현대사회만이 컴퓨터의 출현이 장담된다.
+
+file:tag.org file:info_tag.org
+[[info:org#Tag%20searches][info:org#Tag searches]] 검색의 여러기술을 직접적어둘것.
+
+- [ ] [footnotes]내부색인기능 발견 C-c C-x f org-footnote-action 참고: 주석기능과 유사함. file:footnotes.org - 커맨트를 찾아내던 빠른 방법
+~/config_github/app/emacs/tag.org
+##+TITLE: 프로젝트.org
+
+file:../../app/emacs/tag.org
+*** 동영상을 시청할 것- 독일인의 것을 찾아놓을 것               :test:good:
+DEADLINE: <2020-02-17 Mon> SCHEDULED: <2020-02-17 Mon>
+:PROPERTIES:
+:good:     3
+:END:
+저장위치: 맥북의 500기가에 있음. 충분히 많은 이맥스 동영상을 관찰하고 노트 필기 해 둘 것.
+리스트와 볼 목록을 기록하는 곳은 file:../../hardware/storage/
+** good_below
+* 두
+:PROPERTIES:
+:good:     2
+:abc:      3
+:END:
+
+Newto[[Note]]n
+Newton
+* Note
+
+*** E01S02 ToDo keywords.
+Cycling through them with S-> S<-
+Itemas left of | are ToDo items (red)
+Items right of | are Done items (green)
+#+SEQ_TODO: NEXT(n) ToDO(t) WAITING(w) SOMEDAy(s) PROJ(p) | DONE(d) CANCELLED(c)
+Activate line with C-c C-cGet a menu of all keywords: C-c C-t
+
+
+*** E01S03
+
+Schedule, dadline & agenda view
+Scheduling is done with C-c C-s
+Deadlines are defined with C-c C-d
+Switch to agenda wiew with C-a a
+Follow mode with S-f
+Move forward with f back b
+
+*** E02S01 Tags                                                      :test:
+Tags can be added to headlines and are often used
+as a way to mark GTD contexts.
+: #+TAGS: PHONE(o) COMPUTER(c) GARAGE(g) SHOPPING(s) FAMILY(f) URGENT(u)
+to assign tags to a headline C-c C-q REVIEW 리턴으로 직접입력(:없이 입력함에 유의)
+
+*** E02S02 Agenda mode advanced
+T NEXT|TODO or 검색의 방식임.
+m FAMILY C-u r PHONE/NEXT
+s Search for keywords 
+    Press [, ] to add/sub word, { } to add/sub regexp,
+    C-c C-t로 이동하는 것을 구경만함
+r로 C-c /로 검색어를 그냥 *없이로도 검색됨을 확인함.
+
+**** ㅅㄷㄴㅅ                                                      :test1:
+:PROPERTIES:
+:Effort:   00:12
+
+:END:
+
+
+ TODO E03S04 PRoperties: drawer
+SCHEDULED: <2020-03-12 Thu +3d>
+:PROPERTIES:
+:LAST_REPEAT: [2020-03-10 Tue 09:29]
+:END:
+- State "DONE"       from "TODO"       [2020-03-10 Tue 09:29]
+- State "DONE"       from "TODO"       [2020-03-10 Tue 09:29]
+The :PROPERTIES: drawer stores task specific settings and user defined attributes.
+
+** deep work -  
+
+*** E05S01 Function: Linking (internal)
+Return to previous position C-c &
+Targets:
+    A headline
+    A place in the document with a #+NAME: target line
+        : [[named target]]
+         [[named target]]
+            [[named_target][test]]
+    An item with a :CUSTOM_ID: property
+        :CUSTOM_ID
+        : [[#MyID123]]       
+        :[[#MyID123]]
+
+
+Special: Radio targets that look like this <<<target>>> create links on the fly. C-c C-c
+<<<Newton>>>
+
+*** E05S02 Linking external
+: [[protocol:location][description]]
+: [[file:/home/org.pdf]]
+: [http:www.google.com]]
+: [[bbdb:Susan Jones][Susan Jones]]
+: [[id:123456789]]      :ID: 123456789
+
+외부앱을 설정하는 법.
+
+*** E02S05 Archiving
+Finished tasks clutter up your org file, so its time to move them out of the way.
+
+Define a global archive file with
+: #+ARCHIVE: filename.org::
+Archive an entry with C-c C-x C-a
+Archive a subtree with C-c C-x C-s
+
+Search all subtrees under a headline and see which one can be archived with this keys
+                   C-u C-c C-x C-s
+
+
+
+
+*** TODO E03S04 PRoperties: drawer
+SCHEDULED: <2020-03-15 Sun +3d>
+:PROPERTIES:
+:test: 5
+:LAST_REPEAT: [2020-03-10 Tue 09:30]
+:END:
+- State "DONE"       from "TODO"       [2020-03-10 Tue 09:30]
+- State "DONE"       from "TODO"       [2020-03-10 Tue 09:29]
+- State "DONE"       from "TODO"       [2020-03-10 Tue 09:29]
+The :PROPERTIES: drawer stores task specific settings and user defined attributes.
+ great Define a :LOGGING: property with value nil
+    ;  :LOGGING: nil
+Match M  GENRE="Advanture"  :GENRE: Adventure
+      M PAGE>200 C-u r { search again with new search string } PAGES>0&PAGES<350
+{나의} M test!="Done"
+match
+** 
+*** E03S05 Archiving to different files
+Goal: You want to archive your read books in an extra file
+and not inside the global archive file.
+Recipe: Define an :ARCHIVE: property with the target
+name e.g. :ARCHIVE: track-books.org::* Read books
+
+Definition is done on the top hierachy level and then inherited to its children.
+: #+ARCHIVE: filename.org::
+: #+ARCHIVE: filename.org::
+*** E04S01 Ordered tasks
+Goal: Tasks should be completed one after the other
+Recipe: Define an :ordered: property with value 't'
+Toggle the :ordered: property with C-c C-x o
+help:org-enforce-todo-dependencies
+'(org-enforce-todo-dependencies t)
+help:org-track-ordered-property-tith-tag
+'(org-track-ordered-property-tith-tag t)
+help:org-agenda-dim-blocked-tasks
+org-agenda-dim-blocked-tasks
+help:org-enforce-todo-checkbox-dependencies
+org-enforce-todo-checkbox-dependencies
+**** Youtuber stage and effort
+:PROPERTIES:
+:ORDERED:  t
+:END:
+***** setting up the stage
+***** record the screencast
+***** upload to youtube
+**** Build a house
+:PROPERTIES:
+:ORDERED:  t
+:END:
+***** TODO build the Basement
+***** TODO bild the ground floor
+***** TODO Build the root
+
+*** E04S02 
+
+
+*** E04S04 Column view
+Show your org file in columns
+Define columsn like that
+: #+COLUMNS: %TODO(To Do) %58ITEM(Task) ~~~
+: #+COLUMNS: %7TODO(To Do) %40ITEM(Task) %TAGS(Tags) %6CLOCKSUM(Clock)
+Colunm view can be set locally with the
+: :COLUMNS: property in a property drawer
+: :COLUMNS: %8TODO(To Do) %40ITEM(Book) %15GENRE(Genre) %5PAGES(Pages)
+Show column view: C-c C-x C-c
+Leave column view: q
+
+*** org-*dblock
+C-c C-x i, <menu-bar> <Org> <TAGS and Properties>
+<Insert Column View DBlock>.
+help:org-columns-insert-dblock
+(org-columns-insert-dblock)
+
+*** E04S05 Effort estimate
+:PROPERTIES:
+:COLUMNS: %8TODO(To Do) %40ITEM(Book) %15GENRE(Genre) %5PAGES(Pages) %8Effort(Effort)
+:Effort:   00:15
+:END:
+Estimate the effort that your task will need
+Effort estimates are stored in a property :Effort:
+Easy setup: Define #+PROPERTY:Effort_ALL and
+then possible values. Add this to column view with
+%8Effort(Effort){:}. the {:} means sum up times.
+: #+PROPERTY: Effort_ALL 0:05 0:10
+Show column view: C-c C-x C-c
+Increase effort: S-->
+Decrease effort: S-<-
+
+Leave column view: Q
+*** E05S01 Function: Linking (internal)
+Return to previous position C-c &
+Targets:
+    A headline
+    A place in the document with a #+NAME: target line
+        : [[named target]]
+         [[named target]]
+            [[named_target][test]]
+    An item with a :CUSTOM_ID: property
+        :CUSTOM_ID
+        : [[#MyID123]]       
+        :[[#MyID123]]
+
+
+Special: Radio targets that look like this <<<target>>> create links on the fly. C-c C-c
+<<<Newton>>>
+
+*** E05S02 Linking external
+: [[protocol:location][description]]
+: [[file:/home/org.pdf]]
+: [http:www.google.com]]
+: [[bbdb:Susan Jones][Susan Jones]]
+: [[id:123456789]]      :ID: 123456789
+
+
+help:org-id-get-create
+help:org-id-locations-file stores in what file OrgMode should look for IDs ~/.emacs.d/.org-id-locations
+cloud저장소에 넣어두고 일괄적으로 관리하는 아이디어를 제시함.
+파일프로젝트마다 실행명령을 elisp : 를 두고 안정적으로 관리를 하는 것도 한 방법이다.
+
+** test link
+:PROPERTIES:
+:CUSTOM_ID: MyID123
+:Effort:   3
+:END:
+
+
+#+NAME: named_target
+- test
+- ttod
+
+
+
+#+NAME: named target
+- test
+- ttod

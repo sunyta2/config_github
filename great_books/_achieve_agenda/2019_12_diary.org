@@ -48,12 +48,12 @@ https://www.youtube.com/watch?v=L3LMbpZIKhQ?t=2185
   CLOCK: [2019-12-26 Thu 10:22:10]--[2019-12-26 Thu 10:30] =>  0:08
   CLOCK: [2019-12-26 Thu 10:03:20]--[2019-12-26 Thu 10:07:10] =>  0:04
 #+BEGIN: clocktable :scope subtree :maxlevel 2
-#+CAPTION: Clock summary at [2019-12-26 Thu 10:28]
+#+CAPTION: Clock summary at [2020-03-11 Wed 18:07]
 | Headline         | Time   |
 |------------------+--------|
-| *Total time*     | *0:04* |
+| *Total time*     | *0:12* |
 |------------------+--------|
-| [2019-12-26 Thu] | 0:04   |
+| [2019-12-26 Thu] | 0:12   |
 #+END:
 
   :END:

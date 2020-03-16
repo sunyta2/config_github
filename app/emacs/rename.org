@@ -1,0 +1,25 @@
+(rename-buffer "1") ; 자주 방문하는 중요한 파일은 버퍼명을 바꿔준다.
+help:rename-buffer (rename-buffer "start")
+- 버퍼명의 변경법임!. 통일된 버퍼명이 일괄처리에 유리할 것이므로 검색하고 파일위치를 설정할 것!
++ C-u C-x C-b로 관리를 편리하게 함
+"1-1" "1-2" 통일된 명칭부여로 효율을 높인다. "input1" "output3"문장전달의 명령의 일관된 수행도 가능할 것이다.
+
+현재사용사례수집
+(rename-buffer "1-다이어리(2020-03)");
+(rename-buffer "2-버퍼리스트");
+(rename-buffer "3-핵심프로젝트");
+(rename-buffer "4-음원");
+
+
+
+
+- 버퍼명의 변경법임!. 통일된 버퍼명이 일괄처리에 유리할 것이므로 검색하고 파일위치를 설정할 것!
+help:rename-buffer (rename-buffer "start")
+help:occur-rename-buffer
+help:rename-file
+help:rename-uniquely
+help:speedbar-item-rename
+help:vc-rename-file
+
+원래 로 복귀하는 것을 연구하기 위한 수집
+(buffer-name &optional BUFFER) help:buffer-name

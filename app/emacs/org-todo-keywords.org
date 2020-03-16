@@ -1,0 +1,20 @@
+Task types 
+
+출처: [[http://www.totherme.org/configs/org-stuff.html#orgheadline12][Gareth's Org-Mode Config]] 많은 자료가 풍부하여 볼만함.
+Task types
+However we manage projects as a whole, individual tasks can be in the following categories.
+#+BEGIN_SRC emacs-lisp
+;; 설정을 변경하는 법
+(setq org-todo-keywords '((sequence "TODO(t!/!)" "NEXT(x!/!)"  "|" "DONE(d!/!)" "NOTDOING(n@/!)" "LATER(l!/!)" "WAITING(w@/!)")
+                          (sequence "EMAIL(e!/!)" "REPLY(r!/!)")))
+                ;; 색깔을 지정하면 보기에 인식이 빠를 것이다.
+(setq org-todo-keyword-faces
+      (quote (("TODO" :foreground "red" :weight bold)
+              ("NEXT" :foreground "blue" :weight bold)
+              ("DONE" :foreground "green" :weight bold)
+              ("WAITING" :foreground "orange" :weight bold)
+              ("NOTDOING" :foreground "green" :weight bold)
+              ("LATER" :foreground "orange" :weight bold)
+              ("EMAIL" :foreground "red" :weight bold)
+              ("REPLY" :foreground "red" :weight bold))))
+#+END_SRC

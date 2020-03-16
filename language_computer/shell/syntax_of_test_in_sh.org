@@ -1,4 +1,15 @@
+-*- coding: utf-8 -*-
 #+STARTUP: showeverything indent
+#+TITLE: syntax_of_test_in_sh.org /shell/
+(find-file "../shell/syntax_of_if_in_sh.org")
+(find-file "../shell/syntax_of_test_in_sh.org")
+(man "test")
+
+a=3
+test $a -eq 3 || echo "use dollar sign before variable"
+
+* 오류의 발견과 해법
+
 
 
 #+BEGIN_SRC sh

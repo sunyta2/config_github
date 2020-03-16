@@ -1,0 +1,31 @@
+
+빠르게 이 문서를 열기위한 ESC ESC 숫자의 설정은 interactive한 command명만 수용함을 확인함
+                file:../../app/emacs/esc_esc_num.org
+즉 "interactive"를 넣어서 새로운 함수를 만들어야 했음
+- 함수안에서 함수를 생성시키는 것이 가능하다면
+- (ESC_M_num "파일명" "숫자") 수행하는 것이 가능할 것이다. 
+file:../../app/emacs/global_set_key_kbd.org
+
+
+
+
+- [ ] (start-process "emacs_pdf okular" nil "okular" ;; 빠른 단축으로 만드는 것은 C-c C-l elisp: 를 사용해서 넣으면 됨
+  "-p" (int-to-string (+ 57 24)) ;-p 57; query_string.org
+  "/home/thinkpad/Documents/learning_gnu_emacs.pdf" )
+
+
+
+
+
+*** note of youtube
+
+14. Hacking Emacs the mode-line live
+
+defun screencast-default-keybindings ()
+(interactive)
+(define-prefix-command 'screencast-map_
+(global-set-key (kdb "C-x s") screencast-map)
+(global-set-key (kdb "C-x s a") screencast-start)
+(global-set-key (kdb "C-x s e") screencast-stop)
+
+file:

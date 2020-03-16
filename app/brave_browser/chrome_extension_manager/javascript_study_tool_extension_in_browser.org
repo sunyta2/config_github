@@ -1,0 +1,15 @@
+
+
+* CRX-inspector : extension and javascript study tool
+
+
+** javascript 연구에 사용하면 좋을 것임 또한.
+
+
+** 예시링크 
+[[chrome-extension://lmlpbkpknjcnfabomjkecmkigcphgomk/inspect.html?ihmgiclibbndffejedjimfjmfoabpcke][__MSG_Kernel_AppName__ | CRX Inspector]]
+
+(async-shell-command "brave --incognito 'chrome-extension://lmlpbkpknjcnfabomjkecmkigcphgomk/inspect.html?ihmgiclibbndffejedjimfjmfoabpcke'")
+Allow in private 선택해도 위의 것은 안됨 오직 공개된 곳만 가능한 상태 현재
+Warning: Brave cannot prevent extensions from recording your browsing history. To disable this extension in private mode, unselect this option.
+

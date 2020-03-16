@@ -1,0 +1,4 @@
+
+
+file:tag.org file:info_tag.org
+[[info:org#Tag%20searches][info:org#Tag searches]] 검색의 여러기술을 직접적어둘것.

@@ -1,0 +1,44 @@
+
+
+대발견!!! emacs는 자체적으로 발생한 프로세스를 처리하는 것이 존재함.
+"timeout" "25m" "mpv" "--speed=0.8" "--volume=25" "--player-operation-mode=pseudo-gui"
+(org-set-property "set_2" (buffer-substring-no-properties (line-beginning-position 0) (line-end-position 0)))
+(list-processes)
+
+
+help:list-processes
+
+
+* killprocess not work well
+(progn (kill-process "good test") (message "hi"))
+ not work(when (process-live-p "mpv_above") (kill-process "mpv_above"))
+   not workd(process-running-child-p 'mpv_above)
+help:process-running-child-p
+(when t (message "hi")
+help:try
+(kill-process &optional PROCESS CURRENT-GROUP)
+help:kill-process
+
+
+help:list-system-processes
+   help:process-attributes htop와 더불어 연구필요함.
+
+
+
+#+BEGIN_SRC elisp
+;# while true 무한반복의 실행! 나중에 for문의 횟수사용 (timeout의 방법을 찾기전에 모색이었으나 timeout bash -c도 나중에 성공함!)
+(start-process-shell-command "while true espeak greek latin" nil "strings=\"\
+반갑습니다 
+아리스토텔레스 나무 대방광불화엄경
+\"; while true; echo \"elisp_espeak\"; do echo \"$strings\" | while read LINE ; do espeak -a 20 \"$LINE\"; sleep 3; done; done")
+
+
+(start-process-shell-command "while true 'elisp_espeak' 키워드로 찾아서 ps aux kill" nil
+"ps aux | grep elisp_espeak | awk '{print $2}' | xargs -I{} kill -9 {}")
+;; M-! ps aux | grep "키워드 (by echo)" | awk '{print $2}' | xargs -I{} kill -9 {}
+#+END_SRC
+
+
+(start-process-shell-command "killall espeak while" nil "
+timeout 15m mpv --player-operation-mode=pseudo-gui ~/Music/homer_rhythm/iliad01/line_010.mp4
+")

@@ -1,0 +1,141 @@
+#+STARTUP: showeverything indent latexpreview
+#+OPTIONS: d:t \n:t
+
+* [활용처] link_list_drawer_generate_python_babel.org
+(find-file-other-window "../../language_computer/python/link_list_drawer_generate_python_babel.org")
+
+(find-file-other-window "../../app/brave_browser/readme.org")
+brave --incognito의 많은 링커를 생성한다.
+(async-shell-command "brave --incognito 'https://www.youtube.com/watch?v=tYbGm_1mi3k&t=2m01s'") zsh emacs
+
+(find-file-other-window "../../app/mpv/readme.org")
+mpv ;; 읽은 횟수/듣기만한 횟수
+(async-shell-command "mpv --player-operation-mode=pseudo-gui '/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_02_caesar_64kb.mp3'")  ;; 읽은 횟수/듣기만한 횟수
+(async-shell-command "mpv --player-operation-mode=pseudo-gui '/home/thinkpad/Music/bellumgallicum_caesar/bellumgallicum_02_caesar_64kb.mp3'")  ;; 1 / 2
+
+
+(find-file-other-window "../../app/okular/readme.org")
+okular (async-shell-command "okular \"$(find ~/Music  -inum 6836311)\" &")
+(3282990 2049)
+
+
+buffer-file-name
+(find-file-other-window "../../language_computer/python/link_list_drawer_generate_python_babel.org")
+
+
+/home/thinkpad/config_github/
+language_computer/python/link_list_drawer_generate_python_babel.org")
+
+* 클릭커블한_link생성을_위한_파이썬Babel
+:PROPERTIES:
+:ID:       클릭커블한_link생성을_위한_파이썬Babel
+:END:
+연구필요-한 줄씩 불어내어서 실행하면 장문을 나누어서 그것을 SRC variable로 전환해서 읽게 하면 좋을 것임.
+- 아무튼 한줄씩 읽어내는 구조를 찾아볼것
+#+BEGIN_SRC python :results output drawer :exports both
+done_is_more_than_3 = 2
+if done_is_more_than_3 < 3 :
+    print ("- [[~/config_github/language_computer/python/bookmark_org_link.org::9]] ;; python을 이용한 방식과 틀을 보관 \n\n") # 북마크 만들어 생성하기 파이썬3을 사용하여서.
+    print ("- [[~/config_github/app/emacs/register_emacs.org::9]] ;; hello world \n\n") # 북마크 만들어 생성하기 여기에 설명을 붙인다.
+    print ("- [[~/config_github/language_computer/python/bookmark_org_link.org::save_data]] ;; save_date 바로가기") #
+    #  [[~/config_github/language_computer/python/bookmark_org_link.org::save_data]] ;;
+#print ("[[./test%d.txt::100][test%d.txt::100]]") # 북마크 만들어 생성하기 여기에 설명을 붙인다.
+#+END_SRC
+
+#+RESULTS:
+:RESULTS:
+- [[~/config_github/language_computer/python/bookmark_org_link.org::9]] ;; python을 이용한 방식과 틀을 보관 
+
+
+- [[~/config_github/app/emacs/register_emacs.org::9]] ;; hello world 
+
+
+- [[~/config_github/language_computer/python/bookmark_org_link.org::save_data]] ;; save_date 바로가기
+:END:
+:RESULTS:
+[[*org-link test][org-link test]]
+* C-c C-x d	org-insert-drawer참고해 볼 것C-c C-h
+* org-link test
+
+sfsd
+se
+
+
+
+
+
+
+
+
+
+* save_data
+If you also want to export/publish your links you can use:
+출처 : [[https://stackoverflow.com/questions/45094450/org-mode-clickable-text-jump-to-specific-line-in-emacs?noredirect=1][org mode - clickable text jump to specific line in emacs - Stack Overflow]]
+#+OPTIONS: d:t \n:t
+
+#+BEGIN_SRC python :results output drawer :exports both
+
+for i in range(0,10):
+    #print "[[./test%d.txt::100][test%d.txt::100]]" %(i,i) # not work its syntax of python2
+    print ("[[./test%d.txt::100][test%d.txt::100]]" %(i,i)) # it works its syntax of python3
+    print ("- [[~/config_github/language_computer/python/bookmark_org_link.org::9]] ;; python을 이용한 방식과 틀을 보관 \n\n") # 북마크 만들어 생성하기 파이썬3을 사용하여서.
+    print ("- [[~/config_github/app/emacs/register_emacs.org::9]] ;; hello world \n\n") # 북마크 만들어 생성하기 여기에 설명을 붙인다.
+
+#+END_SRC
+The d:t option tells to export drawers, the \n:t one to preserve linebreaks.
+
+Putting your python code result into a drawer (the :results output drawer) allows org mode to interpret it as true org-mode code.
+
+
+
+#+OPTIONS: d:t \n:t
+
+#+BEGIN_SRC python :results output drawer :exports both
+    # 링커의 시간을 자동으로 생성하는 명령을 실행한다.
+# (async-shell-command "brave --incognito 'https://www.youtube.com/watch?v=_uQrJ0TkZlc&t=8m'")
+done_t=123
+print ("done in #.05H # 위쪽 _SRC에서 수정할 것 기록을 반드시 남길 것") # 이곳_SRC에서 반드시 변경할 것
+for i in range(0,3*3+1,2):
+#    print ("[[./test%d.txt::100][test%d.txt::100]]" %(i,i)) # it works its syntax of python3
+    print ("- ;; comment [[https://www.youtube.com/watch?v=_uQrJ0TkZlc&t=%dm][ 나누어짐_ %d분에서-시작됨 Python Tutorial for Beginners Full Course Learn Python for Web Development - 6.14H YouTube ]] ;; save_date 바로가기" %(i,i)) #
+    print ("- ;; #h%dm에서 나누어짐 comment (async-shell-command \"brave --incognito 'https://www.youtube.com/watch?v=_uQrJ0TkZlc&t=%dm'\") \n" %(i,i)) # 빠르게 실행하는 것
+#+END_SRC
+
+#+RESULTS:
+:RESULTS:
+done in #.05H # 위쪽 _SRC에서 수정할 것 기록을 반드시 남길 것
+- ;; comment [[https://www.youtube.com/watch?v=_uQrJ0TkZlc&t=0m][ 나누어짐_ 0분에서-시작됨 Python Tutorial for Beginners Full Course Learn Python for Web Development - 6.14H YouTube ]] ;; save_date 바로가기
+- ;; #h0m에서 나누어짐 comment (async-shell-command "brave --incognito 'https://www.youtube.com/watch?v=_uQrJ0TkZlc&t=0m'") 
+
+- ;; comment [[https://www.youtube.com/watch?v=_uQrJ0TkZlc&t=2m][ 나누어짐_ 2분에서-시작됨 Python Tutorial for Beginners Full Course Learn Python for Web Development - 6.14H YouTube ]] ;; save_date 바로가기
+- ;; #h2m에서 나누어짐 comment (async-shell-command "brave --incognito 'https://www.youtube.com/watch?v=_uQrJ0TkZlc&t=2m'") 
+
+- ;; comment [[https://www.youtube.com/watch?v=_uQrJ0TkZlc&t=4m][ 나누어짐_ 4분에서-시작됨 Python Tutorial for Beginners Full Course Learn Python for Web Development - 6.14H YouTube ]] ;; save_date 바로가기
+- ;; #h4m에서 나누어짐 comment (async-shell-command "brave --incognito 'https://www.youtube.com/watch?v=_uQrJ0TkZlc&t=4m'") 
+
+- ;; comment [[https://www.youtube.com/watch?v=_uQrJ0TkZlc&t=6m][ 나누어짐_ 6분에서-시작됨 Python Tutorial for Beginners Full Course Learn Python for Web Development - 6.14H YouTube ]] ;; save_date 바로가기
+- ;; #h6m에서 나누어짐 comment (async-shell-command "brave --incognito 'https://www.youtube.com/watch?v=_uQrJ0TkZlc&t=6m'") 
+
+- ;; comment [[https://www.youtube.com/watch?v=_uQrJ0TkZlc&t=8m][ 나누어짐_ 8분에서-시작됨 Python Tutorial for Beginners Full Course Learn Python for Web Development - 6.14H YouTube ]] ;; save_date 바로가기
+- ;; #h8m에서 나누어짐 comment (async-shell-command "brave --incognito 'https://www.youtube.com/watch?v=_uQrJ0TkZlc&t=8m'") 
+
+
+[[https://duckduckgo.com/?q=thinkpad+bios+password&t=brave&iax=videos&ia=videos&iai=jKd46HdFyFY][thinkpad bios password at DuckDuckGo]]
+
+[[https://www.youtube.com/watch?v=g_Row8zEJZc][Hak5 - SSH Forwarding: Local vs Remote with examples, Hak5 1113 part1 - YouTube]]
+
+:END:
+
+##+BEGIN_SRC python :results raw
+#+BEGIN_SRC python :results output drawer :exports both
+print("hi" " good" ' hello');print("world"*12)
+#+END_SRC
+
+#+RESULTS:
+:RESULTS:
+hi good hello
+worldworldworldworldworldworldworldworldworldworldworldworld
+:END:
+None
+
+**** hello world

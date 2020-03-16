@@ -1,0 +1,30 @@
+
+ln -s 
+ln -s -r
+ln -h
+
+* use dired ln Y
+ln -sr <source> <destine>
+
+# buffer-file-name
+(buffer-file-name)
+
+            (concat "readlink -f \"" (buffer-file-name) "\"")
+    (dired-jump 3 )
+                                (shell-command-to-string (concat "echo hi"))
+        (substring (shell-command-to-string (concat "echo hi")) 0 -1)
+
+    (dired-jump 3 (substring (shell-command-to-string (concat "readlink -f \"" (buffer-file-name) "\"")) 0 -1) )
+#+where_is_source_FILE:     (dired-jump 3 (substring (shell-command-to-string (concat "readlink -f \"" (buffer-file-name) "\"")) 0 -1) )
+#+where_is C-x C-j          (dired-jump 3    (buffer-file-name)     )
+
+
+
+* revert ln path get
+** readlink -f (ln-s)
+$  readlink -f /home/thinkpad/config_github/great_books/_achieve_agenda/2020_02_project_ln/1_2020_02_diary.org
+/home/thinkpad/config_github/great_books/_achieve_agenda/2020_02_diary.org
+  - [[https://unix.stackexchange.com/questions/22128/how-to-get-full-path-of-original-file-of-a-soft-symbolic-link][symlink - How to get full path of original file of a soft symbolic link? - Unix & Linux Stack Exchange]]
+** etc stat
+ $ stat current
+  File: `current' -> `/home/user/releases/build/'

@@ -1,0 +1,17 @@
+file:../find/readme.org
+ [[info:find#Invoking%20find][info:find#Invoking find]]
+ [[info:find#Invoking%20xargs][info:find#Invoking xargs]]
+
+locate involved [[info:find#Invoking%20locate][info:find#Invoking locate]]  [[info:find#Invoking%20updatedb][info:find#Invoking updatedb]]
+
+find . -maxdepth 1 -name "*.jpag" | xarg tar -czvf jpeg.tgz
+tar -tzf jpeg.tgz 
+find . -maxdepth 1 -name "*.jpag" -delete
+
+
+find . -type f -cnewer "video73.tar" | xargs wc -l
+
+
+find . | grep X/ | xargs -I{} cp {} ../2/
+find . | grep X/ | xargs -I file cp file ../2/
+find / -name .conf | xargs -n 1 chgrp mygroup

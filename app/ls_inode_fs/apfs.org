@@ -1,0 +1,8 @@
+#+STARTUP: showeverything indent
+Apple File System = apfs.org
+- 목적: 
+
+* arco에서 가능하지만 쓰기가 안됨.
+2 aur/linux-apfs-dkms-git 1:r5.277a34e-1 (+2 0.08%) (Installed: 1:r6.2a598f1-1)
+
+[[https://github.com/sgan81/apfs-fuse][GitHub - sgan81/apfs-fuse: FUSE driver for APFS (Apple File System)]]

@@ -1,0 +1,41 @@
+-*- coding: utf-8; default-directory: "~/config_github/" -*-
+#+STARTUP: showeverything indent
+- 아래의 실험이 성공적이진 못했지만 연구를 해볼 것.... 시간이 들어갈 것임
+- 목표:를 명확히: 대충의 목표: 좀더 빈 버퍼를 열어서 원하는 링크를 자동으로 생성하는 것을 생각해 봄
+grep -n "" *.org
+M-x shell type grep -n "def" *.py (for example) you'll end up with:
+But now you can do M-x compilation-shell-minor-mode to make them clickable (like the compilation-mode, et al. modes)
+출처:[[https://www.reddit.com/r/emacs/comments/9sz0ql/make_emacs_open_files_at_specific_line_numbers_as/][Make emacs open files at specific line numbers as outputted by grep and other shell commands : emacs]]
+[[file:/folder/subfolder/file.xml::435]] with C-c C-o 
+[[3]]
+[[https://www.reddit.com/r/emacs/comments/9sz0ql/make_emacs_open_files_at_specific_line_numbers_as/][Make emacs open files at specific line numbers as outputted by grep and other shell commands : emacs]]
+
+(async-shell-command "brave --incognito 'https://www.reddit.com/r/emacs/comments/9sz0ql/make_emacs_open_files_at_specific_line_numbers_as/'")
+
+
+;; 실험파일위치 test_with_temp_buffer.org
+;;##-*- mode: grep; default-directory: "~/config_github/" -*-
+
+
+
+* 북마크를 다루는 register과 연동하는 것
+** M-x compilation-shell-minor-mode in M-x shell after `$ grep -n "def" *.py`
+ (find-file-other-window "./register_emacs.org")
+     - 한글깨짐을 해결함. coding-system app/emacs/coding_system_in_emacs.org
+ ;; -*- coding: utf-8 -*-
+ ;; -*- coding: utf-8; mode: org; org-confirm-babel-evaluate: nil; -*-
+ emacsclient +4:3 FILE 
+ emacs --no-splash "+$line" --file "$file"
+ (find-file "/home/thinkpad/config_github/app/emacs/register_emacs.org:3")
+ M-x rgrep and cousins already, right?
+
+ Furthermore, if you in M-x shell type grep -n "def" *.py (for example) you'll end up with:
+ But now you can do M-x compilation-shell-minor-mode to make them clickable (like the compilation-mode, et al. modes)
+ 출처:[[https://www.reddit.com/r/emacs/comments/9sz0ql/make_emacs_open_files_at_specific_line_numbers_as/][Make emacs open files at specific line numbers as outputted by grep and other shell commands : emacs]]
+ [[file:/folder/subfolder/file.xml::435]] with C-c C-o 
+ [[3]]
+ [[file:register_emacs.org]] with C-c C-o 
+
+
+* (가정의 상상)readme.org를 모두 클릭가능한 파일로 만드는 File System은 어떤가?
+- 별로임. 모든 것이 관리가 되는 것은 나중에 정리해보면서 살펴야 되므로 소량의 파일에서 실행해 보고 나중에 확장을 검토해 볼 것.

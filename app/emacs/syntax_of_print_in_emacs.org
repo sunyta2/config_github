@@ -1,0 +1,21 @@
+
+
+
+(prin1 (eval (read (current-kill 0)))
+         (current-buffer)))
+(insert (current-kill 0)) ;; save to insert
+
+
+(window-send-string (print *last-command*)) ; 지난 명령문을 바로 윈도우로 보내는 명령- 성공적인 문자입력바로 직송하기
+
+
+
+
+(run-commands "gnewbg 7_test2" "gnewbg 8_test3")
+
+
+(run-commands "gnewbg '9_test4'" "gnewbg '10_test5'")
+
+(print (* 2 3))
+
+(write-line "Hello, World!") 

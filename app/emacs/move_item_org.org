@@ -1,0 +1,30 @@
+* [org-refile] C-c C-w 
+감탄!!!
+
+* M-위아래화살표
+
+
+
+
+the simplest way, Just use M-shift-up or M-shift-down you can move item past superior level.
+
+ C-c C-w (org-refile) and specify the heading where you want to send your TODO item.
+
+[[https://stackoverflow.com/questions/9812181/how-to-move-sub-headings-to-under-other-headings-in-emacs-org-mode][How to move sub-headings to under other headings in emacs org-mode - Stack Overflow]]
+
+Similar to sanityinc's above, the solution I've adopted is to...
+
+Move cursor to *TOMORROW
+Demote it to ** with M-right
+Move cursor up to TODO item 2
+Pull it down beneath **TOMORROW with M-down
+Return cursor to **TOMORROW and re-promote it with M-left
+Constructing a macro for this would probably be better, but it's intuitive and not as bad as it looks. Still, it would be more convenient if C-M-down or something did this.
+
+
+
+Here are 2 options:
+
+Promote Item 2 to the top level with M-left, then move it down below "TOMORROW" with M-down, and finally demote it under "TOMORROW" with M-right.
+
+Cut the "Item 2" subtree with org-cut-special (C-c C-x C-w), then paste it under "TOMORROW" using org-paste-special (C-c C-x C-y).

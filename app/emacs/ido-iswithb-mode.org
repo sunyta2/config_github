@@ -1,0 +1,10 @@
+
+
+C-x b
+
+(iswitchb-mode)
+help:iswitchb-mode
+C-s C-r
+C-k
+use `icomplete-mode' or `ido-mode' instead.
+use help:icomplete-mode or help:ido-mode instead.

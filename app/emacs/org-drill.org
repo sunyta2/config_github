@@ -1,0 +1,32 @@
+(org-info)
+(org-toggle-heading)
+(org-toggle-item)
+pi :# -*- mode: snippet -*-
+[[https://www.youtube.com/watch?v=34zODp_lhqg][Org Mode Basics In Doom Emacs - YouTube]]
+
+* TODO [50%]check box : - [1/2]
+- [ ] water
+- [X] good milk
+
+* test
+
+* mnt/Music/emacs/Flashcards in Emacs
+#+BEGIN_SRC emacs-lisp
+;(use-package org-drill
+;    :ensure t)
+;(add-to-list 'load-path "~/.emacs.d/drill/")
+;(package-initialize)
+(require 'org-drill)
+;;(add-to-list 'load-path "~/.emacs.d/elpa/org-drill/")
+;; (find-dired "~/.emacs.d/elpa/org-drill/")
+;; install org-learn.el 필요함 동영상에 따르면 직접다운로드해서 설치를 권함
+#+END_SRC
+
+Possible completions are:
+org-drill 	org-drill-again
+org-drill-cram 	org-drill-directory
+org-drill-entry 	org-drill-merge-buffers
+org-drill-pronounce-word 	org-drill-relearn-item
+org-drill-resume 	org-drill-strip-all-data
+org-drill-tree
+

@@ -1,0 +1,14 @@
+-*- coding: utf-8 -*-
+#+STARTUP: showeverything indent
+
+
+
+
+* 빈 버퍼를 활용한 명령의 출력창 in with_temp_buffer.org
+(find-file-other-window "./with_temp_buffer.org")
+- 이 후 클릭커블한 설정으로 변경하는 것등을 연구할 가치가 있다.
+
+
+
+** test_with_temp_buffer.org
+(find-file-other-window "./test_with_temp_buffer.org")

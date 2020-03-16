@@ -1,0 +1,19 @@
+
+
+
+* [org-brain] 일단 비디오시청부터해서 최종결과를 확인한다.
+:LOGBOOK:
+CLOCK: [2020-02-17 Mon 13:07]--[2020-02-17 Mon 14:25] =>  1:18
+- good start
+:END:
+[[https://duckduckgo.com/?q=org-brain+emacs&t=brave&iar=videos&iax=videos&ia=videos][org-brain emacs at DuckDuckGo]]
+(async-shell-command "brave --incognito 'https://duckduckgo.com/?q=org-brain+emacs&t=brave&iar=videos&iax=videos&ia=videos'")
+
+* org-timer start from in org
+/emacs/org-timer.org
+목적: 시작시간을 변경하는 법을 알면 Youtube의 동영상에 맞추어서 필요한 부분에서 시작하는 기록이 가능할 것임.
+여러명령중에서 찾아낼 것
+
+
+* github org-brain
+[[https://github.com/kungsgeten/org-brain][GitHub - Kungsgeten/org-brain: Org-mode wiki + concept-mapping]]

@@ -1,0 +1,680 @@
+-*- coding: utf-8 -*-
+#+TITLE: 2020_03_diary.org
+#+CREATOR: LEEJEONGPYO
+#+STARTUP: showeverything indent logdrawer
+#+SEQ_TODO: NEXT(n/!) TODO(t@/!) WAITING(w@/!) SOMEDAY(s/!) PROJ(p) | Done(d@) CANCELLED(c)
+#+TAGS: URGENT(u) COMPUTER(c) SHOPPING(s) FAMILY(f) PHONE(o) GARAGE(g) test(t)
+#+PROPERTY: Effort_ALL 0:05 0:10 0:15 0:220 0:30 1:00 2:00 4:00 6:00 8:00
+#+PROPERTY: Rating_ALL + ++ +++ ++++ +++++
+#+COLUMNS: %8TODO(To Do) %40ITEM(Book) %15GENRE(Genre) %5PAGES(Pages)
+#+ARCHIVE: archive_of_mine.org::
+#+OPTIONS: d:t \n:t p:t todo:nil
+
+
+[[inbox]] [[늘중요한오늘이다.]]
+
+#+NAME: top_named_target_list
+[[named_target]] 
+  [[named_target]
+TODO in THIS_diary.org { C-c / t } by Agenda in THIS file!!! very simple.
+C-c [ C-c / t ;;현재 폴더내의 투두만 국한
+ 
+(rgrep "단어_들" "*.org" "~/config_github/app" nil)
+(find-grep "find ~/config_github/app -type f -exec grep --color -nH --null -e 단어_들 \{\} +")
+
+(rgrep "incognito" "*.org" "~/config_github" nil)
+(async-shell-command "brave --incognito 'https://www.youtube.com/watch?v=IggY48vEe2w&t=11m'")
+
+
+n과 w로 사용하는 법으로 集中의 노트를 사용하는 핵심의 기술이다!
+(find-file-other-window "~/config_github/app/emacs/readme.org")
+C-x n n         narrot-to-region
+C-x n w         widen                 2019_12_diary.org
+C-x n C-h       위의 설명을 보게함. 매우 중요한 특징으로 자주 활용할 것
+
+
+- emacs buffer/path in mini-buffer in org mode    [[info:ido#Top][info:ido#Top]]   [2020-03-04 Wed]
+- frame setting
+- macosx root /EFI by emacs /sudo::/
+- Ebay- action ~ 
+  - (vgb line) short 1pack(moving 1m) long 2m 3m,for long view of monitor
+  - mac pan 6$
+  - keyboard switcher
+- hareware/storage/ 체계적인 목록을 만들기
+  - kde: qt5 install for remote server kde in x220
+- emacs 
+  - 투명한 emacs만들기
+  - info:url#Top external-link for open okular: or mpv: incognito:
+  - tag study in german tutorial
+  - 목록을 일괄이동하는 법을 찾을 것 복사해는 붙이는 것 외에 단축키가 있을 것으로 생각됨
+    대안으로 마커설정후 탭으로 닫고 바로 아래줄로 이동한 다음에 다시 복귀함
+  - 저장장소정하기
+    - - C-c C-x b 블럭으로 열리면(닫기도 동일함. 그러나), 바로 C-x 0 를 실행함  C-x 4 0로 창을 닫는 것이 깔끔함.
+    - C-x 4 c 두 창을 열고 org-mode로 전환해서 줄의 이동의 잇점을 활용하는 워크플로우를 저장해 둔다. (clone-indirect-buffer-other-window NEWNAME DISPLAY-FLAG &optional NORECORD) help:clone-indirect-buffer-other-window help:clone-indirect-buffer
+
+[[info:coreutils#tr%20invocation][info:coreutils#tr invocation]]
+- timeout : file:../../app/timeout/readme.org  [[info:coreutils#timeout%20invocation][info:coreutils#timeout invocation]] for use in mpv espeak while shell command 대발견!
+
+
+- [[info:coreutils#expr%20invocation][info:coreutils#expr invocation]] expr
+- comm [[info:coreutils#comm%20invocation][info:coreutils#comm invocation]] 두 문장을 비교한 차이점을 출력하는 명령어
+$ printf '%s\n' a b c d e     > file1
+$ printf '%s\n'   b c d e f g > file2
+$ comm --total -123 file1 file2
+1       2       4       total
+
+option is a GNU extension.  Portable scripts should use ‘wc’
+t the totals, e.g.  for the above example files:
+
+$ comm -23 file1 file2 | wc -l    # number of lines only in file1
+1
+$ comm -13 file1 file2 | wc -l    # number of lines only in file2
+2
+$ comm -12 file1 file2 | wc -l    # number of lines common to both files
+4
+[[info:coreutils#join%20invocation][info:coreutils#join invocation]] join is column emerging power
+
+
+- tray - 바탕화면의 새로운 내용의 것을 추가하기(todo, vision!, .desktop 특정폴더의shell Scripts리스트로 rotate처럼 여러목록으로 불러냄. 클릭으로 실행함 
+  - (emacsq, project장. rotate, 시작당시부터 데몬을 실행해서 사용함.
+  - emacs실행파일을 아애 무력화하고 그것을 쉘의 특수문을 실행하는 것으로 대체함(기동시 server를 확인하고 가동함) 
+- (신당리) 지적공사: 신당리의 측량법을 문의해 보기
+  - 전화번호 검색하기, 물어볼 내용생각해두기 비용, 경계시 드는 것등등
+  - 신당리에 가기전에 전화나 방문으로 알아보기.
+- linux(lfs-gentoo)
+  - lfs분할해서 번역문을 넣던지 해서 요약노트화해서 최소화할 것
+  - grub lilo
+  - multi-notebook Why? note, experiment, macosx
+    - xcode 외부출력 
+* TODO 저장된 장치 분류하기 file:../../hardware/storage
+- KDE Downloads/앨빈토플러, 드러커의 문서있음. 가상머신의 자료있음(하드웨어로 옮길 것저장장소를 분류할 기준을 정하고 정확히 끊어지는 곳을 분할점으로 삼을 것.)
+- rsync사용을 고려할 것.
+hi 123 world
+유튜브에서 해킹검출의 추출을 보이는 장면을 노트해서 기록해 둘 것.-히스토리검색에 있을 것임 파일명 대구 rgrep *daegu* 직접찾는 실행하면서. 녹화익힐 것.
+
+!. emacs bar-file-path 검색해서 넣을 것
+file:../../../Music/_1_playlist.org 
+file:../../app/wm_compare_youtube_note.org layout record collect 
+
+(global-set-key (kbd "C-c c") 'org-capture)
+help:org-enforce-todo-checkbox-dependencies org-enforce-todo-checkbox-dependencies t
+help:org-enforce-todo-dependencies org-enforce-todo-dependencies t
+
+- use C-z M-z other function
+
+disable keybinding (info "(emacs) Rebinding") ;;M-x global-set-key <RET> C-z shell <RET>
+‘M-x global-unset-key <RET> KEY’
+     Make KEY undefined in the global map.
+‘M-x local-unset-key <RET> KEY’
+     Make KEY undefined locally (in the major mode now in effect).
+
+M-s o Occur
+다른 개별화된 명령을 수행하는 것을 만들어 본다.
+C-z runs the command suspend-frame (found in global-map), which is an
+interactive compiled Lisp function in ‘frame.el’.  help:suspend-frame
+It is bound to C-z, C-x C-z.  help:suspend-frame 
+(global-unset-key (kbd "C-z")) (global-unset-key (kbd "C-x C-z"))
+(global-unset-key (kbd "C-S-b"))
+help:org-agenda-files
+(describe-variable 'org-agenda-files)
+
+(setq org-agenda-files '(
+    "~/Music/mpv_files/mpv_files_list.org" 
+))
+
+    "~/config_github/app/emacs/03diary2020.org"
+
+org-agenda-files is a variable defined in ‘org.el’.
+Its value is ("~/config_github/app/emacs/03diary2020.org")
+Original value was nil
+Its value is
+("~/Music/mpv_files/mpv_files_list.org" "~/config_github/app/emacs/03diary2020.org")
+Original value was nil
+
+
+
+Documentation:
+The files to be used for agenda display.
+
+If an entry is a directory, all files in that directory that are matched
+by ‘org-agenda-file-regexp’ will be part of the file list.
+
+If the value of the variable is not a list but a single file name, then
+the list of agenda files is actually stored and maintained in that file,
+one agenda file per line.  In this file paths can be given relative to
+‘org-directory’.  Tilde expansion and environment variable substitution
+are also made.
+
+Entries may be added to this list with ‘M-x org-agenda-file-to-front’
+and removed with ‘M-x org-remove-file’.
+
+
+
+발견 앱으로 여는 것을 지정하는 방법을 발견함.
+- Presentation Zen - Garr Teynolds 프리젠테이션의 방법론의 책을 소개받음.
+org-agenda-diary-file is a variable defined in ‘org.el’.
+Its value is ‘diary-file’
+diary need to study(org-agenda-diary-entry)
+
+
+
+
+* TODAY INBOX from org-capture /tomonth.org
+** link
+** inbox
+*** TODO repeating daily
+SCHEDULED: <2020-03-14 Sat 09:00-10:00 ++1d> 
+:PROPERTIES:
+:LAST_REPEAT: [2020-03-14 Sat 16:14]
+:END:
+:LOGBOOK:
+- State "CANCELLED"  from "TODO"       [2020-03-14 Sat 16:14]
+- State "TODO"       from "NEXT"       [2020-03-14 Sat 16:12] \\
+  make list of every study divided by time.
+- State "CANCELLED"  from "TODO"       [2020-03-14 Sat 16:11]
+:END:
+- [X] file:~/config_github/great_books/vitruvius/de_architectura/de_architectura_liber01_00.org
+    modified in de_architectura
+    [[elisp:(start-process-shell-command%20"espeak%EB%9D%BC%ED%8B%B4%ED%9D%AC%EB%9E%8D%EC%9D%BD%EA%B8%B0"%20nil%20%0A(concat%20"timeout%2025m%20echo%20\"process%20NAME:%20espeak_timeout_25m\";"%0A"%20string=\""%20(buffer-substring-no-properties%20(+%20(line-beginning-position%202)%206)%20(line-end-position%202))%20"\";"%0A"%20string2=\""%20(buffer-substring-no-properties%20(line-beginning-position%203)%20(line-end-position%203))%20"\";"%0A"timeout%2025m%20bash%20-c%20\"while%20true;%20"%0A"%20do%20espeak%20-a%2030%20-g%2027%20-s%20120%20-v%20other/la%20\\\"$string\\\";%20sleep%202;"%0A"%20%20%20espeak%20-a%2030%20-g%2027%20-s%20150%20-v%20other/la%20\\\"$string\\\";%20sleep%202;"%0A"%20%20%20espeak%20-a%2030%20-g%2030%20-s%20120%20-v%20other/la%20\\\"$string\\\";%20sleep%202;"%0A"%20%20%20%20espeak%20-a%2030%20-g%2015%20-s%20126%20\\\"$string2\\\";%20sleep%202;"%0A"%20%20%20espeak%20-a%2030%20-g%2027%20-s%20120%20-v%20other/la%20\\\"$string\\\";%20sleep%209;"%0A"%20done;%20echo%20\\\"process%20NAME:%20espeak_timeout_25m\\\"%20\""%0A))][elisp:(TIMEOUT 25m espeak_Below=latin+en edit time)]]   [[elisp:(start-process-shell-command%20"kill%20using%20pipe%20BY%20using%20concat%20CMD!%20in%20timeout"%20nil%20(concat%20"ps%20aux"%20"|%20grep%20espeak_timeout_25m"%20"|%20awk%20'{print%20$2}'"%20"|%20xargs%20-I{}%20kill%20-9%20{}"))][elisp:(kill espeak_timeout_25m)]]  ;; 성공적인 정지력!!!
+- [X] Publicorum autem distributiones sunt tres, 
+There are three classes of public buildings: 
+- [ ] [[file:~/Desktop/aristotle.org::*%EB%A6%AC%EB%94%A9%20%EC%95%84%EB%A6%AC%EC%8A%A4%ED%86%A0%ED%85%94%EB%A0%88%EC%8A%A4][file:~/Desktop/aristotle.org::*리딩 아리스토텔레스]]
+       [[file:~/Desktop/pdf_list_of_desktop.org::*"pdf_list_of_desktop.org"][file:~/Desktop/pdf_list_of_desktop.org::*"pdf_list_of_desktop.org"]]
+
+
+- [X] file:~/config_github/great_books/vitruvius/de_architectura/de_architectura_liber01_00.org
+    modified in de_architectura
+
+
+- [X] file:~/config_github/great_books/vitruvius/de_architectura/de_architectura_liber01_00.org
+    modified in de_architectura
+*** TODO how SCHEDULED setting
+SCHEDULED: <2020-03-14 Sat 11:00-12:00 .+d>
+- file:scheduled.org 어떻게 리스트를 관리할 지 방법을 생각수집, 결정함.
+*** [2020-03-11 Wed]
+
+        "/home/thinkpad/config_github/hardware/ngff_pci-e_adapter_converter.org"
+        "/home/thinkpad/config_github/app/emacs/readme.org"
+#+BEGIN_SRC emacs-lisp
+;recover file by test mapcar
+
+(mapcar 'find-file-other-window (list
+
+"~/config_github/app/xrandr/"
+"~/config_github/app/emacs/org-startup.org"
+"~/config_github/app/xrandr/readme.org"
+"~/config_github/app/emacs/indent_whitespace.org"
+"~/config_github/app/emacs/index.org"
+"~/config_github/app/okular/readme.org"
+        ))
+"~/config_github/app/awk/readme.org"
+"~/config_github/app/emacs/org_mode_study/babel_exports_results_form.org"
+"~/config_github/app/emacs/counsel_mode.org"
+"~/config_github/language_computer/shell/syntax_of_array_in_sh.org"
+"~/config_github/app/emacs/info.org"
+"~/config_github/app/emacs/string.org"
+"~/config_github/app/emacs/sort.org"
+"~/config_github/app/espeak/readme.org"
+"~/config_github/app/emacs/region.org"
+"~/Music/Latin_NVV_NT_Drama/_1_latin_new_testment_list.org"
+"~/Desktop/pdf_list_of_desktop.org"
+"~/config_github/app/emacs/global_set_key_kbd.org"
+"~/config_github/os/gentoo/install_process/youtube_t530_study.org"
+"~/Music/_1_bbg_playlist.org"
+"~/config_github/app/emacs/tag.org"
+"~/Music/_1_playlist.org"
+"~/Music/latintutorial_youtube/latintutorial_youtube_playlist.org"
+"~/config_github/app/emacs/mike_zamansky.org"
+"~/config_github/app/emacs/org_babel_load_file.org"
+"~/config_github/app/emacs/agenda_list.org"
+"~/config_github/app/emacs/03diary2020.org"
+"~/.emacs.d/recentf_log/2020_02_18_recentf.org"
+"~/Music/mpv_files/mpv_files_list.org"
+"~/config_github/app/emacs/recentf_in_emacs.org"
+
+
+#+END_SRC
+
+**** TODO test [2020-03-05 Thu 18:33]
+**** TODO [[file:~/config_github/app/emacs/org_babel_load_file.org::*org-capture][org-capture]]
+이곳에 정리해 둘 것.
+**** TODO org-agenda에서 깔끔하게 관리하는 단축키로 전체를 통괄하는 방식연구필요함
+즉 리스트를 수시로 변경하는 기능을 갖추어야 한다. 명령을 찾고 연구하고 수정해서 적용할 것!
+**** TODO vc-dir을 발견함
+깃의 정보까지 조정이 가능한 놀라운 이맥스의 기능확장성!
+M-x vc-dir [[info:emacs#Version%20Control][info:emacs#Version Control]] vc_version_control.org 
+ede [[info:ede#Top][info:ede#Top]] ede.org
+** done
+vim/readme.org
+내일복습할내용
+
+* inbox
+늘중요한오늘이다.
+(rename-buffer "1-다이어리(2020-03)")
+(rename-buffer "03diary2020.org)")
+project_ln/03diary2020.org
+
+전기전선가지고 물통, 방세입금, 물통에 물채우기,
+org-toc m4 download youtube
+
+** [2020-03-16 Mon]
+
+~/Desktop/pdf_list_of_desktop.org
+~/Desktop/aristotle.org
+~/config_github/app/emacs/global_set_key_kbd.org
+~/config_github/app/emacs/03diary2020.org
+~/config_github/app/emacs/esc_esc_num.org
+~/config_github/app/emacs/isearch_multi_occur.org
+~/config_github/great_books/vitruvius/de_architectura/de_architectura_liber01_03.org
+~/config_github/app/emacs/reading_stuff.org
+~/config_github/app/emacs/coding_system_in_emacs.org
+~/Music/_1_bbg_playlist.org
+~/config_github/app/emacs/customize.org
+~/config_github/app/emacs/protocol.org
+~/config_github/app/emacs/bookmark.org
+~/config_github/app/emacs/scheduled.org
+~/config_github/app/mpv/readme.org
+~/config_github/app/m4/readme.org
+~/config_github/app/emacs/shell_emacs/emacsQ_load.el
+~/config_github/great_books/vitruvius/de_architectura/de_architectura_liber01_00.org
+~/config_github/workflow/espeak_workflow.org
+~/config_github/great_books/vitruvius/de_architectura/de_architectura_liber01_01.org
+~/config_github/app/emacs/start_process_shell_command.org
+~/config_github/app/emacs/dired.org
+~/Music/latintutorial_youtube/latintutorial_youtube_playlist.org
+~/Music/mpv_files/mpv_files_list.org
+~/7_note.org
+~/news3.org
+~/note3.org
+~/scratch.org
+~/config_github/app/emacs/_1_emacs_index.org
+~/config_github/app/emacs/add_hook.org
+~/config_github/app/emacs/agenda_list.org
+~/config_github/app/emacs/artist_mode.org
+~/config_github/app/emacs/attach_test.org
+~/config_github/app/emacs/better_shell.org
+~/config_github/app/emacs/browse_url_browser_function.org
+~/config_github/app/emacs/calc.org
+~/config_github/app/emacs/clock_before_write_test.org
+~/config_github/app/emacs/clock_timer_effort_customize_test.org
+~/config_github/app/emacs/clone-indirect-buffer.org
+~/config_github/app/emacs/comint-mode.org
+~/config_github/app/emacs/command-log.org
+~/config_github/app/emacs/compilation_minor_mode.org
+~/config_github/app/emacs/counsel_mode.org
+~/config_github/app/emacs/defadvice.org
+~/config_github/app/emacs/describe-function.org
+~/config_github/app/emacs/diff_mode.org
+~/config_github/app/emacs/dmenu_like_in_emacs.org
+~/config_github/app/emacs/dribble_records_all_characters_typing.org
+~/config_github/app/emacs/ediff.org
+~/config_github/app/emacs/ediff3.org
+~/config_github/app/emacs/ein.org
+~/config_github/app/emacs/eintr.pdf_study_note_test.org
+~/config_github/app/emacs/emacs_is_great.org
+~/config_github/app/emacs/emacs_server_damon_test.org
+~/config_github/app/emacs/emacs_xclip.org
+~/config_github/app/emacs/email.org
+~/config_github/app/emacs/erc.org
+~/config_github/app/emacs/eshell_in_emacs.org
+~/config_github/app/emacs/eshell_process_mpv_send_key.org
+~/config_github/app/emacs/eww.org
+~/config_github/app/emacs/external_link.org
+~/config_github/app/emacs/file-name-directory.org
+~/config_github/app/emacs/footnotes.org
+~/config_github/app/emacs/goto-line.org
+~/config_github/app/emacs/help_emacs.org
+~/config_github/app/emacs/high_level_emacs_youtube.org
+~/config_github/app/emacs/highlight.org
+~/config_github/app/emacs/history_cmd_in_emacs.org
+~/config_github/app/emacs/hydra.org
+~/config_github/app/emacs/ido-iswithb-mode.org
+~/config_github/app/emacs/ielm.org
+~/config_github/app/emacs/image_in_line.org
+~/config_github/app/emacs/indent_whitespace.org
+~/config_github/app/emacs/info.org
+~/config_github/app/emacs/info_eintr.org
+~/config_github/app/emacs/info_elisp.org
+~/config_github/app/emacs/info_m4.org
+~/config_github/app/emacs/info_tag.org
+~/config_github/app/emacs/init.el.org
+~/config_github/app/emacs/insert-char.org
+~/config_github/app/emacs/key_value_pair_attribute_colon.org
+~/config_github/app/emacs/kmacro.org
+~/config_github/app/emacs/layout.org
+~/config_github/app/emacs/logbook_drawer_narrow.org
+~/config_github/app/emacs/marker_macro.org
+~/config_github/app/emacs/melpa.org
+~/config_github/app/emacs/melpa_package.org
+~/config_github/app/emacs/mike_zamansky.org
+~/config_github/app/emacs/mmm-mode.org
+~/config_github/app/emacs/move.org
+~/config_github/app/emacs/move_item_org.org
+~/config_github/app/emacs/mpv.org
+~/config_github/app/emacs/multiple-cursors.org
+~/config_github/app/emacs/org-brain.org
+~/config_github/app/emacs/org-clock-goto_C-u_C-c_C-x_C-j.org
+~/config_github/app/emacs/org-clock.org
+~/config_github/app/emacs/org-drill-spanish_test.org
+~/config_github/app/emacs/org-drill.org
+~/config_github/app/emacs/org-graph-view.org
+~/config_github/app/emacs/org-startup.org
+~/config_github/app/emacs/org-timer.org
+~/config_github/app/emacs/org-todo-keywords.org
+~/config_github/app/emacs/org_babel_load_file.org
+~/config_github/app/emacs/org_id.org
+~/config_github/app/emacs/org_sample_bullet_journaling.org
+~/config_github/app/emacs/other-window.org
+~/config_github/app/emacs/pomodoro_timer.org
+~/config_github/app/emacs/process.org
+~/config_github/app/emacs/readme.org
+
+
+- vim git readme.org 정비함 man추가  file:../../app/git/readme.org
+(switch-to-buffer "03diary2020.org")
+- 왼손 엄지로 메타를 누른다는 것을 알게한 중요한 사실이다 -p 197 메모를 남길 것.
+- [ ] (start-process "emacs_pdf okular" nil "okular" ;; 빠른 단축으로 만드는 것은 C-c C-l elisp: 를 사용해서 넣으면 됨
+  "-p" (int-to-string (+ 57 24)) ;-p 57; query_string.org
+  "/home/thinkpad/Documents/learning_gnu_emacs.pdf" )
+    ;; 끊임없는 개선의 작업을 수행하는 것이 중요하다. 평생의 에디터가 이맥스와 빔이다.
+
+- 
+- git/readme.org add many (man "git~~")
+
+(query-replace-regexp "b" (quote (replace-eval-replacement replace-quote (+ 1 2))) nil nil nil nil nil)
+
+
+빠르게 이 문서를 열기위한 ESC ESC 숫자의 설정은 interactive한 command명만 수용함을 확인함
+즉 "interactive"를 넣어서 새로운 함수를 만들어야 했음
+- 함수안에서 함수를 생성시키는 것이 가능하다면
+- (ESC_M_num "파일명" "숫자") 수행하는 것이 가능할 것이다. 
+file:../../app/emacs/global_set_key_kbd.org                 file:../../app/emacs/esc_esc_num.org
+
+(multi-occur (quote (#<buffer de_architectura_liber01_03.org> #<buffer 03diary2020.org>)) "mapc" nil)
+버퍼의 리스트를 얻어서 리스트를 전부 검색하는 것이 가능할 것이다. 아니면 
+helm의 기능을 상기하면 더 낳은 방법이 있을 것이다.
+
+
+그래이트 이맥스- 복합적인 정보를 처리하는 것에 적합한 상태임.
+고도의 배움의 능력이 없으면 불필요한 것이며 오직 지식을 위한 지혜발굴의 열정이 
+소진된 현대의 물질문명이 마땅히 다루어야 할 최고의 도구이다.
+** [2020-03-15 Sun]
+
+- 화엄을 상단에 배치하는 것으로 방을 새롭게 정비함.
+ - 자신으로 자신을 연구하는 것은 중요한 관점이다.
+- 단축키를 새롭게 배치함.
+-local variable 방식이 파일 아래에 존재하면 가능함을 발굴함.
+
+파일 바로정신의 노트로 가기:
+file:../../great_books/mental_reminder.org::자기자신의마음작동원리
+
+occur의 놀라운 기능에 감탄! 자체편집 e C-c C-c
+setenv getenv를 발굴함. 환경변수를 적용하는 법일단 발굴
+
+
+(setq column-number-mode t)
+
+
+(mapc #'org-babel-load-file (directory-files dotfiles-dir t "\\.org$")) ;hack Emacs 07
+
+** [2020-03-14 Sat]
+- 고행상은 최고의 행복한 자의 마음상태를 반영한다.
+희생을 각오하고 돌파하는 달성의 행복은 그 누가 비할 수 있을까?
+- [ ] file:~/config_github/great_books/vitruvius/de_architectura/de_architectura_liber01_00.org
+    modified in de_architectura from app/espeak/readme.org 성공!
+    espeak로 한줄아래읽기 성공!! concat + shell timeout 25m while true grc la 둘다 성공함. kill도 성공!!!
+- (setq org-startup-indented t)
+** [2020-03-13 Fri]
+위시리스트를 작성하는 것이 어떨지
+특히 맥북의 팬구입이 필요함.
+process 를 중단하는 것이 org의 인식이 잘 안되서 다른 방법으로 concat으로 우회하는 법을 발견실험함.
+
+그리스어에 대한 관점의 이해를 높이는 것이 작동됨.
+** above is today
+** [2020-03-12 Thu]
+깔끔하게 프레임을 설치하는 데 전력을 다함.
+** [2020-03-10 Tue]
+file:../../app/emacs/tag.org
+*** 동영상을 시청할 것- 독일인의 것을 찾아놓을 것               :test:good:
+DEADLINE: <2020-02-17 Mon> SCHEDULED: <2020-02-17 Mon>
+:PROPERTIES:
+:good:     3
+:END:
+
+#+NAME: named_target
+[[named_target]] [[top_named_target_list]]
+** [2020-03-09 Mon]
+#+BEGIN_SRC emacs-lisp :results silent
+;;; 사실상통일함.
+
+(start-process "timeout" nil "timeout" "60m" "mpv" "--speed=1" "--volume=80" "--player-operation-mode=pseudo-gui"
+"/home/thinkpad/Music/nicholas_youtube/latin/quidam, quaedam, quiddam-Zf4oJw1VRdA.mkv"
+"--start=3:30" "--ab-loop-a=3:30" "--ab-loop-b=4:03")
+; 간결한 완성!
+#+END_SRC 
+
+- emacs의 놀라운 그림을 보는 기능을 발견함 그리고Hex에디터가 완연함을 확인함.더 확장돨 가능성있음 image_in_line.org
+
+- 슈왈츠의 놀라운 소개동영상
+(info 추가명령)
+
+- ido-mode C-r C-s
+
+
+
+
+** [2020-03-08 Sun]
+- [ ] info의 놀라운 단축키 m 자동완성 제목를 확인함!! 복사는 쉽게 c키로 가능함 놀라운 발견! 메뉴바을 눌러보고 확인할 것
+- array 발굴실험-기록 syntax_of_array_in_sh.org pid~.org
+음을 추상하면 동작으로 느낄 태세가 되어 있어야 한다.
+음의 진동을 손으로 표현하는 것이다.[2020-03-08 Sun 07:10]
+#+BEGIN_QUOTE emac-lisp
+둘 또는 셋의 철자음소를 듣는 즉시 추상하여, 손의 동작으로 무의식적으로 전달되는 연습이 되어야 한다.
+
+나의 느린 그 인식이 왠지 강점이었음을 확신하며 더욱 창의적인 붓터치의 느낌을 주는 타건이 가능할 것이다.
+충웅~분우~니 깊고 풍성한 이미지를 수집하고 익히는 숙성의 과정이 요구된다. 본질적이면서 더욱 선명하고 생동감있게 무의식이 반응하는 것.
+무의식과 깊은 대화를 나누는 것이다. 자신은 누구이며, 무엇이 우주의 깊은 무의식적인 초의식 본질인가 깊이 느끼는 것이 공부이며, 기도이다.
+즉 다양하고 폭넓은 인식의 경험은 최상승의 가능성을 열기 위한 지표이다.
+Emacs가 훨씬 더 창의적인 타건의 자세를 요구하기에 붓처럼 3차원적인 손의 위치를 요구하는 고도의 동작추상성은
+왕희지의 必字동작을 연상시킨다. 
+super-key Meta-key의 위치가 손의 열림을 주는 것은 비틀린 연마를 위한 혁신의 가능성을 열어준다.
+    장애물이 오히려 새로운 도약의 발판을 열어준다. 극한의 영역을 넘어서 최상의 결과를 도출하는 새로운 지평을 열어낸다. 
+먼저 대기 상태 완전히 하고서 왼손은 모서리를 손톱으로 끍어 주면서 대기한다. 매우 제한된 극한의 터치를 보유할 것을 요구한다.
+                        왼손의 무명지를 Meta키의 상단모서리부분을 끍으며 중지는 D-key의 좌상단에 손끝이 부드럽게 터치된 열리 구조.
+                        왼손의 새끼손가락을 무명지에 붙인다음 
+ 심지어 중지 손가락으로 탄지하듯이 M-a를 연습하는 것이 중요하다.
+먼저 중요한 위치로 이동한 다음에 나머지 수정을 그 곳의 관점에서 처리하는 인상적인 메타 통솔의 기능을 보인다.
+먼저 최초상태 파악 입력전에 Mode-Line를 점검하는 습관을 들일 것. 그리고 그것을 정보처리의 중요한 위치로 인식할 것.
+mode_line.org 정확한 명칭을 인식하고 메뉴얼의 위치를 확인하여 함께 파일명으로 정하여 노트를 설정할 것.
+
+[[info:emacs#Mode%20Line][info:emacs#Mode Line]] The last line of the window is a “mode line”.  This
+displays various information about what is going on in the buffer, such
+as whether there are unsaved changes, the editing modes that are in use,
+the current line numbThe last line of the window is a “mode line”.  This
+displays various information about what is going on in the buffer, such
+as whether there are unsaved changes, the editing modes that are in use,
+the current line number, and so forth. [[info:emacs#Screen][info:emacs#Screen]] 에서 첫 설명등장함.
+    - cf. ‘C-mouse-2’ [[info:emacs#Mode%20Line%20Mouse][info:emacs#Mode Line Mouse]]
+     ‘C-mouse-2’ on a mode line splits that window, producing two
+     side-by-side windows with the boundary running through the click
+     position (*note Split Window::).
+
+
+info_eintr.org
+info_elisp.org
+info_m4.org m4 folder link into emacs need youtube search!!!
+
+mouse.org
+    mouse-yank-secondary
+    mouse-start-secondary
+    mouse-start-secondary
+
+ibuffer_bs_buffer.org [[info:emacs#Buffer%20Menus][info:emacs#Buffer Menus]]
+    - C-<F10> C-mouse-1,2,3 M-mouse-1,2,3
+    - help:mouse-buffer-menu
+    - help:<C-down-mouse-3> <Org> <TODO Lists> <Global TODO list> at that spot runs the command org-todo-list
+    - cf. ‘C-mouse-2’ [[info:emacs#Mode%20Line%20Mouse][info:emacs#Mode Line Mouse]]
+     ‘C-mouse-2’ on a mode line splits that window, producing two
+     side-by-side windows with the boundary running through the click
+     position (*note Split Window::).
+
+    - help:mouse-start-secondary help: help:mouse-secondary-save-then-kill help:mouse-yank-secondary
+    - [ ] [Yellow노란색하이라이트] 최고의 오늘의 성과 M-mouse-3 Yello High light GOOD! not in Vim and any Editor to see where Focus
+  - (bs-show 1)  help:bs-show [[info:emacs#Icomplete][info:emacs#Icomplete]] 빠른 선택을 위한 것으로 C-j C-, C-.
+
+minibuffer.org [[info:emacs#Minibuffer][info:emacs#Minibuffer]]
+ - [[info:emacs#M-x][info:emacs#M-x]] ‘M-x’ works by running the command ‘execute-extended-command’, which
+is responsible for reading the name of another command and invoking it.
+
+ielm.org note in  [[info:emacs#Lisp%20Interaction][info:emacs#Lisp Interaction]] and eshell.org
+
+
+ibuffer_bs_buffer.org [[info:emacs#Buffer%20Menus][info:emacs#Buffer Menus]]
+    - C-<F10> C-mouse-1 M-mouse-1
+
+
+minibuffer.org [[info:emacs#Minibuffer][info:emacs#Minibuffer]]
+ - [[info:emacs#M-x][info:emacs#M-x]] ‘M-x’ works by running the command ‘execute-extended-command’, which
+is responsible for reading the name of another command and invoking it.
+
+
+- [ ] src BOX 칼라 배경방법을 org-info의 위치에 발견한 것 같음. 창의적인 시각화가 가능함.  .org파일을 만들어 둘것.
+정확한 명칭을 파악할 것.
+
+
+
+info_grep.org 명령어 검색으로 찾는 것이 유용함 것임. [[info:emacs#Grep%20Searching][info:emacs#Grep Searching]] C-x `으로 C-o와 유사한 기능을 보인다.
+        grep -nH -e foo *.el | grep bar | grep toto
+(man grep)
+
+
+- rename.org M-x rename-uniquely
+The file name used to load the subshell is determined the same way as
+for Shell mode.  To make multiple terminal emulators, rename the buffer
+‘*terminal*’ to something different using ‘M-x rename-uniquely’, just as
+with Shell mode.
+
+session_recover_crashed.org ~/.emacs.d/.session/으로 기억함 복귀가 가능한 것이 메뉴바에 File > 
+> Recover Crashed Session 명령을 찾아 두고 검색을 지정해 둘 것.
+
+company-mode.org 만들어 두고 검색할 것. 파일명을 자동으로 빔처럼 찾아주는 것이 되면 편리할 것으로 생각된다.
+- [ ] 진리를 사랑하는 사람은 극히 드물다는 사실이다.
+하느님을 사랑하는 것이 인생의 목적이라는 예수, 행복한 이는 갑상토처럼 드물다는 것, 정신희유품
+잘 산다는 것은 잘 죽을 준비(진리를 만날 용기가 있다는 것이며, 그것이 행복에 이르는 길이라는 것)
+
+메타정보에 접근가능한 용기있는 사람은 매우 드물다는 것이고
+
+** [2020-03-07 Sat]
+var="${var//[\*-]/}" # 통합에 성공함! [2020-03-07 Sat 07:00]
+- [ ] xrandr 모니터를 돌리는 기술을 새로 다시 배움. file:../../app/xrandr/readme.org
+- [ ] 1미터길이의 판자로 키보드 놓는 위치를 춤
+- [ ] file:../../app/emacs/src_color_bakground.org 배경에 색깔을 넣어서 시각적 효과를 극대화한다. colorfull background
+
+- [ ] bbg의 음원재생함수를 info를 참조해서 완성함. #+CALL: src_box_name()을 재발굴사용함!
+        [[info:eintr#Data%20types][info:eintr#Data types]] arguments의 추가에 관한 것으로 bbg의함수부분성립과정부분에 둘 것.
+- [ ] 1 line src_bash src_bash[:var a="Control C twice"]{espeak "Run this line by $a Good Emacs"}
+ein연구가 필요하다고 느낀 다시 생각하게 됨. 최고의 아이파이썬이 스크립트언어중의 최고라고 생각한다는 이맥스의 강사.
+- [ ] 
+** [2020-03-06 Fri] M-x display-time
+  - [ ] elisp:(customize-browse)]] Tree구조 파악에 중요한 명령임 help:customize-browse 성과로 기록할 것
+  - emacs안에서 산다! 무엇이든 이맥스로 통합하려고 함.
+  C-u C-u M-: (buffer-file-name)" file:../../app/emacs/customize.org
+
+  - [ ] 속성은 (키 . 가치) :키 "가치" 짝이다. file:../../app/emacs/key_value_pair_attribute_colon.org
+  - [ ] emacs안에서 산다! 무엇이든 이맥스로 통합하려고 함.
+  - [ ] (rename-buffer "1") file:../../app/emacs/rename.org
+  - [ ] ssh + eshell,term + emacs/start_process_shell_command.org + ssh => lfs설치 극대화 기대함
+  (buffer-name)
+  - [ ] y음은 이를 꽉물고 약하게 '으~'위 소리를 내고(이와 유사하게 약음으로발음) oy는 우로 낸다
+  f v   이를 꽉물고
+  ks, th, ps   이를 꽉물고 ㅋ(스-으) ㅌ(스-으) p(스-으)
+  kh, th, ph(f)   이를 꽉물고 ㅋ(
+  ,a ,h ,o   이를 꽉물고 '흐~'(아) '흐~'(ㅐ(ㅔ)ㅣ) '흐~'(오)
+  - [ ] 
+
+* [2020-03-05 Thu]
+- [ ] (call-process "echo" nil "2020_03_diary.org" nil "깔끔하게 문장이 전달된다.") 
+
+깔끔하게 문장이 전달된다.
+
+- [ ] search_find_grep_emacs.org 버퍼내의 검색 help:multi-occur-in-matching-buffers
+- [ ] (describe-input-method 'latin-1-prefix  ) (describe-input-method "TeX") =>  file:insert-char.org
+- [ ]  (<= C-q RET) help:quoted-insert C-h k C-q { 재발견 유튜브동영상에서 insert-char.org } =리턴키를 전달하려면 키의 작용상징부호를 전달 C-u C-x =  <= 상세정보를 더 얻음
+   ([[help:term-send-string][term-send-string]] "*terminal*" "sudo genkernel") ; gentoo설치, tmux를 통제하는 org-babel elisp script
+   (term-send-string "*terminal*" "espeak \"명확하게 발음이 전달된다!\"")
+- macro의 재발굴
+- latin 입력의방식을 발견함.
+- pid
+
+
+* [2020-03-04 Wed] tag checkbox [0/6]
+- [ ] timeout : [[info:coreutils#timeout%20invocation][info:coreutils#timeout invocation]] for use in mpv espeak while shell command 대발견!
+  - [ ] for make Music/_1_playlist.org clickable timeout player Emacs
+- [ ] inode 추출법 file:../../app/ls_inode_fs/inode.org => okular, mpv/readme.org
+- [ ] [[info:org#Checkboxes][info:org#Checkboxes]] [[info:org#Tag%20searches][info:org#Tag searches]] tag
+- [-] * 변수variable basis기본값을 설정하는 법 ${b:-$a} ${b:=$a} herbstluft
+        bash variable basis seting found in herbstluft/start file.
+- [ ] make tag group list WM list
+- [ ] [footnotes]내부색인기능 발견 C-c C-x f org-footnote-action 참고: 주석기능과 유사함. file:footnotes.org - 커맨트를 찾아내던 빠른 방법
+
+herbstluftwm 불편함-음원재생이 많을 경우 놓이는 위치가 본래 위치에 중복침범되어 수정해야 함.
+** test
+
+
+** sdf
+
+
+*** asdfasdf
+
+
+*** cu
+sdfasd
+* [2020-03-03 Tue] [1/3]
+- file:../../app/wm_compare_youtube_note.org 통합적으로 연구하는 것이 중요하다.
+- /app/index.org /app/read.org Y dired file:../../app/_1_app_index.org 로 대용한다. 명확한 로드맵제시
+
+- [X] 
+
+- [[info:stumpwm#Top][info:stumpwm#Top]] info:stumpwm#Top
+- [-] qtile - W541과 모니터를 오른쪽에 두고 배치하는 것이 강력함을 실험함
+- tag group:
+  - 1 2 3 4 5 6 7 8 9 (홀수는 돌파요구, 짝수는 참고자료들) 2모니터때문, 이전의 3배치
+이맥스, 이맥스장부기록, 검색목적달성, 음원재생,
+- [ ] - C-c C-x b 블럭으로 열리면(닫기도 동일함. 그러나), 바로 C-x 0 를 실행함  C-x 4 0로 창을 닫는 것이 깔끔함.
+* [2020-03-02 Mon] 눈에 보이지 않는 것의 강력함.
+
+awk, xargs 서브노트를 작성함!
+- lambda함수의 순수성이 새로운 도전을 하는 태도가 중요함강조 유튜브 동영상 시청.
+- 주당 100시간을 노력하면 필수적으로 성장한다. 16시간이상 투자함. 8시간의 강제노역보다 강력함
+
+** [2020-03-02 Mon 03:50] [[file:~/config_github/app/emacs/kmacro.org::*macro%20help%20:%20link(%EC%89%BD%EA%B2%8C%20%EB%B3%80%ED%99%98%ED%95%98%EC%97%AC%EC%84%9C%20%ED%81%B4%EB%A6%AD%EC%9C%BC%EB%A1%9C%20%EC%82%AC%EC%9A%A9%EC%9D%84%20%ED%8E%B8%EB%A6%AC%ED%95%98%EA%B2%8C%20%EB%A7%8C%EB%93%9C%EB%8A%94%20%EB%B2%95)][macro help : link(쉽게 변환하여서 클릭으로 사용을 편리하게 만드는 법)]]
+[[file:~/config_github/app/emacs/string.org::*character%20positions%EC%9C%BC%EB%A1%9C%20%EC%9B%90%ED%95%98%EB%8A%94%20string%20%EB%B6%80%EB%B6%84%EB%B0%9C%EC%B7%8C%20buffer-substring-no-properties][character positions으로 원하는 string 부분발췌 buffer-substring-no-properties]]
+
+** file globbing in syntax of sh [2020-03-02 Mon 09:39]
+
+* 최신을 앞에 두어야 통합이 쉬울 것이다. 자주 보기 쉬운 것이 이루기 좋다.
+* [2020-03-01 Sun] [[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%201%202%200;%20do%20espeak%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%200)][elisp:Click!espeak_en_3times!]] | [[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%200;%20do%20espeak%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%20nil)][elisp:Click!espeak_en_1times!]] | [[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%201%202%202%202%201%201%202%202%201%200;%20do%20espeak%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%200)][elisp:Click!espeak_en_10times!]]
+** [2020-03-01 Sun 00:00] 놀라운 동조현상 나의 시대를 직감한 듯함!
+λαῶν:  사람들의
+[[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%201%202%200;%20do%20espeak%20-v%20other/grc%20-s%20100%20-g%2030%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%200)][elisp:Click!espeak_grc_3times!]] | [[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%200;%20do%20espeak%20-v%20other/grc%20-s%20100%20-g%2030%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%200)][elisp:Click!espeak_grc_1times!]] | [[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%201%202%202%202%201%201%202%202%201%200;%20do%20espeak%20-v%20other/grc%20-s%20100%20-g%2030%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%200)][elisp:Click!espeak_grc_10times!]]
+cogito 생각하다
+ [[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%20{1..10};%20do%20espeak%20-v%20other/la%20-s%20150%20-g%2030%20\"$a%20$i\";%20sleep%201;%20done"%20nil%200)][elisp:Click!espeak_la_quick_10times!]] | [[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%201%202%200;%20do%20espeak%20-v%20other/la%20-s%20100%20-g%2030%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%200)][elisp:Click!espeak_la_3times!]] | [[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%200;%20do%20espeak%20-v%20other/la%20-s%20100%20-g%2030%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%200)][elisp:Click!espeak_la_1times!]] | [[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%201%202%202%202%201%201%202%202%201%200;%20do%20espeak%20-v%20other/la%20-s%20100%20-g%2030%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%200)][elisp:Click!espeak_la_10times!]]
+(defun la_quick_10times ()
+(call-shell-region (line-beginning-position 0) (line-end-position 0) "a=\"$(cat)\"; for i in {1..10}; do espeak -v other/la -s 150 -g 30 \"$a $i\"; sleep 1; done" nil 0)
+)
+# cogito 생각하다
+# (la_quick_10times)
+a="${a//-/ }"; a="${a//\*/}"
+** 1-2:3
+[[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%201%202%200;%20do%20espeak%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%200)][elisp:Click!espeak_en_3times!]] | [[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20a=\"${a//-/%20}\";%20a=\"${a//\\*/}\";for%20i%20in%200;%20do%20espeak%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%20nil)][elisp:Click!espeak_en_1times!]] | [[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%201%202%202%202%201%201%202%202%201%200;%20do%20espeak%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%200)][elisp:Click!espeak_en_10times!]]
+** [2020-03-01 Sun 00:01] 역사의 현장은 공명진동한다.
+#var="${var//-/}" # 이 둘을 통합시키는 구조가 좋을 것임
+#var="${var//\*/}"
+var="${var//[\*-]/}" # 통합에 성공함! [2020-03-07 Sat 07:00]
+( + 1 0 2)
+
+
+3
+
+3
+

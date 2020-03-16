@@ -1,13 +1,28 @@
-#+TITLE: stumpwm README.ORG for study of emacs and lisp
+#+TITLE: stumpwm readme.org for study of emacs and lisp
 #+CREATOR: LEEJEONGPYO
 #+STARTUP: showeverything indent latexpreview
 
 stumpwm for study of emacs and lisp
 ===================================
+file:stumpwm_is_great_with_emacs_test.org
+강점을 비교함=> file:../wm_compare_youtube_note.org
+[[file:readme.org][stumpwm/readme]] , [[file:~/config_github/app/herbstluftwm/readme.org][herbstluftwm/readme]], [[file:~/config_github/app/xmonad/readme.org][xmonad/readme]] , [[file:~/config_github/app/qtile/readme.org][qtile/readme]] , [[file:~/config_github/app/dwm/readme.org][dwm/readme]] ,
+[[file:~/config_github/app/exwm/readme.org][exwm/readme]] , awesome, i3-gap
+
+(man "stumpwm"없어서)  # man mode
 
 to do
+
+강점: C-x 5 o로 이동하는 것이 dwm에서는 안되지만 StumpWm에서는 매우 잘됨. 또한 빠른 이맥스전용키가 이동하면서 구원함.
+모든 그룹에 이맥스를 창으로 보내는 것이 가능할 것임. 이론상으로 빠른창이동에 대응하는전략임.
+
 how to run file in C-t : <input of dotfile>
 - 도움말을 구하는 방식을 발견함 [2020-01-12 Sun 19:02] C-t h {v|f} 많은 정보를 직접 이맥스의 방식으로 구할 수 있다.
+info:stumpwm#Top Emacs의 놀라운 점! file:../emacs/info.org
+[[info:eintr#Top]] ;; 기초익히기에 중요한 것이므로 노트를 해둘것.
+info:elisp#Top ;; 좀더 심화된 것임. 정확이 문서와 일치하는지 검토해 둘 것.
+info:screen#Top
+
 
 C-t t C-h ;; 유용한 방식을 또 발견함. 도움말을 얻고 동시에 토글의 방식을 발견함.
 C-t h C-h ;; 
@@ -26,7 +41,7 @@ Loads the contributed module with the given NAME.
 기타: *load-path* add-to-load-path init-load-path
 
 
-* screen이 무슨 개념인가??
+* 모니터가 여러 개인 경우 각각의 물리적인 디스플레이어이다.(screen이 무슨 개념인가??)
 https://stumpwm.github.io/git/stumpwm-git_9.html#Screens
 
 
@@ -65,7 +80,7 @@ https://stumpwm.github.io/git/stumpwm-git_9.html#Screens
 (set-unfocus-color "white") (set-unfocus-color "black")
 * title의 명칭과 색깔을 변경하는 법을 찾을 것.
 
-(window-send-string (print *last-command*))
+(window-send-string (print *last-command*)) ; 지난 명령문을 바로 윈도우로 보내는 명령- 성공적인 문자입력바로 직송하기
 hi this is good 
 
 ysiw"
@@ -113,7 +128,7 @@ ysia"
 
 
 #+BEGIN_SRC emacs-lisp
-    (defun show-kernel () ;; 함수정의하는 법 배우기
+    (defun show-kernel () ;; StumpWm 함수 정의하는 법 배우기
       (let ((ip (run-shell-command "uname -r" t)));; 내부변수정의법 배우기
 	(substitute #\Space #\Newline ip)));;#\Space 특수입력?으로 추정되는 법 익히기
 
@@ -146,6 +161,45 @@ ysia"
 	전제1: 겹치게 큰화면으로 만들어 놓은 단일 큰화면명령은 (C-t Q 전체확장)
 
 
+* cf, 자료와 사전정보 Stumpwm
+** [WordDisk_간단좋은사전Site] [[https://worddisk.com/wiki/StumpWM/][Reading | StumpWM]]
+; 다른 단어검색도 좋을 것임.
+[$home/.stumpwmrc] Window manager customizations are stored in a .stumpwmrc file that is found in the home directory of each user. 
+*   slime              20191025.1421 installed  Superior Lisp Interaction Mode for Emacs
+  spaceline          20181223.2024 installed  Modeline configuration library for powerline
+*  stumpwm-mode       20140131.216  installed  special lisp mode for evaluating code into running stumpwm
+stumpwm-mode is an installed package.
+
+     Status: Installed in ‘stumpwm-mode-20140131.216/’ (unsigned). Delete
+    Version: 20140131.216
+     Commit: 61a7cf27e49e0779a53c018b2342f5f1c5cc70b4
+    Summary: special lisp mode for evaluating code into running stumpwm
+   Keywords: comm lisp tools 
+
+load this file, set stumpwm-shell-program to point to stumpish and
+run M-x stumpwm-mode in your stumpwm lisp files. Now, you can
+easily eval code into a running stumpwm using the regular bindings.
+
+[back]
+- [조건필요] 일단, slime을 설치해야함 [[https://www.emacswiki.org/emacs/StumpWM][EmacsWiki: Stump WM]]
+enabled multi-threading, add this code to your .stumpwmrc for interactive control of Stumpwm via Slime:
+
+
+* good big Picture 좋은 아이디어를 얻는다.
+
+** [[https://www.reddit.com/r/unixporn/comments/6lj3h3/stumpwmkde_emacs_org_mode_writing_setup/][StumpWM-KDE Emacs Org mode writing setup. : unixporn]]
+(async-shell-command "brave --incognito 'https://www.reddit.com/r/unixporn/comments/6lj3h3/stumpwmkde_emacs_org_mode_writing_setup/'")
+좋은 자료로 보여진다. [[https://u.teknik.io/5Vy1T.mp4][https://u.teknik.io/5Vy1T.mp4]]
+[[https://u.teknik.io/5Vy1T.mp4][https://u.teknik.io/5Vy1T.mp4]]
+질문해서 자료를 수집한다.- 일단 세련된 파일보이기를 오그모드와 스텀프윈도우에서 잘 적용된 동영상저장을 고려해도 될 것임.
 * 
-
-
+* C-t : 성공한 문장만 일단 수집
+(print (* 2 3))
+(write-line "Hello, World!") 
+http://www.sbcl.org/manual/#Running-from-Emacs
+** 도움말
+C-t h v	Variables
+C-t h f	Functions
+C-t h k	Key sequences
+C-t h c	Commands
+C-t h w	Find key sequences for a command

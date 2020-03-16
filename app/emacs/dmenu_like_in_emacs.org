@@ -1,0 +1,129 @@
+
+
+(getenv "PATH")
+(directory-files "/usr/bin")
+
+
+(split-string (getenv "PATH") ":")
+(directory-files "/usr/bin")
+
+
+mapcat :
+(seq-mapcat 'directory-files
+ (split-string (getenv "PATH") ":"))
+(directory-files "/usr/bin")
+
+
+(seq-mapcat (lambda (directoryname)
+                (if (file-exists-p directoryname)
+                  (directory-files directoryname)
+                  nil))
+ (split-string (getenv "PATH") ":"))
+(directory-files "/usr/bin")
+
+
+
+(completing-read "launch: "
+(seq-mapcat (lambda (directoryname)
+                (if (file-exists-p directoryname)
+                  (directory-files directoryname)
+                  nil))
+                (split-string (getenv "PATH") ":")))
+(directory-files "/usr/bin")
+
+
+(defun dmenu-read ()
+"Gets the target from the users."
+(completing-read "launch: "
+(seq-mapcat (lambda (directoryname)
+                (if (file-exists-p directoryname)
+                  (directory-files directoryname)
+                  nil))
+                (split-string (getenv "PATH") ":"))))
+
+
+;; 2nd part
+
+(defun dmenu-read ()
+"Gets the target from the users."
+(completing-read "launch: "
+(seq-mapcat (lambda (directoryname)
+                (if (file-exists-p directoryname)
+                  (directory-files directoryname)
+                  nil))
+                (split-string (getenv "PATH") ":"))))
+;(start-process-shell-command
+(start-process "gimp" nil "gimp")
+(start-process program nil program)
+;$ thunar "~/Videos"
+(let ((program (demenu-read)))
+(start-process program nil program))
+
+
+
+(defun dmenu-read ()
+"Gets the target from the users."
+(completing-read "launch: "
+(seq-mapcat (lambda (directoryname)
+                (if (file-exists-p directoryname)
+                  (directory-files directoryname)
+                  nil))
+                (split-string (getenv "PATH") ":"))))
+
+(defun dmenu-launcher ()
+"Launch a program."
+(interactive)
+(let ((program (demenu-read)))
+(start-process program nil program)))
+
+
+;; 다듬기 . ../ 지우기
+(defun dmenu-read ()
+"Gets the target from the users."
+(completing-read "launch: "
+(seq-mapcat (lambda (directoryname)
+                (if (file-exists-p directoryname)
+                  (directory-files directoryname nil nil t)
+                  nil))
+                (split-string (getenv "PATH") ":"))))
+
+(defun dmenu-launcher ()
+"Launch a program."
+(interactive)
+(let ((program (demenu-read)))
+(start-process program nil program)))
+
+(global-set-key (kbd "s-p") 'dmenu-launch)
+
+
+;; 3rd Video
+(setq dmenu-excutables nil)
+(defun dmenu-executables-populate ()
+"Populates the dmenu-executables list."
+(interactive)
+(setq dmenu-executables
+    (seq-mapcat (lambda (directoryname)
+                (if (file-exists-p directoryname)
+                  (directory-files directoryname nil nil t)
+                  nil))
+                (split-string (getenv "PATH") ":"))))
+
+
+(defun dmenu-read ()
+"Gets the target from the users."
+(completing-read "launch: " dmenu-executables))
+
+(defun dmenu-launcher ()
+"Launch a program."
+(interactive)
+(let ((program (demenu-read)))
+(start-process program nil program)))
+
+(global-set-key (kbd "s-p") 'dmenu-launch)
+
+(provide 'dmenu-launcher)
+
+
+elisp:
+[[elisp:(start-process-shell-command%20"test"%20nil%20"espeak%20'hi%20world'")][elisp:test_espeak_start-process-shell-command]]
+(start-process-shell-command "test" nil "espeak 'hi'")

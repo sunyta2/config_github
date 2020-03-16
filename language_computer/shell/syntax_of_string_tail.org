@@ -1,0 +1,36 @@
+
+
+#+where_is_source_FILE:     (dired-jump 3 (substring (shell-command-to-string (concat "readlink -f \"" (buffer-file-name) "\"")) 0 -1) )
+#+where_is C-x C-j          (dired-jump 3    (buffer-file-name)     )
+
+* 대안의 다양성
+- printf $(echo hi)
+- sed -e 's/[\r\n]//g' [[https://stackoverflow.com/questions/15520339/how-to-remove-carriage-return-and-newline-from-a-variable-in-shell-script][unix - How to remove carriage return and newline from a variable in shell script - Stack Overflow]]
+- echo $testVar | tr -d '\r'
+- testVar=${testVar//$'\r'}
+- printf '%q\n' "$testVar"
+- echo -n $var
+
+영역의 다양성 계층의 다양성 활용의 정도성, 언어의 특성, 확장성/간결성
+
+* 5 asdfasdf
+** 1ㄴㄹㄷ
+ ㅁㄴㅇㄹ
+*** 3ㅁㄴㅇㄹ
+ 33333
+ 3333
+ 333
+*** 4 asdfasd
+ asdfasdf
+ 4
+
+**** 2ㄹㄴㅇㄹ
+  asdfa
+  asdf
+  asdf
+  222222
+* 0ㄹㄴㅇㄹ
+how move up item in emacs
+M-s-{ } 
+(message recentf-max-saved-items)
+00000000

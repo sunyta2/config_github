@@ -1,0 +1,24 @@
+info:eshell#Top
+
+
+mpv를 eshell로 실행한 동영상에서 
+O
+q
+(process-send-region "*eshell*" (line-beginning-position 0) (line-end-position 0))
+위의 문장은 키를 전달하는 기능을 가진다. 리모트 콘트롤이 되는 것이 가능할 것이다. 이맥스에서 버퍼로프로세스를 만들어서
+그곳으로 전달하는 것이다.
+
+
+** 실험중인 내용임
+help:eshell-send-input
+(eshell-get-old-input)
+(eshell-send-input &optional USE-REGION QUEUE-P NO-NEWLINE)
+If USE-REGION is non-nil, the current region (between point and mark)
+will be used as input.
+
+If QUEUE-P is non-nil, input will be queued until the next prompt,
+rather than sent to the currently active process.  If no process, the
+input is processed immediately.
+
+If NO-NEWLINE is non-nil, the input is sent without an implied final
+newline.

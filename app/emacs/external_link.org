@@ -1,0 +1,94 @@
+
+이맥스는 언어이면 오그모드는 그안의 또 하나의 언어이다.
+- 참조: info:org#External 노트: file:./external_link.org
+[footnote]내부색인기능 발견 C-c C-x f org-footnote-action    참고: 주석기능과 유사함. file:footnotes.org
+
+
+상호교차호환으로 상승하는 구조력이 무한 확장되어 교과서로 통일하는 것은 불가능하다!
+생명처럼 성장하는 것
+자아의 붕괴될 경우 다른 자아가 보완하여 출현하는 것이 중요하다.
+
+(setq org-confirm-elisp-link-function nil)
+(setq org-return-follows-link t) ; [[file:external_link.org]]
+(setq org-confirm-shell-link-function nil)
+(setq org-confirm-shell-link-function 'yes-or-no-p)
+(setq org-confirm-elisp-link-function 'yes-or-no-p)
+(setq org-confirm-elisp-link-function 'y-or-n-p)
+[[file:_1_읽던중인것_emacs_test.org][file:~/config_github/app/emacs/_1_읽던중인것_emacs_test.org]]
+[[file:~/config_github/app/emacs][file:~/config_github/app/emacs]]
+[[file:][file:~/config_github/app/emacs/]]
+(setq org-open-directory-means-index-dot-org t) 리드미파일은 사용법 | 인덱스파일 ToDo list?
+일리가 있는 것이 Folder보기는 간단히 단축키C-x C-j/f로 이동가능하므로 불필요하게 만들 필요가 없다.
+file:./
+(setq org-open-directory-means-index-dot-org: nil)
+
+[[shell:ls%20*.org]]
+[[shell:espeak%20"hi"]]
+
+[[elisp:(progn%20(async-shell-command%20"espeak%20'hi'")%20(message%20"hi"))]]
+
+[[shell:ls%20*.org]]
+[[shell:espeak%20"hi"]]
+
+
+
+[[shell:ls%20*.org]]
+[[shell:espeak%20"hi"]]
+
+help:customize-variable
+help:customize-option Customize SYMBOL, which must be a user option.
+(customize-option 'org-link-file-path-type)
+
+
+
+
+(setq org-link-search-must-match-exact-headline nil)  ;; 단어검색이 가능해진다. : [\[ file: 파일명::검색어]]
+[[https://orgmode.org/manual/External-Links.html#FOOT27][External Links (The Org Manual)]]
+[[info:org#External%20links][info:org#External links]]
+[[help:org-insert-link]]
+help:org-link-file-path-type
+[[info:org#Top][info:org#Top]]
+* 오그파일의 링크의 주소를 상대주소로 변경할 경우:
+    - github에서 빠르게 이동하는 클릭커블한 것을 만들수 있을 것이다.
+
+(setq org-link-file-path-type 'adaptive)
+org-link-file-path-type: 'adaptive
+   How the path name in file links should be stored. Hide
+   Valid values are:
+   
+   relative  Relative to the current directory, i.e. the directory of the file
+             into which the link is being inserted.
+   absolute  Absolute path, if possible with ~ for home directory.
+   noabbrev  Absolute path, no abbreviation of home directory.
+   adaptive  Use relative path for files in the current directory and sub-
+             directories of it.  For other files, use an absolute path.
+
+
+[[info:org#Handling%20links][info:org#Handling links]]
+‘C-u C-c C-l’
+     When ‘C-c C-l’ is called with a ‘C-u’ prefix argument, a link to a
+     file will be inserted and you may use file name completion to
+     select the name of the file.  The path to the file is inserted
+     relative to the directory of the current Org file, if the linked
+     file is in the current directory or in a sub-directory of it, or if
+     the path is written relative to the current directory using ‘../’.
+     Otherwise an absolute path is used, if possible with ‘~/’ for your
+     home directory.  You can force an absolute path with two ‘C-u’
+     prefixes.
+
+[[id:b01a6367-8259-4ac0-a9ab-71567e9a6e6b][pdf. mp3 등 확장자별로 다른 파일을 열게하는 설정으로 오그링크를 변경한다.]]
+
+* pdf. mp3 등 확장자별로 다른 파일을 열게하는 설정으로 오그링크를 변경한다.
+  :PROPERTIES:
+  :ID:       b01a6367-8259-4ac0-a9ab-71567e9a6e6b
+  :END:
+
+
+* (customize-group 'org-follow-link)
+(customize-group 'org-follow-link)
+        [[elisp:(async-shell-command%20"espeak%20\"hi%20world\"%20&>/dev/null")]]
+
+(customize-group 'org-id)
+(customize-group 'org-follow-link)
+(customize-group 'org-store-link) Hexify P를 무력화하면 혹시 %20등을 깔끔하게 볼 수 있을까?
+(customize-group 'org-follow-link)

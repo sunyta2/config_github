@@ -1,0 +1,6 @@
+#+STARTUP: showeverything
+
+* org-clock-goto C-c C-x C-j go back current 
+'(org-colck-into-drawer "CLOCKING")
+
+C-u C-c C-x C-x

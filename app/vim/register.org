@@ -1,6 +1,8 @@
-
-
-
+-*- coding: utf-8 -*-
+#+TITLE: register.org
+#+CREATOR: LEEJEONGPYO
+#+STARTUP: showeverything indent
+#+where_is_source_FILE: (find-file "~/config_github/app/vim/register.org")
 
 set clipboard?
 clipboard=autoselect,exclude:cons\|l

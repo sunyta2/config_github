@@ -1,0 +1,95 @@
+* 메뉴얼pdf보기 (find-file-other-window "~/Documents/stumpwm-git.pdf")
+- 임시필기노트: (find-file-other-window "~/Documents/stumpwm-git.pdf_note_임시필기.org")
+- brave_browser: (async-shell-command "brave --incognito 'chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/file:///home/thinkpad/Documents/stumpwm-git.pdf'")
+
+
+생성된 파일의 기능을 파악하는 것.
+* 필요한 능력
+  :LOGBOOK:
+  CLOCK: [2020-02-18 Tue 15:29]--[2020-02-18 Tue 15:29] =>  0:00
+  :END:
+- 생성된 문서의 필요한 괄호로 이동하는 법은? 
+ 수집의 명령 숫자40
+(dump-desktop-to-file "/home/thinkpad/config_github/app/stumpwm/layout_desktop.dump")
+(dump-group-to-file   "/home/thinkpad/config_github/app/stumpwm/layout_group.dump")
+(restore-from-file "")
+
+(defcommand test 
+
+C-t : *data-dir* ~/.stump.d/
+
+
+창을 선택하는 명령 select-window-by-number num &optional (group (current))
+(fselect 1) cf. (select-window-by-number 1)
+* 예문해제
+#+BEGIN_SRC emacs-lisp
+#S(DDUMP
+   :SCREENS (#S(SDUMP
+                :NUMBER 0
+                :GROUPS (#S(GDUMP
+                            :NUMBER 1
+                            :NAME "1_brave_browser"
+                            :TREE (((#S(FDUMP
+                                        :NUMBER 0
+                                        :X 0
+                                        :Y 0
+                                        :WIDTH 870
+                                        :HEIGHT 540
+                                        :WINDOWS (10485766)
+                                        :CURRENT 10485766)
+                                     #S(FDUMP
+                                        :NUMBER 1
+                                        :X 0
+                                        :Y 540
+                                        :WIDTH 870	  
+                                        :HEIGHT 540	  
+                                        :WINDOWS (18875845)
+                                        :CURRENT 18875845))
+                                    #S(FDUMP		  
+                                       :NUMBER 2	  
+                                       :X 870		  
+                                       :Y 0		  
+                                       :WIDTH 1050	  
+                                       :HEIGHT 1080	  
+                                       :WINDOWS (18874539)
+                                       :CURRENT 18874539)))
+                            :CURRENT 1)			  
+                         #S(GDUMP ;; 둘로 나누어진 구조임. 
+                            :NUMBER 2			  
+                            :NAME "2_Emacsq"   	       	       	      ;+-------------|------------+
+                            :TREE ((#S(FDUMP		  	      ;|             |            |
+                                       :NUMBER 0	  	      ;|             |            |
+                                       :X 0		  	      ;|             |            |
+                                       :Y 0		  	      ;|             |            |
+                                       :WIDTH 960	  	      ;|             |            |
+                                       :HEIGHT 1080	  	      ;|             |            |
+                                       :WINDOWS (16777276 16777217)   ;|             |            |
+                                       :CURRENT 16777276) 	      ;|             |            |
+                                    #S(FDUMP		  	      ;+-------------+------------+
+                                       :NUMBER 1	  
+                                       :X 960		  
+                                       :Y 0		  
+                                       :WIDTH 960	  
+                                       :HEIGHT 1080	  
+                                       :WINDOWS (18876470)
+                                       :CURRENT 18876470)))
+                            :CURRENT 1)	       	       	  
+                         #S(GDUMP
+
+#+END_SRC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+hardware/x220t.org
+
+ ~/config_github/hardware/storage/msata045_arco.org
+(find-file-other-window "storage/msata045_arco.org")
+
+
+
+
+
+
+~/config_github/hardware/storage/
+
+~/config_github/hardware/storage/msata045_arco.org
+~/config_github/hardware/storage/msata827_kde.org
+ 

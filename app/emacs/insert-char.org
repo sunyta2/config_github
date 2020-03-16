@@ -1,0 +1,47 @@
+
+
+key char value send setting stuff.
+
+* special char send to term for process
+ (<= C-q RET) help:quoted-insert C-h k C-q { 재발견 유튜브동영상에서 insert-char.org }
+=리턴키를 전달하려면 이 필요하고 그것을 얻기위해서는 단축키가 필요하다!
+=> 사용용도는 키의 작용상징부호를 전달할 필요가 있기 때문이다. (ex. term-send-string Below)
+   ([[help:term-send-string][term-send-string]] "*terminal*" "sudo genkernel") ; gentoo설치, tmux를 통제하는 org-babel elisp script
+       (term-send-string "*terminal*" "espeak \"명확하게 발음이 전달된다!\"") 
+=> file:term-send-string.org file:insert-char.org
+** insert-char 다른 것이나 잘모르지만 일단 등록
+                (insert-char CHARACTER &optional COUNT INHERIT)
+		help:insert-char (insert-char "RET") file:insert-char.org
+
+
+* TeX and latin-1-prefix
+latin-1 입력법을 발견함! - 라틴어 입력을 맥북에 의존하기 보다는 범용사용을 가능하게 익히는 것이 유리하다.
+맥북 ἀ῏εἒ 보다 범용적으로 사용가능한 이맥스로 입력의 방식을 통일하는 것이 더 효율적인 선택이라고 판단한다.
+help:set-input-method C-x RET C-\ latin-1-prefix  
+äª (set-input-method 'korean-hangul) (set-input-method "latin-1-prefix") (set-input-method "TeX")
+help:describe-input-method
+(describe-input-method 'latin-1-prefix  ) (describe-input-method "TeX") =>  file:insert-char.org
+- (매우상세한) 키값 알아내기(C-u) C-x = 
+    [해결함] # 반드시 영어로 입력할 것 한글은 깨진다. # 이었으나, 
+
+
+
+* (매우상세한) 키값 알아내기(C-u) C-x = 
+
+
+* (kbd "C-h m") => "m" 
+(describe-key (kbd "C-h m"))
+              (kbd "C-h m") => "m" 
+
+
+
+
+
+* C-x @		Prefix Command
+
+C-x @ S		event-apply-shift-modifier
+C-x @ a		event-apply-alt-modifier
+C-x @ c		event-apply-control-modifier
+C-x @ h		event-apply-hyper-modifier
+C-x @ m		event-apply-meta-modifier
+C-x @ s		event-apply-super-modifier

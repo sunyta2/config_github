@@ -1,0 +1,40 @@
+
+
+프리젠테이션의 경우 여러문서에서 각 파일의 도입부에 하이라이트 문자를 강조하는 것이 좋을 것같다.
+<<<Newton>>> 을 사용한 독일인의 방식을 추가하면 놀라운 효과를 줄것이다.
+또한 마우스키로 등록하는 법도 기록을 두면 좋을 것이다.
+
+
+
+help:highlight-phrase
+(highlight-phrase "highlight-" "yellow")
+(highlight-phrase "M-s" "high-blue")
+(highlight-phrase "[Uu]nset-key" (quote hi-pink)) ;; 발굴! C-x C-[ C-[
+
+Global Bindings Starting With M-s:
+key             binding
+---             -------
+M-s h .		highlight-symbol-at-point
+M-s h f		hi-lock-find-patterns
+M-s h l		highlight-lines-matching-regexp
+M-s h p		highlight-phrase
+M-s h r		highlight-regexp
+M-s h u		unhighlight-regexp
+M-s h w		hi-lock-write-interactive-patterns
+
+M-s M-w		eww-search-words
+
+
+
+Global Bindings Starting With M-s:
+key             binding
+---             -------
+
+M-s ESC		Prefix Command
+M-s .		isearch-forward-symbol-at-point
+M-s _		isearch-forward-symbol
+M-s h		Prefix Command
+M-s o		occur
+M-s w		isearch-forward-word
+
+M-s M-w		eww-search-words

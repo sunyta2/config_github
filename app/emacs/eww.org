@@ -1,5 +1,22 @@
 #+STARTUP: showeverything indent latexpreview
-M-x eww RET www.gentoo.org
+(eww-browse-url "url.jpg")
+(eww-browse-url "file:/home/thinkpad/Pictures/hebrew/hebrew_in_ipad.png") 잘 됨.
+(eww-browse-url "file:/home/thinkpad/Desktop/458-AKozakImage1.jpg")
+file:image_in_line.org
+(eww-browse-url "file:/home/thinkpad/Desktop/458-AKozakImage1.jpg")
+
+                      help:browse-url  (browse-url "file:/home/thinkpad/Pictures/hebrew/hebrew_in_ipad.png")
+                       현재 파이어팍스로 열리는 것은 잘 됨. 나중에 변경을 시도할 것
+
+* Tab shuffling in emacs-w3m
+
+[[https://emacs.wordpress.com/2007/02/22/tab-shuffling-in-emacs-w3m/][Tab shuffling in emacs-w3m | minor emacs wizardry]]
+https://emacs.wordpress.com/2007/02/22/tab-shuffling-in-emacs-w3m/
+
+
+
+
+* M-x eww RET www.gentoo.org
 
 
 

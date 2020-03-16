@@ -1,4 +1,19 @@
 
+info:sed#Top
+info:grep#Top
+info:gawk#Top
+
 $ grep -r -n "right"
 
 $ grep -C 5 -r -n "right" | less
+
+
+grep -n total_count *.c
+vi ‘grep -l total_count *.c‘
+
+
+grep을 그대로 클릭으로 전환하는 emacs function이 있던 것으로 기억됨.
+info- terminal에서 본 것 같음
+
+(org) Handling links
+[[file:~/config_github/great_books/_achieve_agenda/2020_02_diary.org::*%5B2020-02-28%20Fri%5D][{2020-02-28 Fri}]]

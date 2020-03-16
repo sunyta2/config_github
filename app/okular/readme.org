@@ -1,0 +1,61 @@
+#+STARTUP: showeverything indent
+#+OPTIONS: d:t \n:t
+
+file:/home/thinkpad/Desktop/pdf_list_of_desktop.org
+file:../mpv/readme.org file:../espeak/readme.org file:../okular/readme.org
+# [주요사용방법 pdf] 많은 리스트를 만들어 쉽게 노트를 작성한다.
+(find-file "./test_acro_list_drawer_okular.org")
+- greek, latin bable
+
+
+
+
+okular
+-p, --page number FROM $ man okular
+(async-shell-command "okular \"$(find ~/Music  -inum 6836311)\" &") ;; Gentoo_manual.pdf
+(3282990 2049)
+
+- 외부다른 문서를 보기위해서 links를 사용한 것이 가능하면 rust나 다른 웹문서를 페이지를 선택해서 보는 것이 가능할 지도 모른다.
+
+* from_bbg_mpv playlist to .el
+- 참, 함수를 만드는 이유는 페이지로 이동하는 것이 file링크를 실행하는 구조로는 불가능해서 함수가 필요함 특히 문서가 길 경우 그것을 다시 살펴보는 것이 번잡함.
+
+; help:okular_pdf (man "okular")
+(okular_pdf  "/home/thinkpad/Documents/git/git - 간편 안내서 - 어렵지 않아요!.pdf" "-p 30 ")
+#+BEGIN_SRC emacs-lisp
+(defun okular_pdf ( book_pdf p )
+" - 절대주소위치사용해야 함 pdf 읽기 페이지
+       즉, ~를 사용하면 파일주소를 읽지도 못하고 현재실행위치와 혼재되서 엉망이 됨  
+  - cd /;을 함수에 넣어야 했음 
+          즉, 추출된 주소가 실행위치에서가 아닌 / 위치에 원점위치하여서 사용하게 함.
+
+  - TODO 함수를 기동함수에 등록하여 범용으로 사용하게 할 것. 
+  - 참조: _1_bbf_playlist.org   (man \"okular\") 
+"
+
+    (
+    start-process-shell-command  (concat "cd /; okular로 열기 " book_pdf  " "  p ) nil 
+                                 (concat "cd /; exec okular \""  book_pdf "\" " p )
+    )
+)
+
+#+END_SRC
+
+* [활용처] link_list_drawer_generate_python_babel.org
+(find-file-other-window "../../language_computer/python/link_list_drawer_generate_python_babel.org")
+brave --incognito의 많은 링커를 생성한다.
+mpv
+okular (async-shell-command "okular \"$(find ~/Music  -inum 6836311)\" &")
+(3282990 2049)
+
+* [mate_translate_good] (async-shell-command "brave --incognito 'chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/file:///home/thinkpad/Documents/eintr.pdf'")
+- 주소가 이상해도 쉽게 브라우져로 통합해서 실행하는 것을 확인했음! -활용: 브라우져로 okular를 대체하는 임시효과를 준다는 강점.
+- [mate_pdf_translate!] 강점:mate를 사용해서 맥에서처럼 pdf의 내부문장을 번역기로 가능하게 함.
+~ /app/brave_browser/chrome_extension_manager/pdf_viewer_extension_in_browser.org
+- 연관처: okular brave_browser
+        [[chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/file:///home/thinkpad/Documents/python/python_for_unix_and_linux_system_administration.pdf][python_for_unix_and_linux_system_administration.pdf]]
+(async-shell-command "brave --incognito 'chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/file:///home/thinkpad/Documents/python/python_for_unix_and_linux_system_administration.pdf'")
+;; eintr.pdf
+(async-shell-command "brave --incognito 'chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/file:///home/thinkpad/Documents/eintr.pdf'")
+
+* [pdf Expert의 원형을 그려서 서로 연결하는 법] 이 문서에 도식에 중요한 기준이 될 것이다. [2020-02-28 Fri 11:50]

@@ -1,0 +1,107 @@
+- 커맨트를 찾아내던 빠른 방법
+[footnote]내부색인기능 발견 C-c C-x f org-footnote-action    참고: 주석기능과 유사함. file:footnotes.org
+
+- [[*process send key & command][process send key & command]]
+분류처를 찾을 것.
+ ( C-x 4 c ) Indirect Buffers_in_buffer_list.org_with_news3.org
+                  _using_in_python_news_chrome.org
+- 핵심능력: 같은 버퍼를 다른 버퍼를 생성해서 전혀 다른 모드로 실행할 수 있다
+	다른 모드의 예: { (news_여기서_주석을 추가함).org | (원본)read-only-mode }, { org | artist-mode }
+- Emacs의 놀라운 다양한 모드의 변형을 가져온다! 매우 유연한 창의성이 빔보다 탁월함.
+
+
+buffer-file-name
+
+
+
+오그링크를 리턴으로 연결하는 법을 찾을 것
+[[file:move.org::41][41_move.org]]
+[[file:tag.org::15]]
+[[file:move.org::27][move.org::27]]
+
+유의사항:
+좌측에 새로창(링크로 열리는 파일)을 열어(C-c C-o)두고 
+오른쪽에서 클릭으로 만들어 복귀하는 방식(C-x o)이 좋은 것이다.
+
+(setq org-open-directory-means-index-dot-org t) 
+(setq org-open-directory-means-index-dot-org nil)
+
+file:~/config_github/app/emacs
+[[file:][file:~/config_github/app/emacs/]]
+(setq org-open-directory-means-index-dot-org t) 
+(setq org-open-directory-means-index-dot-org nil)
+
+
+
+***** 아래는 _1_읽던중인것_emacs.org
+(async-shell-command "ln -fs ./index.org ./_1_읽던중인것_emacs_ln_index.org_test.org")
+- 참조: info:org#External 노트: file:./external_link.org
+info:stumpwm#Top 
+
+[[info:eintr#Top]] ;; 기초익히기에 중요한 것이므로 노트를 해둘것.
+
+info:elisp#Top ;; 좀더 심화된 것임. 정확이 문서와 일치하는지 검토해 둘 것.
+info:screen#Top
+
+        file:info.org 간단 분류와 ShortCut info : 사용법을 요약노트함.
+[[help:org-insert-link]]
+help:org-link-file-path-type
+help:info-apropos
+help:apropos-command
+
+info:ediff#Top 
+info:todo-mode#Top
+info:eww#Top
+info:erc#Top tramp eshell
+
+
+[[info:elisp#Predicates%20on%20Numbers][info:elisp#Predicates on Numbers]]
+
+[[file:~/config_github/app/remote_desktop/possible_in_arco.org]]
+
+[[file:possible_in_arco.org]]
+[[elisp:(message%20"hi")]]
+elisp:
+[[elisp:(async-shell-command%20"espeak%20'hi%20world'%20>/dev/null%20")]]
+(setq org-confirm-elisp-link-function nil)
+(setq org-return-follows-link t) ; [[file:external_link.org]]
+(setq org-confirm-shell-link-function nil)
+
+* TODO Customize Group: Org ID * 여기에서 수정함2 
+  SCHEDULED: <2020-02-29 Sat>
+  :PROPERTIES:
+  :ID:       387de902-86b8-495a-8b70-8dd2cffc5edf
+  :END:
+
+Hide Org Id Link To Org Use Id: [Value Menu] Do not use ID to create link
+   [ State ]: STANDARD.
+- 초기값: org-id-link-to-org-use-id: nil
+- 변경값: org-id-link-to-org-use-id: 'create-if-interactive
+   Non-nil means storing a link to an Org file will use entry IDs. Hide
+   
+   The variable can have the following values:
+   
+   t     Create an ID if needed to make a link to the current entry.
+   
+-참조:  (global-set-key (kbd "C-c l") 'org-store-link) ;; app/emacs/org_id.org ID 참조할 것.
+    - app/emacs/shell_emacs/emacsQ_load.el 참조
+   create-if-interactive
+create-if-interactive
+         If ‘org-store-link’ is called directly (interactively, as a user
+         command), do create an ID to support the link.  But when doing the
+         job for capture, only use the ID if it already exists.  The
+         purpose of this setting is to avoid proliferation of unwanted
+         IDs, just because you happen to be in an Org file when you
+         call ‘org-capture’ that automatically and preemptively creates a
+         link.  If you do want to get an ID link in a capture template to
+         an entry not having an ID, create it first by explicitly creating
+         a link to it, using ‘M-x org-store-link’ first.
+
+
+
+*** process send key & command
+=> file:index.org 
+ file:term-send-string.org file:insert-char.org
+file:eshell_process_mpv_send_key.org
+file:start_process_shell_command.org
+file:eshell_in_emacs.org

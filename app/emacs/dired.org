@@ -1,7 +1,261 @@
+#+TITLE: dired.org /app/emacs/
+#+CREATOR: LEEJEONGPYO
+#+where_is_source_FILE: (dired-jump 3 "~/config_github/app/emacs/dired.org")
+#+STARTUP: showeverything indent
+
+-*- coding: utf-8 -*-
+
+C-x C-f /sudo::/path/to/file /app/sudo_gksudo/readme.org
+- dired C-u ^ 를 kill previous dired [EmacsWiki: Dired Reuse Directory Buffer](https://www.emacswiki.org/emacs/DiredReuseDirectoryBuffer)
+
+- dired-mode에서 파일을 열고 특히 마크로를 실행하면 강력한 기능을 보인다고 아이디어를 제공함.
+( 추측컨데, 파일의 명칭 검색을 가능할 것이고 그것을 열어서 다른 창에서 열고, 검색하며, 수집하여 창을 클로우즈하면서 닫고, 
+여러 단축키로 나누어 등록하여서 파일의 로딩과 처리의 계산의 딜레이를 지연하는 것을 가능하게 할수 있을 지도 모른다.
+즉 서스펜드프레임의 방식을 여기에 넣어서 3번정도 걸면 시간을 벌수 있을지도 모른다.)
 
 
+
+* dired에서 그냥 2를 누르면 2창으로 나누어진 것에서 편리하게 볼 수 있음.
+* dired function or study key
+- dired-mark-sexp 
+  (dired-mark-sexp PREDICATE &optional UNFLAG-P)
+  Mark files for which PREDICATE returns non-nil.
+  With a prefix arg, unmark or unflag those files instead.
+  PREDICATE is a lisp expression that can refer to the following symbols:
+        inode  [integer] the inode of the file (only for ls -i output)
+
+* rsync in dired save in rsync/readme.org  
 * dired-x (load "dired-x") 
-(load "dired-x")
 
+** (load "dired-x") C-x C-j가 가능
+(load "dired-x")
 위의 명령으로 C-x C-j가 가능하여짐 
 https://www.gnu.org/software/emacs/manual/html_node/dired-x/Installation.html#Installation
+
+
+* [C-h m key of dired]
+Dired by name mode defined in ‘dired.el’:
+Mode for "editing" directory listings.
+In Dired, you are "editing" a list of the files in a directory and
+  (optionally) its subdirectories, in the format of ‘ls -lR’.
+  Each directory is a page: use C-x [ and C-x ] to move pagewise.
+"Editing" means that you can run shell commands on files, visit,
+  compress, load or byte-compile them, change their file attributes
+  and insert subdirectories into the same buffer.  You can "mark"
+  files for later commands or "flag" them for deletion, either file
+  by file or all files matching certain criteria.
+You can move using the usual cursor motion commands.
+The buffer is read-only.  Digits are prefix arguments.
+Type d to flag a file ‘D’ for deletion.
+Type m to Mark a file or subdirectory for later commands.
+  Most commands operate on the marked files and use the current file
+  if no files are marked.  Use a numeric prefix argument to operate on
+  the next ARG (or previous -ARG if ARG<0) files, or just ‘1’
+  to operate on the current file only.  Prefix arguments override marks.
+  Mark-using commands display a list of failures afterwards.  Type ?
+  to see why something went wrong.
+Type u to Unmark a file or all files of an inserted subdirectory.
+Type DEL to back up one line and unmark or unflag.
+Type x to delete (eXpunge) the files flagged ‘D’.
+Type RET to Find the current line’s file
+  (or dired it in another buffer, if it is a directory).
+Type o to find file or Dired directory in Other window.
+Type i to Insert a subdirectory in this buffer.
+Type R to Rename a file or move the marked files to another directory.
+Type C to Copy files.
+Type s to toggle Sorting by name/date or change the ‘ls’ switches.
+Type g to read all currently expanded directories aGain.
+  This retains all marks and hides subdirs again that were hidden before.
+Use ‘SPC’ and ‘DEL’ to move down and up by lines.
+
+If Dired ever gets confused, you can either type g to read the
+directories again, type l to relist the file at point or the marked files or a
+subdirectory, or type M-x dired-build-subdir-alist to parse the buffer
+again for the directory tree.
+
+Customization variables (rename this buffer and type C-h v on each line
+for more info):
+
+  ‘dired-listing-switches’
+  ‘dired-trivial-filenames’
+  ‘dired-marker-char’
+  ‘dired-del-marker’
+  ‘dired-keep-marker-rename’
+  ‘dired-keep-marker-copy’
+  ‘dired-keep-marker-hardlink’
+  ‘dired-keep-marker-symlink’
+
+Hooks (use C-h v to see their documentation):
+
+  ‘dired-before-readin-hook’
+  ‘dired-after-readin-hook’
+  ‘dired-mode-hook’
+  ‘dired-load-hook’
+
+Keybindings:
+key             binding
+---             -------
+
+e .. f		dired-find-file
+
+RET		dired-find-file
+C-o		dired-display-file
+C-t		Prefix Command
+C-x		Prefix Command
+ESC		Prefix Command
+SPC		dired-next-line
+!		dired-do-shell-command
+#		dired-flag-auto-save-files
+$		dired-hide-subdir
+%		Prefix Command
+&		dired-do-async-shell-command
+(		dired-hide-details-mode
+*		Prefix Command
++		dired-create-directory
+-		negative-argument
+.		dired-clean-directory
+0 .. 9		digit-argument
+:		Prefix Command
+<		dired-prev-dirline
+=		dired-diff                ;; Git
+>		dired-next-dirline
+?		dired-summary
+A		dired-do-find-regexp
+B		dired-do-byte-compile
+C		dired-do-copy
+D		dired-do-delete
+F		dired-do-find-marked-files
+G		dired-do-chgrp
+H		dired-do-hardlink
+I		dired-info
+L		dired-do-load
+M		dired-do-chmod
+N		dired-man
+O		dired-do-chown
+P		dired-do-print
+Q		dired-do-find-regexp-and-replace
+R		dired-do-rename
+S		dired-do-symlink
+T		dired-do-touch
+U		dired-unmark-all-marks
+V		dired-do-run-mail
+W		browse-url-of-dired-file
+X		dired-do-shell-command
+Y		dired-do-relsymlink
+Z		dired-do-compress
+^		dired-up-directory
+a		dired-find-alternate-file
+c		dired-do-compress-to
+d		dired-flag-file-deletion
+g		revert-buffer
+h		describe-mode
+i		dired-maybe-insert-subdir
+j		dired-goto-file
+k		dired-do-kill-lines
+l		dired-do-redisplay
+m		dired-mark
+n		dired-next-line
+o		dired-find-file-other-window
+p		dired-previous-line
+q		quit-window
+s		dired-sort-toggle-or-edit
+t		dired-toggle-marks
+u		dired-unmark
+v		dired-view-file
+w		dired-copy-filename-as-kill
+x		dired-do-flagged-delete
+y		dired-show-file-type
+~		dired-flag-backup-files
+DEL		dired-unmark-backward
+S-SPC		dired-previous-line
+<follow-link>	mouse-face
+<mouse-2>	dired-mouse-find-file-other-window
+<remap>		Prefix Command
+
+C-t C-t		image-dired-dired-toggle-marked-thumbs
+C-t .		image-dired-display-thumb
+C-t a		image-dired-display-thumbs-append
+C-t c		image-dired-dired-comment-files
+C-t d		image-dired-display-thumbs
+C-t e		image-dired-dired-edit-comment-and-tags
+C-t f		image-dired-mark-tagged-files
+C-t i		image-dired-dired-display-image
+C-t j		image-dired-jump-thumbnail-buffer
+C-t r		image-dired-delete-tag
+C-t t		image-dired-tag-files
+C-t x		image-dired-dired-display-external
+
+C-x ESC		Prefix Command
+
+C-M-d		dired-tree-down
+C-M-n		dired-next-subdir
+C-M-p		dired-prev-subdir
+C-M-u		dired-tree-up
+M-!		dired-smart-shell-command
+M-$		dired-hide-all
+M-(		dired-mark-sexp
+M-G		dired-goto-subdir
+M-s		Prefix Command
+M-{		dired-prev-marked-file
+M-}		dired-next-marked-file
+M-DEL		dired-unmark-all-files
+
+M-s a		Prefix Command
+M-s f		Prefix Command
+
+% &		dired-flag-garbage-files
+% C		dired-do-copy-regexp
+% H		dired-do-hardlink-regexp
+% R		dired-do-rename-regexp
+% S		dired-do-symlink-regexp
+% Y		dired-do-relsymlink-regexp
+% d		dired-flag-files-regexp
+% g		dired-mark-files-containing-regexp
+% l		dired-downcase
+% m		dired-mark-files-regexp
+% r		dired-do-rename-regexp
+% u		dired-upcase
+
+\* C-n		dired-next-marked-file
+\* C-p		dired-prev-marked-file
+\* !		dired-unmark-all-marks
+\* %		dired-mark-files-regexp
+\* (		dired-mark-sexp
+\* *		dired-mark-executables
+\* .		dired-mark-extension
+\* /		dired-mark-directories
+\* ?		dired-unmark-all-files
+\* @		dired-mark-symlinks
+\* O		dired-mark-omitted
+\* c		dired-change-marks
+\* m		dired-mark
+\* s		dired-mark-subdir-files
+\* t		dired-toggle-marks
+\* u		dired-unmark
+\* DEL		dired-unmark-backward
+
+: d		epa-dired-do-decrypt
+: e		epa-dired-do-encrypt
+: s		epa-dired-do-sign
+: v		epa-dired-do-verify
+
+<remap> <advertised-undo>	dired-undo
+<remap> <next-line>		dired-next-line
+<remap> <previous-line>		dired-previous-line
+<remap> <read-only-mode>	dired-toggle-read-only
+<remap> <toggle-read-only>	dired-toggle-read-only
+<remap> <undo>			dired-undo
+
+C-x M-o		dired-omit-mode
+
+M-s f C-s	dired-isearch-filenames
+M-s f ESC	Prefix Command
+
+M-s a C-s	dired-do-isearch
+M-s a ESC	Prefix Command
+
+M-s f C-M-s	dired-isearch-filenames-regexp
+
+M-s a C-M-s	dired-do-isearch-regexp
+
+* 
