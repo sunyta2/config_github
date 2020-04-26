@@ -1,9 +1,0 @@
-[[https://emacs.stackexchange.com/questions/33736/how-can-i-run-a-command-on-several-buffers-files][How can I run a command on several buffers / files? - Emacs Stack Exchange]]
-
-You can [mapc] a function across a sequence, 
-so e.g. write a cleanup function that does a find-file on a filename and then applies whitespace-cleanup and whatever else you want. 
-
-Then create a list of the files that you want to apply it to: 
-(setq my-file list '("file1" "file2" ....)) 
-    and then apply the cleanup function on each file with 
-(mapc '#my-cleanup-function my-filelist). 

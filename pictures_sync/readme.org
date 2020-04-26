@@ -17,4 +17,159 @@
 [[./wanderer_above_the_sea_of_fog.jpg][wanderer_above_the_sea_of_fog.jpg 링크]]
 
 
+#+begin_src sh :results silent
+feh
+	feh --image-bg "#428bdd" --bg-max ~/config_github/pictures_sync/aristotle_bust1.jpg ; xsetroot_bar_info2
+	feh --image-bg "#428bdd" --bg-center ~/config_github/pictures_sync/wanderer_above_the_sea_of_fog.jpg ; xsetroot_bar_info2
+	feh --image-bg "#427bdd" --bg-max ~/config_github/pictures_sync/buddha_all.png ; xsetroot_bar_info2 
+
+	feh --image-bg "#428bdd" --bg-max ~/config_github/pictures_sync/aristotle_bust1.jpg ; 
+	feh --image-bg "#428bdd" --bg-center ~/config_github/pictures_sync/wanderer_above_the_sea_of_fog.jpg ; 
+	feh --image-bg "#427bdd" --bg-max ~/config_github/pictures_sync/buddha_all.png ; 
+
+#+end_src
+
+#+begin_src emacs-lisp :results silent
+(org-babel-do-load-languages ;; 멋진 해결을 발견함 → (info "(org) Languages")
+      'org-babel-load-languages
+      '((emacs-lisp . t)
+        (shell . t)
+        (org . t)
+        (python . t)
+        (haskell . t)
+        (ruby . t)
+        (rust . t)
+        (C . t)
+       ))
+
+#+end_src
+
+
+
+
+
+* list of jpg
+aristotle_bust1.jpg
+buddha_all.jpg
+wanderer_above_the_sea_of_fog.jpg
+readme.org
+
+test_aristotle_bust1.jpg
+test_buddha_all.jpg
+test_wanderer_above_the_sea_of_fog.jpg
+
+cd ~/config_github/pictures_sync/; convert -pointsize 50 -fill yellow -draw 'text 270,460 \
+"1한글
+2연습
+3" '  \
+~/config_github/pictures_sync/aristotle_bust1.jpg  \
+~/config_github/pictures_sync/aristotle_bust1_text_added.jpg
+
+#+begin_src sh :results silent
+# test_aristotle.bust1.jpg
+#cd ~/config_github/pictures_sync/; convert -pointsize 50 -fill yellow -draw 'text 270,460 "1.Emacs2.haskell3.kernel" '  \
+cd ~/config_github/pictures_sync/; cp \
+aristotle_bust1.jpg \
+test_aristotle_bust1.jpg
+
+cd ~/config_github/pictures_sync/; convert -pointsize 99 -fill orange -draw 'text 2130,460 "1.Emacs2.haskell3.kernel" '  \
+test_aristotle_bust1.jpg \
+test_aristotle_bust1.jpg
+
+cd ~/config_github/pictures_sync/; convert -pointsize 150 -fill Green -draw 'text 120,460 "1.Etymology2.Greek3.Latin" '  \
+test_aristotle_bust1.jpg \
+test_aristotle_bust1.jpg
+
+	feh --image-bg "#428bdd" --bg-max ~/config_github/pictures_sync/test_aristotle_bust1.jpg ; 
+#	feh --image-bg "#428bdd" --bg-center ~/config_github/pictures_sync/wanderer_above_the_sea_of_fog.jpg ; 
+#	feh --image-bg "#427bdd" --bg-max ~/config_github/pictures_sync/buddha_all.png ; 
+
+
+#+end_src
+
+
+
+#+begin_src sh :results silent
+# test_buddha_all.jpg
+
+
+#cd ~/config_github/pictures_sync/; convert -pointsize 50 -fill yellow -draw 'text 270,460 "1.Emacs2.haskell3.kernel" '  \
+cd ~/config_github/pictures_sync/; cp \
+buddha_all.jpg \
+test_buddha_all.jpg
+
+cd ~/config_github/pictures_sync/; convert -pointsize 24 -fill orange -draw 'text 330,60 "1.Emacs\2.haskell3.kernel" '  \
+test_buddha_all.jpg \
+test_buddha_all.jpg
+
+cd ~/config_github/pictures_sync/; convert -pointsize 27 -fill Green -draw 'text 20,60 "1.Etymology2.Greek3.Latin" '  \
+test_buddha_all.jpg \
+test_buddha_all.jpg
+ 	feh --image-bg "#427bdd" --bg-max ~/config_github/pictures_sync/test_buddha_all.jpg ; 
+#	feh --image-bg "#428bdd" --bg-max ~/config_github/pictures_sync/test_aristotle_bust1.jpg ; 
+#	feh --image-bg "#428bdd" --bg-center ~/config_github/pictures_sync/wanderer_above_the_sea_of_fog.jpg ; 
+
+
+#+end_src
+
+buddha_all.jpg \
+test_buddha_all.jpg
+
+#+begin_src sh :results silent
+# test_wanderer_above_the_sea_of_fog.jpg
+#cd ~/config_github/pictures_sync/; convert -pointsize 50 -fill yellow -draw 'text 270,460 "1.Emacs2.haskell3.kernel" '  \
+cd ~/config_github/pictures_sync/; cp \
+wanderer_above_the_sea_of_fog.jpg \
+test_wanderer_above_the_sea_of_fog.jpg
+
+cd ~/config_github/pictures_sync/; convert -pointsize 30 -fill orange -draw 'text 810,90 "1.Emacs2.haskell3.kernel" '  \
+test_wanderer_above_the_sea_of_fog.jpg \
+test_wanderer_above_the_sea_of_fog.jpg
+
+cd ~/config_github/pictures_sync/; convert -pointsize 33 -fill Green -draw 'text 120,90 "1.Etymology2.Greek3.Latin" '  \
+test_wanderer_above_the_sea_of_fog.jpg \
+test_wanderer_above_the_sea_of_fog.jpg
+
+	feh --image-bg "#428bdd" --bg-center ~/config_github/pictures_sync/test_wanderer_above_the_sea_of_fog.jpg ; 
+# 	feh --image-bg "#427bdd" --bg-max ~/config_github/pictures_sync/test_buddha_all.jpg ; 
+#	feh --image-bg "#428bdd" --bg-max ~/config_github/pictures_sync/test_aristotle_bust1.jpg ; 
+
+
+#+end_src
+
+wanderer_above_the_sea_of_fog.jpg \
+test_wanderer_above_the_sea_of_fog.jpg
+
+
+
+aristotle_bust1_text_added.jpg
+buddha_all.png
+
+#+begin_src sh :results silent
+
+#pdftocairo -f 18 -singlefile -jpeg /home/thinkpad/Music/basics_of_biblical_greek_william_d_mounce/basics_of_biblical_greek.pdf
+#feh --zoom fill -g 800x600 "/home/foo/Wallpaper/"
+#feh --image-bg "#428bdd" --bg-center ~/config_github/pictures_sync/basics_of_biblical_greek.jpg
+ feh --image-bg "#428bdd" --bg-center --geometry 300x600 ~/config_github/pictures_sync/basics_of_biblical_greek.jpg
+#feh --zoom fill -g 800x600 ~/config_github/pictures_sync/basics_of_biblical_greek.jpg
+#feh --zoom fill -g 300x600 ~/config_github/pictures_sync/basics_of_biblical_greek.jpg
+#+end_src
+
+
+#+begin_src sh :results silent
+cd ~/config_github/pictures_syn/
+  pdftocairo -f 8 -singlefile -y 0 -H 600 -jpeg /home/thinkpad/Music/basics_of_biblical_greek_william_d_mounce/basics_of_biblical_greek.pdf
+# pdftocairo -f 8 -singlefile -y 300 -H 300 -jpeg /home/thinkpad/Music/basics_of_biblical_greek_william_d_mounce/basics_of_biblical_greek.pdf
+# feh --image-bg "#428bdd" --bg-center --geometry 300x600 ~/config_github/pictures_sync/basics_of_biblical_greek.jpg
+ feh --image-bg "#428bdd" --bg-max    --geometry 300x600 ~/config_github/pictures_sync/basics_of_biblical_greek.jpg
+#+end_src
+#+begin_src sh :results silent
+cd ~/config_github/pictures_syn/
+  pdftocairo -f 8 -singlefile -y 500 -H 600 -jpeg /home/thinkpad/Music/basics_of_biblical_greek_william_d_mounce/basics_of_biblical_greek.pdf
+# pdftocairo -f 8 -singlefile -y 300 -H 300 -jpeg /home/thinkpad/Music/basics_of_biblical_greek_william_d_mounce/basics_of_biblical_greek.pdf
+# feh --image-bg "#428bdd" --bg-center --geometry 300x600 ~/config_github/pictures_sync/basics_of_biblical_greek.jpg
+ feh --image-bg "#428bdd" --bg-max    --geometry 300x600 ~/config_github/pictures_sync/basics_of_biblical_greek.jpg
+
+#+end_src
+
 

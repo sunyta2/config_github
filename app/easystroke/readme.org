@@ -1,0 +1,12 @@
+
+
+yay easystroke로 설치가능할 것임.
+
+* touch 스크린 w510
+동영상에서 가능하다면  https://youtu.be/8Vwt11GMc3g Ubuntu 10.10 Touch screen W510
+w520 w530 w541역시 가능할 것이다
+
+[[https://vimeo.com/15008754][Ubuntu 10.04 + Compiz + AWN + Easystroke + Gnome-do on Vimeo]]
+
+
+- [[https://duckduckgo.com/?q=Acer+Iconia+linux&t=brave&iax=videos&ia=videos&iai=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D7EH3GS1gDP0][Acer Iconia linux at DuckDuckGo]] 화면돌리기동작실행가능함

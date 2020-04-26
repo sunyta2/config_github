@@ -73,7 +73,6 @@ The command run (after changing into DIR) is essentially
   find finished at Thu Feb 13 23:22:04
 
 
-
 Find files in DIR that contain matches for REGEXP and start Dired on output.
 The command run (after changing into DIR) is
   find . \( -type f -exec ‘grep-program’ ‘find-grep-options’ \
@@ -92,6 +91,7 @@ The command run (after changing into DIR) is
 (find-grep "find ~/config_github -type f -iname \"*emacs.org\" -exec grep --color -nH --null -e gentoo \{\} +")
 (find-dired "~/config_github" "-type f -iname \"*org\" -exec grep -q -e gentoo \{\} +")
 
+# 참고추가 use M-x dired-do-eshell-command 리턴키 grep -nH --color {{검색어패턴} 리턴}
 
 
 * rgrep lgrep과 grep , grep-find

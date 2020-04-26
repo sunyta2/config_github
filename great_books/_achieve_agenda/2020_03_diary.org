@@ -1,7 +1,7 @@
 -*- coding: utf-8 -*-
 #+TITLE: 2020_03_diary.org
 #+CREATOR: LEEJEONGPYO
-#+STARTUP: showeverything indent logdrawer
+#+STARTUP: showeverything indent logdrawer latexpreview
 #+SEQ_TODO: NEXT(n/!) TODO(t@/!) WAITING(w@/!) SOMEDAY(s/!) PROJ(p) | Done(d@) CANCELLED(c)
 #+TAGS: URGENT(u) COMPUTER(c) SHOPPING(s) FAMILY(f) PHONE(o) GARAGE(g) test(t)
 #+PROPERTY: Effort_ALL 0:05 0:10 0:15 0:220 0:30 1:00 2:00 4:00 6:00 8:00
@@ -9,253 +9,1686 @@
 #+COLUMNS: %8TODO(To Do) %40ITEM(Book) %15GENRE(Genre) %5PAGES(Pages)
 #+ARCHIVE: archive_of_mine.org::
 #+OPTIONS: d:t \n:t p:t todo:nil
+#+TITLE: 목표를 달성하는 습관이 가장 큰 재산이다!
+* TODO file:~/config_github/app/emacs/wish_test.org 목표를 향해서, 도구와 질문사항을 수집할 것.
 
+[[inbox]] [[늘중요한오늘이다.]]    [[질문사항을 수집할]]
 
-[[inbox]] [[늘중요한오늘이다.]]
-
-#+NAME: top_named_target_list
-[[named_target]] 
-  [[named_target]
-TODO in THIS_diary.org { C-c / t } by Agenda in THIS file!!! very simple.
-C-c [ C-c / t ;;현재 폴더내의 투두만 국한
- 
-(rgrep "단어_들" "*.org" "~/config_github/app" nil)
-(find-grep "find ~/config_github/app -type f -exec grep --color -nH --null -e 단어_들 \{\} +")
-
-(rgrep "incognito" "*.org" "~/config_github" nil)
-(async-shell-command "brave --incognito 'https://www.youtube.com/watch?v=IggY48vEe2w&t=11m'")
-
-
-n과 w로 사용하는 법으로 集中의 노트를 사용하는 핵심의 기술이다!
-(find-file-other-window "~/config_github/app/emacs/readme.org")
-C-x n n         narrot-to-region
-C-x n w         widen                 2019_12_diary.org
-C-x n C-h       위의 설명을 보게함. 매우 중요한 특징으로 자주 활용할 것
-
-
-- emacs buffer/path in mini-buffer in org mode    [[info:ido#Top][info:ido#Top]]   [2020-03-04 Wed]
-- frame setting
-- macosx root /EFI by emacs /sudo::/
-- Ebay- action ~ 
-  - (vgb line) short 1pack(moving 1m) long 2m 3m,for long view of monitor
-  - mac pan 6$
-  - keyboard switcher
-- hareware/storage/ 체계적인 목록을 만들기
-  - kde: qt5 install for remote server kde in x220
-- emacs 
-  - 투명한 emacs만들기
-  - info:url#Top external-link for open okular: or mpv: incognito:
-  - tag study in german tutorial
-  - 목록을 일괄이동하는 법을 찾을 것 복사해는 붙이는 것 외에 단축키가 있을 것으로 생각됨
-    대안으로 마커설정후 탭으로 닫고 바로 아래줄로 이동한 다음에 다시 복귀함
-  - 저장장소정하기
-    - - C-c C-x b 블럭으로 열리면(닫기도 동일함. 그러나), 바로 C-x 0 를 실행함  C-x 4 0로 창을 닫는 것이 깔끔함.
-    - C-x 4 c 두 창을 열고 org-mode로 전환해서 줄의 이동의 잇점을 활용하는 워크플로우를 저장해 둔다. (clone-indirect-buffer-other-window NEWNAME DISPLAY-FLAG &optional NORECORD) help:clone-indirect-buffer-other-window help:clone-indirect-buffer
-
-[[info:coreutils#tr%20invocation][info:coreutils#tr invocation]]
-- timeout : file:../../app/timeout/readme.org  [[info:coreutils#timeout%20invocation][info:coreutils#timeout invocation]] for use in mpv espeak while shell command 대발견!
-
-
-- [[info:coreutils#expr%20invocation][info:coreutils#expr invocation]] expr
-- comm [[info:coreutils#comm%20invocation][info:coreutils#comm invocation]] 두 문장을 비교한 차이점을 출력하는 명령어
-$ printf '%s\n' a b c d e     > file1
-$ printf '%s\n'   b c d e f g > file2
-$ comm --total -123 file1 file2
-1       2       4       total
-
-option is a GNU extension.  Portable scripts should use ‘wc’
-t the totals, e.g.  for the above example files:
-
-$ comm -23 file1 file2 | wc -l    # number of lines only in file1
-1
-$ comm -13 file1 file2 | wc -l    # number of lines only in file2
-2
-$ comm -12 file1 file2 | wc -l    # number of lines common to both files
-4
-[[info:coreutils#join%20invocation][info:coreutils#join invocation]] join is column emerging power
-
-
-- tray - 바탕화면의 새로운 내용의 것을 추가하기(todo, vision!, .desktop 특정폴더의shell Scripts리스트로 rotate처럼 여러목록으로 불러냄. 클릭으로 실행함 
-  - (emacsq, project장. rotate, 시작당시부터 데몬을 실행해서 사용함.
-  - emacs실행파일을 아애 무력화하고 그것을 쉘의 특수문을 실행하는 것으로 대체함(기동시 server를 확인하고 가동함) 
-- (신당리) 지적공사: 신당리의 측량법을 문의해 보기
-  - 전화번호 검색하기, 물어볼 내용생각해두기 비용, 경계시 드는 것등등
-  - 신당리에 가기전에 전화나 방문으로 알아보기.
-- linux(lfs-gentoo)
-  - lfs분할해서 번역문을 넣던지 해서 요약노트화해서 최소화할 것
-  - grub lilo
-  - multi-notebook Why? note, experiment, macosx
-    - xcode 외부출력 
-* TODO 저장된 장치 분류하기 file:../../hardware/storage
-- KDE Downloads/앨빈토플러, 드러커의 문서있음. 가상머신의 자료있음(하드웨어로 옮길 것저장장소를 분류할 기준을 정하고 정확히 끊어지는 곳을 분할점으로 삼을 것.)
-- rsync사용을 고려할 것.
-hi 123 world
-유튜브에서 해킹검출의 추출을 보이는 장면을 노트해서 기록해 둘 것.-히스토리검색에 있을 것임 파일명 대구 rgrep *daegu* 직접찾는 실행하면서. 녹화익힐 것.
-
-!. emacs bar-file-path 검색해서 넣을 것
-file:../../../Music/_1_playlist.org 
-file:../../app/wm_compare_youtube_note.org layout record collect 
-
-(global-set-key (kbd "C-c c") 'org-capture)
-help:org-enforce-todo-checkbox-dependencies org-enforce-todo-checkbox-dependencies t
-help:org-enforce-todo-dependencies org-enforce-todo-dependencies t
-
-- use C-z M-z other function
-
-disable keybinding (info "(emacs) Rebinding") ;;M-x global-set-key <RET> C-z shell <RET>
-‘M-x global-unset-key <RET> KEY’
-     Make KEY undefined in the global map.
-‘M-x local-unset-key <RET> KEY’
-     Make KEY undefined locally (in the major mode now in effect).
-
-M-s o Occur
-다른 개별화된 명령을 수행하는 것을 만들어 본다.
-C-z runs the command suspend-frame (found in global-map), which is an
-interactive compiled Lisp function in ‘frame.el’.  help:suspend-frame
-It is bound to C-z, C-x C-z.  help:suspend-frame 
-(global-unset-key (kbd "C-z")) (global-unset-key (kbd "C-x C-z"))
-(global-unset-key (kbd "C-S-b"))
-help:org-agenda-files
-(describe-variable 'org-agenda-files)
-
-(setq org-agenda-files '(
-    "~/Music/mpv_files/mpv_files_list.org" 
-))
-
-    "~/config_github/app/emacs/03diary2020.org"
-
-org-agenda-files is a variable defined in ‘org.el’.
-Its value is ("~/config_github/app/emacs/03diary2020.org")
-Original value was nil
-Its value is
-("~/Music/mpv_files/mpv_files_list.org" "~/config_github/app/emacs/03diary2020.org")
-Original value was nil
+#+TITLE: 목표를 달성하는 습관이 가장 큰 재산이다!
 
 
 
-Documentation:
-The files to be used for agenda display.
-
-If an entry is a directory, all files in that directory that are matched
-by ‘org-agenda-file-regexp’ will be part of the file list.
-
-If the value of the variable is not a list but a single file name, then
-the list of agenda files is actually stored and maintained in that file,
-one agenda file per line.  In this file paths can be given relative to
-‘org-directory’.  Tilde expansion and environment variable substitution
-are also made.
-
-Entries may be added to this list with ‘M-x org-agenda-file-to-front’
-and removed with ‘M-x org-remove-file’.
+[2020-04-03 Fri]
 
 
+emms-mark-ext      20130529.327  new        melpa      Extra functions for emms-mark-mode and emms-tag-edit-mode
+  fn                 20170210.204  new        melpa      Concise anonymous functions for Emacs Lisp
+  focus              20191209.2210 new        melpa      Dim the font color of text in surrounding sections
+  golden-ratio       20191028.1732 new        melpa      Automatic resizing of Emacs windows to the golden ratio
+  golden-ratio-sc... 20170224.229  new        melpa      Scroll half screen down or up, and highlight current line
+  #+begin_src elisp
+(autoload 'golden-ratio-scroll-screen-down "golden-ratio-scroll-screen" "scroll half screen down" t)
+      (autoload 'golden-ratio-scroll-screen-up "golden-ratio-scroll-screen" "scroll half screen up" t)
+  (global-set-key [remap scroll-down-command] 'golden-ratio-scroll-screen-down)
+      (global-set-key [remap scroll-up-command] 'golden-ratio-scroll-screen-up)
+   ;; 반드시 등록해서 사용의 정의를 해둘 가치가 충분하다.
+  #+end_src
 
-발견 앱으로 여는 것을 지정하는 방법을 발견함.
-- Presentation Zen - Garr Teynolds 프리젠테이션의 방법론의 책을 소개받음.
-org-agenda-diary-file is a variable defined in ‘org.el’.
-Its value is ‘diary-file’
-diary need to study(org-agenda-diary-entry)
+
+  highlight          20190710.1527 new        melpa      Highlighting commands.
+  highlight-inden... 20200401.1707 new        melpa      Minor mode to highlight indentation
+  highlight-blocks   20190318.1557 new        melpa      Highlight the blocks point is in
+                
+  history            20160821.1602 new        melpa      History utility for source code navigation
+                = 최고이다. 반드시 등록을 검토하면 파일의 관리에 큰 도움이 될 것이다.
+
+  historyf           20151124.159  new        melpa      file history library like browser
+
+
+
+  hiwin              20150825.827  new        melpa      Visible active window mode.
+
+  highlight-conte... 20181122.2203 new        melpa      Improve orientation when scrolling
+  highlight-defined  20181106.1718 new        melpa      Syntax highlighting of known Elisp symbols
+  highlight-doxygen  20180829.1818 new        melpa      Highlight Doxygen comments
+  highlight-funct... 20170908.500  new        melpa      Highlight function/macro calls
+  highlight-leadi... 20151216.1222 new        melpa      Highlight leading spaces
+  highlight-opera... 20170213.2220 new        melpa      a face for operators in programming modes
+  highlight-quoted   20140916.1822 new        melpa      Highlight Lisp quotes and quoted symbols
+  highlight-refon... 20170211.2024 new        melpa      Visualize font-lock refontification.
+  highlight-stages   20161212.1457 new        melpa      highlight staged (quasi-quoted) expressions
+  highlight-symbol   20160102.2009 new        melpa      automatic and manual symbol highlighting
+  highlight-thing    20181229.1301 new        melpa      Minimalistic minor mode to highlight current thing under point.
+  highlight-uniqu... 20130612.542  new        melpa      highlight symbols which not appear in the repository
+  highlight2clipb... 20151020.1840 new        melpa      Copy text to clipboard with highlighting.
+  hindent            20180518.902  new        melpa      Indent haskell code using the "hindent" program
+  hippie-exp-ext     20160502.2326 new        melpa      Extension of hippie-expand
+  hippie-expand-s... 20170723.146  new        melpa      Hook slime's completion into hippie-expand
+  hippie-namespace   20140508.2041 new        melpa      Special treatment for namespace prefixes in hippie-expand
+  hive               20131217.1512 new        melpa      Hive SQL mode extension
+
+
+다운로드예정.
+  ipython-shell-send 20190220.2246 new        melpa      Send code (including magics) to ipython shell
+  jupyter            20200402.2031 new        melpa      Jupyter
+  kaocha-runner      20190904.1950 new        melpa      A package for running Kaocha tests via CIDER.
+  keycast            20200103.1239 new        melpa      Show current command and its key in the mode line
+모드라인저장해서 연구할 과제구조파악에 이용하면 좋을 것
+
+  lispxmp            20170926.23   new        melpa      Automagic emacs lisp code annotation
+  lispy              20200323.1616 new        melpa      vi-like Paredit
+
+
+  literate-elisp     20200327.620  new        melpa      A library to write Emacs Lisp codes in org mode
+  literate-starte... 20150730.1854 new        melpa      A literate starter kit to configure Emacs using Org-mode files.
+  live-code-talks    20180907.1647 new        melpa      Support for slides with live code in them
++  live-preview       20190415.2214 new        melpa      Live preview by any shell command while editing
+  live-py-mode       20200401.420  new        melpa      Live Coding in Python
+  lively             20171005.754  new        melpa      interactively updating text
+  livereload         20170629.650  new        melpa      Livereload server
+  livescript-mode    20140613.421  new        melpa      Major mode for editing LiveScript files
+  livid-mode         20131116.1344 new        melpa      Live browser eval of JavaScript every time a buffer changes
+  lms                20191102.3    new        melpa      Squeezebox / Logitech Media Server frontend
+  load-bash-alias    20200106.2015 new        melpa      Convert bash aliases into eshell ones
++  load-env-vars      20180511.2210 new        melpa      Load environment variables from files
+  load-theme-buff... 20120702.2036 new        melpa      Install emacs24 color themes by buffer.
+  lockfile-mode      20170625.507  new        melpa      Major mode for .lock files
+  lodgeit            20190802.1308 new        melpa      Paste to a lodgeit powered pastebin
+  log4j-mode         20160108.1918 new        melpa      major mode for viewing log files
++  memento-mori       20190628.2147 new        melpa      Reminder of mortality
++  memoize            20200103.2036 new        melpa      Memoization functions
++  memolist           20150804.1721 new        melpa      memolist.el is Emacs port of memolist.vim.
++  mentor             20190511.1638 new        melpa      Frontend for the rTorrent bittorrent client
+
++  metamorph          20180930.2028 new        melpa      Transform your buffers with lisp
+  mini-frame         20200402.1436 new        melpa      Show minibuffer in child frame on read-from-minibuffer
+  miniedit           20100419.1745 new        melpa      Enhanced editing for minibuffer fields.
+  minimal-session... 20140508.2041 new        melpa      Very lean session saver
+  minions            20200204.1950 new        melpa      A minor-mode menu for the mode line
+
+
+
+  #+RESULTS:
+  : golden-ratio-scroll-screen-up
 
 
 
 
-* TODAY INBOX from org-capture /tomonth.org
-** link
-** inbox
-*** TODO repeating daily
-SCHEDULED: <2020-03-14 Sat 09:00-10:00 ++1d> 
-:PROPERTIES:
-:LAST_REPEAT: [2020-03-14 Sat 16:14]
+** TODAY INBOX from org-capture /tomonth.org
+*** inbox
+그 목표를 정립할 것. 도구를 찾을 것
+무작정 다이어리에 수집이라도 할 것.
+** [2020-05-01 Fri]
+
+
+[2020-04-05 Sun]
+[2020-04-04 Sat]
+[2020-04-02 Thu]
+** [2020-04-01 Wed]
+
+영감님 전화해볼 만나볼 생각...
+1 + 2 = 3
+*** 습관을 완성하는 것이 중요함.
+- 습관리스트체크
+- TODO file:~/config_github/app/emacs/wish_test.org 목표를 향해서, 도구와 질문사항을 수집할 것.
+*** done
+** emacs_내부노트_초소형_간이모듈_copy용_1형
+- <반드시 주제에 맞게> * 핵심단어_는_이것을~하다      제목을 *재설정해 둘 것
+- 형식-주사용처:간단모듈양식의 오그파일_메모용
+      - 연관파일, 요약본은 ##diary.org
+(buffer-name)
+- 수집: 내용 name good test
+[[pdfview:~/Documents/rust_programming.pdf::100]]
+- 주사용처_복사범위(*부터 -:end: -:End: -:END: 까지들 중 필요부분복사) Copy로 사용시 위의 *제목을 수정하고 나머지줄은몽땅삭제할 것
+- diary.org_C-[ C-[ 1 등록시에는 -:end: 부분을 등록함 wish_list_test.org의 경우는 나중에 일과종료전까지 보낸다.
+:~~을기억하고_--를즉시++하라!:
+#+begin_text org :최종목적은_화두확실이다
+- 상황성립배경{주된목적_meta사고, 상위프로젝트위치, 그 문맥배경설명요약}:
+
+- 목적기여_강점: 
+- 주저장파일 (buffer-file-name) (buffer-name) 
+- 현재위치기록 (buffer-file-name) file:../../app/emacs/emacs_is_great.org
+- 전파필요한 직접연관파일(단련리스트파일, 인박스수집): file:../../app/emacs/emacs_is_great.org
+- 관련임시아이디어들 경쟁,대안 : 
+- 등록할 성과요약문 연관파일과 다이어리에 기재사항
+  - 딱! 성취감은 어디서: 
+
+- 더 필요하고 조사해야할 사안 그리고 대기중, 중단이유 또는 복안, 대안사항:
+  - 
+-#+end_text org
+-:end:
+;;;;;;;;;;;; 저장처리과정 ;;;;;;;;;;;;
+;(필수) 다이어리에 저장하고, 주저장파일핵심노트저장후,
+- 일감에 딱 발견할 수 있는 곳
+
+;;(적극권장) 주된목적_meta사고, 상위프로젝트위치, 주로 연동되는 핵심부나 반복연습하는 목록에 추가하여 연동하든지.
+- 음미하며, 지속적인 단련이 상기할 수 있는 곳 음미되지 않으면 성취는 없다.
+
+;;(상기 불충족 대안) 아니면 inbox에 wish리스트에 넣고 기다리든지 아니면 diary 위의 날짜에 밀 넣어두고 연관파일 결정되면 지우면 된다.
+file:~/config_github/app/emacs/wish_test.org 미루어둔다. - xxxxxx.org::기능-활용-연습필요하니 적합장소검토기록할 것
+
+
+
+
+#+begin_center text emacs-lisp :불타는_핵심부은_주변파급으로_공명진동한다이다
+; 핵심을 강화하는 문맥에 연관은 집중적인 추론으로 중요하다.
+
+
+
+
+
+#+end_center
+-#+end_text org
+-:END:
+
+- [ ] 구조파악할 것 ← 내부구조가 정확해야 활용을 높일수 있다
+  #+begin_src emacs-lisp
+  ; # 서열의 순서파악함. * > : > #+오그 > - [ ] > #+src
+  ; 발굴되기 전에는 모든 것이 모르는 것이다!
+
+  #+end_src
+  #+RESULTS:
+
+  #+begin_center text emacs-lisp :다시한번더,불타는_핵심부은_주변파급으로_공명진동한다이다
+  ; 핵심을 강화하는 문맥에 연관은 집중적인 추론으로 중요하다.
+
+
+  ; 다이어리에 저장하고, 핵심노트저장후,
+  ;; 주로 연동되는 핵심부나 반복연습하는 목록에 추가하여 연동하든지.
+  음미되지 않으면 성취는 없다.
+  ;; 아니면 inbox에 wish리스트에 넣고 기다리든지 아니면 위의 날짜에 밀 넣어두고 연관파일 결정되면 지우면 된다.
+
+  #+end_center
+
+
+#+begin_src sh :results table
+
+#+end_src
+#+RESULTS:
+
+#+end_text
+:end:
+** etc....
+  좋은 작지만 가치있는 습관을 모아서 목표를 높게 달성한다.
+- 완성된 기록은 아래에... 착실히 기록한다.
+* Done Diary 늘중요한오늘이다. 기록을 모은다.                      :COMPUTER:
+
+** [2020-03-31 Tue] 다음달 목표정립
+인포 Ctrl-h is prefix for all the help commands
+-  -page break 를 발견함 C-q C-l로 생성해서 중요한 부분을 빠르게 C-x [ C-x ] 로 찾아간다.document and feature discover- greek emacs user
+ 첫부분에 넣어야 검색되는 것 같다. Bookmark로 사용하면 짱이다!!!
+whitespace-mode - regex 사용과 연구에 필수적인 모드이다 노트해 둘 것.
+- org-tree-slide 프리젠테이션으로 보이는 것임. 검토해 볼 것
+
+- dwim = 'Do What I mean' smart contexts situation react
+  andtjfjwdjwghkrgl aksemfdj () # ete
+    # sfe
+    sdfasdf( + 1 2)
+    dsfsadf ( asd  asd f)
+M-(
+# s
+)
+C-u M-; ;; 커멘트를 지워버림
+
+iSearch에 대한 연구- 이맥스의 놀라움 기능에 감탄함.
+M-s C-e
+C-s C-w M-r
+M-s . 놀라움 단어의 전체로 인식해서 검색어로 인식함 
+M-s o occur검색어
+C-s C-w M-s o 
+C-5 M-s o 
+M-e 
+ 
+#+begin_src sh
+echo "hi
+"
+
+#+end_src
+
+ 13
+M-s h r Highhlight regexp
+M-s h u Undo the highlight
+C-s M-r Toggle regexp search
+
+#+begin_src emacs-lisp
+복사용
+#+end_src
+
+
+
+#+begin_text org
+
+
+
+#+begin_src emacs-lisp
+(message "hi")   
+
+#+end_src
+
+
+
+#+begin_src emacs-lisp
+(use-package isearch
+:config
+(setq search-whitespace-regexp ".*") ;; micromotion 4:00
+(setq isearch-lax-whitespace t) ;; Meta-s is common prefix in various search command
+(setq isearch-regexp-lax-whitespace nil)
+)
+#+end_src
+
+
+combine effect accumlate effect
+
+#+begin_src emacs-lisp
+;; alternative to `count-words-region'
+(global-set-key (kbd "M-=") 'count-words)
+#+end_src
+
+
+#+begin_src emacs-lisp
+(globla-set-key (kbd "M-SPC") 'cycle-spacing)
+(globla-set-key (kbd "M-o") 'delete-blank-lines)
+#+end_src
+
+
+
+
+#+end_text
+
+
+** [2020-03-30 Mon]ivy기능을 보완하는 것을 다운로드함 
+동영상을 보면서 이맥스의 기능을 확장하고 노트를 정리함.
+- 다시 발굴한 occur의 기능을 보라 (multi-occur-in-matching-buffers "org" "concat" nil)
+    - swifer와 결합하면 강력하다 S-SPC로 선택영역을 줄인다. C-M-m C-M-n\p M-o (occur창을 생성함 )C-c C-o 입력을 더해줌 M-i
+      
+test
+In Icicles, C-c ' is command icicle-occur, which can search multiple buffers.
+icicles.org
+
+(require 'icicles)
+- 설치한 항목모음
+  - ivy-posframe 비교 helm-posframe 있음
+  - ivy-omni-org ;; buffer, files, bookmarks single interface (require 'ivy-omni-org) Best!!!!
+  - ivy-emoji (require 'ivy-emoji) font 부족함.
+  - ivy-dired-history (require 'ivy-dired-history)
+(require 'savehist)
+ (add-to-list 'savehist-additional-variables 'ivy-dired-history-variable)
+ (savehist-mode 1)
+;; or if you use desktop-save-mode
+;; (add-to-list 'desktop-globals-to-save 'ivy-dired-history-variable)
+
+
+(with-eval-after-load 'dired
+  (require 'ivy-dired-history)
+  ;; if you are using ido,you'd better disable ido for dired
+  ;; (define-key (cdr ido-minor-mode-map-entry) [remap dired] nil) ;in ido-setup-hook
+  (define-key dired-mode-map "," 'dired))
+  - ivy-hydra (require 'ivy-hydra) 
+  - amx ;; Run `M-x amx-mode'. Enable ido-mode or ivy-mode if you
+    http://github.com/DarwinAwardWinner/amx/blob/master/README.mkdn
+  - helm-exwm별로 신통찮음
+  - historian 설치함.ivy-historian을 설치함 amx의 대용이 되면 좋을 것임
+  - ivy-hydra
+  - ivy-yasnippet 설치함 (require 'ivy-yasnippet) 놀라움!!!
+  - ivy-purpose (require 'ivy-purpose) help:ivy-purpose-switch-buffer-with-purpose 
+
+(require 'ivy-xref) ; unless installed from a package
+(setq xref-show-xrefs-function 'ivy-xref-show-xrefs)
+
+
+(use-package ivy-xref
+  :ensure t
+  :init
+  ;; xref initialization is different in Emacs 27 - there are two different
+  ;; variables which can be set rather than just one
+  (when (>= emacs-major-version 27)
+    (setq xref-show-definitions-function #'ivy-xref-show-defs))
+  ;; Necessary in Emacs <27. In Emacs 27 it will affect all xref-based
+  ;; commands other than xref-find-definitions (e.g. project-find-regexp)
+  ;; as well
+  (setq xref-show-xrefs-function #'ivy-xref-show-xrefs))
+Manual installation
+
+
+(use-package historian
+:ensure t
+)
+(use-package ivy-historian
+:ensure t
+)
+
+(use-package ivy
+  :init
+  (ivy-mode +1)
+  (historian-mode +1)
+
+  :config
+  (ivy-historian-mode +1))
+
+ - (use-package ivy-todo :ensure t
+  :bind ("C-c t" . ivy-todo)
+  :commands ivy-todo
+  :config
+  (setq ivy-todo-default-tags '("PROJECT")))
+(setq ivy-todo-file "/home/thinkpad/config_github/app/emacs/ivy-todo.org")
+
+
+- ivy-youtube 설치함 (require 'ivy-youtube)
+(setq ivy-youtube-key
+
+- bbdb counsel-bbdb (require 'counsel-bbdb)
+ - backlight 설치함 (require 'backlight)
+- (use-package bar-cursor
+:ensure t) (bar-cursor-mode 1) 잘 된다. 입력이 더욱 명확하게 된다
+
+- (require 'e2wm)
+(global-set-key (kbd "M-+") 'e2wm:start-management)
+
+- posframe 등을 설치할 것.
+file:/home/thinkpad/config_github/app/emacs/_2_will_installed_needed_packages.org
+#+begin_src sh :results silent
+setxkbmap -option ""
+nitrogen --restore
+#+end_src
+- (setq org-src-window-setup 'current-window)
+
+- exwm-workspace-move-window help:exwm-workspace-move-window
+- exwm-workspace-switch-to-buffer
+- help:exwmx-switch-application 단축키를 만들어서 창전환이 쉽게 이루어져야함. exwmx-switch-application
+disable C-t → C-t C-r로 로피를 실행하는 명령을 만든다.
+(global-unset-key (kbd "C-t C-r"))
+(global-set-key   (kbd "C-t C-r") 'my-rofi)
+
+help:start-process
+(defun my-rofi () 
+   (interactive)
+   (start-process "rofi" nil "rofi" "-show"))
+(global-unset-key (kbd "C-t C-r"))
+(global-set-key   (kbd "C-t C-r") 'my-rofi)
+(global-set-key   (kbd "C-t R") 'elwm-rotate-window) ;; 회전으로 대신하는 놀라운 기능이라고 생각된다.
+(global-set-key   (kbd "C-t b") 'exwmx-switch-application)
+
+- (counsel-fzf nil nil) help:counsel-fzf
+- (helm-multi-swoop-all) help:helm-multi-swoop-all
+- help:counsel-switch-to-shell-buffer
+- help:counsel-switch-to-shell-buffer 빠르게 쉘을 실행하여서 EXWM의 부족한 터미널 기능을 보완할 것으로 기대함
+- posframe 
+help:global-unset-key
+help:elwm-swap-right 
+(global-set-key (kbd "C-S-M-s-<up>") 'elwm-swap-up)
+(global-set-key (kbd "C-S-M-s-<right>") 'elwm-swap-right)
+(global-set-key (kbd "C-S-M-s-<left>") 'elwm-swap-left)
+(global-set-key (kbd "C-S-M-s-<down>") 'elwm-swap-down)
+
+(exwm-input-set-key (kbd "C-S-M-s-<up>") 'elwm-swap-up)
+(exwm-input-set-key (kbd "C-S-M-s-<right>") 'elwm-swap-right)
+(exwm-input-set-key (kbd "C-S-M-s-<left>") 'elwm-swap-left)
+(exwm-input-set-key (kbd "C-S-M-s-<down>") 'elwm-swap-down)
+
+(global-unset-key (kbd "C-S-M-s-<up>"))
+(global-unset-key (kbd "C-S-M-s-<right>"))
+(global-unset-key (kbd "C-S-M-s-<left>") )
+(global-unset-key (kbd "C-S-M-s-<down>") )
+(global-unset-key   (kbd "C-t R"))
+(exwm-input-set-key (kbd "s-R")
+                   '(lambda ()
+                     (interactive) 
+(exwm-mff-mode t) (exwm-mff-warp-to-selected) (seethru 90) (elwm-rotate-window 1)
+                     (other-window 1) 
+)
+)
+(exwm-input-set-key (kbd "S-s-r") 'elwm-rotate-window) ;; 회전으로 대신하는 놀라운 기능이라고 생각된다.
+help:elwm-rotate-window
+ExWm의 단점
+- 투명화가 떨어지는 효과를 보인다. seethru의 기능이 별로임.
+(setq org-ellipsis "   ¬") 찾아서 넣을것.
+
+
+** above is today
+
+** 실질적인 대상을 앞에 두어야 통합이 쉬울 것이다. 자주 보기 쉬운 것이 이루기 좋다.
+
+월간 주간 정리요약보고서 작성할 것
+주간 목표정립
+        [2020-03-01 Sun] [2020-03-16 Mon]
+** [2020-03-29 Sun] 새벽에 ivy counsel swifer의 놀라움에 감탄함. EXWM설치성공! 
+
+
+
+pdf-tools의 놀라운 성과를 발굴함. 노트의 기능을 보완한 놀라운 기능이라고 생각된다. pdf-tools.org로 모아서 정리할 것
+불쌍한 나비처럼 흩날리는 고딩들에 대한 가여운 연민... 교육의 부재 방향의 상실, 허망한 결말...
+
+
+새벽에 ivy counsel swifer의 놀라움에 감탄함.
+- /home/thinkpad/config_github/app/emacs/_2_will_installed_needed_packages.org
+
+- dimmer.org설치함. 활성창외에는 흐리게 만듬.
+- elwm.
+- emms 음악감상의 새로운 지평이 열리기를 기대함.
+- convert 명령을 찾아냄 폴터로 옮기고 저장한 곳을 지정할 거샤ㅑㅡㅑ럄ㄴㅇㄹㅁㄴㅇㄹ
+- egg-timer 타이머.org에 저장할 것.
+:log_opened_filed:
+    emacs_is_great.org    16468 Org              ~/config_github/app/emacs/emacs_is_great.org
+    customize_face_sav...   10068 Org              ~/config_github/app/emacs/shell_emacs/customize_face_saved_to_load.org
+    haskell_in_emacs.org    4133 Org              ~/config_github/app/emacs/haskell_in_emacs.org
+  * *scratch*               367 Org              
+    src_color_bakgroun...   10638 Org              ~/config_github/app/emacs/src_color_bakground.org
+    dired.org              9122 Org              ~/config_github/app/emacs/dired.org
+    _2_will_installed_n...    8994 Org              ~/config_github/app/emacs/_2_will_installed_needed_packages.org
+    leftwm.org              279 Org              ~/config_github/app/emacs/leftwm.org
+    ivy.org                  35 Org              ~/config_github/app/emacs/ivy.org
+    stumpwm-mode.org        103 Org              ~/config_github/app/emacs/stumpwm-mode.org
+    occur.org               159 Org              ~/config_github/app/emacs/occur.org
+    exwm.org                570 Org              ~/config_github/app/emacs/exwm.org
+    engine-mode.org        1897 Org              ~/config_github/app/emacs/engine-mode.org
+    encourage-mode.org      149 Org              ~/config_github/app/emacs/encourage-mode.org
+    ein.org                 270 Org              ~/config_github/app/emacs/ein.org
+    emms.org               2594 Org              ~/config_github/app/emacs/emms.org
+    elwm.org               1205 Org              ~/config_github/app/emacs/elwm.org
+    03diary2020.org       54093 Org              ~/config_github/app/emacs/03diary2020.org
+    egg-timmer.org          561 Org              ~/config_github/app/emacs/egg-timmer.org
+    dimmer.org             1162 Org              ~/config_github/app/emacs/dimmer.org
+    org-noter.org           456 Org              ~/config_github/app/emacs/org-noter.org
+    pdf-tools.org         11227 Org              ~/config_github/app/emacs/pdf-tools.org
+    org-wiki.org            449 Org              ~/config_github/app/emacs/org-wiki.org
+    bookmark_rust_manua...    1584 Org              ~/config_github/language_computer/rust/bookmark_rust_manual.org
+    hello_cargo.org        1374 Org              ~/config_github/language_computer/rust/test_rust/hello_cargo/hello_cargo.org
+    pdf_list_of_deskt...  205871 Org              ~/Desktop/pdf_list_of_desktop.org
+    de_architectura_l...   12113 Org              ~/config_github/great_books/vitruvius/de_architectura/de_architectura_liber01_03.org
+    test_golden.org          11 Org              ~/config_github/app/emacs/test_golden.org
+    goldendict.org         1812 Org              ~/config_github/app/emacs/goldendict.org
+    pdft_ools-compile.org    2204 Org              ~/config_github/app/emacs/pdft_ools-compile.org
+    readme.org            10395 Org              ~/config_github/app/stumpwm/readme.org
+    study_stumpwm_to_m...     460 Org              ~/config_github/app/stumpwm/study_stumpwm_to_make_frame_and_resize_open_app_test.org
+    seethru.org            1455 Org              ~/config_github/app/emacs/seethru.org
+
 :END:
-:LOGBOOK:
-- State "CANCELLED"  from "TODO"       [2020-03-14 Sat 16:14]
-- State "TODO"       from "NEXT"       [2020-03-14 Sat 16:12] \\
-  make list of every study divided by time.
-- State "CANCELLED"  from "TODO"       [2020-03-14 Sat 16:11]
+
+** [2020-03-28 Sat] StumpWM의 기능을 강화함! 
+stumpwm에서 okular의 단축키를 defind-remapped-keys 로 재설정해서 C-n C-p를 사용가능하게 한다.
+
+- 사전을 보는 방법을 획기적으로 개선함. 투명한 창으로 만들어서 보는법
+한글영어를 문서를 
+- stumpwm/readme.org에 총괄저장할 것.
+#+begin_src elisp
+  (require 'ivy)
+#+end_src
+(require 'elwm)
+
+
+- ;; -*- lisp -*- 
+;; 리스트문맥으로 해석하게 함을 발굴함.
+
+그룹선택 grouplist 단축키로 생각할 것
+윈도우선택 windowlist-by-class
+expose 단일창만 생성해서 그렇지 보기에 최강의 윈도우 선택의 방식을 보여준다. 단축키로 만들고 다시 분할을 하는 것도 방법일 것이다.
+
+toggle-always-show 을 시행한 다음에는 순서를 높여서 번호의 중복을 막는다
+renumber 99 드디어 제발굴한다. 원하는 순번으로 재조정해서 다루기 쉬운 인식의 번호로 재가공하는 것이 효과적인 방법이다.
+C-N이 숫자를 변경하는 것으로 발견함
+- 중요한 결정 컨트롤키를 띄는 것이 방해를 유발하므로 통일하여
+자주사용하는 것은 모두 컨트롤키를 누른상태로 아닌것은 띄는 것으로 통일한다 이맥스와 스텀프에 적용할 것
+C-x C-o를 윈도우 변경으로 수정함 스텀프도 둘다변경함.
+(define-key *root-map* (kbd "C-o") "fnext") ;; stumpwm통일된 실수없는 이동을 위한 선택!
+(global-define-key (kbd "C-x C-o") ) ;; stumpwm통일된 실수없는 이동을 위한 선택!
+C-x C-S-o.(delete-blank-lines) 로 변경함
+pull-from-windowlist 는 단축키로 실행해도 유용한 당김의 명령이다.
+C-t ; list-window-properties ;; 현재 사용중인 윈도우의 정보를 획득해서 그것을 활용하여 다른 곳에 확장된 개념으로 재정립
+C-t ; commands 엔터 wind list 로 단축키를 만들어 두는 것이 유용한 것으로 생각된다.
+C-t h f/c/k/v등을 사용해서 정보를 얻는 유용함이 발견된다. C-h와 비교되는 정보의 보고
+
+
+
+*** link
+매일 듣고 익힐 사항링크{C-[ C-[ 숫자} , 도구, 정리는 나중에 하더라도 일단 수집.]]
+
+(seethru 90) (seethru 100) file:seethru.org
+- 닷파일로 옮길것. 즉, 따라서 설치하고 시행할 명령을 만들어서 
+(require 'seethru)
+
+help:seethru-relative 
+seethru-relative
+(seethru-relative -5) (seethru-relative +5)
+
+
+file:pdf-tools.org
+(finder-commentary "pdf-tools")
+- org capture pdf text [[https://emacs.stackexchange.com/questions/51942/how-can-i-capture-selected-text-in-a-pdf-view-buffer-with-org-capture][How can I capture selected text in a pdf-view buffer with org-capture? - Emacs Stack Exchange]]
+    연구필요함 대박이다. 문서의 부분을 자동으로 노트로 옮기는 기능이면 매우 혁신적이다.
+
+(defun org-capture-pdf-active-region ()
+  "Capture the active region of the pdf-view buffer."
+  (let* ((pdf-buf-name (plist-get org-capture-plist :original-buffer))
+         (pdf-buf (get-buffer pdf-buf-name)))
+    (if (buffer-live-p pdf-buf)
+        (with-current-buffer pdf-buf
+          (car (pdf-view-active-region-text)))
+      (user-error "Buffer %S not alive." pdf-buf-name))))
+
+(setq org-capture-templates
+      '(
+        ("j" "Notes" entry (file+olp "/temp/Notes.org" "Notes")
+         "* %?\n%(org-capture-pdf-active-region)\n")
+        )
+      )
+
+latex fragment 12.5.2 
+C-c C-x C-l
+
+#+begin_src latex
+
+\documentclass[12pt]{article}
+\usepackage{lingmacros}
+\usepackage{tree-dvips}
+\begin{document}
+
+\section*{Notes for My Paper}
+
+Don't forget to include examples of topicalization.
+They look like this:
+
+{\small
+\enumsentence{Topicalization from sentential subject:\\ 
+\shortex{7}{a John$_i$ [a & kltukl & [el & 
+  {\bf l-}oltoir & er & ngii$_i$ & a Mary]]}
+{ & {\bf R-}clear & {\sc comp} & 
+  {\bf IR}.{\sc 3s}-love   & P & him & }
+{John, (it's) clear that Mary loves (him).}}
+}
+
+\subsection*{How to handle topicalization}
+
+I'll just assume a tree structure like (\ex{1}).
+
+{\small
+\enumsentence{Structure of A$'$ Projections:\\ [2ex]
+\begin{tabular}[t]{cccc}
+    & \node{i}{CP}\\ [2ex]
+    \node{ii}{Spec} &   &\node{iii}{C$'$}\\ [2ex]
+        &\node{iv}{C} & & \node{v}{SAgrP}
+\end{tabular}
+\nodeconnect{i}{ii}
+\nodeconnect{i}{iii}
+\nodeconnect{iii}{iv}
+\nodeconnect{iii}{v}
+}
+}
+
+\subsection*{Mood}
+
+Mood changes when there is a topic, as well as when
+there is WH-movement.  \emph{Irrealis} is the mood when
+there is a non-subject topic or WH-phrase in Comp.
+\emph{Realis} is the mood when there is a subject topic
+or WH-phrase.
+
+\end{document}
+
+#+end_src
+
+#+RESULTS:
+#+begin_export latex
+\documentclass[12pt]{article}
+\usepackage{lingmacros}
+\usepackage{tree-dvips}
+\begin{document}
+
+\section*{Notes for My Paper}
+
+Don't forget to include examples of topicalization.
+They look like this:
+
+{\small
+\enumsentence{Topicalization from sentential subject:\\ 
+\shortex{7}{a John$_i$ [a & kltukl & [el & 
+  {\bf l-}oltoir & er & ngii$_i$ & a Mary]]}
+{ & {\bf R-}clear & {\sc comp} & 
+  {\bf IR}.{\sc 3s}-love   & P & him & }
+{John, (it's) clear that Mary loves (him).}}
+}
+
+\subsection*{How to handle topicalization}
+
+I'll just assume a tree structure like (\ex{1}).
+
+{\small
+\enumsentence{Structure of A$'$ Projections:\\ [2ex]
+\begin{tabular}[t]{cccc}
+    & \node{i}{CP}\\ [2ex]
+    \node{ii}{Spec} &   &\node{iii}{C$'$}\\ [2ex]
+        &\node{iv}{C} & & \node{v}{SAgrP}
+\end{tabular}
+\nodeconnect{i}{ii}
+\nodeconnect{i}{iii}
+\nodeconnect{iii}{iv}
+\nodeconnect{iii}{v}
+}
+}
+
+\subsection*{Mood}
+
+Mood changes when there is a topic, as well as when
+there is WH-movement.  \emph{Irrealis} is the mood when
+there is a non-subject topic or WH-phrase in Comp.
+\emph{Realis} is the mood when there is a subject topic
+or WH-phrase.
+achieve ‘zero-cost abstractions
+\end{document}
+#+end_export
+** [2020-03-27 Fri] 당겨진 받침대 더욱 다듬어진 책장과 노트북받침!
+방을 정리하니 더욱 새롭게 단정하게 함. 책장의 철빔을 보강해서 휘어짐을 막고 노트북받침대를 더욱 앞으로 당겨 안정감과 쾌적한 좌석을 확충함
+- 지속적인 개선이 새롭게 나아짐.
+어제에 이어 도서를 정리하며 컴퓨터 북들을 읽어감.
+** [2020-03-26 Thu] 모름(형상없이 머무름없음=LOGOS)을 앎을 견디라=불오염.
+- 강한 의문을 탐구력으로 모름(형상없이 머무름없음=LOGOS)을 앎을 견디라=불오염.
+의심이 사라짐, 그냥 의심을 두되 의심이 사라짐.
+적멸하다는 것은 적멸이 아니니라.
+마음에서 뛰어 나가는 것을 돌이키는 것이 실력이다. 소를 잡는 실력 구기방심 마음을 잡는 실력이다.
+모름을 아니 바로 앎(내명학-LOGOS)이 작동하는 것을 알지라! 앎이 작동하면 부처다.
+내명이 해방의 시작 푸루사의 해방이 시작됨 빛중의 빛 육체에 제한된 착각의 아만에서 해방운동이 시행됨.
+모름을 견디려면 의심이 있어야 하므로 화두이다. 용기있게 모름을 견디라!
+    전도된 기관의 역할을 돌이킴 틈만나면 밖으로 튀어나가는 이 힘을 거두어 들이는 의심을 하라 마음의 힘을 그곳에 두라 100쪽
+481 명명백두초 명명조사의 = 대학지도 명명덕 친민 지어지선
+488 설사일물즉부중
+환가수증부
+수증즉불무 오염즉부득
+지차불오염 제불지소호념 여기여시 오역여시 <오가해 488쪽>
+
+숨겨진 것이 없이 모르는 그 자리가 본래 알고모르고를 떠난 자리이다.
+
+염오=안다 모른다(무명=불각,시각=본각)를 떠난 (무이상=불이)자리는 본래 여여(알고모르고에 상관없이두릇) 하나, 모른다고 난리를 치니 더욱 암중모색이다.
+뭐라 할 말이 없다. 손만 흔들면서 보일뿐. 멍충이같이 덤덤하다. 그래서 몰록드러남이다.
+수증즉불무 염오즉부득이다.
+응무소주 이생기심
+손바닥을 딱 치면서 이것이 니 손이냐 내손이냐 딱 치면 아야!
+
+보임-살활이 자재하다는 것은 놓고 들고에 구예가 없다.체상용
+말없는 그 원의 한 자리는 자취가 없어 말없는 가운데 말을 했을 뿐이다.
+무소종래 역무소거 고명여래 그 이름만 여래이다.
+불래상이래 불견상이견
+
+- 키보드 자판익힘
+QWERT YUIOP
+ASDFG HJKL;
+ZXCVB NM,./
+CsM
+
+ㅂㅈㄷㄱㅅ ㅛㅕㅑㅐㅔ
+ㅁㄴㅇㄹㅎ ㅗㅓㅏㅣ;
+ㅋㅌㅊㅍㅠ ㅜㅡ, ./
+그리스어의 화면을 붙여서 만든 글자를 확대해서 그림으로 보낸다음, 바탕화면에 보낸다.
+자판을 익히는 것에 큰 도움이 될 것이다.
+
+
+
++ 0:33:56 ::
+  * 0:34:54 ::
+  * 0:35:02 :: afasf
+  * 0:35:08 ::
+  * 0:35:18 ::
+  * 0:50:03 ::
+    
+  * 0:50:11 :: 시간이 다 되 감.... :)
+  * 0:50:34 :: 
+  * 0:36:33 ::
+    ㅁㄴㅇㄹ
+    ㅁㄴㅇ러 글자입력이 반영되는 구조를 만들어 갑니다.
+
+** [2020-03-25 Wed] 허무한 마음이 바로 재산임을 보라! 일체허무는 한계로 보이는 것일 뿐이다. 환영이다.
+
+
+- emacs는 최적화를 추구하는 것에 방점이라서 문장의 속도나 효과적인 도구성보다는 메타사고에 적합하다. 즉 
+다양한 언어와 시스템의 구조에서 어디서 균형을 잡아들어 가는 것을 정하는 것이다.
+
+- 자신의 okular 한영
+  사전,    이맥스    구조의 완벽한 조합의 윈도우 구성을 배치시도함. 투명과 결합해서 완벽한 인간의 문화
+
+- catholic Bible reading
+ #+begin_src emacs-lisp
+
+(start-process "pdf okular" nil "okular" ;; 빠른 단축으로 만드는 것은 C-c C-l elisp: 를 사용해서 넣으면 됨
+"/home/thinkpad/Desktop/bible_nasb.pdf"  ;; 카톨릭영어성경을 읽는 능력이 돌아왔다
+)
+
+(start-process "pdf okular" nil "okular" ;; 빠른 단축으로 만드는 것은 C-c C-l elisp: 를 사용해서 넣으면 됨
+"/home/thinkpad/Desktop/catholic_bible_korean.pdf"; "-p 6"
+)
+
+
+#+end_src
+
+
+- as a background task: 괄호속에 묶어서 명령구조를 형성하며 더욱이 배경으로 실행하는 것을 발견함.
+#+begin_quote sh
+# entr 메뉴얼맥에 저장된 것에서 괄호속에 묶어서 명령구조를 형성하며 더욱이 배경으로 실행하는 것을 발견함.
+#  Launch and auto-reload a node.js server as a background task:
+$ (ls ∗.js | entr -r node app.js &)
+$ (ls ∗.js | entr -r node app.js &)
+(start-process "pdf okular" nil "okular" ;; 빠른 단축으로 만드는 것은 C-c C-l elisp: 를 사용해서 넣으면 됨
+"/home/thinkpad/Documents/terminal/watch_entr_while_case_while_test_if_etc_man_bash_syntax.txt.pdf"
+)
+
+
+(start-process "pdf okular" nil "okular" ;; 빠른 단축으로 만드는 것은 C-c C-l elisp: 를 사용해서 넣으면 됨
+"/home/thinkpad/Documents/terminal/top2_man_top_.txt.pdf"
+)
+
+
+(start-process "pdf okular" nil "okular" ;; 빠른 단축으로 만드는 것은 C-c C-l elisp: 를 사용해서 넣으면 됨
+"/home/thinkpad/Documents/terminal/eval_man_readline_.txt.pdf"
+)
+
+(start-process "pdf okular" nil "okular" ;; 빠른 단축으로 만드는 것은 C-c C-l elisp: 를 사용해서 넣으면 됨
+"/home/thinkpad/Documents/terminal/learning_the_bash_shell.pdf" 
+"-p" "486" "--find" "eval" ;; 신기하게 발견됨. 위의 내용과 공통임
+)
+
+
+(start-process "pdf okular" nil "okular" ;; 빠른 단축으로 만드는 것은 C-c C-l elisp: 를 사용해서 넣으면 됨
+"/home/thinkpad/Music/bash-cookbook.pdf" ;; 
+
+ "-p" "481" "--find" "Arguments" ;; - page for -
+ ;;Use !:1 for the first argument on the command line, !:2 for the second, and so on.
+)
+ "-p" "" ) ;; - page for -
+
+
+
+(start-process "pdf okular" nil "okular" ;; 빠른 단축으로 만드는 것은 C-c C-l elisp: 를 사용해서 넣으면 됨
+"/home/thinkpad/Music/Clojure for the Brave and True_ - Daniel Higginbotham.pdf" ;; 
+ "-p" "51" ) ;; - page for - 이맥스부분
+"-p" "57" ) ;; - page for - Clojure 읽기 
+"-p" "28" ) ;; - page for - Clojure 읽기
+
+
+
+#+end_quote
+
+- set mark−modified−lines on
+readline is good! 마크로입력기능됨!.
+철자이동가능함 C-] 철자 C-M-] 철자 순간이동된다.
+ #+begin_src org
+(man "readline")
+
+(start-process "pdf okular" nil "okular" ;; 빠른 단축으로 만드는 것은 C-c C-l elisp: 를 사용해서 넣으면 됨
+"/home/thinkpad/Documents/terminal/eval_man_readline_.txt.pdf"
+"-p" )
+(start-process "pdf okular" nil "okular" ;; 빠른 단축으로 만드는 것은 C-c C-l elisp: 를 사용해서 넣으면 됨
+"/home/thinkpad/Documents/terminal/eval_man_readline_.txt.pdf"
+)
+
+#+begin_quote sh
+set mark−modified−lines on
+# 
+#+end_quote
+
+#+end_src
+
+
+
+** [2020-03-24 Tue] 방정리(더많은 공간확보) 
+
+- 자료구조의 성립에 대하여...
+
+
+
+
+- 분절성의 강화중요성을 타자에 반영할 것
+ :유심히관찰하면서무심으로넘어가라:
+  #+begin_quote org
+손의 동작을 유심히 관찰하면서 마음의 흐름을 무의식에 익히는 연습을 하라.
+- [분절습관이들도록관찰] 분절성의 강화, 그리고 입력초기를 관찰하는 습관이 중요한 것이다.
+ 글씨를 쓰는 것은 분절성를 강화하는 것이다.
+ 타자의 장면을 쳐다보면서 최대한 정확한 동작을 연마하는 과정이 필수적이다.
+즉, 타자의 손동작을 관찰하는 것이 중요한 것이 었다.
+또한 이전의 모든 구분은 무용한 실천이었음이 자명하다.
+보면 안된다는 것은 헛된 착각이었음을 알지어다. vim에서 HJKL만을 고집하는 습관이 잘못된 것이었음을 깨달았어야 했다.
+즉, 자신의 잣대가 생성되는 것이 중요한 것이며, 함부로 속단해서 판단하는 것은 어리석은 것이다.
+타자를 치는 것은 글자를 쓰는 것과 같이 입력과 쓰는 부분을 명확히 관찰하는 것에서 출발해야 한다. [2020-03-24 Tue 08:35]
+#+end_quote
+
+
+:end:
+
+
+
+
+
+1) 시각화 부산
+   - 사용한 물통의 뒤집어 놓는 것을 생각해 볼 것.
+
+2) [0%] godmacs 의 이유-기본적으로 계산을 전제한 것이 버퍼이며 버퍼의 기능을 극대화 한 것이 이맥스이다.
+
+3) 
+   1) 원칙상-계산이 정상적인 것임. 따라서 계산없이 보이는 것도 제한된 계산구조이거나 계산없이 입력하라고 지시한 것임 반영될 구조를 생성하는 것이 주목적이었음
+
+      - 즉 오그모드의 
+
+
+   1. 오그모드를 이 안에서 불러 냅니다.
+
+      #+begin_example org
+     
+
+      #+end_example
+
+   2. 
+
+   3. 리스트 반영의 구조
+      - S-좌우화살표의 놀라운 리스트변경기능을 발견함
+        1) 순서변경이 바로 반영되는 것을 알게 됨
+        2) [0/1] aksdfk
+           1) 목록의 숫자형, -형, 스타형 등의 변환이 되며,
+
+           2) [ ] 심지어 소스박스를 하위에 둘 수 있다 단
+
+              1) 오직 첫문장의 첫글자를 당겨서 쓰면 됨
+               #+begin_quote org
+      - [1/2] [50%] tst is ogood [50%]
+        - [X] test
+          - [100%] asdf
+            - [X] sdfasdf
+        - [ ]
+
+
+         #+end_quote
+        3) [100%] [1/1][갱신반영의 순서갱신]목록의 순서갱신이 새롭게 계산되며 그 순서로 반영되는 놀라운 구조임
+           1) [X] 
+        4) 문서의 자동적인 갱신구조
+           1) 
+        5) asdfadfad
+        6) good
+        7) dfasdfkadsfad
+           1. asdfadfad
+
+- goldendictionary
+  - 
+
+
+
+
+
+** etc....
+
+
+
+** [2020-03-23 Mon] <하루의 성과를 기록할 것>
+
+
+
+- [물질의지배성강화] 옷 옷끼리 모으고, 물통을 모으고, 또한 선반축을 설치하니 성과가 새롭다.
+- [언어의 인식을 왜라는 관점에서 접근하는 것이 필요하다.
+    즉, 왜 ao음가가 장음화되면 탈격의 단수형이 되는 인식을 가지게 되는가?  
+
+
+- help:full-calc (full-calc) 
+  :-calc계산기의기본사용법_full-calc:
+  #+begin_text org calc.org:최종목적은_화두확실이다
+help:full-calc (full-calc)
+full-calc
+full-calc-keypad
+help:full-calc (full-calc)
+help:full-calc-keypad
+C-x *		calc-dispatch
+  #+end_text
+  :end:
+
+
+- help:company-yasnippet '<org '탭 > file:../../app/emacs/emacs_is_great.org
+ - (공식메뉴얼도움기능어) (실행예문)              (파일: 저장위치)
+  :'org'탭단축키로저장된yasnappet:
+  #+begin_text org <org_목적은_빠른 노트입력화두확실이다
+
+yasnippet.org 
+company_mode
+add-hook .org
+(company-yasnippet "org탭")
+- 등록할 성과요약문 연관파일과 다이어리에 기재사항
+;;;;;;- 일감에 딱 발견사용할 수 있는 곳
+- 목적기여_강점: 
+
+- :~~을기억하고_--를즉시++하라!:
+- <반드시 주제에 맞게> * 핵심단어_는_이것을~하다      제목을 *재설정해 둘 것
+
+
+
+#+end_text
+:end:
+
+
+
+*** [2020-03-23 Mon]core_Value_질의하며, meta_언어력의 중요성과 emacs
+- <반드시 주제에 맞게> * 핵심단어_는_이것을~하다      제목을 *재설정해 둘 것
+- 형식-주사용처:간단모듈양식의 오그파일_메모용
+      - 연관파일, 요약본은 ##diary.org
+(buffer-name)
+- 수집: 내용
+
+- 주사용처_복사범위(*부터 -:end: -:End: -:END: 까지들 중 필요부분복사) Copy로 사용시 위의 *제목을 수정하고 나머지줄은몽땅삭제할 것
+- diary.org_C-[ C-[ 1 등록시에는 -:end: 부분을 등록함 wish_list_test.org의 경우는 나중에 일과종료전까지 보낸다.] ]
+:수많은-flag들을_바라본다면_강한meta목적잣대를의식하고핵심질의로통합파악하며_즉시언어로분할하며처리하라!:
+#+begin_text org :최종목적은_화두확실이다
+- 상황성립배경{주된목적_meta사고, 상위프로젝트위치, 그 문맥배경설명요약}:
+browse-url-browser-function에서 file:../../app/emacs/browse_url_browser_function.org
+
+환경변수설정부분을 이해하다가 언어분할성에 대한 성찰
+    - 과연 어느부분을 어떻게 다를지를 선택하는 선별의 결단에 직면한다.
+- 목적기여_강점: (통합과 분화가 동시에 진행됨-심리적 자아성장과 연동됨) 컴퓨터언어는 강력한 목적의식과 언어력으로 결단을 요구하며
+- 주저장파일 (buffer-file-name) (buffer-name) 
+- 현재위치기록 (buffer-file-name) file:../../app/emacs/emacs_is_great.org
+- 전파필요한 직접연관파일(단련리스트파일, 인박스수집): file:../../app/emacs/emacs_is_great.org
+- 관련임시아이디어들 경쟁,대안 : 
+- 등록할 성과요약문 연관파일과 다이어리에 기재사항
+  - 딱! 성취감은 어디서: 
+
+- 더 필요하고 조사해야할 사안 그리고 대기중, 중단이유 또는 복안, 대안사항:
+  -
+         (eww-browse-url  "file:///usr/share/doc/git-doc/howto/update-hook-example.html")
+-#+end_text org
+-:end:
+;;;;;;;;;;;; 저장처리과정 ;;;;;;;;;;;;
+;(필수) 다이어리에 저장하고, 주저장파일핵심노트저장후,
+- 일감에 딱 발견할 수 있는 곳
+
+;;(적극권장) 주된목적_meta사고, 상위프로젝트위치, 주로 연동되는 핵심부나 반복연습하는 목록에 추가하여 연동하든지.
+- 음미하며, 지속적인 단련이 상기할 수 있는 곳 음미되지 않으면 성취는 없다.
+
+;;(상기 불충족 대안) 아니면 inbox에 wish리스트에 넣고 기다리든지 아니면 diary 위의 날짜에 밀 넣어두고 연관파일 결정되면 지우면 된다.
+file:~/config_github/app/emacs/wish_test.org 미루어둔다. - xxxxxx.org::기능-활용-연습필요하니 적합장소검토기록할 것
+
+
+
+
+#+begin_center text emacs-lisp :불타는_핵심부은_주변파급으로_공명진동한다이다
+; 핵심을 강화하는 문맥에 연관은 집중적인 추론으로 중요하다.
+심리적 자아성장으로 시련에 쉽게 복구되는 통합성과 보완성 그리고 고도의 분화성을 보인다.
+이맥스는 유닉스 시스템의 
+
+
+
+
+#+end_center
+-#+end_text org
+-:END:
+
+- [ ] 구조파악할 것 ← 내부구조가 정확해야 활용을 높일수 있다
+  #+begin_src emacs-lisp
+  ; # 서열의 순서파악함. * > : > #+오그 > - [ ] > #+src
+  ; 발굴되기 전에는 모든 것이 모르는 것이다!
+
+  #+end_src
+  #+RESULTS:
+
+  #+begin_center text emacs-lisp :다시한번더,불타는_핵심부은_주변파급으로_공명진동한다이다
+  ; 핵심을 강화하는 문맥에 연관은 집중적인 추론으로 중요하다.
+
+
+  ; 다이어리에 저장하고, 핵심노트저장후,
+  ;; 주로 연동되는 핵심부나 반복연습하는 목록에 추가하여 연동하든지.
+  음미되지 않으면 성취는 없다.
+  ;; 아니면 inbox에 wish리스트에 넣고 기다리든지 아니면 위의 날짜에 밀 넣어두고 연관파일 결정되면 지우면 된다.
+
+  #+end_center
+
+
+#+begin_src sh :results table
+
+#+end_src
+#+RESULTS:
+
+#+end_text
+:end:
+
+
+*** [2020-03-23 Mon]emacs_내부노트_초소형_간이모듈_copy용_1형
+- <반드시 주제에 맞게> * 핵심단어_는_이것을~하다      제목을 *재설정해 둘 것
+- 형식-주사용처:간단모듈양식의 오그파일_메모용
+      - 연관파일, 요약본은 ##diary.org
+(buffer-name)
+- 수집: 내용
+
+- 주사용처_복사범위(*부터 -:end: -:End: -:END: 까지들 중 필요부분복사) Copy로 사용시 위의 *제목을 수정하고 나머지줄은몽땅삭제할 것
+- diary.org_C-[ C-[ 1 등록시에는 -:end: 부분을 등록함 wish_list_test.org의 경우는 나중에 일과종료전까지 보낸다.
+:~~을기억하고_--를즉시++하라!:
+#+begin_text org :최종목적은_화두확실이다
+- 상황성립배경{주된목적_meta사고, 상위프로젝트위치, 그 문맥배경설명요약}:
+
+- 목적기여_강점: 
+- 주저장파일 (buffer-file-name) (buffer-name) 
+- 현재위치기록 (buffer-file-name) file:../../app/emacs/emacs_is_great.org
+- 전파필요한 직접연관파일(단련리스트파일, 인박스수집): file:../../app/emacs/emacs_is_great.org
+- 관련임시아이디어들 경쟁,대안 : 
+- 등록할 성과요약문 연관파일과 다이어리에 기재사항
+  - 딱! 성취감은 어디서: 
+
+- 더 필요하고 조사해야할 사안 그리고 대기중, 중단이유 또는 복안, 대안사항:
+  - 
+-#+end_text org
+-:end:
+;;;;;;;;;;;; 저장처리과정 ;;;;;;;;;;;;
+;(필수) 다이어리에 저장하고, 주저장파일핵심노트저장후,
+- 일감에 딱 발견할 수 있는 곳
+
+;;(적극권장) 주된목적_meta사고, 상위프로젝트위치, 주로 연동되는 핵심부나 반복연습하는 목록에 추가하여 연동하든지.
+- 음미하며, 지속적인 단련이 상기할 수 있는 곳 음미되지 않으면 성취는 없다.
+
+;;(상기 불충족 대안) 아니면 inbox에 wish리스트에 넣고 기다리든지 아니면 diary 위의 날짜에 밀 넣어두고 연관파일 결정되면 지우면 된다.
+file:~/config_github/app/emacs/wish_test.org 미루어둔다. - xxxxxx.org::기능-활용-연습필요하니 적합장소검토기록할 것
+
+
+
+
+#+begin_center text emacs-lisp :불타는_핵심부은_주변파급으로_공명진동한다이다
+; 핵심을 강화하는 문맥에 연관은 집중적인 추론으로 중요하다.
+
+
+
+
+
+#+end_center
+-#+end_text org
+-:END:
+
+- [ ] 구조파악할 것 ← 내부구조가 정확해야 활용을 높일수 있다
+  #+begin_src emacs-lisp
+  ; # 서열의 순서파악함. * > : > #+오그 > - [ ] > #+src
+  ; 발굴되기 전에는 모든 것이 모르는 것이다!
+
+  #+end_src
+  #+RESULTS:
+
+  #+begin_center text emacs-lisp :다시한번더,불타는_핵심부은_주변파급으로_공명진동한다이다
+  ; 핵심을 강화하는 문맥에 연관은 집중적인 추론으로 중요하다.
+
+
+  ; 다이어리에 저장하고, 핵심노트저장후,
+  ;; 주로 연동되는 핵심부나 반복연습하는 목록에 추가하여 연동하든지.
+  음미되지 않으면 성취는 없다.
+  ;; 아니면 inbox에 wish리스트에 넣고 기다리든지 아니면 위의 날짜에 밀 넣어두고 연관파일 결정되면 지우면 된다.
+
+  #+end_center
+
+
+#+begin_src sh :results table
+
+#+end_src
+#+RESULTS:
+
+#+end_text
+:end:
+
+
+*** [2020-03-23 Mon]emacs_내부노트_초소형_간이모듈_copy용_1형
+- <반드시 주제에 맞게> * 핵심단어_는_이것을~하다      제목을 *재설정해 둘 것
+- 형식-주사용처:간단모듈양식의 오그파일_메모용
+      - 연관파일, 요약본은 ##diary.org
+(buffer-name)
+- 수집: 내용
+
+- 주사용처_복사범위(*부터 -:end: -:End: -:END: 까지들 중 필요부분복사) Copy로 사용시 위의 *제목을 수정하고 나머지줄은몽땅삭제할 것
+- diary.org_C-[ C-[ 1 등록시에는 -:end: 부분을 등록함 wish_list_test.org의 경우는 나중에 일과종료전까지 보낸다.
+:~~을기억하고_--를즉시++하라!:
+#+begin_text org :최종목적은_화두확실이다
+- 상황성립배경{주된목적_meta사고, 상위프로젝트위치, 그 문맥배경설명요약}:
+
+- 목적기여_강점: 
+- 주저장파일 (buffer-file-name) (buffer-name) 
+- 현재위치기록 (buffer-file-name) file:../../app/emacs/emacs_is_great.org
+- 전파필요한 직접연관파일(단련리스트파일, 인박스수집): file:../../app/emacs/emacs_is_great.org
+- 관련임시아이디어들 경쟁,대안 : 
+- 등록할 성과요약문 연관파일과 다이어리에 기재사항
+  - 딱! 성취감은 어디서: 
+
+- 더 필요하고 조사해야할 사안 그리고 대기중, 중단이유 또는 복안, 대안사항:
+  - 
+-#+end_text org
+-:end:
+;;;;;;;;;;;; 저장처리과정 ;;;;;;;;;;;;
+;(필수) 다이어리에 저장하고, 주저장파일핵심노트저장후,
+- 일감에 딱 발견할 수 있는 곳
+
+;;(적극권장) 주된목적_meta사고, 상위프로젝트위치, 주로 연동되는 핵심부나 반복연습하는 목록에 추가하여 연동하든지.
+- 음미하며, 지속적인 단련이 상기할 수 있는 곳 음미되지 않으면 성취는 없다.
+
+;;(상기 불충족 대안) 아니면 inbox에 wish리스트에 넣고 기다리든지 아니면 diary 위의 날짜에 밀 넣어두고 연관파일 결정되면 지우면 된다.
+file:~/config_github/app/emacs/wish_test.org 미루어둔다. - xxxxxx.org::기능-활용-연습필요하니 적합장소검토기록할 것
+
+
+
+
+#+begin_center text emacs-lisp :불타는_핵심부은_주변파급으로_공명진동한다이다
+; 핵심을 강화하는 문맥에 연관은 집중적인 추론으로 중요하다.
+
+
+
+
+
+#+end_center
+-#+end_text org
+-:END:
+
+- [ ] 구조파악할 것 ← 내부구조가 정확해야 활용을 높일수 있다
+  #+begin_src emacs-lisp
+  ; # 서열의 순서파악함. * > : > #+오그 > - [ ] > #+src
+  ; 발굴되기 전에는 모든 것이 모르는 것이다!
+
+  #+end_src
+  #+RESULTS:
+
+  #+begin_center text emacs-lisp :다시한번더,불타는_핵심부은_주변파급으로_공명진동한다이다
+  ; 핵심을 강화하는 문맥에 연관은 집중적인 추론으로 중요하다.
+
+
+  ; 다이어리에 저장하고, 핵심노트저장후,
+  ;; 주로 연동되는 핵심부나 반복연습하는 목록에 추가하여 연동하든지.
+  음미되지 않으면 성취는 없다.
+  ;; 아니면 inbox에 wish리스트에 넣고 기다리든지 아니면 위의 날짜에 밀 넣어두고 연관파일 결정되면 지우면 된다.
+
+  #+end_center
+
+
+#+begin_src sh :results table
+
+#+end_src
+#+RESULTS:
+
+#+end_text
+:end:
+
+
+*** [2020-03-23 Mon]emacs_내부노트_초소형_간이모듈_copy용_1형
+- <반드시 주제에 맞게> * 핵심단어_는_이것을~하다      제목을 *재설정해 둘 것
+- 형식-주사용처:간단모듈양식의 오그파일_메모용
+      - 연관파일, 요약본은 ##diary.org
+(buffer-name)
+- 수집: 내용
+
+- 주사용처_복사범위(*부터 -:end: -:End: -:END: 까지들 중 필요부분복사) Copy로 사용시 위의 *제목을 수정하고 나머지줄은몽땅삭제할 것
+- diary.org_C-[ C-[ 1 등록시에는 -:end: 부분을 등록함 wish_list_test.org의 경우는 나중에 일과종료전까지 보낸다.
+:~~을기억하고_--를즉시++하라!:
+#+begin_text org :최종목적은_화두확실이다
+- 상황성립배경{주된목적_meta사고, 상위프로젝트위치, 그 문맥배경설명요약}:
+
+- 목적기여_강점: 
+- 주저장파일 (buffer-file-name) (buffer-name) 
+- 현재위치기록 (buffer-file-name) file:../../app/emacs/emacs_is_great.org
+- 전파필요한 직접연관파일(단련리스트파일, 인박스수집): file:../../app/emacs/emacs_is_great.org
+- 관련임시아이디어들 경쟁,대안 : 
+- 등록할 성과요약문 연관파일과 다이어리에 기재사항
+  - 딱! 성취감은 어디서: 
+
+- 더 필요하고 조사해야할 사안 그리고 대기중, 중단이유 또는 복안, 대안사항:
+  - 
+-#+end_text org
+-:end:
+;;;;;;;;;;;; 저장처리과정 ;;;;;;;;;;;;
+;(필수) 다이어리에 저장하고, 주저장파일핵심노트저장후,
+- 일감에 딱 발견할 수 있는 곳
+
+;;(적극권장) 주된목적_meta사고, 상위프로젝트위치, 주로 연동되는 핵심부나 반복연습하는 목록에 추가하여 연동하든지.
+- 음미하며, 지속적인 단련이 상기할 수 있는 곳 음미되지 않으면 성취는 없다.
+
+;;(상기 불충족 대안) 아니면 inbox에 wish리스트에 넣고 기다리든지 아니면 diary 위의 날짜에 밀 넣어두고 연관파일 결정되면 지우면 된다.
+file:~/config_github/app/emacs/wish_test.org 미루어둔다. - xxxxxx.org::기능-활용-연습필요하니 적합장소검토기록할 것
+
+
+
+
+#+begin_center text emacs-lisp :불타는_핵심부은_주변파급으로_공명진동한다이다
+; 핵심을 강화하는 문맥에 연관은 집중적인 추론으로 중요하다.
+
+
+
+
+
+#+end_center
+-#+end_text org
+-:END:
+
+- [ ] 구조파악할 것 ← 내부구조가 정확해야 활용을 높일수 있다
+  #+begin_src emacs-lisp
+  ; # 서열의 순서파악함. * > : > #+오그 > - [ ] > #+src
+  ; 발굴되기 전에는 모든 것이 모르는 것이다!
+
+  #+end_src
+  #+RESULTS:
+
+  #+begin_center text emacs-lisp :다시한번더,불타는_핵심부은_주변파급으로_공명진동한다이다
+  ; 핵심을 강화하는 문맥에 연관은 집중적인 추론으로 중요하다.
+
+
+  ; 다이어리에 저장하고, 핵심노트저장후,
+  ;; 주로 연동되는 핵심부나 반복연습하는 목록에 추가하여 연동하든지.
+  음미되지 않으면 성취는 없다.
+  ;; 아니면 inbox에 wish리스트에 넣고 기다리든지 아니면 위의 날짜에 밀 넣어두고 연관파일 결정되면 지우면 된다.
+
+  #+end_center
+
+
+#+begin_src sh :results table
+
+#+end_src
+#+RESULTS:
+
+#+end_text
+:end:
+
+
+
+*** [2020-03-23 Mon]emacs_내부노트_초소형_간이모듈_copy용_1형
+- <반드시 주제에 맞게> * 핵심단어_는_이것을~하다      제목을 *재설정해 둘 것
+- 형식-주사용처:간단모듈양식의 오그파일_메모용
+      - 연관파일, 요약본은 ##diary.org
+(buffer-name)
+- 수집: 내용
+
+- 주사용처_복사범위(*부터 -:end: -:End: -:END: 까지들 중 필요부분복사) Copy로 사용시 위의 *제목을 수정하고 나머지줄은몽땅삭제할 것
+- diary.org_C-[ C-[ 1 등록시에는 -:end: 부분을 등록함 wish_list_test.org의 경우는 나중에 일과종료전까지 보낸다.
+:~~을기억하고_--를즉시++하라!:
+#+begin_text org :최종목적은_화두확실이다
+- 상황성립배경{주된목적_meta사고, 상위프로젝트위치, 그 문맥배경설명요약}:
+
+- 목적기여_강점: 
+- 주저장파일 (buffer-file-name) (buffer-name) 
+- 현재위치기록 (buffer-file-name) file:../../app/emacs/emacs_is_great.org
+- 전파필요한 직접연관파일(단련리스트파일, 인박스수집): file:../../app/emacs/emacs_is_great.org
+- 관련임시아이디어들 경쟁,대안 : 
+- 등록할 성과요약문 연관파일과 다이어리에 기재사항
+  - 딱! 성취감은 어디서: 
+
+- 더 필요하고 조사해야할 사안 그리고 대기중, 중단이유 또는 복안, 대안사항:
+  - 
+-#+end_text org
+-:end:
+;;;;;;;;;;;; 저장처리과정 ;;;;;;;;;;;;
+;(필수) 다이어리에 저장하고, 주저장파일핵심노트저장후,
+- 일감에 딱 발견할 수 있는 곳
+
+;;(적극권장) 주된목적_meta사고, 상위프로젝트위치, 주로 연동되는 핵심부나 반복연습하는 목록에 추가하여 연동하든지.
+- 음미하며, 지속적인 단련이 상기할 수 있는 곳 음미되지 않으면 성취는 없다.
+
+;;(상기 불충족 대안) 아니면 inbox에 wish리스트에 넣고 기다리든지 아니면 diary 위의 날짜에 밀 넣어두고 연관파일 결정되면 지우면 된다.
+file:~/config_github/app/emacs/wish_test.org 미루어둔다. - xxxxxx.org::기능-활용-연습필요하니 적합장소검토기록할 것
+
+
+
+
+#+begin_center text emacs-lisp :불타는_핵심부은_주변파급으로_공명진동한다이다
+; 핵심을 강화하는 문맥에 연관은 집중적인 추론으로 중요하다.
+
+
+
+
+
+#+end_center
+-#+end_text org
+-:END:
+
+- [ ] 구조파악할 것 ← 내부구조가 정확해야 활용을 높일수 있다
+  #+begin_src emacs-lisp
+  ; # 서열의 순서파악함. * > : > #+오그 > - [ ] > #+src
+  ; 발굴되기 전에는 모든 것이 모르는 것이다!
+
+  #+end_src
+  #+RESULTS:
+
+  #+begin_center text emacs-lisp :다시한번더,불타는_핵심부은_주변파급으로_공명진동한다이다
+  ; 핵심을 강화하는 문맥에 연관은 집중적인 추론으로 중요하다.
+
+
+  ; 다이어리에 저장하고, 핵심노트저장후,
+  ;; 주로 연동되는 핵심부나 반복연습하는 목록에 추가하여 연동하든지.
+  음미되지 않으면 성취는 없다.
+  ;; 아니면 inbox에 wish리스트에 넣고 기다리든지 아니면 위의 날짜에 밀 넣어두고 연관파일 결정되면 지우면 된다.
+
+  #+end_center
+
+
+#+begin_src sh :results table
+
+#+end_src
+#+RESULTS:
+
+#+end_text
+:end:
+
+
+*** [2020-03-23 Mon]emacs_내부노트_초소형_간이모듈_copy용_1형
+- <반드시 주제에 맞게> * 핵심단어_는_이것을~하다      제목을 *재설정해 둘 것
+- 형식-주사용처:간단모듈양식의 오그파일_메모용
+      - 연관파일, 요약본은 ##diary.org
+(buffer-name)
+- 수집: 내용
+
+- 주사용처_복사범위(*부터 -:end: -:End: -:END: 까지들 중 필요부분복사) Copy로 사용시 위의 *제목을 수정하고 나머지줄은몽땅삭제할 것
+- diary.org_C-[ C-[ 1 등록시에는 -:end: 부분을 등록함 wish_list_test.org의 경우는 나중에 일과종료전까지 보낸다.
+:~~을기억하고_--를즉시++하라!:
+#+begin_text org :최종목적은_화두확실이다
+- 상황성립배경{주된목적_meta사고, 상위프로젝트위치, 그 문맥배경설명요약}:
+
+- 목적기여_강점: 
+- 주저장파일 (buffer-file-name) (buffer-name) 
+- 현재위치기록 (buffer-file-name) file:../../app/emacs/emacs_is_great.org
+- 전파필요한 직접연관파일(단련리스트파일, 인박스수집): file:../../app/emacs/emacs_is_great.org
+- 관련임시아이디어들 경쟁,대안 : 
+- 등록할 성과요약문 연관파일과 다이어리에 기재사항
+  - 딱! 성취감은 어디서: 
+
+- 더 필요하고 조사해야할 사안 그리고 대기중, 중단이유 또는 복안, 대안사항:
+  - 
+-#+end_text org
+-:end:
+;;;;;;;;;;;; 저장처리과정 ;;;;;;;;;;;;
+;(필수) 다이어리에 저장하고, 주저장파일핵심노트저장후,
+- 일감에 딱 발견할 수 있는 곳
+
+;;(적극권장) 주된목적_meta사고, 상위프로젝트위치, 주로 연동되는 핵심부나 반복연습하는 목록에 추가하여 연동하든지.
+- 음미하며, 지속적인 단련이 상기할 수 있는 곳 음미되지 않으면 성취는 없다.
+
+;;(상기 불충족 대안) 아니면 inbox에 wish리스트에 넣고 기다리든지 아니면 diary 위의 날짜에 밀 넣어두고 연관파일 결정되면 지우면 된다.
+file:~/config_github/app/emacs/wish_test.org 미루어둔다. - xxxxxx.org::기능-활용-연습필요하니 적합장소검토기록할 것
+
+
+
+
+#+begin_center text emacs-lisp :불타는_핵심부은_주변파급으로_공명진동한다이다
+; 핵심을 강화하는 문맥에 연관은 집중적인 추론으로 중요하다.
+
+
+
+
+
+#+end_center
+-#+end_text org
+-:END:
+
+- [ ] 구조파악할 것 ← 내부구조가 정확해야 활용을 높일수 있다
+  #+begin_src emacs-lisp
+  ; # 서열의 순서파악함. * > : > #+오그 > - [ ] > #+src
+  ; 발굴되기 전에는 모든 것이 모르는 것이다!
+
+  #+end_src
+  #+RESULTS:
+
+  #+begin_center text emacs-lisp :다시한번더,불타는_핵심부은_주변파급으로_공명진동한다이다
+  ; 핵심을 강화하는 문맥에 연관은 집중적인 추론으로 중요하다.
+
+
+  ; 다이어리에 저장하고, 핵심노트저장후,
+  ;; 주로 연동되는 핵심부나 반복연습하는 목록에 추가하여 연동하든지.
+  음미되지 않으면 성취는 없다.
+  ;; 아니면 inbox에 wish리스트에 넣고 기다리든지 아니면 위의 날짜에 밀 넣어두고 연관파일 결정되면 지우면 된다.
+
+  #+end_center
+
+
+#+begin_src sh :results table
+
+#+end_src
+#+RESULTS:
+
+#+end_text
+:end:
+
+** [2020-03-22 Sun] 문맥org모듈노트+<el탭_yasnippet, 3분할(IDEA), gdb Emacs내부사전
+
+:알아보다_자율적인_상위_원리구현:
+#+begin_quote org
+자아구현발달의 목적달성.
+알아보다. 알아서 하세요.. 자율자유의 의미 아이디어의 자발적인 구현을 명함
+친민은 신민이라고 함을 기억할 것.
+즉 무아 경계타파 한계가 없음
+
+#+end_quote
+:end:
+
+- gdb발견 노트생성할 것. app/emacs/gdb.org C/ sheme/연관있음을 유념할 것
+    file:../../app/emacs/gdb.org 
+- (search-emacs-glossary) ;Emacs내부단어사전기능을 발견함!
+- process.org delete-process 발견노트함.
+#+begin_src org :3분할_아이디어
+- 1 2 3 입력-처리-저장의 3분할(IDEA) 화면구성으로 통일할 것. 노트화면분할의 통일할 방법을 가짐
+  1 2는 위치가 바뀔 수 있고 그 안에서 적당히 재분할도 고려해야 할 것임.
+    수집노트-형식(모델),방법-요약생성
+    참고문헌-입력문-결과실행 (프로그래밍의 경우)  MVC, WM, Emacs_Frame_split_windows
+#+end_src
+
+
+
+:F10,F11을기억하고_누르고즉시관찰실험하라!:
+#+begin_text org :최종목적은_syntax양식의 암기없이 흐름을 만듬이다
+- 주저장파일 (buffer-file-name) file:../../app/emacs/yasnippet.org (buffer-name) 
+- yasnippet 발견 F10자주 참조할 것. file:yasnippet.org
+- 상황성립배경{주된목적_meta사고, 상위프로젝트위치, 그 문맥배경설명요약}:
+ [2020-03-21 Sat]  로딩파일의 문제를 해결하면서 이것이 정상적으로 기동하게 되었다.
+          그래서인지 원인을 몰랐지만 <s탭의 자동완성이 작동되지 않았다.
+- yasnippet 발견 F10자주 참조할 것. file:yasnippet.org
+다시 F10 → YASnippet → org-mode에서 재발견한 기능에 감탄함.
+- 목적기여_강점: 
+  - ipython session!, python
+  - # config_github/ emacs/ language/pyton 등 폴더내부에 파일로  ln -fs로 연동해서 사용하는 방법을 고려할 것
+   → 즉, 파일정보를 관리하는 것을 한 곳에서 수행하는 방식: 별도 외부폴더를 정리하는 것보다 언어와 노트 스니핏이 한 곳에서 저장한다.
+  - file:~/.emacs.d/snippets/org-mode/emacs-lisp
+
+#+end_text org
+:end:
+
+
+:delete-process_with_get-process_기억하고_누르고즉시관찰실험하라!:
+#+begin_text org :최종목적은 process중단이 간략히 진행됨이 성공함.
+app/emacs/process.org espeak, mpv diary (delete-process (get-process "while true espeak greek latin"))
+#+end_text org
+:end:
+
+*** (최초완성)emacs_내부노트_초소형_간이모듈_copy용_1형 사용합니다!
+- 이 형식 사용처: "03diary2020.org"
+        공부는 모든것들의 중심으로 향하는 질서정연한 방향성이다. 
+# 어제 노트에 대한 것이 필요하다고 느끼니 오늘 놀라운 발견을 함! 우주의 무의식은 공명진동함.
+                                        우주는 그 강한 힘의 방향으로 공명진동하며 질서를 잡는다.
+# 문맥에 맞는 추론을 하는 것은 중요하다.
+- 강점: 링크가 살아있다! > 파일전체를 새롭게 찾아내는 링크를 구성할 수 있을 것이다.
+
+
+:문맥추론빠른노트완성:
+- 반드시 주제에 맞게 제목을 설정해 둘 것
+현재위치기록 (buffer-file-name)"/home/thinkpad/config_github/app/emacs/03diary2020.org" 
+(buffer-name)
+- 수집:
+
+- 배경설명: 통합적인 문맥노트의 최초실험과 시행을 시도함
+#+begin_text org :목적=문맥을 쉽게 완성하는 노트는 최강이다.
+- 강점: 최초의 실험을 완성하는 것 [2020-03-22 Sun] 의 성과!
+- 관련임시아이디어
+- 주저장파일 (buffer-file-name) (buffer-name) "03diary2020.org" 
+- 연관파일들: file:../../app/emacs/emacs_is_great.org
+- 등록할 성과요약문 연관파일과 다이어리에 
+다이어리에 기록을 남기면서 점차 개선해서 그래이트파일에 등록해서 퍼뜨릴 것
+
+ #+begin_center emacs-lisp :중심아이디어_형식
+; 문맥의 핵심부분을 다시 상기하는 과정을 최대한 단축하는 것이 오그모드의 최고 능력이다.
+; 노트능력의 중요성- 문맥을 저장하는 기능이 필요함. 설득을 하려면 맥락이 중요하며, 중요한 맥락속에서 스토리를 전개하는 것이 필수적이다.
+
+# 문맥에 맞는 추론을 하는 것은 중요하다.
+
+ #+end_center
+#+end_text org
 :END:
-- [X] file:~/config_github/great_books/vitruvius/de_architectura/de_architectura_liber01_00.org
-    modified in de_architectura
-    [[elisp:(start-process-shell-command%20"espeak%EB%9D%BC%ED%8B%B4%ED%9D%AC%EB%9E%8D%EC%9D%BD%EA%B8%B0"%20nil%20%0A(concat%20"timeout%2025m%20echo%20\"process%20NAME:%20espeak_timeout_25m\";"%0A"%20string=\""%20(buffer-substring-no-properties%20(+%20(line-beginning-position%202)%206)%20(line-end-position%202))%20"\";"%0A"%20string2=\""%20(buffer-substring-no-properties%20(line-beginning-position%203)%20(line-end-position%203))%20"\";"%0A"timeout%2025m%20bash%20-c%20\"while%20true;%20"%0A"%20do%20espeak%20-a%2030%20-g%2027%20-s%20120%20-v%20other/la%20\\\"$string\\\";%20sleep%202;"%0A"%20%20%20espeak%20-a%2030%20-g%2027%20-s%20150%20-v%20other/la%20\\\"$string\\\";%20sleep%202;"%0A"%20%20%20espeak%20-a%2030%20-g%2030%20-s%20120%20-v%20other/la%20\\\"$string\\\";%20sleep%202;"%0A"%20%20%20%20espeak%20-a%2030%20-g%2015%20-s%20126%20\\\"$string2\\\";%20sleep%202;"%0A"%20%20%20espeak%20-a%2030%20-g%2027%20-s%20120%20-v%20other/la%20\\\"$string\\\";%20sleep%209;"%0A"%20done;%20echo%20\\\"process%20NAME:%20espeak_timeout_25m\\\"%20\""%0A))][elisp:(TIMEOUT 25m espeak_Below=latin+en edit time)]]   [[elisp:(start-process-shell-command%20"kill%20using%20pipe%20BY%20using%20concat%20CMD!%20in%20timeout"%20nil%20(concat%20"ps%20aux"%20"|%20grep%20espeak_timeout_25m"%20"|%20awk%20'{print%20$2}'"%20"|%20xargs%20-I{}%20kill%20-9%20{}"))][elisp:(kill espeak_timeout_25m)]]  ;; 성공적인 정지력!!!
-- [X] Publicorum autem distributiones sunt tres, 
-There are three classes of public buildings: 
-- [ ] [[file:~/Desktop/aristotle.org::*%EB%A6%AC%EB%94%A9%20%EC%95%84%EB%A6%AC%EC%8A%A4%ED%86%A0%ED%85%94%EB%A0%88%EC%8A%A4][file:~/Desktop/aristotle.org::*리딩 아리스토텔레스]]
-       [[file:~/Desktop/pdf_list_of_desktop.org::*"pdf_list_of_desktop.org"][file:~/Desktop/pdf_list_of_desktop.org::*"pdf_list_of_desktop.org"]]
 
 
-- [X] file:~/config_github/great_books/vitruvius/de_architectura/de_architectura_liber01_00.org
-    modified in de_architectura
+** [2020-03-21 Sat]
 
 
-- [X] file:~/config_github/great_books/vitruvius/de_architectura/de_architectura_liber01_00.org
-    modified in de_architectura
-*** TODO how SCHEDULED setting
-SCHEDULED: <2020-03-14 Sat 11:00-12:00 .+d>
-- file:scheduled.org 어떻게 리스트를 관리할 지 방법을 생각수집, 결정함.
-*** [2020-03-11 Wed]
+load-org 명령어 수집할 것.
+(load-file "/home/thinkpad/config_github/app/emacs/shell_emacs/emacsQ_load.el")
+파일의 링크를 만들어야 할 것이다 변환을 빠르게 적용할 수 있도록 또한 안정성을 담보할 기능도 충족할 것.
 
-        "/home/thinkpad/config_github/hardware/ngff_pci-e_adapter_converter.org"
-        "/home/thinkpad/config_github/app/emacs/readme.org"
-#+BEGIN_SRC emacs-lisp
-;recover file by test mapcar
-
-(mapcar 'find-file-other-window (list
-
-"~/config_github/app/xrandr/"
-"~/config_github/app/emacs/org-startup.org"
-"~/config_github/app/xrandr/readme.org"
-"~/config_github/app/emacs/indent_whitespace.org"
-"~/config_github/app/emacs/index.org"
-"~/config_github/app/okular/readme.org"
-        ))
-"~/config_github/app/awk/readme.org"
-"~/config_github/app/emacs/org_mode_study/babel_exports_results_form.org"
-"~/config_github/app/emacs/counsel_mode.org"
-"~/config_github/language_computer/shell/syntax_of_array_in_sh.org"
-"~/config_github/app/emacs/info.org"
-"~/config_github/app/emacs/string.org"
-"~/config_github/app/emacs/sort.org"
-"~/config_github/app/espeak/readme.org"
-"~/config_github/app/emacs/region.org"
-"~/Music/Latin_NVV_NT_Drama/_1_latin_new_testment_list.org"
-"~/Desktop/pdf_list_of_desktop.org"
-"~/config_github/app/emacs/global_set_key_kbd.org"
-"~/config_github/os/gentoo/install_process/youtube_t530_study.org"
-"~/Music/_1_bbg_playlist.org"
-"~/config_github/app/emacs/tag.org"
-"~/Music/_1_playlist.org"
-"~/Music/latintutorial_youtube/latintutorial_youtube_playlist.org"
-"~/config_github/app/emacs/mike_zamansky.org"
-"~/config_github/app/emacs/org_babel_load_file.org"
-"~/config_github/app/emacs/agenda_list.org"
-"~/config_github/app/emacs/03diary2020.org"
-"~/.emacs.d/recentf_log/2020_02_18_recentf.org"
-"~/Music/mpv_files/mpv_files_list.org"
-"~/config_github/app/emacs/recentf_in_emacs.org"
+           :덧없는세상_작은기여습관_큰목표달성:        
+          #+begin_src text
+일체가 덧없이 허망한 이세상에서 영원한 진리를 만나면, 기회를 후회없이 목숨과 모든 것을 걸어 볼 각오를 내라!
+튀어나가는 자기마음을 잡는다. 목전에 도현이다.(보살도, 발보리심) 심우도.
+  좋은 작지만 가치있는 습관을 모아서 목표를 높게 달성한다.
+          #+end_src
+             :END:                               
 
 
-#+END_SRC
 
-**** TODO test [2020-03-05 Thu 18:33]
-**** TODO [[file:~/config_github/app/emacs/org_babel_load_file.org::*org-capture][org-capture]]
-이곳에 정리해 둘 것.
-**** TODO org-agenda에서 깔끔하게 관리하는 단축키로 전체를 통괄하는 방식연구필요함
-즉 리스트를 수시로 변경하는 기능을 갖추어야 한다. 명령을 찾고 연구하고 수정해서 적용할 것!
-**** TODO vc-dir을 발견함
-깃의 정보까지 조정이 가능한 놀라운 이맥스의 기능확장성!
-M-x vc-dir [[info:emacs#Version%20Control][info:emacs#Version Control]] vc_version_control.org 
-ede [[info:ede#Top][info:ede#Top]] ede.org
-** done
-vim/readme.org
-내일복습할내용
 
-* inbox
-늘중요한오늘이다.
-(rename-buffer "1-다이어리(2020-03)")
-(rename-buffer "03diary2020.org)")
-project_ln/03diary2020.org
+      :노트_원칙_방법_개선_drawer_text_quote_example_verse_src:
+           #+begin_src text
 
-전기전선가지고 물통, 방세입금, 물통에 물채우기,
-org-toc m4 download youtube
+
+- 노트의 원칙을 정립함. 
+일단 Diary에 수집하고 저장의 확정은 위임한 위시노트가 결정하게 둔다.
+(의사결정의 범위를 정하고 경계를 명확히 한다.) 마음에 안들더라도 일단 들어두는 태도가 지도자에게 필요함.
+- 문학적인 오그모드의 노트를 정리해서 넣어둘것. literate_programming_org 노트로src_tangle.org에 저장함
+변수에 표시해 둘 것
+
+           #+end_src
+                                                        :END:
+
+
+
+- 이 파일과 위시노트를 정비함 다시 정비가 필요할 것으로 생각된다.
+- (로그로 명령어를 명확히 한다.) 깔끔하게 명령의 로그를 명령어로 바로 보여준다.
+  - cf. file:../../app/emacs/command-log.org
+
+     :org-template-alist-빠른형식을_입력하는_법을_연구함:
+#+begin_quote elisp
+No completions of <s
+(customize-apropos '("babel" "completion"))
+
+
+org-structure-template-alist
+'(("a" . "export ascii")
+  ("c" . "center")
+  ("C" . "comment")
+  ("e" . "example")
+  ("E" . "export")
+  ("h" . "export html")
+  ("l" . "export latex")
+  ("q" . "quote")
+  ("s" . "src")
+  ("v" . "verse"))
+
+#+end_quote
+help:org-structure-template-alist
+(org-insert_structure-template 'html)
+                   :END:
+
+
+#+begin_verse emacs-lisp
+
+(package-initialize) ;; 목록의 순서즉 입력의 순서가 매우 중요함 지소선후 즉근도의인가!`
+load-path
+(add-to-list LIST-VAR ELEMENT &optional APPEND COMPARE-FN)
+(add-to-list 'load-path "/home/thinkpad/.emacs.d/elpa/")
+/home/thinkpad/.emacs.d/elpa/ob-rust-20180911.1535
+← org-babel-do-load-languages: Cannot open load file: No such file or directory, ob-rust
+
+#+end_verse
+
+
+- 03-20에 이어서 오그모드의 페이스를 저장함.
+
+
+** [2020-03-20 Fri] 문제에서 더 좋은 탐구습관, 명확정리를 배우고 익히다.
+# <문제는 절망감을 주지만,,,> 우회 다른 방식 다른 발견! 메뉴얼 좋은탐구습관, 개념을 명확확장 간략정리, 원문제도 결국 해결함
+    - org-babel-execute-src-block: No org-babel-execute function for sh!
+            → (org-babel-do-load-languages 'org-babel-load-languages)
+              → (info "(org) Languages") emacs/src_block.org
+
+/emacs/src_tangle.org
+# tracking thought process is essential for understanding power!
+노트가 가미된 놀라운 파일
+
+- 우회의 방법을 발견함!
+- org-babel-execute-src-block: No org-babel-execute function for sh!
+(mapconcat 'shell-command-to-string '("lsblk" "lsblk") "\n") ; ← 여기서 심지어 단문으로 C-u C-x C-e도 가능함!!!
+
+- (shell-command-on-region (+ (line-beginning-position 2) 0) (line-end-position 2) 
+			"espeak -a 20 -g 27 -s 120 -v other/la" nil nil nil)
+religionis deorum immortalium fanorum aediumque sacrarum conlocatio, 
+- *Shell Command Output* 버퍼를 일정하게 유지해야 여러개의 버퍼가 열리는 것을 방지함. file:../../app/emacs/shell_command_output_buffer.org
+
+- 영어로 말하는 꿈을 꾸다. 꿈에 영어가 돼는 것을 보니 확실히 진보한 것. 또한 
+    - 방대한 양의 읽기를 전제한 것이 컴퓨터의 속성이라서 모든 출력문을 해독하는 이해력이 필요하다. 
+        디버거는 특히!!! gentoo설치에서도
+- gdb
+- save in lisp
+(info "(asdf) Top")
+(info "(sbcl) Top")
+
+
+** [2020-03-19 Thu] 검색의 神 이 바로 Emacs!!! → 어렵지만 정보검색의 최고 사령관이면서 최강의 전략가.
+# info-appropos로 검색하는 것을 익힐 것 필수적이다.
+- replace-regexp-in-string 발견! while도 발견함!
+- (setq display-time-day-and-date t) ;; mode line 날짜 표시가능해짐
+- (bookmark)북마크를 지정할 수 있고 그것을 다르게 변환할 수 있을 것이다 프로젝트별로 사용하는 것도 유용한 전략일 것이다.
+  또한 e로 annotation을 할 수 있고 A로 검토 가능한 것을 발견한 것은 큰 성과이다.
+
+리스트의 nil제거가 남았다. 물어볼것. (nreverse SEQ) (reverse SEQ)
+입력의 중요한 사안을 정확히
+(info-apropos "list") 정보발견의 핵심
+# 검색의 神 이 바로 Emacs!!! → 바로 C-u M-x multi-occur-in-matching-buffers
+- 검색의 신이 바로 Emacs
+어렵지만 정보검색의 최고 사령관이면서 최강의 전략가.
+- (multi-occur-in-matching-buffers "\\(*\\|org\\)" "입력" "\\&")
+- C-u M-x multi-occur-in-matching-buffers 검색의 경우 입력은 \(*\|org\) <리턴> 입력 <리턴>
+
+
+(dired-mark-files-regexp "\\(org$\\)" nil)
+- string전환을 발견함 단, nil의 제거가 남음 string.org help:-each-while help:-each 
+
+  (add-hook 'dired-mode-hook (lambda () (dired-hide-details-mode t))) ;; 간이한 파일표시가 속도를 높일 것이다.dired.org
+
+** [2020-03-18 Wed]
+
+ killall compton
+[thinkpad@msata045 ~]$ 
+compton -bcCGf --active-opacity 0.93 -i 0.6 -e 0.6 -m 0.9
+help:ls-lisp--dired
+ls-lisp--dired
+screen:hi
+
+C-x 8 a <	←
+C-x 8 a =	↔
+C-x 8 a >	→
+file:c_x_8.org
+(speedbar)
+
+file:../../app/emacs/move.org
+(setq show-paren-style "mixed")
+(setq show-paren-style 'expression) ;;왜 진작에 등록않았을까?!
+(show-paren-mode 1) ;; 일단 잘 코딩된 문장을 읽는 것에 유용하게 읽기에 적용하고 나중에 편집법을 연구하여 연마한다.
+
+
+
+display battery display time
+(tool-bar-mode 0)
+(column-number-mode 0)
+(column-number-mode 1)
+(menu-bar-mode 0)
+help:menu-bar-mode
+
+help:display-time-mode
+(display-time-mode 1)
+help:display-battery-mode
+(display-battery-mode 1)
+(setq battery-mode-line-format "[%b%p%%]")
+(setq battery-mode-line-format "[%t %b%p%%]")
+(setq battery-mode-line-format "[%t %b%p%%]")
+(setq battery-mode-line-format " [%L→%t %b%p%%]")
+(display-battery-mode 0)
+(display-battery-mode 1)
+Compton xcompmgr $ killall xcompmgr 
+$ compton -bcCGf -i 0.8 -e 0.8
+$ compton -bcCGf -i 0.8 -e 0.8 --no-fading-openclose --sw-opti
+
+
+** [2020-03-17 Tue]
+- slime 을 가능하게 만들었다! 너무 놀라운 이맥스의 강력한 프로그래밍기능에 깊이 감탄!
+(global-set-key (kbd "C-M-x") 'eval-defun)
+
 
 ** [2020-03-16 Mon]
 
@@ -430,7 +1863,6 @@ setenv getenv를 발굴함. 환경변수를 적용하는 법일단 발굴
 process 를 중단하는 것이 org의 인식이 잘 안되서 다른 방법으로 concat으로 우회하는 법을 발견실험함.
 
 그리스어에 대한 관점의 이해를 높이는 것이 작동됨.
-** above is today
 ** [2020-03-12 Thu]
 깔끔하게 프레임을 설치하는 데 전력을 다함.
 ** [2020-03-10 Tue]
@@ -592,7 +2024,7 @@ ein연구가 필요하다고 느낀 다시 생각하게 됨. 최고의 아이파
   ,a ,h ,o   이를 꽉물고 '흐~'(아) '흐~'(ㅐ(ㅔ)ㅣ) '흐~'(오)
   - [ ] 
 
-* [2020-03-05 Thu]
+** [2020-03-05 Thu]
 - [ ] (call-process "echo" nil "2020_03_diary.org" nil "깔끔하게 문장이 전달된다.") 
 
 깔끔하게 문장이 전달된다.
@@ -607,7 +2039,7 @@ ein연구가 필요하다고 느낀 다시 생각하게 됨. 최고의 아이파
 - pid
 
 
-* [2020-03-04 Wed] tag checkbox [0/6]
+** [2020-03-04 Wed] tag checkbox [0/6]
 - [ ] timeout : [[info:coreutils#timeout%20invocation][info:coreutils#timeout invocation]] for use in mpv espeak while shell command 대발견!
   - [ ] for make Music/_1_playlist.org clickable timeout player Emacs
 - [ ] inode 추출법 file:../../app/ls_inode_fs/inode.org => okular, mpv/readme.org
@@ -618,18 +2050,8 @@ ein연구가 필요하다고 느낀 다시 생각하게 됨. 최고의 아이파
 - [ ] [footnotes]내부색인기능 발견 C-c C-x f org-footnote-action 참고: 주석기능과 유사함. file:footnotes.org - 커맨트를 찾아내던 빠른 방법
 
 herbstluftwm 불편함-음원재생이 많을 경우 놓이는 위치가 본래 위치에 중복침범되어 수정해야 함.
-** test
 
-
-** sdf
-
-
-*** asdfasdf
-
-
-*** cu
-sdfasd
-* [2020-03-03 Tue] [1/3]
+** [2020-03-03 Tue] [1/3]
 - file:../../app/wm_compare_youtube_note.org 통합적으로 연구하는 것이 중요하다.
 - /app/index.org /app/read.org Y dired file:../../app/_1_app_index.org 로 대용한다. 명확한 로드맵제시
 
@@ -641,20 +2063,20 @@ sdfasd
   - 1 2 3 4 5 6 7 8 9 (홀수는 돌파요구, 짝수는 참고자료들) 2모니터때문, 이전의 3배치
 이맥스, 이맥스장부기록, 검색목적달성, 음원재생,
 - [ ] - C-c C-x b 블럭으로 열리면(닫기도 동일함. 그러나), 바로 C-x 0 를 실행함  C-x 4 0로 창을 닫는 것이 깔끔함.
-* [2020-03-02 Mon] 눈에 보이지 않는 것의 강력함.
+** [2020-03-02 Mon] 눈에 보이지 않는 것의 강력함.
 
 awk, xargs 서브노트를 작성함!
 - lambda함수의 순수성이 새로운 도전을 하는 태도가 중요함강조 유튜브 동영상 시청.
 - 주당 100시간을 노력하면 필수적으로 성장한다. 16시간이상 투자함. 8시간의 강제노역보다 강력함
 
-** [2020-03-02 Mon 03:50] [[file:~/config_github/app/emacs/kmacro.org::*macro%20help%20:%20link(%EC%89%BD%EA%B2%8C%20%EB%B3%80%ED%99%98%ED%95%98%EC%97%AC%EC%84%9C%20%ED%81%B4%EB%A6%AD%EC%9C%BC%EB%A1%9C%20%EC%82%AC%EC%9A%A9%EC%9D%84%20%ED%8E%B8%EB%A6%AC%ED%95%98%EA%B2%8C%20%EB%A7%8C%EB%93%9C%EB%8A%94%20%EB%B2%95)][macro help : link(쉽게 변환하여서 클릭으로 사용을 편리하게 만드는 법)]]
+*** [2020-03-02 Mon 03:50] [[file:~/config_github/app/emacs/kmacro.org::*macro%20help%20:%20link(%EC%89%BD%EA%B2%8C%20%EB%B3%80%ED%99%98%ED%95%98%EC%97%AC%EC%84%9C%20%ED%81%B4%EB%A6%AD%EC%9C%BC%EB%A1%9C%20%EC%82%AC%EC%9A%A9%EC%9D%84%20%ED%8E%B8%EB%A6%AC%ED%95%98%EA%B2%8C%20%EB%A7%8C%EB%93%9C%EB%8A%94%20%EB%B2%95)][macro help : link(쉽게 변환하여서 클릭으로 사용을 편리하게 만드는 법)]]
 [[file:~/config_github/app/emacs/string.org::*character%20positions%EC%9C%BC%EB%A1%9C%20%EC%9B%90%ED%95%98%EB%8A%94%20string%20%EB%B6%80%EB%B6%84%EB%B0%9C%EC%B7%8C%20buffer-substring-no-properties][character positions으로 원하는 string 부분발췌 buffer-substring-no-properties]]
 
-** file globbing in syntax of sh [2020-03-02 Mon 09:39]
+*** file globbing in syntax of sh [2020-03-02 Mon 09:39]
 
-* 최신을 앞에 두어야 통합이 쉬울 것이다. 자주 보기 쉬운 것이 이루기 좋다.
-* [2020-03-01 Sun] [[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%201%202%200;%20do%20espeak%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%200)][elisp:Click!espeak_en_3times!]] | [[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%200;%20do%20espeak%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%20nil)][elisp:Click!espeak_en_1times!]] | [[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%201%202%202%202%201%201%202%202%201%200;%20do%20espeak%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%200)][elisp:Click!espeak_en_10times!]]
-** [2020-03-01 Sun 00:00] 놀라운 동조현상 나의 시대를 직감한 듯함!
+
+** [2020-03-01 Sun] [[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%201%202%200;%20do%20espeak%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%200)][elisp:Click!espeak_en_3times!]] | [[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%200;%20do%20espeak%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%20nil)][elisp:Click!espeak_en_1times!]] | [[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%201%202%202%202%201%201%202%202%201%200;%20do%20espeak%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%200)][elisp:Click!espeak_en_10times!]]
+*** [2020-03-01 Sun 00:00] 놀라운 동조현상 나의 시대를 직감한 듯함!
 λαῶν:  사람들의
 [[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%201%202%200;%20do%20espeak%20-v%20other/grc%20-s%20100%20-g%2030%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%200)][elisp:Click!espeak_grc_3times!]] | [[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%200;%20do%20espeak%20-v%20other/grc%20-s%20100%20-g%2030%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%200)][elisp:Click!espeak_grc_1times!]] | [[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%201%202%202%202%201%201%202%202%201%200;%20do%20espeak%20-v%20other/grc%20-s%20100%20-g%2030%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%200)][elisp:Click!espeak_grc_10times!]]
 cogito 생각하다
@@ -665,9 +2087,9 @@ cogito 생각하다
 # cogito 생각하다
 # (la_quick_10times)
 a="${a//-/ }"; a="${a//\*/}"
-** 1-2:3
+*** 1-2:3
 [[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%201%202%200;%20do%20espeak%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%200)][elisp:Click!espeak_en_3times!]] | [[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20a=\"${a//-/%20}\";%20a=\"${a//\\*/}\";for%20i%20in%200;%20do%20espeak%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%20nil)][elisp:Click!espeak_en_1times!]] | [[elisp:(call-shell-region%20(line-beginning-position%200)%20(line-end-position%200)%20"a=\"$(cat)\";%20for%20i%20in%201%202%202%202%201%201%202%202%201%200;%20do%20espeak%20\"$a\";%20sleep%20$((i*3));%20done"%20nil%200)][elisp:Click!espeak_en_10times!]]
-** [2020-03-01 Sun 00:01] 역사의 현장은 공명진동한다.
+*** [2020-03-01 Sun 00:01] 역사의 현장은 공명진동한다.
 #var="${var//-/}" # 이 둘을 통합시키는 구조가 좋을 것임
 #var="${var//\*/}"
 var="${var//[\*-]/}" # 통합에 성공함! [2020-03-07 Sat 07:00]
@@ -677,4 +2099,5 @@ var="${var//[\*-]/}" # 통합에 성공함! [2020-03-07 Sat 07:00]
 3
 
 3
+
 

@@ -1,0 +1,35 @@
+[[https://duckduckgo.com/?q=tcl+tutorial&t=brave&iar=videos&iax=videos&ia=videos&iai=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DtmDshULRU80][tcl tutorial at DuckDuckGo]]
+- 
+#+begin_src sh :results silent
+# tclsh
+# rlwrap tclsh; #로 가능함을 보인다. https://youtu.be/tmDshULRU80  
+
+
+#+end_src
+
+
+
+  :꺽쇄s탭단축키로저장된yasnappet_angle_s_tab:  
+  #+BEGIN_TEXT org :what_in_your_Mind? 
+- Core_location: file:../../app/emacs/.org
+daiary?, loding_file?, 
+
+  :목표범위를 정하고 아래로 내릴 것
+
+https://youtu.be/8E2CHmfTEVs
+- 
+#+begin_src emacs-lisp :results silent
+(message "ictl teacup search ictl")
+;; 원리를 발견하고 충분한 단련과 습관이 없으면 무용지물이다
+#+end_src
+
+- 
+#+begin_src sh :results silent
+espeak -a 20 -v other/la "amare"
+#
+
+#+end_src
+
+  #+END_TEXT
+  :END:
+

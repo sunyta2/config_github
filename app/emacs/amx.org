@@ -1,0 +1,18 @@
+* amx
+
+amx {M-x history and matches} ;; (use-package amx ;; file:amx.org )
+The =amx= package enhances the minbuffer experience, by tracking the histrory of commands and ranking them automatically.
+I once thought it was only meant to be used wiht Ido, but upon closer inspection I realised othewise.
+Great! counsel leverages AMX's features without any further intervention.
+#+begin_src emacs-lisp
+  (use-package amx ;; amx.org
+    :ensure t
+    :after ivy
+    :custom
+    (amx-backend 'auto)
+    (amx-save-file "~/config_github/app/emacs/amx-items-history.org")
+    (amx-histroy-length 900)
+    (amx-show-key-bindings nil)
+    :config
+    (amx-mode 1))
+#+end_src

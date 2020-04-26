@@ -1,0 +1,11 @@
+#+REVERSE_DATETREE_DATE_FORMAT: %Y-%m-%d %A
+#+REVERSE_DATETREE_WEEK_FORMAT: %Y W%W
+#+REVERSE_DATETREE_YEAR_FORMAT: %Y
+#+REVERSE_DATETREE_USE_WEEK_TREE: t
+
+
+
+try로 시도해 볼 것
+유용한 것으로 평가된다.
+
+나를 위해서 창조된 듯 나의 존재를 드러내기 위한 가능성의 실현이다.

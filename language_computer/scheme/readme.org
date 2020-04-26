@@ -1,0 +1,76 @@
+
+
+
+* Procedures are variables
+  :START:  
+
+- diary?, loding_file?, 
+  #+BEGIN_TEXT org :목적 
+- Core_location: file:../../app/emacs/.org
+
+유튜브 동영상 - Scheme, Guile, and Racket: an Introduction by Craig Maloney
+
+;; Procedures are variables
+#+begin_src emacs-lisp :results silent
+;; Scheme, Guile 이 동영상 19:00부분에서 javascript의 https://youtu.be/Kq-4nhIktes?t=1199
+ (define (foo x) (display "I refuse"))
+,tr (bar 4)
+;; 21:30 javascript가 lambda function의 기능을 빌려옴
+((lambda (x) (* x x)) 4) => 16
+
+#+end_src
+  #+END_TEXT
+
+  :END:
+
+#+begin_src sh :results silent
+espeak -a 20 -v other/la "amare"
+#+end_src
+
+#+begin_src emacs-lisp :results silent
+;; Conditionals
+(if (zero? 0)
+
+
+;; Another Conditional
+(cond 
+ ((zero? 0) (display "True\n"))
+ ((not (zero? 1)) (display "Also True\n")))
+;<; => True
+
+;; Equality (eq)
+;;; eq? → Return #t if x and y are the same object except for numbers and characters.
+(define foo 5)
+(define bar foo)
+(eq? foo bar) → #t
+(eq? foo 5) → #t
+;; same Atom eq
+
+;; Equality (eq)
+;;; eq? → Return #t if x and y are the same object,  except for numbers and characters.
+(define foo "5")
+(define bar "5")
+(eq? foo bar) → #f
+
+;;; Equality (equal)
+; equal? → Return #t if x and y are the same type, and their contents or value are equal.
+(define foo '(3 4 5))
+(define bar '(3 4 5))
+(equal? foo bar) → #t
+(eq? foo bar) → #f
+
+;;; Filter
+(filter (lambda (x) (zero? (remainder x 2))) '(4 5 6 6 6 7 8))
+(filter (lambda (x) (number? x)) '(3 4 5 "no"))
+;; The difference between map and filter
+; map applies the function / procedure against all items:
+(map (lambda (x) (number? x)) '(3 4 5 "no")) → (#t #t #t #f)
+(fileter (lambda (x) (number? x)) '(3 4 5 "no")) → (3 4 5)
+
+#+end_src
+
+
+#+begin_src sh :results silent
+espeak -a 20 -v other/la "amare"
+#+end_src
+

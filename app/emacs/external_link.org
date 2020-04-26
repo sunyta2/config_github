@@ -41,6 +41,16 @@ help:customize-option Customize SYMBOL, which must be a user option.
 
 
 
+org-insert-link C-c C-l
+org-insert-all-link C-c C-M-l
+- [[file:~/config_github/app/emacs/regexp_emacs.org][app/emacs/regexp_emacs.org]]
+- [[info:dired-x#Omitting%20Examples][info:dired-x#Omitting Examples]]
+org-insert-last-stored-link C-c M-l
+
+- C-q TAB
+org-insert-drawer C-c C-x d ;; 노트의 형식을 넣는 방식.
+
+
 
 (setq org-link-search-must-match-exact-headline nil)  ;; 단어검색이 가능해진다. : [\[ file: 파일명::검색어]]
 [[https://orgmode.org/manual/External-Links.html#FOOT27][External Links (The Org Manual)]]

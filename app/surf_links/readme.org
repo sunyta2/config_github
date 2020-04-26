@@ -1,0 +1,57 @@
+브라우징을 더욱 능률적으로 사용가능하게 한다.
+surf shortcut {h | l | / | y | g | p | i}
+* surf
+자동으로 새로운 창으로 열리므로 안정적으로 실행이 된다.
+
+** surf 실행법
+(start-process-shell-command
+   (concat "surf 로" " 열기" ) nil 
+   (concat "cd /; exec " "surf https://entertain.daum.net/tv/5016405")
+)
+(start-process-shell-command
+   (concat "surf 로" " 열기" ) nil 
+   (concat "cd /; exec " "surf https://youtu.be/GtfjaFePjtE")
+)
+
+
+(start-process-shell-command
+   (concat "cd /; okular로 열기 " "book_pdf  " ) nil 
+   (concat "cd /; exec " "okular \"$(find ~/Music  -inum 6836311)\"")
+)
+** surf 단축키
+(find-file-read-only-other-frame "/home/thinkpad/suckless/surf/config.h")
+{h | l} history back forth
+i insert typing mode
+/ search
+y copy current url
+g url box
+p paste
+
+
+https://duckduckgo.com/?q=surf+%EB%8B%A8%EC%B6%95%ED%82%A4h+l+history+back+forth%2F+searchy+copy+current+urlg&ia=web
+** /app/xdg-open/xdg-settings.org for app/xdg-open/xdg-setting.org for surf default in Emacs
+* surf default xdg-settings 
+/app/xdg-open/xdg-settings.org for app/xdg-open/xdg-setting.org for surf default in Emacs
+(find-file "/sudo::/usr/share/applications/surf.desktop")
+xdg-settings set default-web-browser surf.desktop
+### 성공적으로 변경함
+xdg-settings get default-web-browser #명령의 수행을 확인함
+
+* links
+잘 실행된다. 단 한글 안나옴 gui로 한글이 안나온다.
+# alt-f 를 눌러서 → Copy current URL location
+
+별도의 desktop application이 필요한 것으로 생각된다.
+#+begin_src emacs-lisp :results silent
+
+#+end_src
+
+
+#+begin_src sh 
+#:results silent
+which links
+#+end_src
+
+#+RESULTS:
+: /usr/bin/links
+

@@ -1,0 +1,11 @@
+https://youtu.be/Bqw8lfms1U8?t=560
+
+
+
+* - Youtube에서 발견한 것으로 
+[[https://www.youtube.com/watch?v=FOIbK4bJKS8][Cross Platform Graphical User Interfaces in C++ - YouTube]]
+
+https://youtu.be/FOIbK4bJKS8?t=9m30s
+** 나누어서 설명함
+- Structrue
+- Event

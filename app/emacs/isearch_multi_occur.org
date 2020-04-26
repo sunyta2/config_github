@@ -1,10 +1,33 @@
-C-s의 기능으로 함수명은 (isearch-forward)
+19   Switch to buffer: C-s의 기능으로 함수명은 (isearch-forward)
 (isearch-forward &optional REGEXP-P NO-RECURSIVE-EDIT)
 (isearch-forward "*1*" nil)
 (isearch-forward-regexp "5")
 (re-search-forward "5")  잘 작동됨.
     크샤의 설명임: [[http://ergoemacs.org/emacs/elisp_regex.html][Elisp: Regex Tutorial]] 여기서 발견함
 (re-search-backward "5") 
+
+
+* 최고다! 정말 최고최고다
+# 검색의 神 이 바로 Emacs!!! → 바로 C-u M-x multi-occur-in-matching-buffers
+- 검색의 신이 바로 Emacs
+어렵지만 정보검색의 최고 사령관이면서 최강의 전략가.
+- (multi-occur-in-matching-buffers "\\(*\\|org\\)" "입력" "\\&")
+- 다시 발굴한 occur의 기능을 보라 (multi-occur-in-matching-buffers "org" "concat" nil)
+  동영상을 보면서 이맥스의 기능을 확장하고 노트를 정리함.
+    - swifer와 결합하면 강력하다 S-SPC로 선택영역을 줄인다. C-M-m C-M-n\p M-o (occur창을 생성함 )C-c C-o 입력을 더해줌 M-i
+
+Occur Key Binding ;; 필수로 익혀야 할 단축키의 놀라운 기능이라고 생각한다.
+요건M-n, M-p     Go to next and previous occurrence약간 제한되는듯함.
+<, >     Go to beginning and end of buffer
+g     Revert the buffer, refreshing the
+      ; 파일이 편집되면 간단히 여기서 새로 갱신하는 것으로 그 변경을 재반영함.
+e    Switches to occur edit mode ;; <감동!> 자체에서 편집이 가능함 놀라움!!! 그자체
+C-c C-c     Exits occur edit mode and applies changes ;;<감동의 저장> 위 편집을 적용
+
+
+- C-u M-x multi-occur-in-matching-buffers 검색의 경우 입력은 \(*\|org\) <리턴> 입력 <리턴>
+
+- 참조 (info "(emacs) Other Repeating Search") help:multi-occur-in-matching-buffers 에서 C-u추가를 특히 재발굴함! 
 
 1
 To abandon the search and return to the place where you started, 
@@ -24,12 +47,25 @@ both C-u C-<SPC> and C-x C-x will go to the mark.)
 
 
 * multi-occur 단축키로 원하는 부분으로 쉽게 이동하는 것이 필요함.
+
+ivy.org                        11.0k        Org          config_github   app/emacs/
+isearch_multi_occur.org        6.5k         Org          config_github   app/emacs/
+*XELB-DEBUG*                   567.0k       Fundamental  config_github   app/emacs/
+03diary2020.org                64.2k        Org          config_github   app/emacs/
+etymology_google_list_page_no… 399          Org          config_github   great_books/etymology_greek_latin/
+test_list.org                  869          Fundamental  config_github   great_books/etymology_greek_latin/
+*Completions*                  441          Completion …                 
+*Help*                         231          Help                         
+*Packages*                     51.8k        Package Menu                 
 (multi-occur (quote (#<buffer de_architectura_liber01_03.org> #<buffer 03diary2020.org>)) "mapc" nil)
 버퍼의 리스트를 얻어서 리스트를 전부 검색하는 것이 가능할 것이다. 아니면 
 (list-buffers nil) help:list-buffers
 
 helm의 기능을 상기하면 더 낳은 방법이 있을 것이다.
 
+*** 일단 수집함.
+(mapc #'org-babel-load-file (directory-files dotfiles-dir t "\\.org$")) ;hack Emacs 07
+(multi-occur (quote (#<buffer de_architectura_liber01_03.org> #<buffer 03diary2020.org>)) "mapc" nil)
 
 * help
 #+BEGIN_SRC 
@@ -139,8 +175,8 @@ M-n, M-p     Go to next and previous occurrence
 <, >     Go to beginning and end of buffer
 g     Revert the buffer, refreshing the
       ; 파일이 편집되면 간단히 여기서 새로 갱신하는 것으로 그 변경을 재반영함.
-e    Switches to occur edit mode ;; 자체에서 편집이 가능함 놀라움!!! 그자체
-C-c C-c     Exits occur edit mode and applies changes ;; 위 편집을 적용
+e    Switches to occur edit mode ;; <감동!> 자체에서 편집이 가능함 놀라움!!! 그자체
+C-c C-c     Exits occur edit mode and applies changes ;;<감동의 저장> 위 편집을 적용
 
 
 * etc

@@ -1,0 +1,7 @@
+# stumpwm-mode is an installed package.
+
+(require 'stumpwm-mode)
+
+
+(print "hi")
+ stumpish를 찾아서 등록해야 함.

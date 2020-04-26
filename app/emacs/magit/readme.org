@@ -1,5 +1,6 @@
 * magit for git
 C-x g ( M-x magit-status )
+trdt
 
 
 
@@ -13,6 +14,10 @@ C-x g ( M-x magit-status )
 
 * YouTube 동영상 강의
 Ediff - https://www.youtube.com/watch?v=476kAEi-_8o
+e v(resolve) conflict  $ git branch -l
+test
+test good in the way of thought in good reason
+
 
 https://duckduckgo.com/?q=ediff&atb=v92-3_f&iax=videos&ia=videos&pn=1
 

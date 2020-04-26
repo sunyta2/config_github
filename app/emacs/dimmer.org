@@ -1,0 +1,43 @@
+
+
+(setq dimmer-fraction 0.6)
+
+
+dimmer is an available obsolete package.
+
+     Status: Available Obsolete from melpa -- Install
+    Archive: melpa
+    Version: 20200308.2331
+     Commit: e13541621e6fa82510fd5cb6ff029c1a134d0bfc
+    Summary: Visually highlight the selected buffer
+   Requires: emacs-25.1
+   Homepage: https://github.com/gonewest818/dimmer.el
+   Keywords: faces editing 
+Other versions: 20200308.2331 (installed).
+
+This module provides a minor mode that indicates which buffer is
+currently active by dimming the faces in the other buffers.  It
+does this nondestructively, and computes the dimmed faces
+dynamically such that your overall color scheme is shown in a muted
+form without requiring you to define what is a "dim" version of
+every face.
+
+`dimmer.el' can be configured to adjust foreground colors (default),
+background colors, or both.
+
+Usage:
+
+     (require 'dimmer)
+     (dimmer-mode t)
+     (setq dimmer-fraction 0.2) ;; dimmer.org basic value
+     (dimmer-configure-which-key)
+     (dimmer-configure-helm)
+
+Configuration:
+
+By default dimmer excludes the minibuffer and echo areas from
+consideration, so that most packages that use the minibuffer for
+interaction will behave as users expect.
+
+
+

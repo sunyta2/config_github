@@ -1,0 +1,34 @@
+
+* study lisp
+리스프 좀비 ELS 2018 Keynote: This Old Lisp https://www.youtube.com/watch?v=MgVuqPgKJQc
+
+** common lisp
+*** Little bits of lisp 
+
+**** descriptions
+- https://www.youtube.com/watch?v=rmUTW5QWhhM&list=PL2VAYZE_4wRJi_vgpjsH75kMhN4KsuzR_&index=2
+    - 동영상 시청이 좋은 방법이다.
+
+
+
+** clojure
+
+*** [2019-11-16 Sat 09:41] Lambda Calculus - Fundamentals of Lambda Calculus & Functional Programming in JavaScript - YouTube :grasp:
+  https://www.youtube.com/watch?v=3VQ382QG-y4
+
+   (progn (defconst file-path-of-here-file (buffer-file-name) )
+  ;(message file-path-of-here-file)
+  (save-buffer) (kill-buffer)
+	  (read-only-mode)
+  (shell-command "echo ava | sudo -S killall python3")
+  (shell-command (format "echo ava | sudo -S ~/.bin/grasp/server/grasp_server.py --path %s" file-path-of-here-file ) )
+
+  (shell-command "echo ava | sudo -S killall python3")
+  (find-file file-path-of-here-file)
+  (revert-buffer)
+	  (read-only-mode)
+  (end-of-buffer)
+  )
+
+
+

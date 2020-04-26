@@ -1,0 +1,9 @@
+(use-package encourage-mode
+  :ensure t
+  :config
+  ;; Activate encourage-mode
+  (encourage-mode t))
+
+To use it, simply call M-x `encourage-mode'.
+
+

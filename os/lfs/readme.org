@@ -3,6 +3,40 @@
 - 나중에 실물에?
 
 
+(start-process-shell-command
+   (concat "surf 로" " 열기" ) nil 
+   (concat "cd /; exec " "surf https://duckduckgo.com/?q=linux+from+scratch")
+)
+비디오로 가서 시청하는 것. 시청중인 목록만 검색하는 것
+
+(start-process-shell-command
+   (concat "surf 로" "메뉴얼읽기 대안pdf local html을 참조할 것" ) nil 
+   (concat "cd /; exec " "surf http://www.linuxfromscratch.org/lfs/view/stable/")
+) 
+
+
+;; 다음읽을부분-아래에
+
+;; 대충읽은 부분아래에
+1.1. How to Build an LFS System -요약 전체적인 설계를 밝힘.
+
+;; 읽었던 부분 아래에
+
+(start-process-shell-command
+   (concat "surf 로" "메뉴얼읽기 대안pdf local html을 참조할 것" ) nil 
+   (concat "cd /; exec " "surf http://www.linuxfromscratch.org/lfs/read.html")
+)
+
+(start-process-shell-command
+   (concat "surf 로" " 열기" ) nil 
+   (concat "cd /; exec " "surf https://duckduckgo.com/?q=linux%20from%20scratch")
+)
+(start-process-shell-command
+   (concat "surf 로" " 열기" ) nil 
+   (concat "cd /; exec " "surf https://duckduckgo.com/?q=linux+from+scratch")
+)
+
+
 ** lfs
 (find-file "../os/lfs/readme.org")
 

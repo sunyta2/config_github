@@ -1,3 +1,4 @@
+;; -*- lisp -*-
 ;; echo ";; https://raw.githubusercontent.com/Jehops/config/master/stumpwm/.stumpwmrc"
 ;; curl https://raw.githubusercontent.com/Jehops/config/master/stumpwm/.stumpwmrc >> ./stumpwmrc_by jo~~
 

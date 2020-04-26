@@ -10,14 +10,20 @@ help:org-try-structure-completion <= 이것이 탭을 누를때 발생하는 명
 [[elisp:(customize-group%20"structure")][elisp:(customize-group_"structure")]]
 
 (customize-apropos-options (quote ("org-agenda")))
-(customize-apropos-options '"structure")
+(customize-apropos-options '"structure") ;; 발견함. app/emacs/src_tab_org_structure_completion_template.org
 (customize-apropos-options  "structure")
 (customize-apropos-options (quote ("org structure")))
 
 (customize-browse) Tree구조 파악에 중요한 명령임 help:customize-browse 성과로 기록할 것
-C-u C-u M-: (buffer-file-name)
-emacs안에서 산다! 무엇이든 이맥스로 통합하려고 함.
 
+C-u C-u M-: (buffer-file-name)
+→ "/home/thinkpad/config_github/app/emacs/src_tab_org_structure_completion_template.org"
+
+
+(org-insert-structure-template) C-c C-, 뭐지?? 모르겠음
+help:org-insert-structure-template
+
+emacs안에서 산다! 무엇이든 이맥스로 통합하려고 함.
 ** help:customize-browse (customize-browse)
 
 Possible completions are:

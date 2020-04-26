@@ -1,0 +1,55 @@
+* NOTIFY METHOD by app
+
+“Those who know, do not speak. Those who speak, do not know” ~ The Tao
+[[https://ss64.com/bash/notify-send.html][notify-send Man Page - Linux - SS64.com]]
+* dunst with notify-send
+- SEE FOLDER ./dunst
+file:~/.config/dunst/dunstrc
+#+BEGIN_SRC sh
+dunst &> /dev/null; notify-send -t 3000 "dunst $ notify-send -t 3000 \"Run by dunst\"                  \# SEE ~/config_github/app/notify"
+#+END_SRC
+
+#+BEGIN_SRC sh
+mkdir dunst
+cd dunst
+touch README.org
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC emacs-lisp
+(find-file "./dunst/README.org")
+#+END_SRC
+
+#+RESULTS:
+: #<buffer README.org<dunst>>
+* <발견>투명화검토되는 Dunst alternative
+검색을 통해 발견되었음 투명화가능한 Dunst가 필요할 것 같아서 찾던 중에 발견함!
+[[https://www.reddit.com/r/i3wm/comments/f8fy63/true_transparency_enabled_dunst_alternative/][True transparency enabled Dunst alternative : i3wm]]
+ It is inspired by Dunst, fully customizable and true transparency enabled 
+(if you have a compositor, of course). 
+It is also equipped with a notification centre style pane 
+where you can view past notifications:
+
+* file xmessage.org
+file:./xmessage.org go here
+
+* MAC OSX
+- growl
+- notification by applescript
+
+
+** growl
+
+
+** applescript
+- file link to ~/computer/language_computer/applescript/README.org
+* Linux Notification Center-A haskell-written notification center
+
+notifications via DBUS (like any notification daemon) and shows them in the upper right corner of the screen.
+~/.config/deadd/deadd.conf
+[[https://github.com/phuhl/linux_notification_center#linux-notification-center][GitHub - phuhl/linux_notification_center: A notification daemon/center for linux]]
+* twmn 대안의 시작
+[[https://github.com/sboli/twmn][GitHub - sboli/twmn: A notification system for tiling window managers]]
+~/.config/twmn/twmn.conf
+* 다양한 Arch wiki에서 
+[[https://wiki.archlinux.org/index.php/Desktop_notifications][Desktop notifications - ArchWiki]]

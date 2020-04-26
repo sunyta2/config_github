@@ -1,0 +1,165 @@
+화살표부분을 수정하도록 찾아서 검색해 볼 것.
+- posframe이 helm에서도 가능한지 물어볼것.
+
+어떻게 멀티검색을 ivy에서 가능하게 하는가를 찾아내면 대박임.
+x즉 counsel과 병행해서 사용하는 법을 찾아낼 것.
+* install need list
+
+amx {M-x history and matches} ;; (use-package amx ;; file:amx.org )
+
+  ivy-posframe       20191226.637  available  melpa      Using posframe to show Ivy
+  ivy-omni-org       20200125.807  available  melpa      Browse anything in Org mode
+  ivy-purpose        20160724.1003 available  melpa      Ivy Interface for Purpose
+  ivy-todo           20200323.2005 available  melpa      Manage org-mode TODOs with ivy
+  ivy-youtube        20181126.1039 available  melpa      Query YouTube and play videos in your browser
+
+
+
+  ivy-bibtex         20191028.1313 available  melpa      A bibliography manager based on Ivy
+  ivy-clojuredocs    20190907.2053 available  melpa      Search for help in clojuredocs.org
+  ivy-dired-history  20170626.556  available  melpa      use ivy to open recent directories
+  ivy-emoji          20200316.2351 available  melpa      Insert emojis with ivy
+  ivy-erlang-comp... 20191112.1137 available  melpa      Erlang context sensitive completion at point using ivy. It also support xref and eldoc.
+  ivy-explorer       0.3.2         available  gnu        Dynamic file browsing grid using ivy
+  ivy-explorer       20190909.1921 available  melpa      Dynamic file browsing grid using ivy
+  ivy-fuz            20191222.946  available  melpa      Integration between fuz and ivy.
+  ivy-gitlab         20181228.826  available  melpa      Ivy interface to Gitlab
+  ivy-historian      20190111.313  available  melpa      Persistently store selected minibuffer candidates
+  ivy-hydra          20191018.1251 available  melpa      Additional key bindings for Ivy
+  ivy-lobsters       20171202.2041 available  melpa      Browse lobste.rs stories with ivy.
+  ivy-mpdel          20190428.920  available  melpa      Ivy interface to navigate MPD
+  ivy-pages          20160728.1920 available  melpa      Complete current buffer's pages with Ivy
+  ivy-pass           20170812.1955 available  melpa      ivy interface for pass
+  ivy-phpunit        20180219.915  available  melpa      Ivy integration for phpunit.el
+  ivy-prescient      20191224.220  available  melpa      prescient.el + Ivy
+  ivy-rich           20200322.1326 available  melpa      More friendly display transformer for ivy.
+  ivy-rtags          20191222.920  available  melpa      RTags completion back-end for ivy
+  ivy-xcdoc          20160917.1055 available  melpa      Search Xcode documents with ivy interface.
+  ivy-xref           20191126.401  available  melpa      Ivy interface for xref results
+  ivy-yasnippet      20181002.1655 available  melpa      Preview yasnippets with ivy
+
+
+  ein                20200319.1342 available  melpa      Emacs IPython Notebook
+  ein-mumamo         20150302.28   available  melpa      Multiple major mode support for Emacs IPython Notebook
+
+
+  axiom-environment  20200109.2207 available  melpa      An environment for using Axiom/OpenAxiom/FriCAS
+  babel              20181201.919  available  melpa      interface to web translation services such as Babelfish
+  babel-repl         20160504.2201 available  melpa      Run babel REPL
+  back-button        20150804.2004 available  melpa      Visual navigation through mark rings
+  backlight          20190905.519  available  melpa      backlight brightness adjustment on GNU/Linux
+  backline           20200104.1851 available  melpa      Preserve appearance of outline headings
+  backup-each-save   20180227.557  available  melpa      backup each savepoint of a file
+  backup-walker      20130720.1516 available  melpa      quickly traverse all backups of a file
+  backward-forward   20161229.550  available  melpa      navigation backwards and forwards across marks
+  badger-theme       20140717.232  available  melpa      A dark theme for Emacs 24.
+  badwolf-theme      20161004.715  available  melpa      Bad Wolf color theme
+  baidu-translate    20190817.1318 available  melpa      A plugin using baidu-translate-api
+  balanced-windows   20190903.1120 available  melpa      Keep windows balanced
+  bang               20200325.1053 available  melpa      A more intelligent shell-command
+  banner-comment     20190606.1809 available  melpa      For producing banner comments.
+  bap-mode           20200128.1354 available  melpa      Major-mode for BAP's IR
+  bar-cursor         20180227.45   available  melpa      package used to switch block cursor to a bar
+
+
+  bbdb               3.2           available  gnu        core of BBDB
+  bbdb               20200102.403  available  melpa      The Insidious Big Brother Database for GNU Emacs
+  bbdb-              20140221.2354 available  melpa      provide interface for more easily search/choice than BBDB.
+  bbdb-csv-import    20180122.49   available  melpa      import csv to bbdb version 3+
+  bbdb-ext           20151220.2013 available  melpa      Extra commands for BBDB
+  bbdb-vcard         20190410.2054 available  melpa      vCard import/export for BBDB
+  bbdb2erc           20190822.907  available  melpa      make bbdb show if pal is online with ERC, click i to chat
+  counsel-bbdb       20181128.1320 available  melpa      Quick search&input email from BBDB based on ivy
+
+  e2wm               20170215.36   available  melpa      simple window manager for emacs
+  e2wm-R             20151230.926  available  melpa      some e2wm plugin and perspective for GNU R
+  e2wm-bookmark      20151123.521  available  melpa      Bookmark plugin for e2wm.el
+  e2wm-direx         20170509.1301 available  melpa      Plugin of e2wm.el for direx.el
+  e2wm-pkgex4pl      20140525.1047 available  melpa      Plugin of e2wm.el for package explorer of Perl
+  e2wm-sww           20140524.858  available  melpa      Plugin of e2wm.el to switch plugin quickly
+  e2wm-term          20200322.729  available  melpa      Perspective of e2wm.el for work in terminal
+
+  flyspell-correc... 20200215.1503 available  melpa      Correcting words with flyspell via ivy interface
+  flyspell-correc... 20200204.521  available  melpa      Correcting words with flyspell via popup interface
+  flyspell-lazy      20180224.2106 available  melpa      Improve flyspell responsiveness using idle timers
+  flyspell-popup     20170529.815  available  melpa      Correcting words with Flyspell in popup menus
+
+
+  imenu-anywhere     20190512.1939 available  melpa      ido/ivy/helm imenu across same mode/project/etc buffers
+  imenu-list         20190115.2130 available  melpa      Show imenu entries in a separate buffer
+  imenus             20180505.1717 available  melpa      Imenu for multiple buffers and without subgroups
+
+  ivy-bibtex         20191028.1313 available  melpa      A bibliography manager based on Ivy
+  ivy-clojuredocs    20190907.2053 available  melpa      Search for help in clojuredocs.org
+  ivy-dired-history  20170626.556  available  melpa      use ivy to open recent directories
+  ivy-emoji          20200316.2351 available  melpa      Insert emojis with ivy
+  ivy-erlang-comp... 20191112.1137 available  melpa      Erlang context sensitive completion at point using ivy. It also support xref and eldoc.
+  ivy-explorer       0.3.2         available  gnu        Dynamic file browsing grid using ivy
+  ivy-explorer       20190909.1921 available  melpa      Dynamic file browsing grid using ivy
+  ivy-fuz            20191222.946  available  melpa      Integration between fuz and ivy.
+  ivy-gitlab         20181228.826  available  melpa      Ivy interface to Gitlab
+  ivy-historian      20190111.313  available  melpa      Persistently store selected minibuffer candidates
+  ivy-hydra          20191018.1251 available  melpa      Additional key bindings for Ivy
+  ivy-lobsters       20171202.2041 available  melpa      Browse lobste.rs stories with ivy.
+  ivy-mpdel          20190428.920  available  melpa      Ivy interface to navigate MPD
+  ivy-omni-org       20200125.807  available  melpa      Browse anything in Org mode
+  ivy-pages          20160728.1920 available  melpa      Complete current buffer's pages with Ivy
+  ivy-pass           20170812.1955 available  melpa      ivy interface for pass
+  ivy-phpunit        20180219.915  available  melpa      Ivy integration for phpunit.el
+  ivy-posframe       20191226.637  available  melpa      Using posframe to show Ivy
+  ivy-prescient      20191224.220  available  melpa      prescient.el + Ivy
+  ivy-purpose        20160724.1003 available  melpa      Ivy Interface for Purpose
+  ivy-rich           20200322.1326 available  melpa      More friendly display transformer for ivy.
+  ivy-rtags          20191222.920  available  melpa      RTags completion back-end for ivy
+  ivy-todo           20200323.2005 available  melpa      Manage org-mode TODOs with ivy
+  ivy-xcdoc          20160917.1055 available  melpa      Search Xcode documents with ivy interface.
+  ivy-xref           20191126.401  available  melpa      Ivy interface for xref results
+  ivy-yasnippet      20181002.1655 available  melpa      Preview yasnippets with ivy
+  ivy-ycmd           20180909.1225 available  melpa      Ivy interface to ycmd
+  ivy-youtube        20181126.1039 available  melpa      Query YouTube and play videos in your browser
+
+
+* log for some day
+
+** [2020-03-29 Sun]
+[[https://www.instructables.com/id/Add-text-to-images-with-Linux-convert-command/][(convert text add to image saved in Desktop/~html )]] 노트로 정리해 둘 것. app/convert/readme.org
+not install package eimp.el package 일단 연구해 보고 시간나면 다운로드해서 실험해 볼 것.
+ein download- 
+elisp-slime.org
+- /home/thinkpad/config_github/app/emacs/_2_will_installed_needed_packages.org
+:log_opened_filed:
+    emacs_is_great.org    16468 Org              ~/config_github/app/emacs/emacs_is_great.org
+    customize_face_sav...   10068 Org              ~/config_github/app/emacs/shell_emacs/customize_face_saved_to_load.org
+    haskell_in_emacs.org    4133 Org              ~/config_github/app/emacs/haskell_in_emacs.org
+    src_color_bakgroun...   10638 Org              ~/config_github/app/emacs/src_color_bakground.org
+    dired.org              9122 Org              ~/config_github/app/emacs/dired.org
+    _2_will_installed_n...    8994 Org              ~/config_github/app/emacs/_2_will_installed_needed_packages.org
+    leftwm.org              279 Org              ~/config_github/app/emacs/leftwm.org
+    ivy.org                  35 Org              ~/config_github/app/emacs/ivy.org
+    stumpwm-mode.org        103 Org              ~/config_github/app/emacs/stumpwm-mode.org
+    occur.org               159 Org              ~/config_github/app/emacs/occur.org
+    exwm.org                570 Org              ~/config_github/app/emacs/exwm.org
+    engine-mode.org        1897 Org              ~/config_github/app/emacs/engine-mode.org
+    encourage-mode.org      149 Org              ~/config_github/app/emacs/encourage-mode.org
+    ein.org                 270 Org              ~/config_github/app/emacs/ein.org
+    emms.org               2594 Org              ~/config_github/app/emacs/emms.org
+    elwm.org               1205 Org              ~/config_github/app/emacs/elwm.org
+    03diary2020.org       54093 Org              ~/config_github/app/emacs/03diary2020.org
+    egg-timmer.org          561 Org              ~/config_github/app/emacs/egg-timmer.org
+    dimmer.org             1162 Org              ~/config_github/app/emacs/dimmer.org
+    org-noter.org           456 Org              ~/config_github/app/emacs/org-noter.org
+    pdf-tools.org         11227 Org              ~/config_github/app/emacs/pdf-tools.org
+    org-wiki.org            449 Org              ~/config_github/app/emacs/org-wiki.org
+    bookmark_rust_manua...    1584 Org              ~/config_github/language_computer/rust/bookmark_rust_manual.org
+    hello_cargo.org        1374 Org              ~/config_github/language_computer/rust/test_rust/hello_cargo/hello_cargo.org
+    pdf_list_of_deskt...  205871 Org              ~/Desktop/pdf_list_of_desktop.org
+    de_architectura_l...   12113 Org              ~/config_github/great_books/vitruvius/de_architectura/de_architectura_liber01_03.org
+    test_golden.org          11 Org              ~/config_github/app/emacs/test_golden.org
+    goldendict.org         1812 Org              ~/config_github/app/emacs/goldendict.org
+    pdft_ools-compile.org    2204 Org              ~/config_github/app/emacs/pdft_ools-compile.org
+    readme.org            10395 Org              ~/config_github/app/stumpwm/readme.org
+    study_stumpwm_to_m...     460 Org              ~/config_github/app/stumpwm/study_stumpwm_to_make_frame_and_resize_open_app_test.org
+    seethru.org            1455 Org              ~/config_github/app/emacs/seethru.org
+
+:END:
+

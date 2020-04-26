@@ -1,3 +1,7 @@
 
 
-(describe-function 'describe-function)
+** (describe-function 'describe-function)
+** describe-key [xxxxxxxxxx] 참조할 것
+일단 키의 값으로 알아내는 법도 참조해 볼 것... 저장처를 찾아서 나중에 통합할 것.
+                ;; (describe-key [8388646] 1 nil) (start-process-shell-command "돌핀" nil "dolphin")
+(global-set-key [24 C-backspace] ; C-x C-backspace

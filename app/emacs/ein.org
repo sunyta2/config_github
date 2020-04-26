@@ -3,3 +3,7 @@ Emacs IPython Notebook (EIN)
 * [[https://www.youtube.com/watch?v=OB9vFu9Za8w][The Emacs Ipython Notebook- John Miller (Honeywell UOP) - YouTube]]
 
 EIN is awesome, using it to connect to a notebook runing on a server through a ssh tunnel.
+
+
+installed ein
+(require 'ein)

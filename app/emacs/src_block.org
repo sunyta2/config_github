@@ -1,5 +1,63 @@
 
+목록파일로 사용하는 것이 도움이 될 것이다.
+다른 곳의 필요한 자료를 쉽게 찾을 수 있도록 아래에 목록을 둔다.
+[[- 목록]]
+    더 좋은 점을 찾는 것은 문제에서 발견됨! [[org-babel-do-load-languages]]
+
 C-c C-v C-M-h
 help:org-babel-mark-block
 org-babel-mark-block
 
+* C-c C-v j (org-babel-insert-header-arg) ;; 변수를 추가하는 법.
+
+#+begin_src sh :dir 1 :results silent 
+echo hi	
+
+#+end_src
+
+#+BEGIN_SRC emacs-lisp :comments org 
+	(+ 
+  1 
+    2)
+
+(message "hi")
+#+END_SRC
+
+#+RESULTS:
+: hi
+
+
+- 목록
+- (setq shell-command-dont-erase-buffer 'beg-last-out) ;;  *Shell Command Output* 버퍼를 일정하게 유지해야 여러개의 버퍼가 열리는 것을 방지함.
+                                                             ;; 위치: file:../../app/emacs/shell_command_output_buffer.org
+
+
+* 더 좋은 해결점을 발견한다. 언제나 문제는 새로운 발견과 이해의 폭을 넓힌다.
+* org babel의 언어로딩을 해결함!
+#+BEGIN_SRC emacs-lisp
+(org-babel-do-load-languages ;; 멋진 해결을 발견함 → (info "(org) Languages")
+      'org-babel-load-languages
+      '((emacs-lisp . t)
+        (shell . t)
+        (org . t)
+        (python . t)
+        (ruby . t)
+        (rust . t)
+        (C . t)
+       ))
+#+END_SRC
+
+<문제는 절망감을 주지만,,,> 우회 다른 방식 다른 발견! 메뉴얼 좋은탐구습관, 개념을 명확확장 간략정리, 원문제도 결국 해결함
+    - Evaluate this sh code block on your system? (y or n) y
+    - org-babel-execute-src-block: No org-babel-execute function for sh!
+            → (org-babel-do-load-languages 'org-babel-load-languages)
+              → (info "(org) Languages") emacs/src_block.org
+
+- 문제를 우회하기 위하여 다른 방식을 찾아내는 과정에서 다른 발견!
+                - (mapconcat 'shell-command-to-string '("lsblk" "lsblk") "\n") ; ← 여기서 심지어 단문으로 C-u C-x C-e도 가능함!!!
+                - (shell-command-on-region (+ (line-beginning-position 2) 0) (line-end-position 2) 
+			"espeak -a 20 -g 27 -s 120 -v other/la" nil nil nil)
+religionis deorum immortalium fanorum aediumque sacrarum conlocatio, 
+- 메뉴얼을 읽어보는 습관을 기르고, 개념을 명확히 확장하고 간략히 정리하며,
+- 더욱이 원래문제를 정확히 발견한다.
+더 좋은 해결점을 발견한다. 언제나 문제는 새로운 발견과 이해의 폭을 넓힌다.

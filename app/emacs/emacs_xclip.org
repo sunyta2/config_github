@@ -1,6 +1,18 @@
 
 
 
+* 외부의 클립보드와 kill-ring의 관계설정값인 듯하다.
+(setq save-interprogram-paste-before-kill t)
+help:save-interprogram-paste-before-kill
+I haven't noticed this problem before, but now I do. Found this:
+
+(setq save-interprogram-paste-before-kill t)
+I wonder why it's not the default.
+
+oh man, this is exactly what I needed! 
+I even started to write some defadvice for kill-ring-save when all I needed was sth to be t. 
+Thanks!you
+
 
 
 ** emacs-xclip  0.9-1          0.03 MiB

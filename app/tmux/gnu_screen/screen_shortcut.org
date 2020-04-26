@@ -1,9 +1,9 @@
 
-
-* shortcut of GNU screen
-
-
-* 사이트의 내용임. 
+** info screen and dot file of screen
+(info "(screen) Top")
+file:~/.screenrc (info "(screen) Startup Files")
+** shortcut of GNU screen
+*** 사이트의 내용임. 
 SCREEN Quick Reference [GNU screen -quick_reference](http://aperiodic.net/screen/quick_reference)
 ￼Edit
 Getting in

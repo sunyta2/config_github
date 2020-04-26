@@ -1,0 +1,1 @@
+/home/thinkpad/config_github/app/emacs/customize_face_saved_to_load.org

@@ -1,1 +1,62 @@
 (dired-jump 3 "~/.emacs.d/history")
+file:../../app/emacs/history_cmd_in_emacs.org
+
+  :꺽쇄s탭단축키로저장된yasnappet_angle_s_tab:  
+  #+BEGIN_TEXT org :what_in_your_Mind? 
+- Core_location: file:../../app/emacs/.org
+daiary?, loding_file?, 
+
+  #+END_TEXT
+  :목표범위를 정하고 아래로 내릴 것
+- 
+#+begin_src emacs-lisp :results silent
+(message "")
+(require 'history)
+
+(use-package history
+:lighter "history"
+:global t 
+)
+;; 원리를 발견하고 충분한 단련과 습관이 없으면 무용지물이다
+#+end_src
+
+- 
+#+begin_src sh :results silent
+espeak -a 20 -v other/la "amare"
+#
+
+#+end_src
+
+  :END:
+
+
+
+*** 
+- /home/thinkpad/config_github/language_computer/shell/tclsh.org
+  - [[https://github.com/boyw165/history][GitHub - boyw165/history: Emacs - History utility for source code navigation.]]
+
+
+
+*** (global-)command-log-mode
+- 깔끔하게 명령의 로그를 명령어로 바로 보여준다.
+  - cf. file:../../app/emacs/command-log.org
+  - file:../../app/emacs/history_cmd_in_emacs.org
+*command-log* 참조 비교할 것.
+(command-history) help:command-history
+(list-command-history) C-x C-[ C-[ 의 리스트를 모두 보인다. help:list-command-history
+C-h l 마지막의 입력한 키보드를 출력함. (view-lossage) 
+help:view-lossage
+
+help:command-log-mode (command-log-mode)
+help:command-history-mode (command-history-mode)
+
+
+(* (+ 1 2) 5)
+15
+
+15
+
+*** amx {M-x history and matches} ;; (use-package amx ;; file:amx.org )
+
+
+

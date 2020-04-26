@@ -1,0 +1,13 @@
+countdown is an available obsolete package.
+
+     Status: Available Obsolete from melpa -- Install
+    Archive: melpa
+    Version: 20190626.244
+     Commit: 139dea91fc818d65944aca5f16c9626abbdfbf04
+    Summary: Countdown using big LCD-like digits
+   Requires: emacs-25.1, stream-2.2.4
+   Homepage: https://github.com/xuchunyang/countdown.el
+   Keywords: tools 
+Other versions: 20190626.244 (installed).
+
+countdown.el is inspired by countty (https://uninformativ.de/git/countty)

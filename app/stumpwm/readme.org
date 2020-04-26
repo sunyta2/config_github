@@ -9,6 +9,21 @@ file:stumpwm_is_great_with_emacs_test.org
 [[file:readme.org][stumpwm/readme]] , [[file:~/config_github/app/herbstluftwm/readme.org][herbstluftwm/readme]], [[file:~/config_github/app/xmonad/readme.org][xmonad/readme]] , [[file:~/config_github/app/qtile/readme.org][qtile/readme]] , [[file:~/config_github/app/dwm/readme.org][dwm/readme]] ,
 [[file:~/config_github/app/exwm/readme.org][exwm/readme]] , awesome, i3-gap
 
+compton  투명도 transparent
+#+begin_src sh
+
+
+
+#+end_src
+#+BEGIN_SRC sh :results silent
+ killall compton
+compton -bcCGf --active-opacity 0.93 -i 0.6 -e 0.6 -m 0.9 # 기본으로 복귀함.
+#위치를 찾아서 okular/readme.org
+# compton/ okular/readme.org 
+#+END_SRC
+
+
+info:stumpwm#Top 를 자주 살펴볼 것
 (man "stumpwm"없어서)  # man mode
 
 to do
@@ -30,6 +45,70 @@ C-t x {C-h | npfb | hjkl} 맞교환의 탁월한 방식을 발견함.
 13.7 Getting Help
 
 
+* defind-remapped-keys로 다른 앱의 단축키를 설정하는 것으로 통일적인 단축키 양식을 만드는 기초가 된다.
+#+begin_quote org
+[[pdfview: ::15   ;;define-remapped-keys
+
+
+
+#+end_quote
+#+begin_example text
+
+대박! [[pdfview:~/Documents/stumpwm-1.0.0.pdf::11]]
+
+#+end_example
+#+begin_comment text
+대박! [[pdfview:/home/thinkpad/Documents/stumpwm-1.0.0.pdf::11]]
+대박! [[pdfview:~/Documents/stumpwm-1.0.0.pdf::11]]
+대박! [[pdfview:~/Documents/stumpwm-1.0.0.pdf::13]]
+#+end_comment
+file:/home/thinkpad/Documents/stumpwm-1.0.0.pdf
+[[https://emacs.stackexchange.com/questions/19686/how-to-use-pdf-tools-pdf-view-mode-in-emacs][
+
+
+
+아래의 목적을 설명함: 다른 애플리케이션에서 C-g 나 방향이동의 키를 오인해서 다른 반응을 보이는 것을 방지함. brave/okular
+#+begin_src emacs-lisp
+  ;; stumpwm에서 okular의 단축키를 defind-remapped-keys 로 재설정해서 C-n C-p를 사용가능하게 한다.
+  ;;; - stumpwm/readme.org에 총괄저장할 것.
+  ;;;; erron in below
+  ;'((,(lambda (win)
+  ;(string-equal "okular" (window-class win)))
+  (stumpwm:define-remapped-keys
+   '(("(Brave-browser)"
+      ("C-g" . "Escape")
+      ("C-n" . "Down")
+      ("C-p" . "Up")
+      ))
+   )
+
+  ; 멋지게 성공함. 실행법은 C-t : 를 누르고 C-y로 붙인 후 엔터키를 누르면 됨
+  (stumpwm:define-remapped-keys
+   '(("(okular)"
+      ("C-g" . "Escape")
+      ("C-n" . "Down")
+      ("C-p" . "Up")
+      ("C-f" . "Right")
+      ("C-b" . "Left")
+      ("C-v" . "Next")
+      ("M-v" . "Prior")
+      ("M-w" . "C-c")
+      ("C-w" . "C-x")
+      ("C-y" . "C-v")
+      ("M-<" . "Home")
+      ("M->" . "End")
+      ("C-M-b" . "M-Left")
+      ("C-M-f" . "M-Right")
+      ("C-k" . ("C-S-End" "C-x"))
+      ))
+   )
+
+
+
+
+#+end_src
+
+
 * 모듈의 사용법 
 https://stumpwm.github.io/git/stumpwm-git_16.html#index-list_002dmodules
 $ git clone git@github.com:stumpwm/stumpwm-contrib.git ~/.stumpwm.d/modules # 저장의 장소와 
@@ -49,9 +128,10 @@ https://stumpwm.github.io/git/stumpwm-git_9.html#Screens
 (ratwarp 300 300)
 (+ 1 2)  ; (eval-line "(+ 1 2)")요건 잘 안됨.
 
-
+1
 (restart-hard)
 (commands)
+(global-set-key (kbd "C-x C-S-e") 'stumpwm-eval-last-sexp)
 (print *last-command*) (lastmsg)
 (list-window-properties)
 (show-window-properties)
@@ -62,6 +142,7 @@ https://stumpwm.github.io/git/stumpwm-git_9.html#Screens
   "exec firefox"
   "split")
 (window-send-string "hi this is good ")
+(window-send-string "xstumpwm-eval-sast-sexp")
 (window-send-string "<단 영어만>이 명령으로 값을 전송받을 방법이 생긴 것같다.(여기에 명령을 넣으면 그 출력을 전송하는 방식) ")
 (window-send-string *last-command*)
 (current-screen)

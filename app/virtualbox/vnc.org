@@ -1,0 +1,28 @@
+*** Encyclopaedia Britannica on Linux
+[[https://linuxgazette.net/186/brown.html][Running Encyclopaedia Britannica on Linux LG #186]]
+
+
+
+#+begin_src sh :results silent
+sudo apt-get install x11vnc xtightvncviewer vnc4server
+vncpasswd   # give yourself a password
+cat > .vnc/xstartup <<EOF
+#!/bin/bash
+x11vnc -display :1 -rfbport 5902 -forever -scale 2:nb &
+xsetroot -solid grey
+exec $HOME/britannica/linux-launch2.0.pl
+EOF
+chmod +x .vnc/xstartup
+#+end_src
+
+
+#+begin_src sh :results silent
+vncserver :1 -geometry 700x560 -depth 16  # this is about the minimum dimensions for EB
+sleep 2  # allow x11vnc to start
+xtightvncviewer :2 -passwd $HOME/.vnc/passwd -geometry 1275x720 # (adjust this for your desktop)
+killall Xvnc4
+
+#+end_src
+
+
+*** 

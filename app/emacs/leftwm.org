@@ -1,0 +1,7 @@
+install rust wm
+nd
+2 aur/anoise-community-extension3 0.0.1-5 (+14 0.00%) 
+3 aur/ion3 20090110-3 (+7 0.00%) 
+    Tiling tabbed window manager designed with keyboard users in mind
+2 aur/anoise-community-extension3 0.0.1-5 (+14 0.00%) 
+    Ambient Noise Community Library Package 3

@@ -1,5 +1,6 @@
 
 
+
 * herbstluftwm
 
 강점을 비교함=> file:../wm_compare_youtube_note.org
@@ -16,6 +17,8 @@ herbstclient rotate => C-S-r, C-S-r(reloading config)=>C-s-r
 - Shell Bash variable을 다루는 편집의 명령어가 탁월한 함수예문으로 나와서 shell명령의 이해에 큰 도움을 준다!
 
 
+** 성과
+compton투명화발견의 성과달성 app/compton/readme.org참조할 것.
 ** 단점: 현재 
 사용이 불편함 레이아웃이 안정적이지 못함. 단지 돌리기가 있지만 자주 사용하기 보다는 실험용으로 보기 좋은 형태를 다른 것에서
 구현하기 좋은 형태를 찾는 정도로 생각됨 현재의 생각은 잠정적임.

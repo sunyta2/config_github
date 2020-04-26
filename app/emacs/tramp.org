@@ -1,0 +1,5 @@
+
+
+;; (find-file "/sudo::/usr/share/xsessions/emacs.desktop")
+
+C-x C-f /ssh:user@localhost|sudo:localhost:/path/to/file RET

@@ -1,0 +1,182 @@
+
+
+(require 'xelb)
+
+1. Install XELB and EXWM, and make sure they are in `load-path'.
+2. In '~/.emacs', add following lines (please modify accordingly):
+
+   (require 'exwm)
+   (require 'exwm-config)
+   (exwm-config-default)
+
+3. Link or copy the file 'xinitrc' to '~/.xinitrc'.
+4. Launch EXWM in a console (e.g. tty1) with
+
+   xinit -- vt01
+
+
+
+
+
+# exwm-firefox-evil is an available obsolete package.
+# exwm-surf is an available obsolete package.
+# exwm-edit is an available package.
+# exwm-mff is an available obsolete package.
+** exwm의 초기 활성을 위한 기본실행을 모아서 기록하고 실행법을 모색한다.
+그리고 alt 키를 복구하는 명령을 실행한다. setxkbmap -option ""
+    (start-process-shell-command "setxkbmap_alt_recover" nil "setxkbmap -option \"\"")
+;; 투명도활성화 명령을 실행하고 compton/ exwm.org
+    (start-process-shell-command "compton" nil "compton -bcCGf --active-opacity 0.87 -i 0.6 -e 0.6 -m 0.9")
+;;변경이 자유로운 스크립트 대신에 일단 복귀를 사용해 봄     
+    (start-process-shell-command "setxkbmap_alt_recover" nil "nitrogen --restore")    
+#+begin_src emacs-lisp
+  ;; 성공적인 함수명없는 전달!!! el 파일에서 [ [ 1 파일빠르게 열기커맨드지정불요함 ]] global-set-key.org read-shell-command.org
+  (global-set-key (kbd "s-$")
+                  '(lambda (command)
+                     (interactive (list (read-shell-command "$ "))) (start-process-shell-command command nil command))
+                  )
+#+end_src
+help:read-shell-command
+(read-shell-command "hi " "good day")
+help:read-from-minibuffer (
+;; exwm.org의 경우 exwm-input-set-key is an interactive autoloaded compiled Lisp function help:exwm-input-set-key
+(exwm-input-set-key (kbd "s-$")
+                   '(lambda ()
+                     (interactive) (exwm-mff-mode t) (exwm-mff-warp-to-selected) (seethru 90) (start-process-shell-command "command" nil "rofi -show"))
+)
+(exwm-input-set-key (kbd "s-$")
+                   '(lambda ()
+                     (interactive) (start-process-shell-command "command" nil "espeak -a 20 hi"))
+)
+                  
+# C-x b를 변경해서 통합적으로 버퍼를 불러들이는 것을 연구하면,,
+1) 일단 필요한 리스트를 목록을 취합할 것 그리고 그것을 ivy로 보낼 것
+2) 버퍼의 특성을 파악하는 것을 작동시킨다음.
+
+# exwm-x is an available obsolete package.
+(require 'exwm-mff)  help:exwm-mff-mode (exwm-mff-mode t)
+help:exwm-mff-warp-to-selected (exwm-mff-warp-to-selected)
+(exwm-mff-warp-to-selected) ;; 실행을 연동하는 것이 중요한가? 중요할 수 있다 항상 마우스의 위치가 정위치하면 사용에 헤매지 않을 태니까
+(seethru 81) 항상실행되는 구조로 만들 것이 요구된다. 즉 워크스페이스가 활성화 되면 자동으로 실행되는 구조면 적합할 것이다.
+*** 현재의 창정보획득해서 mode-line
+  :꺽쇄s탭단축키로저장된yasnappet_angle_s_tab:  
+  #+BEGIN_TEXT org :what_in_your_Mind? 
+- 목표를 정하고 위로 들어올릴 것
+- Core_location: 
+- 
+#+begin_src emacs-lisp :results silent
+(defun exwmx-quickrun (name)
+  (interactive) ;; file:exwm.org exwmx-dmenu에서 사용하기 위해서 설립한 나의 함수 다른이의 의견을 참조함
+  (start-process name nil name)) ;; use in dmenu ;; 이전의 동영상의 방식을 상기하여 더 비교하고 점검할 것
+
+(setq display-time-format ; file:mode_line.org
+" %H:%M [%Y-%m-%d %a]")
+
+(setq mode-line-format 
+'("%e"
+ (:eval
+  (format "[%d]"
+	  (exwm-workspace--position exwm-workspace--current)  ))
+ mode-line-front-space mode-line-mule-info mode-line-client mode-line-modified mode-line-remote mode-line-frame-identification mode-line-buffer-identification "   " mode-line-position
+ (vc-mode vc-mode)
+ "  " mode-line-modes mode-line-misc-info mode-line-end-spaces)
+)
+
+#+end_src
+help:format
+
+(format "[%d]" (exwm-workspace--position exwm-workspace--current))
+("%e"
+ (:eval
+  (format "[%d]" 
+   (exwm-workspace--position exwm-workspace--current)))
+get from winum-mode
+("%e"
+ (:eval
+  (format winum-format
+	  (winum-get-number-string)))
+ mode-line-front-space mode-line-mule-info mode-line-client mode-line-modified mode-line-remote mode-line-frame-identification mode-line-buffer-identification "   " mode-line-position
+ (vc-mode vc-mode)
+ "  " mode-line-modes mode-line-misc-info mode-line-end-spaces)
+
+
+;;;; (setq mode-line-format 
+'("%e" 
+(format "[%d]" (exwm-workspace--position exwm-workspace--current))
+mode-line-front-space mode-line-mule-info mode-line-client mode-line-modified mode-line-remote mode-line-frame-identification mode-line-buffer-identification "   " mode-line-position
+  (vc-mode vc-mode)
+  "  " mode-line-modes mode-line-misc-info mode-line-end-spaces)
+)
+(display-time)
+- 
+#+begin_src emacs-lisp :results silent
+
+#+end_src
+  #+END_TEXT
+  :END:
+
+
+*** 창을 돌리는 것
+  :rotate-window_in_exwm:  
+  #+BEGIN_TEXT org :what_in_your_Mind? 
+- 목표를 정하고 위로 들어올릴 것
+(global-set-key   (kbd "C-t R") 'elwm-rotate-window) ;; 회전으로 대신하는 놀라운 기능이라고 생각된다.
+- Core_location: 
+- 
+#+begin_src emacs-lisp :results silent
+(message "충분한 단련과 습관이 없으면 무용지물이다")
+(exwm-input-set-key (kbd "s-R")
+                   '(lambda ()
+                     (interactive) 
+(exwm-mff-mode t) (exwm-mff-warp-to-selected) (seethru 90) (elwm-rotate-window 1) ;exwm.org;
+                     (other-window 1) 
+))
+
+#+end_src
+- 위의 명령으로 돌린다음 움직일 수 있는 것을 미세조정하는 명령
+- help:elwm-transpose-window (elwm-transpose-window)
+#+begin_src emacs-lisp :results silent
+(global-set-key   (kbd "C-s-M-<right>") 'elwm-transpose-window) ;; 회전으로 다음의 미세조정용
+; (global-unset-key (kbd "C-s-M-<right>"))
+(exwm-input-set-key (kbd "C-s-M-<right>")
+ 
+
+(global-set-key   (kbd "C-s-M-<right>")
+
+                  '(lambda ()
+                     (interactive) (elwm-transpose-window)
+))
+        'elwm-transpose-window) ;; 더 적합한 방식을 발견함 exwm창의 이동에는 global-set-key보다
+
+
+
+
+;;; 방향을 전환해서 add-hook를 사용하기로 결정실험함
+(add-hook 'exwm-mode-hook 
+(exwm-input-set-key (kbd "C-s-M-<right>")
+        'elwm-transpose-window))  ;;
+exwm-mode-hook is a variable defined in ‘exwm-core.el’.
+Its value is nil
+
+  This variable may be risky if used as a file-local variable.
+
+Documentation:
+Hook run after entering EXWM mode.
+No problems result if this variable is not bound.
+‘add-hook’ automatically binds it.  (This is true for all hook variables.)
+
+#+end_src
+help:add-hook
+  #+END_TEXT
+  :END:
+
+
+
+*** s-&로 실행하는 urxvt는 투명도가 탁월하면서 ranger가 가동된다!
+*** terminal을 사용하는 것에 적합함 → (counsel-switch-to-shell-buffer)
+- 외부에서 실행하는 터미널보다 내부에서 안정적으로 공급가능한 것이 더 적합한 것 같아 우선 시험적으로 적합해 보인다.
+창의 이동이 단축키로 실행하는 것이 가능함
+#+begin_src emacs-lisp
+(counsel-switch-to-shell-buffer) ;다른 신택스구조가 시원시원함 강점 ; 역동적인 것 배제ranger그래픽환경깨짐
+#+end_src
+** 인식의 통합을 위해서

@@ -1,0 +1,27 @@
+
+
+
+counsel-load-library help:counsel-load-library
+
+
+
+M-x unload-feature amx
+(unload-feature (quote amx) nil)
+
+
+[[https://emacs.stackexchange.com/questions/20201/unload-a-whole-package-or-library-tree][libraries - Unload a whole package or library tree - Emacs Stack Exchange]]
+
+#+begin_quote org
+
+There's no built-in way to do this--see Unloading in the Elisp manual.
+
+unload-feature takes a force argument that allows forcibly unloading P even if other packages depend on P; is that sufficient for your needs?
+
+If not, you can try to create a recursive version of unload-feature containing:
+
+(let* ((file (feature-file feature))
+       (dependents (delete file (copy-sequence (file-dependents file))))) 
+  (when dependents
+    (mapc #'unload-feature-recursive (mapcan #'file-provides dependents))))
+
+#+end_quote

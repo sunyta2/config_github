@@ -1,0 +1,2 @@
+(man "xmessage") ;; used in xmobar
+

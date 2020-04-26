@@ -1,0 +1,35 @@
+
+shell의 sleep과 유사한 기능을 수행하는 것으로 delay를 주어서 로딩이나 계산처리의 시간을 벌어준다.
+읽기 문장의 반복에 사용될 수 있을 것이다. while
+help:sleep-for
+
+
+#+BEGIN_SRC emacs-lisp
+(progn
+(message "hi1")
+        (sleep-for 0.5)
+(message "hi2")
+        (sleep-for 0.5)
+(message "hi3")
+)
+   ;;     (send-string "async_espeak_temp" "") ;;good work
+        (sleep-for 0.5) (other-window 1)
+    ;;    (kill-buffer-and-window)
+  )
+
+#+END_SRC
+#+BEGIN_SRC emacs-lisp
+(defun espeak_grc_while_off ()
+" elisp:(espeak_grc_while_on) in org_babel_load_file.org"
+ " elisp:(espeak_grc_while_off) "
+  (prog1
+        (send-string "async_espeak_temp" "") ;;good work
+        (sleep-for 0.5) (other-window 1)
+        (kill-buffer-and-window)
+  )
+)
+
+#+END_SRC
+
+
+* while과 함께 사용하는 것도 가능할 지도.

@@ -1,0 +1,10 @@
+** 마우스의 속도를 변환하는 것을 발견함
+잘 실행되지는 않지만, 나름 연구해 볼 가치는 있음
+[[https://wiki.archlinux.org/index.php/Mouse_acceleration][Mouse acceleration - ArchWiki]] 
+
+
+
+[[https://linuxreviews.org/HOWTO_change_the_mouse_speed_in_X][HOWTO change the mouse speed in X - LinuxReviews]]
+- study is needed in future!
+Shell command:
+xset m 5 1

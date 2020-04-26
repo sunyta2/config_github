@@ -1,0 +1,113 @@
+note Advanced Git for developers - Lorana Jane Mitchell
+
+
+  :꺽쇄s탭단축키로저장된yasnappet_angle_s_tab:  
+  #+BEGIN_TEXT org :what_in_your_Mind? 
+- Core_location: file:../../app/git/advanced_git_youtube.org
+
+
+daiary?, loding_file?, 
+
+  #+END_TEXT
+  :목표범위를 정하고 아래로 내릴 것
+- [[https://www.youtube.com/watch?v=duqBHik7nRo][Advanced GIT for Developers - Lorna Jane Mitchell - Laracon EU 2015 - YouTube]] ;; link 영국여성의 강의
+
+
+#+begin_src emacs-lisp :results silent
+(message "")
+;; 원리를 발견하고 충분한 단련과 습관이 없으면 무용지물이다
+#+end_src
+
+
+- 
+#+begin_src sh :results silent
+cd .git #폴더를 정확히 이동하는 것이 중요한 것이다.
+#
+
+#+end_src
+
+
+git config --local user.email "me@lornajane.net"
+git 
+cat config
+#+begin_src sh :results silent 3:10
+[core]
+repositoryfomatversion = 0
+filemode = true
+bare = false
+logallrefupdate = true
+#
+
+#+end_src
+
+cd .git/object
+watch ls -l 
+- 
+#+begin_src sh :results silent
+git checkout -b branch1
+ls -la .git/refs/heads/
+
+cat .git/refs/heads/master
+cat .git/refs/heads/branch1
+
+branch is purely a text file that lives in your local .git directory 
+and contains plain text that the name of commit it points to. 
+a branch is not a sequence of commits. a branch points to a commit.
+Every commit has a parent parent
+
+#
+
+#+end_src
+git add -p # 유용한 yes/no 의 방식으로 한줄 씩 검토를 한 다음에 더한다.
+  :END:
+
+
+#+begin_src sh :results raw
+#espeak -a 20 -v other/la "amare"
+#
+echo $GDMESSION
+
+In switching buffer, currently using this counsel.el (counsel-wmctrl)
+but found it shell command : wmctrl -l
+and wmctrl -m for check current window manager check for WM from start
+#+end_src
+
+#+RESULTS:
+
+
+
+
+################################################################
+- [[https://www.youtube.com/watch?v=0SJCYPsef54][Advanced Git Tutorial - YouTube]] 
+#+begin_src sh :results silent
+while; do; clear; tree .git; sleep; done
+#
+echo "So. the spear-Danes in days gone by and teh kings who ruled them had courage and greatness."
+| git hash-object -w --stdin
+git cat-file -p #긴~해시
+git cat-file -t #긴~해시 → blob
+
+#+end_src
+po
+about 120 command plumbing command
+
+
+#+begin_src sh :results silent 27:30;영국여자의 강의에서 입력하는 법을 익힐 것
+[user]
+name = Tim Berglund
+email = tlberglund@github.ocm
+signingkey = A12345656
+[color]
+ui = auto
+[alias]
+lol = log --pretty=oneline --abbrev-commit --graph
+lg = log --all --color --graph --pretty-format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgrean(%cr) %C(bold blue)<%an>%creset' --abbrev-commit --
+[core]
+excludesfile = ~/.gitignore
+[credential]
+helper = cache --timeout 600
+[github]
+user = tlberglund@github.com
+"~/.gitconfig"
+
+#+end_src

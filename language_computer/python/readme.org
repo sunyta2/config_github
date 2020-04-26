@@ -1,5 +1,9 @@
 #+STARTUP: showeverything indent latexpreview
 python in broswer bookmark
+* file:../../app/emacs/src_tangle.org 구조적인 노트를 배울 것[코드블록분할]C-cC-vC-d:Divide&Conquer방식(src_tangle.org)
+[[src_tangle in readme.org ]]
+
+
 
 
 #+BEGIN_SRC sh :results silent
@@ -40,3 +44,61 @@ if done_is_more_than_3 < 3 :
 ** Python range() Function Explained with Examples [[https://pynative.com/python-range-function/][Python Range() function explained with Examples Complete Guide]] 잘 설명된 최신의 정보임.
 - 발견의 연유: 원래 시간을 range()함수로 #m30s단위로 나타내는 법을 찾으려다가 사이트를 발견함.
 range (start, stop[, step])
+
+
+* src_tangle in readme.org python/
+
+
+
+#+BEGIN_SRC python :tangle python_tangle_test/hello.py
+print ("Hello world in org_src_tangle!!! is GREAT!!!") ## python3
+#print "Hello world in org_src_tangle!!! is GREAT!!!" ;; python2라서 에러남
+#+END_SRC
+
+Tangle the file: [[elisp:(org-babel-tangle)]]
+
+#+BEGIN_SRC emacs-lisp
+(org-babel-tangle)
+#+END_SRC
+
+#+RESULTS:
+| python_tangle_test/hello.py |
+
+Now, run it: [[shell:python%20python_tangle_test/hello.py]]
+
+#+BEGIN_SRC sh
+python python_tangle_test/hello.py
+#+END_SRC
+src_bash[:var a="good"]{python python_tangle_test/hello.py} {{{results(=Hello world in org_src_tangle!!! is GREAT!!!=)}}}
+
+src_elisp[:var a="good"]{(message a)} {{{results(=good=)}}}
+
+
+#+BEGIN_SRC emacs-lisp
+(shell-command "python python_tangle_test/hello.py")
+#+END_SRC
+
+#+RESULTS:
+: 0
+
+#+BEGIN_SRC bash
+echo "hi"
+#+END_SRC
+check out the file: file:python_tangle_test/hello.py
+
+(setq
+org-babel-load-languages
+'((emacs-lisp . t)
+  (shell . t)
+  (org . t)
+  (python . t)
+  (ruby . t)
+  (rust . t)
+  (C . t)))
+
+* defadvice python repl복귀의 과정
+
+[[https://stackoverflow.com/questions/1416882/emacs-defadvice-on-python-mode-function][Emacs defadvice on python-mode function - Stack Overflow]]
+;; python으로 명령문을 전송한 다음에 바로 복귀하는 명령을 수행하는 것을 목적으로 함. app/emacs/defadvice.org
+
+(defadvice)

@@ -1,5 +1,69 @@
 
+
+
+- help:full-calc (full-calc) file:../../app/emacs/
+  :-calc계산기의기본사용법_full-calc:
+  #+begin_text org calc.org:최종목적은_화두확실이다
+help:full-calc (full-calc)
+full-calc
+full-calc-keypad
+help:full-calc (full-calc)
+help:full-calc-keypad
 C-x *		calc-dispatch
+- 등록할 성과요약문 연관파일과 다이어리에 기재사항
+;;;;;;- 일감에 딱 발견사용할 수 있는 곳
+- 목적기여_강점: 
+
+- :~~을기억하고_--를즉시++하라!:
+- <반드시 주제에 맞게> * 핵심단어_는_이것을~하다      제목을 *재설정해 둘 것
+
+
+
+-#+end_text
+-:end:
+;;;;;;;;;;;; 저장처리과정 ;;;;;;;;;;;;
+;(필수) 다이어리에 저장하고, 주저장파일핵심노트저장후,
+
+;;(적극권장) 주된목적_meta사고, 상위프로젝트위치, 주로 연동되는 핵심부나 반복연습하는 목록에 추가하여 연동하든지.
+- 음미하며, 지속적인 단련이 상기할 수 있는 곳 음미되지 않으면 성취는 없다.
+
+;;(상기 불충족 대안) 아니면 inbox에 wish리스트에 넣고 기다리든지 아니면 diary 위의 날짜에 밀 넣어두고 연관파일 결정되면 지우면 된다.
+file:~/config_github/app/emacs/wish_test.org 미루어둔다. - xxxxxx.org::기능-활용-연습필요하니 적합장소검토기록할 것
+
+#+begin_src emacs-lisp :tangle yes
+
+#+end_src
+- 형식-주사용처:간단모듈양식의 오그파일_메모용
+      - 연관파일, 요약본은 ##diary.org
+(buffer-name)
+- 수집: 내용
+
+- 주사용처_복사범위(*부터 -:end: -:End: -:END: 까지들 중 필요부분복사) Copy로 사용시 위의 *제목을 수정하고 나머지줄은몽땅삭제할 것
+- diary.org_C-[ C-[ 1 등록시에는 -:end: 부분을 등록함 wish_list_test.org의 경우는 나중에 일과종료전까지 보낸다.
+- 상황성립배경{주된목적_meta사고, 상위프로젝트위치, 그 문맥배경설명요약}:
+
+- 목적기여_강점: 
+- 주저장파일 (buffer-file-name) (buffer-name) 
+- 현재위치기록 (buffer-file-name) file:../../app/emacs/emacs_is_great.org
+- 전파필요한 직접연관파일(단련리스트파일, 인박스수집): file:../../app/emacs/emacs_is_great.org
+- 관련임시아이디어들 경쟁,대안 : 
+  - 딱! 성취감은 어디서: 
+
+- 더 필요하고 조사해야할 사안 그리고 대기중, 중단이유 또는 복안, 대안사항:
+  - 
+;;;;;;;;;;;; 저장처리과정 ;;;;;;;;;;;;
+;(필수) 다이어리에 저장하고, 주저장파일핵심노트저장후,
+- 일감에 딱 발견할 수 있는 곳
+
+;;(적극권장) 주된목적_meta사고, 상위프로젝트위치, 주로 연동되는 핵심부나 반복연습하는 목록에 추가하여 연동하든지.
+- 음미하며, 지속적인 단련이 상기할 수 있는 곳 음미되지 않으면 성취는 없다.
+
+;;(상기 불충족 대안) 아니면 inbox에 wish리스트에 넣고 기다리든지 아니면 diary 위의 날짜에 밀 넣어두고 연관파일 결정되면 지우면 된다.
+file:~/config_github/app/emacs/wish_test.org 미루어둔다. - xxxxxx.org::기능-활용-연습필요하니 적합장소검토기록할 것
+
+#+end_text org
+  :end:
+
 
 
 

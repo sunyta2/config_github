@@ -2,6 +2,7 @@
 #+CREATOR: LEEJEONGPYO
 #+STARTUP: showeverything indent
 
+(mapconcat 'shell-command-to-string '("lsblk" "lsblk") "\n") ; ← 여기서 심지어 단문으로 C-u C-x C-e도 가능함!!!
 
 * inode ./inode.org
 2 aur/linux-apfs-dkms-git 1:r5.277a34e-1 (+2 0.08%) (Installed: 1:r6.2a598f1-1)
@@ -42,6 +43,25 @@ Upon logging back in, I went straight to Terminal to run # dmesg. Here are the r
 
 * lsblk
 cf) sudo fdisk -l  # 유사하되 더 자세함
+
+;; 여러줄의 shell 명령을 실행하는 것이 가능하다 babel이 잘 안되는 경우 우회를 한다. emacs/*mapc*.org
+;;; 인간의 창조력과 언어의 결합력은 매우 유연한 사고를 가능하게 한다. babel_tangle로 실행하는 것이 가능하게 됨.
+#+BEGIN_SRC emacs-lisp :results raw drawer
+;(mapconcat 'shell-command-to-string '("lsblk" "lsblk") "\n") ; ← 여기서 심지어 단문으로 C-u C-x C-e도 가능함!!!
+(mapconcat 'shell-command-to-string '(
+           "lsblk" 
+           "lsblk &>/dev/null"
+           "lsblk" 
+                                     ) 
+           "\n")
+
+;(shell-command-to-string "lsblk")
+;(shell-command-to-string "lsblk")
+;(shell-command-to-string "lsblk")
+#+END_SRC
+
+
+(mapconcat 'shell-command-to-string '("lsblk" "lsblk") "\n") ; ← 여기서 심지어 단문으로 C-u C-x C-e도 가능함!!!
 
 
 * sudo iwlist

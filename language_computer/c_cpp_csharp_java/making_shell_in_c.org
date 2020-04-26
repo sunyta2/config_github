@@ -1,0 +1,2 @@
+[[https://www.geeksforgeeks.org/making-linux-shell-c/?ref=rp][Making your own Linux Shell in C - GeeksforGeeks]]
+- 새로운 인식을 가능하게 한다

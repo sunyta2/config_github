@@ -1,0 +1,50 @@
+
+
+
+* Tetris mode defined in ‘tetris.el’:
+A mode for playing Tetris.
+
+This mode runs the hook ‘tetris-mode-hook’, as the final or penultimate step
+during initialization.
+
+key             binding
+---             -------
+
+SPC		tetris-move-bottom
+n		tetris-start-game
+p		tetris-pause-game
+q		tetris-end-game
+<down>		tetris-move-down
+<left>		tetris-move-left
+<right>		tetris-move-right
+<up>		        tetris-rotate-prev
+
+
+
+** dired-mode-hook
+#+BEGIN_SRC emacs-lisp
+(add-hook 'tetris-mode-hook (lambda ()
+      (local-set-key (kbd "C-n") 'tetris-move-down) ;; add-hook으로 변경해서 다른 모드에서 쓰는 기본기능충돌을 방지할 것.
+      (local-set-key (kbd "C-b") 'tetris-move-left) ;; add-hook으로 변경해서 다른 모드에서 쓰는 기본기능충돌을 방지할 것.
+      (local-set-key (kbd "C-f") 'tetris-move-right)
+      (local-set-key (kbd "C-p") 'tetris-rotate-prev)
+))
+
+#+END_SRC
+
+(add-hook 'org-mode-hook (lambda ()
+;(global-set-key (kbd "C-M-x") 'eval-defun) ;; add-hook으로 변경해서 다른 모드에서 쓰는 기본기능충돌을 방지할 것.
+                                   (local-set-key (kbd "C-M-x") 'eval-defun) ;; add-hook으로 변경해서 다른 모드에서 쓰는 기본기능충돌을 방지할 것.
+))
+
+
+  (add-hook 'dired-mode-hook (lambda () (dired-hide-details-mode t)))
+
+  (add-hook 'dired-mode-hook (lambda () (dired-omit-mode)))
+  (add-hook 'org-mode-hook (lambda () (dired-omit-mode)
+                                   (local-set-key)
+                                   (local-set-key)
+  ))
+
+
+

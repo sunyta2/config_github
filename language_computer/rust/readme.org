@@ -25,6 +25,13 @@ https://chrome://bookmarks/?id=3723
 open in chrome
 http://~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/book/ch01-02-hello-world.html
 
+/emacs/eww.org
+rust manual → 
+( eww-browse-url "file:///home/thinkpad/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/book/ch00-00-introduction.html")
+
+
+
+
 install rust in arco and ~/test_
 install emacs package of 
 (use-package lsp-mode
@@ -32,6 +39,9 @@ install emacs package of
   :commands (lsp lsp-deferred))
 
 run remacs and installed.
+
+
+* src
 #+BEGIN_SRC rust
 fn main() {
     println!("Hello, world!");
@@ -42,6 +52,8 @@ fn main() {
 #+RESULTS:
 
 (message explicit-shell-file-name "~/.bashrc")
+help:explicit-shell-file-name
+
 #+RESULTS:
 (require 'cargo)
 

@@ -1,5 +1,15 @@
 #+STARTUP: showeverything
 
+
+help:list-timers 뭐지?
+list-timers is an interactive autoloaded Lisp function in
+‘timer-list.el’.
+
+(list-timers &optional IGNORE-AUTO NONCONFIRM)
+
+List all timers in a buffer.
+
+
 /emacs/org-timer.org
 * [org-timer-change-times-in-region, org-timer] start from in org
 :LOGBOOK:

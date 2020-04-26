@@ -2,14 +2,19 @@
 (man "dwm")  # man mode
 
 강점을 비교함=> file: ../wm_compare_youtube_note.org
--      [[file:stumpwm/readme.org][stumpwm/readme]] , 
-- [[file:herbstluftwm/readme.org][herbstluftwm/readme]],
--       [[file:xmonad/readme.org][xmonad/readme]] ,
--        [[file:qtile/readme.org][qtile/readme]] ,
--          [[file:dwm/readme.org][dwm/readme]] , 
--         [[file:exwm/readme.org][exwm/readme]] ,
--      awesome,
--       i3-gap
+- [[file:stumpwm/readme.org][stumpwm/readme]] , compton 투명화!!!. info:stumpwm#Top 를 자주 살펴볼 것
+    defind-remapped-keys로 다른 앱의 단축키를 설정하는 것으로 통일적인 단축키 양식을 만드는 기초가 된다.
+       ;; stumpwm에서 okular의 단축키를 defind-remapped-keys 로 재설정해서 C-n C-p를 사용가능하게 한다.
+
+                          seethru의 발견으로 이맥스의 투명도를 조절하는 기초를 발굴함.
+- [[file:herbstluftwm/readme.org][herbstluftwm/readme]], compton투명화발견의 성과달성
+- [[file:xmonad/readme.org][xmonad/readme]] ,
+- [[file:qtile/readme.org][qtile/readme]] ,
+- [[file:dwm/readme.org][dwm/readme]] , 
+- [[file:exwm/readme.org][exwm/readme]] ,
+- awesome,
+- i3-gap
+- clfswm을 다운로드함. file:~/config_github/app/clfswm/readme.org
 - study_experiment file:xephyr => file:xephyr/readme.org (man "xephyr")
 file:polybar
 file:xrandr
@@ -30,3 +35,13 @@ qtile W541과 모니터를 오른쪽에 두고 배치하는 것이 강력함을 
 * link
 lfs gentoo study
 m4/readme.org 
+
+* install 성공함
+2 community/python-pyvirtualdisplay 0.2.5-1 (22.4 KiB 68.8 KiB) 
+    Python wrapper for Xvfb, Xephyr and Xvnc
+1 extra/xorg-server-xephyr 1.20.8-1 (881.3 KiB 2.1 MiB) [xorg] 
+    A nested X server that runs as an X application
+
+
+33 aur/xrdp 0.9.13-1 (+108 1.23%) 
+    An open source remote desktop protocol (RDP) server

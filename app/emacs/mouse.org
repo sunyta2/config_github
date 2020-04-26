@@ -1,0 +1,23 @@
+
+
+customize group mouse
+
+make-pointer-invisible: nil 
+
+  :mouse_사라짐방지:  
+  #+BEGIN_TEXT org :마우스모양변경등이 저장되면 좋을 것임 
+- make-pointer-invisible: nil 
+- Core_location: mouse.org
+- 
+#+begin_src emacs-lisp :results silent
+(message "마우스가 입력중에 사라지게하는 기본기능(-마우스찾는 시간허비) 중지함")
+(setq make-pointer-invisible nil) ;app/emacs/mouse.org; 마우스가 입력중에 사라지게하는 기본기능(-마우스찾는 시간허비) 중지함
+#+end_src
+
+- exwm에서 마우스커서가 활성창을 따라다니는 기능을 중요하게 생각할 것 s-S-r rotate
+#+begin_src emacs-lisp :results silent
+
+#+end_src
+  #+END_TEXT
+  :END:
+

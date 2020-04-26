@@ -1,0 +1,58 @@
+
+
+file:~/config_github/app/ls_inode_fs/fs_sshfs.org
+
+외부에서 열고 저장하는 것까지 되면 로딩의 시간을 단축할 방법을 구할 수 있을 것같다.
+- sshfs로 파일을 외부에서 사용하는 법을 만들어 파일화하여 저장한다. app/ls_
+
+
+- 검색할 방법 어떻게 구조를 링크하는지
+process
+- lsblk
+#+BEGIN_SRC sh
+lsblk
+
+#+END_SRC
+;; run in below C-u C-x C-e in line below
+(shell-command-to-string "lsblk")
+"NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda           8:0    0 119.2G  0 disk 
+├─sda1        8:1    0 110.5G  0 part /
+└─sda2        8:2    0   8.8G  0 part [SWAP]
+sdb           8:16   0 931.5G  0 disk 
+└─sdb1        8:17   0 931.5G  0 part 
+mmcblk0     179:0    0  29.7G  0 disk 
+└─mmcblk0p1 179:1    0  29.7G  0 part /run/media/thinkpad/disk
+"
+help:shell-command-to-string
+
+;; 여러줄의 shell 명령을 실행하는 것이 가능하다 babel이 잘 안되는 경우 우회를 한다. emacs/*mapc*.org
+;;; 인간의 창조력과 언어의 결합력은 매우 유연한 사고를 가능하게 한다. babel_tangle로 실행하는 것이 가능하게 됨.
+#+BEGIN_SRC emacs-lisp :results raw drawer
+;(mapconcat 'shell-command-to-string '("lsblk" "lsblk") "\n") ; ← 여기서 심지어 단문으로 C-u C-x C-e도 가능함!!!
+(mapconcat 'shell-command-to-string '(
+           "lsblk" 
+           "lsblk &>/dev/null"
+           "lsblk" 
+                                     ) 
+           "\n")
+
+;(shell-command-to-string "lsblk")
+;(shell-command-to-string "lsblk")
+;(shell-command-to-string "lsblk")
+#+END_SRC
+
+
+(mapconcat 'shell-command-to-string '("lsblk" "lsblk") "\n") ; ← 여기서 심지어 단문으로 C-u C-x C-e도 가능함!!!
+
+
+
+(+ (line-beginning-position 2) 6) (line-end-position 2)) "\";"
+
+(shell-command-on-region START END COMMAND)
+(shell-command-on-region START END "espeak -a 20")
+(shell-command-on-region (+ (line-beginning-position 2) 6) (line-end-position 2)
+"espeak -a 20")
+(shell-command-on-region (+ (line-beginning-position 2) 0) (line-end-position 2) 
+			"espeak -a 20" nil nil nil)
+  hello world 반갑습니다 세상이여!

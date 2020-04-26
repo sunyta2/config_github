@@ -1,5 +1,31 @@
 
-You can [mapc] a function across a sequence, 
+
+
+* mapconcat
+mapconcat 
+help:mapconcat
+
+;; 여러줄의 shell 명령을 실행하는 것이 가능하다 babel이 잘 안되는 경우 우회를 한다. emacs/*mapc*.org
+;;; 인간의 창조력과 언어의 결합력은 매우 유연한 사고를 가능하게 한다. babel_tangle로 실행하는 것이 가능하게 됨.
+#+BEGIN_SRC emacs-lisp :results raw drawer
+;(mapconcat 'shell-command-to-string '("lsblk" "lsblk") "\n") ; ← 여기서 심지어 단문으로 C-u C-x C-e도 가능함!!!
+(mapconcat 'shell-command-to-string '(
+           "lsblk" 
+           "lsblk &>/dev/null"
+           "lsblk" 
+                                     ) 
+           "\n")
+
+;(shell-command-to-string "lsblk")
+;(shell-command-to-string "lsblk")
+;(shell-command-to-string "lsblk")
+#+END_SRC
+
+
+(mapconcat 'shell-command-to-string '("lsblk" "lsblk") "\n") ; ← 여기서 심지어 단문으로 C-u C-x C-e도 가능함!!!
+
+
+* You can [mapc] a function across a sequence, 
 so e.g. write a cleanup function that does a find-file on a filename and then applies whitespace-cleanup and whatever else you want. 
 
 Then create a list of the files that you want to apply it to: 
@@ -21,4 +47,33 @@ If you always run the same sequence of steps, you can define a command such as:
     (indent-region (point-min) (point-max)))
 
 
+** (mapc #'org-babel-load-file (directory-files dotfiles-dir t "\\.org$")) ;hack Emacs 07
+
+
 * help:mapc help:mapcar
+
+* [[https://emacs.stackexchange.com/questions/33736/how-can-i-run-a-command-on-several-buffers-files][How can I run a command on several buffers / files? - Emacs Stack Exchange]]
+
+You can [mapc] a function across a sequence, 
+so e.g. write a cleanup function that does a find-file on a filename and then applies whitespace-cleanup and whatever else you want. 
+
+Then create a list of the files that you want to apply it to: 
+(setq my-file list '("file1" "file2" ....)) 
+    and then apply the cleanup function on each file with 
+(mapc '#my-cleanup-function my-filelist). 
+
+
+*  syntax collection
+
+#+begin_src emacs-lisp
+(defun dired-do-eshell-command (command)
+  "Run an Eshell command on the marked files."
+  (interactive "sEshell command: ")
+  (let ((files (dired-get-marked-files t)))
+    (eshell-command
+     (format "%s %s" command (mapconcat #'identity files " ")))))
+;; use M-x dired-do-eshell-command 리턴키 grep -nH --color {{검색어패턴} 리턴}
+
+
+#+end_src
+

@@ -8,7 +8,7 @@
 [[file:org_mode_study/agenda_view_org.org]]
 agenda C-c [ 리스트에 추가하는 방식을 연구함.
        C-c / t ;;현재 폴더내의 TODO만 국한 
-
+file:emacs_is_great.org
 상세한 검색은 (dired-other-window "~/config_github/app/emacs/spacemacs/analysis/kbd")
 
 * emacs공부의 필요성!

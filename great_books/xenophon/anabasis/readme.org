@@ -1,0 +1,43 @@
+file:./
+
+
+(start-process-shell-command
+   (concat "surf 로" "메뉴얼읽기 대안pdf local html을 참조할 것" ) nil 
+   (concat "cd /; exec " "surf https://www.perseus.tufts.edu/hopper/searchresults?q=xenophon")
+)
+
+γνῶθι σεαυτόν.
+https://en.wikipedia.org/wiki/List_of_Greek_phrases
+
+
+* goto file:./anabasis/readme.org 
+#+NAME: quote_for_test 
+#+begin_quote sh
+Δαρείου καὶ Παρυσάτιδος γίγνονται παῖδες δύο, 
+πρεσβύτερος μὲν Ἀρταξέρξης, νεώτερος δὲ Κῦρος:
+#+end_quote
+echo wow hi # 주석문이다
+amavo te
+echo hi2
+
+#+HEADER: :var reading_text=quote_for_test
+#+begin_src sh :results silent
+#espeak -a 20 -v other/la "amare"
+espeak -a 20 -s 120 -v other/grc "$reading_text"
+#+end_src
+
+
+
+#+header: :var to-vterm="vterm" :comment "전송에 성공!"
+#+header: :var text1=quote_for_test :comment "quote_for_test BOX 구문들을 실험을 실시함 놀라움"
+#+header: :var text1=quote1 :comment "아래의 박스의 quote BOX 구문들을 실행함 놀라움"
+#+header: :var text1="echo Send to Gentoo"
+#+begin_src emacs-lisp :results silent
+(comint-send-string to-vterm 
+    text1 ;; header var로 전송성공함 C-c C-c로 실행할 것
+) 
+#+end_src
+(message "")
+(comint-send-string to-vterm 
+    "echo a Great2! WOW GREAT "
+) 

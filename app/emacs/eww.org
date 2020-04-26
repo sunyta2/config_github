@@ -1,4 +1,9 @@
 #+STARTUP: showeverything indent latexpreview
+
+
+
+(info "(eww) Top")
+
 (eww-browse-url "url.jpg")
 (eww-browse-url "file:/home/thinkpad/Pictures/hebrew/hebrew_in_ipad.png") 잘 됨.
 (eww-browse-url "file:/home/thinkpad/Desktop/458-AKozakImage1.jpg")
@@ -14,11 +19,41 @@ file:image_in_line.org
 https://emacs.wordpress.com/2007/02/22/tab-shuffling-in-emacs-w3m/
 
 
+(eww  "http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0167")
+(eww "http://www.google.com/ncr")
+(eww "http://www.perseus.tufts.edu/")
 
+
+
+rust manual → 
+( eww-browse-url "file:///home/thinkpad/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/book/ch00-00-introduction.html")
+
+
+
+eww copy url by w-키
+( eww-browse-url 
+   "file:///home/thinkpad/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/book/ch01-02-hello-world.html")
+
+file:///home/thinkpad/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/book/ch01-02-hello-world.html
+
+* Heading
+:PROPERTIES:
+:TOC:      :include all
+:END:
+file:./toc-org.org
+This text appears before the TOC.
+(org-make-toc-mode)
+:CONTENTS:
+- [[Tab shuffling in emacs-w3m][Tab shuffling in emacs-w3m]]
+- [[Heading][Heading]]
+- [[M-x eww RET www.gentoo.org][M-x eww RET www.gentoo.org]]
+:END:
+ (org-make-toc)
 
 * M-x eww RET www.gentoo.org
 
-
+w		eww-copy-page-url 주소를 복사함
+G		eww 	주소를 변경입력함
 
 
 

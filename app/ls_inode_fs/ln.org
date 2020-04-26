@@ -10,6 +10,19 @@ Y 사용중인 것(dired에서 ln -r과 동일할 것으로 추측함.) help:dir
 ln -fsr TARGET LINK (man "ln") 
 (buffer-file-name)
 
+  :ln으로생성된링크완성:  
+  #+BEGIN_TEXT org :효과적인 다이어리파일관리 
+- save_location: app/ls_inode_fs/ln.org가 저장의 중심.
+- 
+#+begin_src sh :results silent
+#깔끔하게 생성함
+ln -fs /home/thinkpad/config_github/great_books/_achieve_agenda/2020_04_diary.org /home/thinkpad/config_github/workflow/project_ln/04diary2020.org
+ln -fs /home/thinkpad/config_github/workflow/project_ln/04diary2020.org /home/thinkpad/config_github/app/emacs/04diary2020.org
+#+end_src
+
+  #+END_TEXT
+  :END:
+
 
 
 

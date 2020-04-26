@@ -1,0 +1,14 @@
+연동이 가능한 노트라고 기대됨.
+
+[[https://github.com/fuxialexander/org-noter/tree/pdf-notes-booster][GitHub - fuxialexander/org-noter at pdf-notes-booster]]
+
+MELPA
+This package is available from MELPA, so if you want to install it and have added MELPA to your package archives, you can run M-x package-install RET org-noter
+
+Manual installation
+You can also install it manually, using package.el.
+
+Download org-noter.el
+Open it
+Run M-x package-install-from-buffer RET
+

@@ -33,6 +33,19 @@ keycode 180 = XF86HomePage NoSymbol XF86HomePage
 xmodmap -e "keycode 108 = Super_L"
 xmodmap -e "remove mod1 = Super_L"
 
+** Changing your caps lock into Ctrl in X
+  :START:  
+
+- diary?, loding_file?, 
+  #+BEGIN_TEXT org :목적 
+- Core_location: file:../../app/emacs/.org
+[[http://efod.se/capslock/][Changing your caps lock into Ctrl in X – Erik Forsberg – Hadoop/Cassandra/Python/MySensors/Home Automation/Life]]
+사이트를 연구해서 정리할 것
+[[https://stackoverflow.com/questions/44977410/in-xmonad-how-to-remap-capslock-to-ctrl][haskell - In xmonad, how to remap CapsLock to Ctrl? - Stack Overflow]]
+  #+END_TEXT
+
+  :END:
+
 * 기타 등등,,, 
 zenity --entry --entry-text="Type" --text="Bang on the keyboard"
 # cf. xbindkeys for shortcut setting XF86HomePage

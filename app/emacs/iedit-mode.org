@@ -1,0 +1,9 @@
+
+
+This looks like you've turned on iedit-mode (by default toggled using C-;)
+See screenshot: https://i.imgur.com/xYPQS1T.png
+
+I copied the upper highlighted region and must have hit some keys by accident. It seems to have activated a mode where I'm editing two regions at the same time.
+If I type something in the lower highlighted region, it mirrors the edit in the corresponding spot in the upper region.
+
+I'm interested cause it looks useful, but I can't figure what I did to activate it. Anyone know what this is called?

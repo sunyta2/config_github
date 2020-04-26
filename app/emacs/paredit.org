@@ -1,0 +1,32 @@
+
+
+
+
+#+BEGIN_SRC emacs-lisp
+(load-file "/home/thinkpad/.emacs.d/elpa/paredit-20171127.205/paredit.el")
+(require 'paredit)
+(autoload 'enable-paredit-mode "paredit" t)
+
+;(setq inferior-lisp-program "sbcl")
+'(add-to-list 'load-path "/usr/share/emacs/site-lisp/slime/")
+;(slime-setup)
+()
+ "Turn on pseudo-structural editing of Lisp code."
+;;; ()
+()() asdf sdfsdf (asdfasdf asdf asdf asdf ads asd fa sdf (asdfasdf)asdfasdf asdf asd fa dsf ads)
+
+(defun foo ()
+    (message "hello world"))
+
+#+END_SRC
+
+
+
+* cf. emacs/move.org
+
+(menu-bar-mode 0)
+file:../../app/emacs/move.org
+(setq show-paren-style "mixed")
+(setq show-paren-style 'expression) ;;왜 진작에 등록않았을까?!
+(show-paren-mode 1) ;; 일단 잘 코딩된 문장을 읽는 것에 유용하게 읽기에 적용하고 나중에 편집법을 연구하여 연마한다.
+help:show-paren-mode

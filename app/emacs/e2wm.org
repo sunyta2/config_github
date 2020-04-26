@@ -1,0 +1,22 @@
+
+** 설치를 강하기 고려할 것.
+#+begin_quote org
+
+#+begin_src emacs-lisp
+(require 'e2wm) ;; e2wm.org
+(global-set-key (kbd "M-+") 'e2wm:start
+-management)
+#+end_src
+
+
+#+begin_src emacs-lisp
+ (message "hi2")
+#+end_src
+
+#+RESULTS:
+: hi2
+
+
+
+
+#+end_quote

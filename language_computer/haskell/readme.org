@@ -4,6 +4,20 @@ haskell-tut.hs
 
 
 app/xmonad폴더를 참조할 것
+연구를 하는 장소
+ file:../../app/xmonad
+ file:../../language_computer/haskell
 
+
+* trainner in haskel
+** TODO in here
+
+#+begin_src haskell :results raw
+:t 2
+#+end_src
+
+#+RESULTS:
+2 :: Num p => p
+1 :: Num p => p
 
 

@@ -1,0 +1,47 @@
+-4:32 data
+code is data
+
+function can be table!
+ table is data
+ function is looking stuff of table
+
+What is IO monad? 36:31
+  - [[https://www.youtube.com/watch?v=fCoQb-zqYDI][What is IO monad? - YouTube]]
+
+YOW! 2013 Philip Wadler - The First Monad Tutorial #YOW 47:42
+- https://www.youtube.com/watch?v=yjmKMhJOJos
+
+Get value out of your monad 58:59
+  - https://www.youtube.com/watch?v=F9bznonKc64
+
+How Monoids are useful in Programming
+- https://www.youtube.com/watch?v=BovTQeDK7XI
+
+* idea from haskell
+상위의 아이디어 이치의 값이 정해지면 
+하위의 실행이 정립되어 부수로 정하고 실행된다.
+recursive function은 자기 자신 내부에서 함수가 적용되어 실행되는 것
+inward character강한 내부강화된 구조
+반복문을 만드는 방법이 될 수 있다.
+#+begin_src haskell
+g :: Str -> Int
+g x = length x
+
+f :: Int -> Int
+f x = x + 1
+
+h :: Str -> Int
+h x = f(g(x)) = f (g x) = (f . g) x
+#+end_src
+
+#+RESULTS:
+: <interactive>:14:15: error: parse error on input ‘=’
+
+
+#+begin_src haskell
+
+#+end_src
+
+
+** Haskell Mode for Emacs 공식사이트로 로딩을 고려함
+[[https://github.com/haskell/haskell-mode][GitHub - haskell/haskell-mode: Emacs mode for Haskell]]

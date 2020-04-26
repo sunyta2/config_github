@@ -1,0 +1,585 @@
+ tangle을 키친에서 발굴에서 파일명을 적어두고 시간을 기록함.
+/emacs/src_tangle.org
+비디오명: org_mode_is_awesome.mp4  13:39
+(org-babel-tangle) help:org-babel-tangle
+- It is bound to C-c C-v t, C-c C-v C-t. 단축키가 있을정도로 이미 완성도가 높다는 의미로 추정됨.
+
+그리고 그 사용법을 기록해서 rust나 c언어의 발굴에 사용하는 링크구조를 만들어서 활용을 높일 것.
+
+- 로딩하는 org파일의 각 원하는 부분을 분리해서 el 파일로 저장하는 것이 :tangle 에 의해 가능할 것이다.
+긴 파일명의 경우 quote에 넣어두고 tangle에 대하여 변수값의 형태로 전달하는 것이 가능한지??
+
+# tracking thought process 오그모드를 사용해서! is essential for understanding power!
+- 과정과 이유그리고 상세화된 이해력이 요구된다.
+
+* src_tangle사용법
+
+사용처 readme.org각 언어별의 파일에 두던지 아니면. file:../../language_computer/
+파이썬          [[file:~/config_github/language_computer/python/readme.org::*src_tangle%20in%20readme.org%20python/][src_tangle in readme.org python/]]
+python_org_tangle.org
+러스트 
+rust_org_tangle.org
+    [[file:~/config_github/language_computer/rust/test_rust/hello_cargo/hello_cargo.org]]
+메뉴얼읽기등 Rust_공부자료 - file:../../language_computer/rust/bookmark_rust_manual.org 여기를  Rust 학습정리중심부로 사용할 것
+
+씨
+c_org_tangle.org file:../../language_computer/c_cpp_csharp_java/c_org_tangle.org
+
+* [코드블록분할]C-cC-vC-d:Divide&Conquer방식(src_tangle.org)
+#+begin_quote org emacs-lisp C-cC-vC-d(코드블록분할):Divide&Conquer방식(src_tangle.org)
+;;quote구조의 org lang으로 실시함
+;;C-cC-vC-d(코드블록창설):전체구조목적
+   ;:구조를 전체로 : 복사해서 붙인다. 그것을 코드블록분할로 나눈다.
+   ;;C-cC-vC-d(코드블록분할):Divide&Conquer방식
+   ;;- 등으로 순서를 배치한다음 2칸정도 띄운 다음 실제로 사용할 것을 나눈다.
+     ;(test) ;; 전체과정을 기술함. 코드별이동은 C-c C-v n / p / u로 코드부분만을 골라서 이동함.
+;; 편집하기 쉬운 구조임 C-c C-v C-x	org-babel-do-key-sequence-in-edit-buffer 전체블록이 탭으로 이동되는 등 연구필요함
+;; 연습을 하기 쉬운 구조임 
+;; C-c C-v C-v → (이후)C-x C-q(편집모드로 전환해서 자유롭게 발상을 입력해 본다 C-x 1 전체단일화면) → 복귀시에도 원상복구됨! 
+   (message "C-cC-vC-d(코드블록분할):Divide&Conquer방식")
+
+ #+begin_src emacs-lisp C-cC-vC-d(코드블록분할):Divide&Conquer방식(src_tangle.org)
+;;quote구조의 org lang으로 실시함
+;;C-cC-vC-d(코드블록창설):전체구조목적
+   ;:구조를 전체로 : 복사해서 붙인다. 그것을 코드블록분할로 나눈다.
+   ;;C-cC-vC-d(코드블록분할):Divide&Conquer방식
+   ;;- 등으로 순서를 배치한다음 2칸정도 띄운 다음 실제로 사용할 것을 나눈다.
+     ;(test) ;; 전체과정을 기술함. 코드별이동은 C-c C-v n / p / u로 코드부분만을 골라서 이동함.
+;; 편집하기 쉬운 구조임 C-c C-v C-x	org-babel-do-key-sequence-in-edit-buffer 전체블록이 탭으로 이동되는 등 연구필요함
+;; 연습을 하기 쉬운 구조임 
+;; C-c C-v C-v → (이후)C-x C-q(편집모드로 전환해서 자유롭게 발상을 입력해 본다 C-x 1 전체단일화면) → 복귀시에도 원상복구됨! 
+   (message "C-cC-vC-d(코드블록분할):Divide&Conquer방식")
+#+end_src
+
+#+RESULTS:
+: C-cC-vC-d(코드블록분할):Divide&Conquer방식
+
+;; 후기 감상: 마치 나를 위해 설계된 것처럼 놀라운 기능의 발견에 감탄! C-c C-v h	org-babel-describe-bindings 주로 살펴서 더 정보를 캐낼 것 아니, 블록을 만들어 보면 어떨까
+;; 즉 이전의 모든 것이 연결되는 놀라운 경험을 하는 것 같아 놀랍다!
+
+
+
+#+end_quote
+#+END_SRC
+#+BEGIN_QUOTE text
+[[file:/]]
+
+
+
+ㅁㅇㄴㄹ
+#+BEGIN_SRC sh
+
+echo hi
+#+END_SRC
+
+#+RESULTS:
+: hi
+
+ㅁㄴㅇㄹ
+
+
+#+END_QUOTE
+
+
+
+
+
+* C-c C-v h	org-babel-describe-bindings
+ #+begin_quote org
+Major Mode Bindings Starting With C-c C-v:
+key             binding
+---             -------
+
+C-c C-v C-a	org-babel-sha1-hash
+C-c C-v C-b	org-babel-execute-buffer
+C-c C-v C-c	org-babel-check-src-block
+C-c C-v C-d	org-babel-demarcate-block
+C-c C-v C-e	org-babel-execute-maybe
+C-c C-v C-f	org-babel-tangle-file
+C-c C-v TAB	org-babel-view-src-block-info
+C-c C-v C-j	org-babel-insert-header-arg
+C-c C-v C-l	org-babel-load-in-session
+C-c C-v C-n	org-babel-next-src-block
+C-c C-v C-o	org-babel-open-src-block-result
+C-c C-v C-p	org-babel-previous-src-block
+C-c C-v C-r	org-babel-goto-named-result
+C-c C-v C-s	org-babel-execute-subtree
+C-c C-v C-t	org-babel-tangle
+C-c C-v C-u	org-babel-goto-src-block-head
+C-c C-v C-v	org-babel-expand-src-block
+C-c C-v C-x	org-babel-do-key-sequence-in-edit-buffer
+C-c C-v C-z	org-babel-switch-to-session
+C-c C-v ESC	Prefix Command
+C-c C-v I	org-babel-view-src-block-info
+C-c C-v a	org-babel-sha1-hash
+C-c C-v b	org-babel-execute-buffer
+C-c C-v c	org-babel-check-src-block
+C-c C-v d	org-babel-demarcate-block
+C-c C-v e	org-babel-execute-maybe
+C-c C-v f	org-babel-tangle-file
+C-c C-v g	org-babel-goto-named-src-block
+C-c C-v h	org-babel-describe-bindings
+C-c C-v i	org-babel-lob-ingest
+C-c C-v j	org-babel-insert-header-arg
+C-c C-v k	org-babel-remove-result-one-or-many
+C-c C-v l	org-babel-load-in-session
+C-c C-v n	org-babel-next-src-block
+C-c C-v o	org-babel-open-src-block-result
+C-c C-v p	org-babel-previous-src-block
+C-c C-v r	org-babel-goto-named-result
+C-c C-v s	org-babel-execute-subtree
+C-c C-v t	org-babel-tangle
+C-c C-v u	org-babel-goto-src-block-head
+C-c C-v v	org-babel-expand-src-block
+C-c C-v x	org-babel-do-key-sequence-in-edit-buffer
+C-c C-v z	org-babel-switch-to-session-with-code
+ 
+C-c C-v C-M-h	org-babel-mark-block
+ 
+#+begin_src text C-c C-v h	org-babel-describe-bindings
+Major Mode Bindings Starting With C-c C-v:
+key             binding 마크로 설정으로 빠르게 만드는 법있음 즉 패턴관찰→실행→자동화로 만들기!!!
+---             -------
+#+end_src
+ 
+ #+begin_src text
+C-c C-v C-a	org-babel-sha1-hash
+#+end_src
+
+ #+begin_src text
+C-c C-v C-b	org-babel-execute-buffer
+#+end_src
+
+
+ #+begin_src text
+C-c C-v C-c	org-babel-check-src-block
+#+end_src
+
+ #+begin_src text :기존의 블록을 분할하는 핵심!
+C-c C-v C-d	org-babel-demarcate-block
+#+end_src
+
+ #+begin_src text
+C-c C-v C-e	org-babel-execute-maybe
+#+end_src
+
+ #+begin_src text : 연구필요함! 탱글을 다른 파일로 하는 것으로 추정됨.
+C-c C-v C-f	org-babel-tangle-file
+#+end_src
+
+ #+begin_src text
+C-c C-v TAB	org-babel-view-src-block-info
+#+end_src
+
+ #+begin_src text
+C-c C-v C-j	org-babel-insert-header-arg
+#+end_src
+
+ #+begin_src text
+C-c C-v C-l	org-babel-load-in-session
+#+end_src
+
+ #+begin_src text
+C-c C-v C-n	org-babel-next-src-block
+#+end_src
+
+ #+begin_src text
+C-c C-v C-o	org-babel-open-src-block-result
+#+end_src
+
+ #+begin_src text
+C-c C-v C-p	org-babel-previous-src-block
+#+end_src
+
+ #+begin_src text
+C-c C-v C-r	org-babel-goto-named-result
+#+end_src
+
+ #+begin_src text
+C-c C-v C-s	org-babel-execute-subtree
+#+end_src
+
+ #+begin_src text
+C-c C-v C-t	org-babel-tangle
+#+end_src
+
+ #+begin_src text 블록의 앞부분에 도달하는 빠른 이동법
+C-c C-v C-u	org-babel-goto-src-block-head
+#+end_src
+
+ #+begin_src text
+C-c C-v C-v	org-babel-expand-src-block
+#+end_src
+
+ #+begin_src text
+C-c C-v C-x	org-babel-do-key-sequence-in-edit-buffer
+#+end_src
+
+ #+begin_src text
+C-c C-v C-z	org-babel-switch-to-session
+#+end_src
+
+ #+begin_src text
+C-c C-v ESC	Prefix Command
+#+end_src
+
+ #+begin_src text
+C-c C-v I	org-babel-view-src-block-info
+#+end_src
+
+ #+begin_src text
+C-c C-v a	org-babel-sha1-hash
+#+end_src
+
+ #+begin_src text
+C-c C-v b	org-babel-execute-buffer
+#+end_src
+
+ #+begin_src text
+C-c C-v c	org-babel-check-src-block
+#+end_src
+
+ #+begin_src text
+C-c C-v d	org-babel-demarcate-block
+#+end_src
+
+ #+begin_src text
+C-c C-v e	org-babel-execute-maybe
+#+end_src
+
+ #+begin_src text
+C-c C-v f	org-babel-tangle-file
+#+end_src
+
+ #+begin_src text
+C-c C-v g	org-babel-goto-named-src-block
+#+end_src
+
+ #+begin_src text
+C-c C-v h	org-babel-describe-bindings
+#+end_src
+
+ #+begin_src text
+C-c C-v i	org-babel-lob-ingest
+#+end_src
+
+ #+begin_src text
+C-c C-v j	org-babel-insert-header-arg
+#+end_src
+
+ #+begin_src text
+C-c C-v k	org-babel-remove-result-one-or-many
+#+end_src
+
+ #+begin_src text
+C-c C-v l	org-babel-load-in-session
+#+end_src
+
+ #+begin_src text
+C-c C-v n	org-babel-next-src-block
+#+end_src
+
+ #+begin_src text
+C-c C-v o	org-babel-open-src-block-result
+#+end_src
+
+ #+begin_src text
+C-c C-v p	org-babel-previous-src-block
+#+end_src
+
+ #+begin_src text
+C-c C-v r	org-babel-goto-named-result
+#+end_src
+
+ #+begin_src text
+C-c C-v s	org-babel-execute-subtree
+#+end_src
+
+ #+begin_src text
+C-c C-v t	org-babel-tangle
+#+end_src
+
+ #+begin_src text
+C-c C-v u	org-babel-goto-src-block-head
+#+end_src
+
+ #+begin_src text
+C-c C-v v	org-babel-expand-src-block
+#+end_src
+
+ #+begin_src text
+C-c C-v x	org-babel-do-key-sequence-in-edit-buffer
+#+end_src
+
+ #+begin_src text
+C-c C-v z	org-babel-switch-to-session-with-code
+#+end_src
+
+ #+begin_src text
+C-c C-v C-M-h	org-babel-mark-block
+#+end_src
+
+ #+begin_src text
+
+
+#+END_SRC
+
+
+#+END_SRC
+
+
+
+#+end_verse
+
+
+#+end_quote
+** addition
+(setq shell-command-dont-erase-buffer 'beg-last-out) ;;  *Shell Command Output* 버퍼를 일정하게 유지해야 여러개의 버퍼가 열리는 것을 방지함.
+                                                             ;; 위치: file:../../app/emacs/shell_command_output_buffer.org
+
+(mapconcat 'shell-command-to-string '("lsblk" "lsblk") "\n") ; ← 여기서 심지어 단문으로 C-u C-x C-e도 가능함!!!
+;; 여러줄의 shell 명령을 실행하는 것이 가능하다 babel이 잘 안되는 경우 우회를 한다. emacs/*mapc*.org
+;;; 인간의 창조력과 언어의 결합력은 매우 유연한 사고를 가능하게 한다. babel_tangle로 실행하는 것이 가능하게 됨.
+#+BEGIN_SRC emacs-lisp :results raw drawer
+;(mapconcat 'shell-command-to-string '("lsblk" "lsblk") "\n") ; ← 여기서 심지어 단문으로 C-u C-x C-e도 가능함!!!
+(mapconcat 'shell-command-to-string '(
+           "lsblk" 
+           "lsblk &>/dev/null"
+           "lsblk" 
+                                     ) 
+           "\n")
+
+;(shell-command-to-string "lsblk")
+;(shell-command-to-string "lsblk")
+;(shell-command-to-string "lsblk")
+#+END_SRC
+
+
+
+우회법: 임시로 찾아서 발견한 기능의 보고
+    src_bash[:var a="good"]{echo "$a"} {{{results(=good=)}}}
+
+    src_elisp[:var a="good"]{(message a)} {{{results(=good=)}}}
+
+
+help:shell-command
+(buffer-name)
+ {{{results(=Hello world in org_src_tangle!!! is GREAT!!!=)}}}
+
+
+(shell-command-to-string "lsblk")
+
+src_bash[:var a="good"]{lsblk}
+src_elisp[:var a="good"]{
+(progn 
+(shell-command "lsblk" "lsblk_output" nil)
+(switch-to-buffer "lsblk_output" t t))
+} {{{results(=#<buffer lsblk_output>=)}}}
+
+src_elisp[:var a="good"]{
+(progn 
+(shell-command "lsblk" "fs_sshfs.org" nil)
+(switch-to-buffer "lsblk_output" t t))
+} {{{results(=#<buffer lsblk_output>=)}}}
+
+src_elisp[:var a="good"]{
+(shell-command-to-string "lsblk")
+}
+
+
+
+*** 다른것들모음
+help:org-babel-tangle 
+help:org-babel-tangle-jump-to-org org파일로 다시 복귀하는 것으로 추정됨.
+
+* literate_programming_Youtube
+
+
+** 일단 정보수집부터 시작함.
+
+- C-c C-v i (org-babel-lob-ingest &optional FILE)
+Add all named source blocks defined in FILE to ‘org-babel-library-of-babel’.
+   
+- sudo로 등록하는 세션의 시작으로 빠르게 리눅스설치를 원격으로 제어하는 스크립트가 가능할 것이다.
+#+NAME: table-filter
+#+BEGIN_SRC emacs-lisp
+  (message "hi")
+  (flet ((equals (cont patt)
+                 (if (stringp cont)
+                     (string-match patt cont)))
+         (remove-empties (lst)
+                         (filter (lambda (cell) (not (equal "" cell)))
+                                 lst)))
+    (mapc 'remove-empties
+          (filter (lambda (row)
+                    (and (soem (lambda (cell) (equals cell include)) row)
+                         (notany (lambda (cell) (equals cell exclude)) row) ~~~무언가 빠진 것일임) )
+                         data)))
+            
+
+#+END_SRC
+
+#+HEADER: :post table-filter(data=*this*, include="python". exclude="deinstall")
+#+BEGIN_SRC sh
+            dpkg --get-selections
+#+END_SRC
+
+
+
+#+NAME: column1
+#+BEGIN_SRC emacs-lisp :var data="" :results value
+;  (mapcar 'car data)
+(print 3)
+#+END_SRC
+
+#+HEADER: :post column1(data=table-filter(data=*this*, include="python". exclude="deinstall"))
+#+BEGIN_SRC sh
+            dpkg --get-selections
+#+END_SRC
+
+
+*** use a session property
+:PROPERTIES:
+:session: my-server-sessuib
+:results: output
+:Effort:   3
+:END:
+
+파일명 : SYN/,Emacs/,,mp4,Emacs/Literate_Devops_with_Emacs.mp4
+
+- View the session buffer
+#+HEADER: :post table-filter(data=*this*, include="python". exclude="deinstall")
+#+BEGIN_SRC sh :dir /minecraft.howardabrams.com:
+  hostname -i
+#+END_SRC
+
+
+#+begin_quote org
+
+#+end_quote
+
+
+#+begin_verse org
+
+Remote Access with TRAMP
+
+We oftern have to deal with files on a remote system. These two can be edited as easy as a clicking ahyperlink.
+
+Written as: /goblin.howardabrams.com:website/index.html
+        Initail slash              colon
+             hostname                path to file  
+
+
+#+end_verse
+
+#+begin_quote
+
+
+#+end_quote
+
+#+begin_quote
+- Access Hosts behind Firewalls
+
+Systems in my data center require a bastin AND jump box to get to the host that I want:
+/ssh:bastion.mydomain.com|jumpbox.mydomain.com|dest-host:some-file.org
+Start with             pipe                 pipe
+Protocol  first host       second host          final host:PATH         
+
+
+- Access Files as ROOT !!!
+One Tramp 'protocol' is sudo ...
+/ssh:minecraft.howardabrams.com|sudo:minecraft.howardabrams.ocm:/etc/passwd
+Start with                    New
+Protocol                    Protocol
+
+#+end_quote
+
+
+*** variable
+#+NAME: tar-archive
+#+BEGIN_SRC sh
+ls dist
+#+END_SRC
+
+#RESULTS: tar-archive
+: Reproter-1.0.tar.gz
+
+#+BEGIN_SRC sh :var ZIP=tar-archive
+tar -tzf dist/$ZIP
+#+END_SRC
+
+- table로 변환하는 것으로 다음을 진행함.
+#+BEGIN_SRC sh :var ZIP=tar-archive :results table
+tar -tzf dist/$ZIP
+#+END_SRC
+
+
+- 다시 다른 것: CFG=contents[1,0]
+#+BEGIN_SRC sh :var ZIP=tar-archive CFG=contents[1,0]
+tar -x0zf dist/$ZIP $CFG
+#+END_SRC
+
+
+- table로 변환하는 것으로 다음을 진행함.
+#+BEGIN_SRC sh 
+  hostname --long
+#+END_SRC
+
+#+RESULTS:
+: msata045
+
+- table로 변환하는 것으로 다음을 진행함.
+#+BEGIN_SRC sh :results table
+  sudo dpkg --get-selections | grep -v deinstall | egrep -i '^python\b' | sed -e 's/\s*install$//'
+#+END_SRC
+
+
+
+
+
+#+NAME: column_elisp
+#+BEGIN_SRC elisp
+  (mapcar 'car data)
+#+END_SRC
+
+
+#+BEGIN_SRC sh :results value list :post column_elisp(data=*this*)
+  sudo dpkg --get-selections | grep -v deinstall | egrep -i '^python\b'
+#+END_SRC
+
+*** plask src
+#+BEGIN_SRC sh :dir Reporter   :export both
+#  cd $HOME/Report 없이 바로 진행됨.
+flake8 --exit-zero reporter.py
+# property 에서 :dir: Reporter로 작성해도 된다.
+#+END_SRC
+
+
+#+BEGIN_SRC python :tangle Reporter/setup.py
+  from setuptools import setuptools
+  set(name='Reproter',
+      version='1.0',
+      description='hHelper instance for dealing with Nagios',
+      author='Howard Abrams',
+      author_email='howard.abrams@gmail.com'
+      py_modulse=['reporter'])
+#+END_SRC
+
+
+#+BEGIN_SRC sh :dir ../  :results table :export both
+  #  cd $HOME/Report 없이 바로 진행됨.
+  ls | grep "read"
+  #echo -c "1\na \n"
+  printf "a\na\n"
+  pwd
+  #flake8 --exit-zero reporter.py
+  # property 에서 :dir: Reporter로 작성해도 된다.
+#+END_SRC
+
+#+RESULTS:
+| _2_app_readme.org                |
+| readme.org                       |
+| readme.org~                      |
+| a                                |
+| a                                |
+| /home/thinkpad/config_github/app |

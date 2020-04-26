@@ -1,0 +1,9 @@
+noccur is an available obsolete package.
+
+exwm
+
+
+In Icicles, C-c ' is command icicle-occur, which can search multiple buffers.
+icicles.org
+
+(require 'icicles)

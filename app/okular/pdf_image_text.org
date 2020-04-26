@@ -1,0 +1,12 @@
+
+$ pdftoceditor
+Usage:
+  pdftoceditor replace [--output  FILE] <inputpdf> <tocfile>
+  pdftoceditor append  [--output FILE] <inputpdf> <tocfile>
+  pdftoceditor dump [--output-toc FILE --align-left] <inputpdf>
+** image extract to use in feh and 
+*** pdftocairo file.pdf -png
+
+pdftocairo -f 8 -l 12 file.pdf -png
+
+*** pdftxt

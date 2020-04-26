@@ -1,0 +1,53 @@
+
+(start-process-shell-command
+   (concat "surf 로" "메뉴얼읽기 대안pdf local html을 참조할 것" ) nil 
+   (concat "cd /; exec " "surf https://www.perseus.tufts.edu/hopper/searchresults?q=aristotle")
+)
+
+
+
+(start-process-shell-command
+   (concat "surf 로" "메뉴얼읽기 대안pdf local html을 참조할 것" ) nil 
+   (concat "cd /; exec " "surf https://www.perseus.tufts.edu/hopper/searchresults?q=plato")
+)
+(start-process-shell-command
+   (concat "surf 로" "메뉴얼읽기 대안pdf local html을 참조할 것" ) nil 
+   (concat "cd /; exec " "evince file:///home/thinkpad/Documents/stumpwm-git.pdf")
+)
+(start-process-shell-command
+   (concat "surf 로" "메뉴얼읽기 대안pdf local html을 참조할 것" ) nil 
+   (concat "cd /; exec " "surf https://www.perseus.tufts.edu/hopper/searchresults?q=anabasis")
+)
+(start-process-shell-command
+   (concat "surf 로" "메뉴얼읽기 대안pdf local html을 참조할 것" ) nil 
+   (concat "cd /; exec " "surf https://www.perseus.tufts.edu/hopper/searchresults?q=xenophon")
+)
+
+γνῶθι σεαυτόν.
+https://en.wikipedia.org/wiki/List_of_Greek_phrases
+
+(start-process-shell-command
+   (concat "surf 로" "메뉴얼읽기 대안pdf local html을 참조할 것" ) nil 
+   (concat "cd /; exec " "surf https://en.wikipedia.org/wiki/List_of_Greek_phrases")
+)
+(start-process-shell-command
+   (concat "surf 로" "메뉴얼읽기 대안pdf local html을 참조할 것" ) nil 
+   (concat "cd /; exec " "surf http://www.perseus.tufts.edu/hopper/collection?collection=Perseus%3Acorpus%3Aperseus%2Cauthor%2CVulgate")
+)
+
+http://www.perseus.tufts.edu/hopper/collection?collection=Perseus%3Acorpus%3Aperseus%2Cauthor%2CVulgate
+
+(start-process-shell-command
+   (concat "surf 로" "메뉴얼읽기 대안pdf local html을 참조할 것" ) nil 
+   (concat "cd /; exec " "surf http://www.linuxfromscratch.org/lfs/read.html")
+)
+
+(start-process-shell-command
+   (concat "surf 로" "메뉴얼읽기 대안pdf local html을 참조할 것" ) nil 
+   (concat "cd /; exec " "surf http://www.linuxfromscratch.org/lfs/read.html")
+)
+
+(start-process-shell-command
+   (concat "surf 로" "메뉴얼읽기 대안pdf local html을 참조할 것" ) nil 
+   (concat "cd /; exec " "surf ")
+)

@@ -1,0 +1,195 @@
+* (comint-send-string "vterm" "echo Great! send to other tmux in gentoo {C-q RET ^M} ") 
+
+  :꺽쇄s탭단축키로저장된yasnappet_angle_s_tab:  
+  #+BEGIN_TEXT org :what_in_your_Mind? 
+
+
+  #+END_TEXT
+  #+TAIL: 
+
+  #+BEGIN_TEXT org :what_in_your_Mind? 
+
+- Core_location: file:../../app/emacs/.org
+daiary?, loding_file?, 
+
+  :목표범위를 정하고 아래로 내릴 것
+- 
+#+begin_src emacs-lisp :var to-vterm="vterm" :results silent
+(message "")
+(comint-send-string to-vterm 
+    "echo a Great2! WOW GREAT "
+) 
+
+(comint-send-string to-vterm ;; 주석을 작성함
+     "echo espeak Great3! good world is my stage! # good world " ; 구체적인 문형을 설명함
+    ; => 예상되는 결과를 도출함
+) 
+;; 원리를 발견하고 충분한 단련과 습관이 없으면 무용지물이다
+#+end_src
+
+- 
+#+begin_src sh :results silent
+espeak -a 20 -v other/la "amare"
+#
+
+#+end_src
+
+  #+END_TEXT
+  #+TAIL: 
+
+
+  :END:
+
+*** comint-send-string to-vterm /src_variable.org
+
+
+  #+BEGIN_TEXT org :comint-send을 활용한 문장들 전송 
+
+#+NAME: quote_for_test 
+#+begin_quote sh
+#echo wow hi # 주석문이다
+#echo hi2
+lsblk
+#+end_quote
+
+
+#+header: :var to-vterm="vterm" :comment "전송에 성공!"
+#+header: :var text1="echo Send to Gentoo echo hi"
+#+header: :var text1=quote_for_test :comment "quote_for_test BOX 구문들을 실험을 실시함 놀라움"
+#+header: :var text1=quote1 :comment "아래의 박스의 quote BOX 구문들을 실행함 놀라움"
+#+begin_src emacs-lisp :results silent
+(comint-send-string to-vterm 
+    text1 ;; header var로 전송성공함 C-c C-c로 실행할 것
+) 
+#+end_src
+
+;; gentoo에서 사용중임
+ ;; 사용중인 문장의 앞에 표시를 하는 것도 좋을 듯함
+
+
+  #+END_TEXT
+  #+TAIL: 
+
+
+  #+BEGIN_TEXT org :쉘명령문예정 
+
+#+NAME: quote1
+#+begin_quote sh
+echo hi # 주석문이다
+echo hi2
+#+end_quote
+
+  #+END_TEXT
+
+  #+TAIL: 
+
+* cfdisk /dev/sda #DOS enter
+** New => 128M Primayr => bootable
+** mkfs.ext4 /dev/sdb1
+  #+BEGIN_TEXT org :mkfs.ext4박스설정 
+
+#+NAME: mkfs.ext4
+#+begin_quote sh
+mkfs.ext4 /dev/sdb1 # 주석문: lsblk로 sda sdb등의 확인을 할 것
+mkfs.ext4 /dev/sdb2
+#+end_quote
+
+  #+END_TEXT
+
+  #+TAIL: 
+
+** mkfs.ext4 /dev/sdb2
+** mount /dev/sdb2 /mnt/gentoo
+* download
+** links gentoo.org/downloads/mirrors
+** => releases => amd64/ => audobuilds =>  current-stage3-amd64-hardened
+** => stage3-amd64-hardened-20200401T214502Z.tar.xz 
+** links github.com/MentalOutlaw/gentootestscript => 간단히 download Zip
+** unzip gentootestscript-master.zip #압축을 푼다
+
+#+begin_src emacs-lisp :results silent
+(comint-send-string "vterm" "lsblk echo hi" )
+#+end_src
+
+* tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner
+ - [[https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Stage][Installing the Gentoo installation files - Gentoo Wiki]] 
+ - [[https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Stage/ko][젠투 설치 파일 설치 - Gentoo Wiki]] 
+ [[https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Stage/ko][젠투 설치 파일 설치 - Gentoo Wiki]
+** tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner
+[[https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Stage][Installing the Gentoo installation files - Gentoo Wiki]
+* emacs /etc/portage/make.conf
+ emacs /etc/portage/make.conf
+#+header: :var box=make.conf-box
+#+begin_src emacs-lisp :results silent
+;;(comint-send-string "vterm" "emacs /etc/portage/make.conf" )
+(comint-send-string "vterm" box )
+(comint-send-string "vterm" "xrevert-buffery" )
+#+end_src
+
+
+;; 아래의 문장을 전송함.
+#+NAME: make.conf-box
+#+begin_quote sh
+echo hi
+echo good
+#+end_quote
+
+
+
+#+begin_quote sh :comment "변경시킴"
+# These settings were set by the catalyst build script that automatically
+# built this stage.
+# Please consult /usr/share/portage/config/make.conf.example for a more
+# detailed example.
+COMMON_FLAGS="-O2 -pipe"
+CFLAGS="${COMMON_FLAGS}"
+CXXFLAGS="${COMMON_FLAGS}"
+FCFLAGS="${COMMON_FLAGS}"
+FFLAGS="${COMMON_FLAGS}"
+
+# NOTE: This stage was built with the bindist Use flag enabled
+PORTDIR="/var/db/repos/gentoo"
+DISTDIR="/var/cache/distfiles"
+PKGDIR="/var/cache/binpkgs"
+
+# This sets the language of build output to English.
+# Please keep this setting intact when reporting bugs.
+LC_MESSAGES=C
+
+# EMERGE_DEFAULT_OPTS is set automatically by livecd-tools autoconfig during first live boot.
+# This should be equal to number of processors, see "man emerge" for details.
+EMERGE_DEFAULT_OPTS="${EMERGE_DEFAULT_OPTS} --jobs=4 --load-average=4"
+#+end_quote
+
+#+begin_quote sh
+# These settings were set by the catalyst build script that automatically
+# built this stage.
+# Please consult /usr/share/portage/config/make.conf.example for a more
+# detailed example.
+COMMON_FLAGS="-O2 -pipe"
+CFLAGS="${COMMON_FLAGS}"
+CXXFLAGS="${COMMON_FLAGS}"
+FCFLAGS="${COMMON_FLAGS}"
+FFLAGS="${COMMON_FLAGS}"
+
+# NOTE: This stage was built with the bindist Use flag enabled
+PORTDIR="/var/db/repos/gentoo"
+DISTDIR="/var/cache/distfiles"
+PKGDIR="/var/cache/binpkgs"
+
+# This sets the language of build output to English.
+# Please keep this setting intact when reporting bugs.
+LC_MESSAGES=C
+
+# EMERGE_DEFAULT_OPTS is set automatically by livecd-tools autoconfig during first live boot.
+# This should be equal to number of processors, see "man emerge" for details.
+EMERGE_DEFAULT_OPTS="${EMERGE_DEFAULT_OPTS} --jobs=4 --load-average=4"
+#+end_quote
+
+
+
+
+** mkdir /mnt/gentoo/etc/portage/defaults
+*** mv /mnt/gentoo/etc/portage/make.conf /mnt/gentoo/etc/portage/defaults/
+
+(comint-send-string "vterm" "echo hi2 한글입력")

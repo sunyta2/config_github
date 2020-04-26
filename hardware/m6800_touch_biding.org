@@ -5,9 +5,21 @@ dell m6800 touch SEARCH Site in ebay.com
 
 _biding.org
 
+- 최근 발견한 완전분해법을 설명한 해법
+[[https://www.youtube.com/watch?v=4oaBVKXYV-M][Dell Precision M6800 i7 Quad Core CPU Upgrade - YouTube]]
+https://youtu.be/4oaBVKXYV-M?t=91
+
+
+- 처음으로 봤었던 미국남성의 설명
+[[https://www.youtube.com/watch?v=Bqw8lfms1U8&t=9m20s][Unboxing Dell Precision M6800, 350 GB SSD, 12GB Memory, 1TB HDD - YouTube]]
+https://youtu.be/Bqw8lfms1U8?t=560 하드분해장면바로가기
+
+
+- slice Battery enable in M6800 $88.88 - [[https://www.ebay.com/itm/11-1V-97Wh-New-KJ321-Slice-Battery-for-Dell-E5420-E5540-E6430-E6540-E6520-M4700/293370202907?hash=item444e3a0b1b:g:UB4AAOSwxlxd34ZU][11.1V 97Wh New KJ321 Slice Battery for Dell E5420 E5540 E6430 E6540 E6520 M4700 | eBay]]
+ 얇은 배터리로 안정감 있는 전력공급과 본배터리를 갈아 낄 수 있다. [[https://www.ebay.com/sch/i.html?_from=R40&_trksid=m570.l1313&_nkw=slice+battery+dell+precision&_sacat=0][slice battery dell precision | eBay]]
 
 * w541_COMMON 비교
-
+기본하드가 2개에 CD-ROM까지 3개까지 장착가능함
 m6800 : 17인치 화면이 터치로 크다, 빨콩이 아닌 흑콩이 있다.
 다른 상위 기종보다 msata 업그래이드가 쉽고,
 
@@ -19,3 +31,15 @@ m2sata를 사용해서 아쉬움.
 * $350 auction 이하로 잡을 것.
 mx 라면 최고의 거래라고 생각됨. 나중에 곧 출몰할 것을 기대함.
 가격의 기록을 적어 둘 것...
+* iconia
+[[https://www.ebay.com/sch/i.html?_from=R40&_trksid=m570.l1313&_nkw=acer+iconia+w500p&_sacat=0][acer iconia w500p | eBay]] 검색
+
+[[https://www.ebay.com/itm/Acer-Iconia-W500P-32GB-Wi-Fi-10-1in-Black-/184230693376?_trksid=p2349526.m4383.l10137.c10&nordt=true&rt=nc&orig_cvip=true][Acer Iconia W500P 32GB, Wi-Fi 10.1in - Black | eBay]]
+
+
+- [[https://duckduckgo.com/?q=Acer+Iconia+linux&t=brave&iax=videos&ia=videos&iai=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D7EH3GS1gDP0][Acer Iconia linux at DuckDuckGo]] 화면돌리기동작실행가능함
+
+* touch 스크린 w510
+동영상에서 가능하다면  https://youtu.be/8Vwt11GMc3g Ubuntu 10.10 Touch screen W510
+w520 w530 w541역시 가능할 것이다
+/app/easystroke/readme.org

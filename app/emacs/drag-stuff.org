@@ -1,0 +1,10 @@
+
+뭔지 잘 모르겠음...
+
+(drag-stuff-global-mode t)
+
+
+  (setq drag-stuff-modifier '(meta shift))
+
+
+(require 'drag-stuff)

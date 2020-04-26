@@ -1,0 +1,38 @@
+
+(start-process-shell-command
+   (concat "surf 로" "메뉴얼읽기 대안pdf local html을 참조할 것" ) nil 
+   (concat "cd /; exec " "surf http://www.linuxfromscratch.org/lfs/read.html")
+)
+
+(start-process-shell-command
+   (concat "surf 로" "메뉴얼읽기 대안pdf local html을 참조할 것" ) nil 
+   (concat "cd /; exec " "surf http://www.linuxfromscratch.org/lfs/read.html")
+)
+
+
+(start-process-shell-command
+   (concat "surf 로" "메뉴얼읽기 대안pdf local html을 참조할 것" ) nil 
+   (concat "cd /; exec " "surf https://www.perseus.tufts.edu/hopper/searchresults?q=aristotle")
+)
+
+
+
+(start-process-shell-command
+   (concat "surf 로" "메뉴얼읽기 대안pdf local html을 참조할 것" ) nil 
+   (concat "cd /; exec " "surf https://www.perseus.tufts.edu/hopper/searchresults?q=plato")
+)
+(start-process-shell-command
+   (concat "surf 로" "메뉴얼읽기 대안pdf local html을 참조할 것" ) nil 
+   (concat "cd /; exec " "surf ")
+)
+
+
+
+
+
+그리스어로 된 다른 서적인 것 같음 - [[http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A2008.01.0641%3Abook%3D1%3Achapter%3D2%3Asection%3D1][Marcus Aurelius, M. Antonius Imperator Ad Se Ipsum, book 1, chapter 2, section 1]]
+[[http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A2008.01.0641%3Abook%3D1%3Achapter%3D2%3Asection%3D1][Marcus Aurelius, M. Antonius Imperator Ad Se Ipsum, book 1, chapter 2, section 1]]
+
+
+https://www.perseus.tufts.edu/hopper/searchresults?q=plato
+https://www.perseus.tufts.edu/hopper/searchresults?q=aristotle

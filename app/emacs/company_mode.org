@@ -1,0 +1,21 @@
+
+
+*** filename completion
+[[https://emacs.stackexchange.com/questions/3654/filename-completion-using-company-mode][filename completion using company-mode - Emacs Stack Exchange]]
+You have to run company-files for file completion. You can bind a different map for the files completion completion with
+
+(define-key global-map (kbd "C-.") 'company-files)
+Also make sure you have the company-files in company-backends (M-x > customize-group > company > company backends)
+
+위의 명령을 실행하기에 앞서 global-company-mode를 실행해야 함. global-company-mode
+help:company-backends
+You can use mode hooks to specify a different set of backends for different major modes. For example:
+
+(add-hook 'org-mode-hook
+          (lambda ()
+            (setq-local company-backends '((company-files company-dabbrev)))))
+
+(add-hook 'emacs-lisp-mode-hook
+          (lambda ()
+            (setq-local company-backends '((company-capf company-dabbrev-code)))))
+필요에 따라서 설정을 변경할 수 있다.

@@ -1,7 +1,18 @@
 
 
+C-c C-c 로 실행됨!
+- [ ] 1 line src_bash src_bash[:var a="Control C twice"]{espeak -a 20 "Run this line by $a Good Emacs"}
+    src_bash[:var a="good"]{espeak -a 20 "hello $a world"}
+    src_bash[:var a="good"]{echo "$a"} {{{results(=good=)}}}
 
-- [ ] 1 line src_bash src_bash[:var a="Control C twice"]{espeak "Run this line by $a Good Emacs"}
-    src_bash[:var a="good"]{espeak "hello $a world"}
+    src_elisp[:var a="good"]{(message a)} {{{results(=good=)}}}
+    src_elisp[:var a="good"]{(eshell)} {{{results(=#<buffer *eshell*>=)}}}
+
 
  cf. elisp: Click or Return
+
+
+- org-babel-inline-result-wrap의 값이 "=%s=" 로 정해져있으니 변경가능할 것임!
+    help:org-babel-inline-result-wrap
+
+

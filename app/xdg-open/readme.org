@@ -1,5 +1,6 @@
 * xdg-open 
-
+/app/xdg-open/xdg-settings.org for app/xdg-open/xdg-setting.org for surf default in Emacs
+성공적으로 OS default browser changer
  - other: kde-open gnome-open
  - ~/.config/mimeapps.list saved in arco linux for backup
  

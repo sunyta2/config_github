@@ -1,0 +1,296 @@
+; pdf-tools.org
+(use-package pdf-tools
+:ensure t
+:config 
+(pdf-tools-install)
+)
+
+
+(use-package org-pdfview
+:ensure t)
+org-capture_pdf_selected_text
+
+* 사이트 소개
+#+begin_example text
+
+대박! [[pdfview:/path/to/myfile.pdf::42][My file Description]]
+
+#+end_example
+#+begin_comment text
+대박! [[pdfview:/path/to/myfile.pdf::42][My file Description]
+#+end_comment
+[[https://emacs.stackexchange.com/questions/19686/how-to-use-pdf-tools-pdf-view-mode-in-emacs][gnus - How to use pdf-tools (pdf-view-mode) in emacs? - Emacs Stack Exchange]]
+
+#+begin_quote org
+Ask Question
+Asked 4 years, 2 months ago
+Active 2 years, 7 months ago
+Viewed 18k times
+
+24
+
+
+12
+pdf-tools includes pdf-view-mode which offers several features not present in doc-view-mode (see end of question).
+
+Can pdf-view-mode be used as a replacement for doc-view-mode generally, or does it have to be "tool" by tool?
+
+In either case, is it necessary to edit emacs source to use pdf-tools in gnus, eww and orgmode or are their system-wide settings that can be employed?
+
+--- Features of pdf-tools here for convenience; see github site for details ---
+
+Seems faster than doc-view
+Resolution usually better since not being rendered as a png
+Nice search, and can even search for all occurrences of a phrase
+Can add text annotations, and highlighting, underlining, and the like
+Can create imenus for pdf parts
+Can treat several pdfs as a single "virtual" pdf
+Can integrate with latex to see latex source and pdf side by side and jump from one to the other at the equivalent locations (e.g. select \section{A section} in LaTeX and got that section in pdf.
+org-mode gnus pdf pdf-tools
+shareimprove this question
+edited Jan 20 '16 at 17:23
+asked Jan 19 '16 at 16:58
+
+brittAnderson
+58911 gold badge33 silver badges1313 bronze badges
+See here for a related discussion which likely includes the answer to your questions. – tmalsburg Jan 19 '16 at 18:40
+Gnus may be a special case? See: lists.gnu.org/archive/html/help-gnu-emacs/2015-02/msg00438.html – Brian Z Jan 19 '16 at 19:20
+You might need to reword your question away from the dreaded 'best-practices', which some folks assume means answers will be primarily opinion-based. I seem to recall gnus is a special case here, and you will need to add appropriate config to .mailcap. If your question isn't closed before I get home, I'll dig up my config for you. – Tyler Jan 19 '16 at 20:35
+1
+Gnus uses mailcap to figure out what applications to open attachments with. If you have Emacs configured to open pdf files with pdf-tools, you need to add the line application/pdf; emacsclient %s to .mailcap, and start the Emacs edit-server: invoke Emacs as emacs --daemon, or add (server-start) to your .emacs. – Tyler Jan 20 '16 at 3:07
+Thanks. That works, and after that this works for org. (set 'org-file-apps '((auto-mode . emacs) ... ("\\.pdf\\'" . default))) – brittAnderson Jan 20 '16 at 11:25 
+show 2 more comments
+1 Answer
+Active
+Oldest
+Votes
+
+34
+
+Switching from docview to pdf-tools happens 'automatically' when you install pdf-tools. Once you've done this, any time Emacs tries to open a pdf in Emacs, it will use pdf-tools. However, some packages will call out to the operating system, or use different config within Emacs, to decide if they should use Emacs or another program to open a pdf. So there is some 'tool-by-tool' configuration required to get all Emacs packages to use pdf-tools.
+
+If you want your pdfs opened in the same instance of Emacs, you need to have it running in daemon mode (i.e., start it with emacs --daemon), or call (server-start) in your init so that emacsclient will work.
+
+Org-mode links
+Out of the box, org-mode doesn't know about pdf-tools. However, you can add support for opening org links to pdf files with org-pdfview, which is available as a package on MELPA. Once it's installed, you can activate it with the following code in your .emacs:
+
+(eval-after-load 'org '(require 'org-pdfview))
+
+(add-to-list 'org-file-apps 
+             '("\\.pdf\\'" . (lambda (file link)
+                                     (org-pdfview-open link))))
+Doing this will provide a new completion target for adding links via C-c C-l, pdfview:, with support for jumping to specific pages. Full links use the format:
+
+[[pdfview:/path/to/myfile.pdf::42][My file Description]]
+Interleave Mode & PDF annotations
+Interleave mode provides support for presenting "your PDF side by side with an Org Mode buffer with your notes." This is an alternative to using the annotations embedded in a pdf (which you can do with pdf-tools). Instead, you end up with an org-mode file with all your annotations, which links to the page in the pdf that the annotations are associated with.
+
+Gnus
+As I mentioned in my comment, gnus uses mailcap to open attachments. To configure this, you need the following in your .mailcap file:
+
+application/pdf; emacsclient %s
+EWW
+EWW also uses mailcap, so modify your .mailcap file as per Gnus above.
+
+AucTeX
+For AucTeX, there are a number of relevant options:
+
+viewers are specified via the variable TeX-view-program-selection: find the entry for output-pdf and select "PDF Tools" for the value.
+to use SyncTex, you need to:
+set TeX-source-correlate-mode, either interactively by calling that function via M-x, or by setting the variable permanently via M-x customize-variable.
+make sure TeX-source-correlate-method includes (pdf . synctex)
+With this in place, from your tex source file C-c C-g should display the corresponding section of the pdf.
+
+ESS
+Customize the variable ess-pdf-viewer-pref to emacsclient.
+
+xdg-open
+On Linux, some packages will call the external program xdg-open to open pdf files. This will use your system-wide settings to determine which program to use. This is a system-wide change, so other programs will send pdf documents to Emacs when you've set this up. So if you don't want, e.g., Firefox, to do this, you won't want to make these changes.
+
+To set emacsclient to open pdfs system-wide via xdg-open:
+
+create a file in ~/.local/share/applications/emacsclient.desktop with the contents:
+[Desktop Entry]
+Name=Emacs Client
+Exec=emacsclient %u
+Icon=emacs-icon
+Type=Application
+Terminal=false
+MimeType=application/pdf;
+
+from the command line, issue:
+xdg-mime default emacsclient.desktop application/pdf
+
+You can test that this worked with xdg-open your-document.pdf - it should open your-document.pdf in Emacs.
+
+w3m
+w3m first checks the variable w3m-doc-view-content-types, and if it sees "application/pdf" there, it will open pdfs in doc-view. This is a customizable variable, so remove the "application/pdf" entry using the customization interface.
+
+Without an entry in w3m-doc-view-content-types, w3m next checks the variable w3m-content-type-alist for entries that match "application/pdf". Customize the entry to read
+
+[INS] [DEL] Type: application/pdf
+  Regexp: ( ) Not specified
+          (*) String: \.pdf\'
+  Viewer: ( ) Not specified
+          (*) External viewer:
+                Command: emacsclient
+                Arguments:
+                  [INS] [DEL] file
+                  [INS]
+You could also use an emacs function (presumably find-file or similar), rather than an external call to emacsclient, but I couldn't figure out the syntax for that.
+
+shareimprove this answer
+edited Aug 14 '17 at 13:50
+answered Jul 9 '16 at 22:14
+
+Tyler
+14.8k11 gold badge2727 silver badges6363 bronze badges
+However w3m in emacs still uses docview. Any advice how to fix that one? – brittAnderson Mar 11 '17 at 12:55
+see the updated answer – Tyler Mar 13 '17 at 19:00
+Can I link from org-mode to a particular annotation in the PDF file? – AlwaysLearning Aug 14 '17 at 8:22
+1
+@AlwaysLearning not that I'm aware of. Interleave mode provides support for recording annotations in a separate, linked, org-mode file. I'll update the answer – Tyler Aug 14 '17 at 13:46
+#+end_quote
+* ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+* install pdf-tools
+(finder-commentary "pdf-tools")
+#+begin_quote
+pdf-tools is a new package.
+
+     Status: New from melpa -- Install
+    Archive: melpa
+    Version: 20200214.536
+     Commit: 0159cb1ab36f75879151e5ea24a6918ef58e50a3
+    Summary: Support library for PDF documents.
+   Requires: emacs-24.3, tablist-1.0, let-alist-1.0.4
+   Keywords: files multimedia 
+
+PDF Tools is, among other things, a replacement of DocView for PDF
+files.  The key difference is, that pages are not prerendered by
+e.g. ghostscript and stored in the file-system, but rather created
+on-demand and stored in memory.
+
+Note: This package requires external libraries and works currently
+only on GNU/Linux systems.
+
+Note: If you ever update it, you need to restart Emacs afterwards.
+
+To activate the package put
+
+(pdf-tools-install)
+
+somewhere in your .emacs.el .
+
+M-x pdf-tools-help RET
+
+gives some help on using the package and
+
+M-x pdf-tools-customize RET
+
+offers some customization options.
+
+Features:
+
+* View
+  View PDF documents in a buffer with DocView-like bindings.
+
+* Isearch
+  Interactively search PDF documents like any other buffer. (Though
+  there is currently no regexp support.)
+
+* Follow links
+  Click on highlighted links, moving to some part of a different
+  page, some external file, a website or any other URI.  Links may
+  also be followed by keyboard commands.
+
+* Annotations
+  Display and list text and markup annotations (like underline),
+  edit their contents and attributes (e.g. color), move them around,
+  delete them or create new ones and then save the modifications
+  back to the PDF file.
+
+* Attachments
+  Save files attached to the PDF-file or list them in a dired buffer.
+
+* Outline
+  Use imenu or a special buffer to examine and navigate the PDF's
+  outline.
+
+* SyncTeX
+  Jump from a position on a page directly to the TeX source and
+  vice-versa.
+
+* Misc
+   + Display PDF's metadata.
+   + Mark a region and kill the text from the PDF.
+   + Search for occurrences of a string.
+   + Keep track of visited pages via a history.
+
+[back]
+
+#+end_quote
+
+
+
+#+begin_example elisp :testing only
+
+[[pdfview:/home/thinkpad/Documents/beginners-guide-to-xmonad-latest.pdf]]
+
+
+(eval-after-load 'org '(require 'org-pdfview))
+
+(add-to-list 'org-file-apps 
+             '("\\.pdf\\'" . (lambda (file link)
+                                     (org-pdfview-open link))))
+
+
+file:/home/thinkpad/Documents/beginners-guide-to-xmonad-latest.pdf
+
+#+end_example
+
+
+* pdf-view-restore
+pdf-view-restore is an available obsolete package.
+
+     Status: Available Obsolete from melpa -- Install
+    Archive: melpa
+    Version: 20190904.1708
+     Commit: 5a1947c01a3edecc9e0fe7629041a2f53e0610c9
+    Summary: Support for opening last known pdf position in pdfview mode
+   Requires: pdf-tools-0.90, emacs-26.0
+   Homepage: https://github.com/007kevin/pdf-view-restore
+   Keywords: files convenience 
+Other versions: 20190904.1708 (installed).
+
+Support for saving and opening last known pdf position in pdfview mode.
+Information  will be saved relative to the pdf being viewed so ensure
+`pdf-view-restore-filename' is in the same directory as the viewing pdf.
+
+To enable, add the following:
+  (add-hook 'pdf-view-mode-hook 'pdf-view-restore-mode)
+
+[back]
+
+
+* pdf-grep
+pdfgrep is an available obsolete package.
+
+     Status: Available Obsolete from melpa -- Install
+    Archive: melpa
+    Version: 20200306.209
+     Commit: 1576fc98754d3bdaa40573a037a80f1973110756
+    Summary: run `pdfgrep' and display the results.
+   Requires: emacs-24.4
+   Homepage: https://github.com/jeremy-compostella/pdfgrep
+   Keywords: extensions mail pdf grep 
+Other versions: 20200306.209 (installed).
+
+This package provides the Emacs "grep" facilities for the pdfgrep
+program.
+
+[back]
+
+
+
+

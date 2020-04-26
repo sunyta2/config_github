@@ -1,0 +1,52 @@
+* battery
+** battery
+
+
+#+begin_src sh :results silent
+battery
+#+end_src
+
+
+** acpi to use in StumpWm
+#+BEGIN_SRC sh
+ls -l | grep -v \~ | awk '{ print $9 " " $9}' ##; 가장 기초가 가장 중요하다.
+ls -l  | grep -v "[\#|\~]" | awk '{ print $9 " " $9}' ##; 가장 기초가 가장 중요하다. awk/readme.org
+
+ acpi -b | awk '{print "[" $3, $4, $5 "]"}'
+=> [Discharging, 87%, 03:30:34] # => 깔끔하게 정보출력됨 stumprc에 등록할 것
+
+#+END_SRC
+
+
+** acpi -a
+
+
+** acpi -V # 상세정보출력
+acpi -V
+
+** yay acpi
+yay acpi
+
+* 출처와 5가지 방법
+[[https://www.ostechnix.com/how-to-check-laptop-battery-status-in-terminal-in-linux/][How To Check Laptop Battery Status And Level In Terminal In Linux]]
+
+
+upower -i /org/freedesktop/UPower/devices/battery_BAT0
+** upower -i 방법 기본으로 미리설치됨
+
+#+begin_src sh :results silent
+upower -i /org/freedesktop/UPower/devices/battery_BAT0
+#+end_src
+** batstat
+
+#+begin_src sh :results silent
+$ git clone https://github.com/Juve45/batstat.git
+The above command will pull the latest batstat version and save its contents in a folder named “batstat”.
+
+$ sudo cp batstat /usr/local/bin/ # Make it executable using command:
+$ sudo chmod +x /usr/local/bin/batstat # Finally, run the following command to view your battery status.
+
+$ batstat
+#+end_src
+
+

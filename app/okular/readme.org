@@ -8,6 +8,9 @@ file:../mpv/readme.org file:../espeak/readme.org file:../okular/readme.org
 - greek, latin bable
 
 
+defind-remapped-keys로 다른 앱의 단축키를 설정하는 것으로 통일적인 단축키 양식을 만드는 기초가 된다.
+;; stumpwm에서 okular의 단축키를 defind-remapped-keys 로 재설정해서 C-n C-p를 사용가능하게 한다.
+;;; - stumpwm/readme.org에 총괄저장할 것.
 
 
 okular
@@ -16,6 +19,14 @@ okular
 (3282990 2049)
 
 - 외부다른 문서를 보기위해서 links를 사용한 것이 가능하면 rust나 다른 웹문서를 페이지를 선택해서 보는 것이 가능할 지도 모른다.
+
+* 투명도 transparent
+#+begin_src sh
+#위치를 찾아서 okular/readme.org
+
+
+
+#+end_src
 
 * from_bbg_mpv playlist to .el
 - 참, 함수를 만드는 이유는 페이지로 이동하는 것이 file링크를 실행하는 구조로는 불가능해서 함수가 필요함 특히 문서가 길 경우 그것을 다시 살펴보는 것이 번잡함.

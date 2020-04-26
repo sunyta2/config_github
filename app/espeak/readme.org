@@ -3,6 +3,41 @@
 file:../mpv/readme.org file:../espeak/readme.org file:../okular/readme.org
 file:/home/thinkpad/Desktop/pdf_list_of_desktop.org
 
+- 감탄의 연속이다.: file:../../app/emacs/eloud.org
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;더 좋은 방법을 발견했다. 늘 즐거운 마음으로 혁신에 도전하는 것이 새로운 방법을 발견하는 태도이다.
+(shell-command-on-region (+ (line-beginning-position 2) 0) (line-end-position 2) ;;줄의 위치를 변경하는 구조
+			"espeak -a 20" nil nil nil)  ;;  출력버퍼를 상정함
+  hello world 반갑습니다 세상이여!
+
+(shell-command-on-region (+ (line-beginning-position 2) 0) (line-end-position 2) 
+			"espeak -a 20 -g 27 -s 120 -v other/la" nil nil nil)
+religionis deorum immortalium fanorum aediumque sacrarum conlocatio, 
+
+;; 출력버퍼를 상정함 상세화
+
+:기억하고_누르고즉시관찰실험하라!:
+#+begin_text org :최종목적은 process중단이 간략히 진행됨이 성공함.
+app/emacs/process.org espeak, mpv diary (delete-process (get-process "while true espeak greek latin"))
+
+
+#+end_text org
+:end:
+
+* header
+:PROPERTIES:
+:TOC:      :include all
+:END:
+file:./toc-org.org
+This text appears before the TOC.
+(org-make-toc-mode)
+:CONTENTS:
+    - [[install][install]]
+:END:
+ (org-make-toc)
+
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 * make espeak_above_eng_greek eng_latin
@@ -173,9 +208,16 @@ echo \"process NAME: espeak_while\";
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+* gespeaker 외부로 읽는 것을 가능하게 한다
+file:./gespeaker.org collect settings 
+yay gespeaker
+Welcome in Gespeaker
+
+Δαρείου καὶ Παρυσάτιδος γίγνονται παῖδες δύο, 
+πρεσβύτερος μὲν Ἀρταξέρξης, νεώτερος δὲ Κῦρος:
 
 
-** 
+* test 
 
 
 
@@ -279,6 +321,23 @@ done
 $ cat | while espeak 터미널에서 듣기 연습을 발견함!!! >> 
 $ generate mp3 file from espeak
 [[./practice_model_espeak.org]] << 실행문 모음.
+* src_header_var
+#+NAME: quote_reading1
+#+begin_quote sh
+echo hi  주석문이다
+echo hi2 ;;emacs/src_variable.org espeak/readme.org
+#+end_quote
+
+#+header: :var reading1="echo REARRANGE sentence using M-S-up/down arrow" 
+#+header: :var x=1 
+#+header: :var reading1=quote_reading1 
+#+begin_src sh
+for i in 1 2 3
+do
+espeak -a 20 "$reading1"
+done
+#+end_src
+
 * espeak INDEX
 
 

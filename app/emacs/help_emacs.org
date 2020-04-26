@@ -16,7 +16,7 @@ in ‘help-fns.el’.
 (describe-mode)
 (help-for-help)
 
-
+# (search-emacs-glossary) ;Emacs내부단어사전기능을 발견함! 정확하고 간결한 지식은 핵심열쇠다!
 
 
 It is bound to C-h f, <f1> f, <help> f, <menu-bar> <help-menu>
@@ -28,11 +28,179 @@ Display the full documentation of FUNCTION (a symbol).
 When called from lisp, FUNCTION may also be a function object." 74 85 (button (t) category help-function-def-button help-args (describe-function "/usr/share/emacs/26.3/lisp/help-fns.el")) 204 212 (face help-argument-name) 249 257 (face help-argument-name) 293 301 (face help-argument-name))
 
 
-
+# help:describe-package
+(describe-package 'exwm)
+(describe-package 'exwm-x)
+(finder-commentary "org-pdftools")
+(describe-package 'exwm)
+(finder-commentary "pdf-tools")
+(describe-package 'pdf-tools)
 
 
 [놀라움!] C-u C-x C-e 변수명칭을 변경해서 사용할 것 (describe-function 'describe-function)
+-
+
+
+
+** help: [ (C-)M-/→자동완성 ]함수명생성과 file: 파일명생성의 방법에 사용 
+
+- [ ]   M-/
+	(dabbrev-expand ARG)
+	Expand previous word "dynamically"
+	to the most recent, preceding word for which this is a prefix.
+- [ ] C-M-/
+   ‘dabbrev-abbrev-char-regexp’
+  start_1
+  start_2
+  start_3 asd calendar-cursor-to-date
+  start_3
+  start_4\\\ help: 만들기 쉬운 구조를 형성하기 좋다. 즉 C-h f를 누르고 함수 목록을 호출한 다음 필요한 부분을 당겨오면 가능하므로!
+
+help: 만들기 쉬운 구조를 형성하기 좋다. 즉 C-h f를 누르고 함수 목록을 호출한 다음 필요한 부분을 당겨오면 가능하므로!
+
+file: 구조도 쉽지 않을까 config_git/app/emacs/ src_1_line_execute.org src_tab_org_structure_completion_template.org
+config_git/ 한 칸 띄워서 dired C-x C-f 로 불러낸 파일리스트나 목록에서 자동완성됨을 발견함
+help.org info.org 등록할 것.
+
+/home/thinkpad/config_github/hardware/
+
+
+:(C-)M-/→자동완성:
+
+
+#+begin_test org :목적=최고의 발성은 집중력강화의 비결이다!
+
+- 강점: 
 - 
+ #+begin_center sh
+# 문맥에 맞는 추론을 하는 것은 중요하다.
+
+ #+end_center
+
+
+- [ ] 구조파악할 것 ← 내부구조가 정확해야 활용을 높일수 있다
+ #+begin_src sh :results table
+  
+  # 서열의 순서파악함. * > : > #+오그 > - [ ] > #+src
+ #+end_src
+  #+RESULTS:
+  | #+RESULTS: 결과를 줄에 맞도록 띄울 것 hi2야호 |
+ #+begin_src elisp :results table
+
+   ;(indent-region START END &optional COLUMN)
+ #+end_src
+  #+RESULTS:
+-      -> 구조파악할 것 > 범원리를 간략축적하고 > 이후연구,활용방향,추가필요 기록할 것
+
+
+
+
+
+- 발굴의_과정들
+ #+begin_src sh
+   # 발굴되기 전에는 모든 것이 모르는 것이다!
+
+   for i in 1 2
+   do
+
+       for i in 1 2
+       do
+           printf "hi"
+
+           printf "hi"   
+       done
+   done
+      echo history
+   echo '#+RESULTS: 결과를 줄에 맞도록 띄울 것hi2야호'
+   # [[ end   ]]
+
+ #+end_src
+  #+RESULTS:
+
+
+- 문맥의 핵심부분을 다시 상기하는 과정을 최대한 단축하는 것이 오그모드의 최고 능력이다.
+- 노트능력의 중요성- 문맥을 저장하는 기능이 필요함. 설득을 하려면 맥락이 중요하며, 중요한 맥락속에서 스토리를 전개하는 것이 필수적이다.
+
+
+#+end_test
+
+
+
+           :end:
+
+
+
+
+** org_src_block_내부노트_모듈화_copy용_1형
+
+:미주제1:
+
+
+#+begin_test org :목적=최고의 발성은 집중력강화의 비결이다!
+
+- 강점: 
+- 
+ #+begin_center sh
+# 문맥에 맞는 추론을 하는 것은 중요하다.
+
+ #+end_center
+
+
+- [ ] 구조파악할 것 ← 내부구조가 정확해야 활용을 높일수 있다
+ #+begin_src sh :results table
+  
+  # 서열의 순서파악함. * > : > #+오그 > - [ ] > #+src
+ #+end_src
+  #+RESULTS:
+  | #+RESULTS: 결과를 줄에 맞도록 띄울 것 hi2야호 |
+ #+begin_src elisp :results table
+
+   ;(indent-region START END &optional COLUMN)
+ #+end_src
+  #+RESULTS:
+-      -> 구조파악할 것 > 범원리를 간략축적하고 > 이후연구,활용방향,추가필요 기록할 것
+
+
+
+
+
+- 발굴의_과정들
+ #+begin_src sh
+   # 발굴되기 전에는 모든 것이 모르는 것이다!
+
+   for i in 1 2
+   do
+
+       for i in 1 2
+       do
+           printf "hi"
+
+           printf "hi"   
+       done
+   done
+      echo history
+   echo '#+RESULTS: 결과를 줄에 맞도록 띄울 것hi2야호'
+   # [[ end   ]]
+
+ #+end_src
+  #+RESULTS:
+
+
+- 문맥의 핵심부분을 다시 상기하는 과정을 최대한 단축하는 것이 오그모드의 최고 능력이다.
+- 노트능력의 중요성- 문맥을 저장하는 기능이 필요함. 설득을 하려면 맥락이 중요하며, 중요한 맥락속에서 스토리를 전개하는 것이 필수적이다.
+
+
+#+end_test
+
+
+
+           :end:
+
+
+
+
+
+
 * 인접의 명령어 
 method to make easy: macro help : link(쉽게 변환하여서 클릭으로 사용을 편리하게 만드는 법)
 - 생산방법: [[file:kmacro.org::*macro%20help%20:%20link(%EC%89%BD%EA%B2%8C%20%EB%B3%80%ED%99%98%ED%95%98%EC%97%AC%EC%84%9C%20%ED%81%B4%EB%A6%AD%EC%9C%BC%EB%A1%9C%20%EC%82%AC%EC%9A%A9%EC%9D%84%20%ED%8E%B8%EB%A6%AC%ED%95%98%EA%B2%8C%20%EB%A7%8C%EB%93%9C%EB%8A%94%20%EB%B2%95)][macro help : link(쉽게 변환하여서 클릭으로 사용을 편리하게 만드는 법)]]

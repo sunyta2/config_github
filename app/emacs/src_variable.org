@@ -1,0 +1,191 @@
+
+
+** vterm전송성공-gentoo에 활용하면 딱일 듯...
+*** comint-send-string to-vterm /src_variable.org
+#+NAME: quote_for_test 
+#+begin_quote sh
+echo wow hi # 주석문이다
+echo hi2
+#+end_quote
+
+
+#+header: :var to-vterm="vterm" :comment "전송에 성공!"
+#+header: :var text1=quote_for_test :comment "quote_for_test BOX 구문들을 실험을 실시함 놀라움"
+#+header: :var text1=quote1 :comment "아래의 박스의 quote BOX 구문들을 실행함 놀라움"
+#+header: :var text1="echo Send to Gentoo"
+#+begin_src emacs-lisp :results silent
+(comint-send-string to-vterm 
+    text1 ;; header var로 전송성공함 C-c C-c로 실행할 것
+) 
+#+end_src
+(message "")
+(comint-send-string to-vterm 
+    "echo a Great2! WOW GREAT "
+) 
+
+(comint-send-string to-vterm ;; 주석을 작성함
+     "echo espeak Great3! good world is my stage! # good world " ; 구체적인 문형을 설명함
+    ; => 예상되는 결과를 도출함
+) 
+;; 문장을 확장하는 법을 사용하면 신텍스를 그대로 반영하는 것이 면 좋을 것이다.
+;; gentoo에서 사용중임
+ ;; 사용중인 문장의 앞에 표시를 하는 것도 좋을 듯함
+
+
+
+#+NAME: sh1
+#+begin_quote sh
+espeak 연습이실행이다 # 주석문이다
+#+end_quote
+
+#+NAME: sh1
+#+begin_quote sh
+echo hi2 # 주석문이다
+
+#+end_quote
+
+#+NAME: sh1
+#+begin_quote sh
+echo hi # 주석문이다
+#+end_quote
+#+begin_src emacs-lisp :var text1=sh1 :results silent
+(message text1)
+(shell-command text1)
+#+end_src
+
+
+#+NAME: quote1
+#+begin_quote sh
+echo hi # 주석문이다
+echo hi2
+#+end_quote
+
+#+header: :var text1=quote1 :comment 이렇게 주석을 붙인다
+#+header: :var text1="echo REARRANGE sentence using M-S-up/down arrow"
+#+header: :var text1="echo First header will be pass to below"
+#+header: :var text1="echo 123"
+#+begin_src emacs-lisp :results silent
+(comint-send-string "vterm"
+text1
+) 
+;;    "echo a Great2! WOW GREAT "
+
+(shell-command text1)
+#+end_src
+
+
+** espeak text reading espeak/readme.org참조할 것
+#+NAME: quote_reading1
+#+begin_quote sh
+echo hi  주석문이다
+echo hi2 ;;emacs/src_variable.org espeak/readme.org
+#+end_quote
+
+#+header: :var reading1="echo REARRANGE sentence using M-S-up/down arrow" 
+#+header: :var x=1 
+#+header: :var reading1=quote_reading1 
+#+begin_src sh
+for i in 1 2 3
+do
+espeak -a 20 "$reading1"
+done
+#+end_src
+
+#+RESULTS:
+
+
+
+** collected
+
+- 로딩하는 org파일의 각 원하는 부분을 분리해서 el 파일로 저장하는 것이 :tangle 에 의해 가능할 것이다.
+긴 파일명의 경우 quote에 넣어두고 tangle에 대하여 변수값의 형태로 전달하는 것이 가능한지??
+
+#+name: src_block2_hi2
+#+BEGIN_SRC test
+./src_block2.org
+
+
+
+#+END_SRC
+
+
+
+:#+BEGIN_SRC C :tangle $src_block2_hi2 ;;  안됨...
+
+#+tail: :var y=2
+
+#+header: :var x=1 y="123abc" :tangle ~/config_github/app/emacs/1_src_test.c
+#+BEGIN_SRC C 
+#include <stdio.h>
+
+int main()
+{
+	printf("Hello world from C in tangle org-mode. 123\n");
+        return 0;
+}
+#+END_SRC
+
+#+RESULTS:
+: Hello world from C in tangle org-mode. 123
+
+Tangle the file: [[elisp:(org-babel-tangle)]]
+
+
+#+BEGIN_SRC elisp :var x=3 :results raw drawer
+
+x
+
+#+END_SRC
+
+#+RESULTS:
+:results:
+3
+:end:
+
+
+#+BEGIN_SRC sh :var x=3 :results raw drawer
+echo hi
+echo $x
+
+#+END_SRC
+
+#+RESULTS:
+:results:
+hi
+3
+:end:
+
+:RESULTS:
+:END:
+hi
+2
+| 1 | @ |
+|   |   |
+
+* variable in org
+DEADLINE: <2020-03-21 Sat>
+coding_*.org 참조할 것
+
+
+help:delete-dir-local-variable
+help:delete-file-local-variable   
+
+Coding systems Emacs has excellent Unicode support
+(type C-h h to see it demonstrated), including transpar-
+ently reading and writing between different coding
+systems, bidirectional right-to-left script support,
+keyboard input method switching, and more.
+To see the coding system in use for the current buffer,
+you can type C-h C <RET>. 
+
+
+;;; 동영상에 기록된 내용임 in persisting highlight Emacs mp4
+# Local Variables:
+# mode: mode-name-here
+# ov-highlight-data:
+"((123 231 \"LightBlue\" \"comment\") (567 578 \"Darkolivegreen1\" nil))"
+# my-variable: value
+# eval: (ov-highlight-load)
+# End:
+;; 개별화된 함수를 변수와 함께 처리할 수 있을 것 같다.
+

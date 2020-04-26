@@ -1,0 +1,63 @@
+- Emacs Prince - [[https://www.youtube.com/watch?v=whG9uPp0eto][ Extending pass.el: copy username in the clipboard - YouTube]] 동영상에서 소개를 받음
+
+
+* ivy-pass is an available package.
+
+     Status: Available from melpa -- Install
+    Archive: melpa
+    Version: 20170812.1955
+     Commit: 5b523de1151f2109fdd6a8114d0af12eef83d3c5
+    Summary: ivy interface for pass
+   Requires: emacs-24, ivy-0.8.0, password-store-1.6.5
+   Homepage: https://github.com/ecraven/ivy-pass/
+   Keywords: pass password convenience data 
+
+Quick start:
+Install, configure and initialize pass according to https://www.passwordstore.org/
+run M-x ivy-pass
+The default action is to copy the password to the kill ring.
+
+Other actions (accessible with M-o):
+- edit an entry (e)
+- delete an entry (d)
+- add an entry (a)
+- rename an entry (r)
+- generate a new entry (g)
+
+
+
+
+* password-store is a dependency package.
+
+     Status: Installed in ‘password-store-20200328.1214/’ (unsigned).
+    Version: 20200328.1214
+     Commit: 98193d3bbb3538eda457d0db4ccccbcc4b04ce3d
+    Summary: Password store (pass) support
+   Requires: emacs-25, s-1.9.0, with-editor-2.5.11, auth-source-pass-5.0.0
+Required by: ivy-pass-20170812.1955
+   Homepage: https://www.passwordstore.org/
+   Keywords: tools pass password password-store 
+Other versions: 20200328.1214 (melpa).
+* yay pass설치를 한다. 47 community/pass 
+47 community/pass 1.7.3-1 (18.6 KiB 46.0 KiB) 
+    Stores, retrieves, generates, and synchronizes passwords securely
+- [[chrome://newtab/][New yay pass LatTab]]
+
+#+begin_src sh
+# Gentoo
+# emerge -av pass
+# Arch
+$ pacman -S pass
+# Macintosh
+The password store is available through the Homebrew package manager:
+$ brew install pass
+
+
+
+$ pass
+Error: password store is empty. Try "pass init".
+$ pass init
+Usage: pass init [--path=subfolder,-p subfolder] gpg-id...
+
+#+end_src
+# 참조할 것. file:../../app/gpg/readme.org 가능하게 됨

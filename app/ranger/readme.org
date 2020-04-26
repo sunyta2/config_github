@@ -1,0 +1,69 @@
+:shell open -R ./ #유일하게 이것이 파인더를 열어내는 방법이다.
+:shell open -R ~/Documents  #유일하게 이것이 파인더를 열어내는 방법이다.
+# x :open_with finder
+# x :open_with open -R ./
+:shell echo 'add sentence ' >> HereAddedText.txt
+
+
+
+:shell touch newfile.txt
+
+:set preview_image true
+:set preview_image_method iTerm2 # 검증이 필요한 내용임.
+
+:cd ~/Documents/ # change directory
+
+* ranger :help <RET>명령문과 기본 커맨드를 기록할 것
+
+선택하는 것
+<SPC>로 마킹을 온오프함
+um으로 모든 마커를 해제함
+
+y→n dell 6800 touch Screenshot_20200111_093654.png
+y→p /home/thinkpad/Pictures/dell 6800 touch Screenshot_20200111_093654.png
+https://duckduckgo.com/?q=duckduckgo+video+search&t=brave&iax=videos&ia=videos
+
+https://duckduckgo.com/?q=ranger+command+tip&t=brave&iax=videos&ia=videos&iai=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DqooLR8NmYKs
+(start-process-shell-command
+   (concat "surf 로" " 열기" ) nil 
+   (concat "cd /; exec " "surf https://duckduckgo.com/?q=linux%20from%20scratch&t=brave&iax=videos&ia=videos")
+)
+https://duckduckgo.com/?q=duckduckgo+video+search&t=brave&iax=videos&ia=videos#
+
+(start-process-shell-command
+   (concat "surf 로" " 열기" ) nil 
+   (concat "cd /; exec " "surf https://wiki.archlinux.org/index.php/Ranger")
+)
+
+(start-process-shell-command
+   (concat "surf 로" " 열기" ) nil 
+   (concat "cd /; exec " "surf https://duckduckgo.com/?q=linux%20from%20scratch")
+)
+(start-process-shell-command
+   (concat "surf 로" " 열기" ) nil 
+   (concat "cd /; exec " "surf https://duckduckgo.com/?q=linux+from+scratch")
+)
+
+https://duckduckgo.com/?q=duckduckgo+video+search&t=brave&iax=videos&ia=videos#
+* ranger desktop으로 실행하는 것
+자동으로 urxvt를 활용한 것으로 xmonad로 활용을 높인다.
+(find-file "/sudo::/usr/share/applications/ranger.desktop")
+#+begin_src sh :source "/usr/share/applications/ranger.desktop"
+[Desktop Entry]
+Type=Application
+Name=ranger
+Comment=Launches the ranger file manager
+Icon=utilities-terminal
+Terminal=true
+Exec=ranger
+Categories=ConsoleOnly;System;FileTools;FileManager
+MimeType=inode/directory;
+Keywords=File;Manager;Browser;Explorer;Launcher;Vi;Vim;Python
+#+end_src
+
+
+#+begin_src sh :results silent
+espeak -a 20 -v other/la "amare"
+#+end_src
+
+

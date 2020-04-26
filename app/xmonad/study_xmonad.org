@@ -1,0 +1,98 @@
+
+*** 기본기 연구사이트
+ - [[https://xmonadhaskell.wordpress.com/xmonad-keymaps/][Keymaps – Haskell for XMonad]]
+자료정리가 잘 되어서 연구가 필요함.
+** [[https://xmonadhaskell.wordpress.com/][Haskell for XMonad – Learn to configure XMonad with just enough Haskell programming.]]
+
+*** CIS 194: Introduction to Haskell (Fall 2016)
+ 
+[[https://www.seas.upenn.edu/~cis194/fall16/][CIS194]]
+
+Lecture notes and assignments
+All homework assignments should emerge creatively from the Style guidelines. Homework is due at midnight at the end of the day listed. All homework submission is via Canvas.
+
+Week 1 (Wednesday, 31 August):
+Haskell Basics: Functions and Pictures
+Homework 1 (due Tuesday, 6 September). Example solution
+Week 2 (Wednesday, 7 September):
+Higher order functions and data types
+Homework 2 (due Tuesday, 13 September). Example solution
+Week 3 (Wednesday, 14 September):
+Polymorphism
+Homework 3 (due Tuesday, 20 September). Example solution
+Week 4 (Wednesday, 21 September):
+Type classes
+Homework 4 (due Tuesday, 27 September). Example solution
+Week 5 (Wednesday, 28 September):
+Real World Haskell
+Homework 5 (due Tuesday, 4 October). Example solution
+Week 6 (Wednesday, 5 October):
+IO and monads
+Homework 6 (due never). Example solution
+No homework, enjoy the fall brake!
+Week 7 (Wednesday, 12 October):
+Laziness
+Homework 7 (due Tuesday, 18 October). Example solution
+Week 8 (Wednesday, 19 October):
+Functor and Applicative
+Homework 8 (due Tuesday, 25 October). Example solution
+Week 9 (Wednesday, 26 October):
+More Applicative
+Homework 9 (due Tuesday, 1 November). Example solution
+Week 10 (Wednesday, 2 November):
+Testing
+Homework 10 (due Tuesday, 8 November). Example solution
+Week 11 (Wednesday, 9 November):
+Functional Reactive Programming
+Homework 11 (due Tuesday, 15 November). Example solution
+Week 12 (Wednesday, 16 November):
+Libraries
+No homework this week, work on your project!
+Week 13 (Wednesday, 30 November):
+Packages
+No homework this week, work on your project!
+Week 14 (Wednesday, 7 December):
+Lenses
+No homework this week, prepare your demo!
+
+*** xmonad WindowGo - emacs CMD-Shift-e
+   : Emacs의 사용의 활용을 높이는 방안이다.
+#+begin_text haskell :results silent
+  , ((myModMask .|. shiftMask, xK_e), raiseNext (className =? "Emacs")) -- Emacs 잘 작동되는 것으로 확증됨
+  , ((myModMask, xK_e), raise (className =? "Emacs")) -- study_xmonad.org -- xmonad WindowGo
+#+end_text
+   [[https://hackage.haskell.org/package/xmonad-contrib-0.12/docs/XMonad-Actions-WindowGo.html][XMonad.Actions.WindowGo]] 여기서 출처가 있음... 
+
+
+
+
+*** Dnomyar/.Xdefaults for Xmonad github gist
+[[https://gist.github.com/Dnomyar/9c289fcc2668b59e1ffb][My XMonad (xmobar : battery, cpu, memory, volume, time) - ArchLinux · GitHub]]
+battery, volume를 등록함 위의 것을 사용
+
+*** [[https://github.com/dino-/xmonad-xmobar-conf][GitHub - dino-/xmonad-xmobar-conf: My personal xmonad and xmobar configuration]]
+[[https://github.com/dino-/xmonad-xmobar-conf][GitHub - dino-/xmonad-xmobar-conf: My personal xmonad and xmobar configuration]]
+help added
+* cp -fpr ;; 씽크를 위한 명령임.
+
+(async-shell-command "cp -fpr ~/.xmonad/** ~/.xmonad_backup/xmonad_main/")
+
+편집의 위치를 xmonad_main.hs 를 편집하고 거기서 링크를 연결해서 사용하는 것을 고려할 것
+(find-file "~/config_github/app/xmonad/.xmonad.hs") ;; 편집할 것
+각 파일의 원형에 링크를 복사하고 그것을 실행하는 것
+;; 폴더의 내용을 저장함
+(async-shell-command "cp -fpr ~/.xmonad_backup/xmonad_main/** ~/.xmonad/")
+(find-file "~/.xmonad_backup/xmonad_main")
+
+(async-shell-command "mkdir -p ~/.xmonad_backup/xmonad_main")
+
+(man "cp")
+       -f, --force
+              if an existing destination file cannot be opened, remove it and
+              try  again  (this  option is ignored when the -n option is also
+              used)
+       -p     same as --preserve=mode,ownership,timestamps
+       -R, -r, --recursive
+              copy directories recursively
+
+

@@ -1,7 +1,8 @@
 
 dash
+go → 
 hydra
-ivy
+ivy.org
 swiper
 popup
 alpha

@@ -18,6 +18,40 @@ help:describe-input-method
 
     [해결함] # 반드시 영어로 입력할 것 한글은 깨진다. # 이었으나, 
 
+키보드 자판익힘
+QWERT YUIOP
+ASDFG HJKL;
+ZXCVB NM,./
+CsM
+
+ㅂㅈㄷㄱㅅ ㅛㅕㅑㅐㅔ
+ㅁㄴㅇㄹㅎ ㅗㅓㅏㅣ;
+ㅋㅌㅊㅍㅠ ㅜㅡ, ./
+그리스어의 화면을 붙여서 만든 글자를 확대해서 그림으로 보낸다음, 바탕화면에 보낸다.
+자판을 익히는 것에 큰 도움이 될 것이다.
+
+
+(describe-input-method 'korean-hangul) 
+(describe-input-method "greek")
+(describe-input-method "greek-babel")
+(describe-input-method "greek-ibycus4")
+(describe-input-method "latin-1-prefix")
+(describe-input-method "greek-jis")
+(describe-input-method "greek-mizuochi")
+(describe-input-method "greek-postfix")
+;;사진을 촬영하였으니 확인해 볼 것.
+(set-input-method 'korean-hangul) 
+(set-input-method "greek-babel") `` ᾽ `` `` {``} {᾽} {``} {᾽}᾽᾽᾽``````````
+(set-input-method "greek-ibycus4") ”σσς ς ϝϜϜϜᾕ———————— “ ᾅψψψθθθξξκαβγδεζθηικλμνξοπρστυφχψω ” 
+(set-input-method "latin-1-prefix")
+αβvιεθδιεθσιεηιυη·π·πα·αἁιαδφασδφασδφασδadfasdfασδφasfd
+greek
+greek-babel
+greek-ibycus4
+greek-jis
+greek-mizuochi
+greek-postfix
+
 * 한글(korean-hanguel)깨짐을 해결하는 것은 간단한 명령의 실행을 두는 것이다[해결함!] ./coding_system_in_emacs.org:3: ;; 치료방법을 발견함 -*- coding: utf-8; mode: org; org-confirm-babel-evaluate: nil; -*-
 -*- coding: utf-8; mode: org; org-confirm-babel-evaluate: nil; -*- ;; 불편함. y/n문답시작됨 
 -*- coding: utf-8 -*- ;; 변수 y/n 없이 실행하므로 더 편리함.
@@ -62,6 +96,14 @@ Chances are that every time utf-coding should be activated by invoking 'M-x reve
 ;;;; [[https://emacs.stackexchange.com/questions/37459/how-encode-to-utf-8-content-of-buffer][character encoding - How encode to UTF-8 content of buffer? - Emacs Stack Exchange]]
 ;;Set buffer coding system
 (add-hook 'org-mode-hook (lambda () (revert-buffer-with-coding-system  "utf-8")))
+
+;; 아래의 것을 사용해 본다Dave의 권유인듯함.
+(setq locale-coding-system 'utf-8) ; file:coding_system_in_emacs.org
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-selection-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+
 #+END_SRC
 However, it does not work as expected.
 What's the problem with my function to to handle the revert-buffer-with-coding-system'
@@ -98,26 +140,7 @@ End:
 help:delete-dir-local-variable
 help:delete-file-local-variable   
 
-Coding systems Emacs has excellent Unicode support
-(type C-h h to see it demonstrated), including transpar-
-ently reading and writing between different coding
-systems, bidirectional right-to-left script support,
-keyboard input method switching, and more.
-To see the coding system in use for the current buffer,
-you can type C-h C <RET>. 
-
-
-;;; 동영상에 기록된 내용임 in persisting highlight Emacs mp4
-# Local Variables:
-# mode: mode-name-here
-# ov-highlight-data:
-"((123 231 \"LightBlue\" \"comment\") (567 578 \"Darkolivegreen1\" nil))"
-# my-variable: value
-# eval: (ov-highlight-load)
-# End:
-;; 개별화된 함수를 변수와 함께 처리할 수 있을 것 같다.
-
-
+emacs/src_variable.org 참조할 것.
 
 * 증상을 기록해두어서 나중에 다른 문제의 해결에 도움을 준다
 - 증상 : Select coding system (default raw-text): {문제부분으로 추정됨'raw-text'}

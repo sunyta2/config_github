@@ -1,0 +1,128 @@
+# linux_notification_center의 제작자임. [[https://github.com/phuhl/.dotfiles/blob/master/compton/compton.conf.compton.dotconfig][.dotfiles/compton.conf.compton.dotconfig at master · phuhl/.dotfiles · GitHub]] 
+### (async-shell-command "ln -fs ~/config_github/app/compton/compton.conf.compton.dotconfig ~/.config/compton/compton.conf")
+#################(find-file "~/config_github/app/compton/compton.conf.compton.dotconfig ~/.stumpwmrc")
+### (async-shell-command "cp ~/config_github/app/compton/compton.conf.compton.dotconfig ~/.stumpwmrc")
+#################(find-file "~/.stumpwmrc")
+### (async-shell-command "rm ~/.stumpwmrc")
+
+# (dired "~/config_github/app/qtile/")
+#         # (dired "~/.config/qtile/")
+
+
+# Shadow
+    # shadow = false; shadow-opacity = 0;
+shadow = true;
+no-dnd-shadow = true;
+no-dock-shadow = true;
+clear-shadow = true;
+shadow-radius = 7;
+shadow-offset-x = -7;
+shadow-offset-y = -7;
+ shadow-opacity = 0.7;
+ shadow-red = 0.0;
+ shadow-green = 0.0;
+ shadow-blue = 0.0;
+shadow-exclude = [
+    "name = 'Notification'",
+    "class_g = 'Conky'",
+    "class_g ?= 'Notify-osd'",
+    "class_g = 'Cairo-clock'",
+    "_GTK_FRAME_EXTENTS@:c",
+    "class_g = 'Linux-notification-center'"
+];
+# shadow-exclude = "n:e:Notification";
+# shadow-exclude-reg = "x10+0+0";
+# xinerama-shadow-crop = true;
+ 
+# Opacity
+menu-opacity = 1;
+inactive-opacity = 0.6
+active-opacity = 0.93;
+frame-opacity = 0.4;
+inactive-opacity-override = false; # 검증이 필요할 지도 모른다
+alpha-step = 0.06;
+# inactive-dim = 0.2;
+# inactive-dim-fixed = true;
+# blur-background = true;
+blur-background-frame = true;
+# blur-kern = "5x5box"
+#blur-kern = "5,5,"
+#blur-kern = "7,7,0.000003,0.000102,0.000849,0.001723,0.000849,0.000102,0.000003,0.000102,0.003494,0.029143,0.059106,0.029143,0.003494,0.000102,0.000849,0.029143,0.243117,0.493069,0.243117,0.029143,0.000849,0.001723,0.059106,0.493069,0.493069,0.059106,0.001723,0.000849,0.029143,0.243117,0.493069,0.243117,0.029143,0.000849,0.000102,0.003494,0.029143,0.059106,0.029143,0.003494,0.000102,0.000003,0.000102,0.000849,0.001723,0.000849,0.000102,0.000003"
+#blur-kernel = "5x5box"
+blur-method = "kawase"
+blur-strength = 18
+#blur-kern = "5,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"
+#blur-background-fixed = true;
+blur-background-exclude = [
+#    "window_type = 'dock'",
+    "class_g = 'Plank'",     
+    "window_type = 'desktop'",
+    "_GTK_FRAME_EXTENTS@:c"
+];
+#opacity-rule = [ "80:class_g = 'URxvt'" ];
+
+opacity-rule = ["50:class_g = 'Emacs' && !focused",
+"85:class_g = 'Emacs' && focused",
+"75:class_g = 'Chromium' && !focused",
+"90:class_g = 'Chromium' && focused",
+"75:class_g = 'Brave' && !focused",
+"90:class_g = 'Brave' && focused",
+"65:class_g = 'mpv' && !focused",
+"80:class_g = 'mpv' && focused",
+"50:class_g = 'Dolphin' && !focused",
+"70:class_g = 'Dolphin' && focused",
+"75:class_g = 'Okular' && !focused",
+"80:class_g = 'Okular' && focused",
+"75:class_g = 'URxvt' && !focused",
+"90:class_g = 'URxvt' && focused"];
+
+ 
+# Fading
+fading = true;
+# fade-delta = 30;
+fade-in-step = 0.1;
+fade-out-step = 0.1;
+# no-fading-openclose = true;
+# no-fading-destroyed-argb = true;
+fade-exclude = [ ];
+ 
+# Other
+backend = "xrender"
+mark-wmwin-focused = true;
+mark-ovredir-focused = true;
+# I also had to make sure these settings equaled 'false':
+#mark-wmwin-focused = false; 점검이 필요함
+#mark-ovredir-focused = false;
+
+# use-ewmh-active-win = true;
+detect-rounded-corners = true;
+detect-client-opacity = true;
+refresh-rate = 0;
+vsync = "none";
+dbe = false;
+paint-on-overlay = true;
+# sw-opti = true;
+# unredir-if-possible = true;
+# unredir-if-possible-delay = 5000;
+# unredir-if-possible-exclude = [ ];
+focus-exclude = [ "class_g = 'Cairo-clock'" ];
+detect-transient = true;
+detect-client-leader = true;
+invert-color-include = [ ];
+# resize-damage = 1;
+ 
+# GLX backend
+# glx-no-stencil = true;
+glx-copy-from-front = false;
+# glx-use-copysubbuffermesa = true;
+# glx-no-rebind-pixmap = true;
+glx-swap-method = "undefined";
+# glx-use-gpushader4 = true;
+# xrender-sync = true;
+# xrender-sync-fence = true;
+ 
+# Window type settings
+wintypes:
+{
+  tooltip = { fade = true; shadow = true; opacity = 0.75; focus = true; };
+};

@@ -4,6 +4,42 @@
 #+STARTUP: showeverything indent
 
 -*- coding: utf-8 -*-
+- todo find system default open key press maybe one stroke in dired for open in okular.
+발견함 ! W키를 (shift키와 함께)누르면 됨. 
+W runs the command browse-url-of-dired-file (found in dired-mode-map),
+which is an interactive autoloaded compiled Lisp function in
+‘browse-url.el’.
+It is bound to W.
+(browse-url-of-dired-file)
+
+shortcut모음 활용처
+
+M-{		dired-prev-marked-file  ;; * 표시한 것을 빠르게 검토하는 것에 유용한 단축키일 것이다.
+M-}		dired-next-marked-file  ;;; 즉, 먼저 파일을 알맞게 선택한 다음에,, 
+
+M-DEL		dired-unmark-all-files
+\* !		dired-unmark-all-marks             ;; 표시를 모두 제거함.
+
+
+% g		dired-mark-files-containing-regexp ;; 내용검색으로 포함된 것을 파일을 발견해냄.
+% m		dired-mark-files-regexp       ;; 파일명으로 마킹을 표시함.
+% d		dired-flag-files-regexp       ;; 삭제대상을 d로 표시하는 것으로 추정함.
+% Y		dired-do-relsymlink-regexp
+% l		dired-downcase
+
+
+C-x M-o		dired-omit-mode
+
+M-s f C-s	dired-isearch-filenames
+M-s f ESC	Prefix Command
+
+M-s a C-s	dired-do-isearch
+M-s a ESC	Prefix Command
+
+M-s f C-M-s	dired-isearch-filenames-regexp
+
+M-s a C-M-s	dired-do-isearch-regexp
+
 
 C-x C-f /sudo::/path/to/file /app/sudo_gksudo/readme.org
 - dired C-u ^ 를 kill previous dired [EmacsWiki: Dired Reuse Directory Buffer](https://www.emacswiki.org/emacs/DiredReuseDirectoryBuffer)
@@ -13,7 +49,7 @@ C-x C-f /sudo::/path/to/file /app/sudo_gksudo/readme.org
 여러 단축키로 나누어 등록하여서 파일의 로딩과 처리의 계산의 딜레이를 지연하는 것을 가능하게 할수 있을 지도 모른다.
 즉 서스펜드프레임의 방식을 여기에 넣어서 3번정도 걸면 시간을 벌수 있을지도 모른다.)
 
-
+- [[info:dired-x#Omitting%20Examples][info:dired-x#Omitting Examples]]
 
 * dired에서 그냥 2를 누르면 2창으로 나누어진 것에서 편리하게 볼 수 있음.
 * dired function or study key
@@ -25,6 +61,33 @@ C-x C-f /sudo::/path/to/file /app/sudo_gksudo/readme.org
         inode  [integer] the inode of the file (only for ls -i output)
 
 * rsync in dired save in rsync/readme.org  
+
+* help:dired-hide-details-mode
+
+  (setq dired-hide-details-hide-information-lines t)
+  (add-hook 'dired-mode-hook (lambda () (dired-hide-details-mode t)))
+
+
+(dired-hide-details-mode t)
+#+begin_src emacs-lisp
+  (use-package dired-subtree ;;; dired.org
+  :ensure t
+  :after dired
+  :bind (:map dired-mode-map
+              ("<tab>" . dired-subtree-toggle)
+              ("<C-tab>" . dired-subtree-cycle)
+              ("<S-tab>" . dired-subtree-remove)))
+
+
+
+;              ("<backtab>" . dired-subtree-remove)))
+;              ("<S-iso-lefttab>" . dired-subtree-remove))))
+;;; (find-library "dired-subtree") ;;; M-x find-library 엔터 dired-subtree 엔터
+)
+#+end_src
+ <backtab>, <S-tab>, <S-iso-leftab>, <menu-bar> <Tbl>
+<Previous Field>, <menu-bar> <Org> <Show/Hide> <Cycle Global
+Visibility>
 * dired-x (load "dired-x") 
 
 ** (load "dired-x") C-x C-j가 가능
@@ -91,6 +154,9 @@ Hooks (use C-h v to see their documentation):
   ‘dired-after-readin-hook’
   ‘dired-mode-hook’
   ‘dired-load-hook’
+
+
+(info "(emacs) Operating on Files")
 
 Keybindings:
 key             binding

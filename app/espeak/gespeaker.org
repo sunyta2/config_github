@@ -1,0 +1,19 @@
+collection settings greek latin english
+* greek settings
+  :START:  
+
+- diary?, loding_file?, 
+  #+BEGIN_TEXT org :목적 
+- Core_location: file:../../app/emacs/.org
+greek-ancient
+Female
+Pitch 32
+Volume 18
+Speed 123
+Delay 21
+
+
+
+  #+END_TEXT
+
+  :END:

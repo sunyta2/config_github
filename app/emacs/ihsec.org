@@ -1,0 +1,24 @@
+
+
+- 콘피그를 변경하는 법을 연구함.
+
+
+(finder-commentary "org-pdftools")
+(describe-package 'exwm)
+(finder-commentary "pdf-tools")
+(describe-package 'pdf-tools)aehjr1
+
+
+- 동영상의 소개답글중에서 발굴한 사이트 자신의 콘피그와 Dave의 것을 소개함.
+  [[https://www.youtube.com/watch?v=6KN_oSLFf-k][Emacs: introduction to IBUFFER - YouTube]]  동영상이며 그 아래 답글에서 발굴함.
+답글: aehjr1 2 days ago
+Another great video.  A Vim user for 20-some years, I
+ got into Emacs over a year ago, hooked by Aaron Bieber's Vim meetup on Emacs, and found Org and Magit addictive.  
+So much so I created my own config as Spacemacs wasn't cutting it for me (a couple bugs), 
+but I still configured with evil as I'm so used to my Vim bindings and work didn't permit me to take a lot of time to get used to an entire new muscle memory. Unfortunately, I have to use Windows for work, and cannot get Admin privs to the laptop, so it's difficult to change Emacs configs on the fly--much easier to do that on Linux 
+thanks to Uncle Dave: https://github.com/daedreth/ihsec. 
+
+[[https://github.com/daedreth/ihsec][GitHub - daedreth/ihsec: ihsec - I hate Switching Emacs Configs - A symlink machine to change your ~/.emacs.d quickly and efficiently.]]
+시간을 변경하는 법을 발견함.
+
+

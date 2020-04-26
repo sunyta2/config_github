@@ -1,0 +1,29 @@
+
+
+#+begin_src emacs-lisp :results silent
+(message "원리를 발견하고 충분한 단련과 습관이 없으면 무용지물이다")
+#+end_src
+
+* 
+
+* 자동으로 autostart 가능한 것??
+- 기본실행을 터미널로 하는 것보다 자동실행의 앱으로 전환하는 것이 기억의 부담을 줄인다.
+- 여러 각각 설정실행파일을 만들어서 자동으로 실행하는 것으로 만들어 본다.
+
+compton -CG --config ~/.config/.compton.conf 을 대신해서
+자동으로 autostart로 가능하게 함 출처:[[https://forum.level1techs.com/t/compton-doesnt-start-automatically-on-xfce/120379][Compton doesn't start automatically on XFCE - Software & Operating Systems / Linux - Level1Techs Forums]]
+#+begin_src sh :results silent
+[Desktop Entry]
+Encoding=UTF-8
+Version=0.9.4
+Type=Application
+Name=Compton
+Comment=Compton Compositor
+Exec=compton -CG --config ~/.config/.compton.conf
+OnlyShowIn=XFCE;
+StartupNotify=false
+Terminal=false
+Hidden=false
+
+#+end_src
+

@@ -4,8 +4,134 @@
 ###-*- coding: utf-8 -*-
 
 
+[[info:(slime)%20Top][info:(slime) Top]]
+/home/thinkpad/.cache/yay/stumpwm-git/stumpwm.desktop
+If you are an emacs user, you will find an emacs minor mode for editing StumpWM files (and interfacing with the program stumpish, but more on that below) in the contrib/ directory of the StumpWM source.
+
+stumpish is the STUMP window manager Interactive SHell. It is a program that allows the user to interact with StumpWM while it is running, from the comfort of a terminal (or using the emacs mode). It is installed with StumpWM in /usr/bin/.
+not found
+: found in here [[https://github.com/stumpwm/stumpwm-contrib/blob/master/util/stumpish/stumpish][stumpwm-contrib/stumpish at master · stumpwm/stumpwm-contrib · GitHub]]
+save in app/stumpwm/stumpish
+** stumpish를 가능하게 함 emacs/slime_mode_emacs.org
+드디어 발견함. 지속적인 관찰로 결국 단서를 찾고 다운로드 폴더를 훌터보다가 실패하며, arch-wiki를 찾다가 아래를 발견하고 절망하다가
+링크를 찾아서 들어가서 우연히 깃허브의 폴더중에 stumpish/폴더가 존재하여서 소스코드가 있을 것을 염두하다가 안에서 쉘스크립트로 된 것을 발견함
+- 사용법! 유용함
+- 발전가능성<중요> 프로세스로 전송하는 것이 가능할 것으로 추정됨 리눅스의 파일구조에서 명령을 다른 프로세스로 전송하는 법을 익히면 매우 유용한 기능일 것이다.
+stumpish is the STUMP window manager Interactive SHell. It is a program that allows the user to interact with StumpWM while it is running, from the comfort of a terminal (or using the emacs mode). It is installed with StumpWM in /usr/bin/.
+not found
+: found in here [[https://github.com/stumpwm/stumpwm-contrib/blob/master/util/stumpish/stumpish][stumpwm-contrib/stumpish at master · stumpwm/stumpwm-contrib · GitHub]]
+save in app/stumpwm/stumpish
 
 
+;; exec sbcl --load /path/to/startstump $ [Music]$ sbcl --load ~/Music/quicklisp.lisp
+;; in ../../app/stumpwm/startstump below contents
+
+#+begin_src emacs-lisp :results silent
+;; saveed in .stumpwmrc
+(in-package :stumpwm)
+
+(require :swank)
+(swank-loader:init)
+(swank:create-server :port 4004
+                     :style swank:*communication-style*
+                     :dont-close t)
+;; check for emacs/slime.org
+
+ (load "~/quicklisp/setup.lisp") ;; [[https://www.quicklisp.org/beta/][Quicklisp beta]]
+
+
+#+end_src
+
+
+#+begin_src emacs-lisp :results silent
+;; sbcl로 시작되는 desktop을 만들었고,
+;added in .stumpwmrc
+
+(in-package :stumpwm)
+
+(require :swank)
+(swank-loader:init)
+(swank:create-server :port 4004
+                     :style swank:*communication-style*
+                     :dont-close t)
+;; check for emacs/slime.org
+
+
+#+end_src
+
+sbcl
+(load "~/quicklisp/setup.lisp") ;; sbcl --load
+(ql:quickload "swank")
+(require :stumpwm)
+(ql:quickload "stumpwm")
+(stumpwm:select-window-by-number 1)
+(stumpwm:mode-line)
+(ql:quickload "usocket")
+(defun server-socket (port) "Listening on a port for a message, and print the received message." (usocket:with-socket-listener (socket "127.0.0.1" port) (loop (usocket:with-connected-socket (connection (usocket:socket-accept socket)) (format t "~a~%" (read-line (usocket:socket-stream connection)))))))
+(server-socket 2160)
+
+
+(defun client-socket (port message) "Connect to a server and send a message." (usocket:with-client-socket (socket stream "127.0.0.1" port) (format stream message) (force-output stream)))
+
+
+
+
+;;;;; sbcl client below
+(load "~/quicklisp/setup.lisp")
+(ql:quickload "swank")
+;;(require :stumpwm)
+(ql:quickload "stumpwm")
+(ql:quickload "usocket")
+;;(defun server-socket (port) "Listening on a port for a message, and print the received message." (usocket:with-socket-listener (socket "127.0.0.1" port) (loop (usocket:with-connected-socket (connection (usocket:socket-accept socket)) (format t "~a~%" (read-line (usocket:socket-stream connection)))))))
+;; client-socket
+(defun client-socket (port message) "Connect to a server and send a message." (usocket:with-client-socket (socket stream "127.0.0.1" port) (format stream message) (force-output stream)))
+(client-socket "hi")
+(client-socket 2160 "Hello world1 !")
+(client-socket 2160 "Hello world2 !")
+(client-socket 2160 "Hello world3 !")
+* yay slime
+#+BEGIN_SRC emacs-lisp :results silent
+;:: To make use of slime, add the following lines to your
+;:: ~/.emacs.el or ~/.emacs:
+
+;(load-file "/home/thinkpad/.emacs.d/elpa/paredit-20171127.205/paredit.el")
+
+;(setq inferior-lisp-program "/path/to/lisp-executable")
+;(setq inferior-lisp-program "/home/thinkpad/config_github/app/emacs/test_slime/test.lisp")
+(setq inferior-lisp-program "sbcl")
+(add-to-list 'load-path "/usr/share/emacs/site-lisp/slime/")
+(add-to-list 'load-path "/usr/share/emacs/site-lisp/slime")
+(require 'slime)
+;;(load-library "inferior-slime")
+(require 'inferior-slime)
+;;(slime-setup)
+;;(load (expand-file-name "~/quicklisp/slime-helper.el"))
+;; (find-file "~/quicklisp/slime-helper.el")
+
+;:: Then run 'M-x slime' from within emacs.
+#+END_SRC
+
+#+RESULTS:
+: inferior-slime
+(+ 1 2)
+
+(mode-line)
+man:git
+
+M-x slime-connect. When prompted for host, accept 127.0.0.1. When prompted for port, put in 4004 (not 4005). You are now inside the live Lisp image of your WM. Exciting, right? Why not see if you can really control it?
+(slime-connect)
+CL-USER> (require :stumpwm)
+NIL
+CL-USER> (stumpwm:select-window-by-number 1)
+NIL
+That should've switched to window number 1...so you are in control! Why not rebind a key?
+
+CL-USER> (stumpwm:define-key stumpwm:*root-map* (stumpwm:kbd "u") "exec urxvt")
+NIL
+Try it: press your prefix key then "u" (by default, C-t u) and a urxvt (replace with your favourite terminal) will spawn.
+
+
+keybinding useful C-h l help:view-lossage [[info:(slime)%20Key%20bindings][info:(slime) Key bindings]] (info "(slime) Key bindings")
 * [[https://worddisk.com/wiki/SLIME/][Reading | SLIME]]
 (async-shel-command "brave --incognito 'https://worddisk.com/wiki/SLIME/'")
 
@@ -13,3 +139,290 @@
 
 * cf. 
 - common_lisp
+* TODO slime 나중에 사용할 것을 만들어서 사용방식에 적용할 것.
+  DEADLINE: <2020-03-16 Mon .+1d>
+:: To make use of slime, add the following lines to your
+:: ~/.emacs.el or ~/.emacs:
+
+(setq inferior-lisp-program "/path/to/lisp-executable")
+(add-to-list 'load-path "/usr/share/emacs/site-lisp/slime/")
+(require 'slime)
+(slime-setup)
+
+:: Then run 'M-x slime' from within emacs.
+
+Adding Info-File
+Optional dependencies for slime
+    awk: for recreating the documentation [installed]
+    texlive-core: for recreating the documentation [installed]
+:: Running post-transaction hooks...
+(1/2) Arming ConditionNeedsUpdate...
+(2/2) Updating the info directory file...
+* quickload설치성공함!
+#+begin_src emacs-lisp :results silent
+;; 설치의 과정들[[http://www.kaashif.co.uk/2015/06/28/hacking-stumpwm-with-common-lisp/index.html][kaashif.co.uk: Hacking StumpWM with Common Lisp]]
+
+[thinkpad@msata045 Music]$ 
+[thinkpad@msata045 Music]$ curl -O https://beta.quicklisp.org/quicklisp.lisp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 57144  100 57144    0     0  53656      0  0:00:01  0:00:01 --:--:-- 53656
+[thinkpad@msata045 Music]$ sbcl --load quicklisp.lisp
+This is SBCL 2.0.3, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+
+  ==== quicklisp quickstart 2015-01-28 loaded ====
+
+    To continue with installation, evaluate: (quicklisp-quickstart:install)
+
+    For installation options, evaluate: (quicklisp-quickstart:help)
+
+\* (quicklisp-quickstart:install)
+; Fetching #<URL "http://beta.quicklisp.org/client/quicklisp.sexp">
+; 0.82KB
+==================================================
+838 bytes in 0.00 seconds (818.36KB/sec)
+; Fetching #<URL "http://beta.quicklisp.org/client/2020-01-04/quicklisp.tar">
+; 250.00KB
+==================================================
+256,000 bytes in 0.06 seconds (4032.26KB/sec)
+; Fetching #<URL "http://beta.quicklisp.org/client/2015-09-24/setup.lisp">
+; 4.94KB
+==================================================
+5,054 bytes in 0.00 seconds (0.00KB/sec)
+; Fetching #<URL "http://beta.quicklisp.org/asdf/2.26/asdf.lisp">
+; 194.07KB
+==================================================
+198,729 bytes in 0.05 seconds (4043.15KB/sec)
+; Fetching #<URL "http://beta.quicklisp.org/dist/quicklisp.txt">
+; 0.40KB
+==================================================
+408 bytes in 0.00 seconds (0.00KB/sec)
+Installing dist "quicklisp" version "2020-03-25".
+; Fetching #<URL "http://beta.quicklisp.org/dist/quicklisp/2020-03-25/releases.txt">
+; 447.29KB
+==================================================
+458,030 bytes in 0.11 seconds (3958.36KB/sec)
+; Fetching #<URL "http://beta.quicklisp.org/dist/quicklisp/2020-03-25/systems.txt">
+; 326.29KB
+==================================================
+334,119 bytes in 0.08 seconds (4130.23KB/sec)
+
+  ==== quicklisp installed ====
+
+    To load a system, use: (ql:quickload "system-name")
+
+    To find systems, use: (ql:system-apropos "term")
+
+    To load Quicklisp every time you start Lisp, use: (ql:add-to-init-file)
+
+    For more information, see http://www.quicklisp.org/beta/
+
+NIL
+\* (ql:add-to-init-file)
+I will append the following lines to #P"/home/thinkpad/.sbclrc":
+
+  ;;; The following lines added by ql:add-to-init-file:
+  #-quicklisp
+  (let ((quicklisp-init (merge-pathnames "quicklisp/setup.lisp"
+                                         (user-homedir-pathname))))
+    (when (probe-file quicklisp-init)
+      (load quicklisp-init)))
+
+Press Enter to continue.
+
+#P"/home/thinkpad/.sbclrc"
+\* (quit)
+[thinkpad@msata045 Music]$ sbcl
+This is SBCL 2.0.3, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+\* (ql:quickload "stumpwm")
+To load "stumpwm":
+  Load 4 ASDF systems:
+    alexandria asdf cl-ppcre clx
+  Install 1 Quicklisp release:
+    stumpwm
+; Fetching #<URL "http://beta.quicklisp.org/archive/stumpwm/2020-03-25/stumpwm-20200325-git.tgz">
+; 213.51KB
+==================================================
+218,638 bytes in 0.61 seconds (350.60KB/sec)
+; Loading "stumpwm"
+[package alexandria.1.0.0]........................
+[package cl-ppcre]................................
+..................................................
+[package xlib]....................................
+..................................................
+..................................................
+..................................................
+..................................................
+..................................................
+..................................................
+..................................................
+..................................................
+[package xlib/glx]................................
+[package xlib/gl].................................
+..................................................
+[package xlib/dpms]...............................
+[package xlib/xtest]..............................
+..................................................
+[package xlib/xinerama]...........................
+[package stumpwm].................................
+[package stumpwm-user]............................
+..................................................
+..............
+("stumpwm")
+\* (require :stumpwm)
+NIL
+\* * (ql:quickload "swank")
+To load "swank":
+  Load 1 ASDF system:
+    swank
+; Loading "swank"
+[package swank-loader]............................
+[package swank/backend]...........................
+[package swank/rpc]...............................
+[package swank/match].............................
+[package swank-mop]...............................
+[package swank]...................................
+[package swank/source-path-parser]................
+[package swank/source-file-cache].................
+[package swank/sbcl]..............................
+[package swank/gray]..............................
+...........
+; compiling file "/usr/share/emacs/site-lisp/slime/contrib/swank-util.lisp" (written 16 MAR 2020 09:23:00 PM):
+
+; wrote /home/thinkpad/.slime/fasl/2.24/sbcl-2.0.3-linux-x86-64/contrib/swank-util.fasl
+; compilation finished in 0:00:00.014
+; compiling file "/usr/share/emacs/site-lisp/slime/contrib/swank-repl.lisp" (written 16 MAR 2020 09:23:00 PM):
+.......................................
+[package swank-repl]...
+
+; wrote /home/thinkpad/.slime/fasl/2.24/sbcl-2.0.3-linux-x86-64/contrib/swank-repl.fasl
+; compilation finished in 0:00:00.094
+; compiling file "/usr/share/emacs/site-lisp/slime/contrib/swank-c-p-c.lisp" (written 16 MAR 2020 09:23:00 PM):
+.
+
+; wrote /home/thinkpad/.slime/fasl/2.24/sbcl-2.0.3-linux-x86-64/contrib/swank-c-p-c.fasl
+; compilation finished in 0:00:00.037
+; compiling file "/usr/share/emacs/site-lisp/slime/contrib/swank-arglists.lisp" (written 16 MAR 2020 09:23:00 PM):
+.................
+
+; wrote /home/thinkpad/.slime/fasl/2.24/sbcl-2.0.3-linux-x86-64/contrib/swank-arglists.fasl
+; compilation finished in 0:00:00.405
+; compiling file "/usr/share/emacs/site-lisp/slime/contrib/swank-fuzzy.lisp" (written 16 MAR 2020 09:23:00 PM):
+...
+
+; wrote /home/thinkpad/.slime/fasl/2.24/sbcl-2.0.3-linux-x86-64/contrib/swank-fuzzy.fasl
+; compilation finished in 0:00:00.085
+; compiling file "/usr/share/emacs/site-lisp/slime/contrib/swank-fancy-inspector.lisp" (written 16 MAR 2020 09:23:00 PM):
+......
+..
+
+; wrote /home/thinkpad/.slime/fasl/2.24/sbcl-2.0.3-linux-x86-64/contrib/swank-fancy-inspector.fasl
+; compilation finished in 0:00:00.194
+; compiling file "/usr/share/emacs/site-lisp/slime/contrib/swank-presentations.lisp" (written 16 MAR 2020 09:23:00 PM):
+.
+
+; wrote /home/thinkpad/.slime/fasl/2.24/sbcl-2.0.3-linux-x86-64/contrib/swank-presentations.fasl
+; compilation finished in 0:00:00.043
+; compiling file "/usr/share/emacs/site-lisp/slime/contrib/swank-presentation-streams.lisp" (written 16 MAR 2020 09:23:00 PM):
+..
+
+; wrote /home/thinkpad/.slime/fasl/2.24/sbcl-2.0.3-linux-x86-64/contrib/swank-presentation-streams.fasl
+; compilation finished in 0:00:00.045
+; compiling file "/usr/share/emacs/site-lisp/slime/contrib/swank-asdf.lisp" (written 16 MAR 2020 09:23:00 PM):
+....
+
+; wrote /home/thinkpad/.slime/fasl/2.24/sbcl-2.0.3-linux-x86-64/contrib/swank-asdf.fasl
+; compilation finished in 0:00:00.087
+; compiling file "/usr/share/emacs/site-lisp/slime/contrib/swank-package-fu.lisp" (written 16 MAR 2020 09:23:00 PM):
+
+; wrote /home/thinkpad/.slime/fasl/2.24/sbcl-2.0.3-linux-x86-64/contrib/swank-package-fu.fasl
+; compilation finished in 0:00:00.009
+; compiling file "/usr/share/emacs/site-lisp/slime/contrib/swank-hyperdoc.lisp" (written 16 MAR 2020 09:23:00 PM):
+.
+
+; wrote /home/thinkpad/.slime/fasl/2.24/sbcl-2.0.3-linux-x86-64/contrib/swank-hyperdoc.fasl
+; compilation finished in 0:00:00.002
+; compiling file "/usr/share/emacs/site-lisp/slime/contrib/swank-sbcl-exts.lisp" (written 16 MAR 2020 09:23:00 PM):
+
+; wrote /home/thinkpad/.slime/fasl/2.24/sbcl-2.0.3-linux-x86-64/contrib/swank-sbcl-exts.fasl
+; compilation finished in 0:00:00.012
+; compiling file "/usr/share/emacs/site-lisp/slime/contrib/swank-mrepl.lisp" (written 16 MAR 2020 09:23:00 PM):
+........................................
+[package swank-api]...............................
+[package swank-mrepl].
+
+; wrote /home/thinkpad/.slime/fasl/2.24/sbcl-2.0.3-linux-x86-64/contrib/swank-mrepl.fasl
+; compilation finished in 0:00:00.030
+; compiling file "/usr/share/emacs/site-lisp/slime/contrib/swank-trace-dialog.lisp" (written 16 MAR 2020 09:23:00 PM):
+............................
+[package swank-trace-dialog]..
+
+; wrote /home/thinkpad/.slime/fasl/2.24/sbcl-2.0.3-linux-x86-64/contrib/swank-trace-dialog.fasl
+; compilation finished in 0:00:00.035
+; compiling file "/usr/share/emacs/site-lisp/slime/contrib/swank-macrostep.lisp" (written 16 MAR 2020 09:23:00 PM):
+....................
+[package swank-macrostep].
+
+; wrote /home/thinkpad/.slime/fasl/2.24/sbcl-2.0.3-linux-x86-64/contrib/swank-macrostep.fasl
+; compilation finished in 0:00:00.045
+; compiling file "/usr/share/emacs/site-lisp/slime/contrib/swank-quicklisp.lisp" (written 16 MAR 2020 09:23:00 PM):
+
+; wrote /home/thinkpad/.slime/fasl/2.24/sbcl-2.0.3-linux-x86-64/contrib/swank-quicklisp.fasl
+; compilation finished in 0:00:00.002
+
+("swank")
+*y 
+
+
+#+end_src
+
+
+#+begin_src sh :results silent
+espeak -a 20 -v other/la "amare"
+#+end_src
+
+
+;;exec sbcl --load /path/to/startstump
+;; in ../../app/stumpwm/startstump below contents
+
+#+begin_src emacs-lisp :results silent
+
+
+
+
+#+end_src
+
+
+#+begin_src emacs-lisp :results silent
+;; sbcl로 시작되는 desktop을 만들었고,
+;added in .stumpwmrc
+
+(in-package :stumpwm)
+
+(require :swank)
+(swank-loader:init)
+(swank:create-server :port 4004
+                     :style swank:*communication-style*
+                     :dont-close t)
+;; check for emacs/slime.org
+
+
+
+
+
+#+end_src
+
+
+

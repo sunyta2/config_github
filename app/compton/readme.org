@@ -1,0 +1,85 @@
+Command: compton --config /home/xfcebspwm/.config/compton/compton.conf -b # -b 배경실행일 것이다
+(dired "~/.config/compton/")
+
+[[https://github.com/tryone144/compton][GitHub - tryone144/compton: A compositor for X11.]]
+    - yay tryone144/compton [[https://aur.archlinux.org/packages/compton-tryone-git/][AUR (en) - compton-tryone-git]]
+
+
+ killall compton
+compton --active-opacity 0.93 ;; 추가로 발견한 성과를 거둔다. [2020-03-18 Wed 11:05]
+
+compton -bcCGf --active-opacity 0.93 -i 0.6 -e 0.6 -m 0.9 ;; 기본으로 중요함.
+
+#+BEGIN_SRC sh :results silent
+ killall compton
+compton -bcCGf --active-opacity 0.93 -i 0.6 -e 0.6 -m 0.9 # 기본으로 복귀함.
+# compton/ okular/readme.org 
+#+END_SRC
+o
+#+BEGIN_SRC bash :results silent
+ killall compton
+picom -bcCGf --active-opacity 0.87 -i 0.6 -e 0.6 -m 0.9 # 투명도를 높임.
+compton -bcCGf --active-opacity 0.87 -i 0.6 -e 0.6 -m 0.9 # 투명도를 높임.
+#+END_SRC
+
+#+begin_src sh 
+#;killall picom
+#goldendict
+dolphin & 
+#+end_src
+
+#+RESULTS:
+
+killall xcompmgr
+(man "xcompmgr")
+
+성공적인 투명화성공을 발견함. [2020-03-18 Wed 03:35] 우연히 dt의 herbstluft동영상을 밤에 보다가 compton을 사용하는 것을 보고,
+KDE에서 man을 참조하니 아래의 문장이 작동함을 발견하는 성과를 발견함.
+Compton xcompmgr $ killall xcompmgr 
+$ compton -bcCGf -i 0.8 -e 0.8
+$ compton -bcCGf -i 0.8 -e 0.8 --no-fading-openclose --sw-opti # 발견한 문장임.
+** rofi를 포커스에서 제외하는 명령인 듯함
+#+begin_src sh :results silent
+
+# had to add the following settings to compton.conf:
+# Specify a list of conditions of windows that should always be considered focused.
+focus-exclude = ["name = 'rofi'"];
+#+end_src
+
+
+#+begin_src sh :results silent
+
+# had to add the following settings to compton.conf:
+# Specify a list of conditions of windows that should always be considered focused.
+focus-exclude = ["name = 'rofi'"];
+
+#################################
+#
+# Opacity
+#
+#################################
+
+menu-opacity = 1;
+
+inactive-window-opacity = 1;
+inactive-opacity = 0.60;
+
+active-opacity = 1;
+frame-opacity = 1;
+
+# I also had to make sure these settings equaled 'false':
+mark-wmwin-focused = false;
+mark-ovredir-focused = false;
+
+## 출처: https://github.com/bgdawes/bspwm-xfce-dotfiles/wiki 
+
+#+end_src
+
+
+** --config path (compton다중닷파일선택을 실행함)
+--config path
+  Look for configuration file at the path. Use /dev/null to avoid
+  loading configuration file.
+** 다중모니터 xrandr
+(find-file "../../app/xrandr/readme.org")
+

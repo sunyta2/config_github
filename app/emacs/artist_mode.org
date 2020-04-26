@@ -4,6 +4,8 @@
 * 일단 동영상 시청부터
 (async-shell-command "brave --incognito 'https://www.youtube.com/watch?v=cIuX87Xo8Fc'")
 
-
+artist_mode
 * 단축키는 있던가??
 이중으로 복사된 새로운 복제버퍼를 열어야 했던 것을 기억할 것.
+help:clone-indirect-buffer-other-window
+C-x 4 c		clone-indirect-buffer-other-window

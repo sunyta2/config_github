@@ -2,6 +2,9 @@
 c_cpp_csharp_java🅒🅒🅒 in broswer bookmark
 #+OPTIONS: d:t \n:t
 
+
+(src_tangle.org) 구조적인 노트를 배울 것
+
 #+BEGIN_SRC python :results output drawer :exports both
 done_is_more_than_3 = 2
 if done_is_more_than_3 < 3 :

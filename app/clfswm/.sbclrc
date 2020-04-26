@@ -1,0 +1,19 @@
+;;; -*- common-lisp -*-
+;;; (async-shell-command "ln -fs ~/config_github/app/clfswm/.sbclrc ~/.sbclrc")
+;;;;;;;;;;;;;;;;;(find-file "~/config_github/app/stumpwm/.stumpwmrc ~/.stumpwmrc")
+;;; (async-shell-command "cp ~/config_github/app/stumpwm/.stumpwmrc ~/.stumpwmrc")
+;;;;;;;;;;;;;;;;;(find-file "~/.stumpwmrc")
+;;; (async-shell-command "rm ~/.stumpwmrc")
+
+; (dired "~/config_github/app/qtile/")
+;         # (dired "~/.config/qtile/")
+
+(load "~/quicklisp/quicklisp.lisp")
+
+;;; The following lines added by ql:add-to-init-file:
+#-quicklisp
+(let ((quicklisp-init (merge-pathnames "quicklisp/setup.lisp"
+                                       (user-homedir-pathname))))
+  (when (probe-file quicklisp-init)
+    (load quicklisp-init)))
+

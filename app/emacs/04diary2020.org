@@ -1,0 +1,616 @@
+: -*- coding: utf-8 -*-
+: #+REVERSE_DATETREE_DATE_FORMAT: %Y-%m-%d %A
+: #+REVERSE_DATETREE_WEEK_FORMAT: %Y W%W
+: #+REVERSE_DATETREE_YEAR_FORMAT: %Y
+: #+REVERSE_DATETREE_USE_WEEK_TREE: t
+
+* Heading
+:PROPERTIES:
+:TOC:      :include all
+:END:
+file:./toc-org.org
+This text appears before the TOC.
+(org-make-toc-mode)
+:CONTENTS:
+- [[Heading][Heading]]
+- [[org-make-toc][org-make-toc]]
+  - [[%5B2020-04-19 Sun%5D][{2020-04-19 Sun}]]
+  - [[%5B2020-04-17 Fri%5D %EC%A0%95%EC%8B%A0%EC%9D%84 %EA%B2%AC%ED%95%B4%EC%9D%84 %EC%A0%9C%EC%8B%9C%ED%95%9C%EB%8B%A4.][{2020-04-17 Fri} 정신을 견해을 제시한다.]]
+  - [[%5B2020-04-16 Thu%5D %ED%95%98%EC%8A%A4%EC%BC%88%EC%9D%98 %EB%86%80%EB%9D%BC%EC%9B%80%EC%97%90 %EA%B0%90%ED%83%84%ED%95%A8.][{2020-04-16 Thu} 하스켈의 놀라움에 감탄함.]]
+  - [[%5B2020-04-15 Wed%5D stumpish%EB%A5%BC %EA%B0%80%EB%8A%A5!][{2020-04-15 Wed} stumpish를 가능!]]
+  - [[%5B2020-04-14 Tue%5D][{2020-04-14 Tue}]]
+  - [[%5B2020-04-13 Mon%5D][{2020-04-13 Mon}]]
+  - [[%5B2020-04-12 Sun%5D][{2020-04-12 Sun}]]
+    - [[teset][teset]]
+  - [[%5B2020-04-11 Sat%5D field of EMACS , %EA%B7%B8%EB%A3%B9%EC%9C%BC%EB%A1%9C %EC%8B%A4%ED%96%89%ED%95%98%EB%8A%94 %EA%B2%83%EC%9D%84 %EB%B0%9C%EA%B2%AC%ED%95%A8][{2020-04-11 Sat} field of EMACS , 그룹으로 실행하는 것을 발견함]]
+  - [[%5B2020-04-10 Fri%5D pass gpg%EC%84%A4%EC%B9%98%ED%95%A8][{2020-04-10 Fri} pass gpg설치함]]
+  - [[%5B2020-04-09 Thu%5D][{2020-04-09 Thu}]]
+  - [[%5B2020-04-08 Wed%5D][{2020-04-08 Wed}]]
+  - [[%5B2020-04-07 Tue%5D][{2020-04-07 Tue}]]
+  - [[%5B2020-04-06 Mon%5D][{2020-04-06 Mon}]]
+    - [[tcl%EB%9D%BC%EC%9D%B8%EB%B3%80%EA%B2%BD%EC%9D%98 %EB%AA%85%EB%A0%B9][tcl라인변경의 명령]]
+  - [[%EC%9D%B8%EC%8A%A4%ED%86%A8%EC%9D%98 %EC%97%85%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C %EA%B3%BC%EC%A0%95][인스톨의 업그레이드 과정]]
+    - [[named-timer %EC%9D%B8%EC%8A%A4%ED%86%A8%ED%95%A8][named-timer 인스톨함]]
+  - [[%ED%95%9C%EA%B8%80%EC%9D%98 %EC%A4%91%EC%9A%94%ED%95%9C %EC%82%AC%EC%95%88%EC%9D%B4][한글의 중요한 사안이]]
+- [[Date][Date]]
+  - [[%5B2020-04-05 Sun%5D][{2020-04-05 Sun}]]
+  - [[%5B2020-04-04 Sat%5D][{2020-04-04 Sat}]]
+  - [[%5B2020-04-03 Fri%5D][{2020-04-03 Fri}]]
+    - [[install][install]]
+:END:
+ (org-make-toc)
+
+:CONTENTS:
+- [[org-toc-make][org-toc-make]]
+  - [[Heading][Heading]]
+  - [[Subheading][Subheading]]
+- [[org-toc%EC%9D%98 %EB%B0%9C%EA%B2%AC%EC%9E%A5%EC%86%8C%EC%9E%84][org-toc의 발견장소임]]
+  - [[%ED%95%98%ED%95%98%ED%95%98 asdf sadfasfdads asdfasfd][하하하 asdf sadfasfdads asdfasfd]]
+    - [[%ED%98%B8%ED%98%B8%ED%98%B8][호호호]]
+- [[org-recent-head... 20200228.215  new        melpa      Jump to recently used Org headings][org-recent-head... 20200228.215  new        melpa      Jump to recently used Org headings]]
+:END:
+
+* org-make-toc
+:PROPERTIES:
+:TOC:      :include all
+:END:
+
+;; This will insert properties
+ (org-make-toc-insert)
+ __ (setq org-make-toc-link-type-fn 'org-make-toc--link-entry-org) __
+help:org-make-toc-link-type-fn
+;; Fills CONTENTS with headings
+__ (org-make-toc) __
+
+
+:CONTENTS:
+- [[Heading][Heading]]
+- [[org-make-toc][org-make-toc]]
+  - [[%5B2020-04-19 Sun%5D][{2020-04-19 Sun}]]
+  - [[%5B2020-04-17 Fri%5D %EC%A0%95%EC%8B%A0%EC%9D%84 %EA%B2%AC%ED%95%B4%EC%9D%84 %EC%A0%9C%EC%8B%9C%ED%95%9C%EB%8B%A4.][{2020-04-17 Fri} 정신을 견해을 제시한다.]]
+  - [[%5B2020-04-16 Thu%5D %ED%95%98%EC%8A%A4%EC%BC%88%EC%9D%98 %EB%86%80%EB%9D%BC%EC%9B%80%EC%97%90 %EA%B0%90%ED%83%84%ED%95%A8.][{2020-04-16 Thu} 하스켈의 놀라움에 감탄함.]]
+  - [[%5B2020-04-15 Wed%5D stumpish%EB%A5%BC %EA%B0%80%EB%8A%A5!][{2020-04-15 Wed} stumpish를 가능!]]
+  - [[%5B2020-04-14 Tue%5D][{2020-04-14 Tue}]]
+  - [[%5B2020-04-13 Mon%5D][{2020-04-13 Mon}]]
+  - [[%5B2020-04-12 Sun%5D][{2020-04-12 Sun}]]
+    - [[teset][teset]]
+  - [[%5B2020-04-11 Sat%5D field of EMACS , %EA%B7%B8%EB%A3%B9%EC%9C%BC%EB%A1%9C %EC%8B%A4%ED%96%89%ED%95%98%EB%8A%94 %EA%B2%83%EC%9D%84 %EB%B0%9C%EA%B2%AC%ED%95%A8][{2020-04-11 Sat} field of EMACS , 그룹으로 실행하는 것을 발견함]]
+  - [[%5B2020-04-10 Fri%5D pass gpg%EC%84%A4%EC%B9%98%ED%95%A8][{2020-04-10 Fri} pass gpg설치함]]
+  - [[%5B2020-04-09 Thu%5D][{2020-04-09 Thu}]]
+  - [[%5B2020-04-08 Wed%5D][{2020-04-08 Wed}]]
+  - [[%5B2020-04-07 Tue%5D][{2020-04-07 Tue}]]
+  - [[%5B2020-04-06 Mon%5D][{2020-04-06 Mon}]]
+    - [[tcl%EB%9D%BC%EC%9D%B8%EB%B3%80%EA%B2%BD%EC%9D%98 %EB%AA%85%EB%A0%B9][tcl라인변경의 명령]]
+  - [[%EC%9D%B8%EC%8A%A4%ED%86%A8%EC%9D%98 %EC%97%85%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C %EA%B3%BC%EC%A0%95][인스톨의 업그레이드 과정]]
+    - [[named-timer %EC%9D%B8%EC%8A%A4%ED%86%A8%ED%95%A8][named-timer 인스톨함]]
+  - [[%ED%95%9C%EA%B8%80%EC%9D%98 %EC%A4%91%EC%9A%94%ED%95%9C %EC%82%AC%EC%95%88%EC%9D%B4][한글의 중요한 사안이]]
+- [[Date][Date]]
+  - [[%5B2020-04-05 Sun%5D][{2020-04-05 Sun}]]
+  - [[%5B2020-04-04 Sat%5D][{2020-04-04 Sat}]]
+  - [[%5B2020-04-03 Fri%5D][{2020-04-03 Fri}]]
+    - [[install][install]]
+:END:
+
+
+- emacs.desktop에서 로딩하는 것으로 변경하면 쉽게 해결될 것으로 보인다.
+
+한글입력
+
+** [2020-04-26 Sun] kde-msata에서 upgrade성공함
+- xmonad 가능해짐, 업그래이드에서 리눅스는 끊임없는 연구를 필요로 하므로 일반적인 유저는 도태하는 구조임 높은 목표가 중요함을 확신!
+
+** [2020-04-25 Sat] diff-hl (diff-buffer-with-file)
+Little bits of lisp
+
+diff-buffer-with-file (diff-buffer-with-file) ;; 버퍼를 비교하는 기능을 발견함
+- diff-hl의 놀라움 변화를 검토하는 능력을 발견함. 
+** [2020-04-24 Fri] gespeaker download yay
+- surf default
+
+
+** [2020-04-23 Thu]
+
+** [2020-04-22 Wed] xmonad
+xmonad기능을 재발굴하고 늘려감 감탄!
+폭발적인 연결결합능력이 탁월함에 감탄 Dwm보다 월등한 언어의 우수성에 유래됨.
+현재 최고의 좋은 능력을 가진 것으로 평가됨.
+
+- Emacs만 선별raise 발견함.
+
+** [2020-04-19 Sun]
+xwinmosaic
+16 aur/xwinmosaic-git v0.4.2-1 (+14 0.00%) 
+    X11 window switcher with fancy look
+
+** [2020-04-17 Fri] 정신을 견해을 제시한다.
+
+
+#+begin_src haskell :results silent
+  -- test(message "원리를 발견하고 충분한 단련과 습관이 없으면 무용지물이다")
+
+  module Lib
+    ( some Func
+    ) where
+  import Model
+
+  someFunc :: IO()
+  someFunc = putStrLn $
+    show $
+    toDo ("something", "description of something")
+  main :: IO ()
+  main = scotty 3000 routes
+#+end_src
+
+
+
+#+begin_src sh :results silent
+espeak -a 20 -v other/la "amare"
+#+end_src
+
+
+
+** [2020-04-16 Thu] 하스켈의 놀라움에 감탄함.
+인문학은 복잡한 상황에서 탁월한 해법을 제시하는 것이다.
+기능의 중요한 사안을 정확히 평가한다.
+
+- 학문이 거짓을 수식하는 것으로 사용되면 인간은 최대의 오류를 범하게 된다.
+내용도 없이 꾸미기에만 힘쓰는 바보짓을 학문이라고 착각하는 대 오류를 범한다.
+{서예대전등의 허구성 자기글은 없고 남의 글로 내용을 훔치고 남의 스타일로 꾸민다.}
+
+** [2020-04-15 Wed] stumpish를 가능!
+- stumpish를 가능하게 함 emacs/slime_mode_emacs.org
+(load-module "swm-golden-ratio")
+(echo-date) (message "(")
+** [2020-04-14 Tue]
+자동차검사
+
+
+[[https://www.reddit.com/r/AncientGreek/][Ἑλληνική: Ancient Greek]] 고대그리스어
+[[https://www.reddit.com/r/Koine/][Κοινη: Greekin' out]]
+[[https://www.reddit.com/r/GREEK/][Learning Greek]]
+
+
+
+The Declension Song-iGSKMeL1OOU.mp4 [[https://www.youtube.com/watch?v=iGSKMeL1OOU][The Declension Song - YouTube]]
+
+Magister Wight
+20 subscribers
+"The Declension Song"
+Lyrics by Sister Anna Roberta, CSJ
+To the tune of "The Martins and The Coys"
+
+Now in Latin there are only five declensions
+All the endings you must memorize and say:
+"a" is for the NOMIN-A-TIVE, "ae" GENITIVE AND DATIVE
+"am" ACCUSATIVE, The ABLATIVE long "ā".
+
+Start with a - ae - ae - am - ā, then ae - ārum - īs - ās - īs
+And repeat the first declension every day:
+"a" is for the NOMIN-A-TIVE, "ae'' GENITIVE and DATIVE
+"am" ACCUSATIVE,The ABLATIVE long "ā".
+
+Now the second one is very very simple:
+us - ī - ō - um - ō,  ī - ōrum - īs - ōs - īs
+And the neuter starts with bellum - bellī - bellō - bellum - bellō
+Plural: a - ōrum - īs - a - īs
+
+Start with us - ī - ō - um - ō, then ī - ōrum - īs - ōs - īs
+It is masculine.  Remember five a piece.
+And the neuter starts with bellum - bellī - bellō - bellum - bellō
+Plural: a - ōrum - īs - a - īs
+
+You will find that when you come to third declension
+Nouns will end in L and R and S and X.
+Dux and ducis - ducī - ducem - duce, lūcis - lūcī - lūcem - lūce
+cōnsul.....imperātor.....mīles.....rēx.
+
+Start with:  blank - is - ī - em - e.  Third declension for today
+ēs - um - ibus - ēs and ibus. Say it next.
+Dux and ducis - ducī - ducem - duce, lūcis - lūcī - lūcem - lūce
+cōnsul.....imperātor.....mīles.....rēx.
+ 
+One, two, three and then we come to Fourth Declension
+us - ūs - uī - um - and - ū.  It's just a ball.
+Plural: ūs - uum - ibus - ūs (accusative) and ibus.
+Now we're ready for the fifth and that is all.
+
+ēs - ēī - ēī - em - ē, then the plural right away:
+ēs and ērum - ēbus - ēs - ēbus too.
+First you SAY IT then you PLAY IT, but be sure you EVERY DAY IT
+And with all the five declensions you are through.
+
+[[https://www.reddit.com/r/LatinCircleJerk/][GRUMIO EST IN HORTO]] 라틴어를 즐기다.
+
+[[https://www.reddit.com/r/Locutorium/][Discussions in the Latin language]] 라틴어로만 기록된 사이트
+[[https://www.reddit.com/r/LatinLanguage/][Lingua Latina: A community for discussions about the Latin language.]] luke의 동영상을 발견함.
+[[https://www.youtube.com/watch?v=4d-YsD8zN88&feature=emb_rel_pause][Why is Latin worth learning and using? - YouTube]] ;; luke의 라틴어 공부의 중요성을 강조함! 놀라움 라틴어로 생각하는 습관을 기른다
+[[https://www.youtube.com/watch?v=DmBahbIkkB4&t=264s][3 Reasons to Study Latin (for Normal People, Not Language Geeks) - YouTube]] ;; 비교해 볼 대상이 필요하다
+
+
+루크의 파이썬비교동영상에서 러스트오에스를 발견함
+~/config_github/ dosbox
+https://youtu.be/ovbfWMSQA70 qemu
+[[https://duckduckgo.com/?q=RedoxOS&atb=v92-3_f&iax=videos&ia=videos&pn=1&iai=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DG4VlHzyKZeE][RedoxOS at DuckDuckGo]]
+
+[[https://www.reddit.com/r/EXWM/][EXWM]] 창간 작년에 
+
+
+[[https://www.reddit.com/r/stumpwm/][The Stump Window Manager]] 가입해서 활동질문할 것.
+
+
+[[https://www.reddit.com/r/stumpwm/comments/e2ykc9/changing_font_size_of_the_frame_numbers/][Changing font size of the Frame numbers : stumpwm]]
+- 폰트사이즈를 줄이기 위한 정보획득용
+(stumpwm:set-font (make-instance 'xft:font :family "Anka/Coder" :subfamily "Regular" :size 9 :antialias t)) >
+
+
+
+
+어머니의 거짓말하는 습관에 분노함. [2020-04-14 Tue 05:05]
+;;거짓말을 하는 습관으로 국노가 거짓말을 하는 것을 한탄하면서 자기가 대놓고 거짓말을 하는 것은 옳다고 함
+;; 뻔뻔하게 누구 닮아서 밤에 돌아다니는지를 한탄하는 것에 환멸을 느낌.
+;; 낮에 누워서 자다가 수면리듬없이 생활한 것을 반성하지는 않고
+;; 틈이 나면 온갖 거짓말로 자신의 구변에 맞게 둘러대면서 거짓을 꾸밈.
+
+
+
+** TODO [2020-04-13 Mon]
+SCHEDULED: <2020-04-13 Mon> DEADLINE: <2020-04-13 Mon>
+:LOGBOOK:
+CLOCK: [2020-04-13 Mon 11:19]--[2020-04-13 Mon 11:19] =>  0:00
+CLOCK: [2020-04-13 Mon 11:13]--[2020-04-13 Mon 11:13] =>  0:00
+:END:
+
+
+** [2020-04-12 Sun]
+:PROPERTIES:
+:TOC:      :include descendants
+:END:
+org-toc-make를 발견함! 놀라운 진보임
+org-sidebar
+(org-make-toc-insert)
+ (org-make-toc)
+workgroups2
+
+
+:CONTENTS:
+- [[teset][teset]]
+:END:
+
+***** teset
+** [2020-04-11 Sat] field of EMACS , 그룹으로 실행하는 것을 발견함
+(message "%s" (ivy-completing-read "PROMPT " '("abc" "1 2 3") nil t ) )
+(split-string-and-unquote "ave
+    cse " "\n")z
+(split-string-and-unquote STRING &optional SEPARATOR)
+(global-company-mode)
+(company-mode)
+(global-set-key (kbd "C-.") 'company-files)
+file:../../ap
+file:../emacs/eww.org
+(require 'broadcast)
+(broadcast-mode)
+
+echo hi
+geecho
+echo hi
+echo good
+
+echo a ab find-file ~/config_github/app/emacs/emms.org1 2 3 abc 
+asdfe
+sdf
+123456789
+(use-package buffer-flip
+  :ensure t
+  :bind  (("s-<tab>" . buffer-flip)
+          :map buffer-flip-map
+          ( "s-<tab>" .   buffer-flip-forward) 
+          ( "s-C-<tab>" . buffer-flip-backward) 
+          ( "s-ESC" .     buffer-flip-abort))
+  :config
+  (setq buffer-flip-skip-patterns
+        '("^\\*helm\\b"
+          "^\\*swiper\\*$")))
+
+(use-package ewmctrl
+  :ensure t
+  :bind  (("C-x B" . ewmctrl)
+          )
+)
+
+
+
+tongbu             20200321.1817 new        melpa      A web server to share text or files between two devices
+
+  toc-org            20190902.1055 new        melpa      add table of contents to org-mode files (formerly, org-toc)
+  transpose-frame    20200307.2119 new        melpa      Transpose windows arrangement in a frame
+
+
+  typing             20180830.2203 new        melpa      The Typing Of Emacs
+  typing-game        20160426.1220 new        melpa      a simple typing game
+  typit              20200217.2059 new        melpa      Typing game similar to tests on 10 fast fingers
+    유용한 것으로 추정된다.
+Directory with dictionary files: /home/thinkpad/.emacs.d/elpa/typit-20200217.2059/dict/
+(setq typit-dict-dir "/home/thinkpad/.emacs.d/elpa/typit-20200217.2059/dict/")
+(setq typit--dict-file "/home/thinkpad/.emacs.d/elpa/typit-20200217.2059/dict/english.txt")
+
+(setq typit--dict-file "/home/thinkpad/.emacs.d/elpa/typit-20200217.2059/dict/korean.txt")
+(find-file-other-window "/home/thinkpad/.emacs.d/elpa/typit-20200217.2059/dict/english.txt")
+  
+Directory with dictionaryfiles /home/thinkpad/.emacs.d/elpa/typit-20200217.2059/dict/
+
+
+ try                20181204.236  new        melpa      Try out Emacs packages.
+시도를 하는 법을 익힌다. 123abcdef
+
+
+
+turnip             20150309.629  new        melpa      Interacting with tmux from Emacs
+
+
+
+
+
+
+
+/home/thinkpad/.emacs.d/.emacs_workgroups
+(setq wg-session-file "~/.emacs.d/.emacs_workgroups")
+
+;; Set your own keyboard shortcuts to reload/save/switch WGs:
+;; "s" == "Super" or "Win"-key, "S" == Shift, "C" == Control
+(global-set-key (kbd "<pause>")     'wg-reload-session)
+(global-set-key (kbd "C-S-<pause>") 'wg-save-session)
+(global-set-key (kbd "s-z")         'wg-switch-to-workgroup)
+(global-set-key (kbd "s-/")         'wg-switch-to-previous-workgroup)
+
+(workgroups-mode 1) 
+
+file: ./emms.org
+- 조기투표를 함!
+
+#+begin_text org
+Excitement never Stop, As We Walked in Fields of EMACS!
+Celtic Woman - Fields Of Gold (Official Live Video - 2017)
+https://www.youtube.com/watch?v=g4O3G943kbI
+
+#+end_text
+
+** [2020-04-10 Fri] pass gpg설치함
+figlet toilet comment-box를 가능하게해서 두드러진 주석문을 생성함
+pinentry사용법이 필요함 pass에서 사용하려면.
+
+sudo update-alternatives --config pinentry
+
+** [2020-04-09 Thu]
+(comint-send-string "vterm" text1) 
+- 많은 동영상 gentoo발굴함.
+
+
+
+** [2020-04-08 Wed]
+
+  :async-shell-command깔끔한실행!:  
+  #+BEGIN_TEXT org :async-shell-command깔끔한실행!
+- Core_location: file:../../app/emacs/shell_command_emacs.org
+daiary?yes, loding_file?yes, 
+[[https://stackoverflow.com/questions/13901955/how-to-avoid-pop-up-of-async-shell-command-buffer-in-emacs][asynchronous - How to avoid pop-up of *Async Shell Command* buffer in Emacs? - Stack Overflow]]
+;; help:defadvice 
+
+
+  :목표범위를 정하고 아래로 내릴 것
+- 
+#+begin_src emacs-lisp :results silent
+
+;; display-buffer-alist 
+;; 위의 변수에 저장하면 쓸모없는 출력용버퍼가 거슬리지 않는다.
+;; async-shell-command를 사용할 경우 편리하게 하기 위한 것
+(add-to-list 'display-buffer-alist ;; /app/emacs/shell_command_emacs.org
+  (cons "\\*Async Shell Command\\*.*" (cons #'display-buffer-no-window nil)))
+
+#+end_src
+-
+
+ 
+  #+END_TEXT
+  :END:
+
+
+
+** [2020-04-07 Tue]
+
+(setq display-time-format "[%Y-%B-%d %H:%M]")
+(setq display-time-format ; file:mode_line.org
+" %H:%M [%Y-%m-%d %a]")
+
+(display-time)
+
+
+(setq locale-coding-system 'utf-8) ; file:coding_system_in_emacs.org
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-selection-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+
+(defun exwmx-quickrun (name)
+  (interactive) ;; file:exwm.org
+  (start-process name nil name))
+
+file:ihsec.org
+
+
+
+** [2020-04-06 Mon]
+*** tcl라인변경의 명령
+  :꺽쇄s탭단축키로저장된yasnappet_angle_s_tab:  
+  #+BEGIN_TEXT org :rlwrap CMD
+- Core_location: file:../../language_computer/shell/tclsh.org.org
+daiary?, loding_file?, 
+  #+END_TEXT
+(message "tclsh의 사용법을 익혀 이해력을 높인다.")
+  :END:
+
+
+
+** 인스톨의 업그레이드 과정
+file:../../os/arch/yay_pacman_install.org
+[[https://joshtronic.com/2019/12/23/installing-pacman-breaks-dependency-replaced-by-yay/][Installing `pacman` breaks dependency replaced by `yay`]] 핵심적이므로 파일을 생성해서 반드시 연구할 것
+pdf로 저장하였으므로반드시 확인할 것.
+python-toml: /usr/lib/python3.8/site-packages/toml/encoder.py exists in filesystem
+python-toml: /usr/lib/python3.8/site-packages/toml/ordered.py exists in filesystem
+python-toml: /usr/lib/python3.8/site-packages/toml/tz.py exists in filesystem
+Errors occurred, no packages were upgraded.
+[thinkpad@msata045 Music]$ su -c 'mv -rf /usr/lib/python3.8/site-packages/toml/ /usr/lib/python3.8/site-packages/toml_backup/'
+Password: 
+mv: invalid option -- 'r'
+
+ - 옮길 폴더를 생성하고 파일들을 모두 옮기면 가능해 졌다.
+$ su -c 'mkdir /usr/lib/python3.8/site-packages/toml_backup/'
+Password: 
+$ su -c 'mv -f /usr/lib/python3.8/site-packages/toml/ /usr/lib/python3.8/site-packages/toml_backup/'
+Password: 
+
+
+mpd mpc를 yay로 설치가 되었다.
+
+
+
+*** named-timer 인스톨함 
+
+  :꺽쇄s탭단축키로저장된yasnappet_angle_s_tab:  
+  #+BEGIN_TEXT org :what_in_your_Mind? 
+- 목표를 정하고 위로 들어올릴 것
+- Core_location: 
+- 
+#+begin_src emacs-lisp :results silent
+(message "충분한 단련과 습관이 없으면 무용지물이다")
+#+end_src
+
+- 
+#+begin_src emacs-lisp :results silent
+
+#+end_src
+  #+END_TEXT
+  :END:
+
+
+
+named-timer 인스톨함 
+(require 'timer)
+(defvar my-timer nil)
+(defun activate-my-timer ()
+  (when my-timer
+    (cancel-timer my-timer)
+    (setq my-timer nil))
+  (setq my-timer
+        (run-with-timer 0.3 nil #'message "My timer ran!")))
+(activate-my-timer)
+
+
+adf
+** 한글의 중요한 사안이 
+
+* Date
+** [2020-04-05 Sun]
+  :꺽쇄s탭단축키로저장된yasnappet_angle_s_tab:  
+  #+BEGIN_TEXT org :emms
+- Core_location: file:../../app/emacs/emms.org
+daiary?, loding_file?, 
+
+  :목표범위를 정하고 아래로 내릴 것
+- 
+#+begin_src emacs-lisp :results silent
+(message "정신의 단련")
+;; 원리를 발견하고 충분한 단련과 습관이 없으면 무용지물이다
+#+end_src
+
+- 
+#+begin_src sh :results silent
+espeak -a 20 -v other/la "amare"
+#
+
+#+end_src
+  #+END_TEXT
+
+  :END:
+
+
+
+** [2020-04-04 Sat]
+C-x 1 
+C-x 1 1 원래의 목적달성
+C-x 1 b 원래의 버퍼이동
+C-x 1 M maximize-window
+C-x 1 m minimize-window
+
+(global-unset-key (kbd "C-x 1"))
+(global-set-key (kbd "C-x 1 1") 'delete-other-windows)
+(global-set-key (kbd "C-x 1 S") 'swiper-multi)
+(global-set-key (kbd "C-x b") 'counsel-ibuffer)
+(global-set-key (kbd "C-x 1 M") 'maximize-window)
+(global-set-key (kbd "C-x 1 m") 'minimize-window)
+(global-set-key (kbd "C-x 1 +") 'balance-windows)
+
+
+한글이 읽는다 한글을 읽는다 문서를 등록한다 apple is my fruit 
+# M-n을 누르면 입력창의 글자가 자동으로 등록되는 놀라움을 발견함.
+# download volume amer
+(async-shell-command "amixer --quiet set Master 25%")
+(async-shell-command "amixer --quiet set Master 75%")
+(async-shell-command "amixer --quiet set Master 60%")
+
+
+(async-shell-command "espeak hi")
+
+바흐의 오보에 https://www.youtube.com/watch?v=tOc6I7rxAO8&t=626s
+
+
+  :꺽쇄s탭단축키로저장된yasnappet_angle_s_tab:  
+  #+BEGIN_TEXT org :what_in_your_Mind? 
+- 목표를 정하고 위로 들어올릴 것
+- Core_location: 
+- 
+#+begin_src sh :results silent
+ cat /proc/asound/devices
+# 프로세스를 보이는 놀라운 경험을 선사한다.
+#+end_src
+
+- 
+#+begin_src emacs-lisp :results silent
+
+#+end_src
+  #+END_TEXT
+  :END:
+
+
+
+** [2020-04-03 Fri]
+*** install
+
+- eloud 반드시 나를 위한 greek latin study 
+- 최고다 counsel-diredx 점프에 최강임! (global-set-key (kbd "C-x d") 'counsel-dired-jump)
+- counsel-tramp 를 설치함.
+- elpl Emacs lisp REPL
+- emamux
+- emacsshot
+  emacsshot          20191206.944  new        melpa      Snapshot a frame or window from within
+emms-mark-ext      20130529.327  new        melpa      Extra functions for emms-mark-mode and emms-tag-edit-mod
+
+These default coding systems were tried to encode text
+in the buffer ‘04diary2020.org’:
+  (utf-8-unix (459 . 4194277) (462 . 4194301) (463 . 4194261) (468
+  . 4194181) (469 . 4194292) (470 . 4194209) (471 . 4194227) (472
+  . 4194226) (473 . 4194226) (474 . 4194200) (475 . 4194290))
+However, each of them encountered characters it couldn’t encode:
+  utf-8-unix cannot encode these:
+
+Click on a character (or switch to this window by ‘C-x C-o’
+and select the characters by RET) to jump to the place it appears,
+where ‘C-u C-x =’ will give information about it.
+
+Select one of the safe coding systems listed below,
+or cancel the writing with C-g and edit the buffer
+   to remove or modify the problematic characters,
+or specify any other coding system (and risk losing
+   the problematic characters).
+
+  raw-text no-conversion
+ 

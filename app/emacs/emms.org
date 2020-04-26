@@ -1,0 +1,544 @@
+music and video in emacs!!!
+
+
+looking for conflicting packages...
+error: failed to prepare transaction (could not satisfy dependencies)
+:: installing libpulse (13.0-3) breaks dependency 'libpulse=13.0-2' required by pulseaudio
+Error installing repo packages
+
+
+emms-player-simple-mpv is an available obsolete package.
+
+#+begin_quote org
+
+#+begin_src elisp :results silent
+;; emms.org
+(require 'emms-player-simple-mpv)
+;; This plugin provides control functions (e.g. ab-loop, speed, fullscreen).
+(require 'emms-player-simple-mpv-control-functions)
+
+#+end_src
+
+#+RESULTS:
+: emms-player-simple-mpv-control-functions
+(emms)
+(emms-player-simple-mpv-seek-to SEC)
+(emms-play-file "/home/thinkpad/Music/mpv_files/2_42 파헬벨-☆캐논 변주곡(George Winston in DECEMBER).mp3")
+
+(emms-player-simple-mpv-seek-to (+ (* 60 1) 20))
+
+(with-current-buffer (buffer-name)
+(progn 
+(emms-play-file "/home/thinkpad/Music/mpv_files/1_J. S. Bach  -  'Jesus bleibet meine Freude' BWV 147-d9EN27Zh_vg.webm")
+(sleep-for 30)
+(switch-to-prev-buffer)
+;(message "hi")
+)
+)
+
+
+(progn
+(switch-to-prev-buffer)
+(sleep-for 3)
+(switch-to-next-buffer)
+;(message "hi")
+)
+(progn
+(switch-to-buffer "okular<2>")
+(sleep-for 5)
+(switch-to-buffer "okular")
+(sleep-for 5)
+(switch-to-buffer "okular<2>")
+(switch-to-buffer "emms.org")
+;(message "hi")
+) ;; 투명도가 있는 동영상을 잠깐 동시에 재생하는 기능으로 특이점이다.
+
+
+
+(looking-at "[0-9]+:[0-9]\\{2\\}:[0-9]\\{2\\}") (skip-chars-backward ":[:digit:]" (point-at-bol))   1:01:01 (org-timer-hms-to-secs "1:01:01.03")(skip-chars-backward ":[:digit:]" (point-at-bol))(point-at-bol)
+(looking-at "[0-9]+:[0-9]\\{2\\}:[0-9]\\{2\\}") 1:11:11
+(emms-add-file "/home/thinkpad/Music/mpv_files/1_J. S. Bach  -  'Jesus bleibet meine Freude' BWV 147-d9EN27Zh_vg.webm")
+(emms-add-file "/home/thinkpad/Music/mpv_files/2_42 파헬벨-☆캐논 변주곡(George Winston in DECEMBER).mp3")
+
+(emms-player-simple-mpv-seek-to (+ (* 60 1) 2))
+(emms-player-simple-mpv-seek-to (+ (* 60 1) 5))
+
+(emms-play-file "/home/thinkpad/Music/mpv_files/1_J. S. Bach  -  'Jesus bleibet meine Freude' BWV 147-d9EN27Zh_vg.webm")
+(emms-play-file "/home/thinkpad/Music/mpv_files/2_42 파헬벨-☆캐논 변주곡(George Winston in DECEMBER).mp3")
+(prog1
+nil
+(emms-player-simple-mpv-seek-to (org-timer-hms-to-secs "00:02:01"))
+(emms-player-simple-mpv-ab-loop)
+(sleep-for 1)
+(emms-player-simple-mpv-seek-to (org-timer-hms-to-secs "00:02:05"))
+(emms-player-simple-mpv-ab-loop)
+)
+(emms-pause)
+
+(emms-volume-raise)
+(emms-player-simple-mpv-volume-to 30)
+(emms-volume-lower)
+
+(progn
+(emms-player-simple-mpv-playlist-current-filename)
+(sleep-for 3)
+(emms-player-simple-mpv-time-pos-%) 
+)
+ ;;;  (org-timer-hms-to-secs "00:01:01")
+(let ((secs (org-timer-hms-to-secs "01:01:01"))))
+
+
+
+(emms-player-simple-mpv-time-pos)
+
+(let (
+      (am 2)(as 20)
+      (bm 2)(bs 25)
+      (AM 1)(AS 20)
+      (BM 1)(BS 25)
+     )
+
+ (progn
+   (emms-player-simple-mpv-seek-to (+ (* 60 am) as))
+   (emms-player-simple-mpv-ab-loop)
+   (sleep-for 1)
+   (emms-player-simple-mpv-seek-to (+ (* 60 bm) bs))
+   (emms-player-simple-mpv-ab-loop)
+ )
+
+)
+;;;;
+(defun mpv-seek-to-position-at-point-2 ()
+  "Jump to playback position as inserted by `mpv-insert-playback-position'.
+
+This can be used with the `org-open-at-point-functions' hook."
+  (interactive)
+  (save-excursion
+(
+ ard   (skip-chars-backward "ard" )  ard
+    (when (looking-at "[0-9]+:[0-9]\\{2\\}:[0-9]\\{2\\}")
+      (let ((secs (org-timer-hms-to-secs (match-string 0))))
+        (when (> secs 0)
+          (mpv--enqueue `("seek" ,secs "absolute") #'ignore))))))
+;;;;;;;;;;;;;;;;
+help:mpv-seek-to-position-at-point
+
+(mpv-play "/home/thinkpad/Music/mpv_files/2_42 파헬벨-☆캐논 변주곡(George Winston in DECEMBER).mp3")
+(mpv-pause)
+(mpv-play "/home/thinkpad/Music/basics_of_biblical_greek_william_d_mounce/bbg_cd3_ch15_vst_04_1.mp4")
+(mpv-play "/home/thinkpad/Music/How to Speak, How to listen-Mortimer J. Adler/How To Speak, How To Listen 1b.mp3") 
+(mpv-play "/home/thinkpad/Music/mpv_files/1_greek_roman_heros_wings.mp4")
+
+(mpv-insert-playback-position)0:01:33
+ &optional ARG)
+- 
+- (mpv-insert-playback-position)0:01:58
+- 0:01:00
+- 
+- 
+- 
+
+
+
+
+- 0:01:01 ::
+
+
+
+
+ [[elisp:(mpv-insert-playback-position)]]
+
+
+
+(mpv-insert-playback-position)
+ - 0:03:18 ::
+ - 0:00:06 ::
+ - 0:00:11 ::
+ - 0:00:13 ::
+ - 0:00:14 ::
+ - 0:00:16 ::
+ - 0:00:17 ::
+ - 0:00:18 ::
+ - 0:00:19 ::
+ - 0:00:20 ::
+ - 0:00:22 ::
+ - 0:00:50 ::
+ - 0:00:52 ::
+ - 0:00:54 ::
+ - 0:00:55 ::
+ - 0:00:57 ::
+ - 0:00:58 ::
+ - 0:00:59 ::
+ - 0:01:00 ::
+ - 0:01:01 ::
+ - 0:01:02 ::
+ - 0:01:03 ::
+ - 0:01:04 ::
+ - 0:01:05 ::
+ - 0:01:06 ::
+ - 0:01:07 ::
+ - 0:01:08 ::
+ - 0:01:09 ::
+ - 0:01:10 ::
+ - 0:01:11 ::
+ - 0:01:12 ::
+ - 0:01:13 ::
+ - 0:01:13 ::
+     - 0:01:14 ::
+ - 0:01:15 ::
+- 0:01:16 :: (progn (move-beginning-of-line nil) (forward-whitespace 1) (forward-char 2) ) (move-point-visually 6)     )
+    - 0:01:17 ::
+ - 0:01:19 ::
+
+ - 0:02:45 :: 
+
+
+ - 0:12:50 :: 
+ - 0:03:57 :: 
+ - 0:03:38 :: 
+ - 0:02:59 :: 
+ - 0:19:52 :: 
+ - 0:19:24 :: 
+ - 0:19:07 :: 
+ - 0:16:31 :: 
+ - 0:14:40 ::
+ - 0:20:56 ::
+ - 0:21:04 ::
+ - 0:21:07 ::
+ - 0:21:09 ::
+ - 0:00:19 ::
+ - 0:00:21 ::
+ - 0:00:23 ::
+ - 0:00:25 ::
+ - 0:04:22 ::
+ - 0:06:01 ::
+ - 0:06:03 ::
+ - 0:06:04 ::
+ - 0:06:17 ::
+ - 0:06:18 ::
+
+(async-shell-command "amixer --quiet set Master 25%")
+(async-shell-command "amixer --quiet set Master 75%")
+(async-shell-command "amixer --quiet set Master 60%")
+(async-shell-command "amixer --quiet set Master 25%")
+(async-shell-command "amixer --quiet set Master 80%")
+(async-shell-command "amixer --quiet set Master 60%")
+
+
+
+(string-remove-suffix SUFFIX STRING)
+(string-remove-suffix "\".*" "STRING\"sdfsdf    ")
+elisp:(save-excursion (forward-paragraph) (backward-paragraph) (backward-word) (move-end-of-line nil) (mpv-insert-playback-position (quote -)) ( sleep-for 1))
+(buffer-substring-no-properties (line-beginning-position 0) (line-end-position 0))
+  - "/home/thinkpad/Music/mpv_files/2_ncs_Janji - Heroes Tonight (feat. Johnning) _ (LETRA) SUBTITULOS - ESPAÑOL  (Remasterización)--QPVUD0OQcI.mkv"
+  - "/home/thinkpad/Music/mpv_files/1_파헬벨-☆캐논 변주곡(에반게리온).mp3" ;;
+(mpv-start "Get_below_file_to_play") [[elisp:(let*%0A;;%20%20%20%20%20-%20"%ED%8C%8C%EC%9D%BC/%EC%9C%84%EC%B9%98/%ED%8C%8C%EC%9D%BC%EB%AA%85"%20;;%20string.org(string%EB%B3%80%ED%99%98%EC%9D%98%EC%A4%91%EC%8B%AC%EC%9C%BC%EB%A1%9C%EC%A7%80%EC%A0%95)%20mpv/readme.org%20emms.org%0A(%0A%20%20(from_pos%20(line-beginning-position%201))%20;;%20%EC%9E%84%EC%8B%9C%EB%A1%9C%20%EC%82%AC%EC%9A%A9%ED%95%98%EB%AF%80%EB%A1%9C%20%EC%8B%A4%EC%A0%84%EC%97%90%EC%84%A0%20%EC%82%AD%EC%A0%9C%ED%95%A0%20%EA%B2%83%0A%20%20(to_pos%20%20%20(line-end-position%201))%20%20%20%20%20%20%20;;%20%EC%9E%84%EC%8B%9C%EB%A1%9C%20%EC%82%AC%EC%9A%A9%ED%95%98%EB%AF%80%EB%A1%9C%20%EC%8B%A4%EC%A0%84%EC%97%90%EC%84%A0%20%EC%82%AD%EC%A0%9C%ED%95%A0%20%EA%B2%83%0A%20%20(from_pos%20(line-beginning-position%202))%20;;%20Get_below_file_to_play%EC%9C%84%EC%B9%98%EB%A5%BC%20%0A%20%20(to_pos%20%20%20(line-end-position%202))%20%20%20%20%20%20%20;;%20Get_below_file_to_play%EC%9C%84%EC%B9%98%EB%A5%BC%20%0A%20%20(len%20(-%20to_pos%20from_pos))%0A%20%20(crude%20(buffer-substring-no-properties%20from_pos%20to_pos))%0A%20%20(ending%20%20%20(string-match%20"\".*\""%20(reverse%20crude)))%0A%20%20(starting%20(string-match%20"\".*\""%20%20%20%20%20%20%20%20%20%20crude))%0A%20%20(get_path%20(substring%20crude%20(+%20starting%201)%20(-%20len%20ending%201)))%0A)%0A;;(message%20"%25s"%20get_path)%20;;%20%EA%B2%B0%EA%B3%BC%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%84%B1%EA%B3%B5!%EC%9D%B4%EB%AF%80%EB%A1%9C%20%EC%8B%A4%EC%A0%84%EC%97%90%EC%84%9C%EB%8A%94%20%EC%82%AD%EC%A0%9C%ED%95%98%EA%B3%A0%20%EC%95%84%EB%9E%98%EC%9D%98%20%EB%AC%B8%EC%9E%A5%EC%9D%84%20%EC%8B%A4%ED%96%89%ED%95%98%EB%A9%B4%20%EB%90%A8%0A;;%20(mpv-start%20"%ED%8C%8C%EC%9D%BC/%EC%9C%84%EC%B9%98/%ED%8C%8C%EC%9D%BC%EB%AA%85")%20;;%20%EC%95%84%EB%9E%98%EC%97%90%EC%84%9C%20%EC%8B%A4%ED%96%89%ED%95%98%EA%B2%8C%20%EB%90%A8.%0A%20(mpv-start%20get_path)%0A)][elisp:(mpv-start "바로아래문장추출로 실행됨")]]
+  - "/home/thinkpad/Music/mpv_files/1_J. S. Bach  -  'Jesus bleibet meine Freude' BWV 147-d9EN27Zh_vg.webm"
+  - "/home/thinkpad/Music/mpv_files/3_Bach 바하-브란덴부르그 협주곡 3 번 1 악장 LP.mp3"
+  
+[[elisp:(mpv-pause)]] (mpv-start "/home/thinkpad/Music/mpv_files/1_파헬벨-☆캐논 변주곡(에반게리온).mp3")) [[elisp:(mpv-kill)]]
+
+ - 0:03:04 :: 연구가 필요한 점이 있을 것이다
+ - 0:03:08 ::
+ - 0:00:00 :: [[elisp:mpv-seek-to-position-in-timer-ljp]] [[elisp:(save-excursion%20(forward-paragraph)%20(backward-paragraph)%20(backward-word)%20(move-end-of-line%20nil)%20(mpv-insert-playback-position%20(quote%20-))%20(%20sleep-for%201))][elisp:(mpv-insert-playback-position-LJP)]]
+ - 0:00:38 ::
+ - 0:00:41 ::
+ - 0:00:44 ::
+ - 0:00:45 ::
+ - 0:01:13 ::
+ - 0:00:41 ::
+ - 0:00:43 :: 
+
+
+asdfa.
+ - 0:00:00 :: [[elisp:mpv-seek-to-position-in-timer-ljp]] [[elisp:(save-excursion%20(forward-paragraph)%20(backward-paragraph)%20(backward-word)%20(move-end-of-line%20nil)%20(mpv-insert-playback-position%20(quote%20-))%20(%20sleep-for%201))][elisp:(mpv-insert-playback-position-LJP)]]  (mpv-insert-playback-position-ljp (quote -))
+ - 0:06:20 ::
+ - 0:06:22 ::
+ - 0:06:23 ::
+ - 0:06:25 ::
+ - 0:06:26 ::
+ - 0:06:27 ::
+ - 0:02:49 ::
+ - 0:02:52 :: 
+
+
+
+
+
+
+
+
+
+jh;lkj;lkj
+
+
+
+
+
+
+ - 0:00:01 :: 
+
+sdfja.sadf.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+kjhlkj.
+ - 0:01:20 :: (progn (forward-paragraph) (backward-paragraph) (backward-word) (move-end-of-line nil))
+ - 0:01:21 :: (end-of-paragraph-text)
+ - 0:01:22 :: x
+ - 0:01:28 ::    asdfasd0:11:080:11:130:13:030:13:450:13:490:13:530:14:020:14:050:14:080:14:09
+
+
+(mpv-insert-playback-position-ljp) 
+(defun mpv-insert-playback-position-ljp (&optional arg)
+  "Insert the current playback position at point.
+
+mpv-seek-to-position-at-point 을 변경해서 사용함
+When called with a non-nil ARG, insert a timer list item like `org-timer-item'."
+
+  (interactive "P")
+
+(save-excursion
+(forward-paragraph) (backward-paragraph) (backward-word) (move-end-of-line nil)
+  (let ((buffer (current-buffer)))
+    (mpv--enqueue '("get_property" "playback-time")
+              (lambda (time)
+                (with-current-buffer buffer
+                  (funcall
+                   (if arg #'mpv--position-insert-as-org-item #'insert)
+                   (org-timer-secs-to-hms (round time)))))))))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  (interactive)
+(prog1 (mpv-insert-playback-position) (sleep-for 1))
+)
+)
+
+
+ (&optional arg)
+  "Insert the current playback position at point.
+
+When called with a non-nil ARG, insert a timer list item like `org-timer-item'."
+  (interactive "P")
+  (let ((buffer (current-buffer)))
+    (mpv--enqueue '("get_property" "playback-time")
+              (lambda (time)
+                (with-current-buffer buffer
+                  (funcall
+                   (if arg #'mpv--position-insert-as-org-item #'insert)
+                   (org-timer-secs-to-hms (round time))))))))
+
+
+
+
+asdfas
+
+
+sdfasdf.
+ - 0:01:29 ::
+ - 0:01:30 :: (skip-chars-forward ":[:digit:]" (point-at-bol))   afasd 1:02:02 test 
+ - 0:01:31 ::(skip-chars-forward "[a-z]" (point-at-bol))abd   afasd 1:02:02 test 
+ - 0:01:31 :: (let ((secs 33))
+   
+(when (looking-at "[0-9]+:[0-9]\\{2\\}:[0-9]\\{2\\}")
+      (let ((secs (org-timer-hms-to-secs (match-string 0))))
+          (mpv--enqueue `("seek" ,secs "absolute") #'ignore))
+)
+;; 성공적으로 실행됨을 확인함
+
+
+;; 중단되어서 다른방법으로 우회함(skip-chars-forward "[^0-9]*" (point-at-eol)) 연구나중에
+[[elisp:mpv-seek-to-position-in-timer-ljp]]
+mpv-seek-to-position-in-timer-ljp
+(defun mpv-seek-to-position-in-timer-ljp ()
+  "Jump to playback position as inserted by `mpv-insert-playback-position'.
+
+mpv-seek-to-position-at-point 을 변경해서 사용함"
+  (interactive)
+  (save-excursion
+   (move-beginning-of-line 2) (forward-whitespace 1) (forward-char 2)
+   (when (looking-at "[0-9]+:[0-9]\\{2\\}:[0-9]\\{2\\}")
+      (let ((secs (org-timer-hms-to-secs (match-string 0))))
+          (mpv--enqueue `("seek" ,secs "absolute") #'ignore))
+    )
+  )
+)
+
+     
+          (mpv--enqueue `("seek" ,secs "absolute") #'ignore)))
+ - 0:01:32 ::
+ - 0:01:34 ::
+ - 0:01:35 ::
+ - 0:01:36 ::
+ - 0:01:37 ::
+ - 0:04:15 :: 
+ - 0:03:27 :: 
+ - 0:01:04 :: 0:02:52
+
+ - 0:01:01 :: 
+ - 0:00:58 :: 
+ - 0:00:33 :: 
+ - 0:00:29 :: 
+ - 0:00:27 :: 
+ - 0:00:15 ::
+ - 0:00:00 ::
+ - 0:00:01 :: 
+ - 0:01:24 :: (progn (mpv-seek-to-position-at-point)(sleep-for 3) (mpv-seek-to-position-at-point))0:01:24
+ - (when (looking-at "[0-9]+:[0-9]\\{2\\}:[0-9]\\{2\\}")
+       (let ((secs (org-timer-hms-to-secs (match-string 0))))
+         (when (> secs 0)
+           (mpv--enqueue `("seek" ,secs "absolute") #'ignore))) 00:01:24 :: 
+ - 0:01:24.82 :: 
+ - 0:01:11 :: 
+ - 0:01:04 :: (mpv-seek-to-position-at-point)
+(emms-pause)
+놀라움 그자체 시간을 자동으로 기록하게 되면 그 시간의 위에서 다시 시작하는 기능을 보인다.
+(mpv-pause)
+mpv-seek-to-position-at-point
+(emms-player-simple-mpv-playlist-pos)
+
+help:emms-player-simple-mpv-playlist-mode-play-at 리스트에서 순서위치에 대기하는 것 같음
+
+(progn
+(emms-player-simple-mpv-seek-to (+ (* 60 1) 2))
+(emms-player-simple-mpv-ab-loop)
+(emms-player-simple-mpv-seek-to (+ (* 60 1) 5))
+(emms-player-simple-mpv-ab-loop)
+)
+
+
+(emms-player-simple-mpv--ab-loop-1)
+(emms-player-simple-mpv-ab-loop-2)
+#+begin_src emacs-lisp
+;; An example of setting like emms-player-mplayer.el
+;; `emms-player-my-mpv' is defined in this case.
+(define-emms-simple-player-mpv my-mpv '(file url streamlist playlist)
+    (concat "\\`\\(http[s]?\\|mms\\)://\\|"
+            (apply #'emms-player-simple-regexp
+                   "aac" "pls" "m3u"
+                   emms-player-base-format-list))
+    "mpv" "--no-terminal" "--force-window=no" "--audio-display=no")
+
+(emms-player-simple-mpv-add-to-converters
+ 'emms-player-my-mpv "." '(playlist)
+ (lambda (track-name) (format "--playlist=%s" track-name)))
+
+(add-to-list 'emms-player-list 'emms-player-my-mpv)
+
+(dolist (map (list emms-playlist-mode-map
+;;                   emms-stream-mode-map
+))
+  (define-key map (kbd "m") 'emms-player-simple-mpv-mute)
+  (define-key map (kbd "[") 'emms-player-simple-mpv-speed-decrease)
+  (define-key map (kbd "]") 'emms-player-simple-mpv-speed-increase)
+  (define-key map (kbd "{") 'emms-player-simple-mpv-speed-halve)
+  (define-key map (kbd "}") 'emms-player-simple-mpv-speed-double)
+  (define-key map (kbd ";") 'emms-player-simple-mpv-ab-loop)
+  (define-key map (kbd "<backspace>") 'emms-player-simple-mpv-speed-normal)
+  (define-key map (kbd "T") 'emms-player-simple-mpv-ontop)
+  (define-key map (kbd "F") 'emms-player-simple-mpv-fullscreen)
+  (define-key map (kbd "9") 'emms-volume-lower)
+  (define-key map (kbd "0") 'emms-volume-raise))
+
+(let ((map emms-playlist-mode-map))
+  (define-key map (kbd ",") 'emms-player-simple-mpv-playlist-prev)
+  (define-key map (kbd ".") 'emms-player-simple-mpv-playlist-next))
+;; Playing YouTube playlist in reverse order.
+;; `emms-player-my-mpv-ytpl-reverse' will be defined in this case.
+(define-emms-simple-player-mpv my-mpv-ytpl-reverse '(url)
+  "\\`http[s]://www\\.youtube\\.com/playlist\\?list="
+  "mpv" "--no-terminal" "--force-window=no" "--audio-display=no"
+  "--ytdl" "--ytdl-raw-options=playlist-reverse=")
+
+(add-to-list 'emms-player-list 'emms-player-my-mpv-ytpl-reverse)
+#+end_src
+
+#+RESULTS:
+| emms-player-my-mpv-ytpl-reverse | emms-player-my-mpv |
+
+
+
+#+end_quote
+
+* org-emms
+  :꺽쇄s탭단축키로저장된yasnappet_angle_s_tab:  
+
+file:/home/thinkpad/Music/mpv_files/1_greek_roman_heros_wings.mp4
+  #+BEGIN_TEXT org :what_in_your_Mind? 
+- Core_location: file:../../app/emacs/readme.org
+daiary?, loding_file?, 
+
+
+org-emms is an available package.
+
+     Status: Available from melpa -- Install
+    Archive: melpa
+    Version: 20181010.1114
+     Commit: 07a8917f3d628c32e5de1dbd118ac08203772533
+    Summary: Play multimedia files from org-mode
+   Requires: emacs-24
+   Homepage: https://gitlab.com/jagrg/org-emms
+   Keywords: multimedia 
+
+This package provides a new org link type for playing back
+multimedia files from org-mode using EMMS, The Emacs Multimedia
+System. If the link contains a track position, playback will start
+at the specified position. For example:
+# 현재 잘 되지 않음 연구필요함
+[[emms:/path/to/audio.mp3::2:43]]     Starts playback at 2 min 43 sec.
+[[emms:/path/to/audio.mp3::1:10:45]]  Starts playback at 1 hr 10 min 45 sec.
+[[emms:/path/to/audio.mp3::49]]       Starts playback at 0 min 49 sec.
+
+The two main commands are `org-emms-insert-track' and
+`org-emms-insert-track-position'. The latter is especially useful
+for aligning text with audio when transcribing spoken language.
+
+It is also possible to make a usual org link (with `org-store-link'
+command) from EMMS playlist and browser buffers, and then insert it
+into an org-mode buffer (with `org-insert-link' command).
+
+See also: http://orgmode.org/worg/code/elisp/org-player.el
+
+  #+END_TEXT
+  :목표범위를 정하고 아래로 내릴 것
+- 
+#+begin_src emacs-lisp :results silent
+(message "")
+;; 원리를 발견하고 충분한 단련과 습관이 없으면 무용지물이다
+#+end_src
+
+- 
+#+begin_src sh :results silent
+espeak -a 20 -v other/la "amare"
+#
+
+#+end_src
+
+  :END:
+

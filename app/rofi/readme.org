@@ -10,3 +10,22 @@ touch "./test_manage_list_from_rofi_dmenu.org"
 (find-file "./test_manage_list_from_rofi_dmenu.org")
 
 
+* rofi in emacs in EXWM
+#+begin_quote sh
+
+(start-process "pdf okular" nil "okular" ;; 빠른 단축으로 만드는 것은 C-c C-l elisp: 를 사용해서 넣으면 됨
+    "/home/thinkpad/Music/iliad_homer_with_an_interlinear_translation.pdf"
+    "-p" "6")
+#+end_quote
+#+begin_src sh
+(start-process "rofi_in_emacs3" nil "rofi" ;; 빠른 단축으로 만드는 것은 C-c C-l elisp: 를 사용해서 넣으면 됨
+    "-show"
+;goldendict의 단어를 보기위해서 창의 이동이 필요한 것이다.    "-p" "6"
+)
+static const char *roficmd[] = { "rofi", "-combi", "window,run", "-show", "combi", NULL };
+(start-process "rofi_in_emacs3" nil "rofi" ;; 빠른 단축으로 만드는 것은 C-c C-l elisp: 를 사용해서 넣으면 됨
+    "-combi" "window,run" "-show" "combi"
+;xmonad에서 창을 이동하는 법을 연구하는 중이다.
+)
+#+end_src
+* gmrun in xmonad install by yay gmrun

@@ -1,0 +1,19 @@
+- 곳곳에 흩어진 관련을 이곳으로 모을 것.
+
+#+begin_src emacs-lisp :results silent
+(message "원리를 발견하고 충분한 단련과 습관이 없으면 무용지물이다")
+#+end_src
+
+
+
+*** awk with wmctrl
+#+begin_src sh :results silent
+#!/usr/bin/bash
+
+wmctrl -lx | awk
+BEGIN{}
+$3 ~ "Sublime_text$" {print}
+END{}
+# https://youtu.be/ifz_hsmEzhw
+#+end_src
+

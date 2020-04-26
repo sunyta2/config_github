@@ -1,21 +1,38 @@
 
-빠르게 이 문서를 열기위한 ESC ESC 숫자의 설정은 interactive한 command명만 수용함을 확인함
+
+** 키보드 자판익힘
+QWERT YUIOP
+ASDFG HJKL;
+ZXCVB NM,./
+CsM
+
+ㅂㅈㄷㄱㅅ ㅛㅕㅑㅐㅔ
+ㅁㄴㅇㄹㅎ ㅗㅓㅏㅣ;
+ㅋㅌㅊㅍㅠ ㅜㅡ, ./
+그리스어의 화면을 붙여서 만든 글자를 확대해서 그림으로 보낸다음, 바탕화면에 보낸다.
+자판을 익히는 것에 큰 도움이 될 것이다.
+
+** 빠르게 이 문서를 열기위한 ESC ESC 숫자의 설정은 interactive한 command명만 수용함을 확인함
                 file:../../app/emacs/esc_esc_num.org
+람다함수구조있음 → file:../../app/emacs/syntax_of_global_set_key_in_emacs.org
 즉 "interactive"를 넣어서 새로운 함수를 만들어야 했음
 - 함수안에서 함수를 생성시키는 것이 가능하다면
 - (ESC_M_num "파일명" "숫자") 수행하는 것이 가능할 것이다. 
 file:../../app/emacs/global_set_key_kbd.org
 
 
-
-
+file:../../app/emacs/add_hook.org
+help:global-set-key help:global-unset-key disable key
+help:local-set-key
+help:exwm-input-set-key (exwm-input-set-key (kbd "s-$") '원하는것이exwm창에서실행되게함) file:exwm.org
+;; exwm.org의 경우 exwm-input-set-key is an interactive autoloaded compiled Lisp function help:exwm-input-set-key
 - [ ] (start-process "emacs_pdf okular" nil "okular" ;; 빠른 단축으로 만드는 것은 C-c C-l elisp: 를 사용해서 넣으면 됨
   "-p" (int-to-string (+ 57 24)) ;-p 57; query_string.org
   "/home/thinkpad/Documents/learning_gnu_emacs.pdf" )
 
+help:interactive
 
-
-
+help:define-prefix-command
 
 *** note of youtube
 

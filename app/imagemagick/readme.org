@@ -1,0 +1,48 @@
+imagemagick install but not found convert
+solved by yay imagemagick after pacman -Ssy
+
+* insert text using convert CMD
+
+#+begin_src sh :results silent
+#convert -pointsize 20 -fill yellow -draw 'text 270,460 "Sunset over the Nile" ' sunset1.jpg sunset2.jpg
+convert -pointsize 50 -fill yellow -draw 'text 270,460 "한글연습" '  ~/config_github/pictures_sync/aristotle_bust1.jpg  ~/config_github/pictures_sync/aristotle_bust1_text_added.jpg
+
+convert -pointsize 50 -fill yellow -draw 'text 270,460 "1한글
+2연습
+3" '  ~/config_github/pictures_sync/aristotle_bust1.jpg  ~/config_github/pictures_sync/aristotle_bust1_text_added.jpg
+
+# Note:
+## -pointsize 20: this is the size of the letter (there are 72 points per inch)
+## -fill yellow: this is the fill color of the text
+## -draw 'text 270,460 "Sunset over the Nile" ': start 270 pixels from the left and 460 pixels from the top
+
+#+end_src
+
+
+#+begin_src sh :results silent
+### pdf 페이지를 화면 배경으로 설정하여 지식의 습득을 넓힌다.
+## [[https://askubuntu.com/questions/50170/how-to-convert-pdf-to-image][software recommendation - How to convert PDF to Image? - Ask Ubuntu]]
+
+# pdftoppm input.pdf outputname -png -f {page} -singlefile
+convert -density 150 /home/thinkpad/Music/basics_of_biblical_greek_william_d_mounce/basics_of_biblical_greek.pdf[8] -quality 90 output.png 
+convert -density 150 input.pdf[666] -quality 90 output.png 
+# convert: attempt to perform an operation not allowed by the security policy `gs' @ error/delegate.c/ExternalDelegateCommand/378.
+# convert: no images defined `output.png' @ error/convert.c/ConvertImageCommand/3282.
+#solution → /etc/ImageMagick-7/policy.xml file and removing PDF from <policy domain="coder" rights="none" pattern="{PS,PS2,PS3,EPS,PDF,XPS}" /> 
+# (find-file "/sudo::/etc/ImageMagick-7/policy.xml") ;; 편집해도 안되서 결국 우회함
+
+pdfimages -j /home/thinkpad/Music/basics_of_biblical_greek_william_d_mounce/basics_of_biblical_greek.pdf -p -f 8 -l 12
+
+#+end_src
+
+* which convert
+→ /usr/bin/convert
+
+
+convert image add text in terminal 
+[[https://www.instructables.com/id/Add-text-to-images-with-Linux-convert-command/][Add Text to Images With Linux 'convert' Command : 3 Steps - Instructables]]
+
+- youtube동영상 검색결과 [[https://duckduckgo.com/?q=image+magic&t=brave&iar=videos&iax=videos&ia=videos&iai=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DnbXHbHrfrIs][image magic at DuckDuckGo]] → 많은 자료가 있으므로 살펴고고 연구할 것이 많다.
+
+* config_github/pictures_sync/readme.org 사용의 장소
+file:../../pictures_sync/readme.org

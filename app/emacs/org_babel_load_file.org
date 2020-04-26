@@ -110,6 +110,7 @@ indent in org startup by customize
 (global-set-key (kbd "<f5>") 'revert-buffer)
 
 
+(org-babel-load-file (expand-file-name "~/.emacs.d/myinit.org"))
 ;; (find-file (expand-file-name "~/config_github/app/emacs/org_babel_load_file.org"))
 ;; (find-file (expand-file-name "~/config_github/app/emacs/shell_emacs/emacsQ_load.el"))
 
@@ -123,7 +124,7 @@ indent in org startup by customize
 - (customize-group "org-capture") 
 - /home/thinkpad/.emacs.d/init.el
 - file:/home/thinkpad/org/capture_possible.el
-#+BEGIN_SRC elisp
+#+BEGIN_SRC elisp :results silent
 ;; "~/config_github/great_books/_achieve_agenda/2020_03_diary_spacemacs.org"
 (require 'org-capture)
 (require 'org-protocol)

@@ -1,0 +1,87 @@
+
+** 
+  :꺽쇄s탭단축키로저장된yasnappet_angle_s_tab:  
+  #+BEGIN_TEXT org :if문등의 효과적인 사용법
+
+- Core_location: file:../../app/emacs/if_cond_while_when_case_in_elisp.org.org
+daiary?, loding_file?, 
+
+  #+END_TEXT
+  :목표범위를 정하고 아래로 내릴 것
+- 
+#+begin_src emacs-lisp :results silent
+(message "")
+;; 원리를 발견하고 충분한 단련과 습관이 없으면 무용지물이다
+#+end_src
+
+- 
+#+begin_src sh :results silent
+espeak -a 20 -v other/la "amare"
+#
+
+#+end_src
+
+  :END:
+
+
+** 
+  :꺽쇄s탭단축키로저장된yasnappet_angle_s_tab:  
+  #+BEGIN_TEXT org :what_in_your_Mind? 
+- Core_location: file:../../app/emacs/if_cond_while_when_case_in_elisp.org
+daiary?, loding_file?, 
+
+  :목표범위를 정하고 아래로 내릴 것
+- 
+#+begin_src emacs-lisp :results silent
+
+(setq WM
+   (substring 
+     (shell-command-to-string " wmctrl -m | head -n1 | cut -f 2 -d : | sed -e 's/^[[:space:]]*//' ")
+   0 -1)
+)
+(cond ;; 잘 작동 wm조건문으로 기록 /app/emacs/if_cond_while_when_case_in_elisp.org
+     ( (cl-equalp WM "ExWm")    (message "this is Exwm") )
+     ( (cl-equalp WM "stumpwm") (message "good") (sleep-for 3) (message "this is stumpwm") )
+     ( t (message "this is else") )
+)
+
+
+(cl-equalp WM "ExWm")
+(case WM 
+        ("exwm" (message "hi"))
+        ("EXWM2" (message "hi2"))
+        (t (message "hi3"))
+)
+
+;; 원리를 발견하고 충분한 단련과 습관이 없으면 무용지물이다
+#+end_src
+help:if
+help:if-let*
+help:case
+
+help:cond
+(defun test:case (INPUT)
+  (cond
+    ((equal INPUT "a") (message "bar"))
+    (t (message "foo"))))
+
+(test:case "A")
+
+help:pcase
+(defun test-case (input)
+  (message
+   (pcase input
+     ("a" "bar")
+     ("b" "baz")
+     ("c" "quux")
+     (_ "foo"))))
+
+(message (if (equal INPUT "a") "bar" "foo"))
+#+begin_src sh :results silent
+espeak -a 20 -v other/la "amare"
+#
+
+#+end_src
+
+  #+END_TEXT
+  :END:

@@ -7,7 +7,34 @@ bookmark_rust_manual.org
 [[file:///home/thinkpad/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/book/ch01-03-hello-cargo.html][Hello, Cargo! - The Rust Programming Language]]
 (async-shell-command "brave --incognito 'file:///home/thinkpad/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/book/ch01-03-hello-cargo.html'")
 
-
+(eww "file:///home/thinkpad/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/book/ch01-03-hello-cargo.html")
 bookmark_rust_manual.org of Rust_Programming_language_in_Brave_incognito
+(eww "file:/home/thinkpad/Desktop/pust_Learn Rust in Y Minutes.html")
+(eww "file:/home/thinkpad/Desktop/GitHub - tumashu_exwm-x_ A derivative WM based on EXWM (emacs x window manager).html")
+** 메뉴얼읽기등 Rust_공부자료
+- 북마크로 가는 것과 리스트를 모아둘 것
+:rust_study:
+#+begin_quote org :note and library
+- 메뉴얼읽기등 Rust_공부자료 중심 - file:../../language_computer/rust/bookmark_rust_manual.org 여기를  Rust 학습정리중심부로 사용할 것
+- 메뉴얼읽기등 Rust_공부자료 주변 - file:~/Desktop/pdf_list_of_desktop.org
+- 메뉴얼읽기등 Rust_공부자료 주변 - file:~/config_github/language_computer/rust/test_rust/hello_cargo/hello_cargo.org
+#+BEGIN_SRC emacs-lisp
+(eww "file:///home/thinkpad/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/book/ch01-03-hello-cargo.html")
 
+(start-process "pdf okular" nil "okular" ;; 빠른 단축으로 만드는 것은 C-c C-l elisp: 를 사용해서 넣으면 됨
+ "/home/thinkpad/Documents/rust_programming.pdf" ;; 
+ "-p" "" ) ;; - page for -
+ "-p" "" ) ;; - page for -
+(start-process "pdf okular" nil "okular" ;; 빠른 단축으로 만드는 것은 C-c C-l elisp: 를 사용해서 넣으면 됨
+"/home/thinkpad/Documents/rust_programming.pdf"
+ "-p 18") eww in rust/readme.org
+ "-p" "" ) ;; - page for -
+ "-p" "" ) ;; - page for -
+
+
+#+END_SRC
+#+end_quote
+
+
+:END:
 

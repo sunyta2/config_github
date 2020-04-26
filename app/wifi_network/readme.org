@@ -47,3 +47,22 @@ nc발견! 연구필요함. nc 로 실행하는 (Advanced Network Configuration) 
 	   $ cat /etc/fstab # 파일설정이지만 잘 알아 둘 것.
 	#+END_SRC
 
+* wifi 2G/5G 창녕
+  :꺽쇄s탭단축키로저장된yasnappet_angle_s_tab:  
+  #+BEGIN_TEXT org :what_in_your_Mind? 
+- 목표를 정하고 위로 들어올릴 것
+- Core_location: /wifi_network/readme.org
+- systemctl status "netctl@wlp3s0\\x2dKT_GiGA_2G_Wave2_6949.service"" and "journalctl -xe"
+ge0adz3174  status "netctl@wlp3s0\\x2dKT_GiGA_5G_Wave2_6949.service"" and "journalctl -xe"
+
+#+begin_src emacs-lisp :results silent
+(message "어디에 저장되었는지를 정확히 파악하여 원인을 정확히 파악할 것.")
+#+end_src
+
+- 
+#+begin_src emacs-lisp :results silent
+
+#+end_src
+  #+END_TEXT
+  :END:
+

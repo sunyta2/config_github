@@ -8,6 +8,170 @@ help:whitespace-cleanup-region
 (whitespace-cleanup-region START END)
  START END)
 
+
+** 아래의 형식으로 만들 내용들
+C-M-\
+   ;(indent-region START END &optional COLUMN)
+  M-\
+(delete-horizontal-space &optional BACKWARD-ONLY)
+     whitespace
+
+cf. M-/
+(dabbrev-expand ARG)
+Expand previous word "dynamically"
+ to the most recent, preceding word for which this is a prefix.
+C-M-/
+ ‘dabbrev-abbrev-char-regexp’
+start_1
+start_2
+start_3 asd calendar-cursor-to-date
+start_3
+start_4\\\ help: 만들기 쉬운 구조를 형성하기 좋다. 즉 C-h f를 누르고 함수 목록을 호출한 다음 필요한 부분을 당겨오면 가능하므로!
+
+file: 구조도 쉽지 않을까 config_git/app/emacs/ src_1_line_execute.org src_tab_org_structure_completion_template.org
+config_git/ 한 칸 띄워서 dired C-x C-f 로 불러낸 파일리스트나 목록에서 자동완성됨을 발견함
+help.org info.org 등록할 것.
+
+/home/thinkpad/config_github/hardware/
+
+
+** org_src_block_내부노트_모듈화_copy용_1형
+
+:미주제1:
+
+
+#+begin_test org :목적=최고의 발성은 집중력강화의 비결이다!
+
+- 강점: 
+- 
+ #+begin_center sh
+# 문맥에 맞는 추론을 하는 것은 중요하다.
+
+ #+end_center
+
+
+- [ ] 구조파악할 것 ← 내부구조가 정확해야 활용을 높일수 있다
+ #+begin_src sh :results table
+  
+  # 서열의 순서파악함. * > : > #+오그 > - [ ] > #+src
+ #+end_src
+  #+RESULTS:
+  | #+RESULTS: 결과를 줄에 맞도록 띄울 것 hi2야호 |
+ #+begin_src elisp :results table
+
+   ;(indent-region START END &optional COLUMN)
+ #+end_src
+  #+RESULTS:
+-      -> 구조파악할 것 > 범원리를 간략축적하고 > 이후연구,활용방향,추가필요 기록할 것
+
+
+
+
+
+- 발굴의_과정들
+ #+begin_src sh
+   # 발굴되기 전에는 모든 것이 모르는 것이다!
+
+   for i in 1 2
+   do
+
+       for i in 1 2
+       do
+           printf "hi"
+
+           printf "hi"   
+       done
+   done
+      echo history
+   echo '#+RESULTS: 결과를 줄에 맞도록 띄울 것hi2야호'
+   # [[ end   ]]
+
+ #+end_src
+  #+RESULTS:
+
+
+- 문맥의 핵심부분을 다시 상기하는 과정을 최대한 단축하는 것이 오그모드의 최고 능력이다.
+- 노트능력의 중요성- 문맥을 저장하는 기능이 필요함. 설득을 하려면 맥락이 중요하며, 중요한 맥락속에서 스토리를 전개하는 것이 필수적이다.
+
+
+#+end_test
+
+
+
+           :end:
+
+
+
+
+
+** org_src_block_내부노트_모듈화_copy용_1형
+
+:미주제1:
+
+
+#+begin_test org :목적=최고의 발성은 집중력강화의 비결이다!
+
+- 강점: 
+- 
+ #+begin_center sh
+# 문맥에 맞는 추론을 하는 것은 중요하다.
+
+ #+end_center
+
+
+- [ ] 구조파악할 것 ← 내부구조가 정확해야 활용을 높일수 있다
+ #+begin_src sh :results table
+  
+  # 서열의 순서파악함. * > : > #+오그 > - [ ] > #+src
+ #+end_src
+  #+RESULTS:
+  | #+RESULTS: 결과를 줄에 맞도록 띄울 것 hi2야호 |
+ #+begin_src elisp :results table
+
+   ;(indent-region START END &optional COLUMN)
+ #+end_src
+  #+RESULTS:
+-      -> 구조파악할 것 > 범원리를 간략축적하고 > 이후연구,활용방향,추가필요 기록할 것
+
+
+
+
+
+- 발굴의_과정들
+ #+begin_src sh
+   # 발굴되기 전에는 모든 것이 모르는 것이다!
+
+   for i in 1 2
+   do
+
+       for i in 1 2
+       do
+           printf "hi"
+
+           printf "hi"   
+       done
+   done
+      echo history
+   echo '#+RESULTS: 결과를 줄에 맞도록 띄울 것hi2야호'
+   # [[ end   ]]
+
+ #+end_src
+  #+RESULTS:
+
+
+- 문맥의 핵심부분을 다시 상기하는 과정을 최대한 단축하는 것이 오그모드의 최고 능력이다.
+- 노트능력의 중요성- 문맥을 저장하는 기능이 필요함. 설득을 하려면 맥락이 중요하며, 중요한 맥락속에서 스토리를 전개하는 것이 필수적이다.
+
+
+#+end_test
+
+
+
+           :end:
+
+
+
+
 * indent-rigidly 영역을 선택후 C-x tab으로 연속적인 방향키로 성정하는 놀라운 발견 file:../../app/emacs/indent_whitespace.org
 help:indent-rigidly
 C-x TAB (translated from C-x <tab>) runs the command indent-rigidly
@@ -32,6 +196,10 @@ end of the text to act on, in place of the region.
 Negative values of ARG indent backward, so you can remove all
 indentation by specifying a large negative ARG.
 
+* C-q Tab 탭의 기능을 살리는 것이 가능해짐 (C-숫자 원하는 횟수만큼 연속실행도 가능함.) 미니버퍼에서도 작동됨.
+* 기타등등
+- C-M-\ auto-indent a region이라는데 잘 모르겠음.
+- (org-indent-drawer) C-c C-x d로 만들어진 것을 다루는 것임.
 
 * trim함수발견
 - 추출한 파일명의 자동으로 클린한 상태를 만드는 것으로 추정함.

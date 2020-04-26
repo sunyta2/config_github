@@ -1,0 +1,30 @@
+#+begin_src emacs-lisp :results silent
+(message "원리를 발견하고 충분한 단련과 습관이 없으면 무용지물이다")
+#+end_src
+
+
+#+begin_src sh :results silent
+#!/bin/sh
+#
+# ~/.xinitrc
+#
+# Executed by startx (run your window manager from here)
+
+if [ -d /etc/X11/xinit/xinitrc.d ]; then
+  for f in /etc/X11/xinit/xinitrc.d/*; do
+    [ -x "$f" ] && . "$f"
+  done
+  unset f
+fi
+
+case $1 in
+    awesome) exec ck-launch-session dbus-launch --sh-syntax --exit-with-session awesome ;;
+    dwm) exec ck-launch-session dbus-launch --sh-syntax --exit-with-session dwm ;;
+    ratpoison) exec ck-launch-session dbus-launch --sh-syntax --exit-with-session ratpoison ;;
+    rox) rox -b Default -p default; exec ck-launch-session dbus-launch --sh-syntax --exit-with-session awesome ;;
+    xmonad) exec ck-launch-session dbus-launch --sh-syntax --exit-with-session xmonad ;;
+    #stumpwm) exec ck-launch-session dbus-launch --sh-syntax --exit-with-session stumpwm ;;
+    stumpwm) exec ck-launch-session dbus-launch --sh-syntax --exit-with-session --output /bin/mystumpwm --lisp "sbcl clisp" --system stumpwm --init '(stumpwm:stumpwm ":0")';;
+esac
+#+end_src
+

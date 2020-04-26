@@ -1,0 +1,29 @@
+file:./lsmod.org
+
+https://youtu.be/oITlgf7SLck
+
+
+Input/Output architectures https://www.youtube.com/watch?v=hyXGB8UYDVg
+라틴계남성의 손노트필기 12분짜리  
+
+
+*** How to use Linux part 1 Linux boot process Note
+https://www.youtube.com/watch?v=oITlgf7SLck&feature=youtu.be
+https://youtu.be/oITlgf7SLck?t=5
+https://www.youtube.com/watch?v=oITlgf7SLck&t=1m
+
+BIOS → MBR → Boot Loader(GRUB/LILO) → Kernel and initrd/initramfs
+→ Init/Systemd
+runlevel
+systemctl get-default
+systemctl set-default *****.target
+systemctl isolate
+
+BIOS → Boot Loader → Kernel → Init (User Space Configuration)
+→ Login Prompt
+/var/log same as dmesg
+sudo init 1 ;; not do in 
+cd /etc/init/ && less rc-sysinit.conf
+env DEFAULT_RUNLEVEL=2 in ubuntu but not in arch
+/etc/rc.d Start-up Scripts
+

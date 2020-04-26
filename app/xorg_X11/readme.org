@@ -1,0 +1,46 @@
+
+* 먼저 전체구조를 파악할 것
+의문점: 각 파일의 특성을 이해할 것 xinit xsession xresource /etc/x11 ~/의 닷파일의 상관관계
+/etc/X11/xinit/xinitrc
+/etc/X11/xinit/xinitrc.d/40-libcanberra-gtk-module.sh
+/etc/X11/xinit/xinitrc.d/50-systemd-user.sh
+/etc/X11/xinit/xinitrc.d/90-consolekit
+/etc/X11/xinit/xinitrc.d/swap_alt_win_super.sh
+/etc/X11/xorg.conf.d/00-keyboard.conf
+/etc/X11/xorg.conf.d/99-killX.conf
+
+~/.Xauthority 
+~/.Xdefaults 
+file:~/.xinitrc  (find-file "~/.xinitrc")
+~/.Xresources 
+~/.xsession 
+~/.xsession-errors 
+~/.xsessionrc
+부팅의 과정을 구별해서 알아 볼 것.
+
+* 한글의 입력
+
+** scim성공적인 것 같았음 arco에서
+# 아래내용이 /etc/X11/xinit/xinitrc
+export XMODIFIERS="@im=SCIM"	# 아래의 4문장을 scim의 실행을 위해 임시로 실행함.
+export GTK_IM_MODULE=scim
+export QT_IM_MODULE=scim
+scim -d
+
+* Mod ~/.Xmodmap
+예전에 설정한 것을 돌리는 것을 발견할 것!
+아마도 아래의 내용과 유사할 것으로 추정됨.
+
+in ~/.profile :
+
+export PATH=/Users/me/.cabal/bin:$PATH
+export USERWM=`which xmonad`
+in ~/.xinitrc :
+
+source ~/.profile
+exec $USERWM
+in ~/.Xmodmap :
+
+clear Mod1
+keycode 63 = Meta_L
+add Mod1 = Meta_L   #출처 [[https://wiki.haskell.org/Xmonad/Using_xmonad_on_Apple_OSX][Xmonad/Using xmonad on Apple OSX - HaskellWiki]]

@@ -1,0 +1,17 @@
+
+
+
+- *Shell Command Output* 버퍼를 일정하게 유지해야 여러개의 버퍼가 열리는 것을 방지함. file:../../app/emacs/shell_command_output_buffer.org
+
+
+
+a non-nil value of
+‘shell-command-dont-erase-buffer’ prevent to erase the buffer.
+help:shell-command-dont-erase-buffer
+
+(setq shell-command-dont-erase-buffer nil)
+(setq shell-command-dont-erase-buffer 'beg-last-out) ;;  *Shell Command Output* 버퍼를 일정하게 유지해야 여러개의 버퍼가 열리는 것을 방지함. file:../../app/emacs/shell_command_output_buffer.org
+(setq shell-command-dont-erase-buffer 'end-last-out)
+(setq shell-command-dont-erase-buffer 'save-point)
+display-buffer-no-window is a compiled Lisp function in ‘window.el’.
+help:display-buffer-no-window

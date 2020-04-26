@@ -6,7 +6,7 @@
 * install by OS
 - 리스트를 기록해서 나중에 재설치를 염두함.
 ** arch
-[[file:~/config_github/os/arch/yay_pacman_install.org][../os/arch/yay_pacman_install.org]]
+[[file:~/config_github/os/arch/yay_pacman_install.org][../os/arch/yay_pacman_install.org]] ← 중요한 링크로 꼭 이곳에 모을 것
 ** gentoo
 [[file:~/config_github/os/arch/emerge_gentoo_install.org][../os/gentoo/emerge_gentoo_install.org]]
 ** freebsd

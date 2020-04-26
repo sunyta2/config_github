@@ -1,0 +1,7 @@
+
+
+** Set font for messages and modeline
+StumpWM uses the default XOrg font which is probably small and pixellated. You can use the ttf-fonts module to set a custom font.
+(ql:quickload "clx-truetype")
+(load-module "ttf-fonts")
+(set-font (make-instance 'xft:font :family "DejaVu Sans Mono" :subfamily "Book" :size 11))

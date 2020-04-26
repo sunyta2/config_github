@@ -1,0 +1,57 @@
+** org-present        20200204.1647 installed             Minimalist presentation minor-mode for Emacs org-mode.
+편집이 가능하며 글자크기는 작음
+
+** epresent
+epresent is an available package.
+글자가 큰 장점있음
+
+사용법-Usage
+Call epresent-run on an org-buffer.
+press t / 1 to view the top level of the presentation
+navigate the presentation with n/f, p/b
+scroll with k and l
+use c and C to navigate between code blocks, e to edit them, x to make it run, and s / S to toggle their visibility
+quit with q
+
+     Status: Available from melpa -- Install
+    Archive: melpa
+    Version: 20160411.201
+     Commit: 6c8abedcf46ff08091fa2bba52eb905c6290057d
+    Summary: Simple presentation mode for Emacs Org-mode
+   Requires: org-8, cl-lib-0.5
+   Homepage: https://github.com/dakrone/epresent
+   Keywords: gui 
+
+This is a simple presentation mode for Emacs. It works best in
+Emacs >= 24, which has a nice font rendering engine.
+
+To use, invoke `epresent-run' in an `org-mode' buffer. This will
+make a full-screen frame. Use n/p to navigate, or q to quit. Read
+below for more key bindings. Each top-level headline becomes a
+frame in the presentation (configure `EPRESENT_FRAME_LEVEL' to
+change this default). Org-mode markup is used to nicely display the
+buffer's contents.
+
+
+* org-show-animate by org-show.el
+** download
+curl -O https://raw.githubusercontent.com/jkitchin/jmax/master/org/org-show.el
+#+begin_src emacs-lisp-slide
+(load-file "org-show.el")
+(message "원리를 발견하고 충분한 단련과 습관이 없으면 무용지물이다")
+
+#+end_src
+
+
+#+begin_src emacs-lisp
+; (load-file "org-show.el")
+(org-show-animate '("So" "...한글입력" "why aren't you" "using org-mode?"))
+#+end_src
+
+
+#+begin_src emacs-lisp :results silent
+l
+(org-show-animate '("That's the end of the org-show." "Thank you for your attention!" "http://github.com/jkitchin/jmax"))
+#+end_src
+
+

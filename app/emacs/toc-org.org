@@ -1,0 +1,73 @@
+
+
+* org-toc-make
+org-make-toc-link-type-fn is a variable defined in ‘org-make-toc.el’.
+Its value is ‘org-make-toc--link-entry-github’
+
+(setq org-make-toc-link-type-fn 'org-make-toc--link-entry-github)
+(setq org-make-toc-link-type-fn 'org-make-toc--link-entry-org)
+** Heading
+:PROPERTIES:
+:TOC:      :include all
+:END:
+
+This text appears before the TOC.
+(org-make-toc)
+:CONTENTS:
+- [[org-toc-make][org-toc-make]]
+  - [[Heading][Heading]]
+  - [[Subheading][Subheading]]
+- [[org-toc%EC%9D%98 %EB%B0%9C%EA%B2%AC%EC%9E%A5%EC%86%8C%EC%9E%84][org-toc의 발견장소임]]
+  - [[%ED%95%98%ED%95%98%ED%95%98 asdf sadfasfdads asdfasfd][하하하 asdf sadfasfdads asdfasfd]]
+    - [[%ED%98%B8%ED%98%B8%ED%98%B8][호호호]]
+- [[org-recent-head... 20200228.215  new        melpa      Jump to recently used Org headings][org-recent-head... 20200228.215  new        melpa      Jump to recently used Org headings]]
+:END:
+
+This text appears after it.
+#+begin_src emacs-lisp :results silent
+(add-hook 'org-mode-hook #'org-make-toc-mode)
+#+end_src
+
+
+#+begin_src sh :results silent
+espeak -a 20 -v other/la "amare"
+#+end_src
+
+
+** Subheading
+test
+
+* org-toc의 발견장소임
+:PROPERTIES:
+:TOC:      :include all
+:END:
+
+https://youtu.be/fgizHHd7nOo?t=1018 정확히 발견한 장소임
+[[https://www.youtube.com/watch?v=fgizHHd7nOo][org mode is awesome - YouTube]]
+elisp:(progn (widen) (require 'toc-org) (org-toc-show))
+
+(org-toc-show-subtree-mode)
+(org-toc-show)
+
+** TODO 하하하 asdf sadfasfdads asdfasfd
+DEADLINE: <2020-04-12 Sun>
+ 
+*** 호호호
+OPTIONS: toc:2
+
+
+#+begin_src sh :results silent
+espeak -a 20 -v other/la "amare"
+#+end_src
+
+
+
+* org-recent-head... 20200228.215  new        melpa      Jump to recently used Org headings
+org-recent-head... 20200228.215  new        melpa      Jump to recently used Org headings
+
+
+
+
+
+
+

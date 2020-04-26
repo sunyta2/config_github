@@ -87,3 +87,10 @@ Animo ad conandum nisi solvere saltem inspicere disseretur obviam legentibus ess
 
 
 * yay translate-shell # trans -R
+
+* crow 번역기앱-인터넷을 사용함
+yay translate로 찾아냄 → crow명령이 터미널에서도 가능함
+16 aur/crow-translate 2.3.1-1 (+27 1.69%) 
+    A simple and lightweight translator that allows to translate and say selected text using Google, Yandex and Bing translate AP
+ - [[https://www.how2shout.com/how-to/google-translate-desktop-ubuntu-crow-translate.html][Google translate desktop for Ubuntu & Windows using Crow Translate]] 
+

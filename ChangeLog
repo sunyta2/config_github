@@ -1,11 +1,49 @@
+2020-03-21  thinkpad  <thinkpad@msata045>
+
+	* app/emacs/emacs_is_great.org:
+	단축키는 C-x v =  help:vc-diff revert-buffer과 magit, git, ediff에서 살펴볼만한 내용이다.
+	특히 파일의 손상정도를 확인할 절호의 기회임.
+	(vc-diff &optional HISTORIC NOT-URGENT)
+	Display diffs between file revisions.
+
+	<Wish> in mind is 현재저장된 내용과 버퍼를 비교하는 것을 기록해 둘 것.
+
+	* test_git_commit_m_log.org: 
+
 2020-03-13  thinkpad  <thinkpad@msata045>
 
-	* app/emacs/dired.org: 
+	* app/emacs/dired.org: - 로그를 vc에서 생성하는 법이 있음을 발견함!
+	단축키는 → C-x 4 a.
+
+	(add-change-log-entry-other-window &optional WHOAMI FILE-NAME)
+	Find change log file in other window and add entry and item.
+	This is just like ‘add-change-log-entry’ except that it displays the change log file in another window.
+
 
 2020-03-12  thinkpad  <thinkpad@msata045>
 
-	* app/emacs/dired.org: C-x v = => C-x 4 A 입력을 한 방식임.
+	* app/emacs/dired.org: C-x v = → C-x 4 a 입력을 한 방식임.
 	diff-add-change-log-entries-other-window 나중에 commit을 수행할 경우,
 	반영되는 내용이 적용되는 지 실험으로 확인될 것임.
-	
+
+
+
+2020-02-15 [C-t C-e]stumpwm과 이맥스의 놀라운 창전환
+
+2020-02-14 [footnote]내부색인기능 발견 C-c C-x f org-footnote-action
+	emacs/test_stuff/like_pomodoro_timer_note.org
+	.gitignore -> _*test.org 가 과감한 파일을 대량생산의 핵심 [2020-02-14 Fri 18:00]
+	*_test[0-9][0-9].org
+	*_test_for_*.org
+	-----------------------> 몽땅정리한 과감한 수집을 가능하게 함 대신 대량의 _test.org파일생성
+	- 다른 곳에서도 불러낼 수 있게 add to regist
+	- 이곳에 특징을 기록하여 시간별로 나중에 일괄로 올린다.
+
+2020-02-13 Thu 16:20
+	{linage} * super 메타사고를 수집한다.
+	./great_book/meta_thought.org 깊은사고가 필요함.
+	greek_latin자꾸(노출자극)이 핵심의 증대이다.
+	- 허무(선악생사=죽음의 바다)를 아는 知를 돌려 본질로 돌아감!
+	- 冥想 그윽한 그곳[通一性]동일 中(=曰=ㅁ+|)
+
 

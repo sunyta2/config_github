@@ -1,0 +1,60 @@
+
+참고로 들어오게 된 배경은 emacs/egg-timer.el
+(require 'ivy) ;; 설치되어 있었음
+
+패키지는 (require 'ivy-clipmenu)
+(require 'ivy-clipmenu)
+(global-set-key (kbd "C-M-y") #'ivy-clipmenu-copy) ;; 일단 yank의 약자를 사용함
+ivy-clipmenu ;; 잘 복사가 잘 안됨. 연구하던지 메뉴얼을 보고 수정해야 함.
+
+Backward one half-window (and set half
+
+
+ivy-clipmenu is an available obsolete package.
+
+     Status: Available Obsolete from melpa -- Install
+    Archive: melpa
+    Version: 20200302.1419
+     Commit: ef25acf3f058fe1ede3a29fae2e9cdac8b08cd17
+    Summary: Ivy client for clipmenu
+   Requires: emacs-26.1, f-0.20.0, s-1.12.0, dash-2.16.0, ivy-0.13.0
+   Homepage: https://github.com/wpcarro/ivy-clipmenu.el
+Other versions: 20200302.1419 (installed).
+
+Ivy integration with the clipboard manager, clipmenu.  Essentially, clipmenu
+turns your system clipboard into a list.
+
+To use this module, you must first install clipmenu and ensure that the
+clipmenud daemon is running.  Refer to the installation instructions at
+https://github.com/cdown/clipmenu for those details.
+
+This module intentionally does not define any keybindings since I'd prefer
+not to presume my users' preferences.  Personally, I use EXWM as my window
+manager, so I call `exwm-input-set-key' and map it to `ivy-clipmenu-copy'.
+
+
+
+;;;;;;;;;;;;;;;;;;
+LAUNCHER=rofi"
+7 community/clipmenu 5.6.0-2 (7.0 KiB 12.6 KiB) 
+    Clipboard management using dmenu
+6 community/clipgrab 3.8.10-1 (319.5 KiB 1.2 MiB) 
+    A video downloader and converter for YouTube, Veoh, DailyMotion, MyVideo, ...
+
+
+by egg-timer.org in developer
+use this so go there
+ Check clipmenud --help to view all possible environment variables and what they do. 
+If you manage clipmenud with systemd, 
+you can override the defaults by using systemctl --user edit clipmenud to generate an override file.
+
+
+
+8 community/clipnotify 1.0.2-1 (4.4 KiB 39.0 KiB) 
+    Polling-free clipboard notifier
+
+]$ clipmenud
+WARN: Consider installing clipnotify for better performance.
+WARN: See https://github.com/cdown/clipnotify.
+
+

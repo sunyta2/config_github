@@ -1,0 +1,18 @@
+
+
+  :START:  
+
+- diary?, loding_file?, 
+  #+BEGIN_TEXT org :목적 
+- Core_location: [[https://www.youtube.com/watch?v=iChalAKXffs][What Are Pointers? (C++) - YouTube]]
+5:00부분에서 가능하다! Pointer은 variable to contain address
+"A POINTER is JUST A VARIABLE that HOLDS a MEMORY ADDRESS."
+int a = 5;
+a 같다 RAM[102] # Symbol상징으로 값이 리턴됨 direct addressing
+pointer b = &a; # &a '← address of Symbol a'
+int c = *b; ;; indirect addressing
+
+
+  #+END_TEXT
+
+  :END:

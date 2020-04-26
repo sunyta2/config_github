@@ -1,0 +1,95 @@
+
+
+
+  :finder-commentary는package의정복의정보확인의필수다:
+#+begin_text org :최종목적은_emacs내부구조정복과 메뉴얼활용증대한다
+help:finder-commentary ; file:../../app/emacs/finder.org
+; 패키의 주석문을 볼 수 있어서 각 개요을 잡는데 큰 도움을 준다. browse_url_browser_function.org 보다가 발견함
+help:browse-url 에서 _'browse-url.el'_ 을 클릭해서 우연히 발견함! 
+(finder-commentary "browse-url.el") help:finder-commentary
+
+(finder-commentary "paredit.el") help:finder-commentary
+
+(finder-commentary "org-pdftools")
+# (describe-package 'exwm)
+(finder-commentary "pdf-tools")
+(describe-package 'pdf-tools)
+
+
+#+begin_src emacs-lisp :tangle yes
+
+#+end_src
+
+
+
+- 형식-주사용처:간단모듈양식의 오그파일_메모용
+      - 연관파일, 요약본은 ##diary.org
+(buffer-name)
+- 수집: 내용
+
+- 주사용처_복사범위(*부터 -:end: -:End: -:END: 까지들 중 필요부분복사) Copy로 사용시 위의 *제목을 수정하고 나머지줄은몽땅삭제할 것
+- diary.org_C-[ C-[ 1 등록시에는 -:end: 부분을 등록함 wish_list_test.org의 경우는 나중에 일과종료전까지 보낸다.
+- 상황성립배경{주된목적_meta사고, 상위프로젝트위치, 그 문맥배경설명요약}:
+
+- 목적기여_강점: 
+- 주저장파일 (buffer-file-name) (buffer-name) 
+- 현재위치기록 (buffer-file-name) file:../../app/emacs/emacs_is_great.org
+- 전파필요한 직접연관파일(단련리스트파일, 인박스수집): file:../../app/emacs/emacs_is_great.org
+- 관련임시아이디어들 경쟁,대안 : 
+- 등록할 성과요약문 연관파일과 다이어리에 기재사항
+  - 딱! 성취감은 어디서: 
+
+- 더 필요하고 조사해야할 사안 그리고 대기중, 중단이유 또는 복안, 대안사항:
+  - 
+;;;;;;;;;;;; 저장처리과정 ;;;;;;;;;;;;
+;(필수) 다이어리에 저장하고, 주저장파일핵심노트저장후,
+- 일감에 딱 발견할 수 있는 곳
+
+;;(적극권장) 주된목적_meta사고, 상위프로젝트위치, 주로 연동되는 핵심부나 반복연습하는 목록에 추가하여 연동하든지.
+- 음미하며, 지속적인 단련이 상기할 수 있는 곳 음미되지 않으면 성취는 없다.
+
+;;(상기 불충족 대안) 아니면 inbox에 wish리스트에 넣고 기다리든지 아니면 diary 위의 날짜에 밀 넣어두고 연관파일 결정되면 지우면 된다.
+ file:~/config_github/app/emacs/wish_test.org 미루어둔다. - xxxxxx.org::기능-활용-연습필요하니 적합장소검토기록할 것
+
+
+
+                                                 실험하다.  help:finder-package 아님음
+help:finder-by-keyword
+help:finder-commentary ;; 패키의 주석문을 볼 수 있어서 각 개요을 잡는데 큰 도움을 준다. browse_url_browser_function.org 보다가 발견함
+help:finder-compile-keywords
+help:finder-compile-keywords-make-dist
+help:finder-current-item
+help:finder-exit
+help:finder-goto-xref
+help:finder-insert-at-column
+help:finder-list-keywords  ;; *Finder-package* 창 안의 키워드에서 패키지 주제별로 사전식 묘사를 보이며, 
+help:finder-list-matches
+help:finder-mode
+help:finder-mouse-face-on-line
+help:finder-mouse-select
+help:finder-select
+help:finder-summary
+help:finder-unknown-keywords
+help:finder-unload-function
+
+finder-by-keyword
+finder-commentary
+finder-compile-keywords
+finder-compile-keywords-make-dist
+finder-current-item
+finder-exit
+finder-goto-xref
+finder-insert-at-column
+finder-list-keywords
+finder-list-matches
+finder-mode
+finder-mouse-face-on-line
+finder-mouse-select
+finder-select
+finder-summary
+finder-unknown-keywords
+finder-unload-function
+
+
+#+end_text org    
+:end:

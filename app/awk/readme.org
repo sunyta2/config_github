@@ -13,6 +13,10 @@ info:grep#Top
 #+BEGIN_SRC sh
 ls -l | grep -v \~ | awk '{ print $9 " " $9}' ##; 가장 기초가 가장 중요하다.
 ls -l  | grep -v "[\#|\~]" | awk '{ print $9 " " $9}' ##; 가장 기초가 가장 중요하다. awk/readme.org
+
+ acpi -b | awk '{print "[" $3, $4, $5 "]"}'
+=> [Discharging, 87%, 03:30:34]
+
 #+END_SRC
 
 #+RESULTS:

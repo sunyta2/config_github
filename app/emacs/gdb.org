@@ -1,0 +1,9 @@
+
+file:../../app/emacs/gdb.org 
+(info "(emacs) Starting GUD") ;;파일을 읽는 것에서 계산하는 것을 중간에 감독체크하는 기능으로 우선 직감으로 이해함.
+- F10을 눌러서 tool을 기본으로 살피고 다른 기능들을 잘 살펴볼것.
+
+- flymake-mode 도 있음 문법체크기능임 (info "(emacs) Flymake")
+
+연관성 c, java, cpp, lisp, scheme,
+

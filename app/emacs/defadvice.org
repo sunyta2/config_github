@@ -18,3 +18,51 @@ help:defalias
 (defalias 'list-buffers 'ibuffer)
 (defalias 'list-buffers 'ibuffer-other-window)
 #+END_SRC
+
+
+- [[https://stackoverflow.com/questions/13901955/how-to-avoid-pop-up-of-async-shell-command-buffer-in-emacs][asynchronous - How to avoid pop-up of *Async Shell Command* buffer in Emacs? - Stack Overflow]]
+  :  help:defadvice  함수에 새로운 기능을 추가하는 기능인 것같다. defadvice
+    (defadvice async-shell-command (around hide-async-windows activate)
+       (save-window-excursion
+          ad-do-it))
+    :
+ help:advice-add help:advice-remove
+
+
+;; 의도는 자동으로 mode-line을 갱신하는 기능이나 그밖의 기본기능을 활성화하는 함수를 실행하는 것을 연구함.
+(global-set-key (kbd "C-x o") 'test-mode-line)
+
+(global-set-key (kbd "C-x o") 'other-window)
+
+
+[[https://stackoverflow.com/questions/1416882/emacs-defadvice-on-python-mode-function][Emacs defadvice on python-mode function - Stack Overflow]]
+;; python으로 명령문을 전송한 다음에 바로 복귀하는 명령을 수행하는 것을 목적으로 함. app/emacs/defadvice.org
+
+(defadvice 'other-window
+(interactive)
+(progn 
+(setq mode-line-format 
+'("%e"
+ (:eval
+  (format "[%d]"
+	  (exwm-workspace--position exwm-workspace--current)  ))
+ mode-line-front-space mode-line-mule-info mode-line-client mode-line-modified mode-line-remote mode-line-frame-identification mode-line-buffer-identification "   " mode-line-position
+ (vc-mode vc-mode)
+ "  " mode-line-modes mode-line-misc-info mode-line-end-spaces)
+)
+)
+
+(defun test-mode-line ()
+(interactive)
+(progn 
+(setq mode-line-format 
+'("%e"
+ (:eval
+  (format "[%d]"
+	  (exwm-workspace--position exwm-workspace--current)  ))
+ mode-line-front-space mode-line-mule-info mode-line-client mode-line-modified mode-line-remote mode-line-frame-identification mode-line-buffer-identification "   " mode-line-position
+ (vc-mode vc-mode)
+ "  " mode-line-modes mode-line-misc-info mode-line-end-spaces)
+)
+(other-window 1))
+) 

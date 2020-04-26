@@ -3,6 +3,27 @@
    - brave://로 시작하는 url을 열어내는 것을 특정함
 [[incognito_browser][How do I open Chromium in incognito mode by default? - Ask Ubuntu]] 다양한 방법을 보여줌. [[incognito_browser]]
 
+
+help:finder-commentary ; file:../../app/emacs/finder.org
+; 패키의 주석문을 볼 수 있어서 각 개요을 잡는데 큰 도움을 준다. browse_url_browser_function.org 보다가 발견함
+help:browse-url 에서 _'browse-url.el'_ 을 클릭해서 우연히 발견함! 
+(finder-commentary "browse-url.el") help:finder-commentary
+
+
+
+
+<f11>
+help:toggle-frame-fullscreen toggle-frame-fullscreen
+(toggle-frame-fullscreen)
+
+
+<M-f10>, ESC <f10>
+help:toggle-frame-maximized (toggle-frame-maximized)
+
+
+finder-
+finder-
+
 M-x ffap (click on a link or Alt+x find-file-at-point (alias ffap))
 #+BEGIN_SRC emacs-lisp
 ;; 출처: [[http://ergoemacs.org/emacs/emacs_set_default_browser.html][Emacs: Set Default Browser]]
@@ -11,7 +32,8 @@ M-x ffap (click on a link or Alt+x find-file-at-point (alias ffap))
 (setq browse-url-browser-function 'browse-url-chromium) ; google's browser
 (setq browse-url-browser-function 'eww-browse-url) ; emacs browser
 ;;;; You can also set up a regex list to open specific browser depending on URL.
-
+(executable-find "espeak")
+;; 
 ;; use browser depending on url
 (setq
  browse-url-browser-function
@@ -78,3 +100,45 @@ a few remarks:
 
 Run sudo update-alternatives --config x-www-browser and select /usr/bin/chromium-browser. This will make Chromium your system's default browser.
 Run sudo -e /etc/chromium-browser/default (edit as root), and change the line that reads CHROMIUM_FLAGS="" to CHROMIUM_FLAGS="--incognito".
+
+* browse-url-generic-program
+
+[[https://blog.binchen.org/posts/open-url-in-emacs-with-external-browser.html][Open url in Emacs with external browser | Chen's blog]]
+#+begin_src emacs-lisp :results silent
+defun w3mext-open-link-or-image-or-url ()
+  "Opens the current link or image or current page's uri or any url-like text under cursor in firefox."
+  (interactive)
+  (let (url)
+    (if (string= major-mode "w3m-mode")
+        (setq url (or (w3m-anchor) (w3m-image) w3m-current-url)))
+    (browse-url-generic (if url url (car (browse-url-interactive-arg "URL: "))))
+    ))
+(global-set-key (kbd "C-c b") 'w3mext-open-link-or-image-or-url)
+
+;; 
+C-h v browse-url-generic-program RET
+ to see the documentation
+;; is-a-mac and linux is the boolean constants defined by me
+
+
+(setq browse-url-generic-program
+      (cond
+       (is-a-mac "open")
+       (linux (executable-find "firefox"))
+       ))
+
+
+
+#+end_src
+
+[[https://www.emacswiki.org/emacs/BrowseUrl][EmacsWiki: Browse Url]]
+app/
+help:browse-url-generic
+help:browse-url-generic-program
+
+(setq browse-url-browser-function 'browse-url-generic
+         browse-url-generic-program "/path/to/conkeror")
+#+begin_src sh :results silent
+espeak -a 20 -v other/la "amare"
+#+end_src
+

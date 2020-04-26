@@ -1,3 +1,4 @@
+* diff-mode 에 관하여 
 dired에서 = 키를 눌러서 실행함!
 활용처: 파일의 비교에 사용하기 편할 것임. ediff와 비교 바람.
 
@@ -65,4 +66,32 @@ ESC <remap>	Prefix Command
 C-x 4 A		diff-add-change-log-entries-other-window
 
 ESC <remap> <undo>		diff-undo
+
+* diff-hl use-package 
+
+** descriptions
+버전에서 변화된 것을 즉각 버퍼에 표시해서 변동사항을 실시간으로 확인한다
+;; 추가필요한 것 파일저장전에 파일 저장내용을 비교하는 것이 어떤가
+help:diff-buffer-with-file (diff-buffer-with-file) fesfsef
+help:diff-backup 
+** Codes
+sdfasdfasdfasdf
+
+Emacs is great - Ep 13 more faster git ussage
+;; +! to signify file change on-the-fly https://youtu.be/UR2xZ4UY4h4
+#+begin_src emacs-lisp :results silent
+;; +! to signify file change on-the-fly https://youtu.be/UR2xZ4UY4h4
+
+(use-package diff-hl
+:ensure t
+:config
+(diff-hl-margin-mode)
+)
+#+end_src
+
+
+#+begin_src sh :results silent
+espeak -a 20 -v other/la "amare"
+#+end_src
+
 

@@ -20,14 +20,15 @@ $ sudo pacman -Su
 And that is it, you should run these commands, mmmh once a week, and you will stay up to date.
 
 
-* yay
+* yay -Sua
 install list
 spectacle, kolour ;; For screenshot PrtSc to activate spectacle,
 translate ;; google translate
 pulsemixer ;; xsetroot ;; pulsemixer --get-volume | awk '{ print $1 }'
-
-tmuxp
-
+itmuxp
+sudo pacman -Ssy 
+먼저, sudo pacman -Syu를 실행하는 것이 필요함
+sudo pacman -Syu ; yay -Sua
 * pacman
 
 #+BEGIN_SRC sh
@@ -63,3 +64,740 @@ buffer-file-path
 sudo pacman -S plasma-meta
 
 #+END_SRC
+
+
+* 인스톨의 업그레이드 과정
+file:../../os/arch/yay_pacman_install.org
+[[https://joshtronic.com/2019/12/23/installing-pacman-breaks-dependency-replaced-by-yay/][Installing `pacman` breaks dependency replaced by `yay`]] 핵심적이므로 파일을 생성해서 반드시 연구할 것
+pdf로 저장하였으므로반드시 확인할 것.
+
+  :꺽쇄s탭단축키로저장된yasnappet_angle_s_tab:  
+  #+BEGIN_TEXT org :what_in_your_Mind? 
+- 목표를 정하고 위로 들어올릴 것
+- Core_location: 
+- 중요한 사이트임 외국남자아이 사진이 있던 파비콘모양의 사이트
+    - [[https://joshtronic.com/2019/12/23/installing-pacman-breaks-dependency-replaced-by-yay/][Installing `pacman` breaks dependency replaced by `yay`]]
+    - yay 업그래이드의 중요한 해결책을 제시함 핵심부분임!
+#+begin_src emacs-lisp :results silent
+(message "충분한 단련과 습관이 없으면 무용지물이다")
+#+end_src
+ther packages:
+
+error: failed to prepare transaction (could not satisfy dependencies)
+:: installing xorgproto (2019.2-2) breaks dependency 'dmxproto' required by libdmx
+:: installing xorgproto (2019.2-2) breaks dependency 'xfdgaproto' required by liblibxxf86dga
+Before I could worry about getting pacman and yay playing nicely again, I had to correct the aforementioned issues, by doing the following, which was posted in the latest news on archlinux.org:
+
+su -c 'pacman -Rdd libdmx libxxf86dga'
+After running that, I was able to run the following to remove yay, upgrade the system and then re-install yay manually from the Arch User Repository:
+
+Remove yay by running yay -R yay.
+Upgrade the system using pacman by running su -c 'pacman -Syu'.
+Grab the latest PKGBUILD for yay by running curl -OJ 'https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=yay'.
+Build the package and install it by running makepkg -si.
+
+
+
+
+
+
+
+
+Total Installed Size:  12475.90 MiB
+Net Upgrade Size:         48.95 MiB
+
+:: Proceed with installation? [Y/n] y
+(827/827) checking keys in keyring                               [------------------------------------] 100%(827/827) checking package integrity                             [------------------------------------] 100%(827/827) loading package files                                  [------------------------------------] 100%(827/827) checking for file conflicts                            [------------------------------------] 100%error: failed to commit transaction (conflicting files)
+python-toml: /usr/lib/python3.8/site-packages/toml/__init__.py exists in filesystem
+python-toml: /usr/lib/python3.8/site-packages/toml/__pycache__/__init__.cpython-38.pyc exists in filesystem
+python-toml: /usr/lib/python3.8/site-packages/toml/__pycache__/decoder.cpython-38.pyc exists in filesystem
+python-toml: /usr/lib/python3.8/site-packages/toml/__pycache__/encoder.cpython-38.pyc exists in filesystem
+python-toml: /usr/lib/python3.8/site-packages/toml/__pycache__/ordered.cpython-38.pyc exists in filesystem
+python-toml: /usr/lib/python3.8/site-packages/toml/__pycache__/tz.cpython-38.pyc exists in filesystem
+python-toml: /usr/lib/python3.8/site-packages/toml/decoder.py exists in filesystem
+python-toml: /usr/lib/python3.8/site-packages/toml/encoder.py exists in filesystem
+python-toml: /usr/lib/python3.8/site-packages/toml/ordered.py exists in filesystem
+python-toml: /usr/lib/python3.8/site-packages/toml/tz.py exists in filesystem
+Errors occurred, no packages were upgraded.
+[thinkpad@msata045 emacs]$ 
+
+
+
+- 아래의 설치에서 에러가 발생되는 것은
+ yay-bin-9.4.6-1-x86_64                3.8 GiB  5.66 MiB/s 11:19 [------------------------------------] 100%(827/827) checking keys in keyring                               [------------------------------------] 100%(827/827) checking package integrity                             [------------------------------------] 100%(827/827) loading package files                                  [------------------------------------] 100%(827/827) checking for file conflicts                            [------------------------------------] 100%error: failed to commit transaction (conflicting files)
+python-toml: /usr/lib/python3.8/site-packages/toml/__init__.py exists in filesystem
+python-toml: /usr/lib/python3.8/site-packages/toml/__pycache__/__init__.cpython-38.pyc exists in filesystem
+python-toml: /usr/lib/python3.8/site-packages/toml/__pycache__/decoder.cpython-38.pyc exists in filesystem
+python-toml: /usr/lib/python3.8/site-packages/toml/__pycache__/encoder.cpython-38.pyc exists in filesystem
+python-toml: /usr/lib/python3.8/site-packages/toml/__pycache__/ordered.cpython-38.pyc exists in filesystem
+python-toml: /usr/lib/python3.8/site-packages/toml/__pycache__/tz.cpython-38.pyc exists in filesystem
+python-toml: /usr/lib/python3.8/site-packages/toml/decoder.py exists in filesystem
+python-toml: /usr/lib/python3.8/site-packages/toml/encoder.py exists in filesystem
+python-toml: /usr/lib/python3.8/site-packages/toml/ordered.py exists in filesystem
+python-toml: /usr/lib/python3.8/site-packages/toml/tz.py exists in filesystem
+Errors occurred, no packages were upgraded.
+[thinkpad@msata045 Music]$ su -c 'mv -rf /usr/lib/python3.8/site-packages/toml/ /usr/lib/python3.8/site-packages/toml_backup/'
+Password: 
+mv: invalid option -- 'r'
+
+ - 옮길 폴더를 생성하고 파일들을 모두 옮기면 가능해 졌다.
+$ su -c 'mkdir /usr/lib/python3.8/site-packages/toml_backup/'
+Password: 
+$ su -c 'mv -f /usr/lib/python3.8/site-packages/toml/ /usr/lib/python3.8/site-packages/toml_backup/'
+Password: 
+
+
+mpd mpc를 yay로 설치가 되었다.
+
+
+- 
+#+begin_src emacs-lisp :results silent
+
+#+end_src
+  #+END_TEXT
+  :END:
+
+
+** (248/248) checking for file conflicts                  [----------------------------] 100%
+error: failed to commit transaction (conflicting files)
+nss: /usr/lib/p11-kit-trust.so exists in filesystem
+Errors occurred, no packages were upgraded.
+위의 문제를 해결하기 위해서 
+폴더를 옮기고 설치를 준비함
+
+
+# 아래를 참조해서 더 아래를 실행함 - 옮길 폴더를 생성하고 파일들을 모두 옮기면 가능해 졌다.
+$ su -c 'mkdir /usr/lib/python3.8/site-packages/toml_backup/'
+Password: 
+$ su -c 'mv -f /usr/lib/python3.8/site-packages/toml/ /usr/lib/python3.8/site-packages/toml_backup/'
+Password: 
+
+# 당면문제임.
+Move ‘/usr/lib/p11-kit-trust.so’ to ‘/usr/lib/p11-kit-trust_backup.so’ failed:
+(file-error Renaming Permission denied /usr/lib/p11-kit-trust.so /usr/lib/p11-kit-trust_backup.so)
+Move failed for 1 of 1 file
+# 아래와 같이 파일을 변경하니 실행이 진행되어 업그래이트가 가동됨
+$ su -c 'mv /usr/lib/p11-kit-trust.so /usr/lib/p11-kit-trust_back.so'
+Password: 
+
+# 재 확인용 실행함 pacman -Su
+$ pacman -Su
+:: Starting full system upgrade...
+warning: arcolinux-lightdm-gtk-greeter: local (2:2.0.6-1) is newer than arcolinux_repo (1:2.0.6-1)
+ there is nothing to do
+* : Proceed with installation? [Y/n] y
+(1/1) checking keys in keyring                                                [##########################
+(1/1) checking package integrity                                              [##########################
+error: pacman: signature from "Levente Polyak (anthraxx) <levente@leventepolyak.net>" is unknown trust
+:: File /var/cache/pacman/pkg/pacman-5.2.1-4-x86_64.pkg.tar.zst is corrupted (invalid or corrupted packag
+Do you want to delete it? [Y/n] y
+error: failed to commit transaction (invalid or corrupted package (PGP signature))
+Errors occurred, no packages were upgraded.
+Error installing repo packages
+[[SOLVED] Problem with pacman update - Signature is unknown trust / Newbie Corner / Arch Linux Forums](https://bbs.archlinux.org/viewtopic.php?id=143337)
+
+
+* list
+[[SOLVED] Problem with pacman update - Signature is unknown trust / Newbie Corner / Arch Linux Forums](https://bbs.archlinux.org/viewtopic.php?id=143337)
+rm -R /etc/pacman.d/gnupg
+pacman-key --init
+pacman-key --populate archlinux
+
+Welcome to the Emacs shell
+
+/sudo:root@msata827:/etc/pacman.d $ pacman-key --init
+gpg: /etc/pacman.d/gnupg/trustdb.gpg: trustdb created
+gpg: no ultimately trusted keys found
+gpg: starting migration from earlier GnuPG versions
+gpg: porting secret keys from '/etc/pacman.d/gnupg/secring.gpg' to gpg-agent
+gpg: migration succeeded
+gpg: Generating pacman keyring master key...
+gpg: key E8FBC60B4BFF0E12 marked as ultimately trusted
+gpg: directory '/etc/pacman.d/gnupg/openpgp-revocs.d' created
+gpg: revocation certificate stored as '/etc/pacman.d/gnupg/openpgp-revocs.d/B9ACD88FE968F256BD8C290EE8FBC60B4BFF0E12.rev'
+gpg: Done
+==> Updating trust database...
+gpg: marginals needed: 3  completes needed: 1  trust model: pgp
+gpg: depth: 0  valid:   1  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 1u
+/sudo:root@msata827:/etc/pacman.d $ pacman --populate archlinux
+/bin/pacman: unrecognized option '--populate'
+/sudo:root@msata827:/etc/pacman.d $ pacman-key --populate archlinux
+==> Appending keys from archlinux.gpg...
+==> Locally signing trusted keys in keyring...
+  -> Locally signing key D8AFDDA07A5B6EDFA7D8CCDAD6D055F927843F1C...
+  -> Locally signing key DDB867B92AA789C165EEFA799B729B06A680C281...
+  -> Locally signing key 684148BB25B49E986A4944C55184252D824B18E8...
+  -> Locally signing key 91FFE0700E80619CEB73235CA88E23E377514E00...
+  -> Locally signing key 0E8B644079F599DFC1DDC3973348882F6AC6A4C2...
+  -> Locally signing key AB19265E5D7D20687D303246BA1DFB64FFF979E7...
+==> Importing owner trust values...
+gpg: inserting ownertrust of 4
+gpg: setting ownertrust to 4
+gpg: setting ownertrust to 4
+gpg: setting ownertrust to 4
+gpg: setting ownertrust to 4
+gpg: setting ownertrust to 4
+==> Disabling revoked keys in keyring...
+  -> Disabling key 8F76BEEA0289F9E1D3E229C05F946DED983D4366...
+  -> Disabling key 63F395DE2D6398BBE458F281F2DBB4931985A992...
+  -> Disabling key 50F33E2E5B0C3D900424ABE89BDCF497A4BBCC7F...
+  -> Disabling key 27FFC4769E19F096D41D9265A04F9397CDFD6BB0...
+  -> Disabling key 39F880E50E49A4D11341E8F939E4F17F295AFBF4...
+  -> Disabling key 8840BD07FC24CB7CE394A07CCF7037A4F27FB7DA...
+  -> Disabling key 5559BC1A32B8F76B3FCCD9555FA5E5544F010D48...
+  -> Disabling key 0B20CA1931F5DA3A70D0F8D2EA6836E1AB441196...
+  -> Disabling key 07DFD3A0BC213FA12EDC217559B3122E2FA915EC...
+  -> Disabling key 4FCF887689C41B09506BE8D5F3E1D5C5D30DB0AD...
+  -> Disabling key 5A2257D19FF7E1E0E415968CE62F853100F0D0F0...
+  -> Disabling key 7FA647CD89891DEDC060287BB9113D1ED21E1A55...
+  -> Disabling key BC1FBE4D2826A0B51E47ED62E2539214C6C11350...
+  -> Disabling key 4A8B17E20B88ACA61860009B5CED81B7C2E5C0D2...
+  -> Disabling key 5696C003B0854206450C8E5BE613C09CB4440678...
+  -> Disabling key 8CF934E339CAD8ABF342E822E711306E3C4F88BC...
+  -> Disabling key F5A361A3A13554B85E57DDDAAF7EF7873CFD4BB6...
+  -> Disabling key 5E7585ADFF106BFFBBA319DC654B877A0864983E...
+  -> Disabling key 65EEFE022108E2B708CBFCF7F9E712E59AF5F22A...
+  -> Disabling key 40440DC037C05620984379A6761FAD69BA06C6A9...
+  -> Disabling key 34C5D94FE7E7913E86DC427E7FB1A3800C84C0A5...
+  -> Disabling key 81D7F8241DB38BC759C80FCE3A726C6170E80477...
+  -> Disabling key E7210A59715F6940CF9A4E36A001876699AD6E84...
+  -> Disabling key 5357F3B111688D88C1D88119FCF2CB179205AC90...
+  -> Disabling key FB871F0131FEA4FB5A9192B4C8880A6406361833...
+  -> Disabling key 66BD74A036D522F51DD70A3C7F2A16726521E06D...
+  -> Disabling key B1F2C889CB2CCB2ADA36D963097D629E437520BD...
+  -> Disabling key 9515D8A8EAB88E49BB65EDBCE6B456CAF15447D5...
+  -> Disabling key 40776A5221EF5AD468A4906D42A1DB15EC133BAD...
+  -> Disabling key D4DE5ABDE2A7287644EAC7E36D1A9E70E19DAA50...
+  -> Disabling key 44D4A033AC140143927397D47EFD567D4C7EA887...
+==> Updating trust database...
+gpg: key 1EB2638FF56C0C53: no user ID for key signature packet of class 10
+gpg: key 1EB2638FF56C0C53: no user ID for key signature packet of class 10
+gpg: key 786C63F330D7CB92: no user ID for key signature packet of class 10
+gpg: key 786C63F330D7CB92: no user ID for key signature packet of class 10
+gpg: key 786C63F330D7CB92: no user ID for key signature packet of class 10
+gpg: key 786C63F330D7CB92: no user ID for key signature packet of class 10
+gpg: key 786C63F330D7CB92: no user ID for key signature packet of class 10
+gpg: key 786C63F330D7CB92: no user ID for key signature packet of class 10
+gpg: key 786C63F330D7CB92: no user ID for key signature packet of class 10
+gpg: key 786C63F330D7CB92: no user ID for key signature packet of class 10
+gpg: key 786C63F330D7CB92: no user ID for key signature packet of class 10
+gpg: key 786C63F330D7CB92: no user ID for key signature packet of class 10
+gpg: key 786C63F330D7CB92: no user ID for key signature packet of class 10
+gpg: key 786C63F330D7CB92: no user ID for key signature packet of class 10
+gpg: key 786C63F330D7CB92: no user ID for key signature packet of class 10
+gpg: key 786C63F330D7CB92: no user ID for key signature packet of class 10
+gpg: key 786C63F330D7CB92: no user ID for key signature packet of class 10
+gpg: key 786C63F330D7CB92: no user ID for key signature packet of class 10
+gpg: key 786C63F330D7CB92: no user ID for key signature packet of class 10
+gpg: key 786C63F330D7CB92: no user ID for key signature packet of class 10
+gpg: key 786C63F330D7CB92: no user ID for key signature packet of class 10
+gpg: key 786C63F330D7CB92: no user ID for key signature packet of class 10
+gpg: key 786C63F330D7CB92: no user ID for key signature packet of class 10
+gpg: key 786C63F330D7CB92: no user ID for key signature packet of class 10
+gpg: key 786C63F330D7CB92: no user ID for key signature packet of class 10
+gpg: key 786C63F330D7CB92: no user ID for key signature packet of class 10
+gpg: key 786C63F330D7CB92: no user ID for key signature packet of class 10
+gpg: key 786C63F330D7CB92: no user ID for key signature packet of class 10
+gpg: key 786C63F330D7CB92: no user ID for key signature packet of class 10
+gpg: key 786C63F330D7CB92: no user ID for key signature packet of class 10
+gpg: marginals needed: 3  completes needed: 1  trust model: pgp
+gpg: depth: 0  valid:   1  signed:   6  trust: 0-, 0q, 0n, 0m, 0f, 1u
+gpg: depth: 1  valid:   6  signed:  71  trust: 0-, 0q, 0n, 6m, 0f, 0u
+gpg: depth: 2  valid:  71  signed:   6  trust: 71-, 0q, 0n, 0m, 0f, 0u
+gpg: next trustdb check due at 2020-06-15
+/sudo:root@msata827:/etc/pacman.d $ ls
+gnupg  gnupg2  mirrorlist  mirrorlist.pacnew
+/sudo:root@msata827:/etc/pacman.d $ cd gnupg
+/sudo:root@msata827:/etc/pacman.d/gnupg $ ls
+S.gpg-agent          gpg-agent.conf     pubring.gpg   trustdb.gpg
+S.gpg-agent.browser  gpg.conf           pubring.gpg~  
+S.gpg-agent.extra    openpgp-revocs.d   secring.gpg   
+S.gpg-agent.ssh      private-keys-v1.d  tofu.db
+
+* test
+
+123
+12asdf3
+1sdfs23-esfef-asdf asdf asdf
+1asdf23-esfef-asdf asdf asdf
+
+
+
+
+
+-[0-9].*$
+
+
+
+
+ pacman -S pcre
+ 
+pacman -S libffi libutil-linux glib2 xz
+
+
+
+pacman -S lz4 zstd icu expat lzo gmp
+
+pacman -S libcap gdbm db perl openssl coreutils
+
+pacman -S findutils libtasn1 libp11-kit libgpg-error libgcrypt systemd-libs
+
+pacman -S device-mapper popt json-c argon2 cryptsetup e2fsprogs
+
+pacman -S libsasl libldap keyutils krb5 libcap-ng audit
+
+pacman -S dbus libmnl libnftnl libnl libusb libpcap
+
+pacman -S iptables cracklib libtirpc pambase pam kbd
+
+pacman -S kmod hwids libunistring libidn2 libseccomp shadow
+
+pacman -S util-linux pcre2 systemd p11-kit ca-certificates-utils ca-certificates-mozilla
+
+pacman -S ca-certificates libssh2 libpsl libnghttp2 curl libelf
+
+pacman -S libedit which file sqlite nettle gnutls
+
+pacman -S btrfs-progs dosfstools dmraid mpfr libnsl libaio
+
+pacman -S thin-provisioning-tools lvm2 mdadm nspr nss npth
+
+pacman -S libksba libassuan libsecret pinentry gnupg gpgme
+
+pacman -S xfsprogs tar libtool pciutils libevent minizip
+
+pacman -S sysfsutils inetutils qgpgme psmisc archlinux-keyring libarchive
+
+pacman -S gawk m4 diffutils autoconf automake libmicrohttpd
+
+pacman -S elfutils binutils bison libmpc gcc less
+
+pacman -S gzip texinfo make patch run-parts libidn
+
+pacman -S cronie iproute2 dhcpcd dialog dnssec-anchors sed
+
+pacman -S fakeroot ldns openssh flex gettext grep
+
+pacman -S glib2-docs procps-ng gpm groff grub iputils
+
+pacman -S iw jfsutils libpipeline licenses mkinitcpio-busybox mkinitcpio
+
+pacman -S linux linux-firmware logrotate man-db man-pages ppp
+
+pacman -S nano net-tools openresolv netctl wpa_supplicant pacman-mirrorlist
+
+pacman -S pacman pkgconf reiserfsprogs s-nail sudo systemd-sysvcompat
+
+pacman -S usbutils vi libjpeg-turbo libtiff xcb-proto libxdmcp
+
+pacman -S libxau libxcb xorgproto libx11 libxml2 shared-mime-info
+
+pacman -S gdk-pixbuf2 freetype2 graphite harfbuzz fribidi libxext
+
+pacman -S fontconfig libxrender pixman pango librsvg gtk-update-icon-cache
+
+pacman -S adwaita-icon-theme libdrm wayland libxxf86vm libxfixes libxdamage
+
+pacman -S libnetfilter_conntrack llvm-libs lm_sensors mesa libglvnd libice
+
+pacman -S xdg-utils libxi tslib mtdev libevdev libwacom
+
+pacman -S libinput xkeyboard-config libxkbcommon libxkbcommon-x11 libproxy avahi
+
+pacman -S libcups md4c qt5-base kitemmodels js60 polkit
+
+pacman -S gptfdisk python libbytesize ndctl parted volume_key
+
+pacman -S libyaml libblockdev udisks2 libplist libusbmuxd usbmuxd
+
+pacman -S libimobiledevice solid kcoreaddons kwidgetsaddons qt5-x11extras kjobwidgets
+
+pacman -S kdbusaddons kconfig kwindowsystem kcrash kglobalaccel qt5-svg
+
+pacman -S kauth kcodecs kguiaddons qt5-declarative ki18n kconfigwidgets
+
+pacman -S kitemviews karchive kiconthemes attica kxmlgui kbookmarks
+
+pacman -S libxslt gstreamer orc libxv iso-codes gst-plugins-base-libs
+
+pacman -S alsa-topology-conf alsa-ucm-conf alsa-lib gst-plugins-base libxtst libsndfile
+
+pacman -S libpulse openal qt5-multimedia qt5-speech tdb knotifications
+
+pacman -S kservice kwallet kcompletion sonnet ktextwidgets kio
+
+pacman -S kpackage libepoxy kdeclarative kcmutils signon-kwallet-extension libaccounts-glib
+
+pacman -S libaccounts-qt qt5-webchannel qt5-location libxcomposite libxrandr libxss
+
+pacman -S snappy aom gsm libsamplerate jack libbluray
+
+pacman -S vulkan-icd-loader dav1d libssh libva libvpx libwebp
+
+pacman -S x264 x265 xvidcore opencore-amr libibus sdl2
+
+pacman -S srt v4l-utils ffmpeg re2 qt5-webengine libnotify
+
+pacman -S signon-ui kaccounts-integration libakonadi mariadb-libs mariadb-clients mariadb
+
+pacman -S akonadi kmime akonadi-mime ksmtp libical kcalendarcore
+
+pacman -S kcontacts libkgapi kmailtransport grantlee syntax-highlighting kpimtextedit
+
+pacman -S kidentitymanagement kcalutils prison akonadi-contacts akonadi-calendar libkleo
+
+pacman -S xapian-core kactivities qt5-wayland kwayland qt5-quickcontrols qt5-quickcontrols2
+
+pacman -S qt5-graphicaleffects kirigami2 plasma-framework threadweaver krunner akonadi-search
+
+pacman -S kldap libkdepim knewstuff kimap purpose pimcommon
+
+pacman -S grantleetheme kdepim-apps-libs kholidays calendarsupport akonadi-calendar-tools mailimporter
+
+pacman -S libgravatar kmbox qca messagelib mailcommon akonadi-import-wizard
+
+pacman -S akonadi-notes akonadiconsole kparts kontactinterface knotifyconfig http-parser
+
+pacman -S libgit2 ktexteditor syndication kuserfeedback akregator alsa-plugins
+
+pacman -S alsa-utils analitza dconf cantarell-fonts gsettings-desktop-schemas glib-networking
+
+pacman -S libsoup appstream appstream-qt archlinux-appstream-data kpty libzip
+
+pacman -S ark qt5-xmlpatterns artikulate aspell at-spi2-core atk
+
+pacman -S at-spi2-atk neon libkcddb libkcompactdisc audiocd-kio spglib
+
+pacman -S libmsym avogadrolibs poppler poppler-qt5 kfilemetadata kidletime
+
+pacman -S baloo baloo-widgets bc black-hole-solver blinken bluez
+
+pacman -S bluez-qt bluedevil bluez-libs kdnssd libkdegames bomber
+
+pacman -S boost-libs bovo frameworkintegration kdecoration breeze-icons breeze
+
+pacman -S breeze-gtk gc guile dkms bubblewrap libqalculate
+
+pacman -S jbig2dec libpaper ghostscript cantor kdesu kinit
+
+pacman -S cervisia check libxinerama wayland-protocols desktop-file-utils libgusb
+
+pacman -S colord gtk3 chromium talloc libbsd tevent
+
+pacman -S libwbclient cifs-utils compiler-rt clang jsoncpp libuv
+
+pacman -S rhash cmake dhclient discover djvulibre ldb
+
+pacman -S smbclient openexr libmtp kactivities-stats kdsoap kdsoap-ws-discovery-client-git20...   278.8 KiB  62.4K/s 00:04 [##################################] 100%
+
+pacman -S kio-extras dolphin dolphin-plugins dragon source-highlight guile2.0
+
+pacman -S gdb-common gdb drkonqi libvoikko enchant kdiagram
+
+pacman -S eventviews extra-cmake-modules faac faad2 gssdp gupnp
+
+pacman -S farstream ffmpegthumbnailer ffmpegthumbs hwloc openmpi fftw
+
+pacman -S filelight libinstpatch fluidsynth freecell-solver fuse-common gcr
+
+pacman -S libxpm gd perl-error perl-timedate git libsigc++
+
+pacman -S glibmm spirv-tools glslang rtkit pipewire libvncserver
+
+pacman -S gnome-remote-desktop python-appdirs python-pyparsing python-six python-packaging python-ordered-set
+
+pacman -S python-setuptools python-mako gobject-introspection-runtime gobject-introspection granatier grantlee-editor
+
+pacman -S netpbm graphviz gst-plugins-bad-libs wavpack libshout mpg123
+
+pacman -S imlib2 gst-plugins-good libde265 libdca libkate libdvdread
+
+pacman -S libdvdnav libsrtp imagemagick zbar raptor sdl
+
+pacman -S gst-plugins-bad gtk-doc gtk2 libkipi libkdcraw gwenview
+
+pacman -S harfbuzz-icu python-dbus-common python-dbus pygobject-devel python-gobject python2
+
+pacman -S python2-gobject2 python2-dbus python2-gobject ibus incidenceeditor juk
+
+pacman -S libburn qt5-sensors qt5-webkit k3b kaccounts-providers kactivitymanagerd
+
+pacman -S libkolabxml kdav kalarmcal qt5-networkauth kdepim-runtime kaddressbook
+
+pacman -S python-zope-interface python-incremental python-constantly python-attrs python-automat python-idna
+
+pacman -S python-hyperlink python-twisted python-pyqt5-sip python-pyqt5 libkmahjongg kajongg
+
+pacman -S kalarm kalgebra kplotting kunitconversion qt5-script openbabel
+
+pacman -S kalzium libgphoto2 kamera kamoso kdeedu-data libkeduvocdocument
+
+pacman -S kanagram kapman kapptemplate kate katomic kbackup
+
+pacman -S kblackbox kblocks kbounce kbreakout kbruch kcachegrind-common
+
+pacman -S kcachegrind kcalc kcharselect kcolorchooser kcron kde-cli-tools
+
+pacman -S kde-dev-scripts qt5-tools kde-dev-utils kde-gtk-config kdebugsettings kded
+
+pacman -S kdegraphics-mobipocket libkexiv2 kdegraphics-thumbnailers kemoticons kdelibs4support kdenetwork-filesharing
+
+pacman -S mlt kdenlive ktnef libksieve kpkpass protobuf
+
+pacman -S libphonenumber zxing-cpp kitinerary kdepim-addons libksysguard milou
+
+pacman -S kscreenlocker kwin noto-fonts qqc2-desktop-style xorg-mkfontscale plasma-integration
+
+pacman -S kpeople libkscreen kquickcharts plasma-workspace kdeplasma-addons kdesdk-kioslaves
+
+pacman -S kdesdk-thumbnailers libkomparediff2 kdevelop kdf kdialog kdiamond
+
+pacman -S kdoctools keditbookmarks kfind kfloppy kfourinline kgamma5
+
+pacman -S kgeography kget kgoldrunner kgpg khangman kjs
+
+pacman -S khtml khelpcenter khotkeys kig kigo killbots
+
+pacman -S kimagemapeditor kinfocenter kirigami-gallery kiriki kiten kjsembed
+
+pacman -S kjumpingcube kleopatra klettres klickety klines kmag
+
+pacman -S kmahjongg kross kmail-account-wizard mbox-importer pim-data-exporter pim-sieve-editor
+
+pacman -S kmail kmenuedit kmines kmix kmousetool kmouth
+
+pacman -S kmplot knavalbattle knetattach knetwalk knights knotes
+
+pacman -S kolf kollision libieee1284 sane libksane kolourpaint
+
+pacman -S kompare konqueror konquest konsole kontact kopete
+
+pacman -S korganizer kpatience kqtquickcharts krdc kreversi krfb
+
+pacman -S kross-interpreters kruler kscreen kshisen ksirk ksnakeduel
+
+pacman -S kspaceduel ksquares ksshaskpass ksudoku ksysguard ksystemlog
+
+pacman -S kteatime ktimer ktorrent ktouch ktuberling kturtle
+
+pacman -S kubrick socat kwallet-pam kwalletmanager kwave kwayland-integration
+
+pacman -S kwordquiz kwrite kwrited kxmlrpcclient libcdio-paranoia libcdr
+
+pacman -S libcmis libe-book libetonyek libixion libmagick6 libmbim
+
+pacman -S libmm-glib libmp4v2 libmpdclient libmspub libmwaw libnm
+
+pacman -S libnma liborcus libpagemaker shaderc libplacebo libpwquality
+
+pacman -S libqmi libqxp libwps libvisio libtommath libzmf
+
+pacman -S xmlsec libstaroffice libreoffice-fresh libsignon-glib libspeechd libsynctex
+
+pacman -S libteam libwpe libxfont2 lokalize lskat lua
+
+pacman -S lua-lgi lua52 m17n-lib marble-common marble meson
+
+pacman -S uchardet minuet modemmanager modemmanager-qt nm-connection-editor networkmanager
+
+pacman -S network-manager-applet networkmanager-qt pangomm nitrogen okular oxygen
+
+pacman -S qhull palapeli parley perl-encode-locale perl-http-date perl-file-listing
+
+pacman -S perl-html-tagset perl-html-parser perl-lwp-mediatypes perl-uri perl-io-html perl-http-message
+
+pacman -S perl-http-cookies perl-http-daemon perl-http-negotiate perl-net-http perl-try-tiny perl-www-robotrules
+
+pacman -S perl-libwww perl-xml-parser picmi plasma-browser-integration polkit-kde-agent systemsettings
+
+pacman -S plasma-desktop plasma-nm pulseaudio plasma-pa plasma-sdk plasma-vault
+
+pacman -S plasma-workspace-wallpapers poppler-glib powerdevil poxml print-manager rsync
+
+pacman -S python-pycparser python-cffi python-pep517 python-urllib3 python-pip python-pyxdg
+
+pacman -S rocs rubygems ruby sbcl screen xorg-xkbcomp
+
+pacman -S xorg-server-common xf86-input-libinput xorg-server sddm sddm-kcm spectacle
+
+pacman -S speech-dispatcher step sweeper telepathy-mission-control telepathy-accounts-signon telepathy-qt
+
+pacman -S telepathy-kde-accounts-kcm telepathy-kde-approver telepathy-logger-qt telepathy-kde-common-internals telepathy-kde-auth-handler telepathy-kde-call-ui
+
+pacman -S telepathy-kde-contact-list telepathy-kde-contact-runner telepathy-kde-desktop-applets telepathy-kde-filetransfer-handl...    65.9 KiB  59.0K/s 00:01 [##################################] 100% telepathy-kde-integration-module...   174.7 KiB  66.8K/s 00:03 [##################################] 100% telepathy-kde-send-file
+
+pacman -S telepathy-kde-text-ui zziplib texlive-bin umbrello user-manager vala
+
+pacman -S vim-runtime vim wpebackend-fdo xdg-dbus-proxy webkit2gtk xdg-desktop-portal-kde
+
+pacman -S xorg-server-xephyr xterm yelp-xsl zeroconf-ioslave libmfx brotli
+
+pacman -S libaec hdf5 broadcom-wl-dkms ttf-liberation xsel clipnotify
+
+pacman -S clipmenu frei0r-plugins ghc-libs ghc girara go
+
+pacman -S twolame libfdk-aac serd sord sratom lilv
+
+pacman -S python-pygments haskell-base-orphans haskell-tagged haskell-distributive haskell-transformers-compat haskell-comonad
+
+pacman -S haskell-statevar haskell-contravariant haskell-exceptions haskell-th-abstraction haskell-bifunctors haskell-profunctors
+
+pacman -S haskell-hashable haskell-unordered-containers haskell-semigroupoids haskell-transformers-base haskell-free haskell-void
+
+pacman -S haskell-adjunctions haskell-integer-logarithms haskell-primitive haskell-scientific haskell-attoparsec haskell-base-compat
+
+pacman -S haskell-base-compat-batteries haskell-dlist haskell-time-compat haskell-random haskell-uuid-types haskell-vector
+
+pacman -S haskell-aeson haskell-extensible-exceptions haskell-alsa-core haskell-alsa-mixer haskell-hourglass haskell-basement
+
+pacman -S haskell-memory haskell-asn1-types haskell-asn1-encoding haskell-asn1-parse haskell-async haskell-blaze-builder
+
+pacman -S haskell-blaze-markup haskell-blaze-html haskell-byteable haskell-call-stack haskell-case-insensitive haskell-cereal
+
+pacman -S haskell-split haskell-vector-algorithms haskell-mono-traversable haskell-unliftio-core haskell-resourcet haskell-conduit
+
+pacman -S haskell-network haskell-zlib haskell-streaming-commons haskell-typed-process haskell-conduit-extra haskell-data-default-class
+
+pacman -S haskell-socks haskell-cryptonite haskell-pem haskell-x509 haskell-x509-store haskell-x509-validation
+
+pacman -S haskell-tls haskell-x509-system haskell-connection haskell-cookie haskell-data-default-instances-c...     7.9 KiB  0.00B/s 00:00 [##################################] 100% haskell-data-default-instances-d...     7.0 KiB  0.00B/s 00:00 [##################################] 100%
+
+pacman -S haskell-old-locale haskell-data-default-instances-o...     6.9 KiB  2.23M/s 00:00 [##################################] 100% haskell-data-default haskell-invariant haskell-kan-extensions haskell-parallel
+
+pacman -S haskell-reflection haskell-lens haskell-th-lift haskell-xml-types haskell-xml-conduit haskell-dbus
+
+pacman -S haskell-hinotify haskell-network-uri haskell-http haskell-http-types haskell-mime-types haskell-http-client
+
+pacman -S haskell-http-client-tls haskell-http-conduit haskell-iwlib haskell-safe-exceptions haskell-utf8-string haskell-libmpd
+
+pacman -S haskell-old-time haskell-parsec-numbers haskell-regex-base haskell-regex-posix haskell-regex-compat haskell-setlocale
+
+pacman -S haskell-timezone-series haskell-timezone-olson haskell-type-equality haskell-x11 haskell-x11-xft herbstluftwm
+
+pacman -S ibus-hangul python-click python-pyhamcrest vtk libconfig libev
+
+pacman -Sy libluv libnewt libpgm mc ninja vamp-plugin-sdk
+
+pacman -S rubberband mpv minitube msgpack-c unibilium neovim
+
+pacman -S opencc profile-sync-daemon python-contextlib2 python-msgpack python-xlib qtile
+
+pacman -S ranger ruby-reline ruby-irb ruby-chronic ruby-json tmux
+
+pacman -S virtualbox-host-modules-arch virtualbox virtualbox-guest-iso xmonad-contrib zathura-pdf-poppler
+
+* 1
+** success
+pacman -S pacman 이 실행되도록 설정하고
+즉, Path를 File로 변경함 
+위의 것으로 깔끔하게 다시 실행됨.[[HowTo] Rescue your system: error: hook ... Invalid value Path - Technical Issues and Assistance / Tutorials - Manjaro Linux Forum](https://forum.manjaro.org/t/howto-rescue-your-system-error-hook-invalid-value-path/123226)
+
+pacman -Rdd broken-dependency file
+pacman -Rdd okular 
+yay poppler-git
+
+pacman -S appstream appstream-qt archlinux-appstream-data archlinux-keyring argon2 ark artikulate aspell
+pacman -S clang
+pacman -S filesystem findutils flex fluidsynth fontconfig frameworkintegration freecell-solver freetype2
+pacman -S dav1d
+pacman -S fontconfig
+pacman -S gtk-update-icon-cache gtk2 gtk3
+pacman -S gzip
+pacman -S gtk2 gtk3 guile2.0
+pacman -S gtk-update-icon-cache guile guile2.0 gupnp gwenview gzip
+;;; 위의 것은 완료가 됨
+
+
+
+
+
+
+pacman -S hwids hwloc iana-etc ibus icu ilmbase [removal] imagemagick
+pacman -S jack jbig2dec jfsutils js60 json-c jsoncpp juk k3b
+pacman -S kdeedu-data kdegraphics-mobipocket kdegraphics-thumbnailers kdelibs4support kdenetwork-filesharing kdenlive kdepim-addons kdepim-apps-libs
+pacman -S kdepim-runtime kdeplasma-addons kdesdk-kioslaves kdesdk-thumbnailers kdesu kdevelop kdf kdiagram
+pacman -S kdiamond kdnssd kdoctools kdsoap kdsoap-ws-discovery-client-git20200316
+pacman -S kimagemapeditor kimap kinfocenter kinit kio kio-extras kirigami-gallery kirigami2
+pacman -S kiriki kitemmodels kitemviews kiten kitinerary kjobwidgets kjs kjsembed
+
+
+
+
+pacman -S kmod kmousetool kmouth kmplot knavalbattle knetattach knetwalk knewstuff
+pacman -S knights knotes knotifications knotifyconfig kolf kollision kolourpaint kompare
+pacman -S konqueror konquest konsole kontact kontactinterface kopete korganizer kpackage
+pacman -S kparts kpatience kpeople kpimtextedit kpkpass kplotting kpty kqtquickcharts
+pacman -S kquickcharts krb5 krdc kreversi krfb kross kross-interpreters kruler
+pacman -S krunner kscreen kscreenlocker kservice kshisen ksirk ksmtp ksnakeduel
+pacman -S kspaceduel ksquares ksshaskpass ksudoku ksysguard ksystemlog kteatime ktexteditor
+pacman -S ktextwidgets ktimer ktnef ktorrent ktouch ktuberling kturtle kubrick
+pacman -S kunitconversion kuserfeedback kwallet kwallet-pam kwalletmanager kwave kwayland kwayland-integration
+pacman -S kwidgetsaddons kwin kwindowsystem kwordquiz kwrite kwrited kxmlgui kxmlrpcclient
+pacman -S ldb ldns less libaccounts-glib libaccounts-qt libaec libaio libakonadi
+pacman -S libarchive libassuan libblockdev libbluray libbsd libburn libbytesize libcap
+pacman -S libcap-ng libcdio-paranoia libcdr libcmis libcups libdca libde265 libdrm
+pacman -S libdvdnav libdvdread libe-book libedit libelf libepoxy libetonyek libevdev
+pacman -S libevent libgcrypt libgit2 libglvnd libgpg-error libgphoto2 libgravatar libgusb
+pacman -S libibus libical libice libidn libidn2 libieee1284 libimobiledevice libinput
+pacman -S libinstpatch libixion libjpeg-turbo libkate libkcddb libkcompactdisc libkdcraw libkdegames
+pacman -S libkdepim libkeduvocdocument libkexiv2 libkgapi libkipi libkleo libkmahjongg libkolabxml
+pacman -S libkomparediff2 libksane libksba libkscreen libksieve libksysguard libldap libmagick6
+pacman -S libmbim libmicrohttpd libmm-glib libmnl libmp4v2 libmpc libmpdclient libmspub
+pacman -S libmsym libmtp libmwaw libnetfilter_conntrack libnftnl libnghttp2 libnl libnm
+pacman -S libnma libnotify libnsl liborcus libp11-kit libpagemaker libpaper libpcap
+pacman -S libphonenumber libpipeline libplacebo libplist libproxy libpsl libpulse libpwquality
+pacman -S libqalculate libqmi libqxp libreoffice-fresh librsvg libsamplerate libsasl libseccomp
+pacman -S libsecret libshout libsigc++ libsignon-glib libsndfile libsoup libspeechd libsrtp
+pacman -S libssh libssh2 libstaroffice libsynctex libtasn1 libteam libtiff libtirpc
+pacman -S libtommath libtool libunistring libusb libusbmuxd libuv libva libvisio
+pacman -S libvncserver libvoikko libvpx libwacom libwbclient libwebp libwpe libwps
+pacman -S libx11 libxau libxcb libxcomposite libxdamage libxdmcp libxext libxfixes
+pacman -S libxfont2 libxi libxinerama libxkbcommon libxkbcommon-x11 libxml2 libxpm libxrandr
+pacman -S libxrender libxslt libxss libxtst libxv libxxf86vm libyaml libzip
+pacman -S libzmf licenses linux linux-api-headers linux-firmware llvm-libs lm_sensors logrotate
+pacman -S lokalize lskat lua lua-lgi lua52 lvm2 lz4 lzo
+pacman -S m17n-lib m4 mailcommon mailimporter make man-db man-pages marble
+pacman -S marble-common mariadb mariadb-clients mariadb-libs mbox-importer md4c mdadm mesa
+pacman -S meson messagelib milou minitube minizip minuet mkinitcpio mkinitcpio-busybox
+pacman -S mlt modemmanager modemmanager-qt mpfr mpg123 mpv mtdev nano
+pacman -S ncurses ndctl neon net-tools netctl netpbm nettle network-manager-applet
+pacman -S networkmanager networkmanager-qt nitrogen nm-connection-editor noto-fonts npth nspr nss
+pacman -S okular openal openbabel opencore-amr openexr openmpi openresolv openssh
+pacman -S openssl orc oxygen p11-kit pacman pacman-mirrorlist palapeli pam
+pacman -S pambase pango pangomm parley parted patch pciutils pcre2
+pacman -S perl perl-encode-locale perl-error perl-file-listing perl-html-parser perl-html-tagset perl-http-cookies perl-http-daemon
+pacman -S perl-http-date perl-http-message perl-http-negotiate perl-io-html perl-libwww perl-lwp-mediatypes perl-net-http perl-timedate
+pacman -S perl-try-tiny perl-uri perl-www-robotrules perl-xml-parser picmi pim-data-exporter pim-sieve-editor pimcommon
+pacman -S pinentry pipewire pixman pkgconf plasma-browser-integration plasma-desktop plasma-framework plasma-integration
+pacman -S plasma-nm plasma-pa plasma-sdk plasma-vault plasma-workspace plasma-workspace-wallpapers polkit polkit-kde-agent
+pacman -S poppler poppler-glib poppler-qt5 popt powerdevil poxml ppp print-manager
+pacman -S prison procps-ng protobuf psmisc pulseaudio purpose pygobject-devel pygobject2-devel
+pacman -S [removal] pyqt5-common [removal] python python-appdirs python-attrs python-automat python-cffi
+pacman -S python-constantly python-dbus python-dbus-common python-distro python-gobject python-hyperlink python-idna python-incremental
+pacman -S python-mako python-ordered-set python-packaging python-pep517 python-pip python-pycparser python-pyparsing python-pyqt5
+pacman -S python-pyqt5-sip python-pyxdg python-setuptools python-six python-twisted python-urllib3 python-xdg [removal]
+pacman -S python-zope-interface python2 python2-dbus python2-gobject python2-gobject2 qca qgpgme qhull
+pacman -S qqc2-desktop-style qt5-base qt5-declarative qt5-graphicaleffects qt5-location qt5-multimedia qt5-networkauth qt5-quickcontrols
+pacman -S qt5-quickcontrols2 qt5-script qt5-sensors qt5-speech qt5-svg qt5-tools qt5-wayland qt5-webchannel
+pacman -S qt5-webengine qt5-webkit qt5-x11extras qt5-xmlpatterns raptor re2 readline reiserfsprogs
+pacman -S rhash rocs rsync rtkit ruby rubygems run-parts s-nail
+pacman -S sane sbcl screen sddm sddm-kcm sdl sdl2 sed
+pacman -S shaderc shadow shared-mime-info signon-kwallet-extension signon-ui smbclient snappy socat
+pacman -S solid sonnet source-highlight spectacle speech-dispatcher spglib spirv-tools sqlite
+pacman -S srt step sudo sweeper syndication syntax-highlighting sysfsutils systemd
+pacman -S systemd-libs systemd-sysvcompat systemsettings talloc tar tdb telepathy-accounts-signon telepathy-kde-accounts-kcm
+pacman -S telepathy-kde-approver telepathy-kde-auth-handler telepathy-kde-call-ui telepathy-kde-common-internals telepathy-kde-contact-list telepathy-kde-contact-runner telepathy-kde-desktop-applets telepathy-kde-filetransfer-handler
+pacman -S telepathy-kde-integration-module telepathy-kde-send-file telepathy-kde-text-ui telepathy-logger-qt telepathy-mission-control telepathy-qt tevent texinfo
+pacman -S texlive-bin thin-provisioning-tools threadweaver tslib ttf-liberation tzdata uchardet udisks2
+pacman -S umbrello usbmuxd usbutils user-manager util-linux v4l-utils vala vi
+pacman -S vim vim-runtime volume_key vulkan-icd-loader wavpack wayland wayland-protocols webkit2gtk
+pacman -S which wpa_supplicant wpebackend-fdo x264 x265 xapian-core xcb-proto xdg-dbus-proxy
+pacman -S xdg-desktop-portal-kde xdg-utils xf86-input-libinput xfsprogs xkeyboard-config xmlsec xorg-mkfontscale xorg-server
+pacman -S xorg-server-common xorg-xkbcomp xorgproto xsel xvidcore dzbar zlib zstd
+** yay 를 재설치해서 라이브러리의 미발견을 해결함
+의존성파일의 위치를 발견하지 못해서 헤매는 것을 재설치로 해결함
+git clone https://aur.archlinux.org/yay.git20  
+cd yay ;; before folder saved in yay2
+makepkg -si 로 재설치됨
+yay -Sua가 재가동됨 잘 실행됨.
+

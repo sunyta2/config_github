@@ -1,0 +1,5 @@
+learning perl
+(start-process-shell-command
+   (concat "surf 로" "메뉴얼읽기 대안pdf local html을 참조할 것" ) nil 
+   (concat "cd /; exec " "surf http:www.learningperl.com")
+)

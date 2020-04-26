@@ -1,0 +1,55 @@
+
+투명도는 높이는 것을 발굴함.  alpha를 검색하든 중에 melpa에서 찾아냄.
+;; 참조 compton/readme picom을 설치해서 같이 보관하고 있음
+- 닷파일로 옮길것. 즉, 따라서 설치하고 시행할 명령을 만들어서 
+#+begin_src emacs-lisp
+(require 'seethru)    ; seethru.org
+;(seethru VALUE)
+;(seethru 90)
+;Sets the transparency of the currently selected Emacs
+;frame (0-100, where 0 is transparent and 100 is opaque)
+
+;help:seethru-relative 
+;seethru-relative
+;(seethru-relative -5) (seethru-relative +5)
+
+#+end_src
+- 다른 부분을 호출 시행하는 것을 가능하게 만들것. 다른 동영상이나 문서를 보는 경우 브라우징의 경우에서 투명도를 개별적으로 명령하는 기능은 필요할 것이다.
+  - 구조를 분석해서 터미널에서 
+(finder-commentary "seethru")
+
+[[https://github.com/benaiah/seethru][GitHub - Benaiah/seethru: seethru.el - easily change Emacs transparency]] (global-set-key (kbd "<M-wheel-up>")
+                (lambda ()
+                  (seethru-relative -10)))
+(seethru-recommended-keybinds "C-x") ;; "C-x 8" and "C-x 9"
+(seethru-mouse-bindings "C") ;; hold control while wheeling
+                             ;; mouse to change transparency
+    (global-set-key (kbd "<M-wheel-up>")
+                    (lambda ()
+                      (seethru-relative -10)))
+
+    (global-set-key (kbd "<M-wheel-up>")
+                    (lambda ()
+                      (seethru-relative +10)))
+
+
+    (global-set-key (kbd "<M-triple-mouse-4>")
+                    (lambda ()
+                      (seethru-relative -5)))
+
+    (global-set-key (kbd "<M-triple-mouse-5>")
+                    (lambda ()
+                      (seethru-relative +5)))
+
+
+*** seethru is an interactive autoloaded compiled Lisp function in
+‘seethru.el’.
+help:seethru
+(seethru VALUE)
+(seethru 90)
+Sets the transparency of the currently selected Emacs
+frame (0-100, where 0 is transparent and 100 is opaque)
+
+help:seethru-relative 
+seethru-relative
+(seethru-relative -5) (seethru-relative +5)

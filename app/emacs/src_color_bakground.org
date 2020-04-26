@@ -1,18 +1,763 @@
 
+#+TITLE: 창의적인 문서구조의 완성
+
+#+AUTHOR: LeeJeongpyo
+#+OPTION: test
+#+TODO
+(info "(org) Editing Source Code") ← 원래 메뉴얼을 먼저 잘 살펴야 함!
 
 file:../../app/emacs/src_color_bakground.org
 [창의적인 시각화가 가능함.] 배경에 색깔을 넣어서 시각적 효과를 극대화한다. colorfull background
 - [ ] src BOX 칼라 배경방법을 org-info의 위치에 발견한 것 같음. 위치기록해 둘 것
 - add to .el
 
+** [ ] 자료수집과 해결의 과정에 관하여
+DEADLINE: <2020-03-21 Sat>
+
+#+begin_quote C
+help:org-export-filter-center-block-functions is a variable defined in ‘ox.el’.
+(setq 'org-fontify-quote-and-verse-blocks t) ;;; 반드시 등록해야 하는 것으로 보인다.
+
+
+Hide org-mode-line-clock-face
+
+
+   [X] :
+       Background: gold        Choose   (sample)
+   [ Stipple: --
+   [X] :
+
+
+ org-meta-line-face: [sample]
+    State : SET for current session only.
+   Face for meta lines starting with "#+".
+   [ ] Font Family: --
+   [ ] Font Foundry: --
+   [ ] Width: --
+   [ ] Height: --
+   [ ] Weight: --
+   [ ] Slant: --
+   [ ] Underline: --
+   [ ] Overline: --
+   [ ] Strike-through: --
+   [ ] Box around text: --
+   [ ] Inverse-video: --
+   [ ] Foreground: --
+   [ ] Distant Foreground: --
+   [X] :
+       Background: LightGoldenrod1  Choose   (sample)
+  
+
+Hide org-quote-face: [sample]
+    State : SET for current session only. (lisp)
+   Face for #+BEGIN_QUOTE ... #+END_QUOTE blocks.
+Lisp expression: 
+((t
+  (:background "lawn green" :inherit
+	       (org-block))))
+org-quote-face
+
+
+#+end_quote
+
+help:timeclock-mode-line-display
+
+
+
+mode-line in M-x customize-apropose mode line faces
+(custom-set-faces
+'(mode-line ((t
+  (:box
+   (:line-width -1 :color nil :style released-button)
+   :foreground "black" :background "goldenrod3")))
+ )
+
+'(mode-line-buffer-id
+ ((t
+  (:weight bold :slant normal :box
+	   (:line-width 3 :color "grey75" :style released-button)
+	   :foreground "dark blue")))
+ )
+;'(mode-line-inactive   )
+)
+
+
+
+mode-line
+ mode-line-buffer-id 
+
+* loading part in THIS org file
+
 #+BEGIN_SRC emacs-lisp
-     (require 'color)
+     (require 'color) ;; src_color_background.org
      (set-face-attribute 'org-block nil :background
                          (color-darken-name
                           (face-attribute 'default :background) 3))
 
-     (setq org-src-block-faces '(("emacs-lisp" (:background "#EEE2FF"))
-                                 ("python" (:background "#E5FFB8"))))
+     (setq org-src-block-faces '(
+                                 ("emacs-lisp" (:background "#EEE2FF"))
+                                 ("python" (:background "#E5FFB8"))
+                                 ("sh" (:background "Darkolivegreen1"))
+                                 ("C" (:background "LightBlue"))
+                                 ("rust" (:background "LightBlue"))
+                                ))
+(setq org-timer-display 'both)
+(timeclock-mode-line-display t)
+(setq org-ellipsis "   ¬")
+;(timeclock-mode-line-display t)
+;(org-timer-set-mode-line 
+;"off"
+;)
+;"on"
+;"paused"
+
+;;red blue green oragne LightBlue Darkolivegreen1
+;; (info "(org) Editing Source Code") ← 먼저, 원래 메뉴얼을 먼저 잘 살펴야 함!
+#+END_SRC
+
+
+* TODO 강점과 활용처모색
+#+begin_quote emacs-lisp 유심히 살펴보면 열고 닫음이 자재함.
+(+ q 3)
+(message "hi")
+
+asdfasdfasdfasdfasdfasdfasdf
+asdfasdfadsf
+asdfasdf
+asdfasdf
+#+end_quote
+
+
+
+
+
+#+BEGIN_SRC emacs-lisp
+ἢ ὁδὸν ἐλθέμεναι ἢ ἀνδράσιν ἶφι μάχεσθαι;
+οὐ γὰρ ἐγὼ Τρώων ἕνεκ' ἤλυθον αἰχμητάων
+δεῦρο μαχησόμενος, ἐπεὶ οὔ τί μοι αἴτιοί εἰσιν:
+
+
 
 
 #+END_SRC
+
+
+
+* customize-group > Org Faces > > Choose를 클릭하면 *Colors* 창이 뜬다.
+
+* org-todo-keyword-faces 값을 확인
+
+#+BEGIN_SRC 
+(setq org-todo-keyword-faces 
+      (quote (("TODO" :foreground "red" :weight bold)
+              ("NEXT" :foreground "blue" :weight bold)
+              ("DONE" :foreground "green" :weight bold)
+              ("WAITING" :foreground "orange" :weight bold)
+              ("NOTDOING" :foreground "green" :weight bold)
+              ("LATER" :foreground "orange" :weight bold)
+              ("EMAIL" :foreground "red" :weight bold)
+              ("REPLY" :foreground "red" :weight bold))))
+#+END_SRC
+
+
+
+#+BEGIN_SRC emacs-lisp
+;;; 동영상에 기록된 내용임 in persisting highlight Emacs mp4
+# Local Variables:
+# mode: mode-name-here
+# ov-highlight-data:
+"((123 231 \"LightBlue\" \"comment\") (567 578 \"Darkolivegreen1\" nil))"
+# my-variable: value
+# eval: (ov-highlight-load)
+# End:
+;; 개별화된 함수를 변수와 함께 처리할 수 있을 것 같다.
+
+#+END_SRC
+
+** org-emacs-variable (← C-u C-x C-e) 그냥변수값호출하기도 쉬운 것이 emacs
+help:org-src-block-faces org-src-block-faces (← C-u C-x C-e) 그냥변수값호출하기도 쉬운 것이 emacs
+org-src-block-faces
+(("emacs-lisp" (:background "#EEE2FF")) ("python" (:background "#E5FFB8")) ("sh" (:background "Darkolivegreen1")) ("C" (:background "LightBlue")) ("rust" (:background "LightBlue")))
+
+
+(("emacs-lisp" (:background "#EEE2FF")) ("python" (:background "#E5FFB8")) ("sh" (:background "Darkolivegreen1")) ("rust" (:background "LightBlue")))
+
+위에처럼 바로 붙는다 이맥스 짱!
+Value:
+(("emacs-lisp"
+  (:background "#EEE2FF"))
+ ("python"
+  (:background "#E5FFB8"))
+ ("sh"
+  (:background "Darkolivegreen1"))
+ ("rust"
+  (:background "LightBlue")))
+Original value was nil
+
+* table in this changes
+:test_table:
+asdfasdfa
+| 1 |   |   |   |             |     2 |
+|   |   |   |   |             |       |
+|   |   |   |   |             |       |
+|   |   |   |   |             |       |
+|   |   |   |   | sdfasdfasdf | asdfa |
+|   |   |   |   |             |       |
+file:~/
+:END:
+
+
+*   추출된 것을 모음
+:LOGBOOK:
+CLOCK: [2020-03-20 Fri 18:41]--[2020-03-20 Fri 18:43] =>  0:02
+:END:
+
+** 좋은색을 추출할 것 아래에서 복사해서 사용할 것 
+black
+dim gray
+dark gray
+gray
+light gray
+gainsboro
+white smoke
+white
+red
+orange red
+dark orange
+orange
+gold
+yellow
+chartreuse
+lawn green
+green
+spring green
+medium spring green
+cyan
+deep sky blue
+blue
+medium blue
+dark violet
+dark magenta
+magenta
+dark red
+brown
+firebrick
+indian red
+light coral
+salmon
+light salmon
+tomato
+coral
+dark salmon
+rosy brown
+sienna
+saddle brown
+chocolate
+peru
+sandy brown
+burlywood
+tan
+navajo white
+wheat
+dark goldenrod
+goldenrod
+light goldenrod
+pale goldenrod
+cornsilk
+dark khaki
+khaki
+lemon chiffon
+dark olive green
+olive drab
+yellow green
+green yellow
+light green
+forest green
+dark green
+lime green
+pale green
+dark sea green
+sea green
+medium sea green
+light sea green
+medium aquamarine
+aquamarine
+dark cyan
+dark turquoise
+medium turquoise
+turquoise
+pale turquoise
+powder blue
+light blue
+sky blue
+light sky blue
+cadet blue
+steel blue
+dark slate gray
+slate gray
+light slate gray
+royal blue
+dodger blue
+cornflower blue
+light steel blue
+dark blue
+navy
+midnight blue
+dark slate blue
+slate blue
+medium slate blue
+light slate blue
+medium purple
+blue violet
+purple
+dark orchid
+medium orchid
+orchid
+thistle
+plum
+violet
+medium violet red
+violet red
+pale violet red
+maroon
+deep pink
+hot pink
+pink
+light pink
+snow
+misty rose
+seashell
+peach puff
+linen
+antique white
+bisque
+papaya whip
+moccasin
+blanched almond
+old lace
+floral white
+beige
+light yellow
+light goldenrod yellow
+ivory
+honeydew
+mint cream
+light cyan
+azure
+alice blue
+lavender
+ghost white
+lavender blush
+red4
+red3
+red2
+red1
+OrangeRed4
+OrangeRed3
+OrangeRed2
+OrangeRed1
+DarkOrange4
+DarkOrange3
+DarkOrange2
+DarkOrange1
+orange4
+orange3
+orange2
+orange1
+gold4
+gold3
+gold2
+gold1
+yellow4
+yellow3
+yellow2
+yellow1
+chartreuse4
+chartreuse3
+chartreuse2
+chartreuse1
+green4
+green3
+green2
+green1
+SpringGreen4
+SpringGreen3
+SpringGreen2
+SpringGreen1
+cyan4
+cyan3
+cyan2
+cyan1
+turquoise4
+turquoise3
+turquoise2
+turquoise1
+DeepSkyBlue4
+DeepSkyBlue3
+DeepSkyBlue2
+DeepSkyBlue1
+blue4
+blue3
+blue2
+blue1
+magenta4
+magenta3
+magenta2
+magenta1
+brown4
+brown3
+brown2
+brown1
+firebrick4
+firebrick3
+firebrick2
+firebrick1
+IndianRed4
+IndianRed3
+IndianRed2
+IndianRed1
+RosyBrown4
+RosyBrown3
+RosyBrown2
+RosyBrown1
+snow4
+snow3
+snow2
+snow1
+MistyRose4
+MistyRose3
+MistyRose2
+MistyRose1
+tomato4
+tomato3
+tomato2
+tomato1
+coral4
+coral3
+coral2
+coral1
+salmon4
+salmon3
+salmon2
+salmon1
+LightSalmon4
+LightSalmon3
+LightSalmon2
+LightSalmon1
+sienna4
+sienna3
+sienna2
+sienna1
+chocolate4
+chocolate3
+chocolate2
+chocolate1
+seashell4
+seashell3
+seashell2
+seashell1
+PeachPuff4
+PeachPuff3
+PeachPuff2
+PeachPuff1
+tan4
+tan3
+tan2
+tan1
+bisque4
+bisque3
+bisque2
+bisque1
+AntiqueWhite4
+AntiqueWhite3
+AntiqueWhite2
+AntiqueWhite1
+burlywood4
+burlywood3
+burlywood2
+burlywood1
+NavajoWhite4
+NavajoWhite3
+NavajoWhite2
+NavajoWhite1
+wheat4
+wheat3
+wheat2
+wheat1
+DarkGoldenrod4
+DarkGoldenrod3
+DarkGoldenrod2
+DarkGoldenrod1
+goldenrod4
+goldenrod3
+goldenrod2
+goldenrod1
+cornsilk4
+cornsilk3
+cornsilk2
+cornsilk1
+LightGoldenrod4
+LightGoldenrod3
+LightGoldenrod2
+LightGoldenrod1
+LemonChiffon4
+LemonChiffon3
+LemonChiffon2
+LemonChiffon1
+khaki4
+khaki3
+khaki2
+khaki1
+LightYellow4
+LightYellow3
+LightYellow2
+LightYellow1
+ivory4
+ivory3
+ivory2
+ivory1
+OliveDrab4
+OliveDrab3
+OliveDrab2
+OliveDrab1
+DarkOliveGreen4
+DarkOliveGreen3
+DarkOliveGreen2
+DarkOliveGreen1
+PaleGreen4
+PaleGreen3
+PaleGreen2
+PaleGreen1
+DarkSeaGreen4
+DarkSeaGreen3
+DarkSeaGreen2
+DarkSeaGreen1
+honeydew4
+honeydew3
+honeydew2
+honeydew1
+SeaGreen4
+SeaGreen3
+SeaGreen2
+SeaGreen1
+aquamarine4
+aquamarine3
+aquamarine2
+aquamarine1
+DarkSlateGray4
+DarkSlateGray3
+DarkSlateGray2
+DarkSlateGray1
+PaleTurquoise4
+PaleTurquoise3
+PaleTurquoise2
+PaleTurquoise1
+LightCyan4
+LightCyan3
+LightCyan2
+LightCyan1
+azure4
+azure3
+azure2
+azure1
+CadetBlue4
+CadetBlue3
+CadetBlue2
+CadetBlue1
+LightBlue4
+LightBlue3
+LightBlue2
+LightBlue1
+LightSkyBlue4
+LightSkyBlue3
+LightSkyBlue2
+LightSkyBlue1
+SkyBlue4
+SkyBlue3
+SkyBlue2
+SkyBlue1
+SteelBlue4
+SteelBlue3
+SteelBlue2
+SteelBlue1
+DodgerBlue4
+DodgerBlue3
+DodgerBlue2
+DodgerBlue1
+SlateGray4
+SlateGray3
+SlateGray2
+SlateGray1
+LightSteelBlue4
+LightSteelBlue3
+LightSteelBlue2
+LightSteelBlue1
+RoyalBlue4
+RoyalBlue3
+RoyalBlue2
+RoyalBlue1
+SlateBlue4
+SlateBlue3
+SlateBlue2
+SlateBlue1
+MediumPurple4
+MediumPurple3
+MediumPurple2
+MediumPurple1
+purple4
+purple3
+purple2
+purple1
+DarkOrchid4
+DarkOrchid3
+DarkOrchid2
+DarkOrchid1
+MediumOrchid4
+MediumOrchid3
+MediumOrchid2
+MediumOrchid1
+thistle4
+thistle3
+thistle2
+thistle1
+plum4
+plum3
+plum2
+plum1
+orchid4
+orchid3
+orchid2
+orchid1
+maroon4
+maroon3
+maroon2
+maroon1
+DeepPink4
+DeepPink3
+DeepPink2
+DeepPink1
+HotPink4
+HotPink3
+HotPink2
+HotPink1
+VioletRed4
+VioletRed3
+VioletRed2
+VioletRed1
+LavenderBlush4
+LavenderBlush3
+LavenderBlush2
+LavenderBlush1
+PaleVioletRed4
+PaleVioletRed3
+PaleVioletRed2
+PaleVioletRed1
+pink4
+pink3
+pink2
+pink1
+LightPink4
+LightPink3
+LightPink2
+LightPink1
+gray0
+gray1
+gray2
+gray3
+gray4
+gray5
+gray6
+gray7
+gray8
+gray9
+gray10
+gray11
+gray12
+gray13
+gray14
+gray15
+gray16
+gray17
+gray18
+gray19
+gray20
+gray21
+gray22
+gray23
+gray24
+gray25
+gray26
+gray27
+gray28
+gray29
+gray30
+gray31
+gray32
+gray33
+gray34
+gray35
+gray36
+gray37
+gray38
+gray39
+gray40
+gray41
+gray42
+gray43
+gray44
+gray45
+gray46
+gray47
+gray48
+gray49
+gray50
+gray51
+gray52
+gray53
+gray54
+gray55
+gray56
+gray57
+gray58
+gray59
+gray60
+gray61
+gray62
+gray63
+gray64
+gray65
+gray66
+gray67
+gray68
+gray69
+gray70
+gray71
+gray72
+gray73
+gray74
+gray75
+gray76
+gray77
+gray78
+gray79
+gray80
+gray81
+gray82
+gray83
+gray84
+gray85
+gray86
+gray87
+gray88
+gray89
+gray90
+gray91
+gray92
+gray93
+gray94
+gray95
+gray96
+gray97
+gray98
+gray99
+gray100

@@ -1,7 +1,7 @@
 # 기초의 essential_단련없이 발달은 없다! emacs/move.org
 일단 이동의 기본방식을 잘 수집한다. 잘 단련된 기본을 바탕으로 발전을 쌓는다.
 
-[[info:org#Motion][info:org#Motion]]
+info:org#Motion]]
 ‘C-c C-u’     (‘outline-up-heading’)     Backward to higher level heading.
 ‘C-c C-j’     (‘org-goto’) Jump to a different place without changing the current outline
 ‘C-c C-w’     (‘org-refile’) Refile entry or region to a different location.  *Note Refile and copy 
@@ -14,6 +14,7 @@ C-u C-p | C-u C-a 빠르게 줄을 키보드로 이동하는 법!
 즉 M-y는 이전으로 돌아가면서 이미 붙인 내용을 아웃시킨다.
 
 M-SPC는 M-\과 달리 1개의 스페이스공간을 둔다. 
+C-q Tab 탭의 기능을 살리는 것이 가능해짐 (C-숫자 원하는 횟수만큼 연속실행도 가능함.) 미니버퍼에서도 작동됨.
 
 M-z는 (M--) 숫자 (M-z) 영문자1개 빠르게 이동한다.
 
@@ -81,7 +82,11 @@ use C-M-w before M-w.
 * [2020-01-16 Thu 13:00] 유용한 정도를 발견함 C-s C-w로 맨 마지막 줄요 이동하는 법이 있음.
 C-r C-w (C-w ...이후 단어를 수집해서 검색어로 연결시킴! 신기함.)
 * C-u C-u C-f/b ;; 빠른 줄의 이동 C-SPC로 region설정에도 좋음!
-C-u C-u C-n/p
+C-u C-u C-/p
+* C-c C-v C-u	org-babel-goto-src-block-head (src_tangle.org)
+begin_src text 블록의 앞부분에 도달하는 빠른 이동법
+C-c C-v C-u	org-babel-goto-src-block-head
+C-c C-v C-p / C-n
 * 프로젝트워크북 클릭커블로 쉽게 위치로 이동하기- 갑자기 아이디어가 떠오름 
 그리고 클릭커블한 마커위치로 바로가기 a,b,c 
 마커설정을 정하는 방법을 구하기( 파일 열기가 전제되어야 할 것임 )
@@ -145,16 +150,33 @@ example, C-u 286 M-g M-g will jump to line number 286 in the current buffer.
 "}
 * [C-c &] Position saved to mark ring, go back with 'C-c &'
 Position saved to mark ring, go back with 'C-c &'. 문장이 나옴.
+- help:org-mark-ring-goto
+- help:org-mark-ring-goto
+- help:
+(global-set-key (kbd "C-c & &") 'org-mark-ring-goto) ;; ;yasnippet으로 인한 변경을 보완하는 것이다.
+
+info:org#Motion
+
+* C-c % 빠르게 선택하는 법으로 더 인식에 명확해지는 효과를 준다.
+C-c % 빠르게 선택하는 법으로 C-SPC를 두번눌러서 하는 것보다는 불편해 보여도 더 인식에 명확해지는 효과를 준다.
+C-c % help:org-mark-ring-push
+(org-mark-ring-push &optional POS BUFFER)
+
 * [C-M-{f, b, u, d}] Vim % 같은 기능 
 C-M-f, or M-x forward-sexp, goes forward to the closing brace, or to the opening brace in the next set of braces. 
 C-M-b, or M-x backward-sexp
 
+file:../../app/emacs/paredit.org
+(setq show-paren-style "mixed")
+(setq show-paren-style 'expression) ;;왜 진작에 등록않았을까?!
+(show-paren-mode 1) ;; 일단 잘 코딩된 문장을 읽는 것에 유용하게 읽기에 적용하고 나중에 편집법을 연구하여 연마한다.
+help:show-paren-mode
 also a show-paren-mode. For navigation, I think it's better C-M-n and C-M-n
 
 C-M-@
 C-M-<SPC> [2020-01-13 Mon 20:20] 특히 C-x C-x로 마커와 커서를 변경하면 삭제에 특히 유용한 것임!
 Put mark after following expression (mark-sexp).
-
+" "
 빠른 이동에 유용함 id:[[id:register이용한_빠른_이동전술][Quick 위치이동( C-x r j ) ( C-x r {C-}SPC @ );포인터를 마커로 변환함]]
 ** [C-M-n p f F SPC b B N P]VIM % 기능과 유사함
 C-M-@, C-M-SPC.

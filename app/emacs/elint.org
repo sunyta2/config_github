@@ -1,0 +1,16 @@
+
+elint로 구문을 자동검토하는 것인 듯한다.
+[[https://stackoverflow.com/questions/20551754/emacs-lisp-error-wrong-type-argument-commandp][elisp - Emacs Lisp error "Wrong type argument: commandp" - Stack Overflow]]
+
+
+#+begin_src emacs-lisp :results silent
+  (message "원리를 발견하고 충분한 단련과 습관이 없으면 무용지물이다")
+  (message-box "hi"
+  )
+#+end_src
+
+
+#+begin_src sh :results silent
+espeak -a 20 -v other/la "amare"
+#+end_src
+

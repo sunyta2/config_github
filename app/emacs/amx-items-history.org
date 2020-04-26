@@ -1,0 +1,37 @@
+
+;; ----- amx-history -----
+(
+ comment-box
+ password-store-edit
+ ivy-pass
+ comment-region
+ password-store-init
+ emms-stop
+ emms
+)
+
+;; ----- amx-data -----
+(
+ (amx-mode . 2)
+ (counsel-M-x . 1)
+ (history-mode . 2)
+ (5x5 . 1)
+ (amx . 1)
+ (history-goto-history . 1)
+ (package-install . 1)
+ (counsel-org-clock-goto . 1)
+ (counsel-load-library . 3)
+ (package-list-packages . 2)
+ (epresent-run . 1)
+ (epresent-quit . 1)
+ (org-present . 2)
+ (org-present-quit . 1)
+ (emms-add-url . 2)
+ (emms . 3)
+ (emms-stop . 1)
+ (ivy-pass . 4)
+ (password-store-init . 1)
+ (comment-region . 1)
+ (comment-box . 7)
+ (password-store-edit . 1)
+)

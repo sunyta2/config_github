@@ -11,6 +11,13 @@ file:/home/thinkpad/Desktop/pdf_list_of_desktop.org
 실험중임 [[*%EA%B0%95%EC%9D%98%EB%93%A3%EA%B8%B0%EC%9A%A9 property%EC%B6%94%EC%B6%9C %EC%82%AC%EC%9A%A9%EC%8B%A4%ED%96%89%EB%B2%951-ggb %EB%93%B1%EC%97%90 %EC%A0%81%EC%9A%A9%ED%95%A0 %EA%B2%83%EC%9E%84][강의듣기용 property추출 사용실행법1-ggb 등에 적용할 것임]]
 
 
+:기억하고_누르고즉시관찰실험하라!:
+#+begin_text org :최종목적은 process중단이 간략히 진행됨이 성공함.
+app/emacs/process.org espeak, mpv diary (delete-process (get-process "while true espeak greek latin"))
+#+end_text org
+:end:
+
+
 #+NAME: test
 * mpv 구간 반복의 프로세스를 만들어 완성하고 시도할 것.
 - 전제: 멀티텀의 설치할 것.
@@ -234,7 +241,7 @@ okular (async-shell-command "okular \"$(find ~/Music  -inum 6836311)\" &")
 
 * 바로위를 재생하는 클릭실행
 #+NAME: 바로위를 재생하는 클릭실행
-
+(buffer-substring-no-properties (line-beginning-position 0) (line-end-position 0))
 /home/thinkpad/Music/mpv_files/2_ncs_deemo_Reflection.webm
 [[elisp:(start-process%20"timeout"%20nil%20"timeout"%20"25m"%20"mpv"%20"--speed=0.8"%20"--volume=25"%20"--player-operation-mode=pseudo-gui"%20(buffer-substring-no-properties%20(line-beginning-position%200)%20(line-end-position%200)))][바로위를 재생함25분 "없이 파일명, 0.8speed 25vol]]
 

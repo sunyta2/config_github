@@ -13,9 +13,10 @@ File: ediff.info,  Node: Quick Help Commands,  Next: Other Session Commands,  Up
 
 3.1 Quick Help Commands
 =======================
-
+         :ediff_help:
 ‘?’
      Toggles the Ediff Quick Help window ON and OFF.
+         :END:
 ‘G’
      Prepares a mail buffer for sending a praise or a curse to the Ediff
      maintainer.

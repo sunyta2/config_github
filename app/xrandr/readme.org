@@ -154,3 +154,5 @@ xrandr --auto --output eDP-1 --auto --below VGA-1
 DP-2-3
 share
 xrandr --output VGA-1 --same-as eDP-1
+* compton app/compton/readme.org 투명한 xwindow apps이 가능해짐!
+(find-file "../../app/compton/readme.org")

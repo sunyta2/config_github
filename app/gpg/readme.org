@@ -1,0 +1,19 @@
+
+
+- 동영상의 예시에서 설정하는 법을 보여줌
+- [[https://www.youtube.com/watch?v=vNZtFE5zAVE][pass, command line password manager - YouTube]] 
+    gpg --list-key # 1:30부분에서 pass로 사용할 것을 등록함.
+
+file:../../app/pass/readme.org
+
+
+* GPG key생성의 방법
+- [[https://help.github.com/en/github/authenticating-to-github/generating-a-new-gpg-key][Generating a new GPG key - GitHub Help]] 
+
+$ gpg --full-generate-key
+
+$ pass init ABVCDEFG긴PASSWORDABCDE
+Password store initialized for ABVCDEFG긴PASSWORDABCDE
+[thinkpad@msata045 email]$ pass insert email/sunyta2@naver.com
+Enter password for email/sunyta2@naver.com: 
+Retype password for email/sunyta2@naver.com: 

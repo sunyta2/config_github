@@ -10,6 +10,11 @@ find . | grep X/ | xargs -I file cp file ../2/
 "ps aux | grep elisp_espeak | awk '{print $2}' | xargs -I{} kill -9 {}")
 ;; M-! ps aux | grep while | awk '{print $2}' | xargs -I{} kill -9 {}
 #+END_SRC
+#+begin_src emacs-lisp :results silent
+;;app/feh/readme.org kill by elisp:
+(start-process-shell-command "app/feh/readme.org start_exwm.sh kill" nil 
+(concat "ps aux" "| grep start_exwm.sh" "| awk '{print $2}'" "| xargs -I{} kill -9 {}"))
+#+end_src
 
 
 

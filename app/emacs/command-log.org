@@ -1,3 +1,31 @@
 
 
+* (global-)command-log-mode
+- 깔끔하게 명령의 로그를 명령어로 바로 보여준다.
+  - cf. file:../../app/emacs/command-log.org
+  - file:../../app/emacs/history_cmd_in_emacs.org
+#+BEGIN_SRC emacs-lisp
+(use-package command-log-mode
+  :config 
+  (clm/open-command-log-buffer)
+	;(require 'command-log-mode)
+	;(add-hook 'LaTeX-mode-hook 'command-log-mode)
+	;To see the log buffer, call M-x clm/open-command-log-buffer.
+  )
+
+
+
+#+END_SRC
+global-command-log-mode M-x help:global-command-log-mode
+command-log-mode M-x help:command-log-mode
+clm/open-command-log-buffer M-x help:clm/open-command-log-buffer
+clm/command-log-clear
+clm/toggle-command-log-buffer
+clm/save-command-log
+clm/close-command-log-buffer
+
+
+*** etc
+
  [[https://www.youtube.com/watch?v=FJq__bBi0nI][Emacs Doom E16: Org Mode, Marking Tasks with Tags - YouTube]]
+

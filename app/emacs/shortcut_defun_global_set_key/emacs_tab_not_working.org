@@ -1,25 +1,2 @@
 * 취지: spacemacs에서 tab으로 <s 완성을 위하여.
-(org-insert-structure-template) C-c C-,
-
-org-insert-link C-c C-l
-org-insert-all-link C-c C-M-l
-org-insert-last-stored-link C-c M-l
-org-insert-drawer C-c C-x d ;; 노트의 형식을 넣는 방식.
-
-* C-q TAB
-
-
-* C-c C-v j (org-babel-insert-header-arg) ;; 변수를 추가하는 법.
-
-#+begin_src sh :dir 1 :results silent 
-echo hi
-
-#+end_src
-
-
-
-
-* C-M-\ ;; auto-indent a region
-  <s
-  <s 
-**  [#B] <s
+- (customize-apropos-options '"structure") ;; 발견함. app/emacs/src_tab_org_structure_completion_template.org

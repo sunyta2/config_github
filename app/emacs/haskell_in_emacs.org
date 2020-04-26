@@ -1,0 +1,102 @@
+
+
+* install
+haskell ghc install yasnipp_haskell
+intero is an available obsolete package.
+
+     Status: Available Obsolete from melpa -- Install
+    Archive: melpa
+    Version: 20200125.848
+     Commit: fdb0550a2ddb5692d470336aa4a057717d572695
+    Summary: Complete development mode for Haskell
+   Requires: flycheck-0.25, company-0.8, emacs-24.4, haskell-mode-13.0
+   Homepage: https://github.com/commercialhaskell/intero
+   Keywords: haskell tools 
+Other versions: 20200125.848 (installed).
+
+(setq haskell-process-type 'stack-ghci)
+ ((org-babel-do-load-languages
+     'org-babel-load-languages
+        '((haskell . t)))
+ #+begin_src haskell :results column
+3
+ #+end_src
+
+ #+RESULTS:
+
+
+
+* site 몽땅 주소 [[https://stackoverflow.com/questions/42081379/how-to-set-up-org-babel-for-haskell-with-stack][emacs - How to set up org-babel for Haskell with Stack - Stack Overflow]]
+#+BEGIN_SRC haskell
+let x = "test한글"
+putStrLn x
+#+END_SRC
+
+#+RESULTS:
+: test한글
+
+
+I get
+
+executing Haskell code-block
+
+...which hangs forever. When I C-g, I see:
+
+GHCi, version 7.6.3: http://www.haskell.org/ghc/  :? for help
+Loading package ghc-prim ... linking ... done.
+Loading package integer-gmp ... linking ... done.
+Loading package base ... linking ... done.
+Some flags have not been recognized: prompt2, ghci     | 
+ghci    λ> let x = "TESTING!"
+putStrLn x
+"org-babel-haskell-eoe"
+Prelude| 
+<interactive>:4:1: parse error on input `putStrLn'
+ghci    λ> "org-babel-haskell-eoe"
+When I tab to the haskell buffer, I see it has genuinely evaluated what I sent, it just has this org-babel-haskell-eoe error and never returns control to my org session.
+
+Any chance this is because I have a custom prompt? Using the lambda instead of Prelude> ?
+
+haskell emacs org-mode literate-programming org-babel
+shareimprove this question
+edited May 23 '17 at 11:47
+
+Community♦
+111 silver badge
+asked Feb 7 '17 at 3:49
+
+Mittenchops
+13.5k2222 gold badges7676 silver badges165165 bronze badges
+You might find this other question useful: stackoverflow.com/questions/42081379/… – brittAnderson Feb 7 '17 at 13:48
+You need to load ob-haskell.el (or add haskell to org-babel-load-languages and restart emacs) before you can try evaluating haskell code blocks. That should get rid of the "No org-babel-execute function for haskell" message at least. – NickD Feb 7 '17 at 17:09 
+1
+@brittUWaterloo, I believe you linked to this very question of mine. – Mittenchops Feb 8 '17 at 4:33
+@Nick, ob-haskell.el from where? – Mittenchops Feb 8 '17 at 4:33
+It's part of "official" org-mode: you should be able to just say (require 'ob-haskell) and get it loaded. But I'm not sure whether it is going to help with anything other than that initial problem, which you might (or might not) have gotten past by now. – NickD Feb 8 '17 at 17:04 
+show 2 more comments
+3 Answers
+Active
+Oldest
+Votes
+
+5
+
++25
+This is not a complete answer: in particular, it does not even mention Stack. But I (a complete ignoramus on Haskell) wanted to find out what it would take to get the OP's test program to run in babel. Here's what I found:
+
+You need a haskell interpreter ;-) I'm on Fedora 24, so I installed the ghc-compiler package and I got ghci.
+
+You need haskell-mode. I installed that from MELPA, using the emacs package manager. That also installed inf-haskell.el
+
+By default, inf-haskell wants to run hugs, so I customized haskell-program-name and set it to "ghci".
+
+M-x load-library RET ob-haskell RET
+
+C-c C-c on the code block: the first time it fails and the Messages buffer shows "Buffer haskell.org does not exist or has no process".
+
+But if you do it C-c C-c on the code block again, it succeeds!
+
+Obviously, ob-haskell.el needs some work - and that's before we even get to Stack, of which I know even less than I know of Haskell, so I'll leave that as an exercise for the interested reader :-)
+
+EDIT: Re. version info (requested in a comment): I keep close to the bleeding edge. At this point in time (2017-05-01), I run Org mode version 9.0.5 (release_9.0.5-444-g998576 @ /home/nick/elisp/org-mode/lisp/) and GNU Emacs 26.0.50 (build 1, x86_64-pc-linux-gnu, GTK+ Version 3.20.10) of 2017-04-14
+* 

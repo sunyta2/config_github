@@ -1,6 +1,6 @@
 
 
-
+file:../../app/emacs/global_set_key_kbd.org define-prefix-command 연구..
 
 
 * 명령구조들을 일단 수집함
@@ -22,3 +22,52 @@
    (python-shell-send-string "; print()")) ;; 문장을 전송하는 법
 #+END_SRC
 
+** slime에서 수집한 것
+#+BEGIN_SRC emacs-lisp
+(add-hook 'slime-load-hook
+       (lambda ()
+          (define-key slime-prefix-map (kbd "M-h") 'slime-documentation-lookup)))
+;; (info "(slime) Basic customization")
+#+END_SRC
+
+** dired-mode-hook
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'dired-mode-hook (lambda () (dired-hide-details-mode t)))
+
+  (add-hook 'dired-mode-hook (lambda () (dired-omit-mode)))
+  (add-hook 'org-mode-hook (lambda () (dired-omit-mode)
+                                   (local-set-key)
+                                   (local-set-key)
+  ))
+#+END_SRC
+
+** fset to lambda()
+#+BEGIN_SRC elisp
+(fset 'hi2
+(lambda () (message-box "hi") (+ 1 2) (+ 3 5)))
+(hi2)
+#+END_SRC
+
+
+** test
+#+BEGIN_SRC emacs-lisp
+
+  (add-hook 'dired-mode-hook (lambda () (dired-omit-mode)))
+  (add-hook 'org-mode-hook (lambda () (dired-omit-mode)
+                                   (local-set-key)
+                                   (local-set-key)
+  ))
+#+END_SRC
+
+
+#+BEGIN_SRC emacs-lisp
+
+  (add-hook 'dired-mode-hook (lambda () (dired-omit-mode)))
+
+
+(add-hook 'org-mode-hook (lambda ()
+;(global-set-key (kbd "C-M-x") 'eval-defun) ;; add-hook으로 변경해서 다른 모드에서 쓰는 기본기능충돌을 방지할 것.
+                                   (local-set-key (kbd "C-M-x") 'eval-defun) ;; add-hook으로 변경해서 다른 모드에서 쓰는 기본기능충돌을 방지할 것.
+))
+
+#+END_SRC

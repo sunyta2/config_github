@@ -1,0 +1,384 @@
+
+
+* counsel은_중요한_자산이다
+:counsel_Have_many_functions:
+
+
+counsel-grep-or-swiper
+counsel-switch-to-shell-buffer ;; 터미널의 중요한 기능 멀티터미널가능 이름자동변경 단, 동적인 ranger 실행에러남.
+counsel-linux-app 실행에 중요한 역할을 한다.설명이 뜨는 구조로 안정적이다. 단 정식의쉘명령실행안됨  ;; 일단 실험해봄(counsel-linux-app) 
+
+counsel-buffer-or-recentf 버퍼의 선택을 더욱 높인다.
+ivy-omni-org
+counsel-wmctrl exwm의 창을 모아서 선택하는 법이 있음.
+help:counsel-wmctrl string의 리스프로 더 다양한 접근이 가능할 것이 사실이다.
+(global-set-key (kbd "C-x B") 'counsel-wmctrl)
+
+
+:END:
+** 모드라인 workspace number
+  :mode-line-with-workspace:  
+  #+BEGIN_TEXT org :what_in_your_Mind? 
+- 목표를 정하고 위로 들어올릴 것
+- Core_location: 
+- need : get line info by M-x command
+- need :save in exwm mode-line dotfile and diary
+-  
+#+begin_src emacs-lisp :results silent
+(:eval
+  (format winum-format
+  (winum-get-number-string)))
+
+(:eval
+(format winum-format
+(winum-get-number-string)))
+#+end_src
+
+- 
+#+begin_src emacs-lisp :results silent
+
+#+end_src
+  #+END_TEXT
+  :END:
+
+* below
+
+** 임시노트정리함
+
+#+begin_quote org
+harry note
+Atoms are the simplest objects in Emacs Lisp.
+ They evaluate to themselves, so evaluating these objects will just return themselves.
+
+If we want to refer to a list without trying to evaluate it, 
+we can wrap it in a call to the quote function. 
+In the same way that quoting a word in English refers to the word and not the thing it represents,
+ quoting an expression in Lisp refers to the list itself. 
+To say that another way, quoting an expression treats it as data, not as code.
+(quote (1 2 3))
+And boom! We get (1 2 3), just like we wanted.
+
+Like virtually every other language, Emacs Lisp has variables.
+Emacs has many variables that are already defined and in use; 
+for example, path-separator contains a string that separates file paths in the system’s $PATH variable.
+path-separator
+In my system, evaluating path-separator returns ":".
+
+The answer is that setq actually isn’t just a function. setq is an example of a macro. 
+Macros are a bit like functions, 
+but they also make it possible to manipulate their arguments before they get executed—in this case, 
+the setq macro implicitly wraps a quote around the first argument. 
+
+
+(you could think of the values in a let expression as being bound in parallel), but a variant, let*, does.
+
+지나치게 기교를 부린 코드는 나중에 이해가 어렵다.
+You may be tempted to use these return values to write very terse code, 
+but I’d advise you to resist that temptation. 
+Overly clever code will only be harder for you to understand later.
+
+Some functions—= or null, for example - just return t or nil.
+
+
+
+#+end_quote
+
+** 
+
+
+동영상을 다운로드함 counsel과 함께 사용한다고 함.
+
+
+swiper...
+
+(require 'ivy)
+
+* test
+**  test
+#+begin_src emacs-lisp
+
+  ;; There are multiple ways to start the server, and I am still experimenting with the best approach for my needs.
+  ;; The following keeps the running process running.
+  (unless (boundp 'server-process)
+    (server-start))
+
+
+  ;; Then we want to make sure that the session's state is stored, using Emacs' session managemnet system.
+  (desktop-save-mode 1)
+  (setq desktop-restore-eager 10)
+  (setq desktop-files-not-to-save "\\(^/[^/:]*:\\|(ftp)$\\|KILL\\)")
+  (setq desktop-restore-frames nil)
+
+
+
+  ;; Now ensure Emacs saves the contensts of the session in regular intervals. This sets it to ten minutes.
+  (defun contrib/desktop-save ()
+    "Write the desktop save file to ~/.emacs.d"
+    (desktop-save user-emacs-directory))
+
+  (if (not (boundp 'contrib/desktop-save-timer))
+      (setq contrib/desktop-save-timer
+            (run-with-idle-timer 600 t 'contrib/desktop-save)))
+
+#+end_src
+
+#+begin_quote org
+
+(require 'emms-player-simple-mpv)
+;; This plugin provides control functions (e.g. ab-loop, speed, fullscreen).
+(require 'emms-player-simple-mpv-control-functions)
+
+
+(setq org-src-window-setup 'current-window)
+org-src-window-setup: 'split-window-below
+current-window     Show edit buffer in the current window, keeping all other
+                   windows.
+split-window-below Show edit buffer below the current window, keeping all
+                   other windows.
+other-window       Use ‘switch-to-buffer-other-window’ to display edit buffer.
+reorganize-frame   Show only two windows on the current frame, the current
+                   window and the edit buffer.  When exiting the edit buffer,
+                   return to one window.
+other-frame        Use ‘switch-to-buffer-other-frame’ to display edit buffer.
+                   Also, when exiting the edit buffer, kill that frame.
+exwm-workspace-warp-cursor
+(ivy-resume) (emms)
+#+begin_src emacs-lisp
+    (use-package amx    ;;; ivy.org
+      :ensure t
+      :after ivy
+      :custom
+      (amx-backend 'auto)
+      (amx-save-file "~/config_github/app/emacs/amx-items-history.org")
+;;      (amx-save-file "~/config_github/app/emacs/amx-items")
+      (amx-history-length 369)
+      (amx-show-key-bindings nil)
+      :config
+      (amx-mode 1))
+(setq exwm-workspace-warp-cursor t) ;; mouse.org 
+(ido-mode -1)
+  (global-set-key (kbd "C-x b") 'counsel-switch-buffer) ;; C-n / C-p로 바로 버퍼로 거칠게 전환함
+  (global-set-key (kbd "C-x b") 'ivy-switch-buffer) ;; C-M-n / C-M-p로 눌러 버퍼로 소프트 전환함
+  (global-set-key (kbd "C-x b") 'swiper-multi) ;; C-M-n / C-M-p로 눌러 버퍼들 선택해 전환함
+;;(global-set-key (kbd "C-x B") 'exwm-workspace-switch-to-buffer)
+;;(global-set-key (kbd "C-x M") 'exwm-workspace-move-window)
+  (use-package ivy-rich
+    :ensure t
+    :config
+    (setcdr (assq t ivy-format-functions-alist)
+            #'ivy-format-function-line)
+    (ivy-rich-mode 1))
+  (use-package ivy-posframe
+    :ensure t
+    :delight
+    :custom
+    (ivy-posframe-height-alist
+     '((swiper . 15)
+       (t . 10)))
+    (ivy-posframe-display-functions-alist
+     '((complete-symbol . ivy-posframe-display-at-point)
+       (counsel-describe-function . nil)
+       (counsel-describe-variable . nil)
+       (swiper . nil)
+       (swiper-isearch . nil)
+       (t . ivy-posframe-display-at-frame-center)))
+    :config
+    (ivy-posframe-mode 1))
+
+  (use-package swiper
+    :ensure t
+    :after ivy
+    :custom
+    (swiper-action-recenter t)
+    (swiper-goto-start-of-match t)
+    (swiper-include-line-number-in-search t)
+    :bind (("C-s" . swiper)))
+#+end_src
+
+
+
+#+begin_src elisp :results silent
+  (use-package counsel
+    :ensure t
+    :custom
+    (counsel-yank-pop-preselect-last t)
+    (counsel-yank-pop-separator "\n                                                                                            \n")
+    (counsel-rg-base-command
+     "rg -SHn --no-heading --color never --no-follow --hidden %s")
+    (counsel-find-file-occur-cmd     ; TODO Simplify this
+     "ls -a | grep -i -E '%s' | tr '\\n' '\\0' | xargs -0 ls -d --group-directories-first")
+    :config
+    (defun prot/counsel-fzf-rg-files (&optional input dir)
+      "Run `fzf' in tandem with `ripgrep' to find files in the
+  present directory. Both of those programs are external To
+  Emacs."
+      (interactive)
+      (let ((process-environment
+             (cons (concat "FZF_DEFAULT_COMMAND=rg -Sn --color never --files --no-follow --hidden")
+                   process-environment)))
+        (counsel-fzf input dir)))
+
+    (defun prot/counsel-fzf-dir (arg)
+      "Specify root directory for `counsel-fzf'."
+      (prot/counsel-fzf-rg-files ivy-text
+                                 (read-directory-name
+                                  (concat (car (split-string counsel-fzf-cmd))
+                                          " in directory: "))))
+
+    (defun prot/counsel-rg-dir (arg)
+      "Specify root directory for `counsel-rg'."
+      (let ((current-prefix-arg '(4)))
+        (counsel-rg ivy-text nil "")))
+
+    (ivy-add-actions
+     'counsel-fzf
+     '(("r" prot/counsel-fzf-dir "change root directory")
+       ("g" prot/counsel-rg-dir "use ripgrep in root directory")))
+
+      (ivy-add-actions
+     'counsel-rg
+     '(("r" prot/counsel-rg-dir "change root directory")
+       ("z" prot/counsel-fzf-dir "find files with fzf in root directory")))
+
+      ;; Remove coummands that only work with key bindings
+      (put 'counsel-find-symbol 'no-counsel-M-x t)
+      :bind (("M-x" . counsel-M-x)
+             ("C-x C-f" . counsel-find-file)
+             ("s-f" . counsel-find-file)
+             ("s-F" . find-file-other-window)
+             ("s-r" . counsel-rg)
+             ("s-z" . counsel-fzf)))
+#+end_src
+
+#+RESULTS:
+: emms-player-simple-mpv-control-functions
+
+
+#+begin_src emacs-lisp
+;; An example of setting like emms-player-mplayer.el
+;; `emms-player-my-mpv' is defined in this case.
+(define-emms-simple-player-mpv my-mpv '(file url streamlist playlist)
+    (concat "\\`\\(http[s]?\\|mms\\)://\\|"
+            (apply #'emms-player-simple-regexp
+                   "aac" "pls" "m3u"
+                   emms-player-base-format-list))
+    "mpv" "--no-terminal" "--force-window=no" "--audio-display=no")
+
+(emms-player-simple-mpv-add-to-converters
+ 'emms-player-my-mpv "." '(playlist)
+ (lambda (track-name) (format "--playlist=%s" track-name)))
+
+(add-to-list 'emms-player-list 'emms-player-my-mpv)
+
+(dolist (map (list emms-playlist-mode-map
+;;                   emms-stream-mode-map
+))
+  (define-key map (kbd "m") 'emms-player-simple-mpv-mute)
+  (define-key map (kbd "[") 'emms-player-simple-mpv-speed-decrease)
+  (define-key map (kbd "]") 'emms-player-simple-mpv-speed-increase)
+  (define-key map (kbd "{") 'emms-player-simple-mpv-speed-halve)
+  (define-key map (kbd "}") 'emms-player-simple-mpv-speed-double)
+  (define-key map (kbd ";") 'emms-player-simple-mpv-ab-loop)
+  (define-key map (kbd "<backspace>") 'emms-player-simple-mpv-speed-normal)
+  (define-key map (kbd "T") 'emms-player-simple-mpv-ontop)
+  (define-key map (kbd "F") 'emms-player-simple-mpv-fullscreen)
+  (define-key map (kbd "9") 'emms-volume-lower)
+  (define-key map (kbd "0") 'emms-volume-raise))
+
+(let ((map emms-playlist-mode-map))
+  (define-key map (kbd ",") 'emms-player-simple-mpv-playlist-prev)
+  (define-key map (kbd ".") 'emms-player-simple-mpv-playlist-next))
+;; Playing YouTube playlist in reverse order.
+;; `emms-player-my-mpv-ytpl-reverse' will be defined in this case.
+(define-emms-simple-player-mpv my-mpv-ytpl-reverse '(url)
+  "\\`http[s]://www\\.youtube\\.com/playlist\\?list="
+  "mpv" "--no-terminal" "--force-window=no" "--audio-display=no"
+  "--ytdl" "--ytdl-raw-options=playlist-reverse=")
+
+(add-to-list 'emms-player-list 'emms-player-my-mpv-ytpl-reverse)
+#+end_src
+
+#+RESULTS:
+| emms-player-my-mpv-ytpl-reverse | emms-player-my-mpv |
+
+
+
+#+end_quote
+
+
+
+** ivy youtube
+#+begin_quote org
+- 0:00:00 :: 
+(info "(ivy) Introduction")
+help:ivy-count-format
+#+begin_src elisp :results silent
+;; Ivy, Counsel, Swiper Setup
+;; ivy.org
+(require 'ivy)
+(setq ivy-use-virtual-buffers t)
+(setq ivy-count-format "(%d/%d) ")
+(ivy-mode 1)
+(global-set-key "\C-s" 'swiper)
+(require 'swiper)
+(require 'counsel)
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "C-h f") 'counsel-describe-function)
+(global-set-key (kbd "C-h v") 'counsel-describe-variable)
+(global-set-key (kbd "C-h l") 'counsel-find-library)
+(global-set-key (kbd "C-h i") 'counsel-info-lookup-symbol)
+(global-set-key (kbd "C-h u") 'counsel-unicode-char)
+
+(global-set-key (kbd "<f1> f") 'counsel-describe-function)
+(global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+(global-set-key (kbd "<f1> l") 'counsel-find-library)
+(global-set-key (kbd "<f1> i") 'counsel-info-lookup-symbol)
+(global-set-key (kbd "<f1> u") 'counsel-unicode-char)
+;;(global-set-key (kbd "<F2> u") 'counsel-unicode-char)
+;;(global-set-key (kbd "<f1> f") 'counsel-dscribe-)
+;;(global-set-key (kbd "<f1> f") 'counsel-dscribe-)
+;;(global-set-key (kbd "C-c C-r") 'ivy-resume)
+(global-set-key (kbd "") ')
+(global-set-key (kbd "") ')
+(global-set-key (kbd "") ')
+(global-set-key (kbd "") ')
+
+(require ')
+;; This plugin provides control functions (e.g. ab-loop, speed, fullscreen).
+(require 'emms-player-simple-mpv-control-functions)
+#+end_src
+
+;; Avy Setup
+(global-set-key (kbd "C-:") 'avy-goto-char-timer)
+(setq avy-all-windows 'all-frames)
+(setq avy-timeout-seconds 1.0)
+(avy-setup-default)
+
+amx {M-x history and matches}
+amx {M-x history and matches} ;; (use-package amx ;; file:amx.org )
+
+#+RESULTS:
+: emms-player-simple-mpv-control-functions
+
+
+#+begin_src emacs-lisp
+(use-package counsel
+:ensure t
+:after (avy amx)
+:custom
+(counsel-yank-pop-preselect-last t)
+(setq counsel-yank-pop-separator "\n-----------------------------------------------------------------------------------------------\n")
+;;­­­­­­­­­­
+
+(setq counsel-yank-pop-separator "\n                                                                                            \n")
+;;                                              
+#+end_src
+
+
+
+
+#+end_quote
+
+
+

@@ -1,0 +1,10 @@
+ebay sunyta002
+
+[[https://www.youtube.com/watch?v=7FLZO2hidHs][Why I left my $200k job as a Software Developer - YouTube]]황금수갑
+Tech industry salaries https://www.levels.fyi/
+Indie Hackers https://www.indiehackers.com/
+Pieter Levels' Blog https://levels.io/
+Nomad List https://nomadlist.com/
+
+const [el] = await page.$x("//*[@id="imBlkFroont"]');
+const [el] = await page.$x()

@@ -5,9 +5,14 @@
 (info-apropos "Magic File Names")
 (apropos-command (quote ("Magic" "File" "Names")) nil)
 (command-history)
+(info-apropos "prompt") 정보 발견의 핵심명령어!!!!
+(info-apropos "list") 정보발견의 핵심
 
+- (search-emacs-glossary) ;Emacs내부단어사전기능을 발견함! 정확하고 간결한 지식은 핵심열쇠다!
+
+- F10을 눌러서 메뉴바의 항목을 자주 익혀둘 것! 기본이면서 중요한 사용법이다
 (info "(info) Help")     기본기에 통달할 것!
- info:info#Help 
+ info:info#Help  # (info "(info) Top") 사용법을 정확히 자주 살펴보고 읽어두어서 연습에 활용할 것.
 (Info-help)
 
 (apropos-command "region")
@@ -17,6 +22,17 @@
                   (kbd "C-h m")
 (describe-mode)
 (help-for-help)
+
+- package의 정보확인- help:finder-commentary ; file:../../app/emacs/finder.org
+  ; 패키의 주석문을 볼 수 있어서 각 개요을 잡는데 큰 도움을 준다. browse_url_browser_function.org 보다가 발견함
+(finder-commentary "org-pdftools")
+(describe-package 'exwm)
+(finder-commentary "pdf-tools")
+# (describe-package 'pdf-tools)  ; 더 좋은 명령어이다.
+
+- (로그로 명령어를 명확히 한다.) 깔끔하게 명령의 로그를 명령어로 바로 보여준다.
+  - cf. file:../../app/emacs/command-log.org
+
 
 * info is *info* 메뉴얼들이다.
 - [ ] info의 놀라운 단축키를 확인함!! 메뉴바을 눌러보고 확인할 것!!! (info "(stumpwm) Windows")

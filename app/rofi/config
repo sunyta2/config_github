@@ -1,16 +1,172 @@
+### (async-shell-command "ln -fs ~/config_github/app/rofi/config ~/.config/rofi/config")
+#################(find-file "~/config_github/app/stumpwm/.stumpwmrc ~/.stumpwmrc")
+### (async-shell-command "cp ~/config_github/app/stumpwm/.stumpwmrc ~/.stumpwmrc")
+#################(find-file "~/.stumpwmrc")
+### (async-shell-command "rm ~/.stumpwmrc")
+
+# (dired "~/config_github/app/rofi/")
+#         # (dired "~/.config/rofi/")
+# ~/.config/rofi/config
+
 # (find-file "~/.config/rofi/config")
              # 취지:rofi의 단순명령으로 실행하도록 in dwm
 # (find-file "~/config_github/app/dwm/rofi/config")
 # RUN by $ rofi -show combi # drun IS VERY USEFUL!
 
 # https://github.com/ageldama/configs/blob/master/i3wm/macbook-air-2012mid/rofi-config 한국인의 자료.
+# (find-file "/usr/share/rofi/themes/")
 
-
-rofi.theme: /usr/share/rofi/themes/android_notification.rasi
-# ~/.config/rofi/config
+###### not work #rofi.show:          combi
+#rofi.lines: 15
+rofi.modi:          combi
 rofi.combi-modi:    window,drun,run,ssh
 #rofi.theme:         lb
+
 #rofi.font:          Envy Code R 10
-rofi.modi:          combi
-###### not work #rofi.show:          combi
-#rofi.theme: /usr/share/rofi/themes/gruvbox-dark-hard.rasi
+
+###############
+rofi.theme: /usr/share/rofi/themes/gruvbox-dark-hard.rasi
+rofi.theme: /usr/share/rofi/themes/android_notification.rasi
+rofi.theme: Adapta-Nokto.rasi
+rofi.theme: android_notification.rasi
+rofi.theme: Arc-Botticelli.rasi
+rofi.theme: Arc-Botticelli-transparent.rasi
+rofi.theme: Arc-Casablanca.rasi
+rofi.theme: Arc-Casablanca-transparent.rasi
+rofi.theme: Arc-Crimson.rasi
+rofi.theme: Arc-Crimson-transparent.rasi
+rofi.theme: Arc-Dark-Botticelli.rasi
+rofi.theme: Arc-Dark-Botticelli-transparent.rasi
+rofi.theme: Arc-Dark-Casablanca.rasi
+rofi.theme: Arc-Dark-Casablanca-transparent.rasi
+rofi.theme: Arc-Dark-Crimson.rasi
+rofi.theme: Arc-Dark-Crimson-transparent.rasi
+rofi.theme: Arc-Dark-Evopop.rasi
+rofi.theme: Arc-Dark-Evopop-transparent.rasi
+rofi.theme: Arc-Dark-Froly.rasi
+rofi.theme: Arc-Dark-Froly-transparent.rasi
+rofi.theme: Arc-Dark-Havelock.rasi
+rofi.theme: Arc-Dark-Havelock-transparent.rasi
+rofi.theme: Arc-Dark-Hibiscus.rasi
+rofi.theme: Arc-Dark-Hibiscus-transparent.rasi
+rofi.theme: Arc-Dark-Mandy.rasi
+rofi.theme: Arc-Dark-Mandy-transparent.rasi
+rofi.theme: Arc-Dark-Mantis.rasi
+rofi.theme: Arc-Dark-Mantis-transparent.rasi
+rofi.theme: Arc-Dark-Niagara.rasi
+rofi.theme: Arc-Dark-Niagara-transparent.rasi
+####### not good
+rofi.theme: Pop-Dark.rasi
+rofi.theme: purple.rasi
+rofi.theme: Monokai.rasi
+rofi.theme: Indego.rasi
+rofi.theme: gruvbox-light-soft.rasi
+rofi.theme: gruvbox-light.rasi
+
+
+rofi.theme: gruvbox-dark-soft.rasi
+rofi.theme: gruvbox-dark.rasi
+rofi.theme: gruvbox-dark-hard.rasi
+rofi.theme: gruvbox-common.rasi
+
+
+rofi.theme: glue_pro_blue.rasi
+
+rofi.theme: Arc-Orchid.rasi
+rofi.theme: Arc-Paper.rasi
+rofi.theme: Arc-Polo.rasi
+rofi.theme: Arc-Punch.rasi
+
+rofi.theme: Arc-Smoke-transparent.rasi
+rofi.theme: Arc-Smoke.rasi
+rofi.theme: Arc.rasi
+
+rofi.theme: Arc-Paper-transparent.rasi
+rofi.theme: Arc-Punch-transparent.rasi
+rofi.theme: Arc-Orchid-transparent.rasi
+rofi.theme: Arc-Mandy.rasi
+
+rofi.theme: Arc-Mantis.rasi
+rofi.theme: Arc-Niagara.rasi
+rofi.theme: Arc-Numix.rasi
+rofi.theme: Arc-Numix-transparent.rasi
+rofi.theme: Arc-Niagara-transparent.rasi
+
+rofi.theme: Arc-Mantis-transparent.rasi
+
+rofi.theme: Arc-Mandy-transparent.rasi
+rofi.theme: Arc-Dark-Numix.rasi
+rofi.theme: Arc-Dark-Orchid.rasi
+rofi.theme: Arc-Dark-Paper.rasi
+rofi.theme: Arc-Dark-Polo.rasi
+rofi.theme: Arc-Dark-Punch.rasi
+rofi.theme: Arc-Dark.rasi
+rofi.theme: Arc-Dark-Smoke.rasi
+rofi.theme: Arc-Dark-Tacao.rasi
+rofi.theme: Arc-Dark-Tory.rasi
+rofi.theme: Arc-Evopop.rasi
+
+rofi.theme: Arc-Froly.rasi
+rofi.theme: Arc-Froly-transparent.rasi
+rofi.theme: DarkBlue.rasi
+rofi.theme: blue.rasi
+rofi.theme: Arc-Tory.rasi
+rofi.theme: Arc-Tacao.rasi
+
+
+rofi.theme: Arc-Havelock.rasi
+rofi.theme: Arc-Hibiscus.rasi
+
+rofi.theme: Arc-Dark-Orchid-transparent.rasi
+rofi.theme: Arc-Havelock-transparent.rasi
+rofi.theme: Arc-Hibiscus-transparent.rasi
+
+
+
+####### good
+rofi.theme: gruvbox-light-hard.rasi # 길이 표시부분있음
+rofi.theme: solarized.rasi
+rofi.theme: Paper.rasi
+rofi.theme: fancy.rasi ## 입력창이 매우 깔끔함
+rofi.theme: c64.rasi ## 특이한 배경
+rofi.theme: dmenu.rasi  # 특이함
+rofi.theme: Arc-Tory-transparent.rasi   ## 흰색 투명으로 추가 연구필요
+rofi.theme: Arc-Tacao-transparent.rasi
+rofi.theme: ArcoLinux-Darkish.rasi # 특이함 연구필요함 깔끔하고 산뜻함 투명 추가고려할 것
+rofi.theme: ArcoLinux-Nord.rasi
+rofi.theme: Arc-Evopop-transparent.rasi #더 깔끔한 간단모형
+rofi.theme: Arc-Dark-Tory-transparent.rasi  # 더더 깔끔함
+rofi.theme: Arc-Dark-Smoke-transparent.rasi # 더 떠 깔끔함
+rofi.theme: Arc-Dark-Paper-transparent.rasi
+rofi.theme: Arc-Dark-Polo-transparent.rasi
+rofi.theme: Arc-Dark-Punch-transparent.rasi
+rofi.theme: Arc-Dark-Tacao-transparent.rasi
+rofi.theme: Arc-Dark-Numix-transparent.rasi ## 오렌지 선택임
+rofi.theme: Arc-Dark-Niagara-transparent.rasi #깔끔
+rofi.theme: Arc-Dark-Havelock-transparent.rasi # 깔끔
+rofi.theme: Arc-Casablanca-transparent.rasi ## 깔끔 오랜지
+
+#######
+rofi.theme: solarized_alternate.rasi
+rofi.theme: lb.rasi # 투명화된 현상연구필요
+rofi.theme: arthur.rasi       ## 특이한 투명과 깔끔배경
+rofi.theme: Arc-Polo-transparent.rasi ### 무난 투명으로 간편함
+rofi.theme: paper-float.rasi
+rofi.theme: sidebar.rasi # 특이함
+####### 
+
+
+ # 특이함 연구필요함 깔끔하고 산뜻함 투명 추가고려할 것
+
+
+rofi.theme: ArcoLinux-Darkish.rasi
+rofi.theme: ArcoLinux-Nord.rasi
+rofi.theme: sidebar.rasi
+
+
+rofi.theme: Arc-Dark-Tacao-transparent.rasi
+
+rofi.theme: Arc-Dark-Paper-transparent.rasi
+rofi.theme: Arc-Dark-Punch-transparent.rasi
+rofi.theme: Arc-Dark-Polo-transparent.rasi
+

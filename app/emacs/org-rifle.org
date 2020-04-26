@@ -1,0 +1,14 @@
+
+
+
+
+
+* helm-org-rifle
+
+[[https://github.com/alphapapa/org-rifle][GitHub - alphapapa/org-rifle: Rifle through your Org-mode buffers and acquire your target]]
+** 드디어 재발견함!
+
+* org-search-goto-ml.el
+[[https://github.com/alphapapa/org-search-goto][GitHub - alphapapa/org-search-goto: org-search-goto]]
+[[https://www.emacswiki.org/emacs/org-search-goto-ml.el][EmacsWiki: org-search-goto-ml.el]] 이것이 원형이 었다고 함.
+트라이로 시도해 볼 것

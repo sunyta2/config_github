@@ -6,13 +6,51 @@
 #+CREATOR: LEEJEONGPYO
 ###-*- coding: utf-8 -*-
 
+* 검색의 神 이 바로 Emacs!!! → 바로 C-u M-x multi-occur-in-matching-buffers
+- management가 필요한 UNIX에서 최강의 통합관리능력을 보유한 것이 바로 Emacs이다.
+- 검색의 신이 바로 Emacs
+어렵지만 정보검색의 최고 사령관이면서 최강의 전략가.
+- (multi-occur-in-matching-buffers "\\(*\\|org\\)" "입력" "\\&")
+- C-u M-x multi-occur-in-matching-buffers 검색의 경우 입력은 \(*\|org\) <리턴> 입력 <리턴>
+(describe-key [8388646] 1 nil) (start-process-shell-command "돌핀" nil "dolphin")
+
+s-& runs the command (lambda (command) (interactive (list
+(read-shell-command "$ "))) (start-process-shell-command command nil
+command)) (found in global-map), which is an interactive Lisp
+function.
+
+It is bound to s-&.
+
+(anonymous COMMAND)
+#+begin_src emacs-lisp
+  ;; 성공적인 함수명없는 전달!!! el 파일에서 [ [ 1 파일빠르게 열기커맨드지정불요함 ]] global-set-key.org read-shell-command.org
+  (global-set-key (kbd "s-$")
+                  '(lambda (command)
+                     (interactive (list (read-shell-command "$ "))) (start-process-shell-command command nil command))
+                  )
+#+end_src
+help:read-shell-command
+(read-shell-command "hi " "good day")
+help:read-from-minibuffer (
+file:readme.org
 * org-mode agenda 연구중
 file:org_mode_study/agenda_view_org.org
 agenda C-c [ 리스트에 추가하는 방식을 연구함.
        C-c / t ;;현재 폴더내의 TODO만 국한 
 /app/emacs/org-clock-goto_C-u_C-c_C-x_C-j.org
+* Magit, VC로 실험과 시도의 제왕이다.
+로그를 vc에서 생성하는 법이 있음을 발견함!
+	단축키는 → C-x 4 a.
+*vc-diff* 단축키는 C-x v =  help:vc-diff revert-buffer과 magit, git, ediff에서 살펴볼만한 내용이다.
+	특히 파일의 손상정도를 확인할 절호의 기회임.
 
-* [concentration] 집중적인 노트의 통합이 가능하다
+:연구중_저장내용_버퍼:
+------ <Wish> in mind is 현재저장된 내용과 버퍼를 비교하는 것을 기록해 둘 것.
+(ediff-backup (buffer-name))
+(ediff)
+:END:
+
+* [concentration] 집중적인 노트의 통합_org_src_block_내부노트_모듈S 수집개선저장
 - 원칙발견실험중: 두기술이상이 합체할 경우 새로 파일을 만드는 것을 원칙으로 한다.
       - 사용기술:mpv, okular, python list ;; 이문장으로 쉽게 찾을 수 있게한다.
         - 파일위치제목: /app/emacs/원칙설명_이름정함.org
@@ -20,9 +58,405 @@ agenda C-c [ 리스트에 추가하는 방식을 연구함.
 n과 w로 사용하는 법으로 集中의 노트를 사용하는 핵심의 기술이다!
 (find-file-other-window "~/config_github/app/emacs/readme.org")
           强點에 集中하여 眞我로 통합을 추구함 app/emacs/readme.org
-C-x n n         narrot-to-region
+C-x n s         narrow-to-subtree       C-x n n        narrow-to-region
 C-x n w         widen                 2019_12_diary.org
 C-x n C-h       위의 설명을 보게함. 매우 중요한 특징으로 자주 활용할 것
+
+
+- [ ]기본처리의 아이디어 마인드를 두는 방점! 질서를 잡는 우주의식
+        공부는 모든것들의 중심으로 향하는 질서정연한 방향성이다. 
+어제 노트에 대한 것이 필요하다고 느끼니 오늘 놀라운 발견을 함! 우주의 무의식은 공명진동함.
+                                        우주는 그 강한 힘의 방향으로 공명진동하며 질서를 잡는다.
+최고의 것을 연마하고 깨닫는 사람이 가장 가치있는 것을 우주무의식은 심층으로 보고있다.
+알아보다는 사실이다. 즉, 아는 힘이 메이기전은 무한하다!
+당당한 이유가 무엇인가?
+가장 신기한 것은 자기자신이라고 본다.
+  - 다듬고 보살피며 재처리정련, 집중과 끈기있는 연관성으로 음미하고 상시적이고 체계적 분할로 정기적으로 지속적 정확 처리집행하며 재검토되지 않는 일은 성과가 없다.
+  -  -> 구조파악할 것 → 범원리를 간략축적하고 → 이후연구,활용방향,추가필요 기록할 것
+[문맥을 연결해서] 새로운 발전을 개발하는 것이 힘든 것이다. 집중적인 노력이 요구된다.
+- 문맥의 핵심부분을 다시 상기하는 과정을 최대한 단축하는 것이 오그모드의 최고 능력이다.
+- 노트능력의 중요성- 문맥을 저장하는 기능이 필요함. 설득을 하려면 맥락이 중요하며, 중요한 맥락속에서 스토리를 전개하는 것이 필수적이다.
+               목표를 향해서, 도구와 질문사항을 수집할 것.
+               목표를 달성하는 습관이 가장 큰 재산이다!
+# 문맥에 맞는 추론을 하는 것은 중요하다.
+
+- 강점: 링크가 살아있다! → 파일전체를 새롭게 찾아내는 문맥적인 링크를 구성할 수 있을 것이다.
+  - 보라! → [[*%5Bconcentration%5D %EC%A7%91%EC%A4%91%EC%A0%81%EC%9D%B8 %EB%85%B8%ED%8A%B8%EC%9D%98 %ED%86%B5%ED%95%A9_org_src_block_%EB%82%B4%EB%B6%80%EB%85%B8%ED%8A%B8_%EB%AA%A8%EB%93%88S %EC%88%98%EC%A7%91%EA%B0%9C%EC%84%A0%EC%A0%80%EC%9E%A5][살아있는 문맥링크의 집중적인 노트의 통합_org_src_block_내부노트_모듈S 수집개선저장]] 
+
+
+  :꺽쇄s탭단축키로저장된yasnappet_angle_s_tab:
+  #+begin_text org :what_in_your_Mind $0
+- save_location: $1
+- 
+#+begin_src emacs-lisp :results silent
+$2
+#+end_src
+
+- 
+#+begin_src emacs-lisp :results silent
+$
+#+end_src
+  #+end_text
+  :end:
+
+
+- [ ]이파일의 아래 형식은 사본을 저장하는 장소로 사용하고 주로 활동은 ESC ESC 1에서 활용하는 것으로 한다.
+  - 아래에 여러 백업을 둔다.
+  - 실험본을 두고 여러완성형을 일단 이곳에 수집저장하고 활용은 주로 위의 지정한 다이어리에서 집행한다.
+- [ ] 아이디어를 수집
+  - 3분할_아이디어
+    - 1 2 3 입력-처리-저장의 3분할(IDEA) 화면구성으로 통일할 것. 노트화면분할의 통일할 방법을 가짐
+      1 2는 위치가 바뀔 수 있고 그 안에서 적당히 재분할도 고려해야 할 것임.
+       수집노트-형식(모델),방법-요약생성
+       참고문헌-입력문-결과실행 (프로그래밍의 경우)  MVC, WM, Emacs_Frame_split_windows
+       help:finder-commentary ; file:../../app/emacs/finder.org
+       ; 패키의 주석문을 볼 수 있어서 각 개요을 잡는데 큰 도움을 준다. browse_url_browser_function.org 보다가 발견함
+
+  - 리스트목록포함할 것(차례, 인접파일리스트, 상시공부노트파일, 검색할 내용등을 항목으로 내장할 것)
+    file:~/config_github/app/emacs/wish_test.org
+  - 활용처를 모색할 것
+  - 저장의 장소를 찾을 것(형식개선의 방식을 전달할 곳을 활용할 것)
+  - file:~/.emacs.d/snippets/org-mode/emacs-lisp yasnipit발견!!! ← F10메뉴_자주 확인할 것
+    -  file:../../app/emacs/yasnippet.org (buffer-name) 단축키로 구조확장하는 것을 연구하여 기록하고 수집할 곳
+- [ ] 공통기재사항 범용원칙
+  - - 반드시 주제에 맞게 제목을 변경해서 설정해 둘 것
+  - 각 모듈의 형식을 사용하는 가장 모델의 실용적인 파일위치를 이곳에 수집하여서 아이디어 전개감독수정을 반영할 것.
+    - 초소형부터 바닥부터 basis를 철저하게 파고들어서 거대구조를 단련한다.
+  - 수집처_주제등록처: 를 둘 것(링크를 위해서):  그리고 현재위치 (buffer-file-name) (buffer-name)
+
+customize_face_saved_to_load.org -> file:/home/thinkpad/config_github/app/emacs/customize_face_saved_to_load.org
+
+
+#+begin_quote elisp :backupbefore in emacsQ_load.el
+     (setq org-src-block-faces '(
+                                 ("emacs-lisp" (:background "gray9"))
+				 ("elisp" (:background "gray18"))
+				 ("sh" (:background "midnight blue"))
+				 ("python" (:background "OliveDrab1"))
+                                 ("C" (:background "Darkolivegreen1"))
+					;("rust" (:background "LightBlue"))
+					;("rust" (:background "tan1"))
+				 ("rust" (:background "DarkGoldenrod1"))
+				 ("text" (:background "LightGoldenrod1"))
+				 ;("org" (:background "gray6"))
+				 ;("org" (:background "yellow3"))
+				 ("org" (:background "#FFFF7F"))
+				 ;("org" (:background "light yellow"))
+				 ;("text" (:background "snow1"))
+                                 ;("" (:background "LightBlue"))
+				 ;("python" (:background "#E5FFB8"))
+                                 ("test" (:background "#EEE2FF"))
+				 ;;("emacs-lisp" (:background "PaleTurquoise1"))
+                                ))
+#+end_quote
+
+ #+begin_src emacs-lisp :results silent :이곳에서 실험을 전개하라
+   ; 문맥을 추론하도록 구분의 color을 두라! emacs_is_great.org에 정리할 것
+   ; #+RESULTS: 결과를 줄에 맞도록 띄울 것 ← 보기가 간략해야 생각을 집중하기 좋다.
+   (setq org-src-block-faces '(;서열적으로 윗첫문장이 등록되면 아래등록은 무시됨
+                               ("emacs-lisp" (:background "#7FE2BB")) ;; 수정1번한 연한 청록배경임-약간 진하게 잘어울림 org
+                               ("emacs-lisp" (:background "#AAFFFF")) ;; 연한 하늘색배경임
+                               ("emacs-lisp" (:background "gray9"))
+                               ("elisp" (:background "#7FE2DA")) ;; 수정2번한 연한 청록배경임
+                               ("elisp" (:background "#AAFFFF")) ;; 연한 하늘색배경임
+                               ("elisp" (:background "#FFFF7F")) ;; 연한 노랑으로 좋은배경임
+                               ("elisp" (:background "gray18"))
+                               ("sh" (:background "#AAFFFF")) ;; 연한 하늘색배경임
+                               ("sh" (:background "midnight blue"))
+                               ("python" (:background "OliveDrab1"))
+                               ("C" (:background "Darkolivegreen1"))
+                                           ;("rust" (:background "LightBlue"))
+                                           ;("rust" (:background "tan1"))
+                               ("rust" (:background "DarkGoldenrod1"))
+                                           ;("org" (:background "gray6"))
+                                           ;("org" (:background "yellow3"))
+                               ("org" (:background "#FFFF7F")) ;; 연한 노랑으로 좋은배경임
+                               ("org" (:background "#AAFF7F")) ;; 연한 초록배경임
+                               ("org" (:background "#AAFFFF")) ;; 연한 하늘색배경임
+                               ("org" (:background "#FFAAFF")) ;; 연한 핑크배경임
+                               ("text" (:background "#FFAAFF")) ;; 연한 핑크배경임
+                               ("text" (:background "LightGoldenrod1"))
+                                           ;("org" (:background "light yellow"))
+                                           ;("text" (:background "snow1"))
+                                           ;("" (:background "LightBlue"))
+                                           ;("python" (:background "#E5FFB8"))
+                               ;;("emacs-lisp" (:background "PaleTurquoise1"))
+                               ("test" (:background "#EEE2FF"))
+                               ))
+                                           ;					;
+                                           ;C-M-\.
+
+   ;(indent-region START END &optional COLUMN)
+ #+end_src
+  #+RESULTS:
+ 
+
+- help:info (search-emacs-glossary) file:../../app/emacs/emacs_is_great.org
+ - (공식메뉴얼도움기능어) (실행예문)              (파일: 저장위치)
+  :꺽쇄org탭단축키로저장된yasnappet:
+  #+begin_text org :파일명.org_목적은_화두확실이다
+
+
+- 등록할 성과요약문 연관파일과 다이어리에 기재사항
+;;;;;;- 일감에 딱 발견사용할 수 있는 곳
+- 목적기여_강점: 
+
+- :~~을기억하고_--를즉시++하라!:
+- <반드시 주제에 맞게> * 핵심단어_는_이것을~하다      제목을 *재설정해 둘 것
+
+
+
+-#+end_text
+-:end:
+;;;;;;;;;;;; 저장처리과정 ;;;;;;;;;;;;
+;(필수) 다이어리에 저장하고, 주저장파일핵심노트저장후,
+
+;;(적극권장) 주된목적_meta사고, 상위프로젝트위치, 주로 연동되는 핵심부나 반복연습하는 목록에 추가하여 연동하든지.
+- 음미하며, 지속적인 단련이 상기할 수 있는 곳 음미되지 않으면 성취는 없다.
+
+;;(상기 불충족 대안) 아니면 inbox에 wish리스트에 넣고 기다리든지 아니면 diary 위의 날짜에 밀 넣어두고 연관파일 결정되면 지우면 된다.
+ file:~/config_github/app/emacs/wish_test.org 미루어둔다. - xxxxxx.org::기능-활용-연습필요하니 적합장소검토기록할 것
+
+   #+begin_src emacs-lisp :tangle yes
+
+
+this is lisp
+
+
+
+   #+end_src
+
+
+   #+begin_src sh :tangle yes
+
+sh is best quality in the world in good chances
+"hi"
+
+
+
+   #+end_src
+   - 46:47:09 :: 
+#+begin_quote text
+
+
+#+end_quote
+#+begin_verse elisp
+
+
+#+end_verse
+
+   #+begin_src text :tangle yes
+
+
+
+
+   #+end_src
+
+
+   #+begin_src elisp :tangle yes
+
+
+this is elisp
+
+
+
+
+   #+end_src
+
+
+- 형식-주사용처:간단모듈양식의 오그파일_메모용
+      - 연관파일, 요약본은 ##diary.org
+(buffer-name)
+- 수집: 내용
+
+- 주사용처_복사범위(*부터 -:end: -:End: -:END: 까지들 중 필요부분복사) Copy로 사용시 위의 *제목을 수정하고 나머지줄은몽땅삭제할 것
+- diary.org_C-[ C-[ 1 등록시에는 -:end: 부분을 등록함 wish_list_test.org의 경우는 나중에 일과종료전까지 보낸다.
+- 상황성립배경{주된목적_meta사고, 상위프로젝트위치, 그 문맥배경설명요약}:
+
+- 목적기여_강점: 
+- 주저장파일 (buffer-file-name) (buffer-name) 
+- 현재위치기록 (buffer-file-name) file:../../app/emacs/emacs_is_great.org
+- 전파필요한 직접연관파일(단련리스트파일, 인박스수집): file:../../app/emacs/emacs_is_great.org
+- 관련임시아이디어들 경쟁,대안 : 
+  - 딱! 성취감은 어디서: 
+
+- 더 필요하고 조사해야할 사안 그리고 대기중, 중단이유 또는 복안, 대안사항:
+  - 
+;;;;;;;;;;;; 저장처리과정 ;;;;;;;;;;;;
+;(필수) 다이어리에 저장하고, 주저장파일핵심노트저장후,
+- 일감에 딱 발견할 수 있는 곳
+
+;;(적극권장) 주된목적_meta사고, 상위프로젝트위치, 주로 연동되는 핵심부나 반복연습하는 목록에 추가하여 연동하든지.
+- 음미하며, 지속적인 단련이 상기할 수 있는 곳 음미되지 않으면 성취는 없다.
+
+;;(상기 불충족 대안) 아니면 inbox에 wish리스트에 넣고 기다리든지 아니면 diary 위의 날짜에 밀 넣어두고 연관파일 결정되면 지우면 된다.
+ file:~/config_github/app/emacs/wish_test.org 미루어둔다. - xxxxxx.org::기능-활용-연습필요하니 적합장소검토기록할 것
+
+  #+end_text
+    :end:
+
+
+
+** emacs_내부노트_초소형_간이모듈_copy용_1형
+- <반드시 주제에 맞게> * 핵심단어_는_이것을~하다      제목을 *재설정해 둘 것
+- 형식-주사용처:간단모듈양식의 오그파일_메모용
+      - 연관파일, 요약본은 ##diary.org
+(buffer-name)
+- 수집: 내용
+
+- 주사용처_복사범위(*부터 -:end: -:End: -:END: 까지들 중 필요부분복사) Copy로 사용시 위의 *제목을 수정하고 나머지줄은몽땅삭제할 것
+- diary.org_C-[ C-[ 1 등록시에는 -:end: 부분을 등록함 wish_list_test.org의 경우는 나중에 일과종료전까지 보낸다.
+:~~을기억하고_--를즉시++하라!:
+#+begin_text org :최종목적은_화두확실이다
+- 상황성립배경{주된목적_meta사고, 상위프로젝트위치, 그 문맥배경설명요약}:
+
+- 목적기여_강점: 
+- 주저장파일 (buffer-file-name) (buffer-name) 
+- 현재위치기록 (buffer-file-name) file:../../app/emacs/emacs_is_great.org
+- 전파필요한 직접연관파일(단련리스트파일, 인박스수집): file:../../app/emacs/emacs_is_great.org
+- 관련임시아이디어들 경쟁,대안 : 
+- 등록할 성과요약문 연관파일과 다이어리에 기재사항
+  - 딱! 성취감은 어디서: 
+
+- 더 필요하고 조사해야할 사안 그리고 대기중, 중단이유 또는 복안, 대안사항:
+  - 
+-#+end_text org
+-:end:
+;;;;;;;;;;;; 저장처리과정 ;;;;;;;;;;;;
+;(필수) 다이어리에 저장하고, 주저장파일핵심노트저장후,
+- 일감에 딱 발견할 수 있는 곳
+
+;;(적극권장) 주된목적_meta사고, 상위프로젝트위치, 주로 연동되는 핵심부나 반복연습하는 목록에 추가하여 연동하든지.
+- 음미하며, 지속적인 단련이 상기할 수 있는 곳 음미되지 않으면 성취는 없다.
+
+;;(상기 불충족 대안) 아니면 inbox에 wish리스트에 넣고 기다리든지 아니면 diary 위의 날짜에 밀 넣어두고 연관파일 결정되면 지우면 된다.
+ file:~/config_github/app/emacs/wish_test.org 미루어둔다. - xxxxxx.org::기능-활용-연습필요하니 적합장소검토기록할 것
+
+
+
+
+ #+begin_center text emacs-lisp :불타는_핵심부은_주변파급으로_공명진동한다이다
+; 핵심을 강화하는 문맥에 연관은 집중적인 추론으로 중요하다.
+
+
+
+
+
+ #+end_center
+-#+end_text org
+-:END:
+
+- [ ] 구조파악할 것 ← 내부구조가 정확해야 활용을 높일수 있다
+  #+begin_src emacs-lisp
+; # 서열의 순서파악함. * > : > #+오그 > - [ ] > #+src
+   ; 발굴되기 전에는 모든 것이 모르는 것이다!
+
+  #+end_src
+   #+RESULTS:
+
+ #+begin_center text emacs-lisp :다시한번더,불타는_핵심부은_주변파급으로_공명진동한다이다
+; 핵심을 강화하는 문맥에 연관은 집중적인 추론으로 중요하다.
+
+
+; 다이어리에 저장하고, 핵심노트저장후,
+;; 주로 연동되는 핵심부나 반복연습하는 목록에 추가하여 연동하든지.
+음미되지 않으면 성취는 없다.
+;; 아니면 inbox에 wish리스트에 넣고 기다리든지 아니면 위의 날짜에 밀 넣어두고 연관파일 결정되면 지우면 된다.
+
+ #+end_center
+
+
+ #+begin_src sh :results table
+  
+ #+end_src
+  #+RESULTS:
+
+#+end_text
+           :end:
+* ㅅㄷㄴㅅ
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+* 
+** 화엄경독송읽기, 라틴어espeak, pdf 노트용
+
+** lfs, gentoo,  haskell pdf note
+
+** ggb, 시간별재생을 나누어서 가능하게 하는 방식모듈
+- 각 리스트에 시간대를 나누어두고 리스트를 매 묶음시간대에서 나누어 실행하게 한다.
+# 동시진행가능하게 만드는 대혁신!!!
+- 각 파일의 동시진행이 가능한 방식을 만들어 둔다.
+   즉 [ 파일03 ] [ *파일노트부분 ] [ *작전노트_voca만수집 ] [발음연구처] [중단지점과연결점등록처] [ 이해안감수집처 ] [ 연구필요 ] [ 링크사이트(ggb사이트) 파일 ] 
+** Music/mpv_/ 배경음악듣기모듈화
+** org_src_block_내부노트_모듈화_실험_test_YouTube강의필기용_1형 만들어야함.
+** [2020-03-##] org_src_block_내부노트_모듈화_실험_test_diary_1형 만들어야함.
+하위구조의 색깔을 정해서 등록할 것- el 의 위치에서 검색해서 등록할 것.
+
+** org_src_block_내부노트_모듈화_copy용_1형
+
+:미주제1:
+
+#+begin_test org :목적=최고의 발성은 집중력강화의 비결이다!
+
+- 강점: 
+- 
+ #+begin_center sh
+# 문맥에 맞는 추론을 하는 것은 중요하다.
+
+ #+end_center
+
+
+- [ ] 구조파악할 것 ← 내부구조가 정확해야 활용을 높일수 있다
+ #+begin_src sh :results table
+  
+  # 서열의 순서파악함. * > : > #+오그 > - [ ] > #+src
+ #+end_src
+  #+RESULTS:
+  | #+RESULTS: 결과를 줄에 맞도록 띄울 것 hi2야호 |
+ #+begin_src elisp :results table
+
+   ;(indent-region START END &optional COLUMN)
+ #+end_src
+  #+RESULTS:
+-      -> 구조파악할 것 > 범원리를 간략축적하고 > 이후연구,활용방향,추가필요 기록할 것
+
+
+
+
+
+- 발굴의_과정들
+ #+begin_src sh
+   # 발굴되기 전에는 모든 것이 모르는 것이다!
+
+   for i in 1 2
+   do
+
+       for i in 1 2
+       do
+           printf "hi"
+
+           printf "hi"   
+       done
+   done
+      echo history
+   echo '#+RESULTS: 결과를 줄에 맞도록 띄울 것hi2야호'
+   # [[ end   ]]
+
+ #+end_src
+  #+RESULTS:
+
+
+- 문맥의 핵심부분을 다시 상기하는 과정을 최대한 단축하는 것이 오그모드의 최고 능력이다.
+- 노트능력의 중요성- 문맥을 저장하는 기능이 필요함. 설득을 하려면 맥락이 중요하며, 중요한 맥락속에서 스토리를 전개하는 것이 필수적이다.
+
+
+#+end_test
+
+
+
+           :end:
+
+
+
 
 ** - 에서 [Alt키+좌우화살표]서열간격조정할 수 있음을 발견함. [Alt+Return]- 다음항목으로 넘어감 즉, 빠른 노트입력이 가능하다
 
@@ -41,10 +475,14 @@ emacs/test_stuff/like_pomodoro_timer_note.org
 
 - espeak M-| 로 문서를 바로 읽어들이는 것이 우수함.
     (find-file-other-window "../espeak/readme.org:2")
+    (find-file-other-window "../espeak/readme.org")
   strings="$( cat )"; while true; do echo "$strings" | while read LINE ; do espeak -g 60 -s 100 -v other/grc "$LINE"; sleep 3; done; sleep 3 done
                 ;; 단문으로 만드는 것은 시행착오를 거치면서 완성되는 것이다. espeak -g 60 -s 100 -v other/grc /la를 실행
                 ;; C-x ESC ESC	repeat-complex-command
 시행착오 완성된 영역선택에서 읽기를 실행하는 문장임( GREAT!!! )
+(shell-command-on-region (+ (line-beginning-position 2) 0) (line-end-position 2)  ;;늘 더 좋은 방법을 발견해 나아감.
+			"espeak -a 20 -g 27 -s 120 -v other/la" nil nil nil)
+religionis deorum immortalium fanorum aediumque sacrarum conlocatio, 
 
 
 - 브라우져로 YouTube시청 등의 기능 brave --incognito surf
@@ -64,10 +502,35 @@ emacs/test_stuff/like_pomodoro_timer_note.org
 * [미완성] vim과 비교하거나 다른 것을 연구해야 하는 것들
 - ibus의 놀라운 한자입력완성기능이 있는데 ibus.el을 연구해볼것.
 
+* info help의 기능이 놀라움.
+# info-appropos로 검색하는 것을 익힐 것 필수적이다.
+
+* src tangle
+/emacs/src_tangle.org
+# tracking thought process is essential for understanding power!
+- 다듬어 연구한 자의 도구가 바로 이맥스이며 컴퓨터이다.
+# <문제는 절망감을 주지만,,,> 우회 다른 방식 다른 발견! 메뉴얼 좋은탐구습관, 개념을 명확확장 간략정리, 원문제도 결국 해결함
+    - org-babel-execute-src-block: No org-babel-execute function for sh!
+            → (org-babel-do-load-languages 'org-babel-load-languages)
+              → (info "(org) Languages") emacs/src_block.org
+- org-babel-execute-src-block: No org-babel-execute function for sh! 우회를발견_ + 원문제해결책발견함!
+(mapconcat 'shell-command-to-string '("lsblk" "lsblk") "\n") ; ← 여기서 심지어 단문으로 C-u C-x C-e도 가능함!!!
+
+노트가 가미된 놀라운 파일
 * TODO workflow/ 폴더를 만들어서 연구하고 연습을 하는 곳을 둘 것.
-- 정확한 정의가 선명한 자신감과 불타는 의욕을 감응[etymology음원필요성]
+
+
+- 정확한 정의가 선명한 자신감과 불타는 의욕을 감응[etymology음원필요성] - [[file:~/config_github/great_books/etymology_greek_latin/readme.org::*%EC%9B%90%EC%9D%8C%EC%9D%98%20%EC%86%8D%EC%84%B1%EC%9D%84%20%ED%8C%8C%EC%95%85%ED%95%98%EB%8A%94%20%EA%B2%83etymology%EC%97%90%20%EA%B4%80%ED%95%98%EC%97%AC%20readme.org%20%EA%B7%B8%EB%A6%AC%EC%8A%A4%EC%96%B4%20%EB%9D%BC%ED%8B%B4%EC%96%B4%20greek%20latin][원음의 속성을 파악하는 것etymology에 관하여 readme.org 그리스어 라틴어 greek latin]] 
 '가가 가가?'
 - 단어의 선정이 tool{선명함}이냐 workflow{포괄적}
 - [사용에 기여하는 것] 
     - (대안제시) [정확한 단어주제]파일명검색(M-x find-grep 등)으로 찾아내는 것을 활용하는 메타관리규칙.
     # [find-name-dired *검색어*]일단 M-x locate로 파일명 검색보다는 M-x find-name-dired *검색어*
+:로그목록들:
+- wm log 배치에 관해서 compare_wm
+- emacs org 사용원리와 저장원리
+    - Agenda file list
+    - recentf list
+- 원리원칙과 발견
+- 워크플로우 list
+:END:

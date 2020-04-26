@@ -1,0 +1,82 @@
+
+자료의 수집저장소: file:../../app/emacs/src_tangle.org
+ file:../../app/emacs/src_tangle.org 구조적인 노트를 배울 것[코드블록분할]C-cC-vC-d:Divide&Conquer방식(src_tangle.org)
+
+#+HEADER: :var a=column1()
+#+BEGIN_SRC sh
+            echo "hi $a"
+#+END_SRC
+
+#+RESULTS:
+: hi 3
+
+
+:#+BEGIN_SRC C :tangle c_tangle_test/hello.c :comments link
+#+BEGIN_SRC C :tangle ~/config_github/language_computer/c_cpp_csharp_java/c_tangle_test/hello.c
+#include <stdio.h>
+
+int main()
+{
+	printf("Hello world from C in tangle org-mode.\n");
+        return 0;
+}
+#+END_SRC
+
+
+Tangle the file: [[elisp:(org-babel-tangle)]]
+
+#+BEGIN_SRC elisp :results raw :comments both
+(org-babel-tangle)
+#+END_SRC
+
+#+RESULTS:
+(~/config_github/language_computer/c_cpp_csharp_java/c_tangle_test/hello.c)
+(~/config_github/language_computer/c_cpp_csharp_java/c_tangle_test/hello.c)
+(c_tangle_test/hello.c)
+
+
+
+;; 여러줄의 shell 명령을 실행하는 것이 가능하다 babel이 잘 안되는 경우 우회를 한다. emacs/*mapc*.org
+;;; 인간의 창조력과 언어의 결합력은 매우 유연한 사고를 가능하게 한다. babel_tangle로 실행하는 것이 가능하게 됨.
+#+BEGIN_SRC emacs-lisp :results raw drawer
+;(mapconcat 'shell-command-to-string '("lsblk" "lsblk") "\n") ; ← 여기서 심지어 단문으로 C-u C-x C-e도 가능함!!!
+(mapconcat 'shell-command-to-string '(
+"gcc c_tangle_test/hello.c -o c_tangle_test/hello"
+;           "lsblk" 
+;           "lsblk &>/dev/null"
+"echo next shell command"
+;"c_tangle_test/hello"
+"echo again wow"
+"~/config_github/language_computer/c_cpp_csharp_java/c_tangle_test/hello"
+;           "lsblk" 
+                                     ) 
+           "\n")
+
+;(shell-command-to-string "lsblk")
+;(shell-command-to-string "lsblk")
+;(shell-command-to-string "lsblk")
+#+END_SRC
+
+#+RESULTS:
+:RESULTS:
+
+next shell command
+
+again wow
+
+Hello world from C in tangle org-mode.
+:END:
+
+
+#+BEGIN_SRC sh :results raw
+gcc c_tangle_test/hello.c -o c_tangle_test/hello
+#+END_SRC
+
+#+RESULTS:
+
+#+BEGIN_SRC sh :results raw
+c_tangle_test/hello
+#+END_SRC
+
+#+RESULTS:
+Hello world from C in tangle org-mode.

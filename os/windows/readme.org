@@ -1,0 +1,6 @@
+
+
+get code 
+wmic path SoftwareLicensingService get OA3xOriginalProductKey
+https://youtu.be/dT_xevPwKjo?t=220
+[[https://www.youtube.com/watch?v=dT_xevPwKjo&feature=emb_rel_end][Ultimate Lenovo T440p Laptop Upgrade Guide | Screen, CPU, RAM, HDDs, & Keyboard - YouTube]]

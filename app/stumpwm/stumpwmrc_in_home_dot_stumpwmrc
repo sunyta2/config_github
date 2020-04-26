@@ -1,3 +1,4 @@
+;; -*- lisp -*-
 ;; purpose: stumpwm dotfile to use real os and sync github in korean 
 
 ;; ~/.stumpwmrc ;; in arch KDE

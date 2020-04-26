@@ -1,0 +1,6 @@
+history를 중복하지 않는 법을 기록함
+dt의 동영상을 보고 기록을 남길 것.[[https://www.youtube.com/watch?v=P7Jd0iNSCQA][What Are Linux Users Putting In Their Config Files? - YouTube]]
+
+추가장소를 기록할 것
+export HISTCONTROL=ignoreboth # 7:50부분-명령의 중복를 지운다 https://youtu.be/P7Jd0iNSCQA?t=470
+export HISTCONTROL=ignoreboth:erasedups ~/.bashrc에 저장된 내용임

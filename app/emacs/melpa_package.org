@@ -1,4 +1,188 @@
-Melpa를 사용하는 법에 관하여.
+
+
+* counsel-package
+  :counsel을활용한능률적인정보획득과설치_실행:  
+  #+BEGIN_TEXT org :정확한 정보의 획득과 능동성확보 
+- 목표를 정하고 위로 들어올릴 것
+- Core_location: 
+- help:counsel-package
+#+begin_src emacs-lisp :results silent
+(counsel-package) ;;; help:counsel-package
+(counsel-load-library) ;;; help:counsel-load-library (require '원하는패키지);대응명령
+(historian-load) ;;; help:historian-load
+#+end_src
+
+(counsel-package) ;;; help:counsel-package
+(counsel-load-library) ;;; help:counsel-load-library
+(historian-load) ;;; help:historian-load
+
+- help:counsel-load-library
+- help:historian-load
+- help:org-babel-load-file ;;; (org-babel-load-file) ;;;
+- help:org-babel-load-in-session ;;; (org-babel-load-in-session) ;;; C-c C-v l, C-c C-v C-l 
+- help:org-eldoc-load ;;; (org-eldoc-load) ;;;
+- help:recentf-load-list ;;; (recentf-load-list) ;;;
+- help:unload-feature ;;; (unload-feature) ;;;
+
+- help:ivy-historian-mode ;;; (ivy-historian-mode) ;;;
+- help:historian-mode ;;; (historian-mode) ;;;
+- help:historian-load ;;; (historian-load) ;;;
+- help:historian-save ;;; (historian-save) ;;;
+- help:historian-clear ;;; (historian-clear) ;;;
+
+- help:ivy-previous-line-or-history ;;; (ivy-previous-line-or-history) ;;;
+- help:ivy-historian-mode ;;; (ivy-historian-mode) ;;;
+- help:historian-mode ;;; (historian-mode) ;;;
+- help:Info-history ;;; (Info-history) ;;;
+- help:historian-load ;;; (historian-load) ;;;
+- help:historian-save ;;; (historian-save) ;;;
+- help:command-history ;;; (command-history) ;;; - C-x ESC ESC의 출력으로 유용한 명령원형들을 보임
+- help:counsel-command-history ;;; (counsel-command-history) ;;; 위의 것보다 더 세련됨!
+- help:list-command-history ;;; (list-command-history) ;;;
+- help:counsel-shell-history ;;; (counsel-shell-history) ;;; 목록이 적음.
+- help:counsel-minibuffer-history ;;; (counsel-minibuffer-history) ;;;
+
+
+
+- help:historian-clear ;;; (historian-clear) ;;;
+- help:ido-load-history ;;; (ido-load-history) ;;;
+- help:ido-save-history ;;; (ido-save-history) ;;;
+- help:ido-wash-history ;;; (ido-wash-history) ;;;
+- help:Info-history-back ;;; (Info-history-back) ;;;
+- help:vc-region-history ;;; (vc-region-history) ;;;
+- help:counsel-esh-history ;;; (counsel-esh-history) ;;;
+- help:eshell-list-history ;;; (eshell-list-history) ;;;
+- help:helm-eshell-history ;;; (helm-eshell-history) ;;;
+- help:Info-history-forward ;;; (Info-history-forward) ;;;
+- help:goto-history-element ;;; (goto-history-element) ;;;
+- help:next-history-element ;;; (next-history-element) ;;;
+- help:nnmail-split-history ;;; (nnmail-split-history) ;;;
+
+- help:helm-projects-history ;;; (helm-projects-history) ;;;
+- help:pdf-history-minor-mode ;;; (pdf-history-minor-mode) ;;;
+- help:transient-history-next ;;; (transient-history-next) ;;;
+- help:transient-history-prev ;;; (transient-history-prev) ;;;
+- help:helm-minibuffer-history ;;; (helm-minibuffer-history) ;;;
+- help:ivy-next-history-element ;;; (ivy-next-history-element) ;;;
+- help:ivy-next-line-or-history ;;; (ivy-next-line-or-history) ;;;
+- help:previous-history-element ;;; (previous-history-element) ;;;
+- help:url-history-save-history ;;; (url-history-save-history) ;;;
+
+- help:counsel-org-clock-history ;;; (counsel-org-clock-history) ;;;
+- help:counsel-slime-repl-history ;;; (counsel-slime-repl-history) ;;;
+- help:vc-git-region-history-mode ;;; (vc-git-region-history-mode) ;;;
+- help:e2wm:pst-history-up-command ;;; (e2wm:pst-history-up-command) ;;;
+- help:helm-reset-adaptive-history ;;; (helm-reset-adaptive-history) ;;;
+- help:comint-get-next-from-history ;;; (comint-get-next-from-history) ;;;
+- help:eshell-get-next-from-history ;;; (eshell-get-next-from-history) ;;;
+- help:helm-complex-command-history ;;; (helm-complex-command-history) ;;;
+- help:ivy-previous-history-element ;;; (ivy-previous-history-element) ;;;
+- help:next-line-or-history-element ;;; (next-line-or-history-element) ;;;
+- help:url-history-setup-save-timer ;;; (url-history-setup-save-timer) ;;;
+- help:e2wm:pst-history-back-command ;;; (e2wm:pst-history-back-command) ;;;
+- help:e2wm:pst-history-down-command ;;; (e2wm:pst-history-down-command) ;;;
+- help:next-complete-history-element ;;; (next-complete-history-element) ;;;
+- help:next-matching-history-element ;;; (next-matching-history-element) ;;;
+- help:exwm-firefox-core-history-back ;;; (exwm-firefox-core-history-back) ;;;
+- help:exwm-firefox-core-history-menu ;;; (exwm-firefox-core-history-menu) ;;;
+- help:comint-history-isearch-backward ;;; (comint-history-isearch-backward) ;;;
+- help:e2wm:history-add-loaded-buffers ;;; (e2wm:history-add-loaded-buffers) ;;;
+- help:e2wm:dp-two-navi-history-command ;;; (e2wm:dp-two-navi-history-command) ;;;
+- help:e2wm:pst-history-forward-command ;;; (e2wm:pst-history-forward-command) ;;;
+- help:previous-line-or-history-element ;;; (previous-line-or-history-element) ;;;
+- help:term-replace-by-expanded-history ;;; (term-replace-by-expanded-history) ;;;
+- help:e2wm:def-plugin-history-list-mode ;;; (e2wm:def-plugin-history-list-mode) ;;;
+- help:e2wm:dp-code-navi-history-command ;;; (e2wm:dp-code-navi-history-command) ;;;
+- help:exwm-firefox-core-history-forward ;;; (exwm-firefox-core-history-forward) ;;;
+- help:exwm-firefox-core-history-sidebar ;;; (exwm-firefox-core-history-sidebar) ;;;
+- help:previous-complete-history-element ;;; (previous-complete-history-element) ;;;
+- help:previous-matching-history-element ;;; (previous-matching-history-element) ;;;
+- help:comint-replace-by-expanded-history ;;; (comint-replace-by-expanded-history) ;;;
+- help:e2wm:def-plugin-history-list2-mode ;;; (e2wm:def-plugin-history-list2-mode) ;;;
+- help:e2wm:dp-two-history-toggle-command ;;; (e2wm:dp-two-history-toggle-command) ;;;
+- help:e2wm:dp-two-right-history-up-command ;;; (e2wm:dp-two-right-history-up-command) ;;;
+- help:comint-history-isearch-backward-regexp ;;; (comint-history-isearch-backward-regexp) ;;;
+- help:e2wm:dp-two-right-history-back-command ;;; (e2wm:dp-two-right-history-back-command) ;;;
+- help:e2wm:dp-two-right-history-down-command ;;; (e2wm:dp-two-right-history-down-command) ;;;
+- help:Electric-command-history-redo-expression ;;; (Electric-command-history-redo-expression) ;;;
+- help:e2wm:def-plugin-history-list-back-command ;;; (e2wm:def-plugin-history-list-back-command) ;;;
+- help:e2wm:def-plugin-history-list-kill-command ;;; (e2wm:def-plugin-history-list-kill-command) ;;;
+- help:e2wm:def-plugin-history-list-show-command ;;; (e2wm:def-plugin-history-list-show-command) ;;;
+- help:e2wm:dp-two-right-history-forward-command ;;; (e2wm:dp-two-right-history-forward-command) ;;;
+- help:e2wm:def-plugin-history-list-select-command ;;; (e2wm:def-plugin-history-list-select-command) ;;;
+- help:e2wm:def-plugin-history-list-forward-command ;;; (e2wm:def-plugin-history-list-forward-command) ;;;
+- help:e2wm:def-plugin-history-list2-select-command ;;; (e2wm:def-plugin-history-list2-select-command) ;;;
+- help:e2wm:def-plugin-history-list2-show-left-command ;;; (e2wm:def-plugin-history-list2-show-left-command) ;;;
+- help:e2wm:def-plugin-history-list2-show-right-command ;;; (e2wm:def-plugin-history-list2-show-right-command) ;;;
+
+
+- help:yas-reload-all ;;; (yas-reload-all) ;;;
+- help:yas/reload-all ;;; (yas/reload-all) ;;;
+- help:ac-comphist-load ;;; (ac-comphist-load) ;;;
+- help:ido-load-history ;;; (ido-load-history) ;;;
+- help:rust-mode-reload ;;; (rust-mode-reload) ;;;
+- help:counsel-load-theme ;;; (counsel-load-theme) ;;;
+- help:speedbar-item-load ;;; (speedbar-item-load) ;;;
+- help:tramp-unload-tramp ;;; (tramp-unload-tramp) ;;;
+- help:yas-load-directory ;;; (yas-load-directory) ;;;
+- help:yas/load-directory ;;; (yas/load-directory) ;;;
+- help:bookmark-bmenu-load ;;; (bookmark-bmenu-load) ;;;
+- help:counsel-bbdb-reload ;;; (counsel-bbdb-reload) ;;;
+- help:sieve-upload-and-bury ;;; (sieve-upload-and-bury) ;;;
+- help:sieve-upload-and-kill ;;; (sieve-upload-and-kill) ;;;
+- help:update-file-autoloads ;;; (update-file-autoloads) ;;;
+- help:gnus-cloud-upload-data ;;; (gnus-cloud-upload-data) ;;;
+- help:haskell-process-reload ;;; (haskell-process-reload) ;;;
+- help:list-load-path-shadows ;;; (list-load-path-shadows) ;;;
+- help:yas-load-snippet-buffer ;;; (yas-load-snippet-buffer) ;;;
+- help:yas/load-snippet-buffer ;;; (yas/load-snippet-buffer) ;;;
+- help:exwm-firefox-core-reload ;;; (exwm-firefox-core-reload) ;;;
+- help:auto-compile-on-load-mode ;;; (auto-compile-on-load-mode) ;;;
+- help:haskell-process-load-file ;;; (haskell-process-load-file) ;;;
+- help:purpose-load-frame-layout ;;; (purpose-load-frame-layout) ;;;
+- help:strokes-load-user-strokes ;;; (strokes-load-user-strokes) ;;;
+- help:yas-direct-keymaps-reload ;;; (yas-direct-keymaps-reload) ;;;
+- help:yas/direct-keymaps-reload ;;; (yas/direct-keymaps-reload) ;;;
+- help:browse-url-netscape-reload ;;; (browse-url-netscape-reload) ;;;
+- help:gnus-cloud-upload-all-data ;;; (gnus-cloud-upload-all-data) ;;;
+- help:load-completions-from-file ;;; (load-completions-from-file) ;;;
+- help:markdown-reload-extensions ;;; (markdown-reload-extensions) ;;;
+- help:purpose-find-file-overload ;;; (purpose-find-file-overload) ;;;
+- help:purpose-load-window-layout ;;; (purpose-load-window-layout) ;;;
+- help:update-directory-autoloads ;;; (update-directory-autoloads) ;;;
+- help:gnus-cloud-download-all-data ;;; (gnus-cloud-download-all-data) ;;;
+- help:rustic-cargo-reload-outdated ;;; (rustic-cargo-reload-outdated) ;;;
+- help:display-time-next-load-average ;;; (display-time-next-load-average) ;;;
+- help:haskell-process-load-or-reload ;;; (haskell-process-load-or-reload) ;;;
+- help:org-require-autoloaded-modules ;;; (org-require-autoloaded-modules) ;;;
+- help:purpose-load-frame-layout-file ;;; (purpose-load-frame-layout-file) ;;;
+- help:purpose-switch-buffer-overload ;;; (purpose-switch-buffer-overload) ;;;
+- help:e2wm:history-add-loaded-buffers ;;; (e2wm:history-add-loaded-buffers) ;;;
+- help:org-babel-load-in-session-maybe ;;; (org-babel-load-in-session-maybe) ;;;
+- help:purpose-load-window-layout-file ;;; (purpose-load-window-layout-file) ;;;
+- help:emacs-lisp-byte-compile-and-load ;;; (emacs-lisp-byte-compile-and-load) ;;;
+- help:emms-playlist-mode-load-playlist ;;; (emms-playlist-mode-load-playlist) ;;;
+- help:exwm-firefox-core-downloads-menu ;;; (exwm-firefox-core-downloads-menu) ;;;
+- help:haskell-process-reload-devel-main ;;; (haskell-process-reload-devel-main) ;;;
+- help:yas-load-snippet-buffer-and-close ;;; (yas-load-snippet-buffer-and-close) ;;;
+- help:purpose-find-file-other-frame-overload ;;; (purpose-find-file-other-frame-overload) ;;;
+- help:exwm-firefox-core-reload-override-cache ;;; (exwm-firefox-core-reload-override-cache) ;;;
+- help:purpose-find-file-other-window-overload ;;; (purpose-find-file-other-window-overload) ;;;
+- help:purpose-switch-buffer-other-frame-overload ;;; (purpose-switch-buffer-other-frame-overload) ;;;
+- help:emms-player-simple-mpv-playlist-mode-reload ;;; (emms-player-simple-mpv-playlist-mode-reload) ;;;
+- help:purpose-switch-buffer-other-window-overload ;;; (purpose-switch-buffer-other-window-overload) ;;;
+
+#+begin_src emacs-lisp :results silent
+
+#+end_src
+  #+END_TEXT
+  :END:
+
+
+
+
+
+* Melpa를 사용하는 법에 관하여.
 
 2.1 Installing from Melpa
 Magit is available from Melpa and Melpa-Stable. If you haven’t used Emacs’ package manager before, then it is high time you familiarize yourself with it by reading the documentation in the Emacs manual, see (emacs)Packages. Then add one of the archives to package-archives:
@@ -31,9 +215,8 @@ https://magit.vc/manual/magit/Installing-from-Melpa.html#Installing-from-Melpa
    '("melpa" . "http://melpa.milkbox.net/packages/")
    t))
 #+END_SRC 
-;; 인스톨할 것. use-package
-(package-initialize)
-;;;; 설치되어 있었음 (package-install "use-package")
+*** 인스톨할 것. use-package ;;;; 설치되어 있었음 (package-install "use-package")
+# (package-initialize)
 
 [[file:~/config_github/app/emacs/melpa_package.org]]
 (package-initialize)

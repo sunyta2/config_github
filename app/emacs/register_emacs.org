@@ -8,7 +8,25 @@
 help:list-registers   cf help:list-abbrevs help:list-processes
 
 (list-registers)
-(list-registers)
+(list-registers) 
+(execute-extended-command nil "list-registers" "lis-r")
+M-x lis-r RET
+ You can run the command ‘list-registers’ with M-x lis-r RET
+
+(point-to-register 97 nil) C-x r @ a
+(point-to-register b nil) C-x r @
+(jump-to-register 97 nil) C-x r j
+
+(jump-to-register 105 nil)
+
+
+
+
+help:point-to-register
+
+
+(register-read-with-preview "") ;; 목록을 보이지만 미완의 정보가 PROMPT
+
 
 
 * hi

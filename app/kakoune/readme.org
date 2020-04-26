@@ -1,0 +1,3 @@
+[[https://github.com/mawww/kakoune][GitHub - mawww/kakoune: mawww's experiment for a better code editor]]
+
+* $ kak 로 실행함 kakoune

@@ -1,0 +1,81 @@
+
+
+mode-line의 기능을 이곳에 수집한다.
+
+(setq display-time-day-and-date t) ;; mode line 날짜 표시가능해짐
+
+파일경로를 표시하면 인식에 큰 도움이 될 것이다.
+
+:mode-string_mode-line:
+- 반드시 주제에 맞게 제목을 설정해 둘 것
+현재위치기록 (buffer-file-name) (buffer-name)
+
+- 수집:
+
+- 배경설명:
+#+begin_text org :목적=화두철저의 mode-string
+- 강점: 
+
+다음엔 어디로? 파일의 저장위치를 모드 라인의 자리에 보관하고 ielm에도 앞의 위치 등록할 것,
+- 
+- [ ] 구조파악할 것 ← 내부구조가 정확해야 활용을 높일수 있다
+ #+begin_src elisp :results table
+동영상위치를 기록할 것
+hack emacs 14 live.mp4 상세한 ielm을 사용한 방식을 잘 관찰하고 익힐 것.
+
+   ;(indent-region START END &optional COLUMN)
+ #+end_src
+
+
+
+#+begin_quote emacs-lisp (화두확실)정밀한 공부의 목적을 확실히
+
+
+;; ielm.org mode_line
+(setq global-mode-string
+                           '(
+                             ""
+                             org-timer-mode-line-string
+                             "화두확실"
+                             display-time-string
+                             battery-mode-line-string
+                             timeclock-mode-string
+                             )
+  )
+
+
+
+(setq display-time-format ; file:mode_line.org
+" %H:%M [%Y-%m-%d %a]")
+
+(setq mode-line-format 
+'("%e"
+ (:eval
+  (format "[%d]"
+	  (exwm-workspace--position exwm-workspace--current)  ))
+ mode-line-front-space mode-line-mule-info mode-line-client mode-line-modified mode-line-remote mode-line-frame-identification mode-line-buffer-identification "   " mode-line-position
+ (vc-mode vc-mode)
+ "  " mode-line-modes mode-line-misc-info mode-line-end-spaces)
+)
+
+
+(display-time)
+
+#+end_quote
+
+
+- [ ] 구조파악할 것 ← 내부구조가 정확해야 활용을 높일수 있다
+ #+begin_src elisp :results table
+
+   ;(indent-region START END &optional COLUMN)
+ #+end_src
+  #+RESULTS:
+
+#+end_text
+다음엔 어디로? 파일의 저장위치를 모드 라인의 자리에 보관하고 ielm에도 앞의 위치 등록할 것,
+동영상위치를 기록할 것
+hack emacs 14 live.mp4 상세한 ielm을 사용한 방식을 잘 관찰하고 익힐 것.
+    : 
+           :end:
+
+

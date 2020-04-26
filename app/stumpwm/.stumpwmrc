@@ -1,21 +1,69 @@
+;; -*- lisp -*-
 ;;; (async-shell-command "ln -fs ~/config_github/app/stumpwm/.stumpwmrc ~/.stumpwmrc")
+;;;;;;;;;;;;;;;;;(find-file "~/config_github/app/stumpwm/.stumpwmrc ~/.stumpwmrc")
+;;; (async-shell-command "cp ~/config_github/app/stumpwm/.stumpwmrc ~/.stumpwmrc")
+;;;;;;;;;;;;;;;;;(find-file "~/.stumpwmrc")
+;;; (async-shell-command "rm ~/.stumpwmrc")
+;;; (find-file "/sudo::/usr/share/xsessions/sbcl_run_StumpWM.desktop")
+ ;;; sudo::/usr/share/xsessions/sbcl_run_StumpWM.desktop
+;;; (find-file "/sudo::/usr/share/xsessions/stumpwm.desktop")
+
 ; (dired "~/config_github/app/qtile/")
 ;         # (dired "~/.config/qtile/")
+
+
+
+(in-package :stumpwm)
+
+(require :swank)
+(swank-loader:init)
+;(swank:create-server :port 4004
+;                     :style swank:*communication-style*
+;                     :dont-close t)
+;; check for emacs/slime.org
+(swank:create-server)
+ (load "~/quicklisp/setup.lisp") ;; [[https://www.quicklisp.org/beta/][Quicklisp beta]]
+
+
+
+
+
+
 
 ;;(setf *mouse-focus-policy* :click)
 (setf *mouse-focus-policy* :sloppy) ;; 그냥 마우스 포인터의 위치 변경만으로 이동되는 것이 우선함.
 ;;(setf *mouse-focus-policy* :ignore) ;;강점-다른창의 키입력이 많이 차단되는 효과로 안정적인 입력이 가능하다.
 ;(define-key *root-map* (kbd "C-r") "exec rofi -show") ;; dwm과 달리 창의 이동이 완전히 자유롭다.
-(define-key *root-map* (kbd "C-r") "exec rofi -combi,run -show combi") ;; dwm과 달리 창의 이동이 완전히 자유롭다.
+(define-key *root-map* (kbd "C-r") "exec rofi -combi,run -show combi") ;; rofi의 경우 dwm에서와는 다르게 StumpWm은 창의 전환 자연스럽다.
 
 ;; 기본설정에서 필요해서 변경한 내용
 (define-key *root-map* (kbd "C-c") "exec urxvt") ;; urxvt로 변경함.
 (define-key *root-map* (kbd "c") "exec urxvt") ;; urxvt로 변경함.
+
+(define-key *root-map* (kbd "C-Tab") "exec xwinmosaic") ;; 출력창에 깔끔하게 실행결과가 hi됨.
+(define-key *root-map* (kbd "c") "exec urxvt") ;; urxvt로 변경함.
+(define-key *root-map* (kbd "Tab") "exec xwinmosaic") ;; xwinmosaic
+(define-key *root-map* (kbd "C-n") "pull-from-windowlist") ;; 원하는 것을 끌고 앞으로 나간다.
+(define-key *root-map* (kbd "C-p") "pull-from-windowlist") ;; 원하는 것을 끌고 앞으로 나간다.
+(define-key *root-map* (kbd "n") "pull-from-windowlist") ;; 원하는 것을 끌고 앞으로 나간다.
+(define-key *root-map* (kbd "p") "pull-from-windowlist") ;; 원하는 것을 끌고 앞으로 나간다.
+
+
+(define-key *root-map* (kbd "C-Tab") "exec rofi -show window") ;; 원하는 것을 끌고 앞으로 나간다.
+(define-key *root-map* (kbd "C-G") "gmove-and-follow") ;; 원하는 것을 끌고 앞으로 나간다.
+(define-key *root-map* (kbd "C-N") "gnext-with-window") ;; 원하는 것을 끌고 앞으로 나간다.
+(define-key *root-map* (kbd "C-P") "gprev-with-window") ;; 원하는 것을 끌고 앞으로 나간다.
+(define-key *root-map* (kbd "C-o") "fnext") ;; stumpwm통일된 실수없는 이동을 위한 선택!
+(define-key *root-map* (kbd "o") "fnext") ;; 
+;;gprev-with-window
+
 ;(define-key *root-map* (kbd "C-e") (concat "emacs -Q -lw " (getenv "$HOME") "/config_github/app/emacs/shell_emacs/emacsQ_load.el") ;; emacsQ
 ;(define-key *root-map* (kbd "e") (concat "exec Exec=emacs -Q -l " (getenv "$HOME") "/config_github/app/emacs/shell_emacs/emacsQ_load.el") ;; emacsQ
 ;; 
-(define-key *root-map* (kbd "e") "emacs -Q -l '/home/thinkpad/config_github/app/emacs/shell_emacs/emacsQ_load.el'")
-(define-key *root-map* (kbd "C-e") "emacs -Q -l 'home/thinkpad/config_github/app/emacs/shell_emacs/emacsQ_load.el")
+;(define-key *root-map* (kbd "e") "emacs -Q -l '/home/thinkpad/config_github/app/emacs/shell_emacs/emacsQ_load.el'")
+;(define-key *root-map* (kbd "C-e") "emacs -Q -l 'home/thinkpad/config_github/app/emacs/shell_emacs/emacsQ_load.el")
+(define-key *root-map* (kbd "e") "emacs")
+(define-key *root-map* (kbd "C-e") "emacs")
 
 ;배경화면의 설정
 ;(run-shell-command	(concat "feh --image-bg #428bdd --bg-max " (getenv "$HOME") "/config_github/pictures_sync/aristotle_bust1.jpg")
@@ -23,27 +71,56 @@
 ;(run-shell-command	"feh --image-bg #427bdd --bg-max $HOME/config_github/pictures_sync/buddha_all.png")
 (run-shell-command	"setxkbmap -option ''")
 
-
-
+(setf *frame-number-map* "asdfgqwertzxcvb")
+
 (setf *window-format* "%m%n%s%c")
-(setf *screen-mode-line-format* (list "[^B%n^b] %W^>%d"))
+;(setf *screen-mode-line-format* (list "[^B%n^b] %W^>%d")) ;;backup well worked
+(setf *screen-mode-line-format* (list " Know Thyself  %d     [^B%n^b]  %W  [^B%n^b]^>[^B%n^b] Know thySelf %d" '(:eval (stumpwm:run-shell-command "acpi -b | awk '{print \" [\" $3, $4, $5 \"]\"}'" t)))) ;; 위의 문장을 수정해서 테스트함
+;; 모드라인 형식을 찾고 없으면 넣어야 하며,
+;; acpi -b | awk '{print "[" $3, $4, $5 "]"}' 책부분 44쪽 페이지를 적어두고
+;; 결합하여 수정할 것
+;; test (setf *hidden-window-color* "Green")
+;(setf stumpwm:*screen-mode-line-format*
+;(list "%w | "
+;'(:eval (stumpwm:run-shell-command "date" t))))
+;; '(:eval (stumpwm:run-shell-command "acpi -b | awk '{print \"[\" $3, $4, $5 \"]\"}'" t))
 
-(setf *time-modeline-string* "%a %b %e %k:%M")
+;; expose
+;; *expose-auto-tile-fn* ;; 실행함수를 정의해서 사용의 편의성을 도모함.
+
+
+;;(setf *time-modeline-string* "%a %b %e %k:%M")
+;; testing (setf *time-modeline-string* "%k:%M [%Y-%m-%d %a]")
+;; testing (setf *time-modeline-string* "%a %b %e %k:%M")
+(setf *time-modeline-string* "%k:%M [%Y-%m-%d %a]")
 
 (setf *mode-line-timeout* 2)
-(enable-mode-line (current-screen) (current-head) t)
 
+
+ (setf *mode-line-position* :bottom)
+;Gray20
+;(setf *mode-line-background-color* "Yellow")
+;(setf *mode-line-background-color* "Orange")
+(setf *mode-line-background-color* "Gold")
+;(setf *mode-line-foreground-color* "Black") ;; Gray50
+(setf *mode-line-foreground-color* "Dark Blue") ;; Gray50
 ;;(define-key *top-map* (kbd "C-M-Left") "exec bbq :prev")
 
+;;(setf *mode-line-border-color* "Red") ;; Gray30
+;(setf *mode-line-border-color* "Blue") ;; Gray30
+(setf *mode-line-border-color* "Dark Red") ;; Gray30
+(setf *mode-line-border-color* "Red") ;; Gray30
+;(setf *mode-line-border-width* 2) ;;1
+;(setf *normal-border-width* 3) ;; 1
 
 
-
+(enable-mode-line (current-screen) (current-head) t)
 
 ;[cfg/.stumpwmrc at master · lepisma/cfg](https://github.com/lepisma/cfg/blob/master/stumpwm/.stumpwmrc) 에서 발췌
 ;; Programs
 ;(run-shell-command "polybar screen --reload")
 ;(run-shell-command "nm-applet")
-(run-shell-command "dunst")
+(run-shell-command "dunst") ;; TODO dunst를 깔끔하게 보이는 것을 만들어 놓을것 budha의 동영상을 참조검색해서 링크할 것 원래의 폴더를 이곳에 링크하고
 ;(run-shell-command "redshift")
 ;(run-shell-command "gnome-encfs-manager")
 ;(run-shell-command "electrum")
@@ -117,6 +194,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
+;;(setf *normal-border-width* 3) ;; 1
 
 ; set the border color for focused windows
       (set-focus-color "orange")  ; `white' by default
@@ -187,8 +265,60 @@
 ;;(setf *screen-mode-line-format* (list "[^B%n^b] %W^>%d"))
 ;; create the other groups3
 
+;(stumpwm:define-remapped-keys
+;   '(("(okular)"
+;      ("C-g" . "Escape")
+;      ("C-n" . "Down")
+;      ("C-p" . "Up")
+;      ("C-f" . "Right")
+;      ("C-b" . "Left")
+;      ("C-v" . "Next")
+;      ("M-v" . "Prior")
+;      ("M-w" . "C-c")
+;      ("C-w" . "C-x")
+;      ("C-y" . "C-v")
+;      ("M-<" . "Home")
+;      ("M->" . "End")
+;      ("C-M-b" . "M-Left")
+;      ("C-M-f" . "M-Right")
+;      ("C-k" . ("C-S-End" "C-x"))
+;      ))
+;   )
+;; StumpWm의 놀라운 전환성-애플리케이션의 기존 단축키를 Emacs Key와 유사하게 전환이 된다는 것이다.
+  (stumpwm:define-remapped-keys
+   '(("(Brave-browser)"
+      ("C-g" . "Escape")
+      ("C-n" . "Down")
+      ("C-p" . "Up")
+      )
+      ("(Chromium)"
+      ("C-g" . "Escape")
+      ("C-n" . "Down")
+      ("C-p" . "Up")
+      )
+      ("(okular)"
+      ("C-g" . "Escape")
+      ("C-n" . "Down")
+      ("C-p" . "Up")
+      ("C-f" . "Right")
+      ("C-b" . "Left")
+      ("C-v" . "Next")
+      ("M-v" . "Prior")
+      ("M-w" . "C-c")
+      ("C-w" . "C-x")
+      ("C-y" . "C-v")
+      ("M-<" . "Home")
+      ("M->" . "End")
+      ("C-M-b" . "M-Left")
+      ("C-M-f" . "M-Right")
+      ("C-k" . ("C-S-End" "C-x"))
+      )
+))
+
+
 (run-commands "grename 1"
-	      "run-shell-command emacs -Q -l /home/thinkpad/config_github/app/emacs/shell_emacs/emacsQ_load.el"
+;;	      "run-shell-command emacs -Q -l /home/thinkpad/config_github/app/emacs/shell_emacs/emacsQ_load.el"
+	      "run-shell-command emacs"
 	      "run-shell-command konsole"
 	      "gnew 2"
 	      "run-shell-command okular /home/thinkpad/Documents/stumpwm-git.pdf"
@@ -213,18 +343,7 @@
 ;; (gnext)
 ;; (run-shell-command "dolphin")
 
-;;(run-commands "gnewbg 2");(fnext)
-;;(run-commands "gnewbg 3")
-;;(run-commands "gnewbg 4")
-;;(run-commands "gnewbg 5")
-;;(run-commands "gnewbg 6")
 
-;(restore-from-file "~/config_github/app/stumpwm/LAYOUT/LAYOUT3.el")
-;;(run-shell-command "okular -p 36 '' &>/dev/null &")
-;;(run-shell-command "EXECUTE_LAYOUT1.sh")
-;;;;;; (find-file-other-window "~/config_github/app/stumpwm/LAYOUT/")
-
-;(restore-from-file "~/config_github/app/stumpwm/LAYOUT/LAYOUT2.el")
 
 ;(gnew "2")
 (gnext)

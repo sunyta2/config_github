@@ -23,7 +23,104 @@ help:kill-process
 help:list-system-processes
    help:process-attributes htop와 더불어 연구필요함.
 
+:기억하고_누르고즉시관찰실험하라!:
+#+begin_text org :최종목적은 process중단이 간략히 진행됨이 성공함.
+app/emacs/process.org espeak, mpv diary (delete-process (get-process "while true espeak greek latin"))
+#+end_text org
+:end:
 
+:F10을기억하고_누르고즉시관찰실험하라!:
+#+begin_text org :최종목적은_syntax양식의 암기없이 흐름을 만듬이다
+
+
+- 상황성립배경{주된목적_meta사고, 상위프로젝트위치, 그 문맥배경설명요약}:
+ [2020-03-21 Sat]  로딩파일의 문제를 해결하면서 이것이 정상적으로 기동하게 되었다.
+          그래서인지 원인을 몰랐지만 <s탭의 자동완성이 작동되지 않았다.
+- yasnippet 발견 F10자주 참조할 것. file:yasnippet.org
+다시 F10 → YASnippet → org-mode에서 재발견한 기능에 감탄함.
+
+- 목적기여_강점: 
+- 주저장파일 (buffer-file-name) file:../../app/emacs/yasnippet.org (buffer-name) 
+- 현재위치기록 (buffer-file-name) file:../../app/emacs/emacs_is_great.org
+- 전파필요한 직접연관파일(단련리스트파일, 인박스수집): file:../../app/emacs/emacs_is_great.org
+- 관련임시아이디어들 경쟁,대안 : 
+- 등록할 성과요약문 연관파일과 다이어리에 기재사항
+  - 
+
+- 더 필요하고 조사해야할 사안 그리고 대기중, 중단이유:
+  - ipython session!, python
+  - # config_github/ emacs/ language/pyton 등 폴더내부에 파일로  ln -fs로 연동해서 사용하는 방법을 고려할 것
+   → 즉, 파일정보를 관리하는 것을 한 곳에서 수행하는 방식: 별도 외부폴더를 정리하는 것보다 언어와 노트 스니핏이 한 곳에서 저장한다.
+  - file:~/.emacs.d/snippets/org-mode/emacs-lisp
+
+요약 : process중단이 간략히 진행됨이 성공함.
+app/emacs/process.org espeak, mpv diary (delete-process (get-process "while true espeak greek latin"))
+help:delete-process help:get-process
+#+begin_center text emacs-lisp :핵심부delete-process은_(delete-process (get-process screencast-process-name))이다
+; 동영상의 예문을 일단 수집해 둔다. Hack emacs 14 mode-line hacking live.mp4
+; - 연관처:ffmpeg, global-keybind.org espeak mpv 다른 언어학습의 관련된 실행문에 사용됨.
+(setq screencast-process-name "screencast-process")
+(start-process screencast-process-name
+               "*screencast*"
+               "/usr/bin/ffmpeg"
+               "-f" "alsa" "-ac" "2" "-i" "pulse" "-f" "x11grab" "-r" "30" "-s" ~~~~~~~ )
+
+(defun screencast-stop ()
+ (interactive)
+ (delete-process (get-process screencast-process-name))
+)
+
+(defun screencast-default-keybindings ()
+ (interactive)
+ (define-prefix-command 'screencast-map)
+ (global-set-key (kbd "C-x s") screencast-map)
+ (global-set-key (kbd "C-x s a") screencast-start)
+
+)
+#+end_center
+
+#+begin_src emacs-lisp :tangle yes
+;; 위의 예시를 변형해서 아래의 실행을 중단시키는 것을 실험한다.
+;;  (delete-process (get-process screencast-process-name))
+ (delete-process (get-process "while true espeak greek latin"))
+
+
+;# while true 무한반복의 실행! 나중에 for문의 횟수사용 (timeout의 방법을 찾기전에 모색이었으나 timeout bash -c도 나중에 성공함!)
+(start-process-shell-command "while true espeak greek latin" nil "strings=\"\
+반갑습니다 
+아리스토텔레스 나무 대방광불화엄경
+\"; while true; echo \"elisp_espeak\"; do echo \"$strings\" | while read LINE ; do espeak -a 20 \"$LINE\"; sleep 3; done; done")
+
+;; 실험의 대성공!!!
+#+end_src
+
+[[link of the video][file:link of the image]
+
+- file:../../app/emacs/process.org
+- file:../../app/emacs/browse_url_browser_function.org
+- help:kill-buffer 는 버퍼를 제거함. 구분해서 사용해야 하는 것으로 실험확인됨.
+#+begin_src emacs-lisp :tangle yes
+;; 위의 예시 버퍼를 중단시키는 것을 실험한다.
+;;  (delete-process (get-process screencast-process-name))
+ (delete-process (get-process "while true espeak greek latin"))
+ (delete-process (get-process "browse_url_browser_function.org")) ;;[처리못함] 즉 버퍼제거는 안됨
+(kill-buffer "browse_url_browser_function.org")
+(kill-buffer "test_마트_shopping.org")
+;# while true 무한반복의 실행! 나중에 for문의 횟수사용 (timeout의 방법을 찾기전에 모색이었으나 timeout bash -c도 나중에 성공함!)
+(start-process-shell-command "while true espeak greek latin" nil "strings=\"\
+반갑습니다 
+아리스토텔레스 나무 대방광불화엄경
+\"; while true; echo \"elisp_espeak\"; do echo \"$strings\" | while read LINE ; do espeak -a 20 \"$LINE\"; sleep 3; done; done")
+
+;; 실험의 대성공!!!
+#+end_src
+- 즉 둘은 다른 영역을 다루므로 help:kill-buffer 는 버퍼를 제거함. 각각 구분해서 대응 사용해야 하는 것으로 실험확인됨.
+
+
+
+
+#+end_text org
+:end:
 
 #+BEGIN_SRC elisp
 ;# while true 무한반복의 실행! 나중에 for문의 횟수사용 (timeout의 방법을 찾기전에 모색이었으나 timeout bash -c도 나중에 성공함!)
@@ -42,3 +139,6 @@ help:list-system-processes
 (start-process-shell-command "killall espeak while" nil "
 timeout 15m mpv --player-operation-mode=pseudo-gui ~/Music/homer_rhythm/iliad01/line_010.mp4
 ")
+
+
+

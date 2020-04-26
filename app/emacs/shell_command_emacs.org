@@ -5,6 +5,42 @@ alias org='/usr/bin/emacs --funcall org-agenda-list &' # 함수실행을 진행�
 emacsclient -t --eval "(org-agenda-list)" "(delete-other-windows)" # Make it as function or alias
 
 
+** async-shell-command깔끔한실행!
+[[https://stackoverflow.com/questions/13901955/how-to-avoid-pop-up-of-async-shell-command-buffer-in-emacs][asynchronous - How to avoid pop-up of *Async Shell Command* buffer in Emacs? - Stack Overflow]]
+  :async-shell-command깔끔한실행!:  
+  #+BEGIN_TEXT org :async-shell-command깔끔한실행!
+- Core_location: file:../../app/emacs/shell_command_emacs.org
+daiary?yes, loding_file?yes, 
+- [[https://stackoverflow.com/questions/13901955/how-to-avoid-pop-up-of-async-shell-command-buffer-in-emacs][asynchronous - How to avoid pop-up of *Async Shell Command* buffer in Emacs? - Stack Overflow]]
+  :  help:defadvice  함수에 새로운 기능을 추가하는 기능인 것같다. defadvice
+    (defadvice async-shell-command (around hide-async-windows activate)
+       (save-window-excursion
+          ad-do-it))
+    :
+ help:advice-add help:advice-remove
+
+
+(advice-add 'test-mode-line :around #'other-window)
+
+- 아래의 방식은 멋진 해결책을 제시한다.
+    : 해결점을 찾아 냈다!
+
+   #+begin_src emacs-lisp :results silent
+
+;; display-buffer-alist 
+;; 위의 변수에 저장하면 쓸모없는 출력용버퍼가 거슬리지 않는다.
+;; async-shell-command를 사용할 경우 편리하게 하기 위한 것
+(add-to-list 'display-buffer-alist ;; /app/emacs/shell_command_emacs.org
+  (cons "\\*Async Shell Command\\*.*" (cons #'display-buffer-no-window nil)))
+
+#+end_src
+
+
+  #+END_TEXT
+  :END:
+
+
+
 * -l "~/config_github/app/emacs/shell_emacs/shell_command_emacs.org" 
   -l "(lisp-file실행할파일)" man emacs에서 밝힘
 
@@ -43,4 +79,5 @@ emacsclient -t --eval "(org-agenda-list)" "(delete-other-windows)" # Make it as 
 
 
 ** 대안으로 gksudo 명령을 쉘명령으로 실행하는 것도 고려해 봄직함.
-    (find-file-other-window "../../sudo_gksudo/readme.org")
+- file:tramp.org ;; (find-file "/sudo::/usr/share/xsessions/emacs.desktop")
+-    (find-file-other-window "../../sudo_gksudo/readme.org") 

@@ -25,3 +25,27 @@ xdotool key k # app/emacs/shell_emacs/eshell_in_emacs.org 사용될 활용있음
 
 
 
+* xdotool get mouselocation -shell
+
+  :START:  
+
+  #+BEGIN_TEXT org :목적  
+- Core_location: file:../../app/emacs/.org
+
+#+begin_src sh :results silent
+#!/bin/sh
+unset X Y; sleep 1
+eval "$(xdotool getmouselocation -shell 2>/dev/null)"
+for n in X Y; do  : "$(($n-=$n>25?25:$n))"; done
+xwd -root -silent |
+xv -    -crop "$X" "$Y" 50 50 \
+        -geometry "50x50+$X+$Y" \
+        -nodecor -viewonly -rv -quit
+#+end_src
+
+
+
+
+  #+END_TEXT
+
+  :END:

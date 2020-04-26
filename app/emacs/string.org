@@ -1,30 +1,309 @@
 
 #+where_is_source_FILE:     (dired-jump 3 (substring (shell-command-to-string (concat "readlink -f \"" (buffer-file-name) "\"")) 0 -1) )
 
+
+
+
+:help_주제어:
+help: 주제어
+#+begin_src emacs-lisp :for_WHAT!  글자의 위치를 얻는 것이 필요한 경우
+;; alias for ‘line-end-position’ in ‘subr.el’.
+
+(point-at-eol &optional N)
+ 
+
+
+#+end_src
+           :end:
+
+
+
+
+:help_sort-lines:
 help:sort-lines
+#+begin_src emacs-lisp :for_What! 
+;; M-| sort -r?? 유사기능이 있음을 확인하고 영역선택이나 다른 곳에서 사용을 적용해 볼 것.
+ (sort-lines REVERSE BEG END)
+Sort lines in region alphabetically; argument means descending order.
+Called from a program, there are three arguments:
+REVERSE (non-nil means reverse order), BEG and END (region to sort).
+The variable ‘sort-fold-case’ determines whether alphabetic case affects
+the sort order.
 
 
 
-1
-3
-3
-5
-7
-(message "\
---start=09:00 " )        ;; will use in ggb_mpv etc...
+#+end_src
+           :end:
 
 
+
+:help_주제어:
+help: 주제어
+#+begin_text elisp :for_WHAT! 
+;; 
+
+
+#+end_text
+:END:
+
+
+
+
+
+#+begin_src org
+  
+
+    
+  to study   replace-quote uses prin1-to-string
+
+  replace-string interacivly
+  replace-match is for lisp
+  
+
+(search-emacs-glossary)
+
+
+  (replace
+
+  (+ 1)
+
+  replace
+
+
+#+end_src
+
+
+
+#+begin_src org
+  help:replace-match-string-symbols
+
+#+end_src
+
+
+:help_compare-strings:
+help:compare-strings
+#+begin_src emacs-lisp
+; compare-strings is a built-in function in ‘C source code’.
+(compare-strings STR1 START1 END1 STR2 START2 END2 &optional
+IGNORE-CASE)
+
+#+end_src
+           :end:
+
+
+
+* list to string in emacs-lisp 발견함.
+ (format "%S" '("foo" "adn"))
+"(\"foo\" \"adn\")"
+
+ (format "%s" '("foo" "adn"))
+"(foo adn)"
+ELISP> 
+(mapconcat 'identity '("hi" "world") " ")
+"hi world"
+(prin1-to-string your-string)
+(prin1-to-string '("your" "-string"))
+
+help:prin1-to-string
+Finally something special
+help:princ
+(princ your-string)
+
+
+(prin1-to-string "(\"foo\" \"adn\")") "\"(\\\"foo\\\" \\\"adn\\\")\""
+Finally something special
+
+(princ "(\"foo\" \"adn\")") "(\"foo\" \"adn\")"
+
+(substring (mapc 'identity '("hi" "world")) 0 -1)
+(substring "123456" 1 -1) "avb"
+(substring (mapc 'prin1 '("hi" "world")) 0 -1)
+(mapc 'prin1 '("hi" "world"))("hi" "world")
+(substring 
+(mapc #'print #'("hi" "world"))("hi" "world")
+(string-to-char "\"")
+(mapconcat 'identity '("hi" "world") " ")
+help:prin1
+(prin1 '("a" "b"))
+help:identity
+(mapc 'identity '("hi" "world"))("hi" "world")
+(split-string "hi world")
+(mapconcat 'prin1 (split-string "hi world") " ")
+
+(substring (format "%S" '("foo" "adn")) 2 -3) "foo\" \"adn"
+
+  :START:  
+
+- diary?, loding_file?, 
+- Core_location: file:../../app/emacs/  .org
+  #+BEGIN_TEXT elisp :목적 
+;(format) will embed parentheses in the string, e.g.:
+;ELISP> (format "%s" '("foo" "bar"))
+        "(foo bar)"
+
+; Thus if you need an analogue to Ruby/JavaScript-like join(), there is (mapconcat):
+;ELISP> (mapconcat 'identity '("foo" "bar") " ")
+        "foo bar"
+
+(+ 1 2) 
+  #+END_TEXT
+(
+pp-eval-last-sexp
+
+pp-eval-last-sexp
+(pp-eval-expression (concat "123 " "aef"))
+help:pp-eval-expression
+help:c-offsets-alist
+
+
+
+  :END:
+
+prin1-to-string
+(progn
+(prin1-to-string '("hi" "good"))
+
+(mapc 'prin1-to-string '("hi" "good"))
+)
+(princ '("hi" "good")) ("hi" "good")
+
+(mapc 'princ '("hi" "good"))
+
+"hi\" \"world"
+"hi world"
+(prin1-to-string your-string)
+Finally something special
+
+(princ your-string)
+(mapcat 'prin1-to-string '("hi" "world"))
+(substring (format "%s" '("hi" "world") 1 -1)
+(mapconcat 'identity '("hi" "world") " ")
+
+(format "%s" '("hi" "world"))
+
+(mapcan 'print '("hi" "world"))
+
+(mapcar ' '("hi"))
+ "world"))
+
+(princ "hi")
+(mapc 'princ '("hi" "world")) ("hi" "world")
+
+help:prin1-to-string
+help:mapconcat
+
+
+(-each '("a" "b") 'print)
+help:-each 답을 발견한 것 같다. 즉 process에 값을 전달하는 방법으로 유용하게 사용될 것으로 추정됨.
+(-each (split-string "a b c") 'print)
+reverse list방법을 아래서 참고해서 "nil"을 제거하는 법으로 가능해지게 된 것같다. 
+help:-each-while help:-each 
+ 아애 다른 방법을 모색함 
+- mapconcat in the file:../../app/emacs/syntax_of_mapc_in_emacs.org
+
+
+(subst-char-in-string 97 99 "abaaaaaacdefghijklmn1 2 3 3 2 1 1 2 3" t)
+"cbcccccccdefghijklmn1 2 3 3 2 1 1 2 3"
+
+(replace-regexp-in-string "fg" "GOOD DAY" "abaaaaaacdefghijklmn1 2 3 3 2 1 1 2fg 3")
+"abaaaaaacdeGOOD DAYhijklmn1 2 3 3 2 1 1 2GOOD DAY 3"
+
+(replace-regexp-in-string "your" "my" (prin1-to-string '("your" "-string")))
+(replace-regexp-in-string "\"" "" (prin1-to-string '("your" "-string")))
+
+
+(char-to-string 22) ;; 글자로 변환하는 법!
+(string-to-char =" ") ;; 숫자값으로 변환하는 법    확인은 → (message "\x22\x20\x22") (%20은 \x20으로 표기됨.)
+                         C-x =로 얻은 값으로       → 실험 (message "\x20 \40 \42") (#o40은 \40으로 표기됨.)
+(replace-regexp-in-string " " "\x22\x20\x22" "by good world") "by\" \"good\" \"world"
+(replace-regexp-in-string " " "\x22\x20\x22" (prin1-to-string '("your" "-string"))) "(\"your\"\" \"\"-string\")"
+
+(setq i 1) (setq i (+ 1 i))
+(while (< i 5)
+(setq i (+ 1 i))
+(message-box "hi"))
+ (message-y-or-n-p "hi" "good")
+
+help:while
+  (while (search-forward FROM-STRING nil t)
+    (replace-match TO-STRING nil t))
+which will run faster and will not set the mark or print anything.
+(You may need a more complex loop if FROM-STRING can match the null string
+and TO-STRING is also null.)
+
+* replace-match 참조해서 내부구조를 파악할 것
+ help:replace-match
+
+   help:reverse 역진행의 콤마위치를 알기 위해서는 reverse를 활용하는 것이 도움이 된다.
+help:string-match ;;용도 원하는 regex 출발과 종점으로 발췌해서 파일을 사용하는 것.
+(string-match REGEXP STRING &optional START)
+(string-match "\".*\"" "sdfad \"STRING/fasd\"sdfa  sdf  ") 6
+(string-match "\".*\"" (reverse "sdfad \"STRING/fasd\"sdfa  sdf  ")) 11
+
+(string-match "\".*?$" "sdfad \"STRING/fasd\"adsfasdfsdfa  sdf  ") ;; 실패 역진행위치추적안됨 reverse사용해야 되는 듯함.
+(string-match "\".*?$" "sdfad \"STRING/fasd\"adsfasdfsdfa  sdf  ") 
+
+  :regex필요부분추출:  
+  #+BEGIN_TEXT org :what_in_your_Mind? 
+- 파일명을 추출해서 사용하려면 아래의 문장에서 원하는 부분을 발췌해야한다.
+    - "파일/위치/파일명"
+(buffer-substring-no-properties (line-beginning-position 0) (line-end-position 0))
+    - " " 위치를 파악해서 문장을 절단해야하는 데 string-match를 사용해봄. emms.org mpv-play에서...
+- 그래서 다음의 명령으로 실행을 가능하게 한다.
+- Core_location: emms.org mpv-play에서... string.org
+- 
+#+begin_src emacs-lisp :results raw
+(let*
+;;     - "파일/위치/파일명" ;; string.org(string변환의중심으로지정) mpv/readme.org emms.org
+(
+  (from_pos (line-beginning-position 1)) ;; 임시로 사용하므로 실전에선 삭제할 것
+  (to_pos   (line-end-position 1))       ;; 임시로 사용하므로 실전에선 삭제할 것
+  (from_pos (line-beginning-position 2)) ;; Get_below_file_to_play위치를 
+  (to_pos   (line-end-position 2))       ;; Get_below_file_to_play위치를 
+  (len (- to_pos from_pos))
+  (crude (buffer-substring-no-properties from_pos to_pos))
+  (ending   (string-match "\".*\"" (reverse crude)))
+  (starting (string-match "\".*\""          crude))
+  (get_path (substring crude (+ starting 1) (- len ending 1)))
+)
+(message "%s" get_path) ;; 결과테스트성공!이므로 실전에서는 삭제하고 아래의 문장을 실행하면 됨
+;; (mpv-start "파일/위치/파일명") ;; 아래에서 실행하게 됨.
+;; (mpv-start get_path)
+
+)     ;; ← 요기서 testing 실행하면 Get_below_file_to_play 위치를 목표로 딱! 잡아서 실행됨
+;;     - "파일/위치/파일명;; Get_below_file_to_play위치를 " ;; Get_below_file_to_play
+
+#+end_src
+(message "충분한 단련과 습관이 없으면 무용지물이다")
+
+- 
+#+begin_src emacs-lisp :results silent
+
+#+end_src
+  #+END_TEXT
+  :END:
+
+
+help:match-string ;;용도
+match-string
 * (buffer-substring-no-properties (line-beginning-position 0) (line-end-position 0)) 가 정답!!!
 
 - trim in *whitespace search
-* character positions으로 원하는 string 부분발췌 buffer-substring-no-properties
+* substring 방법들! character positions으로 원하는 string 부분발췌 buffer-substring-no-properties
 (buffer-substring-no-properties (line-beginning-position 0) (line-end-position 0)) => "* character positions으로 원하는 string 부분발췌 buffer-substring-no-properties"
 
 cf .(line-substring-with-bidi-context  는 안됨
+# 버퍼상의 starting ending위치로 사용가능함
 help:buffer-substring
-(buffer-substring START END)
+(buffer-substring START END) ;; starting ending위치로 사용가능함
 (buffer-substring (line-beginning-position 0) (line-end-position 0)) => #("* character positions으로 원하는 string 부분발췌 buffer-substring-no-properties" 0 2 (fontified t face org-level-1) 2 70 (fontified t face org-level-1))
 
+    # string단문상의 starting ending 위치로 사용가능함
+    help:substring
+    (substring STRING &optional FROM TO)
+    (substring "12345" 1 3) "23"
+          # 소수점방식으로 이해하면 됨.
+    # ;length를 찾으려다가 없어서 단순히 (- ending starting) 으로 될 것임!
 
 This function copies the text properties of that part of the buffer
 into the result string; if you don’t want the text properties,
@@ -42,6 +321,9 @@ they can be in either order.
 (buffer-substring-no-properties (line-beginning-position 0) (line-end-position 0))
 ; buffer-substring-no-properties 
 * (dired-jump 3 (substring (shell-command-to-string (concat "readlink -f \"" (buffer-file-name) "\"")) 0 -1) )
+
+# shell-command-to-string의 뒤 따르는 추가된 줄을 제거하는 것이 바로
+# (substring " test " 0 -1)
 (dired-jump 3 (substring (
 shell-command-to-string (
 concat 
@@ -69,6 +351,18 @@ help:shell-command-to-string
 "asdfasdf"
 )  =>  "asdfaef12   312asdfasdf"
 
+* string-equal #ignore text properties
+[[https://stackoverflow.com/questions/25092446/case-in-elisp-how-to-compare-against-a-string][emacs - Case in elisp, How to compare against a string? - Stack Overflow]]
+
+If you do not know where INPUT comes from it is better to use string-equal. Text properties are ignored by string-equal
+
+* cl-equalp  [[https://emacs.stackexchange.com/questions/10384/string-equality-ignore-case][elisp - String equality, ignore case? - Emacs Stack Exchange]] 대소문자를 무시한 철자비교법
+ - [[https://emacs.stackexchange.com/questions/10384/string-equality-ignore-case][elisp - String equality, ignore case? - Emacs Stack Exchange]] 
+(equalp "hi2" "Hi2")
+help:equalp help:cl-equalp
+help:string-suffix-p
+help:string-prefix-p
+
 
 * (string-to-list "123 123")
 
@@ -85,9 +379,72 @@ help:shell-command-to-string
 ")
 help:cdr
 
+* (cadr (reverse (split-string (pwd) "/"))) ;; string.org for mode-line
+  :mode-line에정확한정보전달을위한것:  
+  #+BEGIN_TEXT org :mode-line정확한 정보전달
+- 목표를 정하고 위로 들어올릴 것
+- (cadr (reverse (split-string (pwd) "/"))) ;; string.org
+- 
+#+begin_src emacs-lisp :results silent
+(cadr (reverse (split-string (pwd) "/"))) ;; string.org
+#+end_src
+
+Mode Line Format: 
+(setq mode-line-format 
+'("%e"
+ (:eval
+  (format "[%d]"
+	  (exwm-workspace--position exwm-workspace--current)  ))
+ mode-line-front-space mode-line-mule-info mode-line-client mode-line-modified mode-line-remote mode-line-frame-identification mode-line-buffer-identification "   " mode-line-position
+ (vc-mode vc-mode)
+ "  " mode-line-modes mode-line-misc-info mode-line-end-spaces)
+)
+
+
+("%e"
+ (:eval
+  (format "[%d/%s]"
+	  (exwm-workspace--position exwm-workspace--current) (cadr (reverse (split-string (pwd) "/"))) ))
+ mode-line-front-space mode-line-mule-info mode-line-client mode-line-modified mode-line-remote mode-line-frame-identification mode-line-buffer-identification "   " mode-line-position
+ (vc-mode vc-mode)
+ "  " mode-line-modes mode-line-misc-info mode-line-end-spaces)
+;; 일단 성공적이다.
+;; 변수를 두개를 동시에 넣으면 에러성의 현상이 발생됨
+순서를 변경하는 실험을 한다
+Mode Line Format: 
+("%e"
+ (:eval
+  (format "[%d"
+	  (exwm-workspace--position exwm-workspace--current) ))
+ (:eval
+  (format "/%s/]"
+	   (print (cadr (reverse (split-string (pwd) "/")))) ))
+mode-line-frame-identification mode-line-buffer-identification
+ mode-line-front-space mode-line-mule-info mode-line-client mode-line-modified mode-line-remote "   " mode-line-position
+ (vc-mode vc-mode)
+ "  " mode-line-modes mode-line-misc-info mode-line-end-spaces)
+
+
+
+
+- 
+#+begin_src emacs-lisp :results silent
+
+#+end_src
+  #+END_TEXT
+  :END:
+
+
 
 * split-string (info "(elisp) Creating Strings")
 help:split-string
 
 (split-string "jkj kjk kjkj")
 
+
+* 창의적인 방법으로 리스트 list (1 2 3 "nil")에서 마지막의 "nil"을 제거하는 법을 발견함!!!
+- 인간의 창조적인 진화력은 위대함.
+(nreverse SEQ) (reverse SEQ)
+
+(nreverse SEQ) (reverse '(1 2 3 "nil"))
+(nreverse SEQ) (reverse (cdr (reverse '(1 2 3 "nil"))))

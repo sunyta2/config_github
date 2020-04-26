@@ -1,0 +1,62 @@
+~/.emacs.d/elpa/pdf-tools-20200214.536/build/server/
+위치에 저장되어 있는 것을 활용한 것으로 생각된다.
+또한 doc모드로 된 것을 전환하기 위해서는 컴파일이 필수적이었다. 
+사이트의 설명이 있으니 참조할 것.
+(finder-commentary "pdf-tools")
+
+Many of the designations
+
+* log collect
+#+begin_src org
+~/.emacs.d/elpa/pdf-tools-20200214.536/build/server/
+
+-*- mode: compilation; default-directory: "~/.emacs.d/elpa/pdf-tools-20200214.536/build/server/" -*-
+Comint started at Fri Mar 27 23:10:28
+
+/home/thinkpad/.emacs.d/elpa/pdf-tools-20200214.536/build/server/autobuild -i /home/thinkpad/.emacs.d/elpa/pdf-tools-20200214.536/
+---------------------------
+    Installing packages    
+---------------------------
+Skipping package installation (already installed)
+
+---------------------------
+ Configuring and compiling 
+---------------------------
+autoreconf -i
+configure.ac:15: installing './ar-lib'
+configure.ac:11: installing './compile'
+configure.ac:78: installing './config.guess'
+configure.ac:78: installing './config.sub'
+configure.ac:6: installing './install-sh'
+configure.ac:6: installing './missing'
+Makefile.am: installing './depcomp'
+./configure -q --bindir=/home/thinkpad/.emacs.d/elpa/pdf-tools-20200214.536/ && make -s
+
+Is case-sensitive searching enabled ?     yes
+Is modifying text annotations enabled ?   yes
+Is modifying markup annotations enabled ? yes
+
+ar: `u' modifier ignored since `D' is the default (see `U')
+/usr/bin/ld: epdfinfo-epdfinfo.o: in function `mktempfile':
+/home/thinkpad/.emacs.d/elpa/pdf-tools-20200214.536/build/server/epdfinfo.c:354: warning: the use of `tempnam' is dangerous, better use `mkstemp'
+
+---------------------------
+       Installing          
+---------------------------
+make -s install
+make[1]: Entering directory '/home/thinkpad/.emacs.d/elpa/pdf-tools-20200214.536/build/server'
+ /usr/bin/mkdir -p '/home/thinkpad/.emacs.d/elpa/pdf-tools-20200214.536'
+  /usr/bin/install -c epdfinfo '/home/thinkpad/.emacs.d/elpa/pdf-tools-20200214.536'
+make[1]: Nothing to be done for 'install-data-am'.
+make[1]: Leaving directory '/home/thinkpad/.emacs.d/elpa/pdf-tools-20200214.536/build/server'
+
+===========================
+   Build succeeded. :O)    
+===========================
+
+Comint finished at Fri Mar 27 23:10:39
+
+
+
+
+#+end_src

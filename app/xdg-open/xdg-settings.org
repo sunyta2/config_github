@@ -1,0 +1,32 @@
+
+
+../emacs/url~ 검토할 것
+(buffer-file-name)
+/app/xdg-open/xdg-settings.org for app/xdg-open/xdg-setting.org for surf default in Emacs
+* surf default
+ls /usr/share/applications/iceweasel.desktop
+~/.local/share/applications/surf.desktop
+(find-file "/sudo::/usr/share/applications/surf.desktop")
+
+
+xdg-settings set default-web-browser surf.desktop
+### 성공적으로 변경함
+xdg-settings get default-web-browser #명령의 수행을 확인함
+http://google.com
+http:www.ebay.com
+
+#+begin_src emacs-lisp :results silent
+
+#+end_src
+
+- https://stackoverflow.com/questions/41172692/xdg-open-not-open-default-browser
+#+begin_src sh :results silent
+[Desktop Entry]
+Type=Application # 방법을 발견한 곳! [[https://stackoverflow.com/questions/41172692/xdg-open-not-open-default-browser][xdg-open not open default browser - Stack Overflow]]
+Name=surf
+Comment=Surf minimal web browser # app/xdg-open/xdg-setting.org for surf default in Emacs
+Terminal=false
+Exec=surf
+Categories=Network;WebBrowser
+#+end_src
+
